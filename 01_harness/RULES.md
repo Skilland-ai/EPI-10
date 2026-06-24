@@ -9,7 +9,7 @@ These rules are always-on.
 
 ## Anti-bloat
 - Do not copy `00_inbox` into working files.
-- Keep `02_context` readable in 5 minutes.
+- Keep `02_context` readable in 5 minutes; this repo's active context is `02_context/00_intake_context_pack.md`.
 - Move heavy guidance into `shared/skills/`.
 
 ## Spec discipline
@@ -19,8 +19,9 @@ These rules are always-on.
 
 ## Output discipline
 - Final deliverables must go to `04_outputs/`.
+- Use spec-defined output subtrees when the active spec defines them; this repo uses `04_outputs/spec-driving/`.
 - Working debris goes to `05_scratch/`.
-- Use predictable names for deliverables: `YYYY-MM-DD_topic_v1.md`.
+- Use predictable names for standalone deliverables, such as `YYYY-MM-DD_topic_v1.md`; for staged runs, preserve the spec-defined folder and file names.
 
 ## QA gate before close
 - Verify each acceptance criterion explicitly.
