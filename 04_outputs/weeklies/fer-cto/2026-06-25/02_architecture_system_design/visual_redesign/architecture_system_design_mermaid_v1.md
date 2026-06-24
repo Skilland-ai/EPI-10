@@ -8,6 +8,72 @@ EPI10 MVP 1.0 is a small owned orchestration layer, not a full healthcare platfo
 
 Odoo remains the operational source of truth for cases, states, tasks, owners, dashboard and manual TellmeGen milestones. Healthie is the customer portal hypothesis for onboarding, forms, consents, documents, communication and report delivery. TellmeGen stays external/manual in Fase 1. EPI10 Informe Final Copilot is controlled draft support with pseudonymization and mandatory human review.
 
+## Diagram 0 - Big Picture Simplified
+
+This first diagram is intentionally shallow. Its only job is to make the boundary obvious at a glance: actors and web/pago sit outside the custom runtime, the EPI10-owned service and PostgreSQL live inside AWS Espana, SaaS/provider tools stay outside AWS, and TellmeGen remains a manual/out-of-system boundary in Fase 1.
+
+```mermaid
+flowchart LR
+  classDef actor fill:#F8FAFC,stroke:#475569,color:#111827;
+  classDef entry fill:#ECFDF5,stroke:#047857,color:#111827;
+  classDef aws fill:#E7F0FF,stroke:#1D4ED8,color:#111827;
+  classDef data fill:#DBEAFE,stroke:#1D4ED8,color:#111827;
+  classDef saas fill:#ECFDF5,stroke:#047857,color:#111827;
+  classDef gated fill:#FEF9C3,stroke:#A16207,color:#111827;
+  classDef manual fill:#FFF7ED,stroke:#C2410C,color:#111827;
+  classDef error fill:#FEE2E2,stroke:#B91C1C,color:#111827;
+
+  subgraph Actors["Actors / users"]
+    Cliente0["Cliente final"]:::actor
+    Equipo0["Aitor / equipo EPI10"]:::actor
+    Fer0["Fer<br/>CTO review gates"]:::gated
+  end
+
+  subgraph Entry0["Outside AWS - entry"]
+    WebPago0["web/pago<br/>lead_created<br/>payment_success"]:::entry
+  end
+
+  subgraph AWS0["Inside AWS Espana - EPI10-owned MVP"]
+    API0["API intake<br/>schema + auth/signature"]:::aws
+    Core0["Orchestration core<br/>idempotency<br/>state engine<br/>task engine"]:::aws
+    Clients0["Provider clients<br/>Odoo client<br/>Healthie client if valid<br/>report handoff"]:::aws
+    PG0[("PostgreSQL tecnico<br/>IDs, event metadata<br/>state snapshots<br/>retries/errors only")]:::data
+    Ops0["Reliability + support<br/>retry queue<br/>dead-letter<br/>observability"]:::error
+  end
+
+  subgraph SaaS0["Outside AWS - SaaS / providers"]
+    Odoo0["Odoo<br/>operational backoffice<br/>cases, states, tasks, dashboard"]:::saas
+    Healthie0["Healthie<br/>portal hypothesis<br/>forms, consents, docs, delivery<br/>API/DPA/cost gated"]:::gated
+    Copilot0["Copilot / approved LLM tools<br/>pseudonymized draft support<br/>human review required"]:::manual
+  end
+
+  subgraph Manual0["Outside AWS - manual boundary"]
+    TellmeGen0["TellmeGen B2B<br/>manual only in Fase 1<br/>no API automation"]:::manual
+    Recovery0["Manual recovery / fallback<br/>visible as Odoo task"]:::error
+  end
+
+  Cliente0 --> WebPago0
+  WebPago0 -->|"events"| API0
+  API0 --> Core0
+  Core0 --> PG0
+  Core0 --> Ops0
+  Core0 --> Clients0
+  Clients0 -->|"case/state/task"| Odoo0
+  Clients0 -. "invite/sync if validated" .-> Healthie0
+  Healthie0 -. "webhook/poll if validated" .-> API0
+  Equipo0 -. "manual lab work" .-> TellmeGen0
+  TellmeGen0 -. "manual milestone" .-> Odoo0
+  Odoo0 -->|"ready for report"| Equipo0
+  Equipo0 -->|"pseudonymized package"| Copilot0
+  Copilot0 -->|"draft only"| Equipo0
+  Equipo0 -. "final report if API permits" .-> Healthie0
+  Ops0 -->|"dead-letter / alert"| Recovery0
+  Recovery0 --> Odoo0
+  Fer0 --> Core0
+  Fer0 --> Odoo0
+  Fer0 --> Healthie0
+```
+
 ## Diagram 1 - Architecture Context
 
 This context view separates the customer entry path, EPI10-owned orchestration, SaaS/external systems, manual boundaries and CTO review gates. Yellow nodes are gated or Unknown, not assumed capabilities.
