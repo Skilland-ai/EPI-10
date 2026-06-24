@@ -1,0 +1,45 @@
+{
+  "case_id": "epi10-salud",
+  "run_id": "epi10-salud-20260609",
+  "mode": "standard",
+  "run_status": "PRE_SALES_COMPLETE",
+  "active_stage": null,
+  "stage_statuses": {
+    "00": "PASSED",
+    "01": "PASSED",
+    "02": "PASSED",
+    "03": "PASSED",
+    "04": "PASSED",
+    "06": "PENDING"
+  },
+  "artifact_paths": {
+    "00": "context/00_intake_context_pack.md",
+    "01": "artifacts/01_problem_audit_v1.md",
+    "02": "artifacts/02_mvp_scope_decision_v2.md",
+    "03": "artifacts/03_technical_presales_blueprint_v2.md",
+    "04": "artifacts/04_commercial_proposal_longform_v1.md",
+    "06": "artifacts/06_execution_plan_v1.md"
+  },
+  "review_paths": {
+    "00": "reviews/stage_00_review_iter_01.md",
+    "01": "reviews/stage_01_review_iter_01.md",
+    "02": "reviews/stage_02_review_iter_02.md",
+    "03": "reviews/stage_03_review_iter_02.md",
+    "04": "reviews/stage_04_review_iter_01.md"
+  },
+  "iteration_counts": {
+    "00": 1,
+    "01": 1,
+    "02": 2,
+    "03": 2,
+    "04": 1,
+    "06": 0
+  },
+  "max_iterations": null,
+  "blocked_questions": [],
+  "assumptions": [],
+  "overrides": [],
+  "last_action": "Stage 04 longform commercial proposal passed review.",
+  "next_action": "Pre-sales complete. Review price, timeline, placeholders and commercial terms with Raul; do not run Stage 06 unless execution_plan_enabled is set to true.",
+  "updated_at": "2026-06-11"
+}
