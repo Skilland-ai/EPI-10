@@ -1,0 +1,4 @@
+interface:
+  display_name: "Founder CTO"
+  short_description: "CTO governance for agentic builders"
+  default_prompt: "Use $founder-cto to review this technical decision before execution."

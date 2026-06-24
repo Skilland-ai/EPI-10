@@ -1,0 +1,57 @@
+{
+  "skill_name": "founder-cto",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use the founder CTO skill for a weekly CTO review. I am a founder using agents to ship a B2B onboarding automation. This week we finished the intake form and a prototype dashboard, but the customer export and error handling are unclear. Give me the CTO sparring session output.",
+      "expected_output": "A Spanish weekly CTO review with progress, decisions made, blocked decisions, risks, next decisions, escalations, rigor dial, and one-week CTO focus.",
+      "files": [],
+      "expectations": [
+        "The response is in Spanish by default.",
+        "The response identifies the weekly CTO mode.",
+        "The response includes progress, decisions made, blocked decisions, risks, next decisions, and escalations.",
+        "The response selects one of the four rigor dial levels and explains why.",
+        "The response ends with a concrete next action or one-week focus."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We need to decide whether to build a custom CRM enrichment pipeline or buy a vendor tool. Use founder CTO judgment and produce a build-vs-buy memo. The team is two builders, timeline is three weeks, data is business contact data, and this is for internal sales operations.",
+      "expected_output": "A Spanish build-vs-buy memo comparing build, buy, reuse, and defer, with cost/risk/reversibility analysis and a recommendation calibrated to internal ops.",
+      "files": [],
+      "expectations": [
+        "The response is in Spanish by default.",
+        "The response identifies the build-vs-buy mode.",
+        "The response compares build, buy, reuse, and defer or explains why an option is unavailable.",
+        "The response chooses the internal ops rigor level or justifies a different level.",
+        "The response discusses reversibility, ownership, data/control risk, and time to value."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Review this spec before execution: build a client portal with login, document uploads, payment status, admin editing, notifications, analytics, and AI summary generation in one sprint. We have no acceptance criteria yet. Use the skill as a spec challenge.",
+      "expected_output": "A Spanish spec critique that holds or gates execution, names ambiguities, missing decisions, acceptance criteria gaps, overbuild risk, and required edits before handoff.",
+      "files": [],
+      "expectations": [
+        "The response is in Spanish by default.",
+        "The response identifies the spec challenge mode.",
+        "The response gives a readiness verdict such as hold or ready with edits.",
+        "The response flags scope and acceptance criteria gaps.",
+        "The response separates missing decisions, risks, and suggested spec edits."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Use founder CTO mode to review a planned workflow that processes patient-submitted documents, extracts structured data with an LLM, and lets staff approve before saving. We want to move fast but this may involve sensitive personal data.",
+      "expected_output": "A Spanish regulated/sensitive project review that raises privacy/security/legal/human-review rigor, identifies data risks, gates execution, and recommends controls.",
+      "files": [],
+      "expectations": [
+        "The response is in Spanish by default.",
+        "The response selects the regulated/sensitive rigor level.",
+        "The response names privacy, security, legal/compliance, auditability, and human review concerns.",
+        "The response avoids guessing legal requirements and marks legal/compliance unknowns where needed.",
+        "The response includes a concrete readiness gate or next action before execution."
+      ]
+    }
+  ]
+}

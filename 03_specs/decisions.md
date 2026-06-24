@@ -4,3 +4,4 @@
 - 2026-06-24: Preserved Stage 06 as pending run state only; no Stage 06 artifact was generated.
 - 2026-06-24: Accepted and closed the document migration spec after QA validation.
 - 2026-06-24: Planned a follow-up spec to align the repo harness with the migrated spec-driving structure.
+- 2026-06-24: Created active spec `002_now.md` to build a reusable `founder-cto` skill as repo source plus exportable package, without installing it globally yet.
