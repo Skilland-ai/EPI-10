@@ -6,3 +6,4 @@
 - 2026-06-24: Planned a follow-up spec to align the repo harness with the migrated spec-driving structure.
 - 2026-06-24: Created active spec `002_now.md` to build a reusable `founder-cto` skill as repo source plus exportable package, without installing it globally yet.
 - 2026-06-24: Created active spec `003_now.md` to build a reusable `founder-cto-advisor` subagent that uses the `founder-cto` skill plus spec and QA skills, with repo source and export copy.
+- 2026-06-24: Created active spec `004_now.md` for an interactive `founder-cto-advisor` diagnosis of `04_outputs/spec-driving/`, focused on architecture, system design, solo-developer feasibility, and execution readiness before any Stage 06 work.
