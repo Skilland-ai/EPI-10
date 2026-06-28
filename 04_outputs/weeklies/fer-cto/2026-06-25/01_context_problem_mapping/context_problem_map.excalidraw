@@ -1,7 +1,7 @@
 {
   "type": "excalidraw",
   "version": 2,
-  "source": "https://excalidraw.com",
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
   "elements": [
     {
       "id": "title-001",
@@ -22,11 +22,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120001,
-      "version": 1,
-      "versionNonce": 220001,
+      "version": 2,
+      "versionNonce": 1145104125,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "EPI10 - contexto, problema real y bloqueos para weekly Fer CTO",
@@ -36,7 +36,9 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "EPI10 - contexto, problema real y bloqueos para weekly Fer CTO",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "a0",
+      "autoResize": true
     },
     {
       "id": "sub-001",
@@ -57,11 +59,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120002,
-      "version": 1,
-      "versionNonce": 220002,
+      "version": 2,
+      "versionNonce": 1239602003,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Clave: no falta solo una API; falta un sistema operativo minimo y trazable.",
@@ -71,7 +73,9 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Clave: no falta solo una API; falta un sistema operativo minimo y trazable.",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "a1",
+      "autoResize": true
     },
     {
       "id": "actor-carmen-box",
@@ -90,15 +94,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120003,
-      "version": 1,
-      "versionNonce": 220003,
+      "version": 2,
+      "versionNonce": 1491402589,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "a2"
     },
     {
       "id": "actor-carmen-text",
@@ -119,11 +126,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120004,
-      "version": 1,
-      "versionNonce": 220004,
+      "version": 2,
+      "versionNonce": 1400041715,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Carmen\nbuyer / foco",
@@ -133,7 +140,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Carmen\nbuyer / foco",
-      "lineHeight": 1.2
+      "lineHeight": 1.2,
+      "index": "a3",
+      "autoResize": true
     },
     {
       "id": "actor-client-box",
@@ -152,15 +161,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120005,
-      "version": 1,
-      "versionNonce": 220005,
+      "version": 2,
+      "versionNonce": 103222205,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "a4"
     },
     {
       "id": "actor-client-text",
@@ -181,11 +193,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120006,
-      "version": 1,
-      "versionNonce": 220006,
+      "version": 2,
+      "versionNonce": 476994195,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Cliente final\nexperiencia",
@@ -195,7 +207,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Cliente final\nexperiencia",
-      "lineHeight": 1.2
+      "lineHeight": 1.2,
+      "index": "a5",
+      "autoResize": true
     },
     {
       "id": "actor-aitor-box",
@@ -214,15 +228,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120007,
-      "version": 1,
-      "versionNonce": 220007,
+      "version": 2,
+      "versionNonce": 1814596637,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "a6"
     },
     {
       "id": "actor-aitor-text",
@@ -243,11 +260,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120008,
-      "version": 1,
-      "versionNonce": 220008,
+      "version": 2,
+      "versionNonce": 831230003,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Aitor\npain owner",
@@ -257,7 +274,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Aitor\npain owner",
-      "lineHeight": 1.2
+      "lineHeight": 1.2,
+      "index": "a7",
+      "autoResize": true
     },
     {
       "id": "actor-team-box",
@@ -276,15 +295,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120009,
-      "version": 1,
-      "versionNonce": 220009,
+      "version": 2,
+      "versionNonce": 718995581,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "a8"
     },
     {
       "id": "actor-team-text",
@@ -305,11 +327,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120010,
-      "version": 1,
-      "versionNonce": 220010,
+      "version": 2,
+      "versionNonce": 1152455123,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Equipo EPI10\noperacion",
@@ -319,7 +341,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Equipo EPI10\noperacion",
-      "lineHeight": 1.2
+      "lineHeight": 1.2,
+      "index": "a9",
+      "autoResize": true
     },
     {
       "id": "actor-tellmegen-box",
@@ -338,15 +362,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120011,
-      "version": 1,
-      "versionNonce": 220011,
+      "version": 2,
+      "versionNonce": 1744824541,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aA"
     },
     {
       "id": "actor-tellmegen-text",
@@ -367,11 +394,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120012,
-      "version": 1,
-      "versionNonce": 220012,
+      "version": 2,
+      "versionNonce": 116744051,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "TellmeGen\nexterno",
@@ -381,7 +408,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "TellmeGen\nexterno",
-      "lineHeight": 1.2
+      "lineHeight": 1.2,
+      "index": "aB",
+      "autoResize": true
     },
     {
       "id": "actor-reboot-box",
@@ -400,15 +429,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120013,
-      "version": 1,
-      "versionNonce": 220013,
+      "version": 2,
+      "versionNonce": 354993469,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aC"
     },
     {
       "id": "actor-reboot-text",
@@ -429,11 +461,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120014,
-      "version": 1,
-      "versionNonce": 220014,
+      "version": 2,
+      "versionNonce": 1117714707,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Reboot / Skilland\nRaul + Fer",
@@ -443,15 +475,17 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Reboot / Skilland\nRaul + Fer",
-      "lineHeight": 1.2
+      "lineHeight": 1.2,
+      "index": "aD",
+      "autoResize": true
     },
     {
       "id": "request-box",
       "type": "rectangle",
-      "x": 42,
-      "y": 220,
+      "x": 44.12825419319418,
+      "y": 218.6664391884077,
       "width": 245,
-      "height": 150,
+      "height": 188.07180039462077,
       "angle": 0,
       "strokeColor": "#1971c2",
       "backgroundColor": "#e7f5ff",
@@ -462,23 +496,26 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120015,
-      "version": 1,
-      "versionNonce": 220015,
+      "version": 42,
+      "versionNonce": 1800664381,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381518726,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aE"
     },
     {
       "id": "request-text",
       "type": "text",
-      "x": 62,
+      "x": 50.004756577361434,
       "y": 238,
-      "width": 205,
-      "height": 112,
+      "width": 228.99048684527713,
+      "height": 125.10699769107832,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -491,21 +528,23 @@
       "frameId": null,
       "roundness": null,
       "seed": 120016,
-      "version": 1,
-      "versionNonce": 220016,
+      "version": 244,
+      "versionNonce": 1701400765,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381522442,
       "link": null,
       "locked": false,
       "text": "Entrada Carmen / EPI10\n\n- Fase 1 practica\n- Herramientas existentes\n- Portal cliente\n- Odoo backoffice\n- TellmeGen proveedor\n- Costes y seguridad",
-      "fontSize": 15,
+      "fontSize": 16.75540147648371,
       "fontFamily": 1,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Entrada Carmen / EPI10\n\n- Fase 1 practica\n- Herramientas existentes\n- Portal cliente\n- Odoo backoffice\n- TellmeGen proveedor\n- Costes y seguridad",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "aF",
+      "autoResize": true
     },
     {
       "id": "flow-title",
@@ -526,11 +565,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120017,
-      "version": 1,
-      "versionNonce": 220017,
+      "version": 2,
+      "versionNonce": 1692162557,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Flujo actual fragmentado",
@@ -540,7 +579,9 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Flujo actual fragmentado",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "aG",
+      "autoResize": true
     },
     {
       "id": "flow-web-box",
@@ -559,15 +600,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120018,
-      "version": 1,
-      "versionNonce": 220018,
+      "version": 2,
+      "versionNonce": 690753619,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aH"
     },
     {
       "id": "flow-web-text",
@@ -588,11 +632,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120019,
-      "version": 1,
-      "versionNonce": 220019,
+      "version": 2,
+      "versionNonce": 1536823901,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Web + pago",
@@ -602,7 +646,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Web + pago",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "aI",
+      "autoResize": true
     },
     {
       "id": "flow-aitor-box",
@@ -621,15 +667,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120020,
-      "version": 1,
-      "versionNonce": 220020,
+      "version": 2,
+      "versionNonce": 1351388659,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aJ"
     },
     {
       "id": "flow-aitor-text",
@@ -650,11 +699,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120021,
-      "version": 1,
-      "versionNonce": 220021,
+      "version": 2,
+      "versionNonce": 918666941,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Aitor / equipo\nmiddleware humano",
@@ -664,7 +713,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Aitor / equipo\nmiddleware humano",
-      "lineHeight": 1.2
+      "lineHeight": 1.2,
+      "index": "aK",
+      "autoResize": true
     },
     {
       "id": "flow-out-1-box",
@@ -683,15 +734,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120022,
-      "version": 1,
-      "versionNonce": 220022,
+      "version": 2,
+      "versionNonce": 1582061459,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aL"
     },
     {
       "id": "flow-out-1-text",
@@ -712,11 +766,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120023,
-      "version": 1,
-      "versionNonce": 220023,
+      "version": 2,
+      "versionNonce": 1022680861,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Odoo estados",
@@ -726,7 +780,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Odoo estados",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "aM",
+      "autoResize": true
     },
     {
       "id": "flow-out-2-box",
@@ -745,15 +801,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120024,
-      "version": 1,
-      "versionNonce": 220024,
+      "version": 2,
+      "versionNonce": 1621224755,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aN"
     },
     {
       "id": "flow-out-2-text",
@@ -774,11 +833,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120025,
-      "version": 1,
-      "versionNonce": 220025,
+      "version": 2,
+      "versionNonce": 1688531837,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Portal / email / docs",
@@ -788,7 +847,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Portal / email / docs",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "aO",
+      "autoResize": true
     },
     {
       "id": "flow-out-3-box",
@@ -807,15 +868,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120026,
-      "version": 1,
-      "versionNonce": 220026,
+      "version": 2,
+      "versionNonce": 1525927635,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aP"
     },
     {
       "id": "flow-out-3-text",
@@ -836,11 +900,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120027,
-      "version": 1,
-      "versionNonce": 220027,
+      "version": 2,
+      "versionNonce": 1511226333,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "TellmeGen manual",
@@ -850,7 +914,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "TellmeGen manual",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "aQ",
+      "autoResize": true
     },
     {
       "id": "flow-out-4-box",
@@ -869,15 +935,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120028,
-      "version": 1,
-      "versionNonce": 220028,
+      "version": 2,
+      "versionNonce": 534281331,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aR"
     },
     {
       "id": "flow-out-4-text",
@@ -898,11 +967,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120029,
-      "version": 1,
-      "versionNonce": 220029,
+      "version": 2,
+      "versionNonce": 1162999869,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Informe + seguimiento",
@@ -912,7 +981,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Informe + seguimiento",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "aS",
+      "autoResize": true
     },
     {
       "id": "arrow-request-flow",
@@ -931,21 +1002,33 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 2 },
+      "roundness": {
+        "type": 2
+      },
       "seed": 120030,
-      "version": 1,
-      "versionNonce": 220030,
+      "version": 2,
+      "versionNonce": 1796634131,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
-      "points": [[0, 0], [52, 0]],
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          52,
+          0
+        ]
+      ],
       "lastCommittedPoint": null,
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "endArrowhead": "arrow",
+      "index": "aT"
     },
     {
       "id": "arrow-web-aitor",
@@ -964,21 +1047,33 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 2 },
+      "roundness": {
+        "type": 2
+      },
       "seed": 120031,
-      "version": 1,
-      "versionNonce": 220031,
+      "version": 2,
+      "versionNonce": 1346496669,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
-      "points": [[0, 0], [55, 0]],
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          55,
+          0
+        ]
+      ],
       "lastCommittedPoint": null,
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "endArrowhead": "arrow",
+      "index": "aU"
     },
     {
       "id": "arrow-aitor-out",
@@ -997,21 +1092,33 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 2 },
+      "roundness": {
+        "type": 2
+      },
       "seed": 120032,
-      "version": 1,
-      "versionNonce": 220032,
+      "version": 2,
+      "versionNonce": 1000618931,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
-      "points": [[0, 0], [52, 0]],
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          52,
+          0
+        ]
+      ],
       "lastCommittedPoint": null,
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "endArrowhead": "arrow",
+      "index": "aV"
     },
     {
       "id": "pain-box",
@@ -1030,15 +1137,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120033,
-      "version": 1,
-      "versionNonce": 220033,
+      "version": 2,
+      "versionNonce": 1821691133,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aW"
     },
     {
       "id": "pain-text",
@@ -1059,11 +1169,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120034,
-      "version": 1,
-      "versionNonce": 220034,
+      "version": 2,
+      "versionNonce": 1839746387,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Dolores operativos\n\n- Manualidad de Aitor/equipo\n- Estados y tareas dispersos\n- Docs / analiticas por canales debiles\n- Informe final poco sistematizado\n- Datos sensibles\n- Baja trazabilidad",
@@ -1073,7 +1183,9 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Dolores operativos\n\n- Manualidad de Aitor/equipo\n- Estados y tareas dispersos\n- Docs / analiticas por canales debiles\n- Informe final poco sistematizado\n- Datos sensibles\n- Baja trazabilidad",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "aX",
+      "autoResize": true
     },
     {
       "id": "blockers-box",
@@ -1092,15 +1204,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120035,
-      "version": 1,
-      "versionNonce": 220035,
+      "version": 2,
+      "versionNonce": 1506551133,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aY"
     },
     {
       "id": "blockers-text",
@@ -1121,11 +1236,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120036,
-      "version": 1,
-      "versionNonce": 220036,
+      "version": 2,
+      "versionNonce": 343485171,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Bloqueos / Unknowns\n\n- Healthie API / DPA / coste\n- Odoo API / modelo / permisos\n- Web/pago schema + auth\n- Matriz datos / logs / LLM\n- Plantilla informe\n- Capacidad Raul solo",
@@ -1135,7 +1250,9 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Bloqueos / Unknowns\n\n- Healthie API / DPA / coste\n- Odoo API / modelo / permisos\n- Web/pago schema + auth\n- Matriz datos / logs / LLM\n- Plantilla informe\n- Capacidad Raul solo",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "aZ",
+      "autoResize": true
     },
     {
       "id": "phase1-box",
@@ -1154,15 +1271,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120037,
-      "version": 1,
-      "versionNonce": 220037,
+      "version": 2,
+      "versionNonce": 1798926781,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aa"
     },
     {
       "id": "phase1-text",
@@ -1183,11 +1303,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120038,
-      "version": 1,
-      "versionNonce": 220038,
+      "version": 2,
+      "versionNonce": 345855123,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Fase 1 resuelve\nlo controlable\n\n- Portal cliente\n- Odoo backoffice\n- Estados + tareas\n- Docs + informe final\n- Automatizaciones operativas\n- Trazabilidad",
@@ -1197,7 +1317,9 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Fase 1 resuelve\nlo controlable\n\n- Portal cliente\n- Odoo backoffice\n- Estados + tareas\n- Docs + informe final\n- Automatizaciones operativas\n- Trazabilidad",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "ab",
+      "autoResize": true
     },
     {
       "id": "outscope-box",
@@ -1216,15 +1338,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120039,
-      "version": 1,
-      "versionNonce": 220039,
+      "version": 2,
+      "versionNonce": 234762781,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "ac"
     },
     {
       "id": "outscope-text",
@@ -1245,11 +1370,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120040,
-      "version": 1,
-      "versionNonce": 220040,
+      "version": 2,
+      "versionNonce": 2110474803,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Fuera de Fase 1\n\n- API TellmeGen automatica\n- Usuarios/tests/barcodes auto\n- Descarga resultados/PDF auto\n- Dashboard genetica\n- Diagnostico automatico\n- Gemelo digital\n- Stage 06",
@@ -1259,7 +1384,9 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Fuera de Fase 1\n\n- API TellmeGen automatica\n- Usuarios/tests/barcodes auto\n- Descarga resultados/PDF auto\n- Dashboard genetica\n- Diagnostico automatico\n- Gemelo digital\n- Stage 06",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "ad",
+      "autoResize": true
     },
     {
       "id": "fer-box",
@@ -1278,15 +1405,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120041,
-      "version": 1,
-      "versionNonce": 220041,
+      "version": 2,
+      "versionNonce": 252438141,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "ae"
     },
     {
       "id": "fer-text",
@@ -1307,11 +1437,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120042,
-      "version": 1,
-      "versionNonce": 220042,
+      "version": 2,
+      "versionNonce": 619285459,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Fer debe revisar\n\n- Framing Fase 1\n- Arquitectura minima\n- Gates antes de build\n- Slice vertical inicial\n- Capacidad Raul solo\n- Soporte acotado",
@@ -1321,7 +1451,9 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Fer debe revisar\n\n- Framing Fase 1\n- Arquitectura minima\n- Gates antes de build\n- Slice vertical inicial\n- Capacidad Raul solo\n- Soporte acotado",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "index": "af",
+      "autoResize": true
     },
     {
       "id": "risk-callout-box",
@@ -1340,15 +1472,18 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 3 },
+      "roundness": {
+        "type": 3
+      },
       "seed": 120043,
-      "version": 1,
-      "versionNonce": 220043,
+      "version": 2,
+      "versionNonce": 556011229,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "ag"
     },
     {
       "id": "risk-callout-text",
@@ -1369,11 +1504,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 120044,
-      "version": 1,
-      "versionNonce": 220044,
+      "version": 2,
+      "versionNonce": 2114886003,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
       "text": "Riesgo actual: ejecucion y arquitectura readiness,\nno client fit solamente.",
@@ -1383,7 +1518,9 @@
       "verticalAlign": "middle",
       "containerId": null,
       "originalText": "Riesgo actual: ejecucion y arquitectura readiness,\nno client fit solamente.",
-      "lineHeight": 1.2
+      "lineHeight": 1.2,
+      "index": "ah",
+      "autoResize": true
     },
     {
       "id": "arrow-pain-blockers",
@@ -1402,21 +1539,33 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 2 },
+      "roundness": {
+        "type": 2
+      },
       "seed": 120045,
-      "version": 1,
-      "versionNonce": 220045,
+      "version": 2,
+      "versionNonce": 584592189,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
-      "points": [[0, 0], [20, 0]],
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          20,
+          0
+        ]
+      ],
       "lastCommittedPoint": null,
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "endArrowhead": "arrow",
+      "index": "ai"
     },
     {
       "id": "arrow-blockers-phase1",
@@ -1435,25 +1584,39 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": { "type": 2 },
+      "roundness": {
+        "type": 2
+      },
       "seed": 120046,
-      "version": 1,
-      "versionNonce": 220046,
+      "version": 2,
+      "versionNonce": 914420499,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1782381511110,
       "link": null,
       "locked": false,
-      "points": [[0, 0], [22, 38]],
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          22,
+          38
+        ]
+      ],
       "lastCommittedPoint": null,
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "endArrowhead": "arrow",
+      "index": "aj"
     }
   ],
   "appState": {
-    "gridSize": null,
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
     "viewBackgroundColor": "#ffffff"
   },
   "files": {}
