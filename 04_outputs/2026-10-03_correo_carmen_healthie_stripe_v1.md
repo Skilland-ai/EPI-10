@@ -55,7 +55,7 @@ Raúl
 > 1. Enable the **API add-on** for our account, with access to both the **Sandbox** and **Production** environments. Please let us know the pricing.
 > 2. Receive a quote for the **Enterprise plan** with **Semi White Label** and with **Full White Label** (to compare), and separately for **Mobile White Label**. Please include minimum term, setup fees and whether our current Group configuration is preserved when upgrading.
 > 3. Confirm where our data is hosted and share your **DPA** (GDPR Data Processing Agreement). We operate in Spain/EU.
->4. Confirm whether the Group API add-on includes **webhooks** and a **sandbox** environment, or whether those require Enterprise.
+> 4. Confirm whether the Group API add-on includes **webhooks** and a **sandbox** environment, or whether those require Enterprise.
 > 5. Can the client portal and mobile app be shown in **Spanish**?
 > 6. Is there a cost for an additional provider/admin account that we would use as a **system account** for the API key?
 >
