@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "source_url": "https://epi10-nutriwell-demo.raulreboot.chatgpt.site",
+  "control": "CTA inferior «Probar compra»",
+  "checkout_url": "https://buy.stripe.com/test_fZufZj1Nyg7mfNQ7BkeME00?locale=es",
+  "observed_product": "NutriWell · DEMO",
+  "observed_amount": "100,00 €",
+  "observed_environment": "Entorno de prueba",
+  "payment_executed": false,
+  "customer_data_entered": false
+}

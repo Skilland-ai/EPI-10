@@ -1,0 +1,93 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "button": [
+        {
+          "align": "center",
+          "font": "18px",
+          "height": 64,
+          "href": "https://buy.stripe.com/test_fZufZj1Nyg7mfNQ7BkeME00?locale=es",
+          "text": "Probar compra ↗",
+          "width": 231
+        }
+      ],
+      "client": 305,
+      "outside": [],
+      "scrollWidth": 305,
+      "viewport": 320,
+      "minimumTextPx": 14
+    },
+    {
+      "button": [
+        {
+          "align": "center",
+          "font": "18px",
+          "height": 64,
+          "href": "https://buy.stripe.com/test_fZufZj1Nyg7mfNQ7BkeME00?locale=es",
+          "text": "Probar compra ↗",
+          "width": 285
+        }
+      ],
+      "client": 375,
+      "outside": [],
+      "scrollWidth": 375,
+      "viewport": 390,
+      "minimumTextPx": 14
+    },
+    {
+      "button": [
+        {
+          "align": "center",
+          "font": "18px",
+          "height": 64,
+          "href": "https://buy.stripe.com/test_fZufZj1Nyg7mfNQ7BkeME00?locale=es",
+          "text": "Probar compra ↗",
+          "width": 566
+        }
+      ],
+      "client": 753,
+      "outside": [],
+      "scrollWidth": 753,
+      "viewport": 768,
+      "minimumTextPx": 14
+    },
+    {
+      "button": [
+        {
+          "align": "center",
+          "font": "18px",
+          "height": 64,
+          "href": "https://buy.stripe.com/test_fZufZj1Nyg7mfNQ7BkeME00?locale=es",
+          "text": "Probar compra ↗",
+          "width": 367.359375
+        }
+      ],
+      "client": 1009,
+      "outside": [],
+      "scrollWidth": 1009,
+      "viewport": 1024,
+      "minimumTextPx": 14
+    },
+    {
+      "button": [
+        {
+          "align": "center",
+          "font": "18px",
+          "height": 64,
+          "href": "https://buy.stripe.com/test_fZufZj1Nyg7mfNQ7BkeME00?locale=es",
+          "text": "Probar compra ↗",
+          "width": 578
+        }
+      ],
+      "client": 1425,
+      "outside": [],
+      "scrollWidth": 1425,
+      "viewport": 1440,
+      "minimumTextPx": 14
+    }
+  ],
+  "browser_dom_qa": true,
+  "visual_screenshot_available": false,
+  "payment_executed": false
+}

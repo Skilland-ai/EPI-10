@@ -1,0 +1,2853 @@
+{
+  "consultedAt": "2026-09-15 16:35:05 UTC",
+  "project": {
+    "id": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "uuid": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "icon": null,
+    "color": "#f2994a",
+    "name": "EPI10 Salud MVP",
+    "summary": "",
+    "description": null,
+    "url": "https://linear.app/skilland/project/epi10-salud-mvp-928812c268de",
+    "resourceCount": 3,
+    "createdAt": "2026-09-02T11:45:01.136Z",
+    "updatedAt": "2026-09-07T05:11:50.779Z",
+    "startedAt": "2026-09-02T11:45:01.203Z",
+    "completedAt": null,
+    "canceledAt": null,
+    "startDate": "2026-08-31",
+    "startDateResolution": null,
+    "targetDate": "2026-11-13",
+    "targetDateResolution": null,
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "labels": [],
+    "initiatives": [],
+    "lead": {
+      "id": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+      "name": "Raúl"
+    },
+    "leadTeam": {
+      "id": "c18d12a2-69bc-499c-9079-952933bf00a7",
+      "name": "Skilland",
+      "key": "SKI"
+    },
+    "status": {
+      "id": "808e3669-dc8e-409d-8a3f-aaa55ad70876",
+      "name": "In Progress",
+      "type": "started"
+    },
+    "teams": [
+      {
+        "id": "c18d12a2-69bc-499c-9079-952933bf00a7",
+        "name": "Skilland",
+        "key": "SKI"
+      }
+    ],
+    "members": [
+      {
+        "id": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+        "name": "Raúl",
+        "email": "direccion@skilland.ai"
+      },
+      {
+        "id": "5578e620-4e5d-4818-a54f-4210e8d36bc0",
+        "name": "Fer Martin",
+        "email": "fernandomartinsantana@gmail.com"
+      }
+    ],
+    "milestones": [
+      {
+        "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+        "name": "OL1 - Apertura de frentes ",
+        "description": "## OL1 — Apertura de frentes\n\n* **Periodo:** 2026-08-31 — 2026-09-04\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-04\n* **Tareas:** 12\n\n 1. `OL1 [Stripe] Definir alcance funcional del mockup de cobro | EPI10 MVP Fase 1` — Delimitar qué debe demostrar el mockup de Stripe, qué recorrido verá Carmen y qué queda fuera antes de tocar configuración.\n 2. `OL1 [Stripe] Inventariar escenarios y reglas de pago | EPI10 MVP Fase 1` — Identificar pago correcto, cancelado, fallido, reintento, duplicado y reembolso, junto con sus efectos operativos.\n 3. `OL1 [Stripe] Preparar entorno Stripe de pruebas de Skilland | EPI10 MVP Fase 1` — Disponer de un entorno de pruebas independiente donde construir el mockup sin esperar al alta de EPI10.\n 4. `OL1 [Healthie] Coordinar contratación inicial del plan Group | EPI10 MVP Fase 1` — Acompañar a Carmen en el cierre del plan Group para disponer cuanto antes del entorno real de Healthie.\n 5. `OL1 [Healthie] Solicitar cotización Enterprise y Mobile White Label | EPI10 MVP Fase 1` — Abrir en paralelo la vía Enterprise para conocer coste y condiciones de Mobile White Label sin bloquear el plan Group.\n 6. `OL1 [Healthie] Ordenar accesos, owners y soporte de contratación | EPI10 MVP Fase 1` — Definir quién compra, quién administra, quién implementa y por qué canal se resuelven dudas con Healthie.\n 7. `OL1 [Odoo] Solicitar ficha técnica y accesos del entorno actual | EPI10 MVP Fase 1` — Pedir la información necesaria para entender el Odoo de EPI10 antes de diseñar o modificar nada.\n 8. `OL1 [Odoo] Coordinar sesión técnica con el mantenedor de Odoo | EPI10 MVP Fase 1` — Alinear con la persona que mantiene Odoo el acceso, límites, despliegue y forma segura de colaborar.\n 9. `OL1 [Odoo] Definir estrategia de copia, backup y sandbox | EPI10 MVP Fase 1` — Decidir cómo trabajar sobre una copia controlada sin desarrollar directamente en producción ni exponer datos sensibles.\n10. `OL1 [Copilot] Preparar discovery operativo del informe con Aitor | EPI10 MVP Fase 1` — Preparar una sesión centrada en cómo se construye, revisa y valida hoy el informe final.\n11. `OL1 [Journey] Consolidar fuentes vigentes y baseline del journey | EPI10 MVP Fase 1` — Unificar workshop, decisiones posteriores y alcance firmado en una única baseline funcional sin contradicciones.\n12. `OL1 [PM] Abrir control de alcance, decisiones, riesgos y dependencias | EPI10 MVP Fase 1` — Crear los registros transversales que permitan gobernar el proyecto sin perder decisiones ni bloqueos.",
+        "targetDate": "2026-09-04",
+        "progress": "25%"
+      },
+      {
+        "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+        "name": "OL4 - Specs y cierre de Stripe",
+        "description": "## OL4 — Specs y cierre de Stripe\n\n* **Periodo:** 2026-09-21 — 2026-09-25\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-25\n* **Tareas:** 13\n\n 1. `OL4 [Journey] Redactar specs ejecutables de Healthie | EPI10 MVP Fase 1` — Traducir el journey asignado a Healthie en paquetes de implementación verificables.\n 2. `OL4 [Journey] Redactar specs ejecutables de Odoo | EPI10 MVP Fase 1` — Traducir estados, checks, tareas, owners, vistas y excepciones a implementación Odoo.\n 3. `OL4 [Journey] Cerrar contratos de datos e integración | EPI10 MVP Fase 1` — Cerrar eventos, payloads mínimos, IDs, ownership, idempotencia y fallbacks entre sistemas.\n 4. `OL4 [Stripe] Revisar internamente el mockup completo | EPI10 MVP Fase 1` — Hacer un gate interno de calidad antes de presentar la solución a Carmen.\n 5. `OL4 [Stripe] Presentar mockup a Carmen y solicitar feedback | EPI10 MVP Fase 1` — Validar con Carmen el recorrido de pago antes de replicarlo en el entorno del cliente.\n 6. `OL4 [Stripe] Incorporar feedback aprobado | EPI10 MVP Fase 1` — Aplicar únicamente cambios validados que mantengan el alcance del módulo Stripe.\n 7. `OL4 [Stripe] Acompañar alta y verificación de la cuenta EPI10 | EPI10 MVP Fase 1` — Ayudar a EPI10 a completar el alta, verificación y roles necesarios sin asumir titularidad de la cuenta.\n 8. `OL4 [Stripe] Replicar catálogo y configuración en EPI10 | EPI10 MVP Fase 1` — Trasladar al entorno de EPI10 la estructura aprobada en el mockup.\n 9. `OL4 [Stripe] Configurar credenciales, enlaces y webhooks del entorno EPI10 | EPI10 MVP Fase 1` — Dejar conectados los elementos técnicos del entorno cliente con gestión segura de secretos.\n10. `OL4 [Stripe] Ejecutar pruebas de aceptación en EPI10 | EPI10 MVP Fase 1` — Validar la réplica en el entorno EPI10 antes de declarar entregado el módulo.\n11. `OL4 [Stripe] Entregar y documentar el módulo Stripe | EPI10 MVP Fase 1` — Cerrar la entrega con configuración, operación, pruebas y responsabilidades entendibles.\n12. `OL4 [Stripe] Emitir y registrar la factura del módulo adicional | EPI10 MVP Fase 1` — Facturar el trabajo separado de Stripe una vez entregado conforme al acuerdo comercial.\n13. `OL4 [Copilot] Cerrar especificación funcional y rúbrica del informe | EPI10 MVP Fase 1` — Dejar una especificación implementable y evaluable del borrador asistido y su revisión humana.",
+        "targetDate": "2026-09-25",
+        "progress": "0%"
+      },
+      {
+        "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+        "name": "OL2 - Artefactos y diagnóstico",
+        "description": "## OL2 — Artefactos y diagnóstico\n\n* **Periodo:** 2026-09-07 — 2026-09-11\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-11\n* **Tareas:** 11\n\n 1. `OL2 [Stripe] Especificar flujo de compra y estados de pago | EPI10 MVP Fase 1` — Convertir el alcance inicial en una secuencia verificable desde la selección del producto hasta el resultado del pago.\n 2. `OL2 [Stripe] Diseñar wireframes y copy del checkout | EPI10 MVP Fase 1` — Diseñar la experiencia que se enseñará a Carmen antes de replicarla en su cuenta.\n 3. `OL2 [Stripe] Definir matriz de pruebas y excepciones de pago | EPI10 MVP Fase 1` — Traducir escenarios de pago en casos de prueba reproducibles y criterios de aceptación.\n 4. `OL2 [Healthie] Validar plan, API, DPA, residencia y límites de cuenta | EPI10 MVP Fase 1` — Confirmar qué permite realmente el plan contratado y qué gates legales/técnicos condicionan el MVP.\n 5. `OL2 [Healthie] Inventariar módulos y capacidades disponibles | EPI10 MVP Fase 1` — Mapear en el entorno real las capacidades necesarias para el journey y separar incluido, add-on, Enterprise y fuera de alcance.\n 6. `OL2 [Odoo] Diagnosticar versión, módulos, hosting y permisos | EPI10 MVP Fase 1` — Obtener un diagnóstico reproducible del entorno actual y de las restricciones para implementar el MVP.\n 7. `OL2 [Odoo] Obtener y restaurar una copia sanitizada de desarrollo | EPI10 MVP Fase 1` — Disponer de una copia funcional y segura del entorno para desarrollar y probar sin afectar producción.\n 8. `OL2 [Copilot] Realizar entrevista de discovery con Aitor | EPI10 MVP Fase 1` — Capturar el proceso real del informe, las decisiones expertas, inputs, excepciones y puntos automatizables.\n 9. `OL2 [Copilot] Recopilar plantillas e informes anonimizados | EPI10 MVP Fase 1` — Reunir material representativo y autorizado para especificar y evaluar borradores sin usar datos identificables.\n10. `OL2 [Journey] Mapear actores, owners y fuentes de verdad | EPI10 MVP Fase 1` — Asignar responsable humano y sistema fuente para cada tramo, dato, documento, estado y comunicación.\n11. `OL2 [PM] Actualizar registro de accesos, bloqueos y unknowns | EPI10 MVP Fase 1` — Consolidar lo aprendido en contratación, Odoo, Stripe y Copilot para hacer visibles las dependencias reales.",
+        "targetDate": "2026-09-11",
+        "progress": "9%"
+      },
+      {
+        "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+        "name": "OL5 - Construcción funcional",
+        "description": "## OL5 — Construcción funcional\n\n* **Periodo:** 2026-09-28 — 2026-10-09\n* **Duración:** 2 semanas\n* **Deadline común:** 2026-10-09\n* **Tareas:** 18\n\n 1. `OL5 [Healthie] Configurar cuenta, organización y preferencias base | EPI10 MVP Fase 1` — Dejar la cuenta real organizada para operar el journey EPI10 con nomenclatura y preferencias consistentes.\n 2. `OL5 [Healthie] Configurar grupos, tags y segmentación operativa | EPI10 MVP Fase 1` — Implementar la segmentación necesaria para onboarding, test, informe entregado e interés futuro.\n 3. `OL5 [Healthie] Configurar ficha de cliente y campos necesarios | EPI10 MVP Fase 1` — Representar en Healthie solo los datos de cliente necesarios para la experiencia y operación.\n 4. `OL5 [Healthie] Implementar consentimientos y formulario principal | EPI10 MVP Fase 1` — Digitalizar las piezas de onboarding que bloquean o habilitan el avance del caso.\n 5. `OL5 [Healthie] Implementar cuestionarios adicionales de Fase 1 | EPI10 MVP Fase 1` — Configurar únicamente los cuestionarios adicionales aprobados para enriquecer el informe.\n 6. `OL5 [Healthie] Configurar subida y gestión de documentos | EPI10 MVP Fase 1` — Permitir que el cliente/equipo aporte documentos aprobados sin recurrir a canales dispersos.\n 7. `OL5 [Healthie] Configurar comunicaciones, emails y notificaciones | EPI10 MVP Fase 1` — Centralizar comunicaciones repetibles de activación, espera, cita, informe y soporte.\n 8. `OL5 [Healthie] Configurar agenda y citas del test | EPI10 MVP Fase 1` — Permitir que el cliente agende la cita cuando el test está disponible, con confirmación y recordatorios.\n 9. `OL5 [Odoo] Implementar modelo de caso EPI10 y pipeline | EPI10 MVP Fase 1` — Crear la entidad/vista operativa que centraliza el seguimiento de cada cliente EPI10.\n10. `OL5 [Odoo] Implementar estados, hitos y checklist operativo | EPI10 MVP Fase 1` — Representar el avance sin convertir cada check en un estado principal ni duplicar Healthie.\n11. `OL5 [Odoo] Implementar tareas automáticas, owners y próximos pasos | EPI10 MVP Fase 1` — Generar acciones operativas claras cuando el caso alcanza hitos relevantes.\n12. `OL5 [Odoo] Implementar vistas, filtros y tablero operativo | EPI10 MVP Fase 1` — Dar al equipo una vista accionable de casos por estado, owner, bloqueo y siguiente acción.\n13. `OL5 [Odoo] Implementar hitos manuales de test y laboratorio | EPI10 MVP Fase 1` — Controlar la logística externa mediante hitos mínimos sin simular una integración TellmeGen inexistente.\n14. `OL5 [Odoo] Implementar documentos, informe y marcadores de entrega | EPI10 MVP Fase 1` — Representar el archivo de origen autorizado, borradores, versión validada y publicación sin convertir Odoo en repositorio genético bruto.\n15. `OL5 [Odoo] Implementar incidencias, bloqueos y cierre del caso | EPI10 MVP Fase 1` — Gestionar excepciones y cerrar el caso solo cuando entrega, notificación y correcciones estén resueltas.\n16. `OL5 [Copilot] Crear estructura base del harness y repositorio | EPI10 MVP Fase 1` — Preparar una base versionada y auditable para ejecutar el flujo asistido del informe.\n17. `OL5 [Copilot] Implementar ingesta y pseudonimización | EPI10 MVP Fase 1` — Preparar inputs autorizados para generación minimizando identificadores y contenido no necesario.\n18. `OL5 [Copilot] Implementar flujo inicial de generación de borradores | EPI10 MVP Fase 1` — Generar uno o varios borradores internos asociados a un caso sin publicarlos al cliente.",
+        "targetDate": "2026-10-09",
+        "progress": "0%"
+      },
+      {
+        "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+        "name": "OL3 - Validación y preparación",
+        "description": "## OL3 — Validación y preparación\n\n* **Periodo:** 2026-09-14 — 2026-09-18\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-18\n* **Tareas:** 22\n\n 1. `OL3 [Stripe] Configurar catálogo, producto y precio de prueba | EPI10 MVP Fase 1` — Crear en modo test la estructura comercial mínima que alimentará el checkout demo.\n 2. `OL3 [Stripe] Implementar checkout de prueba en entorno Skilland | EPI10 MVP Fase 1` — Construir un recorrido funcional de pago demostrable sin depender del entorno EPI10.\n 3. `OL3 [Stripe] Configurar páginas de éxito, cancelación y reintento | EPI10 MVP Fase 1` — Cerrar la experiencia visible después de cada resultado principal del checkout.\n 4. `OL3 [Stripe] Preparar evento o webhook de pago para el mockup | EPI10 MVP Fase 1` — Demostrar que el resultado del pago puede producir un evento consumible por el journey posterior.\n 5. `OL3 [Stripe] Ejecutar pruebas funcionales del mockup | EPI10 MVP Fase 1` — Validar el mockup contra la matriz de escenarios antes de enseñarlo al cliente.\n 6. `OL3 [Stripe] Preparar evidencia y guion de demo para Carmen | EPI10 MVP Fase 1` — Preparar una explicación breve que permita validar decisiones funcionales sin entrar en detalle técnico innecesario.\n 7. `OL3 [Journey] Congelar journey MVP end-to-end | EPI10 MVP Fase 1` — Cerrar el recorrido desde entrada y pago hasta informe, soporte y cierre operativo.\n 8. `OL3 [Journey] Definir estados, hitos y transiciones del caso | EPI10 MVP Fase 1` — Traducir el journey a estados principales, checks e hitos operativos utilizables en Odoo.\n 9. `OL3 [Journey] Definir modelo operativo y próximos pasos | EPI10 MVP Fase 1` — Especificar cómo cada caso muestra qué falta, qué toca hacer, quién actúa y cuándo.\n10. `OL3 [Journey] Definir campos, IDs y referencias mínimas | EPI10 MVP Fase 1` — Definir los datos mínimos para vincular pago, cliente Healthie, caso Odoo y ejecución Copilot sin duplicación innecesaria.\n11. `OL3 [Journey] Asignar responsabilidades entre Stripe, Healthie, Odoo y Copilot | EPI10 MVP Fase 1` — Evitar solapamientos definiendo qué sistema crea, conserva, muestra y actualiza cada elemento del journey.\n12. `OL3 [Journey] Clasificar datos, documentos y ubicaciones permitidas | EPI10 MVP Fase 1` — Fijar data boundaries para datos personales, salud, genética, documentos, logs y paquetes Copilot.\n13. `OL3 [Healthie] Crear estructura demo de grupos, tags y clientes | EPI10 MVP Fase 1` — Preparar la organización base que permitirá segmentar y operar clientes EPI10.\n14. `OL3 [Healthie] Configurar branding base, idioma y experiencia de entrada | EPI10 MVP Fase 1` — Alinear la primera impresión del portal con EPI10 dentro de los límites del plan contratado.\n15. `OL3 [Healthie] Definir roles y permisos del entorno | EPI10 MVP Fase 1` — Aplicar mínimo privilegio a administradores, profesionales, soporte y cliente demo.\n16. `OL3 [Healthie] Prototipar invitación y onboarding inicial | EPI10 MVP Fase 1` — Probar la activación del cliente y su primera entrada antes de configurar todo el journey.\n17. `OL3 [Odoo] Crear entorno seguro de desarrollo | EPI10 MVP Fase 1` — Dejar disponible una instancia reproducible para construir y probar el MVP.\n18. `OL3 [Odoo] Validar estrategia de configuración y módulos custom mínimos | EPI10 MVP Fase 1` — Decidir qué se resuelve con configuración nativa y qué requiere desarrollo mínimo mantenible.\n19. `OL3 [Copilot] Sintetizar discovery y decisiones del informe | EPI10 MVP Fase 1` — Convertir la entrevista y ejemplos en un mapa claro de proceso, criterios expertos y unknowns.\n20. `OL3 [Copilot] Definir inputs, outputs y límites del Copilot | EPI10 MVP Fase 1` — Cerrar qué recibe el Copilot, qué genera, qué nunca decide y qué debe revisar una persona.\n21. `OL3 [PM] Celebrar checkpoint de alineación y desbloqueo | EPI10 MVP Fase 1` — Revisar con los actores adecuados decisiones funcionales, accesos y bloqueos antes de cerrar specs.\n22. `OL3 [Journey] Definir excepciones y recuperación manual del journey | EPI10 MVP Fase 1` — Mapear fallos frecuentes para que ningún caso quede invisible o bloqueado sin owner.",
+        "targetDate": "2026-09-18",
+        "progress": "0%"
+      },
+      {
+        "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+        "name": "OL7 - Integración completa",
+        "description": "## OL7 — Integración completa\n\n* **Periodo:** 2026-10-26 — 2026-11-06\n* **Duración:** 2 semanas\n* **Deadline común:** 2026-11-06\n* **Tareas:** 9\n\n1. `OL7 [INT QA] Integrar alta desde Stripe/web hacia Odoo y Healthie | EPI10 MVP Fase 1` — Conectar el arranque del journey para crear/vincular cliente y caso tras el evento acordado.\n2. `OL7 [INT QA] Integrar onboarding Healthie con hitos Odoo | EPI10 MVP Fase 1` — Traducir activación, consentimiento y formularios completados en hitos operativos mínimos.\n3. `OL7 [INT QA] Integrar preparación y pedido manual del test | EPI10 MVP Fase 1` — Encadenar onboarding completo, regla de listo, tarea del equipo y registro manual de test pedido.\n4. `OL7 [INT QA] Integrar agenda Healthie con estado de cita en Odoo | EPI10 MVP Fase 1` — Reflejar cita elegida, confirmación y cambios relevantes en el caso operativo.\n5. `OL7 [INT QA] Integrar hitos de laboratorio con activación del Copilot | EPI10 MVP Fase 1` — Conectar el tramo manual de laboratorio con la preparación controlada del borrador.\n6. `OL7 [INT QA] Integrar borrador, revisión y aprobación del informe | EPI10 MVP Fase 1` — Vincular generación Copilot, versiones y validación humana con el estado operativo Odoo.\n7. `OL7 [INT QA] Integrar publicación final en Healthie y cierre en Odoo | EPI10 MVP Fase 1` — Entregar el informe validado, notificar al cliente y completar los marcadores de cierre.\n8. `OL7 [INT QA] Implementar idempotencia, reintentos y recuperación | EPI10 MVP Fase 1` — Evitar duplicados y casos perdidos cuando fallan o se repiten eventos entre sistemas.\n9. `OL7 [INT QA] Ejecutar replay end-to-end del caso demo | EPI10 MVP Fase 1` — Recorrer el caso EPI10-DEMO-001 completo para validar journey, operación, Copilot, entrega y recuperación.",
+        "targetDate": "2026-11-06",
+        "progress": "0%"
+      },
+      {
+        "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+        "name": "OL6 - Superficies de integración y QA individual",
+        "description": "## OL6 — Superficies de integración y QA individual\n\n* **Periodo:** 2026-10-12 — 2026-10-23\n* **Duración:** 2 semanas\n* **Deadline común:** 2026-10-23\n* **Tareas:** 14\n\n 1. `OL6 [Healthie] Validar invitación, activación y onboarding | EPI10 MVP Fase 1` — Probar de forma aislada la experiencia completa desde invitación hasta onboarding mínimo completado.\n 2. `OL6 [Healthie] Validar formularios, documentos y agenda | EPI10 MVP Fase 1` — Comprobar que los módulos de experiencia cliente funcionan juntos y respetan permisos.\n 3. `OL6 [Healthie] Configurar soporte post-informe y escalado | EPI10 MVP Fase 1` — Centralizar dudas simples y escalar incidencias que requieren revisión del equipo.\n 4. `OL6 [Healthie] Configurar publicación del informe final | EPI10 MVP Fase 1` — Preparar la superficie donde el cliente recibirá únicamente el informe validado.\n 5. `OL6 [Odoo] Implementar entrada desde web y pago | EPI10 MVP Fase 1` — Crear/actualizar contacto y caso desde un evento de entrada/pago de forma idempotente.\n 6. `OL6 [Odoo] Implementar referencias y sincronización con Healthie | EPI10 MVP Fase 1` — Vincular caso y cliente Healthie y reflejar solo hitos relevantes sin replicar datos clínicos.\n 7. `OL6 [Odoo] Implementar regla de listo para pedir test y tareas asociadas | EPI10 MVP Fase 1` — Activar el paso operativo del test cuando los checks mínimos están completos.\n 8. `OL6 [Odoo] Implementar acción de publicación del informe | EPI10 MVP Fase 1` — Permitir publicar en Healthie únicamente una versión marcada como validada por una persona autorizada.\n 9. `OL6 [Odoo] Validar seguridad, permisos, auditoría y backup | EPI10 MVP Fase 1` — Verificar la configuración Odoo antes de la integración completa.\n10. `OL6 [Copilot] Implementar plantilla, checklist y rúbrica | EPI10 MVP Fase 1` — Convertir la especificación del informe en controles ejecutables de generación y revisión.\n11. `OL6 [Copilot] Configurar agentes, skills y prompts | EPI10 MVP Fase 1` — Separar responsabilidades del proceso de borrador en componentes revisables y mantenibles.\n12. `OL6 [Copilot] Implementar revisión humana y control de versiones | EPI10 MVP Fase 1` — Garantizar que borrador, correcciones y versión final validada no se confundan.\n13. `OL6 [Copilot] Construir dataset de evaluación y ejecutar evals | EPI10 MVP Fase 1` — Medir el comportamiento del Copilot con casos anonimizados y criterios acordados.\n14. `OL6 [Copilot] Configurar logs seguros, errores y retención | EPI10 MVP Fase 1` — Hacer observable y recuperable el flujo sin registrar datos sensibles innecesarios.",
+        "targetDate": "2026-10-23",
+        "progress": "0%"
+      },
+      {
+        "id": "c07f086b-1a16-461a-aaf6-44dae0d4c52e",
+        "name": "OL8 - Cierre técnico del MVP",
+        "description": "## OL8 — Cierre técnico del MVP\n\n* **Periodo:** 2026-11-09 — 2026-11-13\n* **Duración:** 1 semana\n* **Deadline común:** 2026-11-13\n* **Tareas:** 7\n\n1. `OL8 [INT QA] Ejecutar regresión consolidada y corregir bloqueos | EPI10 MVP Fase 1` — Revalidar los flujos críticos después del replay y cerrar defectos bloqueantes del MVP.\n2. `OL8 [INT QA] Completar QA de seguridad, privacidad y datos sensibles | EPI10 MVP Fase 1` — Realizar el gate final sobre permisos, datos, logs, documentos, secretos y revisión humana.\n3. `OL8 [INT QA] Cerrar documentación técnica, runbook y evidencias | EPI10 MVP Fase 1` — Dejar el MVP comprensible, operable y recuperable para el equipo que realizará la demo y el handoff posterior.\n4. `OL8 [PM] Cerrar blockers y pendientes imprescindibles del MVP | EPI10 MVP Fase 1` — Revisar el tablero final y asegurar que ningún bloqueo imprescindible queda oculto o sin decisión.\n5. `OL8 [PM] Consolidar release notes y paquete de aceptación | EPI10 MVP Fase 1` — Sintetizar qué se ha construido, probado, limitado y dejado preparado para la demo.\n6. `OL8 [PM] Preparar guion, datos y entorno de demo del MVP | EPI10 MVP Fase 1` — Dejar lista una demo coherente que muestre valor y trazabilidad sin depender de datos reales ni pasos improvisados.\n7. `OL8 [PM] Realizar go-no-go interno y declarar MVP listo para demo | EPI10 MVP Fase 1` — Tomar la decisión interna final sobre la preparación técnica del MVP para la demo de cierre.",
+        "targetDate": "2026-11-13",
+        "progress": "0%"
+      }
+    ],
+    "resources": [
+      {
+        "type": "document",
+        "id": "135e7bc0-3025-45b0-a21e-08f2d68e53de",
+        "title": "02. EPI10 Salud MVP Fase 1 — Roadmap cronológico por oleadas",
+        "icon": null,
+        "color": null,
+        "url": "https://linear.app/skilland/document/02-epi10-salud-mvp-fase-1-roadmap-cronologico-por-oleadas-2f1b0de81adf",
+        "createdAt": "2026-09-07T05:11:57.556Z",
+        "updatedAt": "2026-09-07T05:11:58.210Z"
+      },
+      {
+        "type": "document",
+        "id": "707a9518-5470-4d04-bb09-8320d6ce30ae",
+        "title": "01. EPI10 Salud MVP Fase 1 — Roadmap lógico-funcional jerárquico",
+        "icon": null,
+        "color": null,
+        "url": "https://linear.app/skilland/document/01-epi10-salud-mvp-fase-1-roadmap-logico-funcional-jerarquico-306fd8f19985",
+        "createdAt": "2026-09-07T05:11:57.078Z",
+        "updatedAt": "2026-09-07T05:11:57.907Z"
+      },
+      {
+        "type": "document",
+        "id": "c1119e59-84b9-44ac-95a7-29f7cc27126a",
+        "title": "00. EPI10 Salud MVP Fase 1 — Punto de situación y nueva planificación",
+        "icon": null,
+        "color": null,
+        "url": "https://linear.app/skilland/document/00-epi10-salud-mvp-fase-1-punto-de-situacion-y-nueva-planificacion-bbe59058595f",
+        "createdAt": "2026-09-07T05:11:56.543Z",
+        "updatedAt": "2026-09-07T05:11:57.321Z"
+      }
+    ]
+  },
+  "milestones": {
+    "milestones": [
+      {
+        "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+        "name": "OL1 - Apertura de frentes ",
+        "description": "## OL1 — Apertura de frentes\n\n* **Periodo:** 2026-08-31 — 2026-09-04\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-04\n* **Tareas:** 12\n\n 1. `OL1 [Stripe] Definir alcance funcional del mockup de cobro | EPI10 MVP Fase 1` — Delimitar qué debe demostrar el mockup de Stripe, qué recorrido verá Carmen y qué queda fuera antes de tocar configuración.\n 2. `OL1 [Stripe] Inventariar escenarios y reglas de pago | EPI10 MVP Fase 1` — Identificar pago correcto, cancelado, fallido, reintento, duplicado y reembolso, junto con sus efectos operativos.\n 3. `OL1 [Stripe] Preparar entorno Stripe de pruebas de Skilland | EPI10 MVP Fase 1` — Disponer de un entorno de pruebas independiente donde construir el mockup sin esperar al alta de EPI10.\n 4. `OL1 [Healthie] Coordinar contratación inicial del plan Group | EPI10 MVP Fase 1` — Acompañar a Carmen en el cierre del plan Group para disponer cuanto antes del entorno real de Healthie.\n 5. `OL1 [Healthie] Solicitar cotización Enterprise y Mobile White Label | EPI10 MVP Fase 1` — Abrir en paralelo la vía Enterprise para conocer coste y condiciones de Mobile White Label sin bloquear el plan Group.\n 6. `OL1 [Healthie] Ordenar accesos, owners y soporte de contratación | EPI10 MVP Fase 1` — Definir quién compra, quién administra, quién implementa y por qué canal se resuelven dudas con Healthie.\n 7. `OL1 [Odoo] Solicitar ficha técnica y accesos del entorno actual | EPI10 MVP Fase 1` — Pedir la información necesaria para entender el Odoo de EPI10 antes de diseñar o modificar nada.\n 8. `OL1 [Odoo] Coordinar sesión técnica con el mantenedor de Odoo | EPI10 MVP Fase 1` — Alinear con la persona que mantiene Odoo el acceso, límites, despliegue y forma segura de colaborar.\n 9. `OL1 [Odoo] Definir estrategia de copia, backup y sandbox | EPI10 MVP Fase 1` — Decidir cómo trabajar sobre una copia controlada sin desarrollar directamente en producción ni exponer datos sensibles.\n10. `OL1 [Copilot] Preparar discovery operativo del informe con Aitor | EPI10 MVP Fase 1` — Preparar una sesión centrada en cómo se construye, revisa y valida hoy el informe final.\n11. `OL1 [Journey] Consolidar fuentes vigentes y baseline del journey | EPI10 MVP Fase 1` — Unificar workshop, decisiones posteriores y alcance firmado en una única baseline funcional sin contradicciones.\n12. `OL1 [PM] Abrir control de alcance, decisiones, riesgos y dependencias | EPI10 MVP Fase 1` — Crear los registros transversales que permitan gobernar el proyecto sin perder decisiones ni bloqueos.",
+        "progress": 25,
+        "sortOrder": -28.99,
+        "targetDate": "2026-09-04"
+      },
+      {
+        "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+        "name": "OL4 - Specs y cierre de Stripe",
+        "description": "## OL4 — Specs y cierre de Stripe\n\n* **Periodo:** 2026-09-21 — 2026-09-25\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-25\n* **Tareas:** 13\n\n 1. `OL4 [Journey] Redactar specs ejecutables de Healthie | EPI10 MVP Fase 1` — Traducir el journey asignado a Healthie en paquetes de implementación verificables.\n 2. `OL4 [Journey] Redactar specs ejecutables de Odoo | EPI10 MVP Fase 1` — Traducir estados, checks, tareas, owners, vistas y excepciones a implementación Odoo.\n 3. `OL4 [Journey] Cerrar contratos de datos e integración | EPI10 MVP Fase 1` — Cerrar eventos, payloads mínimos, IDs, ownership, idempotencia y fallbacks entre sistemas.\n 4. `OL4 [Stripe] Revisar internamente el mockup completo | EPI10 MVP Fase 1` — Hacer un gate interno de calidad antes de presentar la solución a Carmen.\n 5. `OL4 [Stripe] Presentar mockup a Carmen y solicitar feedback | EPI10 MVP Fase 1` — Validar con Carmen el recorrido de pago antes de replicarlo en el entorno del cliente.\n 6. `OL4 [Stripe] Incorporar feedback aprobado | EPI10 MVP Fase 1` — Aplicar únicamente cambios validados que mantengan el alcance del módulo Stripe.\n 7. `OL4 [Stripe] Acompañar alta y verificación de la cuenta EPI10 | EPI10 MVP Fase 1` — Ayudar a EPI10 a completar el alta, verificación y roles necesarios sin asumir titularidad de la cuenta.\n 8. `OL4 [Stripe] Replicar catálogo y configuración en EPI10 | EPI10 MVP Fase 1` — Trasladar al entorno de EPI10 la estructura aprobada en el mockup.\n 9. `OL4 [Stripe] Configurar credenciales, enlaces y webhooks del entorno EPI10 | EPI10 MVP Fase 1` — Dejar conectados los elementos técnicos del entorno cliente con gestión segura de secretos.\n10. `OL4 [Stripe] Ejecutar pruebas de aceptación en EPI10 | EPI10 MVP Fase 1` — Validar la réplica en el entorno EPI10 antes de declarar entregado el módulo.\n11. `OL4 [Stripe] Entregar y documentar el módulo Stripe | EPI10 MVP Fase 1` — Cerrar la entrega con configuración, operación, pruebas y responsabilidades entendibles.\n12. `OL4 [Stripe] Emitir y registrar la factura del módulo adicional | EPI10 MVP Fase 1` — Facturar el trabajo separado de Stripe una vez entregado conforme al acuerdo comercial.\n13. `OL4 [Copilot] Cerrar especificación funcional y rúbrica del informe | EPI10 MVP Fase 1` — Dejar una especificación implementable y evaluable del borrador asistido y su revisión humana.",
+        "progress": 0,
+        "sortOrder": 949,
+        "targetDate": "2026-09-25"
+      },
+      {
+        "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+        "name": "OL2 - Artefactos y diagnóstico",
+        "description": "## OL2 — Artefactos y diagnóstico\n\n* **Periodo:** 2026-09-07 — 2026-09-11\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-11\n* **Tareas:** 11\n\n 1. `OL2 [Stripe] Especificar flujo de compra y estados de pago | EPI10 MVP Fase 1` — Convertir el alcance inicial en una secuencia verificable desde la selección del producto hasta el resultado del pago.\n 2. `OL2 [Stripe] Diseñar wireframes y copy del checkout | EPI10 MVP Fase 1` — Diseñar la experiencia que se enseñará a Carmen antes de replicarla en su cuenta.\n 3. `OL2 [Stripe] Definir matriz de pruebas y excepciones de pago | EPI10 MVP Fase 1` — Traducir escenarios de pago en casos de prueba reproducibles y criterios de aceptación.\n 4. `OL2 [Healthie] Validar plan, API, DPA, residencia y límites de cuenta | EPI10 MVP Fase 1` — Confirmar qué permite realmente el plan contratado y qué gates legales/técnicos condicionan el MVP.\n 5. `OL2 [Healthie] Inventariar módulos y capacidades disponibles | EPI10 MVP Fase 1` — Mapear en el entorno real las capacidades necesarias para el journey y separar incluido, add-on, Enterprise y fuera de alcance.\n 6. `OL2 [Odoo] Diagnosticar versión, módulos, hosting y permisos | EPI10 MVP Fase 1` — Obtener un diagnóstico reproducible del entorno actual y de las restricciones para implementar el MVP.\n 7. `OL2 [Odoo] Obtener y restaurar una copia sanitizada de desarrollo | EPI10 MVP Fase 1` — Disponer de una copia funcional y segura del entorno para desarrollar y probar sin afectar producción.\n 8. `OL2 [Copilot] Realizar entrevista de discovery con Aitor | EPI10 MVP Fase 1` — Capturar el proceso real del informe, las decisiones expertas, inputs, excepciones y puntos automatizables.\n 9. `OL2 [Copilot] Recopilar plantillas e informes anonimizados | EPI10 MVP Fase 1` — Reunir material representativo y autorizado para especificar y evaluar borradores sin usar datos identificables.\n10. `OL2 [Journey] Mapear actores, owners y fuentes de verdad | EPI10 MVP Fase 1` — Asignar responsable humano y sistema fuente para cada tramo, dato, documento, estado y comunicación.\n11. `OL2 [PM] Actualizar registro de accesos, bloqueos y unknowns | EPI10 MVP Fase 1` — Consolidar lo aprendido en contratación, Odoo, Stripe y Copilot para hacer visibles las dependencias reales.",
+        "progress": 9.09,
+        "sortOrder": 1868,
+        "targetDate": "2026-09-11"
+      },
+      {
+        "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+        "name": "OL5 - Construcción funcional",
+        "description": "## OL5 — Construcción funcional\n\n* **Periodo:** 2026-09-28 — 2026-10-09\n* **Duración:** 2 semanas\n* **Deadline común:** 2026-10-09\n* **Tareas:** 18\n\n 1. `OL5 [Healthie] Configurar cuenta, organización y preferencias base | EPI10 MVP Fase 1` — Dejar la cuenta real organizada para operar el journey EPI10 con nomenclatura y preferencias consistentes.\n 2. `OL5 [Healthie] Configurar grupos, tags y segmentación operativa | EPI10 MVP Fase 1` — Implementar la segmentación necesaria para onboarding, test, informe entregado e interés futuro.\n 3. `OL5 [Healthie] Configurar ficha de cliente y campos necesarios | EPI10 MVP Fase 1` — Representar en Healthie solo los datos de cliente necesarios para la experiencia y operación.\n 4. `OL5 [Healthie] Implementar consentimientos y formulario principal | EPI10 MVP Fase 1` — Digitalizar las piezas de onboarding que bloquean o habilitan el avance del caso.\n 5. `OL5 [Healthie] Implementar cuestionarios adicionales de Fase 1 | EPI10 MVP Fase 1` — Configurar únicamente los cuestionarios adicionales aprobados para enriquecer el informe.\n 6. `OL5 [Healthie] Configurar subida y gestión de documentos | EPI10 MVP Fase 1` — Permitir que el cliente/equipo aporte documentos aprobados sin recurrir a canales dispersos.\n 7. `OL5 [Healthie] Configurar comunicaciones, emails y notificaciones | EPI10 MVP Fase 1` — Centralizar comunicaciones repetibles de activación, espera, cita, informe y soporte.\n 8. `OL5 [Healthie] Configurar agenda y citas del test | EPI10 MVP Fase 1` — Permitir que el cliente agende la cita cuando el test está disponible, con confirmación y recordatorios.\n 9. `OL5 [Odoo] Implementar modelo de caso EPI10 y pipeline | EPI10 MVP Fase 1` — Crear la entidad/vista operativa que centraliza el seguimiento de cada cliente EPI10.\n10. `OL5 [Odoo] Implementar estados, hitos y checklist operativo | EPI10 MVP Fase 1` — Representar el avance sin convertir cada check en un estado principal ni duplicar Healthie.\n11. `OL5 [Odoo] Implementar tareas automáticas, owners y próximos pasos | EPI10 MVP Fase 1` — Generar acciones operativas claras cuando el caso alcanza hitos relevantes.\n12. `OL5 [Odoo] Implementar vistas, filtros y tablero operativo | EPI10 MVP Fase 1` — Dar al equipo una vista accionable de casos por estado, owner, bloqueo y siguiente acción.\n13. `OL5 [Odoo] Implementar hitos manuales de test y laboratorio | EPI10 MVP Fase 1` — Controlar la logística externa mediante hitos mínimos sin simular una integración TellmeGen inexistente.\n14. `OL5 [Odoo] Implementar documentos, informe y marcadores de entrega | EPI10 MVP Fase 1` — Representar el archivo de origen autorizado, borradores, versión validada y publicación sin convertir Odoo en repositorio genético bruto.\n15. `OL5 [Odoo] Implementar incidencias, bloqueos y cierre del caso | EPI10 MVP Fase 1` — Gestionar excepciones y cerrar el caso solo cuando entrega, notificación y correcciones estén resueltas.\n16. `OL5 [Copilot] Crear estructura base del harness y repositorio | EPI10 MVP Fase 1` — Preparar una base versionada y auditable para ejecutar el flujo asistido del informe.\n17. `OL5 [Copilot] Implementar ingesta y pseudonimización | EPI10 MVP Fase 1` — Preparar inputs autorizados para generación minimizando identificadores y contenido no necesario.\n18. `OL5 [Copilot] Implementar flujo inicial de generación de borradores | EPI10 MVP Fase 1` — Generar uno o varios borradores internos asociados a un caso sin publicarlos al cliente.",
+        "progress": 0,
+        "sortOrder": 2888,
+        "targetDate": "2026-10-09"
+      },
+      {
+        "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+        "name": "OL3 - Validación y preparación",
+        "description": "## OL3 — Validación y preparación\n\n* **Periodo:** 2026-09-14 — 2026-09-18\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-18\n* **Tareas:** 22\n\n 1. `OL3 [Stripe] Configurar catálogo, producto y precio de prueba | EPI10 MVP Fase 1` — Crear en modo test la estructura comercial mínima que alimentará el checkout demo.\n 2. `OL3 [Stripe] Implementar checkout de prueba en entorno Skilland | EPI10 MVP Fase 1` — Construir un recorrido funcional de pago demostrable sin depender del entorno EPI10.\n 3. `OL3 [Stripe] Configurar páginas de éxito, cancelación y reintento | EPI10 MVP Fase 1` — Cerrar la experiencia visible después de cada resultado principal del checkout.\n 4. `OL3 [Stripe] Preparar evento o webhook de pago para el mockup | EPI10 MVP Fase 1` — Demostrar que el resultado del pago puede producir un evento consumible por el journey posterior.\n 5. `OL3 [Stripe] Ejecutar pruebas funcionales del mockup | EPI10 MVP Fase 1` — Validar el mockup contra la matriz de escenarios antes de enseñarlo al cliente.\n 6. `OL3 [Stripe] Preparar evidencia y guion de demo para Carmen | EPI10 MVP Fase 1` — Preparar una explicación breve que permita validar decisiones funcionales sin entrar en detalle técnico innecesario.\n 7. `OL3 [Journey] Congelar journey MVP end-to-end | EPI10 MVP Fase 1` — Cerrar el recorrido desde entrada y pago hasta informe, soporte y cierre operativo.\n 8. `OL3 [Journey] Definir estados, hitos y transiciones del caso | EPI10 MVP Fase 1` — Traducir el journey a estados principales, checks e hitos operativos utilizables en Odoo.\n 9. `OL3 [Journey] Definir modelo operativo y próximos pasos | EPI10 MVP Fase 1` — Especificar cómo cada caso muestra qué falta, qué toca hacer, quién actúa y cuándo.\n10. `OL3 [Journey] Definir campos, IDs y referencias mínimas | EPI10 MVP Fase 1` — Definir los datos mínimos para vincular pago, cliente Healthie, caso Odoo y ejecución Copilot sin duplicación innecesaria.\n11. `OL3 [Journey] Asignar responsabilidades entre Stripe, Healthie, Odoo y Copilot | EPI10 MVP Fase 1` — Evitar solapamientos definiendo qué sistema crea, conserva, muestra y actualiza cada elemento del journey.\n12. `OL3 [Journey] Clasificar datos, documentos y ubicaciones permitidas | EPI10 MVP Fase 1` — Fijar data boundaries para datos personales, salud, genética, documentos, logs y paquetes Copilot.\n13. `OL3 [Healthie] Crear estructura demo de grupos, tags y clientes | EPI10 MVP Fase 1` — Preparar la organización base que permitirá segmentar y operar clientes EPI10.\n14. `OL3 [Healthie] Configurar branding base, idioma y experiencia de entrada | EPI10 MVP Fase 1` — Alinear la primera impresión del portal con EPI10 dentro de los límites del plan contratado.\n15. `OL3 [Healthie] Definir roles y permisos del entorno | EPI10 MVP Fase 1` — Aplicar mínimo privilegio a administradores, profesionales, soporte y cliente demo.\n16. `OL3 [Healthie] Prototipar invitación y onboarding inicial | EPI10 MVP Fase 1` — Probar la activación del cliente y su primera entrada antes de configurar todo el journey.\n17. `OL3 [Odoo] Crear entorno seguro de desarrollo | EPI10 MVP Fase 1` — Dejar disponible una instancia reproducible para construir y probar el MVP.\n18. `OL3 [Odoo] Validar estrategia de configuración y módulos custom mínimos | EPI10 MVP Fase 1` — Decidir qué se resuelve con configuración nativa y qué requiere desarrollo mínimo mantenible.\n19. `OL3 [Copilot] Sintetizar discovery y decisiones del informe | EPI10 MVP Fase 1` — Convertir la entrevista y ejemplos en un mapa claro de proceso, criterios expertos y unknowns.\n20. `OL3 [Copilot] Definir inputs, outputs y límites del Copilot | EPI10 MVP Fase 1` — Cerrar qué recibe el Copilot, qué genera, qué nunca decide y qué debe revisar una persona.\n21. `OL3 [PM] Celebrar checkpoint de alineación y desbloqueo | EPI10 MVP Fase 1` — Revisar con los actores adecuados decisiones funcionales, accesos y bloqueos antes de cerrar specs.\n22. `OL3 [Journey] Definir excepciones y recuperación manual del journey | EPI10 MVP Fase 1` — Mapear fallos frecuentes para que ningún caso quede invisible o bloqueado sin owner.",
+        "progress": 0,
+        "sortOrder": 3860,
+        "targetDate": "2026-09-18"
+      },
+      {
+        "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+        "name": "OL7 - Integración completa",
+        "description": "## OL7 — Integración completa\n\n* **Periodo:** 2026-10-26 — 2026-11-06\n* **Duración:** 2 semanas\n* **Deadline común:** 2026-11-06\n* **Tareas:** 9\n\n1. `OL7 [INT QA] Integrar alta desde Stripe/web hacia Odoo y Healthie | EPI10 MVP Fase 1` — Conectar el arranque del journey para crear/vincular cliente y caso tras el evento acordado.\n2. `OL7 [INT QA] Integrar onboarding Healthie con hitos Odoo | EPI10 MVP Fase 1` — Traducir activación, consentimiento y formularios completados en hitos operativos mínimos.\n3. `OL7 [INT QA] Integrar preparación y pedido manual del test | EPI10 MVP Fase 1` — Encadenar onboarding completo, regla de listo, tarea del equipo y registro manual de test pedido.\n4. `OL7 [INT QA] Integrar agenda Healthie con estado de cita en Odoo | EPI10 MVP Fase 1` — Reflejar cita elegida, confirmación y cambios relevantes en el caso operativo.\n5. `OL7 [INT QA] Integrar hitos de laboratorio con activación del Copilot | EPI10 MVP Fase 1` — Conectar el tramo manual de laboratorio con la preparación controlada del borrador.\n6. `OL7 [INT QA] Integrar borrador, revisión y aprobación del informe | EPI10 MVP Fase 1` — Vincular generación Copilot, versiones y validación humana con el estado operativo Odoo.\n7. `OL7 [INT QA] Integrar publicación final en Healthie y cierre en Odoo | EPI10 MVP Fase 1` — Entregar el informe validado, notificar al cliente y completar los marcadores de cierre.\n8. `OL7 [INT QA] Implementar idempotencia, reintentos y recuperación | EPI10 MVP Fase 1` — Evitar duplicados y casos perdidos cuando fallan o se repiten eventos entre sistemas.\n9. `OL7 [INT QA] Ejecutar replay end-to-end del caso demo | EPI10 MVP Fase 1` — Recorrer el caso EPI10-DEMO-001 completo para validar journey, operación, Copilot, entrega y recuperación.",
+        "progress": 0,
+        "sortOrder": 4785,
+        "targetDate": "2026-11-06"
+      },
+      {
+        "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+        "name": "OL6 - Superficies de integración y QA individual",
+        "description": "## OL6 — Superficies de integración y QA individual\n\n* **Periodo:** 2026-10-12 — 2026-10-23\n* **Duración:** 2 semanas\n* **Deadline común:** 2026-10-23\n* **Tareas:** 14\n\n 1. `OL6 [Healthie] Validar invitación, activación y onboarding | EPI10 MVP Fase 1` — Probar de forma aislada la experiencia completa desde invitación hasta onboarding mínimo completado.\n 2. `OL6 [Healthie] Validar formularios, documentos y agenda | EPI10 MVP Fase 1` — Comprobar que los módulos de experiencia cliente funcionan juntos y respetan permisos.\n 3. `OL6 [Healthie] Configurar soporte post-informe y escalado | EPI10 MVP Fase 1` — Centralizar dudas simples y escalar incidencias que requieren revisión del equipo.\n 4. `OL6 [Healthie] Configurar publicación del informe final | EPI10 MVP Fase 1` — Preparar la superficie donde el cliente recibirá únicamente el informe validado.\n 5. `OL6 [Odoo] Implementar entrada desde web y pago | EPI10 MVP Fase 1` — Crear/actualizar contacto y caso desde un evento de entrada/pago de forma idempotente.\n 6. `OL6 [Odoo] Implementar referencias y sincronización con Healthie | EPI10 MVP Fase 1` — Vincular caso y cliente Healthie y reflejar solo hitos relevantes sin replicar datos clínicos.\n 7. `OL6 [Odoo] Implementar regla de listo para pedir test y tareas asociadas | EPI10 MVP Fase 1` — Activar el paso operativo del test cuando los checks mínimos están completos.\n 8. `OL6 [Odoo] Implementar acción de publicación del informe | EPI10 MVP Fase 1` — Permitir publicar en Healthie únicamente una versión marcada como validada por una persona autorizada.\n 9. `OL6 [Odoo] Validar seguridad, permisos, auditoría y backup | EPI10 MVP Fase 1` — Verificar la configuración Odoo antes de la integración completa.\n10. `OL6 [Copilot] Implementar plantilla, checklist y rúbrica | EPI10 MVP Fase 1` — Convertir la especificación del informe en controles ejecutables de generación y revisión.\n11. `OL6 [Copilot] Configurar agentes, skills y prompts | EPI10 MVP Fase 1` — Separar responsabilidades del proceso de borrador en componentes revisables y mantenibles.\n12. `OL6 [Copilot] Implementar revisión humana y control de versiones | EPI10 MVP Fase 1` — Garantizar que borrador, correcciones y versión final validada no se confundan.\n13. `OL6 [Copilot] Construir dataset de evaluación y ejecutar evals | EPI10 MVP Fase 1` — Medir el comportamiento del Copilot con casos anonimizados y criterios acordados.\n14. `OL6 [Copilot] Configurar logs seguros, errores y retención | EPI10 MVP Fase 1` — Hacer observable y recuperable el flujo sin registrar datos sensibles innecesarios.",
+        "progress": 0,
+        "sortOrder": 5704,
+        "targetDate": "2026-10-23"
+      },
+      {
+        "id": "c07f086b-1a16-461a-aaf6-44dae0d4c52e",
+        "name": "OL8 - Cierre técnico del MVP",
+        "description": "## OL8 — Cierre técnico del MVP\n\n* **Periodo:** 2026-11-09 — 2026-11-13\n* **Duración:** 1 semana\n* **Deadline común:** 2026-11-13\n* **Tareas:** 7\n\n1. `OL8 [INT QA] Ejecutar regresión consolidada y corregir bloqueos | EPI10 MVP Fase 1` — Revalidar los flujos críticos después del replay y cerrar defectos bloqueantes del MVP.\n2. `OL8 [INT QA] Completar QA de seguridad, privacidad y datos sensibles | EPI10 MVP Fase 1` — Realizar el gate final sobre permisos, datos, logs, documentos, secretos y revisión humana.\n3. `OL8 [INT QA] Cerrar documentación técnica, runbook y evidencias | EPI10 MVP Fase 1` — Dejar el MVP comprensible, operable y recuperable para el equipo que realizará la demo y el handoff posterior.\n4. `OL8 [PM] Cerrar blockers y pendientes imprescindibles del MVP | EPI10 MVP Fase 1` — Revisar el tablero final y asegurar que ningún bloqueo imprescindible queda oculto o sin decisión.\n5. `OL8 [PM] Consolidar release notes y paquete de aceptación | EPI10 MVP Fase 1` — Sintetizar qué se ha construido, probado, limitado y dejado preparado para la demo.\n6. `OL8 [PM] Preparar guion, datos y entorno de demo del MVP | EPI10 MVP Fase 1` — Dejar lista una demo coherente que muestre valor y trazabilidad sin depender de datos reales ni pasos improvisados.\n7. `OL8 [PM] Realizar go-no-go interno y declarar MVP listo para demo | EPI10 MVP Fase 1` — Tomar la decisión interna final sobre la preparación técnica del MVP para la demo de cierre.",
+        "progress": 0,
+        "sortOrder": 6678,
+        "targetDate": "2026-11-13"
+      }
+    ]
+  },
+  "documents": [
+    {
+      "id": "c1119e59-84b9-44ac-95a7-29f7cc27126a",
+      "title": "00. EPI10 Salud MVP Fase 1 — Punto de situación y nueva planificación",
+      "content": "# EPI10 Salud MVP Fase 1 — Punto de situación y nueva planificación\n\n## Baseline\n\nEsta planificación parte del cierre del Healthie UX Discovery Sprint y del diseño operativo de la Fase 1. El discovery funcional de Healthie ha permitido revisar la cuenta, la experiencia de entrada, la ficha de cliente, formularios y consentimientos, documentos, comunicaciones, citas, operativa ligera y laterales útiles. La contratación del entorno definitivo de Healthie y la obtención de accesos de Odoo son dependencias externas que deben coordinarse sin detener la preparación interna.\n\n## Objetivo del nuevo horizonte\n\nTransformar el journey estratégico ya diseñado en una ejecución controlada que deje el MVP integrado, validado y preparado para una demo de cierre. El horizonte comienza el 31 de agosto de 2026 y termina el 13 de noviembre de 2026.\n\n## Principios de ejecución\n\n1. Stripe se abre y cierra pronto porque es un módulo separado, permite validar rápido con Carmen y habilita facturación propia.\n2. El mockup de Stripe se construye primero en el entorno de Skilland para no depender del ritmo de alta del cliente; tras validación se replica en EPI10.\n3. Healthie y Odoo se preparan en paralelo: contratación, accesos, diagnóstico, sandbox y configuración base.\n4. El journey se convierte antes en estados, datos, responsabilidades, contratos y specs ejecutables compartidas entre Healthie, Odoo, Copilot e integración.\n5. Odoo gobierna el caso operativo y los próximos pasos; Healthie gobierna la experiencia del cliente; Stripe gestiona el pago; el Copilot prepara borradores internos bajo revisión humana.\n6. TellmeGen/laboratorio permanece externo y manual en Fase 1; solo se reflejan hitos útiles en Odoo.\n7. La integración se valida de extremo a extremo con idempotencia, reintentos, recuperación manual, seguridad, privacidad y evidencia de aceptación.\n8. El horizonte actual termina con el MVP técnicamente listo para demo. El despliegue productivo, mantenimiento y Fase 2 se planificarán después.\n\n## Estructura del roadmap\n\n* Roadmap v1: vista lógico-funcional jerárquica con 7 bloques y 31 subbloques.\n* Roadmap v2: vista cronológica con 8 oleadas, 11 semanas y 106 Tasks.\n* Deadline final previsto: 13 de noviembre de 2026.\n\n## Criterio de éxito\n\nEl MVP queda listo cuando existe un caso demo reproducible desde la entrada/pago hasta la publicación del informe validado, con estados y próximos pasos visibles, experiencia Healthie configurada, operación Odoo funcional, Copilot bajo revisión humana, integraciones recuperables y paquete técnico listo para demo.",
+      "icon": null,
+      "color": null,
+      "url": "https://linear.app/skilland/document/00-epi10-salud-mvp-fase-1-punto-de-situacion-y-nueva-planificacion-bbe59058595f",
+      "slugId": "bbe59058595f",
+      "createdAt": "2026-09-07T05:11:56.543Z",
+      "updatedAt": "2026-09-07T05:11:57.321Z",
+      "archivedAt": null,
+      "creator": {
+        "id": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+        "name": "Raúl"
+      },
+      "updatedBy": {
+        "id": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+        "name": "Raúl"
+      },
+      "project": {
+        "id": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+        "name": "EPI10 Salud MVP"
+      },
+      "initiative": null,
+      "team": null,
+      "issue": null
+    },
+    {
+      "id": "707a9518-5470-4d04-bb09-8320d6ce30ae",
+      "title": "01. EPI10 Salud MVP Fase 1 — Roadmap lógico-funcional jerárquico",
+      "content": "# Roadmap v1 — Vista lógico-funcional jerárquica\n\n## Resultado compartido\n\nMVP integrado, validado y preparado para la demo de cierre.\n\n## 1. Stripe\n\n### 1.1 Diseño del flujo de cobro\n\n* **T001 · OL1** — `OL1 [Stripe] Definir alcance funcional del mockup de cobro | EPI10 MVP Fase 1`\n  Delimitar qué debe demostrar el mockup de Stripe, qué recorrido verá Carmen y qué queda fuera antes de tocar configuración.\n* **T002 · OL1** — `OL1 [Stripe] Inventariar escenarios y reglas de pago | EPI10 MVP Fase 1`\n  Identificar pago correcto, cancelado, fallido, reintento, duplicado y reembolso, junto con sus efectos operativos.\n* **T013 · OL2** — `OL2 [Stripe] Especificar flujo de compra y estados de pago | EPI10 MVP Fase 1`\n  Convertir el alcance inicial en una secuencia verificable desde la selección del producto hasta el resultado del pago.\n* **T015 · OL2** — `OL2 [Stripe] Definir matriz de pruebas y excepciones de pago | EPI10 MVP Fase 1`\n  Traducir escenarios de pago en casos de prueba reproducibles y criterios de aceptación.\n\n### 1.2 Mockup funcional en entorno Skilland\n\n* **T003 · OL1** — `OL1 [Stripe] Preparar entorno Stripe de pruebas de Skilland | EPI10 MVP Fase 1`\n  Disponer de un entorno de pruebas independiente donde construir el mockup sin esperar al alta de EPI10.\n* **T014 · OL2** — `OL2 [Stripe] Diseñar wireframes y copy del checkout | EPI10 MVP Fase 1`\n  Diseñar la experiencia que se enseñará a Carmen antes de replicarla en su cuenta.\n* **T024 · OL3** — `OL3 [Stripe] Configurar catálogo, producto y precio de prueba | EPI10 MVP Fase 1`\n  Crear en modo test la estructura comercial mínima que alimentará el checkout demo.\n* **T025 · OL3** — `OL3 [Stripe] Implementar checkout de prueba en entorno Skilland | EPI10 MVP Fase 1`\n  Construir un recorrido funcional de pago demostrable sin depender del entorno EPI10.\n* **T026 · OL3** — `OL3 [Stripe] Configurar páginas de éxito, cancelación y reintento | EPI10 MVP Fase 1`\n  Cerrar la experiencia visible después de cada resultado principal del checkout.\n* **T027 · OL3** — `OL3 [Stripe] Preparar evento o webhook de pago para el mockup | EPI10 MVP Fase 1`\n  Demostrar que el resultado del pago puede producir un evento consumible por el journey posterior.\n* **T028 · OL3** — `OL3 [Stripe] Ejecutar pruebas funcionales del mockup | EPI10 MVP Fase 1`\n  Validar el mockup contra la matriz de escenarios antes de enseñarlo al cliente.\n* **T029 · OL3** — `OL3 [Stripe] Preparar evidencia y guion de demo para Carmen | EPI10 MVP Fase 1`\n  Preparar una explicación breve que permita validar decisiones funcionales sin entrar en detalle técnico innecesario.\n* **T049 · OL4** — `OL4 [Stripe] Revisar internamente el mockup completo | EPI10 MVP Fase 1`\n  Hacer un gate interno de calidad antes de presentar la solución a Carmen.\n\n### 1.3 Validación y alta de EPI10\n\n* **T050 · OL4** — `OL4 [Stripe] Presentar mockup a Carmen y solicitar feedback | EPI10 MVP Fase 1`\n  Validar con Carmen el recorrido de pago antes de replicarlo en el entorno del cliente.\n* **T051 · OL4** — `OL4 [Stripe] Incorporar feedback aprobado | EPI10 MVP Fase 1`\n  Aplicar únicamente cambios validados que mantengan el alcance del módulo Stripe.\n* **T052 · OL4** — `OL4 [Stripe] Acompañar alta y verificación de la cuenta EPI10 | EPI10 MVP Fase 1`\n  Ayudar a EPI10 a completar el alta, verificación y roles necesarios sin asumir titularidad de la cuenta.\n\n### 1.4 Implantación en entorno EPI10\n\n* **T053 · OL4** — `OL4 [Stripe] Replicar catálogo y configuración en EPI10 | EPI10 MVP Fase 1`\n  Trasladar al entorno de EPI10 la estructura aprobada en el mockup.\n* **T054 · OL4** — `OL4 [Stripe] Configurar credenciales, enlaces y webhooks del entorno EPI10 | EPI10 MVP Fase 1`\n  Dejar conectados los elementos técnicos del entorno cliente con gestión segura de secretos.\n* **T055 · OL4** — `OL4 [Stripe] Ejecutar pruebas de aceptación en EPI10 | EPI10 MVP Fase 1`\n  Validar la réplica en el entorno EPI10 antes de declarar entregado el módulo.\n* **T056 · OL4** — `OL4 [Stripe] Entregar y documentar el módulo Stripe | EPI10 MVP Fase 1`\n  Cerrar la entrega con configuración, operación, pruebas y responsabilidades entendibles.\n\n### 1.5 Facturación del módulo adicional\n\n* **T057 · OL4** — `OL4 [Stripe] Emitir y registrar la factura del módulo adicional | EPI10 MVP Fase 1`\n  Facturar el trabajo separado de Stripe una vez entregado conforme al acuerdo comercial.\n\n## 2. Diseño ejecutable del journey\n\n### 2.1 Consolidación funcional\n\n* **T011 · OL1** — `OL1 [Journey] Consolidar fuentes vigentes y baseline del journey | EPI10 MVP Fase 1`\n  Unificar workshop, decisiones posteriores y alcance firmado en una única baseline funcional sin contradicciones.\n* **T030 · OL3** — `OL3 [Journey] Congelar journey MVP end-to-end | EPI10 MVP Fase 1`\n  Cerrar el recorrido desde entrada y pago hasta informe, soporte y cierre operativo.\n\n### 2.2 Distribución de responsabilidades entre sistemas\n\n* **T022 · OL2** — `OL2 [Journey] Mapear actores, owners y fuentes de verdad | EPI10 MVP Fase 1`\n  Asignar responsable humano y sistema fuente para cada tramo, dato, documento, estado y comunicación.\n* **T034 · OL3** — `OL3 [Journey] Asignar responsabilidades entre Stripe, Healthie, Odoo y Copilot | EPI10 MVP Fase 1`\n  Evitar solapamientos definiendo qué sistema crea, conserva, muestra y actualiza cada elemento del journey.\n\n### 2.3 Modelo operativo del caso\n\n* **T031 · OL3** — `OL3 [Journey] Definir estados, hitos y transiciones del caso | EPI10 MVP Fase 1`\n  Traducir el journey a estados principales, checks e hitos operativos utilizables en Odoo.\n* **T032 · OL3** — `OL3 [Journey] Definir modelo operativo y próximos pasos | EPI10 MVP Fase 1`\n  Especificar cómo cada caso muestra qué falta, qué toca hacer, quién actúa y cuándo.\n* **T045 · OL3** — `OL3 [Journey] Definir excepciones y recuperación manual del journey | EPI10 MVP Fase 1`\n  Mapear fallos frecuentes para que ningún caso quede invisible o bloqueado sin owner.\n\n### 2.4 Contratos de datos e integración\n\n* **T033 · OL3** — `OL3 [Journey] Definir campos, IDs y referencias mínimas | EPI10 MVP Fase 1`\n  Definir los datos mínimos para vincular pago, cliente Healthie, caso Odoo y ejecución Copilot sin duplicación innecesaria.\n* **T035 · OL3** — `OL3 [Journey] Clasificar datos, documentos y ubicaciones permitidas | EPI10 MVP Fase 1`\n  Fijar data boundaries para datos personales, salud, genética, documentos, logs y paquetes Copilot.\n\n### 2.5 Preparación de la ejecución\n\n* **T046 · OL4** — `OL4 [Journey] Redactar specs ejecutables de Healthie | EPI10 MVP Fase 1`\n  Traducir el journey asignado a Healthie en paquetes de implementación verificables.\n* **T047 · OL4** — `OL4 [Journey] Redactar specs ejecutables de Odoo | EPI10 MVP Fase 1`\n  Traducir estados, checks, tareas, owners, vistas y excepciones a implementación Odoo.\n* **T048 · OL4** — `OL4 [Journey] Cerrar contratos de datos e integración | EPI10 MVP Fase 1`\n  Cerrar eventos, payloads mínimos, IDs, ownership, idempotencia y fallbacks entre sistemas.\n\n## 3. Healthie\n\n### 3.1 Contratación y habilitación\n\n* **T004 · OL1** — `OL1 [Healthie] Coordinar contratación inicial del plan Group | EPI10 MVP Fase 1`\n  Acompañar a Carmen en el cierre del plan Group para disponer cuanto antes del entorno real de Healthie.\n* **T005 · OL1** — `OL1 [Healthie] Solicitar cotización Enterprise y Mobile White Label | EPI10 MVP Fase 1`\n  Abrir en paralelo la vía Enterprise para conocer coste y condiciones de Mobile White Label sin bloquear el plan Group.\n* **T006 · OL1** — `OL1 [Healthie] Ordenar accesos, owners y soporte de contratación | EPI10 MVP Fase 1`\n  Definir quién compra, quién administra, quién implementa y por qué canal se resuelven dudas con Healthie.\n* **T016 · OL2** — `OL2 [Healthie] Validar plan, API, DPA, residencia y límites de cuenta | EPI10 MVP Fase 1`\n  Confirmar qué permite realmente el plan contratado y qué gates legales/técnicos condicionan el MVP.\n\n### 3.2 Configuración base del entorno\n\n* **T017 · OL2** — `OL2 [Healthie] Inventariar módulos y capacidades disponibles | EPI10 MVP Fase 1`\n  Mapear en el entorno real las capacidades necesarias para el journey y separar incluido, add-on, Enterprise y fuera de alcance.\n* **T036 · OL3** — `OL3 [Healthie] Crear estructura demo de grupos, tags y clientes | EPI10 MVP Fase 1`\n  Preparar la organización base que permitirá segmentar y operar clientes EPI10.\n* **T037 · OL3** — `OL3 [Healthie] Configurar branding base, idioma y experiencia de entrada | EPI10 MVP Fase 1`\n  Alinear la primera impresión del portal con EPI10 dentro de los límites del plan contratado.\n* **T038 · OL3** — `OL3 [Healthie] Definir roles y permisos del entorno | EPI10 MVP Fase 1`\n  Aplicar mínimo privilegio a administradores, profesionales, soporte y cliente demo.\n* **T039 · OL3** — `OL3 [Healthie] Prototipar invitación y onboarding inicial | EPI10 MVP Fase 1`\n  Probar la activación del cliente y su primera entrada antes de configurar todo el journey.\n* **T059 · OL5** — `OL5 [Healthie] Configurar cuenta, organización y preferencias base | EPI10 MVP Fase 1`\n  Dejar la cuenta real organizada para operar el journey EPI10 con nomenclatura y preferencias consistentes.\n\n### 3.3 Implantación del journey en Healthie\n\n* **T060 · OL5** — `OL5 [Healthie] Configurar grupos, tags y segmentación operativa | EPI10 MVP Fase 1`\n  Implementar la segmentación necesaria para onboarding, test, informe entregado e interés futuro.\n* **T061 · OL5** — `OL5 [Healthie] Configurar ficha de cliente y campos necesarios | EPI10 MVP Fase 1`\n  Representar en Healthie solo los datos de cliente necesarios para la experiencia y operación.\n* **T062 · OL5** — `OL5 [Healthie] Implementar consentimientos y formulario principal | EPI10 MVP Fase 1`\n  Digitalizar las piezas de onboarding que bloquean o habilitan el avance del caso.\n* **T063 · OL5** — `OL5 [Healthie] Implementar cuestionarios adicionales de Fase 1 | EPI10 MVP Fase 1`\n  Configurar únicamente los cuestionarios adicionales aprobados para enriquecer el informe.\n* **T064 · OL5** — `OL5 [Healthie] Configurar subida y gestión de documentos | EPI10 MVP Fase 1`\n  Permitir que el cliente/equipo aporte documentos aprobados sin recurrir a canales dispersos.\n* **T065 · OL5** — `OL5 [Healthie] Configurar comunicaciones, emails y notificaciones | EPI10 MVP Fase 1`\n  Centralizar comunicaciones repetibles de activación, espera, cita, informe y soporte.\n* **T066 · OL5** — `OL5 [Healthie] Configurar agenda y citas del test | EPI10 MVP Fase 1`\n  Permitir que el cliente agende la cita cuando el test está disponible, con confirmación y recordatorios.\n* **T079 · OL6** — `OL6 [Healthie] Configurar soporte post-informe y escalado | EPI10 MVP Fase 1`\n  Centralizar dudas simples y escalar incidencias que requieren revisión del equipo.\n\n### 3.4 Preparación para la integración\n\n* **T080 · OL6** — `OL6 [Healthie] Configurar publicación del informe final | EPI10 MVP Fase 1`\n  Preparar la superficie donde el cliente recibirá únicamente el informe validado.\n\n### 3.5 QA funcional de Healthie\n\n* **T077 · OL6** — `OL6 [Healthie] Validar invitación, activación y onboarding | EPI10 MVP Fase 1`\n  Probar de forma aislada la experiencia completa desde invitación hasta onboarding mínimo completado.\n* **T078 · OL6** — `OL6 [Healthie] Validar formularios, documentos y agenda | EPI10 MVP Fase 1`\n  Comprobar que los módulos de experiencia cliente funcionan juntos y respetan permisos.\n\n## 4. Odoo\n\n### 4.1 Onboarding técnico de Odoo\n\n* **T007 · OL1** — `OL1 [Odoo] Solicitar ficha técnica y accesos del entorno actual | EPI10 MVP Fase 1`\n  Pedir la información necesaria para entender el Odoo de EPI10 antes de diseñar o modificar nada.\n* **T008 · OL1** — `OL1 [Odoo] Coordinar sesión técnica con el mantenedor de Odoo | EPI10 MVP Fase 1`\n  Alinear con la persona que mantiene Odoo el acceso, límites, despliegue y forma segura de colaborar.\n* **T018 · OL2** — `OL2 [Odoo] Diagnosticar versión, módulos, hosting y permisos | EPI10 MVP Fase 1`\n  Obtener un diagnóstico reproducible del entorno actual y de las restricciones para implementar el MVP.\n\n### 4.2 Entorno seguro de desarrollo\n\n* **T009 · OL1** — `OL1 [Odoo] Definir estrategia de copia, backup y sandbox | EPI10 MVP Fase 1`\n  Decidir cómo trabajar sobre una copia controlada sin desarrollar directamente en producción ni exponer datos sensibles.\n* **T019 · OL2** — `OL2 [Odoo] Obtener y restaurar una copia sanitizada de desarrollo | EPI10 MVP Fase 1`\n  Disponer de una copia funcional y segura del entorno para desarrollar y probar sin afectar producción.\n* **T040 · OL3** — `OL3 [Odoo] Crear entorno seguro de desarrollo | EPI10 MVP Fase 1`\n  Dejar disponible una instancia reproducible para construir y probar el MVP.\n* **T041 · OL3** — `OL3 [Odoo] Validar estrategia de configuración y módulos custom mínimos | EPI10 MVP Fase 1`\n  Decidir qué se resuelve con configuración nativa y qué requiere desarrollo mínimo mantenible.\n\n### 4.3 Implantación del journey en Odoo\n\n* **T067 · OL5** — `OL5 [Odoo] Implementar modelo de caso EPI10 y pipeline | EPI10 MVP Fase 1`\n  Crear la entidad/vista operativa que centraliza el seguimiento de cada cliente EPI10.\n* **T068 · OL5** — `OL5 [Odoo] Implementar estados, hitos y checklist operativo | EPI10 MVP Fase 1`\n  Representar el avance sin convertir cada check en un estado principal ni duplicar Healthie.\n* **T069 · OL5** — `OL5 [Odoo] Implementar tareas automáticas, owners y próximos pasos | EPI10 MVP Fase 1`\n  Generar acciones operativas claras cuando el caso alcanza hitos relevantes.\n* **T070 · OL5** — `OL5 [Odoo] Implementar vistas, filtros y tablero operativo | EPI10 MVP Fase 1`\n  Dar al equipo una vista accionable de casos por estado, owner, bloqueo y siguiente acción.\n* **T071 · OL5** — `OL5 [Odoo] Implementar hitos manuales de test y laboratorio | EPI10 MVP Fase 1`\n  Controlar la logística externa mediante hitos mínimos sin simular una integración TellmeGen inexistente.\n* **T072 · OL5** — `OL5 [Odoo] Implementar documentos, informe y marcadores de entrega | EPI10 MVP Fase 1`\n  Representar el archivo de origen autorizado, borradores, versión validada y publicación sin convertir Odoo en repositorio genético bruto.\n* **T073 · OL5** — `OL5 [Odoo] Implementar incidencias, bloqueos y cierre del caso | EPI10 MVP Fase 1`\n  Gestionar excepciones y cerrar el caso solo cuando entrega, notificación y correcciones estén resueltas.\n\n### 4.4 Seguridad, permisos y QA\n\n* **T081 · OL6** — `OL6 [Odoo] Implementar entrada desde web y pago | EPI10 MVP Fase 1`\n  Crear/actualizar contacto y caso desde un evento de entrada/pago de forma idempotente.\n* **T082 · OL6** — `OL6 [Odoo] Implementar referencias y sincronización con Healthie | EPI10 MVP Fase 1`\n  Vincular caso y cliente Healthie y reflejar solo hitos relevantes sin replicar datos clínicos.\n* **T083 · OL6** — `OL6 [Odoo] Implementar regla de listo para pedir test y tareas asociadas | EPI10 MVP Fase 1`\n  Activar el paso operativo del test cuando los checks mínimos están completos.\n* **T084 · OL6** — `OL6 [Odoo] Implementar acción de publicación del informe | EPI10 MVP Fase 1`\n  Permitir publicar en Healthie únicamente una versión marcada como validada por una persona autorizada.\n* **T085 · OL6** — `OL6 [Odoo] Validar seguridad, permisos, auditoría y backup | EPI10 MVP Fase 1`\n  Verificar la configuración Odoo antes de la integración completa.\n\n## 5. Copilot del informe\n\n### 5.1 Cierre del discovery con Aitor\n\n* **T010 · OL1** — `OL1 [Copilot] Preparar discovery operativo del informe con Aitor | EPI10 MVP Fase 1`\n  Preparar una sesión centrada en cómo se construye, revisa y valida hoy el informe final.\n* **T020 · OL2** — `OL2 [Copilot] Realizar entrevista de discovery con Aitor | EPI10 MVP Fase 1`\n  Capturar el proceso real del informe, las decisiones expertas, inputs, excepciones y puntos automatizables.\n* **T021 · OL2** — `OL2 [Copilot] Recopilar plantillas e informes anonimizados | EPI10 MVP Fase 1`\n  Reunir material representativo y autorizado para especificar y evaluar borradores sin usar datos identificables.\n\n### 5.2 Especificación del informe\n\n* **T042 · OL3** — `OL3 [Copilot] Sintetizar discovery y decisiones del informe | EPI10 MVP Fase 1`\n  Convertir la entrevista y ejemplos en un mapa claro de proceso, criterios expertos y unknowns.\n* **T043 · OL3** — `OL3 [Copilot] Definir inputs, outputs y límites del Copilot | EPI10 MVP Fase 1`\n  Cerrar qué recibe el Copilot, qué genera, qué nunca decide y qué debe revisar una persona.\n* **T058 · OL4** — `OL4 [Copilot] Cerrar especificación funcional y rúbrica del informe | EPI10 MVP Fase 1`\n  Dejar una especificación implementable y evaluable del borrador asistido y su revisión humana.\n\n### 5.3 Construcción del Copilot\n\n* **T074 · OL5** — `OL5 [Copilot] Crear estructura base del harness y repositorio | EPI10 MVP Fase 1`\n  Preparar una base versionada y auditable para ejecutar el flujo asistido del informe.\n* **T075 · OL5** — `OL5 [Copilot] Implementar ingesta y pseudonimización | EPI10 MVP Fase 1`\n  Preparar inputs autorizados para generación minimizando identificadores y contenido no necesario.\n* **T076 · OL5** — `OL5 [Copilot] Implementar flujo inicial de generación de borradores | EPI10 MVP Fase 1`\n  Generar uno o varios borradores internos asociados a un caso sin publicarlos al cliente.\n\n### 5.4 Evaluación e integración\n\n* **T086 · OL6** — `OL6 [Copilot] Implementar plantilla, checklist y rúbrica | EPI10 MVP Fase 1`\n  Convertir la especificación del informe en controles ejecutables de generación y revisión.\n* **T087 · OL6** — `OL6 [Copilot] Configurar agentes, skills y prompts | EPI10 MVP Fase 1`\n  Separar responsabilidades del proceso de borrador en componentes revisables y mantenibles.\n* **T088 · OL6** — `OL6 [Copilot] Implementar revisión humana y control de versiones | EPI10 MVP Fase 1`\n  Garantizar que borrador, correcciones y versión final validada no se confundan.\n* **T089 · OL6** — `OL6 [Copilot] Construir dataset de evaluación y ejecutar evals | EPI10 MVP Fase 1`\n  Medir el comportamiento del Copilot con casos anonimizados y criterios acordados.\n* **T090 · OL6** — `OL6 [Copilot] Configurar logs seguros, errores y retención | EPI10 MVP Fase 1`\n  Hacer observable y recuperable el flujo sin registrar datos sensibles innecesarios.\n\n## 6. Integración y QA end-to-end\n\n### 6.1 Integraciones del sistema\n\n* **T091 · OL7** — `OL7 [INT QA] Integrar alta desde Stripe/web hacia Odoo y Healthie | EPI10 MVP Fase 1`\n  Conectar el arranque del journey para crear/vincular cliente y caso tras el evento acordado.\n* **T092 · OL7** — `OL7 [INT QA] Integrar onboarding Healthie con hitos Odoo | EPI10 MVP Fase 1`\n  Traducir activación, consentimiento y formularios completados en hitos operativos mínimos.\n* **T093 · OL7** — `OL7 [INT QA] Integrar preparación y pedido manual del test | EPI10 MVP Fase 1`\n  Encadenar onboarding completo, regla de listo, tarea del equipo y registro manual de test pedido.\n* **T094 · OL7** — `OL7 [INT QA] Integrar agenda Healthie con estado de cita en Odoo | EPI10 MVP Fase 1`\n  Reflejar cita elegida, confirmación y cambios relevantes en el caso operativo.\n* **T095 · OL7** — `OL7 [INT QA] Integrar hitos de laboratorio con activación del Copilot | EPI10 MVP Fase 1`\n  Conectar el tramo manual de laboratorio con la preparación controlada del borrador.\n* **T096 · OL7** — `OL7 [INT QA] Integrar borrador, revisión y aprobación del informe | EPI10 MVP Fase 1`\n  Vincular generación Copilot, versiones y validación humana con el estado operativo Odoo.\n* **T097 · OL7** — `OL7 [INT QA] Integrar publicación final en Healthie y cierre en Odoo | EPI10 MVP Fase 1`\n  Entregar el informe validado, notificar al cliente y completar los marcadores de cierre.\n\n### 6.2 Fiabilidad transversal\n\n* **T098 · OL7** — `OL7 [INT QA] Implementar idempotencia, reintentos y recuperación | EPI10 MVP Fase 1`\n  Evitar duplicados y casos perdidos cuando fallan o se repiten eventos entre sistemas.\n* **T101 · OL8** — `OL8 [INT QA] Completar QA de seguridad, privacidad y datos sensibles | EPI10 MVP Fase 1`\n  Realizar el gate final sobre permisos, datos, logs, documentos, secretos y revisión humana.\n\n### 6.3 QA end-to-end\n\n* **T099 · OL7** — `OL7 [INT QA] Ejecutar replay end-to-end del caso demo | EPI10 MVP Fase 1`\n  Recorrer el caso EPI10-DEMO-001 completo para validar journey, operación, Copilot, entrega y recuperación.\n* **T100 · OL8** — `OL8 [INT QA] Ejecutar regresión consolidada y corregir bloqueos | EPI10 MVP Fase 1`\n  Revalidar los flujos críticos después del replay y cerrar defectos bloqueantes del MVP.\n* **T102 · OL8** — `OL8 [INT QA] Cerrar documentación técnica, runbook y evidencias | EPI10 MVP Fase 1`\n  Dejar el MVP comprensible, operable y recuperable para el equipo que realizará la demo y el handoff posterior.\n\n## 7. Project Management\n\n### 7.1 Gobernanza y control de alcance\n\n* **T012 · OL1** — `OL1 [PM] Abrir control de alcance, decisiones, riesgos y dependencias | EPI10 MVP Fase 1`\n  Crear los registros transversales que permitan gobernar el proyecto sin perder decisiones ni bloqueos.\n\n### 7.2 Dependencias, accesos y riesgos\n\n* **T023 · OL2** — `OL2 [PM] Actualizar registro de accesos, bloqueos y unknowns | EPI10 MVP Fase 1`\n  Consolidar lo aprendido en contratación, Odoo, Stripe y Copilot para hacer visibles las dependencias reales.\n\n### 7.3 Coordinación de actores\n\n* **T044 · OL3** — `OL3 [PM] Celebrar checkpoint de alineación y desbloqueo | EPI10 MVP Fase 1`\n  Revisar con los actores adecuados decisiones funcionales, accesos y bloqueos antes de cerrar specs.\n\n### 7.4 Seguimiento de ejecución\n\n* **T103 · OL8** — `OL8 [PM] Cerrar blockers y pendientes imprescindibles del MVP | EPI10 MVP Fase 1`\n  Revisar el tablero final y asegurar que ningún bloqueo imprescindible queda oculto o sin decisión.\n\n### 7.5 Cierre del horizonte actual\n\n* **T104 · OL8** — `OL8 [PM] Consolidar release notes y paquete de aceptación | EPI10 MVP Fase 1`\n  Sintetizar qué se ha construido, probado, limitado y dejado preparado para la demo.\n* **T105 · OL8** — `OL8 [PM] Preparar guion, datos y entorno de demo del MVP | EPI10 MVP Fase 1`\n  Dejar lista una demo coherente que muestre valor y trazabilidad sin depender de datos reales ni pasos improvisados.\n* **T106 · OL8** — `OL8 [PM] Realizar go-no-go interno y declarar MVP listo para demo | EPI10 MVP Fase 1`\n  Tomar la decisión interna final sobre la preparación técnica del MVP para la demo de cierre.\n\n---\n\n**Totales:** 7 bloques · 31 subbloques · 106 Tasks.",
+      "icon": null,
+      "color": null,
+      "url": "https://linear.app/skilland/document/01-epi10-salud-mvp-fase-1-roadmap-logico-funcional-jerarquico-306fd8f19985",
+      "slugId": "306fd8f19985",
+      "createdAt": "2026-09-07T05:11:57.078Z",
+      "updatedAt": "2026-09-07T05:11:57.907Z",
+      "archivedAt": null,
+      "creator": {
+        "id": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+        "name": "Raúl"
+      },
+      "updatedBy": {
+        "id": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+        "name": "Raúl"
+      },
+      "project": {
+        "id": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+        "name": "EPI10 Salud MVP"
+      },
+      "initiative": null,
+      "team": null,
+      "issue": null
+    },
+    {
+      "id": "135e7bc0-3025-45b0-a21e-08f2d68e53de",
+      "title": "02. EPI10 Salud MVP Fase 1 — Roadmap cronológico por oleadas",
+      "content": "# Roadmap v2 — Vista cronológica por oleadas\n\nInicio: lunes 31 de agosto de 2026.\nFin previsto: viernes 13 de noviembre de 2026.\nDuración: 11 semanas.\nTotal: 106 Tasks.\n\n## OL1 — Apertura de frentes\n\n* **Periodo:** 2026-08-31 — 2026-09-04\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-04\n* **Tareas:** 12\n\n 1. `OL1 [Stripe] Definir alcance funcional del mockup de cobro | EPI10 MVP Fase 1` — Delimitar qué debe demostrar el mockup de Stripe, qué recorrido verá Carmen y qué queda fuera antes de tocar configuración.\n 2. `OL1 [Stripe] Inventariar escenarios y reglas de pago | EPI10 MVP Fase 1` — Identificar pago correcto, cancelado, fallido, reintento, duplicado y reembolso, junto con sus efectos operativos.\n 3. `OL1 [Stripe] Preparar entorno Stripe de pruebas de Skilland | EPI10 MVP Fase 1` — Disponer de un entorno de pruebas independiente donde construir el mockup sin esperar al alta de EPI10.\n 4. `OL1 [Healthie] Coordinar contratación inicial del plan Group | EPI10 MVP Fase 1` — Acompañar a Carmen en el cierre del plan Group para disponer cuanto antes del entorno real de Healthie.\n 5. `OL1 [Healthie] Solicitar cotización Enterprise y Mobile White Label | EPI10 MVP Fase 1` — Abrir en paralelo la vía Enterprise para conocer coste y condiciones de Mobile White Label sin bloquear el plan Group.\n 6. `OL1 [Healthie] Ordenar accesos, owners y soporte de contratación | EPI10 MVP Fase 1` — Definir quién compra, quién administra, quién implementa y por qué canal se resuelven dudas con Healthie.\n 7. `OL1 [Odoo] Solicitar ficha técnica y accesos del entorno actual | EPI10 MVP Fase 1` — Pedir la información necesaria para entender el Odoo de EPI10 antes de diseñar o modificar nada.\n 8. `OL1 [Odoo] Coordinar sesión técnica con el mantenedor de Odoo | EPI10 MVP Fase 1` — Alinear con la persona que mantiene Odoo el acceso, límites, despliegue y forma segura de colaborar.\n 9. `OL1 [Odoo] Definir estrategia de copia, backup y sandbox | EPI10 MVP Fase 1` — Decidir cómo trabajar sobre una copia controlada sin desarrollar directamente en producción ni exponer datos sensibles.\n10. `OL1 [Copilot] Preparar discovery operativo del informe con Aitor | EPI10 MVP Fase 1` — Preparar una sesión centrada en cómo se construye, revisa y valida hoy el informe final.\n11. `OL1 [Journey] Consolidar fuentes vigentes y baseline del journey | EPI10 MVP Fase 1` — Unificar workshop, decisiones posteriores y alcance firmado en una única baseline funcional sin contradicciones.\n12. `OL1 [PM] Abrir control de alcance, decisiones, riesgos y dependencias | EPI10 MVP Fase 1` — Crear los registros transversales que permitan gobernar el proyecto sin perder decisiones ni bloqueos.\n\n## OL2 — Artefactos y diagnóstico\n\n* **Periodo:** 2026-09-07 — 2026-09-11\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-11\n* **Tareas:** 11\n\n 1. `OL2 [Stripe] Especificar flujo de compra y estados de pago | EPI10 MVP Fase 1` — Convertir el alcance inicial en una secuencia verificable desde la selección del producto hasta el resultado del pago.\n 2. `OL2 [Stripe] Diseñar wireframes y copy del checkout | EPI10 MVP Fase 1` — Diseñar la experiencia que se enseñará a Carmen antes de replicarla en su cuenta.\n 3. `OL2 [Stripe] Definir matriz de pruebas y excepciones de pago | EPI10 MVP Fase 1` — Traducir escenarios de pago en casos de prueba reproducibles y criterios de aceptación.\n 4. `OL2 [Healthie] Validar plan, API, DPA, residencia y límites de cuenta | EPI10 MVP Fase 1` — Confirmar qué permite realmente el plan contratado y qué gates legales/técnicos condicionan el MVP.\n 5. `OL2 [Healthie] Inventariar módulos y capacidades disponibles | EPI10 MVP Fase 1` — Mapear en el entorno real las capacidades necesarias para el journey y separar incluido, add-on, Enterprise y fuera de alcance.\n 6. `OL2 [Odoo] Diagnosticar versión, módulos, hosting y permisos | EPI10 MVP Fase 1` — Obtener un diagnóstico reproducible del entorno actual y de las restricciones para implementar el MVP.\n 7. `OL2 [Odoo] Obtener y restaurar una copia sanitizada de desarrollo | EPI10 MVP Fase 1` — Disponer de una copia funcional y segura del entorno para desarrollar y probar sin afectar producción.\n 8. `OL2 [Copilot] Realizar entrevista de discovery con Aitor | EPI10 MVP Fase 1` — Capturar el proceso real del informe, las decisiones expertas, inputs, excepciones y puntos automatizables.\n 9. `OL2 [Copilot] Recopilar plantillas e informes anonimizados | EPI10 MVP Fase 1` — Reunir material representativo y autorizado para especificar y evaluar borradores sin usar datos identificables.\n10. `OL2 [Journey] Mapear actores, owners y fuentes de verdad | EPI10 MVP Fase 1` — Asignar responsable humano y sistema fuente para cada tramo, dato, documento, estado y comunicación.\n11. `OL2 [PM] Actualizar registro de accesos, bloqueos y unknowns | EPI10 MVP Fase 1` — Consolidar lo aprendido en contratación, Odoo, Stripe y Copilot para hacer visibles las dependencias reales.\n\n## OL3 — Validación y preparación\n\n* **Periodo:** 2026-09-14 — 2026-09-18\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-18\n* **Tareas:** 22\n\n 1. `OL3 [Stripe] Configurar catálogo, producto y precio de prueba | EPI10 MVP Fase 1` — Crear en modo test la estructura comercial mínima que alimentará el checkout demo.\n 2. `OL3 [Stripe] Implementar checkout de prueba en entorno Skilland | EPI10 MVP Fase 1` — Construir un recorrido funcional de pago demostrable sin depender del entorno EPI10.\n 3. `OL3 [Stripe] Configurar páginas de éxito, cancelación y reintento | EPI10 MVP Fase 1` — Cerrar la experiencia visible después de cada resultado principal del checkout.\n 4. `OL3 [Stripe] Preparar evento o webhook de pago para el mockup | EPI10 MVP Fase 1` — Demostrar que el resultado del pago puede producir un evento consumible por el journey posterior.\n 5. `OL3 [Stripe] Ejecutar pruebas funcionales del mockup | EPI10 MVP Fase 1` — Validar el mockup contra la matriz de escenarios antes de enseñarlo al cliente.\n 6. `OL3 [Stripe] Preparar evidencia y guion de demo para Carmen | EPI10 MVP Fase 1` — Preparar una explicación breve que permita validar decisiones funcionales sin entrar en detalle técnico innecesario.\n 7. `OL3 [Journey] Congelar journey MVP end-to-end | EPI10 MVP Fase 1` — Cerrar el recorrido desde entrada y pago hasta informe, soporte y cierre operativo.\n 8. `OL3 [Journey] Definir estados, hitos y transiciones del caso | EPI10 MVP Fase 1` — Traducir el journey a estados principales, checks e hitos operativos utilizables en Odoo.\n 9. `OL3 [Journey] Definir modelo operativo y próximos pasos | EPI10 MVP Fase 1` — Especificar cómo cada caso muestra qué falta, qué toca hacer, quién actúa y cuándo.\n10. `OL3 [Journey] Definir campos, IDs y referencias mínimas | EPI10 MVP Fase 1` — Definir los datos mínimos para vincular pago, cliente Healthie, caso Odoo y ejecución Copilot sin duplicación innecesaria.\n11. `OL3 [Journey] Asignar responsabilidades entre Stripe, Healthie, Odoo y Copilot | EPI10 MVP Fase 1` — Evitar solapamientos definiendo qué sistema crea, conserva, muestra y actualiza cada elemento del journey.\n12. `OL3 [Journey] Clasificar datos, documentos y ubicaciones permitidas | EPI10 MVP Fase 1` — Fijar data boundaries para datos personales, salud, genética, documentos, logs y paquetes Copilot.\n13. `OL3 [Healthie] Crear estructura demo de grupos, tags y clientes | EPI10 MVP Fase 1` — Preparar la organización base que permitirá segmentar y operar clientes EPI10.\n14. `OL3 [Healthie] Configurar branding base, idioma y experiencia de entrada | EPI10 MVP Fase 1` — Alinear la primera impresión del portal con EPI10 dentro de los límites del plan contratado.\n15. `OL3 [Healthie] Definir roles y permisos del entorno | EPI10 MVP Fase 1` — Aplicar mínimo privilegio a administradores, profesionales, soporte y cliente demo.\n16. `OL3 [Healthie] Prototipar invitación y onboarding inicial | EPI10 MVP Fase 1` — Probar la activación del cliente y su primera entrada antes de configurar todo el journey.\n17. `OL3 [Odoo] Crear entorno seguro de desarrollo | EPI10 MVP Fase 1` — Dejar disponible una instancia reproducible para construir y probar el MVP.\n18. `OL3 [Odoo] Validar estrategia de configuración y módulos custom mínimos | EPI10 MVP Fase 1` — Decidir qué se resuelve con configuración nativa y qué requiere desarrollo mínimo mantenible.\n19. `OL3 [Copilot] Sintetizar discovery y decisiones del informe | EPI10 MVP Fase 1` — Convertir la entrevista y ejemplos en un mapa claro de proceso, criterios expertos y unknowns.\n20. `OL3 [Copilot] Definir inputs, outputs y límites del Copilot | EPI10 MVP Fase 1` — Cerrar qué recibe el Copilot, qué genera, qué nunca decide y qué debe revisar una persona.\n21. `OL3 [PM] Celebrar checkpoint de alineación y desbloqueo | EPI10 MVP Fase 1` — Revisar con los actores adecuados decisiones funcionales, accesos y bloqueos antes de cerrar specs.\n22. `OL3 [Journey] Definir excepciones y recuperación manual del journey | EPI10 MVP Fase 1` — Mapear fallos frecuentes para que ningún caso quede invisible o bloqueado sin owner.\n\n## OL4 — Specs y cierre de Stripe\n\n* **Periodo:** 2026-09-21 — 2026-09-25\n* **Duración:** 1 semana\n* **Deadline común:** 2026-09-25\n* **Tareas:** 13\n\n 1. `OL4 [Journey] Redactar specs ejecutables de Healthie | EPI10 MVP Fase 1` — Traducir el journey asignado a Healthie en paquetes de implementación verificables.\n 2. `OL4 [Journey] Redactar specs ejecutables de Odoo | EPI10 MVP Fase 1` — Traducir estados, checks, tareas, owners, vistas y excepciones a implementación Odoo.\n 3. `OL4 [Journey] Cerrar contratos de datos e integración | EPI10 MVP Fase 1` — Cerrar eventos, payloads mínimos, IDs, ownership, idempotencia y fallbacks entre sistemas.\n 4. `OL4 [Stripe] Revisar internamente el mockup completo | EPI10 MVP Fase 1` — Hacer un gate interno de calidad antes de presentar la solución a Carmen.\n 5. `OL4 [Stripe] Presentar mockup a Carmen y solicitar feedback | EPI10 MVP Fase 1` — Validar con Carmen el recorrido de pago antes de replicarlo en el entorno del cliente.\n 6. `OL4 [Stripe] Incorporar feedback aprobado | EPI10 MVP Fase 1` — Aplicar únicamente cambios validados que mantengan el alcance del módulo Stripe.\n 7. `OL4 [Stripe] Acompañar alta y verificación de la cuenta EPI10 | EPI10 MVP Fase 1` — Ayudar a EPI10 a completar el alta, verificación y roles necesarios sin asumir titularidad de la cuenta.\n 8. `OL4 [Stripe] Replicar catálogo y configuración en EPI10 | EPI10 MVP Fase 1` — Trasladar al entorno de EPI10 la estructura aprobada en el mockup.\n 9. `OL4 [Stripe] Configurar credenciales, enlaces y webhooks del entorno EPI10 | EPI10 MVP Fase 1` — Dejar conectados los elementos técnicos del entorno cliente con gestión segura de secretos.\n10. `OL4 [Stripe] Ejecutar pruebas de aceptación en EPI10 | EPI10 MVP Fase 1` — Validar la réplica en el entorno EPI10 antes de declarar entregado el módulo.\n11. `OL4 [Stripe] Entregar y documentar el módulo Stripe | EPI10 MVP Fase 1` — Cerrar la entrega con configuración, operación, pruebas y responsabilidades entendibles.\n12. `OL4 [Stripe] Emitir y registrar la factura del módulo adicional | EPI10 MVP Fase 1` — Facturar el trabajo separado de Stripe una vez entregado conforme al acuerdo comercial.\n13. `OL4 [Copilot] Cerrar especificación funcional y rúbrica del informe | EPI10 MVP Fase 1` — Dejar una especificación implementable y evaluable del borrador asistido y su revisión humana.\n\n## OL5 — Construcción funcional\n\n* **Periodo:** 2026-09-28 — 2026-10-09\n* **Duración:** 2 semanas\n* **Deadline común:** 2026-10-09\n* **Tareas:** 18\n\n 1. `OL5 [Healthie] Configurar cuenta, organización y preferencias base | EPI10 MVP Fase 1` — Dejar la cuenta real organizada para operar el journey EPI10 con nomenclatura y preferencias consistentes.\n 2. `OL5 [Healthie] Configurar grupos, tags y segmentación operativa | EPI10 MVP Fase 1` — Implementar la segmentación necesaria para onboarding, test, informe entregado e interés futuro.\n 3. `OL5 [Healthie] Configurar ficha de cliente y campos necesarios | EPI10 MVP Fase 1` — Representar en Healthie solo los datos de cliente necesarios para la experiencia y operación.\n 4. `OL5 [Healthie] Implementar consentimientos y formulario principal | EPI10 MVP Fase 1` — Digitalizar las piezas de onboarding que bloquean o habilitan el avance del caso.\n 5. `OL5 [Healthie] Implementar cuestionarios adicionales de Fase 1 | EPI10 MVP Fase 1` — Configurar únicamente los cuestionarios adicionales aprobados para enriquecer el informe.\n 6. `OL5 [Healthie] Configurar subida y gestión de documentos | EPI10 MVP Fase 1` — Permitir que el cliente/equipo aporte documentos aprobados sin recurrir a canales dispersos.\n 7. `OL5 [Healthie] Configurar comunicaciones, emails y notificaciones | EPI10 MVP Fase 1` — Centralizar comunicaciones repetibles de activación, espera, cita, informe y soporte.\n 8. `OL5 [Healthie] Configurar agenda y citas del test | EPI10 MVP Fase 1` — Permitir que el cliente agende la cita cuando el test está disponible, con confirmación y recordatorios.\n 9. `OL5 [Odoo] Implementar modelo de caso EPI10 y pipeline | EPI10 MVP Fase 1` — Crear la entidad/vista operativa que centraliza el seguimiento de cada cliente EPI10.\n10. `OL5 [Odoo] Implementar estados, hitos y checklist operativo | EPI10 MVP Fase 1` — Representar el avance sin convertir cada check en un estado principal ni duplicar Healthie.\n11. `OL5 [Odoo] Implementar tareas automáticas, owners y próximos pasos | EPI10 MVP Fase 1` — Generar acciones operativas claras cuando el caso alcanza hitos relevantes.\n12. `OL5 [Odoo] Implementar vistas, filtros y tablero operativo | EPI10 MVP Fase 1` — Dar al equipo una vista accionable de casos por estado, owner, bloqueo y siguiente acción.\n13. `OL5 [Odoo] Implementar hitos manuales de test y laboratorio | EPI10 MVP Fase 1` — Controlar la logística externa mediante hitos mínimos sin simular una integración TellmeGen inexistente.\n14. `OL5 [Odoo] Implementar documentos, informe y marcadores de entrega | EPI10 MVP Fase 1` — Representar el archivo de origen autorizado, borradores, versión validada y publicación sin convertir Odoo en repositorio genético bruto.\n15. `OL5 [Odoo] Implementar incidencias, bloqueos y cierre del caso | EPI10 MVP Fase 1` — Gestionar excepciones y cerrar el caso solo cuando entrega, notificación y correcciones estén resueltas.\n16. `OL5 [Copilot] Crear estructura base del harness y repositorio | EPI10 MVP Fase 1` — Preparar una base versionada y auditable para ejecutar el flujo asistido del informe.\n17. `OL5 [Copilot] Implementar ingesta y pseudonimización | EPI10 MVP Fase 1` — Preparar inputs autorizados para generación minimizando identificadores y contenido no necesario.\n18. `OL5 [Copilot] Implementar flujo inicial de generación de borradores | EPI10 MVP Fase 1` — Generar uno o varios borradores internos asociados a un caso sin publicarlos al cliente.\n\n## OL6 — Superficies de integración y QA individual\n\n* **Periodo:** 2026-10-12 — 2026-10-23\n* **Duración:** 2 semanas\n* **Deadline común:** 2026-10-23\n* **Tareas:** 14\n\n 1. `OL6 [Healthie] Validar invitación, activación y onboarding | EPI10 MVP Fase 1` — Probar de forma aislada la experiencia completa desde invitación hasta onboarding mínimo completado.\n 2. `OL6 [Healthie] Validar formularios, documentos y agenda | EPI10 MVP Fase 1` — Comprobar que los módulos de experiencia cliente funcionan juntos y respetan permisos.\n 3. `OL6 [Healthie] Configurar soporte post-informe y escalado | EPI10 MVP Fase 1` — Centralizar dudas simples y escalar incidencias que requieren revisión del equipo.\n 4. `OL6 [Healthie] Configurar publicación del informe final | EPI10 MVP Fase 1` — Preparar la superficie donde el cliente recibirá únicamente el informe validado.\n 5. `OL6 [Odoo] Implementar entrada desde web y pago | EPI10 MVP Fase 1` — Crear/actualizar contacto y caso desde un evento de entrada/pago de forma idempotente.\n 6. `OL6 [Odoo] Implementar referencias y sincronización con Healthie | EPI10 MVP Fase 1` — Vincular caso y cliente Healthie y reflejar solo hitos relevantes sin replicar datos clínicos.\n 7. `OL6 [Odoo] Implementar regla de listo para pedir test y tareas asociadas | EPI10 MVP Fase 1` — Activar el paso operativo del test cuando los checks mínimos están completos.\n 8. `OL6 [Odoo] Implementar acción de publicación del informe | EPI10 MVP Fase 1` — Permitir publicar en Healthie únicamente una versión marcada como validada por una persona autorizada.\n 9. `OL6 [Odoo] Validar seguridad, permisos, auditoría y backup | EPI10 MVP Fase 1` — Verificar la configuración Odoo antes de la integración completa.\n10. `OL6 [Copilot] Implementar plantilla, checklist y rúbrica | EPI10 MVP Fase 1` — Convertir la especificación del informe en controles ejecutables de generación y revisión.\n11. `OL6 [Copilot] Configurar agentes, skills y prompts | EPI10 MVP Fase 1` — Separar responsabilidades del proceso de borrador en componentes revisables y mantenibles.\n12. `OL6 [Copilot] Implementar revisión humana y control de versiones | EPI10 MVP Fase 1` — Garantizar que borrador, correcciones y versión final validada no se confundan.\n13. `OL6 [Copilot] Construir dataset de evaluación y ejecutar evals | EPI10 MVP Fase 1` — Medir el comportamiento del Copilot con casos anonimizados y criterios acordados.\n14. `OL6 [Copilot] Configurar logs seguros, errores y retención | EPI10 MVP Fase 1` — Hacer observable y recuperable el flujo sin registrar datos sensibles innecesarios.\n\n## OL7 — Integración completa\n\n* **Periodo:** 2026-10-26 — 2026-11-06\n* **Duración:** 2 semanas\n* **Deadline común:** 2026-11-06\n* **Tareas:** 9\n\n1. `OL7 [INT QA] Integrar alta desde Stripe/web hacia Odoo y Healthie | EPI10 MVP Fase 1` — Conectar el arranque del journey para crear/vincular cliente y caso tras el evento acordado.\n2. `OL7 [INT QA] Integrar onboarding Healthie con hitos Odoo | EPI10 MVP Fase 1` — Traducir activación, consentimiento y formularios completados en hitos operativos mínimos.\n3. `OL7 [INT QA] Integrar preparación y pedido manual del test | EPI10 MVP Fase 1` — Encadenar onboarding completo, regla de listo, tarea del equipo y registro manual de test pedido.\n4. `OL7 [INT QA] Integrar agenda Healthie con estado de cita en Odoo | EPI10 MVP Fase 1` — Reflejar cita elegida, confirmación y cambios relevantes en el caso operativo.\n5. `OL7 [INT QA] Integrar hitos de laboratorio con activación del Copilot | EPI10 MVP Fase 1` — Conectar el tramo manual de laboratorio con la preparación controlada del borrador.\n6. `OL7 [INT QA] Integrar borrador, revisión y aprobación del informe | EPI10 MVP Fase 1` — Vincular generación Copilot, versiones y validación humana con el estado operativo Odoo.\n7. `OL7 [INT QA] Integrar publicación final en Healthie y cierre en Odoo | EPI10 MVP Fase 1` — Entregar el informe validado, notificar al cliente y completar los marcadores de cierre.\n8. `OL7 [INT QA] Implementar idempotencia, reintentos y recuperación | EPI10 MVP Fase 1` — Evitar duplicados y casos perdidos cuando fallan o se repiten eventos entre sistemas.\n9. `OL7 [INT QA] Ejecutar replay end-to-end del caso demo | EPI10 MVP Fase 1` — Recorrer el caso EPI10-DEMO-001 completo para validar journey, operación, Copilot, entrega y recuperación.\n\n## OL8 — Cierre técnico del MVP\n\n* **Periodo:** 2026-11-09 — 2026-11-13\n* **Duración:** 1 semana\n* **Deadline común:** 2026-11-13\n* **Tareas:** 7\n\n1. `OL8 [INT QA] Ejecutar regresión consolidada y corregir bloqueos | EPI10 MVP Fase 1` — Revalidar los flujos críticos después del replay y cerrar defectos bloqueantes del MVP.\n2. `OL8 [INT QA] Completar QA de seguridad, privacidad y datos sensibles | EPI10 MVP Fase 1` — Realizar el gate final sobre permisos, datos, logs, documentos, secretos y revisión humana.\n3. `OL8 [INT QA] Cerrar documentación técnica, runbook y evidencias | EPI10 MVP Fase 1` — Dejar el MVP comprensible, operable y recuperable para el equipo que realizará la demo y el handoff posterior.\n4. `OL8 [PM] Cerrar blockers y pendientes imprescindibles del MVP | EPI10 MVP Fase 1` — Revisar el tablero final y asegurar que ningún bloqueo imprescindible queda oculto o sin decisión.\n5. `OL8 [PM] Consolidar release notes y paquete de aceptación | EPI10 MVP Fase 1` — Sintetizar qué se ha construido, probado, limitado y dejado preparado para la demo.\n6. `OL8 [PM] Preparar guion, datos y entorno de demo del MVP | EPI10 MVP Fase 1` — Dejar lista una demo coherente que muestre valor y trazabilidad sin depender de datos reales ni pasos improvisados.\n7. `OL8 [PM] Realizar go-no-go interno y declarar MVP listo para demo | EPI10 MVP Fase 1` — Tomar la decisión interna final sobre la preparación técnica del MVP para la demo de cierre.\n\n## Hito final\n\nMVP listo para demo · 13 de noviembre de 2026.",
+      "icon": null,
+      "color": null,
+      "url": "https://linear.app/skilland/document/02-epi10-salud-mvp-fase-1-roadmap-cronologico-por-oleadas-2f1b0de81adf",
+      "slugId": "2f1b0de81adf",
+      "createdAt": "2026-09-07T05:11:57.556Z",
+      "updatedAt": "2026-09-07T05:11:58.210Z",
+      "archivedAt": null,
+      "creator": {
+        "id": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+        "name": "Raúl"
+      },
+      "updatedBy": {
+        "id": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+        "name": "Raúl"
+      },
+      "project": {
+        "id": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+        "name": "EPI10 Salud MVP"
+      },
+      "initiative": null,
+      "team": null,
+      "issue": null
+    }
+  ],
+  "issues": {
+    "issues": [
+      {
+        "id": "SKI-33",
+        "uuid": "fec94dac-b2f3-4464-aadf-e4e233bd6589",
+        "title": "Coordinar sesión técnica con el mantenedor de Odoo",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "In Progress",
+        "statusType": "started",
+        "url": "https://linear.app/skilland/issue/SKI-33/coordinar-sesion-tecnica-con-el-mantenedor-de-odoo",
+        "dueDate": "2026-09-11",
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:13:34.724Z",
+        "updatedAt": "2026-09-10T23:55:24.481Z"
+      },
+      {
+        "id": "SKI-26",
+        "uuid": "e2e35bb5-ed44-4e44-95e2-b6e42a7bf08f",
+        "title": "Definir alcance funcional del mockup de cobro",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-26/definir-alcance-funcional-del-mockup-de-cobro",
+        "dueDate": "2026-09-11",
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:12:57.140Z",
+        "updatedAt": "2026-09-10T23:55:22.604Z"
+      },
+      {
+        "id": "SKI-30",
+        "uuid": "99de6ed4-9822-4310-a3a0-dfa348eddb31",
+        "title": "Solicitar cotización Enterprise y Mobile White Label",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "In Progress",
+        "statusType": "started",
+        "url": "https://linear.app/skilland/issue/SKI-30/solicitar-cotizacion-enterprise-y-mobile-white-label",
+        "dueDate": "2026-09-11",
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:13:32.963Z",
+        "updatedAt": "2026-09-10T23:55:16.659Z"
+      },
+      {
+        "id": "SKI-28",
+        "uuid": "87f30bb8-97e5-440d-b48f-9a7fb833ca15",
+        "title": "Preparar entorno Stripe de pruebas de Skilland",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-28/preparar-entorno-stripe-de-pruebas-de-skilland",
+        "dueDate": "2026-09-11",
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:13:31.142Z",
+        "updatedAt": "2026-09-10T23:55:15.307Z"
+      },
+      {
+        "id": "SKI-27",
+        "uuid": "7b00ef89-91b0-4fa1-a992-e3c59bce2b7c",
+        "title": "Inventariar escenarios y reglas de pago",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-27/inventariar-escenarios-y-reglas-de-pago",
+        "dueDate": "2026-09-11",
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:13:30.301Z",
+        "updatedAt": "2026-09-10T23:55:14.215Z"
+      },
+      {
+        "id": "SKI-32",
+        "uuid": "73deb45b-217a-465a-b842-59176bd2cf62",
+        "title": "Solicitar ficha técnica y accesos del entorno actual",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "In Progress",
+        "statusType": "started",
+        "url": "https://linear.app/skilland/issue/SKI-32/solicitar-ficha-tecnica-y-accesos-del-entorno-actual",
+        "dueDate": "2026-09-11",
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:13:34.192Z",
+        "updatedAt": "2026-09-10T23:55:13.802Z"
+      },
+      {
+        "id": "SKI-29",
+        "uuid": "4fed5f6a-8646-4064-ade5-21640a6091d7",
+        "title": "Coordinar contratación inicial del plan Group",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "In Progress",
+        "statusType": "started",
+        "url": "https://linear.app/skilland/issue/SKI-29/coordinar-contratacion-inicial-del-plan-group",
+        "dueDate": "2026-09-11",
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:13:32.199Z",
+        "updatedAt": "2026-09-10T23:55:10.369Z"
+      },
+      {
+        "id": "SKI-31",
+        "uuid": "401ea2c9-b1da-4912-9ba7-30bc3de9fa3e",
+        "title": "Ordenar accesos, owners y soporte de contratación",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "In Progress",
+        "statusType": "started",
+        "url": "https://linear.app/skilland/issue/SKI-31/ordenar-accesos-owners-y-soporte-de-contratacion",
+        "dueDate": "2026-09-11",
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:13:33.631Z",
+        "updatedAt": "2026-09-10T23:55:09.034Z"
+      },
+      {
+        "id": "SKI-1",
+        "uuid": "215cdc02-4bd9-49d4-9546-7adbd93682e7",
+        "title": "Consolidar fuentes vigentes y baseline del journey",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "In Progress",
+        "statusType": "started",
+        "url": "https://linear.app/skilland/issue/SKI-1/consolidar-fuentes-vigentes-y-baseline-del-journey",
+        "assignee": "Raúl",
+        "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+        "dueDate": "2026-09-11",
+        "archivedAt": null,
+        "createdAt": "2026-09-02T11:47:36.760Z",
+        "updatedAt": "2026-09-10T23:55:05.741Z"
+      },
+      {
+        "id": "SKI-35",
+        "uuid": "981548e5-3b16-431a-bc5a-64e60e1aee9b",
+        "title": "Preparar discovery operativo del informe con Aitor",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "Done",
+        "statusType": "completed",
+        "url": "https://linear.app/skilland/issue/SKI-35/preparar-discovery-operativo-del-informe-con-aitor",
+        "dueDate": null,
+        "archivedAt": "2026-09-07T05:32:58.092Z",
+        "createdAt": "2026-09-07T05:13:36.306Z",
+        "updatedAt": "2026-09-07T05:32:38.381Z"
+      },
+      {
+        "id": "SKI-130",
+        "uuid": "92b54f26-3c58-4d96-ae27-7e79bab7d1d0",
+        "title": "Realizar go-no-go interno y declarar MVP listo para demo",
+        "projectMilestone": {
+          "id": "c07f086b-1a16-461a-aaf6-44dae0d4c52e",
+          "name": "OL8 - Cierre técnico del MVP"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-130/realizar-go-no-go-interno-y-declarar-mvp-listo-para-demo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:19:09.533Z",
+        "updatedAt": "2026-09-07T05:19:10.203Z"
+      },
+      {
+        "id": "SKI-129",
+        "uuid": "60babb51-9f72-4a00-8d69-7b34a7dba3de",
+        "title": "Preparar guion, datos y entorno de demo del MVP",
+        "projectMilestone": {
+          "id": "c07f086b-1a16-461a-aaf6-44dae0d4c52e",
+          "name": "OL8 - Cierre técnico del MVP"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-129/preparar-guion-datos-y-entorno-de-demo-del-mvp",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:19:08.117Z",
+        "updatedAt": "2026-09-07T05:19:08.793Z"
+      },
+      {
+        "id": "SKI-128",
+        "uuid": "c23a72bb-2323-4825-ad97-27ccff7bb263",
+        "title": "Consolidar release notes y paquete de aceptación",
+        "projectMilestone": {
+          "id": "c07f086b-1a16-461a-aaf6-44dae0d4c52e",
+          "name": "OL8 - Cierre técnico del MVP"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-128/consolidar-release-notes-y-paquete-de-aceptacion",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:19:07.296Z",
+        "updatedAt": "2026-09-07T05:19:07.558Z"
+      },
+      {
+        "id": "SKI-127",
+        "uuid": "f20ad459-a2f6-428e-9eef-eb2f5bfbd7d1",
+        "title": "Cerrar blockers y pendientes imprescindibles del MVP",
+        "projectMilestone": {
+          "id": "c07f086b-1a16-461a-aaf6-44dae0d4c52e",
+          "name": "OL8 - Cierre técnico del MVP"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-127/cerrar-blockers-y-pendientes-imprescindibles-del-mvp",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:19:04.868Z",
+        "updatedAt": "2026-09-07T05:19:05.280Z"
+      },
+      {
+        "id": "SKI-126",
+        "uuid": "eedaff45-d9e5-4b23-9cd5-8dca74d2d8d4",
+        "title": "Cerrar documentación técnica, runbook y evidencias",
+        "projectMilestone": {
+          "id": "c07f086b-1a16-461a-aaf6-44dae0d4c52e",
+          "name": "OL8 - Cierre técnico del MVP"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-126/cerrar-documentacion-tecnica-runbook-y-evidencias",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:19:03.768Z",
+        "updatedAt": "2026-09-07T05:19:03.983Z"
+      },
+      {
+        "id": "SKI-125",
+        "uuid": "b844ed8f-5933-406e-a597-71e32401d344",
+        "title": "Completar QA de seguridad, privacidad y datos sensibles",
+        "projectMilestone": {
+          "id": "c07f086b-1a16-461a-aaf6-44dae0d4c52e",
+          "name": "OL8 - Cierre técnico del MVP"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-125/completar-qa-de-seguridad-privacidad-y-datos-sensibles",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:19:02.486Z",
+        "updatedAt": "2026-09-07T05:19:02.762Z"
+      },
+      {
+        "id": "SKI-124",
+        "uuid": "42e5ee58-59c2-49f8-a62b-4cf0b248b74b",
+        "title": "Ejecutar regresión consolidada y corregir bloqueos",
+        "projectMilestone": {
+          "id": "c07f086b-1a16-461a-aaf6-44dae0d4c52e",
+          "name": "OL8 - Cierre técnico del MVP"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-124/ejecutar-regresion-consolidada-y-corregir-bloqueos",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:19:00.519Z",
+        "updatedAt": "2026-09-07T05:19:01.680Z"
+      },
+      {
+        "id": "SKI-123",
+        "uuid": "7cc34a5d-de99-451a-b55f-5d909d58bf68",
+        "title": "Ejecutar replay end-to-end del caso demo",
+        "projectMilestone": {
+          "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+          "name": "OL7 - Integración completa"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-123/ejecutar-replay-end-to-end-del-caso-demo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:18:33.367Z",
+        "updatedAt": "2026-09-07T05:18:33.764Z"
+      },
+      {
+        "id": "SKI-122",
+        "uuid": "d311c515-43b8-44bd-bcb1-3eeb9a857b21",
+        "title": "Implementar idempotencia, reintentos y recuperación",
+        "projectMilestone": {
+          "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+          "name": "OL7 - Integración completa"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-122/implementar-idempotencia-reintentos-y-recuperacion",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:18:31.839Z",
+        "updatedAt": "2026-09-07T05:18:32.613Z"
+      },
+      {
+        "id": "SKI-121",
+        "uuid": "2c796603-c694-4f4b-be47-0c842a8d2626",
+        "title": "Integrar publicación final en Healthie y cierre en Odoo",
+        "projectMilestone": {
+          "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+          "name": "OL7 - Integración completa"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-121/integrar-publicacion-final-en-healthie-y-cierre-en-odoo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:18:30.351Z",
+        "updatedAt": "2026-09-07T05:18:30.631Z"
+      },
+      {
+        "id": "SKI-120",
+        "uuid": "f532c42b-afc4-49ea-b691-a50edfd2a359",
+        "title": "Integrar borrador, revisión y aprobación del informe",
+        "projectMilestone": {
+          "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+          "name": "OL7 - Integración completa"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-120/integrar-borrador-revision-y-aprobacion-del-informe",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:18:28.450Z",
+        "updatedAt": "2026-09-07T05:18:28.982Z"
+      },
+      {
+        "id": "SKI-119",
+        "uuid": "983e8cf3-8e21-49a9-95af-7d89ba2c4629",
+        "title": "Integrar hitos de laboratorio con activación del Copilot",
+        "projectMilestone": {
+          "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+          "name": "OL7 - Integración completa"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-119/integrar-hitos-de-laboratorio-con-activacion-del-copilot",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:18:27.377Z",
+        "updatedAt": "2026-09-07T05:18:27.710Z"
+      },
+      {
+        "id": "SKI-118",
+        "uuid": "4225f20e-3d03-41bb-96ad-55ac741787ec",
+        "title": "Integrar agenda Healthie con estado de cita en Odoo",
+        "projectMilestone": {
+          "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+          "name": "OL7 - Integración completa"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-118/integrar-agenda-healthie-con-estado-de-cita-en-odoo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:18:26.595Z",
+        "updatedAt": "2026-09-07T05:18:26.905Z"
+      },
+      {
+        "id": "SKI-117",
+        "uuid": "3748557b-b931-4685-9da3-ec911b34f2e3",
+        "title": "Integrar preparación y pedido manual del test",
+        "projectMilestone": {
+          "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+          "name": "OL7 - Integración completa"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-117/integrar-preparacion-y-pedido-manual-del-test",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:18:25.206Z",
+        "updatedAt": "2026-09-07T05:18:25.444Z"
+      },
+      {
+        "id": "SKI-116",
+        "uuid": "0f5a933a-3474-422e-b201-fb1adcc4e2da",
+        "title": "Integrar onboarding Healthie con hitos Odoo",
+        "projectMilestone": {
+          "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+          "name": "OL7 - Integración completa"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-116/integrar-onboarding-healthie-con-hitos-odoo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:18:24.386Z",
+        "updatedAt": "2026-09-07T05:18:24.615Z"
+      },
+      {
+        "id": "SKI-115",
+        "uuid": "02850357-5518-44b6-a3c2-96077e3f00a7",
+        "title": "Integrar alta desde Stripe/web hacia Odoo y Healthie",
+        "projectMilestone": {
+          "id": "eb0e1016-d3f4-485f-8a8b-0db95dd377a7",
+          "name": "OL7 - Integración completa"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-115/integrar-alta-desde-stripeweb-hacia-odoo-y-healthie",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:18:23.526Z",
+        "updatedAt": "2026-09-07T05:18:23.781Z"
+      },
+      {
+        "id": "SKI-114",
+        "uuid": "e2a13480-587b-416a-b818-b07798e682dd",
+        "title": "Configurar logs seguros, errores y retención",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-114/configurar-logs-seguros-errores-y-retencion",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:55.306Z",
+        "updatedAt": "2026-09-07T05:17:55.602Z"
+      },
+      {
+        "id": "SKI-113",
+        "uuid": "d90d8c56-1e7e-474f-aa87-29e7f521e3e0",
+        "title": "Construir dataset de evaluación y ejecutar evals",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-113/construir-dataset-de-evaluacion-y-ejecutar-evals",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:54.192Z",
+        "updatedAt": "2026-09-07T05:17:54.447Z"
+      },
+      {
+        "id": "SKI-112",
+        "uuid": "b22e2147-10c7-410d-a9fa-eab1393a8cb5",
+        "title": "Implementar revisión humana y control de versiones",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-112/implementar-revision-humana-y-control-de-versiones",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:53.236Z",
+        "updatedAt": "2026-09-07T05:17:53.555Z"
+      },
+      {
+        "id": "SKI-111",
+        "uuid": "bfcd2b79-21b3-4754-b705-1a8a8cc8ea6b",
+        "title": "Configurar agentes, skills y prompts",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-111/configurar-agentes-skills-y-prompts",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:52.443Z",
+        "updatedAt": "2026-09-07T05:17:52.666Z"
+      },
+      {
+        "id": "SKI-110",
+        "uuid": "4a30990b-a1a2-473f-b1dc-f44a6177940a",
+        "title": "Implementar plantilla, checklist y rúbrica",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-110/implementar-plantilla-checklist-y-rubrica",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:51.637Z",
+        "updatedAt": "2026-09-07T05:17:51.908Z"
+      },
+      {
+        "id": "SKI-109",
+        "uuid": "73bf1eaf-2f3d-4161-97bb-8140a0708961",
+        "title": "Validar seguridad, permisos, auditoría y backup",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-109/validar-seguridad-permisos-auditoria-y-backup",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:49.109Z",
+        "updatedAt": "2026-09-07T05:17:49.667Z"
+      },
+      {
+        "id": "SKI-108",
+        "uuid": "db619704-0157-40f2-9fdd-3c620650e8c9",
+        "title": "Implementar acción de publicación del informe",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-108/implementar-accion-de-publicacion-del-informe",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:47.939Z",
+        "updatedAt": "2026-09-07T05:17:48.201Z"
+      },
+      {
+        "id": "SKI-107",
+        "uuid": "f3ca80c6-7f7f-46a6-a765-c82ed075e1ef",
+        "title": "Implementar regla de listo para pedir test y tareas asociadas",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-107/implementar-regla-de-listo-para-pedir-test-y-tareas-asociadas",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:47.057Z",
+        "updatedAt": "2026-09-07T05:17:47.282Z"
+      },
+      {
+        "id": "SKI-106",
+        "uuid": "2224e0c4-0820-4cde-8346-231058573124",
+        "title": "Implementar referencias y sincronización con Healthie",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-106/implementar-referencias-y-sincronizacion-con-healthie",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:45.979Z",
+        "updatedAt": "2026-09-07T05:17:46.278Z"
+      },
+      {
+        "id": "SKI-105",
+        "uuid": "3d590737-ae59-4380-8c38-4496326db4c2",
+        "title": "Implementar entrada desde web y pago",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-105/implementar-entrada-desde-web-y-pago",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:45.165Z",
+        "updatedAt": "2026-09-07T05:17:45.386Z"
+      },
+      {
+        "id": "SKI-104",
+        "uuid": "1c4ecd7e-7f67-473e-9062-7cebfd0b5d67",
+        "title": "Configurar publicación del informe final",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-104/configurar-publicacion-del-informe-final",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:44.414Z",
+        "updatedAt": "2026-09-07T05:17:44.622Z"
+      },
+      {
+        "id": "SKI-103",
+        "uuid": "696ece66-a4cc-4858-9114-bc1b8b98bc25",
+        "title": "Configurar soporte post-informe y escalado",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-103/configurar-soporte-post-informe-y-escalado",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:43.277Z",
+        "updatedAt": "2026-09-07T05:17:43.518Z"
+      },
+      {
+        "id": "SKI-102",
+        "uuid": "b97973a3-8bb4-435d-b7bf-deb917ca2cd2",
+        "title": "Validar formularios, documentos y agenda",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-102/validar-formularios-documentos-y-agenda",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:42.552Z",
+        "updatedAt": "2026-09-07T05:17:42.773Z"
+      },
+      {
+        "id": "SKI-101",
+        "uuid": "61e49ced-9e5f-4b40-b704-de0db8835260",
+        "title": "Validar invitación, activación y onboarding",
+        "projectMilestone": {
+          "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+          "name": "OL6 - Superficies de integración y QA individual"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-101/validar-invitacion-activacion-y-onboarding",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:41.530Z",
+        "updatedAt": "2026-09-07T05:17:41.983Z"
+      },
+      {
+        "id": "SKI-100",
+        "uuid": "5c9ef521-2b73-4a9c-a91c-0afb015a5791",
+        "title": "Implementar flujo inicial de generación de borradores",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-100/implementar-flujo-inicial-de-generacion-de-borradores",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:10.891Z",
+        "updatedAt": "2026-09-07T05:17:11.121Z"
+      },
+      {
+        "id": "SKI-99",
+        "uuid": "6709c39a-950e-491e-bdf7-1148f73c8063",
+        "title": "Implementar ingesta y pseudonimización",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-99/implementar-ingesta-y-pseudonimizacion",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:09.448Z",
+        "updatedAt": "2026-09-07T05:17:10.338Z"
+      },
+      {
+        "id": "SKI-98",
+        "uuid": "1902c980-5a89-4119-9c9e-b0a5f0ec0122",
+        "title": "Crear estructura base del harness y repositorio",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-98/crear-estructura-base-del-harness-y-repositorio",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:08.314Z",
+        "updatedAt": "2026-09-07T05:17:08.514Z"
+      },
+      {
+        "id": "SKI-97",
+        "uuid": "ff65f734-e69a-4d48-93c0-eafa633985a6",
+        "title": "Implementar incidencias, bloqueos y cierre del caso",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-97/implementar-incidencias-bloqueos-y-cierre-del-caso",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:07.167Z",
+        "updatedAt": "2026-09-07T05:17:07.410Z"
+      },
+      {
+        "id": "SKI-96",
+        "uuid": "495c167e-46d1-42b2-a74a-f448c9dcade5",
+        "title": "Implementar documentos, informe y marcadores de entrega",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-96/implementar-documentos-informe-y-marcadores-de-entrega",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:06.196Z",
+        "updatedAt": "2026-09-07T05:17:06.414Z"
+      },
+      {
+        "id": "SKI-95",
+        "uuid": "1be8cee9-d7a6-4cb6-898e-acb3d2c31a0b",
+        "title": "Implementar hitos manuales de test y laboratorio",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-95/implementar-hitos-manuales-de-test-y-laboratorio",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:04.866Z",
+        "updatedAt": "2026-09-07T05:17:05.191Z"
+      },
+      {
+        "id": "SKI-94",
+        "uuid": "3bdfe03f-e76f-4719-8e67-1d2cf0ffd2a8",
+        "title": "Implementar vistas, filtros y tablero operativo",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-94/implementar-vistas-filtros-y-tablero-operativo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:02.650Z",
+        "updatedAt": "2026-09-07T05:17:03.497Z"
+      },
+      {
+        "id": "SKI-93",
+        "uuid": "982e0755-1748-4abe-97d2-dac3dc31fce2",
+        "title": "Implementar tareas automáticas, owners y próximos pasos",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-93/implementar-tareas-automaticas-owners-y-proximos-pasos",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:01.708Z",
+        "updatedAt": "2026-09-07T05:17:01.964Z"
+      },
+      {
+        "id": "SKI-92",
+        "uuid": "2f5d40d3-b878-4153-a2e2-a2d1f1467d46",
+        "title": "Implementar estados, hitos y checklist operativo",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-92/implementar-estados-hitos-y-checklist-operativo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:17:00.257Z",
+        "updatedAt": "2026-09-07T05:17:00.571Z"
+      },
+      {
+        "id": "SKI-91",
+        "uuid": "8fca2929-6a91-4d7a-b248-28f0e5a469a3",
+        "title": "Implementar modelo de caso EPI10 y pipeline",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-91/implementar-modelo-de-caso-epi10-y-pipeline",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:59.034Z",
+        "updatedAt": "2026-09-07T05:16:59.238Z"
+      },
+      {
+        "id": "SKI-90",
+        "uuid": "9c77fe23-3f93-4f5e-b406-a7405af61a29",
+        "title": "Configurar agenda y citas del test",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-90/configurar-agenda-y-citas-del-test",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:58.019Z",
+        "updatedAt": "2026-09-07T05:16:58.468Z"
+      },
+      {
+        "id": "SKI-89",
+        "uuid": "d56cf24d-3cb4-489a-b93d-331cb2367381",
+        "title": "Configurar comunicaciones, emails y notificaciones",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-89/configurar-comunicaciones-emails-y-notificaciones",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:56.719Z",
+        "updatedAt": "2026-09-07T05:16:56.972Z"
+      },
+      {
+        "id": "SKI-88",
+        "uuid": "2862a797-377b-41bc-b5dc-14a3af08ffec",
+        "title": "Configurar subida y gestión de documentos",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-88/configurar-subida-y-gestion-de-documentos",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:55.274Z",
+        "updatedAt": "2026-09-07T05:16:55.564Z"
+      },
+      {
+        "id": "SKI-87",
+        "uuid": "5b9262cb-ede5-4f46-80c3-7151f209d635",
+        "title": "Implementar cuestionarios adicionales de Fase 1",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-87/implementar-cuestionarios-adicionales-de-fase-1",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:53.805Z",
+        "updatedAt": "2026-09-07T05:16:54.567Z"
+      },
+      {
+        "id": "SKI-86",
+        "uuid": "2632e28d-3be0-499b-9012-efa773a7fd40",
+        "title": "Implementar consentimientos y formulario principal",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-86/implementar-consentimientos-y-formulario-principal",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:52.952Z",
+        "updatedAt": "2026-09-07T05:16:53.257Z"
+      },
+      {
+        "id": "SKI-85",
+        "uuid": "ea911e15-6fc6-4387-8b27-0b29b7768131",
+        "title": "Configurar ficha de cliente y campos necesarios",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-85/configurar-ficha-de-cliente-y-campos-necesarios",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:52.020Z",
+        "updatedAt": "2026-09-07T05:16:52.373Z"
+      },
+      {
+        "id": "SKI-84",
+        "uuid": "77786e00-5d7d-4fb4-b960-775601aec63a",
+        "title": "Configurar grupos, tags y segmentación operativa",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-84/configurar-grupos-tags-y-segmentacion-operativa",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:51.215Z",
+        "updatedAt": "2026-09-07T05:16:51.522Z"
+      },
+      {
+        "id": "SKI-83",
+        "uuid": "7936a9a5-080e-4121-8636-9b29351a10a5",
+        "title": "Configurar cuenta, organización y preferencias base",
+        "projectMilestone": {
+          "id": "debcfedd-2e22-45fc-b050-4109d887a8dd",
+          "name": "OL5 - Construcción funcional"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-83/configurar-cuenta-organizacion-y-preferencias-base",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:50.200Z",
+        "updatedAt": "2026-09-07T05:16:50.477Z"
+      },
+      {
+        "id": "SKI-82",
+        "uuid": "e8d53fee-b114-4425-9ed3-183e3c7f3b4d",
+        "title": "Cerrar especificación funcional y rúbrica del informe",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-82/cerrar-especificacion-funcional-y-rubrica-del-informe",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:21.504Z",
+        "updatedAt": "2026-09-07T05:16:21.748Z"
+      },
+      {
+        "id": "SKI-81",
+        "uuid": "8c66f70c-fce1-44db-9817-e88b4cc2df70",
+        "title": "Emitir y registrar la factura del módulo adicional",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-81/emitir-y-registrar-la-factura-del-modulo-adicional",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:20.701Z",
+        "updatedAt": "2026-09-07T05:16:20.937Z"
+      },
+      {
+        "id": "SKI-80",
+        "uuid": "2e4dcadd-4334-4d3e-9008-47f04e88ff82",
+        "title": "Entregar y documentar el módulo Stripe",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-80/entregar-y-documentar-el-modulo-stripe",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:19.937Z",
+        "updatedAt": "2026-09-07T05:16:20.186Z"
+      },
+      {
+        "id": "SKI-79",
+        "uuid": "f04f4b6d-c01e-4580-be2b-bec2a88456bf",
+        "title": "Ejecutar pruebas de aceptación en EPI10",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-79/ejecutar-pruebas-de-aceptacion-en-epi10",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:19.144Z",
+        "updatedAt": "2026-09-07T05:16:19.359Z"
+      },
+      {
+        "id": "SKI-78",
+        "uuid": "a8279848-79e9-422e-a7d7-41f144bacd89",
+        "title": "Configurar credenciales, enlaces y webhooks del entorno EPI10",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-78/configurar-credenciales-enlaces-y-webhooks-del-entorno-epi10",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:18.292Z",
+        "updatedAt": "2026-09-07T05:16:18.625Z"
+      },
+      {
+        "id": "SKI-77",
+        "uuid": "a427f048-9a8b-410f-b7ad-241249a1aa22",
+        "title": "Replicar catálogo y configuración en EPI10",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-77/replicar-catalogo-y-configuracion-en-epi10",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:17.513Z",
+        "updatedAt": "2026-09-07T05:16:17.768Z"
+      },
+      {
+        "id": "SKI-76",
+        "uuid": "dc8ca1a9-3ec3-477e-9d59-390c68b1bd99",
+        "title": "Acompañar alta y verificación de la cuenta EPI10",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-76/acompanar-alta-y-verificacion-de-la-cuenta-epi10",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:15.622Z",
+        "updatedAt": "2026-09-07T05:16:16.071Z"
+      },
+      {
+        "id": "SKI-75",
+        "uuid": "7f5354d3-67cc-41d4-8109-ccf56672c768",
+        "title": "Incorporar feedback aprobado",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-75/incorporar-feedback-aprobado",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:13.828Z",
+        "updatedAt": "2026-09-07T05:16:14.051Z"
+      },
+      {
+        "id": "SKI-74",
+        "uuid": "642db799-e483-47aa-87f2-e145b6fdb714",
+        "title": "Presentar mockup a Carmen y solicitar feedback",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-74/presentar-mockup-a-carmen-y-solicitar-feedback",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:12.703Z",
+        "updatedAt": "2026-09-07T05:16:13.373Z"
+      },
+      {
+        "id": "SKI-73",
+        "uuid": "a98734b5-f426-4afc-97b8-713dff094ac9",
+        "title": "Revisar internamente el mockup completo",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-73/revisar-internamente-el-mockup-completo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:10.428Z",
+        "updatedAt": "2026-09-07T05:16:11.155Z"
+      },
+      {
+        "id": "SKI-72",
+        "uuid": "d6d7377c-2e9d-42ad-94d1-44dbbae7fab6",
+        "title": "Cerrar contratos de datos e integración",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-72/cerrar-contratos-de-datos-e-integracion",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:09.246Z",
+        "updatedAt": "2026-09-07T05:16:09.454Z"
+      },
+      {
+        "id": "SKI-71",
+        "uuid": "cd59fb34-e6a2-4fcc-ae90-9f38946347e1",
+        "title": "Redactar specs ejecutables de Odoo",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-71/redactar-specs-ejecutables-de-odoo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:08.044Z",
+        "updatedAt": "2026-09-07T05:16:08.507Z"
+      },
+      {
+        "id": "SKI-70",
+        "uuid": "398ded64-d091-4698-8f3a-0e81b773f183",
+        "title": "Redactar specs ejecutables de Healthie",
+        "projectMilestone": {
+          "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+          "name": "OL4 - Specs y cierre de Stripe"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-70/redactar-specs-ejecutables-de-healthie",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:16:06.926Z",
+        "updatedAt": "2026-09-07T05:16:07.178Z"
+      },
+      {
+        "id": "SKI-69",
+        "uuid": "95aa5113-5f46-4d48-bf81-35a7cbfd3392",
+        "title": "Definir excepciones y recuperación manual del journey",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-69/definir-excepciones-y-recuperacion-manual-del-journey",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:29.800Z",
+        "updatedAt": "2026-09-07T05:15:30.221Z"
+      },
+      {
+        "id": "SKI-68",
+        "uuid": "62ff1729-e829-4427-9bfa-3e55556fb15c",
+        "title": "Celebrar checkpoint de alineación y desbloqueo",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-68/celebrar-checkpoint-de-alineacion-y-desbloqueo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:28.486Z",
+        "updatedAt": "2026-09-07T05:15:28.989Z"
+      },
+      {
+        "id": "SKI-67",
+        "uuid": "4db8d6e7-4d5d-4438-8c7d-971ead8e4587",
+        "title": "Definir inputs, outputs y límites del Copilot",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-67/definir-inputs-outputs-y-limites-del-copilot",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:27.507Z",
+        "updatedAt": "2026-09-07T05:15:27.934Z"
+      },
+      {
+        "id": "SKI-66",
+        "uuid": "301cc0a6-9ad9-44ed-bf01-74942495bf13",
+        "title": "Sintetizar discovery y decisiones del informe",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-66/sintetizar-discovery-y-decisiones-del-informe",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:26.640Z",
+        "updatedAt": "2026-09-07T05:15:26.871Z"
+      },
+      {
+        "id": "SKI-65",
+        "uuid": "787c8227-d642-4f90-a0a6-160930b3f5c9",
+        "title": "Validar estrategia de configuración y módulos custom mínimos",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-65/validar-estrategia-de-configuracion-y-modulos-custom-minimos",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:25.807Z",
+        "updatedAt": "2026-09-07T05:15:26.111Z"
+      },
+      {
+        "id": "SKI-64",
+        "uuid": "e681c249-fe50-4cad-b7f2-4e04e42c496b",
+        "title": "Crear entorno seguro de desarrollo",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-64/crear-entorno-seguro-de-desarrollo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:25.095Z",
+        "updatedAt": "2026-09-07T05:15:25.337Z"
+      },
+      {
+        "id": "SKI-63",
+        "uuid": "d80523fa-cf7e-445a-9e2f-90313e93760a",
+        "title": "Prototipar invitación y onboarding inicial",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-63/prototipar-invitacion-y-onboarding-inicial",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:24.300Z",
+        "updatedAt": "2026-09-07T05:15:24.544Z"
+      },
+      {
+        "id": "SKI-62",
+        "uuid": "baf347fc-81f3-4432-8c53-de5b2e658ecb",
+        "title": "Definir roles y permisos del entorno",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-62/definir-roles-y-permisos-del-entorno",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:22.280Z",
+        "updatedAt": "2026-09-07T05:15:22.725Z"
+      },
+      {
+        "id": "SKI-61",
+        "uuid": "012550cf-f1b4-44eb-9ff4-34b159e0789f",
+        "title": "Configurar branding base, idioma y experiencia de entrada",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-61/configurar-branding-base-idioma-y-experiencia-de-entrada",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:21.310Z",
+        "updatedAt": "2026-09-07T05:15:21.777Z"
+      },
+      {
+        "id": "SKI-60",
+        "uuid": "1ea9a38a-6df1-4f10-b362-18dbf071f225",
+        "title": "Crear estructura demo de grupos, tags y clientes",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-60/crear-estructura-demo-de-grupos-tags-y-clientes",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:20.178Z",
+        "updatedAt": "2026-09-07T05:15:20.385Z"
+      },
+      {
+        "id": "SKI-59",
+        "uuid": "85eca6d2-0298-463f-98b3-70a6f4ebd3cf",
+        "title": "Clasificar datos, documentos y ubicaciones permitidas",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-59/clasificar-datos-documentos-y-ubicaciones-permitidas",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:19.228Z",
+        "updatedAt": "2026-09-07T05:15:19.463Z"
+      },
+      {
+        "id": "SKI-58",
+        "uuid": "71b6d274-08d7-46b2-b047-3fd4a917039a",
+        "title": "Asignar responsabilidades entre Stripe, Healthie, Odoo y Copilot",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-58/asignar-responsabilidades-entre-stripe-healthie-odoo-y-copilot",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:18.039Z",
+        "updatedAt": "2026-09-07T05:15:18.278Z"
+      },
+      {
+        "id": "SKI-57",
+        "uuid": "ddf4f259-72c1-4838-9109-453b809d88d8",
+        "title": "Definir campos, IDs y referencias mínimas",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-57/definir-campos-ids-y-referencias-minimas",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:16.704Z",
+        "updatedAt": "2026-09-07T05:15:17.070Z"
+      },
+      {
+        "id": "SKI-56",
+        "uuid": "164c8ba6-b1ec-49ca-9647-c063e2345913",
+        "title": "Definir modelo operativo y próximos pasos",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-56/definir-modelo-operativo-y-proximos-pasos",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:15.867Z",
+        "updatedAt": "2026-09-07T05:15:16.078Z"
+      },
+      {
+        "id": "SKI-55",
+        "uuid": "23991000-fa49-42d7-b696-2fef4e05277a",
+        "title": "Definir estados, hitos y transiciones del caso",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-55/definir-estados-hitos-y-transiciones-del-caso",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:14.615Z",
+        "updatedAt": "2026-09-07T05:15:14.937Z"
+      },
+      {
+        "id": "SKI-54",
+        "uuid": "ae6a21df-09ea-43b7-8fa4-9eee152755eb",
+        "title": "Congelar journey MVP end-to-end",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-54/congelar-journey-mvp-end-to-end",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:10.929Z",
+        "updatedAt": "2026-09-07T05:15:12.410Z"
+      },
+      {
+        "id": "SKI-53",
+        "uuid": "a9921c7a-9091-40fa-9fa1-1a185b1c1106",
+        "title": "Preparar evidencia y guion de demo para Carmen",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-53/preparar-evidencia-y-guion-de-demo-para-carmen",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:09.408Z",
+        "updatedAt": "2026-09-07T05:15:09.626Z"
+      },
+      {
+        "id": "SKI-52",
+        "uuid": "09924f05-08c2-401c-812f-e325176be0cc",
+        "title": "Ejecutar pruebas funcionales del mockup",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-52/ejecutar-pruebas-funcionales-del-mockup",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:07.947Z",
+        "updatedAt": "2026-09-07T05:15:08.202Z"
+      },
+      {
+        "id": "SKI-51",
+        "uuid": "7bb7bcac-6d1e-431d-8baa-d5542e924e42",
+        "title": "Preparar evento o webhook de pago para el mockup",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-51/preparar-evento-o-webhook-de-pago-para-el-mockup",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:06.932Z",
+        "updatedAt": "2026-09-07T05:15:07.219Z"
+      },
+      {
+        "id": "SKI-50",
+        "uuid": "fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8",
+        "title": "Configurar páginas de éxito, cancelación y reintento",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-50/configurar-paginas-de-exito-cancelacion-y-reintento",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:05.201Z",
+        "updatedAt": "2026-09-07T05:15:05.650Z"
+      },
+      {
+        "id": "SKI-49",
+        "uuid": "98006883-995e-4c62-926f-7d0299092eeb",
+        "title": "Implementar checkout de prueba en entorno Skilland",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-49/implementar-checkout-de-prueba-en-entorno-skilland",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:04.013Z",
+        "updatedAt": "2026-09-07T05:15:04.523Z"
+      },
+      {
+        "id": "SKI-48",
+        "uuid": "766b6866-a4d6-4cdd-80df-eca1d36875c6",
+        "title": "Configurar catálogo, producto y precio de prueba",
+        "projectMilestone": {
+          "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+          "name": "OL3 - Validación y preparación"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-48/configurar-catalogo-producto-y-precio-de-prueba",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:15:01.045Z",
+        "updatedAt": "2026-09-07T05:15:01.765Z"
+      },
+      {
+        "id": "SKI-47",
+        "uuid": "a87716c2-2046-4131-8e1b-06b8a66bf4c6",
+        "title": "Actualizar registro de accesos, bloqueos y unknowns",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Done",
+        "statusType": "completed",
+        "url": "https://linear.app/skilland/issue/SKI-47/actualizar-registro-de-accesos-bloqueos-y-unknowns",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:25.409Z",
+        "updatedAt": "2026-09-07T05:14:25.652Z"
+      },
+      {
+        "id": "SKI-46",
+        "uuid": "32caa9df-47c5-41ec-b25e-c1fa57dfc345",
+        "title": "Mapear actores, owners y fuentes de verdad",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-46/mapear-actores-owners-y-fuentes-de-verdad",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:24.680Z",
+        "updatedAt": "2026-09-07T05:14:24.924Z"
+      },
+      {
+        "id": "SKI-45",
+        "uuid": "6aee0ac9-6e5b-4f3a-87d2-154b79603207",
+        "title": "Recopilar plantillas e informes anonimizados",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-45/recopilar-plantillas-e-informes-anonimizados",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:23.842Z",
+        "updatedAt": "2026-09-07T05:14:24.227Z"
+      },
+      {
+        "id": "SKI-44",
+        "uuid": "99c7061d-5d4e-4e6a-a260-d374fa44bcc3",
+        "title": "Realizar entrevista de discovery con Aitor",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-44/realizar-entrevista-de-discovery-con-aitor",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:22.730Z",
+        "updatedAt": "2026-09-07T05:14:22.949Z"
+      },
+      {
+        "id": "SKI-43",
+        "uuid": "8a2574d8-57b6-4abd-92df-054ded530570",
+        "title": "Obtener y restaurar una copia sanitizada de desarrollo",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-43/obtener-y-restaurar-una-copia-sanitizada-de-desarrollo",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:21.782Z",
+        "updatedAt": "2026-09-07T05:14:22.049Z"
+      },
+      {
+        "id": "SKI-42",
+        "uuid": "c7762692-c6e4-4544-87ad-0ecc21ea73f4",
+        "title": "Diagnosticar versión, módulos, hosting y permisos",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-42/diagnosticar-version-modulos-hosting-y-permisos",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:20.947Z",
+        "updatedAt": "2026-09-07T05:14:21.264Z"
+      },
+      {
+        "id": "SKI-41",
+        "uuid": "cfde7001-735a-4f74-862b-874a48d0bc86",
+        "title": "Inventariar módulos y capacidades disponibles",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-41/inventariar-modulos-y-capacidades-disponibles",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:20.129Z",
+        "updatedAt": "2026-09-07T05:14:20.393Z"
+      },
+      {
+        "id": "SKI-40",
+        "uuid": "627534c1-e156-44e9-bb66-b889d38a1d97",
+        "title": "Validar plan, API, DPA, residencia y límites de cuenta",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-40/validar-plan-api-dpa-residencia-y-limites-de-cuenta",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:19.340Z",
+        "updatedAt": "2026-09-07T05:14:19.545Z"
+      },
+      {
+        "id": "SKI-39",
+        "uuid": "392c12ce-043e-4402-83fc-c38688e0b197",
+        "title": "Definir matriz de pruebas y excepciones de pago",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-39/definir-matriz-de-pruebas-y-excepciones-de-pago",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:18.543Z",
+        "updatedAt": "2026-09-07T05:14:18.753Z"
+      },
+      {
+        "id": "SKI-38",
+        "uuid": "33559f96-cd18-4253-a759-0c857794e74a",
+        "title": "Diseñar wireframes y copy del checkout",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-38/disenar-wireframes-y-copy-del-checkout",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:17.651Z",
+        "updatedAt": "2026-09-07T05:14:18.029Z"
+      },
+      {
+        "id": "SKI-37",
+        "uuid": "7b9d744d-0ee1-4bbb-833c-97d959387444",
+        "title": "Especificar flujo de compra y estados de pago",
+        "projectMilestone": {
+          "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+          "name": "OL2 - Artefactos y diagnóstico"
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-37/especificar-flujo-de-compra-y-estados-de-pago",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:14:16.902Z",
+        "updatedAt": "2026-09-07T05:14:17.129Z"
+      },
+      {
+        "id": "SKI-36",
+        "uuid": "0ff354f1-a177-42ab-b51f-c268a01d4376",
+        "title": "Abrir control de alcance, decisiones, riesgos y dependencias",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "Done",
+        "statusType": "completed",
+        "url": "https://linear.app/skilland/issue/SKI-36/abrir-control-de-alcance-decisiones-riesgos-y-dependencias",
+        "dueDate": null,
+        "archivedAt": null,
+        "createdAt": "2026-09-07T05:13:36.838Z",
+        "updatedAt": "2026-09-07T05:13:36.838Z"
+      },
+      {
+        "id": "SKI-34",
+        "uuid": "191fd335-7ed2-47be-8f4d-a190dd3bf461",
+        "title": "Definir estrategia de copia, backup y sandbox",
+        "projectMilestone": {
+          "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+          "name": "OL1 - Apertura de frentes "
+        },
+        "status": "Todo",
+        "statusType": "unstarted",
+        "url": "https://linear.app/skilland/issue/SKI-34/definir-estrategia-de-copia-backup-y-sandbox",
+        "dueDate": null,
+        "archivedAt": "2026-09-07T05:33:28.716Z",
+        "createdAt": "2026-09-07T05:13:35.633Z",
+        "updatedAt": "2026-09-07T05:13:35.841Z"
+      }
+    ],
+    "hasNextPage": false
+  },
+  "unassigned": {
+    "issues": [
+      {
+        "id": "SKI-33",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-26",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-30",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-28",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-27",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-32",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-29",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-31",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-35",
+        "archivedAt": "2026-09-07T05:32:58.092Z"
+      },
+      {
+        "id": "SKI-130",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-129",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-128",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-127",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-126",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-125",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-124",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-123",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-122",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-121",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-120",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-119",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-118",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-117",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-116",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-115",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-114",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-113",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-112",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-111",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-110",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-109",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-108",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-107",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-106",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-105",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-104",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-103",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-102",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-101",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-100",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-99",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-98",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-97",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-96",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-95",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-94",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-93",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-92",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-91",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-90",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-89",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-88",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-87",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-86",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-85",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-84",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-83",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-82",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-81",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-80",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-79",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-78",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-77",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-76",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-75",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-74",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-73",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-72",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-71",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-70",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-69",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-68",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-67",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-66",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-65",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-64",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-63",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-62",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-61",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-60",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-59",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-58",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-57",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-56",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-55",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-54",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-53",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-52",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-51",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-50",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-49",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-48",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-47",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-46",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-45",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-44",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-43",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-42",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-41",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-40",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-39",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-38",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-37",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-36",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-34",
+        "archivedAt": "2026-09-07T05:33:28.716Z"
+      }
+    ],
+    "hasNextPage": false
+  },
+  "active": {
+    "issues": [
+      {
+        "id": "SKI-33",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-26",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-30",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-28",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-27",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-32",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-29",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-31",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-1",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-130",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-129",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-128",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-127",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-126",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-125",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-124",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-123",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-122",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-121",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-120",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-119",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-118",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-117",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-116",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-115",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-114",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-113",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-112",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-111",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-110",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-109",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-108",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-107",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-106",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-105",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-104",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-103",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-102",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-101",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-100",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-99",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-98",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-97",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-96",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-95",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-94",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-93",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-92",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-91",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-90",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-89",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-88",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-87",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-86",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-85",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-84",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-83",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-82",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-81",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-80",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-79",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-78",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-77",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-76",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-75",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-74",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-73",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-72",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-71",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-70",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-69",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-68",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-67",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-66",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-65",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-64",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-63",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-62",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-61",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-60",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-59",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-58",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-57",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-56",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-55",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-54",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-53",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-52",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-51",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-50",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-49",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-48",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-47",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-46",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-45",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-44",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-43",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-42",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-41",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-40",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-39",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-38",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-37",
+        "archivedAt": null
+      },
+      {
+        "id": "SKI-36",
+        "archivedAt": null
+      }
+    ],
+    "hasNextPage": false
+  }
+}
+

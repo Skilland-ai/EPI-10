@@ -1,0 +1,24 @@
+{
+  "verified_at": "2026-09-15T19:50:55.029744+00:00",
+  "integration": "server_checkout_sessions",
+  "account_id": "acct_1UFzBqRrJS0VSqzs",
+  "livemode": false,
+  "product_id": "prod_epi10_nutriwell_demo_v1",
+  "price_id": "price_1UG00zRrJS0VSqzs4Uhv6g9Q",
+  "amount": 10000,
+  "currency": "eur",
+  "quantity": 1,
+  "mode": "payment",
+  "entry_url": "https://epi10-nutriwell-demo.vercel.app",
+  "success_url": "https://epi10-nutriwell-demo.vercel.app/compra",
+  "cancel_url": "https://epi10-nutriwell-demo.vercel.app/compra",
+  "server_environment_variable_names": [
+    "STRIPE_SECRET_KEY",
+    "DEMO_COOKIE_SECRET"
+  ],
+  "cookie_name": "nutriwell_demo_order",
+  "cookie_days": 30,
+  "payment_tested": true,
+  "evidence": "../evidencias/2026-09-15_confirmacion_recuperacion.json",
+  "previous_payment_link_config": "checkout_demo.json"
+}

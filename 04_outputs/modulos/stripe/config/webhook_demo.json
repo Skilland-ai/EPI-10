@@ -1,0 +1,26 @@
+{
+  "verified_at": "2026-09-15T20:27:29.898Z",
+  "account_id": "acct_1UFzBqRrJS0VSqzs",
+  "endpoint_id": "we_1UG2wvRrJS0VSqzsL52DmF4u",
+  "url": "https://epi10-nutriwell-demo.vercel.app/api/webhooks/stripe",
+  "livemode": false,
+  "status": "enabled",
+  "api_version": "2026-08-26.dahlia",
+  "enabled_events": [
+    "checkout.session.completed",
+    "checkout.session.async_payment_succeeded",
+    "checkout.session.async_payment_failed",
+    "checkout.session.expired",
+    "charge.refunded"
+  ],
+  "signing_environment_variable": "STRIPE_WEBHOOK_SECRET",
+  "storage": {
+    "provider": "Upstash Redis",
+    "resource": "epi10-stripe-events-demo",
+    "resource_id": "store_pLsMKu4pJymUMifN",
+    "plan": "free",
+    "region": "iad1",
+    "ledger_key": "epi10:stripe:sandbox:v1",
+    "ttl": null
+  }
+}

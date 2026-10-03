@@ -1,0 +1,61 @@
+{
+  "verified_at": "2026-09-15T18:07:33.792383+00:00",
+  "account_id": "acct_1UFzBqRrJS0VSqzs",
+  "product": {
+    "id": "prod_epi10_nutriwell_demo_v1",
+    "object": "product",
+    "active": true,
+    "attributes": [],
+    "created": 1789492769,
+    "default_price": "price_1UG00zRrJS0VSqzs4Uhv6g9Q",
+    "description": "Conoce tu biología y cuida tus hábitos. Incluye test genético, cuestionario, informe personalizado, plan de acción y sesión profesional.",
+    "images": [
+      "https://files.stripe.com/links/MDB8YWNjdF8xVUZ6QnFSckpTMFZTcXpzfGZsX3Rlc3Rfd0dKRnR6TTA5OWRRY3Q1bUxGUmpMc2hs00fhYfc2pl"
+    ],
+    "livemode": false,
+    "marketing_features": [],
+    "metadata": {
+      "demo": "true",
+      "demo_quantity": "1",
+      "linear_issue": "SKI-48",
+      "project": "epi10"
+    },
+    "name": "NutriWell · DEMO",
+    "package_dimensions": null,
+    "shippable": null,
+    "statement_descriptor": null,
+    "tax_code": null,
+    "tax_details": null,
+    "type": "service",
+    "unit_label": null,
+    "updated": 1789495649,
+    "url": null
+  },
+  "cover": {
+    "file_id": "file_1UG0kdRrJS0VSqzsppDdZm7t",
+    "file_link_id": "link_1UG0keRrJS0VSqzsy4ulhln3",
+    "image_url": "https://files.stripe.com/links/MDB8YWNjdF8xVUZ6QnFSckpTMFZTcXpzfGZsX3Rlc3Rfd0dKRnR6TTA5OWRRY3Q1bUxGUmpMc2hs00fhYfc2pl",
+    "livemode": false,
+    "http_status": 200,
+    "mime_type": "image/jpeg",
+    "original_sha256": "333292d960bdf6eb5f2d27e9f15c5542ed1b79ac37c0aaaa90bd06dae31fc5ee",
+    "download_sha256": "88dca3a8cc79bb0e40ee3e5a9392c6fb1a002bcdebfc9a45fa07ef0534de3250",
+    "bytes_identical": false
+  },
+  "branding": {
+    "icon": "",
+    "logo": "file_1UG02ERrJS0VSqzs5X1MupI8",
+    "primary_color": "#F8F5EF",
+    "secondary_color": "#044799"
+  },
+  "checks": {
+    "product_test_mode": true,
+    "copy_applied": true,
+    "cover_applied": true,
+    "header_branding_preserved": true,
+    "header_logo": true,
+    "price_100_eur": true,
+    "public_cover": true
+  },
+  "payment_tested": false
+}

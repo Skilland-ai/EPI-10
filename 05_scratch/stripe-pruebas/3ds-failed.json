@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-09-15T20:54:29.960Z",
+  "account": "acct_1UFzBqRrJS0VSqzs",
+  "livemode": false,
+  "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+  "reference": "NW-60E20C9B",
+  "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+  "session_status": "open",
+  "payment_status": "unpaid",
+  "state": "pending",
+  "amount": 10000,
+  "currency": "eur",
+  "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+  "intent_status": "requires_payment_method",
+  "last_payment_error": {
+    "code": "payment_intent_authentication_failure"
+  },
+  "charge": null,
+  "sessions_for_order": [
+    {
+      "id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+      "status": "open",
+      "payment_status": "unpaid"
+    }
+  ],
+  "ledger": {}
+}

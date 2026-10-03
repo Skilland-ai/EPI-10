@@ -1,0 +1,29 @@
+{
+  "verified_at": "2026-09-15T18:48:20.373830+00:00",
+  "project_id": "appgprj_6aa98db08ca48191a89d4b06f92167bd",
+  "version_id": "appgprj_6aa98db08ca48191a89d4b06f92167bd~appgver_ea9f88c765f8819198c5a0e50bd35aeb",
+  "version_number": 2,
+  "deployment_id": "appgdep_6aa992e812248191a291bbec4c5073b3",
+  "status": "succeeded",
+  "url": "https://epi10-nutriwell-demo.raulreboot.chatgpt.site",
+  "access": "public",
+  "access_revision": 2,
+  "source_commit": "41319f38c466e346c0ebae71c89a7dd7531d25a4",
+  "build_pass": true,
+  "typescript_pass": true,
+  "anonymous_http_status": 200,
+  "viewport_widths": [
+    320,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "minimum_text_px": 14,
+  "body_text_px": 18,
+  "secondary_text_px": 16,
+  "purchase_button_height_px": 64,
+  "responsive_dom_qa_pass": true,
+  "screenshot_qa_available": false,
+  "payment_executed": false
+}

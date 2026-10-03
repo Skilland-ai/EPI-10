@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "checks": {
+    "api_checks": true,
+    "larger_width": true,
+    "square_height_300": true,
+    "image_loaded": true,
+    "header_preserved": true,
+    "copy_preserved": true,
+    "price_and_demo": true,
+    "no_payment": true,
+    "asset_present": true,
+    "prompt_present": true
+  },
+  "width_increase_percent": 41.5,
+  "image_300px_reviewed": true,
+  "hosted_checkout_limit_px": 300,
+  "screenshot_available": false
+}

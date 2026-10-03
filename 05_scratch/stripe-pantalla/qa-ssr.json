@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "checks": {
+    "checkout_buttons": true,
+    "anchors": true,
+    "image_alts": true,
+    "local_images_exist": true,
+    "site_title": true,
+    "og_image_absolute": true,
+    "x_image_absolute": true,
+    "noindex": true
+  },
+  "browser_ui_qa_performed": false,
+  "verification": "SSR HTML semantic checks, not visual QA"
+}

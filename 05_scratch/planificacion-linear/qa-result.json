@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "documents_exact": 3,
+  "unique_tasks": 106,
+  "active": 104,
+  "archived": 2,
+  "milestones": 8,
+  "roadmap_refs": 106,
+  "local_links": 10,
+  "functional_blocks": 7,
+  "functional_subblocks": 31,
+  "no_secret_patterns": true,
+  "snapshot": "2026-09-15 16:35:05 UTC"
+}

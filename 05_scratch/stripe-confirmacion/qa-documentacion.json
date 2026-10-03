@@ -1,0 +1,20 @@
+{
+  "files": 57,
+  "markdown": 22,
+  "links": 195,
+  "broken_links": [],
+  "secret_files": [],
+  "git_diff": [
+    {
+      "repository": ".",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "repository": "04_outputs/modulos/stripe/app",
+      "pass": true,
+      "details": ""
+    }
+  ],
+  "local_env_ignored": true
+}

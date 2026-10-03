@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "checked_issues": 22,
+  "stripe_retained": 12,
+  "stripe_canceled": 9,
+  "demo": 9,
+  "feedback": 1,
+  "replica": 1,
+  "invoice_child": 1,
+  "access_done": true,
+  "cycles": false,
+  "external_dependencies_preserved": true,
+  "errors": []
+}

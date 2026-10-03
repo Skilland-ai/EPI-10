@@ -1,0 +1,30 @@
+{
+  "id": "file_1UG02ERrJS0VSqzs5X1MupI8",
+  "object": "file",
+  "created": 1789492846,
+  "expires_at": null,
+  "filename": "Logos_EPI10-01.png",
+  "links": {
+    "object": "list",
+    "data": [
+      {
+        "id": "link_1UG02FRrJS0VSqzsD7pgzdeS",
+        "object": "file_link",
+        "created": 1789492847,
+        "expired": false,
+        "expires_at": null,
+        "file": "file_1UG02ERrJS0VSqzs5X1MupI8",
+        "livemode": false,
+        "metadata": {},
+        "url": "https://files.stripe.com/links/MDB8YWNjdF8xVUZ6QnFSckpTMFZTcXpzfGZsX3Rlc3RfTHo2WVRkc3JSalBReFh4RUpKM09sdWp600MeZT2ncG"
+      }
+    ],
+    "has_more": false,
+    "url": "/v1/file_links?file=file_1UG02ERrJS0VSqzs5X1MupI8"
+  },
+  "purpose": "business_logo",
+  "size": 4472,
+  "title": null,
+  "type": "png",
+  "url": "https://files.stripe.com/v1/files/file_1UG02ERrJS0VSqzs5X1MupI8/contents"
+}

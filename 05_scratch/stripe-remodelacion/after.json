@@ -1,0 +1,1667 @@
+[
+  {
+    "id": "SKI-81",
+    "uuid": "8c66f70c-fce1-44db-9817-e88b4cc2df70",
+    "title": "Emitir y registrar la factura del módulo Stripe tras su entrega",
+    "description": "## Resultado\n\nConservar la obligación comercial del módulo adicional después de su entrega aceptada.\n\n## Criterio de terminado\n\n- [ ] Entrega de <issue id=\"a427f048-9a8b-410f-b7ad-241249a1aa22\" href=\"https://linear.app/skilland/issue/SKI-77/replicar-el-mockup-validado-en-la-cuenta-epi10-y-entregar-el-modulo\">SKI-77</issue> aceptada según el acuerdo comercial.\n- [ ] Emitir la factura con datos e importe acordados; enviarla por el canal autorizado cuando proceda.\n- [ ] Registrar referencia y estado de cobro sin incluir datos fiscales/bancarios sensibles en evidencias públicas.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar bitacora.md; documentación comercial autorizada tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"8c66f70c-fce1-44db-9817-e88b4cc2df70\" href=\"https://linear.app/skilland/issue/SKI-81/emitir-y-registrar-la-factura-del-modulo-adicional\">SKI-81</issue>; versión anterior guardada en el repositorio. Fase posterior al mockup validado; no se ha ejecutado todavía.",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-81/emitir-y-registrar-la-factura-del-modulo-stripe-tras-su-entrega",
+    "gitBranchName": "direccion/ski-81-emitir-y-registrar-la-factura-del-modulo-stripe-tras-su",
+    "createdAt": "2026-09-07T05:16:20.701Z",
+    "updatedAt": "2026-09-15T16:56:59.933Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:20.701Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "parentId": "SKI-77",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [
+        {
+          "id": "SKI-77",
+          "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-75",
+    "uuid": "7f5354d3-67cc-41d4-8109-ccf56672c768",
+    "title": "Incorporar feedback aprobado",
+    "description": "## Sustituida en el speedrun del 15 de septiembre de 2026\n\nEl trabajo de esta tarea se integra en [SKI-74](<https://linear.app/skilland/issue/SKI-74>). Se retira del trabajo activo por reorganización solicitada por Raúl; **no significa que el trabajo se haya ejecutado**. Las dependencias se han trasladado a las tareas concretas. El detalle anterior se conserva debajo.\n\n---\n\nAplicar únicamente cambios validados que mantengan el alcance del módulo Stripe.\n\n## Objetivo\n\nAplicar únicamente cambios validados que mantengan el alcance del módulo Stripe.\n\n## Criterio de terminado\n\nCambios implementados, regresión ejecutada y cualquier petición fuera de alcance aparcada.\n\n## Dependencias\n\nT050.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T051 · Stripe · 1.3 Validación y alta de EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-75/incorporar-feedback-aprobado",
+    "gitBranchName": "direccion/ski-75-incorporar-feedback-aprobado",
+    "createdAt": "2026-09-07T05:16:13.828Z",
+    "updatedAt": "2026-09-15T16:57:30.624Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": "2026-09-15T16:57:30.615Z",
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Canceled",
+    "statusType": "canceled",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:13.828Z",
+        "endedAt": "2026-09-15T16:57:30.624Z"
+      },
+      {
+        "state": {
+          "id": "2bf6eb1f-4ae9-454e-b610-e7b934d59bb5",
+          "name": "Canceled",
+          "type": "canceled"
+        },
+        "startedAt": "2026-09-15T16:57:30.624Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-74",
+          "title": "Revisar el mockup con Carmen, aplicar feedback y validar la versión final"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-74",
+    "uuid": "642db799-e483-47aa-87f2-e145b6fdb714",
+    "title": "Revisar el mockup con Carmen, aplicar feedback y validar la versión final",
+    "description": "## Resultado\n\nObtener feedback sobre la demo y cerrar la versión que se replicará en la cuenta del cliente.\n\n## Criterio de terminado\n\n- [ ] Presentar el recorrido y recoger decisiones sobre naming, oferta, imagen, precio definitivo y siguientes pasos.\n- [ ] Registrar ajustes concretos, aprobaciones y preguntas pendientes con su origen.\n- [ ] Implementar los ajustes aprobados dentro del alcance y repetir las pruebas afectadas.\n- [ ] Identificar la versión del mockup validada por Carmen; aprobación explícita registrada antes de la réplica.\n- [ ] Las peticiones fuera de alcance quedan identificadas para decidir aparte; no asumir aceptación por ausencia de respuesta.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar bitacora.md; decisiones.md; guia_cliente.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Integra el trabajo antes separado en <issue id=\"7f5354d3-67cc-41d4-8109-ccf56672c768\" href=\"https://linear.app/skilland/issue/SKI-75/incorporar-feedback-aprobado\">SKI-75</issue>. Conserva el ID de <issue id=\"642db799-e483-47aa-87f2-e145b6fdb714\" href=\"https://linear.app/skilland/issue/SKI-74/presentar-mockup-a-carmen-y-solicitar-feedback\">SKI-74</issue>; versión anterior guardada en el repositorio. Feedback previsto el 16 de septiembre; aprobación pendiente.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-74/revisar-el-mockup-con-carmen-aplicar-feedback-y-validar-la-version",
+    "gitBranchName": "direccion/ski-74-revisar-el-mockup-con-carmen-aplicar-feedback-y-validar-la",
+    "createdAt": "2026-09-07T05:16:12.703Z",
+    "updatedAt": "2026-09-15T16:56:57.274Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-16",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:12.703Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-77",
+          "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-53",
+          "title": "Dejar el enlace y el guion de demo NutriWell listos para Carmen"
+        }
+      ],
+      "relatedTo": [
+        {
+          "id": "SKI-75",
+          "title": "Incorporar feedback aprobado"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-49",
+    "uuid": "98006883-995e-4c62-926f-7d0299092eeb",
+    "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR",
+    "description": "## Resultado\n\nObtener un checkout real de pruebas, coherente con EPI10, que pueda abrirse desde la página de NutriWell.\n\n## Criterio de terminado\n\n- [ ] Elegir y documentar Payment Link o Checkout Sessions según los retornos y referencias requeridos.\n- [ ] Configurar el precio de <issue id=\"766b6866-a4d6-4cdd-80df-eca1d36875c6\" href=\"https://linear.app/skilland/issue/SKI-48/crear-en-stripe-nutriwell-demo-100-eur-pago-unico-y-una-unidad\">SKI-48</issue>, pago único, cantidad fija y los campos mínimos de compra.\n- [ ] Aplicar logo completo 01 azul o 02 blanco según fondo, color #044799 y textos de EPI10; conservar proporciones.\n- [ ] Generar un enlace/sesión de prueba verificable y comprobar producto, nombre, importe y moneda.\n- [ ] Configurar medios de pago concretos y dejar claro que todo el recorrido usa pruebas.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar guia_cliente.md; marca.md; bitacora.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Integra el trabajo antes separado en <issue id=\"33559f96-cd18-4253-a759-0c857794e74a\" href=\"https://linear.app/skilland/issue/SKI-38/disenar-wireframes-y-copy-del-checkout\">SKI-38</issue>. Conserva el ID de <issue id=\"98006883-995e-4c62-926f-7d0299092eeb\" href=\"https://linear.app/skilland/issue/SKI-49/implementar-checkout-de-prueba-en-entorno-skilland\">SKI-49</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-49/configurar-el-checkout-stripe-con-los-nuevos-logos-epi10-y-cobro-de",
+    "gitBranchName": "direccion/ski-49-configurar-el-checkout-stripe-con-los-nuevos-logos-epi10-y",
+    "createdAt": "2026-09-07T05:15:04.013Z",
+    "updatedAt": "2026-09-15T16:56:48.544Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-15",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:04.013Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-51",
+          "title": "Recibir el evento de pago Stripe con firma verificada y deduplicación"
+        },
+        {
+          "id": "SKI-50",
+          "title": "Conectar confirmación, abandono y reintento de la compra NutriWell"
+        },
+        {
+          "id": "SKI-37",
+          "title": "Construir la página NutriWell con marca EPI10 y botón al checkout"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-26",
+          "title": "Cerrar la ficha y reglas de compra de NutriWell · DEMO (100 EUR)"
+        },
+        {
+          "id": "SKI-48",
+          "title": "Crear en Stripe NutriWell · DEMO: 100 EUR, pago único y una unidad"
+        }
+      ],
+      "relatedTo": [
+        {
+          "id": "SKI-38",
+          "title": "Diseñar wireframes y copy del checkout"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-48",
+    "uuid": "766b6866-a4d6-4cdd-80df-eca1d36875c6",
+    "title": "Crear en Stripe NutriWell · DEMO: 100 EUR, pago único y una unidad",
+    "description": "## Resultado\n\nCrear el catálogo real de pruebas que alimentará la compra de la demo.\n\n## Criterio de terminado\n\n- [ ] Crear o reutilizar sin duplicados el producto NutriWell · DEMO con descripción e imagen acordadas.\n- [ ] Crear precio nominal de 10000 céntimos EUR, no recurrente, y cantidad de compra fija en uno.\n- [ ] Comprobar producto y precio en API/Dashboard y guardar IDs públicos.\n- [ ] No añadir facturación o impuestos automáticos a esta demo; no fija el tratamiento fiscal del servicio real.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar guia_cliente.md; bitacora.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"766b6866-a4d6-4cdd-80df-eca1d36875c6\" href=\"https://linear.app/skilland/issue/SKI-48/configurar-catalogo-producto-y-precio-de-prueba\">SKI-48</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-48/crear-en-stripe-nutriwell-demo-100-eur-pago-unico-y-una-unidad",
+    "gitBranchName": "direccion/ski-48-crear-en-stripe-nutriwell-demo-100-eur-pago-unico-y-una",
+    "createdAt": "2026-09-07T05:15:01.045Z",
+    "updatedAt": "2026-09-15T16:56:46.598Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-15",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:01.045Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-49",
+          "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-28",
+          "title": "Conectar el CLI al entorno de pruebas EPI10 y verificar acceso"
+        },
+        {
+          "id": "SKI-26",
+          "title": "Cerrar la ficha y reglas de compra de NutriWell · DEMO (100 EUR)"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-79",
+    "uuid": "f04f4b6d-c01e-4580-be2b-bec2a88456bf",
+    "title": "Ejecutar pruebas de aceptación en EPI10",
+    "description": "## Sustituida en el speedrun del 15 de septiembre de 2026\n\nEl trabajo de esta tarea se integra en [SKI-77](<https://linear.app/skilland/issue/SKI-77>). Se retira del trabajo activo por reorganización solicitada por Raúl; **no significa que el trabajo se haya ejecutado**. Las dependencias se han trasladado a las tareas concretas. El detalle anterior se conserva debajo.\n\n---\n\nValidar la réplica en el entorno EPI10 antes de declarar entregado el módulo.\n\n## Objetivo\n\nValidar la réplica en el entorno EPI10 antes de declarar entregado el módulo.\n\n## Criterio de terminado\n\nMatriz de pruebas ejecutada en test/sandbox del cliente con evidencia y sin defectos bloqueantes.\n\n## Dependencias\n\nT053, T054.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T055 · Stripe · 1.4 Implantación en entorno EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-79/ejecutar-pruebas-de-aceptacion-en-epi10",
+    "gitBranchName": "direccion/ski-79-ejecutar-pruebas-de-aceptacion-en-epi10",
+    "createdAt": "2026-09-07T05:16:19.144Z",
+    "updatedAt": "2026-09-15T16:57:37.653Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": "2026-09-15T16:57:37.633Z",
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Canceled",
+    "statusType": "canceled",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:19.144Z",
+        "endedAt": "2026-09-15T16:57:37.653Z"
+      },
+      {
+        "state": {
+          "id": "2bf6eb1f-4ae9-454e-b610-e7b934d59bb5",
+          "name": "Canceled",
+          "type": "canceled"
+        },
+        "startedAt": "2026-09-15T16:57:37.653Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-77",
+          "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-78",
+    "uuid": "a8279848-79e9-422e-a7d7-41f144bacd89",
+    "title": "Configurar credenciales, enlaces y webhooks del entorno EPI10",
+    "description": "## Sustituida en el speedrun del 15 de septiembre de 2026\n\nEl trabajo de esta tarea se integra en [SKI-77](<https://linear.app/skilland/issue/SKI-77>). Se retira del trabajo activo por reorganización solicitada por Raúl; **no significa que el trabajo se haya ejecutado**. Las dependencias se han trasladado a las tareas concretas. El detalle anterior se conserva debajo.\n\n---\n\nDejar conectados los elementos técnicos del entorno cliente con gestión segura de secretos.\n\n## Objetivo\n\nDejar conectados los elementos técnicos del entorno cliente con gestión segura de secretos.\n\n## Criterio de terminado\n\nCredenciales no expuestas, URLs y endpoints correctos, firmas verificadas y eventos esperados observables.\n\n## Dependencias\n\nT052, T053.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T054 · Stripe · 1.4 Implantación en entorno EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-78/configurar-credenciales-enlaces-y-webhooks-del-entorno-epi10",
+    "gitBranchName": "direccion/ski-78-configurar-credenciales-enlaces-y-webhooks-del-entorno-epi10",
+    "createdAt": "2026-09-07T05:16:18.292Z",
+    "updatedAt": "2026-09-15T16:57:33.315Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": "2026-09-15T16:57:33.288Z",
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Canceled",
+    "statusType": "canceled",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:18.292Z",
+        "endedAt": "2026-09-15T16:57:33.315Z"
+      },
+      {
+        "state": {
+          "id": "2bf6eb1f-4ae9-454e-b610-e7b934d59bb5",
+          "name": "Canceled",
+          "type": "canceled"
+        },
+        "startedAt": "2026-09-15T16:57:33.315Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-77",
+          "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-39",
+    "uuid": "392c12ce-043e-4402-83fc-c38688e0b197",
+    "title": "Definir matriz de pruebas y excepciones de pago",
+    "description": "## Sustituida en el speedrun del 15 de septiembre de 2026\n\nEl trabajo de esta tarea se integra en [SKI-52](<https://linear.app/skilland/issue/SKI-52>). Se retira del trabajo activo por reorganización solicitada por Raúl; **no significa que el trabajo se haya ejecutado**. Las dependencias se han trasladado a las tareas concretas. El detalle anterior se conserva debajo.\n\n---\n\nTraducir escenarios de pago en casos de prueba reproducibles y criterios de aceptación.\n\n## Objetivo\n\nTraducir escenarios de pago en casos de prueba reproducibles y criterios de aceptación.\n\n## Criterio de terminado\n\nMatriz incluye happy path, cancelación, fallo, reintento, duplicado y verificación de eventos sin usar cobros reales.\n\n## Dependencias\n\nT002, T013.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T015 · Stripe · 1.1 Diseño del flujo de cobro",
+    "projectMilestone": {
+      "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+      "name": "OL2 - Artefactos y diagnóstico"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-39/definir-matriz-de-pruebas-y-excepciones-de-pago",
+    "gitBranchName": "direccion/ski-39-definir-matriz-de-pruebas-y-excepciones-de-pago",
+    "createdAt": "2026-09-07T05:14:18.543Z",
+    "updatedAt": "2026-09-15T16:57:28.568Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": "2026-09-15T16:57:28.559Z",
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Canceled",
+    "statusType": "canceled",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:14:18.543Z",
+        "endedAt": "2026-09-15T16:57:28.568Z"
+      },
+      {
+        "state": {
+          "id": "2bf6eb1f-4ae9-454e-b610-e7b934d59bb5",
+          "name": "Canceled",
+          "type": "canceled"
+        },
+        "startedAt": "2026-09-15T16:57:28.568Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-52",
+          "title": "Probar NutriWell: pago, rechazo, reintento, duplicados, devolución y móvil"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-28",
+    "uuid": "87f30bb8-97e5-440d-b48f-9a7fb833ca15",
+    "title": "Conectar el CLI al entorno de pruebas EPI10 y verificar acceso",
+    "description": "## Resultado\n\nPermitir que Codex configure y pruebe Stripe desde terminal usando el entorno que Raúl ya abrió en el Dashboard.\n\n## Criterio de terminado\n\n- [X] Completar autorización del dispositivo EPI10-Codex en navegador para el entorno de pruebas.\n- [X] Comprobar por CLI/API el contexto autorizado, nombre e ID de cuenta/sandbox y que las operaciones se realizan en pruebas.\n- [X] Probar lectura de catálogo y eventos sin exponer credenciales.\n- [X] Registrar el modo de acceso y el contexto no secreto en documentación; no copiar tokens ni claves al repo.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar bitacora.md; acceso_stripe.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"87f30bb8-97e5-440d-b48f-9a7fb833ca15\" href=\"https://linear.app/skilland/issue/SKI-28/conectar-el-cli-al-entorno-de-pruebas-epi10-y-verificar-acceso\">SKI-28</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.\n\n## Verificación ejecutada — 2026-09-15\n\nCLI 1.50.11 autorizado mediante navegador para Entorno de prueba de EPI10 Salud · sandbox (`acct_1UFzBqRrJS0VSqzs`). Lecturas correctas de /v1/account, /v1/products, /v1/prices y /v1/events. Catálogo vacío; evento devuelto con livemode=false. Documentado en `04_outputs/modulos/stripe/docs/acceso_stripe.md`; evidencia filtrada sin credenciales en `05_scratch/stripe-remodelacion/stripe_access_verified.json`. Producto, checkout y pagos siguen en sus tareas pendientes.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-28/conectar-el-cli-al-entorno-de-pruebas-epi10-y-verificar-acceso",
+    "gitBranchName": "direccion/ski-28-conectar-el-cli-al-entorno-de-pruebas-epi10-y-verificar",
+    "createdAt": "2026-09-07T05:13:31.142Z",
+    "updatedAt": "2026-09-15T17:03:39.096Z",
+    "archivedAt": null,
+    "completedAt": "2026-09-15T17:03:39.074Z",
+    "startedAt": "2026-09-15T16:56:42.574Z",
+    "canceledAt": null,
+    "dueDate": "2026-09-15",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Done",
+    "statusType": "completed",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:13:31.142Z",
+        "endedAt": "2026-09-15T16:56:42.581Z"
+      },
+      {
+        "state": {
+          "id": "3557045f-ba80-46f9-83f0-75dcfd2cf938",
+          "name": "In Progress",
+          "type": "started"
+        },
+        "startedAt": "2026-09-15T16:56:42.581Z",
+        "endedAt": "2026-09-15T17:03:39.096Z"
+      },
+      {
+        "state": {
+          "id": "1e686c27-ffdb-4585-b505-d0cfa749a3a1",
+          "name": "Done",
+          "type": "completed"
+        },
+        "startedAt": "2026-09-15T17:03:39.096Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-51",
+          "title": "Recibir el evento de pago Stripe con firma verificada y deduplicación"
+        },
+        {
+          "id": "SKI-48",
+          "title": "Crear en Stripe NutriWell · DEMO: 100 EUR, pago único y una unidad"
+        }
+      ],
+      "blockedBy": [],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-53",
+    "uuid": "a9921c7a-9091-40fa-9fa1-1a185b1c1106",
+    "title": "Dejar el enlace y el guion de demo NutriWell listos para Carmen",
+    "description": "## Resultado\n\nCerrar la revisión interna y preparar una presentación reproducible para el 16 de septiembre.\n\n## Criterio de terminado\n\n- [ ] URL final accesible desde el navegador de presentación y replay completo sin bloqueos.\n- [ ] Guion de 3–5 minutos: oferta, checkout, pago, confirmación y comprobación en Stripe.\n- [ ] Capturas de respaldo del recorrido y una excepción, con datos ficticios.\n- [ ] Guía cliente, bitácora y pruebas actualizadas; lista breve de decisiones para Carmen.\n- [ ] Revisión interna completa sin defectos críticos; el envío/presentación y aprobación se registran en <issue id=\"642db799-e483-47aa-87f2-e145b6fdb714\" href=\"https://linear.app/skilland/issue/SKI-74/presentar-mockup-a-carmen-y-solicitar-feedback\">SKI-74</issue>.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar speedrun_demo.md; guia_cliente.md; pruebas.md; evidencias/ tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Integra el trabajo antes separado en <issue id=\"a98734b5-f426-4afc-97b8-713dff094ac9\" href=\"https://linear.app/skilland/issue/SKI-73/revisar-internamente-el-mockup-completo\">SKI-73</issue>. Conserva el ID de <issue id=\"a9921c7a-9091-40fa-9fa1-1a185b1c1106\" href=\"https://linear.app/skilland/issue/SKI-53/preparar-evidencia-y-guion-de-demo-para-carmen\">SKI-53</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-53/dejar-el-enlace-y-el-guion-de-demo-nutriwell-listos-para-carmen",
+    "gitBranchName": "direccion/ski-53-dejar-el-enlace-y-el-guion-de-demo-nutriwell-listos-para",
+    "createdAt": "2026-09-07T05:15:09.408Z",
+    "updatedAt": "2026-09-15T16:56:57.299Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-15",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:09.408Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-74",
+          "title": "Revisar el mockup con Carmen, aplicar feedback y validar la versión final"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-52",
+          "title": "Probar NutriWell: pago, rechazo, reintento, duplicados, devolución y móvil"
+        }
+      ],
+      "relatedTo": [
+        {
+          "id": "SKI-73",
+          "title": "Revisar internamente el mockup completo"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-77",
+    "uuid": "a427f048-9a8b-410f-b7ad-241249a1aa22",
+    "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe",
+    "description": "## Resultado\n\nImplantar en la cuenta propia de EPI10 la versión aceptada por Carmen, con configuración y entrega verificadas.\n\n## Criterio de terminado\n\n- [ ] Cuenta EPI10 bajo su titularidad: alta/verificación y permisos de implementación gestionados por las personas autorizadas.\n- [ ] Replicar el catálogo, precio comercial, textos, marca y flujo de la versión aprobada; registrar diferencias de entorno.\n- [ ] Configurar credenciales, URLs y webhooks propios de EPI10 con verificación de firma, idempotencia y sin exponer secretos.\n- [ ] Ejecutar aceptación en pruebas de EPI10 y preparar el paso a producción conforme a sus decisiones y datos definitivos.\n- [ ] Entregar guía, enlaces, operación, incidencias, responsables y evidencias; registrar aceptación de entrega.\n- [ ] La factura del módulo adicional se conserva como subtarea <issue id=\"8c66f70c-fce1-44db-9817-e88b4cc2df70\" href=\"https://linear.app/skilland/issue/SKI-81/emitir-y-registrar-la-factura-del-modulo-adicional\">SKI-81</issue>, posterior a la entrega.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar guia_cliente.md; decisiones.md; pruebas.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Integra el trabajo antes separado en <issue id=\"dc8ca1a9-3ec3-477e-9d59-390c68b1bd99\" href=\"https://linear.app/skilland/issue/SKI-76/acompanar-alta-y-verificacion-de-la-cuenta-epi10\">SKI-76</issue>, <issue id=\"a8279848-79e9-422e-a7d7-41f144bacd89\" href=\"https://linear.app/skilland/issue/SKI-78/configurar-credenciales-enlaces-y-webhooks-del-entorno-epi10\">SKI-78</issue>, <issue id=\"f04f4b6d-c01e-4580-be2b-bec2a88456bf\" href=\"https://linear.app/skilland/issue/SKI-79/ejecutar-pruebas-de-aceptacion-en-epi10\">SKI-79</issue>, <issue id=\"2e4dcadd-4334-4d3e-9008-47f04e88ff82\" href=\"https://linear.app/skilland/issue/SKI-80/entregar-y-documentar-el-modulo-stripe\">SKI-80</issue>. Conserva el ID de <issue id=\"a427f048-9a8b-410f-b7ad-241249a1aa22\" href=\"https://linear.app/skilland/issue/SKI-77/replicar-catalogo-y-configuracion-en-epi10\">SKI-77</issue>; versión anterior guardada en el repositorio. Fase posterior al mockup validado; no se ha ejecutado todavía.",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-77/replicar-el-mockup-validado-en-la-cuenta-epi10-y-entregar-el-modulo",
+    "gitBranchName": "direccion/ski-77-replicar-el-mockup-validado-en-la-cuenta-epi10-y-entregar-el",
+    "createdAt": "2026-09-07T05:16:17.513Z",
+    "updatedAt": "2026-09-15T16:56:59.952Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:17.513Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-81",
+          "title": "Emitir y registrar la factura del módulo Stripe tras su entrega"
+        },
+        {
+          "id": "SKI-105",
+          "title": "Implementar entrada desde web y pago"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-74",
+          "title": "Revisar el mockup con Carmen, aplicar feedback y validar la versión final"
+        }
+      ],
+      "relatedTo": [
+        {
+          "id": "SKI-78",
+          "title": "Configurar credenciales, enlaces y webhooks del entorno EPI10"
+        },
+        {
+          "id": "SKI-79",
+          "title": "Ejecutar pruebas de aceptación en EPI10"
+        },
+        {
+          "id": "SKI-80",
+          "title": "Entregar y documentar el módulo Stripe"
+        },
+        {
+          "id": "SKI-76",
+          "title": "Acompañar alta y verificación de la cuenta EPI10"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-73",
+    "uuid": "a98734b5-f426-4afc-97b8-713dff094ac9",
+    "title": "Revisar internamente el mockup completo",
+    "description": "## Sustituida en el speedrun del 15 de septiembre de 2026\n\nEl trabajo de esta tarea se integra en [SKI-53](<https://linear.app/skilland/issue/SKI-53>). Se retira del trabajo activo por reorganización solicitada por Raúl; **no significa que el trabajo se haya ejecutado**. Las dependencias se han trasladado a las tareas concretas. El detalle anterior se conserva debajo.\n\n---\n\nHacer un gate interno de calidad antes de presentar la solución a Carmen.\n\n## Objetivo\n\nHacer un gate interno de calidad antes de presentar la solución a Carmen.\n\n## Criterio de terminado\n\nReplay completo ejecutado, copy y branding revisados, datos de prueba limpios y defectos críticos en cero.\n\n## Dependencias\n\nT028, T029.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T049 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-73/revisar-internamente-el-mockup-completo",
+    "gitBranchName": "direccion/ski-73-revisar-internamente-el-mockup-completo",
+    "createdAt": "2026-09-07T05:16:10.428Z",
+    "updatedAt": "2026-09-15T16:57:29.721Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": "2026-09-15T16:57:29.633Z",
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Canceled",
+    "statusType": "canceled",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:10.428Z",
+        "endedAt": "2026-09-15T16:57:29.721Z"
+      },
+      {
+        "state": {
+          "id": "2bf6eb1f-4ae9-454e-b610-e7b934d59bb5",
+          "name": "Canceled",
+          "type": "canceled"
+        },
+        "startedAt": "2026-09-15T16:57:29.721Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-53",
+          "title": "Dejar el enlace y el guion de demo NutriWell listos para Carmen"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-37",
+    "uuid": "7b9d744d-0ee1-4bbb-833c-97d959387444",
+    "title": "Construir la página NutriWell con marca EPI10 y botón al checkout",
+    "description": "## Resultado\n\nCrear la entrada visual que Carmen verá antes del pago.\n\n## Criterio de terminado\n\n- [ ] Página con nuevo logo, imagen coherente, explicación breve de NutriWell y sus cinco inclusiones.\n- [ ] Precio de prueba 100 EUR, indicación de demo y CTA de contratación enlazado al checkout de <issue id=\"98006883-995e-4c62-926f-7d0299092eeb\" href=\"https://linear.app/skilland/issue/SKI-49/configurar-el-checkout-stripe-con-los-nuevos-logos-epi10-y-cobro-de\">SKI-49</issue>.\n- [ ] Diseño usable en ordenador y móvil, con textos legibles, buen contraste y navegación por teclado.\n- [ ] Guardar implementación y comandos dentro del módulo Stripe; no incluir claves en cliente ni en el repo.\n- [ ] Dejar preparada la dirección de demo para el replay final; las URLs de retorno se cierran en <issue id=\"fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8\" href=\"https://linear.app/skilland/issue/SKI-50/configurar-paginas-de-exito-cancelacion-y-reintento\">SKI-50</issue>.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar speedrun_demo.md; marca.md; app/ o src/ tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"7b9d744d-0ee1-4bbb-833c-97d959387444\" href=\"https://linear.app/skilland/issue/SKI-37/especificar-flujo-de-compra-y-estados-de-pago\">SKI-37</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-37/construir-la-pagina-nutriwell-con-marca-epi10-y-boton-al-checkout",
+    "gitBranchName": "direccion/ski-37-construir-la-pagina-nutriwell-con-marca-epi10-y-boton-al",
+    "createdAt": "2026-09-07T05:14:16.902Z",
+    "updatedAt": "2026-09-15T16:56:50.006Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-15",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:14:16.902Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-52",
+          "title": "Probar NutriWell: pago, rechazo, reintento, duplicados, devolución y móvil"
+        },
+        {
+          "id": "SKI-50",
+          "title": "Conectar confirmación, abandono y reintento de la compra NutriWell"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-49",
+          "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR"
+        },
+        {
+          "id": "SKI-26",
+          "title": "Cerrar la ficha y reglas de compra de NutriWell · DEMO (100 EUR)"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-52",
+    "uuid": "09924f05-08c2-401c-812f-e325176be0cc",
+    "title": "Probar NutriWell: pago, rechazo, reintento, duplicados, devolución y móvil",
+    "description": "## Resultado\n\nEjecutar la matriz contra la demo integrada y resolver defectos antes de enseñarla.\n\n## Criterio de terminado\n\n- [ ] Pago correcto con tarjeta de prueba y correspondencia entre confirmación, Stripe y evento.\n- [ ] Rechazo, abandono y reintento comprobados con evidencia; incluir autenticación de tarjeta si el método elegido la requiere.\n- [ ] Doble intento de compra y evento repetido tratados según la regla acordada; firma inválida rechazada.\n- [ ] Devolución de prueba verificada en Stripe y mensajes coherentes con su estado.\n- [ ] Revisión visual en móvil y ordenador: logo, nombre, precio, contenido y botones; registrar cada caso como aprobado/fallido con evidencia.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar pruebas.md; evidencias/ tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Integra el trabajo antes separado en <issue id=\"392c12ce-043e-4402-83fc-c38688e0b197\" href=\"https://linear.app/skilland/issue/SKI-39/definir-matriz-de-pruebas-y-excepciones-de-pago\">SKI-39</issue>. Conserva el ID de <issue id=\"09924f05-08c2-401c-812f-e325176be0cc\" href=\"https://linear.app/skilland/issue/SKI-52/ejecutar-pruebas-funcionales-del-mockup\">SKI-52</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-52/probar-nutriwell-pago-rechazo-reintento-duplicados-devolucion-y-movil",
+    "gitBranchName": "direccion/ski-52-probar-nutriwell-pago-rechazo-reintento-duplicados",
+    "createdAt": "2026-09-07T05:15:07.947Z",
+    "updatedAt": "2026-09-15T16:56:53.450Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-15",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:07.947Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-53",
+          "title": "Dejar el enlace y el guion de demo NutriWell listos para Carmen"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-37",
+          "title": "Construir la página NutriWell con marca EPI10 y botón al checkout"
+        },
+        {
+          "id": "SKI-50",
+          "title": "Conectar confirmación, abandono y reintento de la compra NutriWell"
+        },
+        {
+          "id": "SKI-51",
+          "title": "Recibir el evento de pago Stripe con firma verificada y deduplicación"
+        }
+      ],
+      "relatedTo": [
+        {
+          "id": "SKI-39",
+          "title": "Definir matriz de pruebas y excepciones de pago"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-38",
+    "uuid": "33559f96-cd18-4253-a759-0c857794e74a",
+    "title": "Diseñar wireframes y copy del checkout",
+    "description": "## Sustituida en el speedrun del 15 de septiembre de 2026\n\nEl trabajo de esta tarea se integra en [SKI-49](<https://linear.app/skilland/issue/SKI-49>). Se retira del trabajo activo por reorganización solicitada por Raúl; **no significa que el trabajo se haya ejecutado**. Las dependencias se han trasladado a las tareas concretas. El detalle anterior se conserva debajo.\n\n---\n\nDiseñar la experiencia que se enseñará a Carmen antes de replicarla en su cuenta.\n\n## Objetivo\n\nDiseñar la experiencia que se enseñará a Carmen antes de replicarla en su cuenta.\n\n## Criterio de terminado\n\nWireframes y textos cubren entrada, checkout, confirmación, cancelación, error y siguiente paso con branding provisional.\n\n## Dependencias\n\nT013.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T014 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+      "name": "OL2 - Artefactos y diagnóstico"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-38/disenar-wireframes-y-copy-del-checkout",
+    "gitBranchName": "direccion/ski-38-disenar-wireframes-y-copy-del-checkout",
+    "createdAt": "2026-09-07T05:14:17.651Z",
+    "updatedAt": "2026-09-15T16:57:27.226Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": "2026-09-15T16:57:27.218Z",
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Canceled",
+    "statusType": "canceled",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:14:17.651Z",
+        "endedAt": "2026-09-15T16:57:27.226Z"
+      },
+      {
+        "state": {
+          "id": "2bf6eb1f-4ae9-454e-b610-e7b934d59bb5",
+          "name": "Canceled",
+          "type": "canceled"
+        },
+        "startedAt": "2026-09-15T16:57:27.226Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-49",
+          "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-51",
+    "uuid": "7bb7bcac-6d1e-431d-8baa-d5542e924e42",
+    "title": "Recibir el evento de pago Stripe con firma verificada y deduplicación",
+    "description": "## Resultado\n\nDemostrar que un pago de la demo deja una señal fiable para la integración posterior.\n\n## Criterio de terminado\n\n- [ ] Receptor de prueba conectado a Stripe y evento de Checkout vinculado a sesión y pago.\n- [ ] Verificar firma con el cuerpo original y rechazar una firma inválida sin alterar el registro.\n- [ ] Actuar solo cuando el estado del pago permita considerarlo cobrado; documentar los tipos de evento elegidos.\n- [ ] Reentregar el mismo evento no produce una segunda actuación; registrar ID y resultado mínimo.\n- [ ] Evidencia reproducible de recepción y repetición; no crear clientes/casos reales en Healthie u Odoo.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar pruebas.md; bitacora.md; app/ o src/ tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"7bb7bcac-6d1e-431d-8baa-d5542e924e42\" href=\"https://linear.app/skilland/issue/SKI-51/preparar-evento-o-webhook-de-pago-para-el-mockup\">SKI-51</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-51/recibir-el-evento-de-pago-stripe-con-firma-verificada-y-deduplicacion",
+    "gitBranchName": "direccion/ski-51-recibir-el-evento-de-pago-stripe-con-firma-verificada-y",
+    "createdAt": "2026-09-07T05:15:06.932Z",
+    "updatedAt": "2026-09-15T16:56:51.521Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-15",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:06.932Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-52",
+          "title": "Probar NutriWell: pago, rechazo, reintento, duplicados, devolución y móvil"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-28",
+          "title": "Conectar el CLI al entorno de pruebas EPI10 y verificar acceso"
+        },
+        {
+          "id": "SKI-49",
+          "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-80",
+    "uuid": "2e4dcadd-4334-4d3e-9008-47f04e88ff82",
+    "title": "Entregar y documentar el módulo Stripe",
+    "description": "## Sustituida en el speedrun del 15 de septiembre de 2026\n\nEl trabajo de esta tarea se integra en [SKI-77](<https://linear.app/skilland/issue/SKI-77>). Se retira del trabajo activo por reorganización solicitada por Raúl; **no significa que el trabajo se haya ejecutado**. Las dependencias se han trasladado a las tareas concretas. El detalle anterior se conserva debajo.\n\n---\n\nCerrar la entrega con configuración, operación, pruebas y responsabilidades entendibles.\n\n## Objetivo\n\nCerrar la entrega con configuración, operación, pruebas y responsabilidades entendibles.\n\n## Criterio de terminado\n\nDocumento de entrega incluye alcance, enlaces, operación, incidencias, owners, evidencia y aceptación.\n\n## Dependencias\n\nT055.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T056 · Stripe · 1.4 Implantación en entorno EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-80/entregar-y-documentar-el-modulo-stripe",
+    "gitBranchName": "direccion/ski-80-entregar-y-documentar-el-modulo-stripe",
+    "createdAt": "2026-09-07T05:16:19.937Z",
+    "updatedAt": "2026-09-15T16:57:38.771Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": "2026-09-15T16:57:38.763Z",
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Canceled",
+    "statusType": "canceled",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:19.937Z",
+        "endedAt": "2026-09-15T16:57:38.771Z"
+      },
+      {
+        "state": {
+          "id": "2bf6eb1f-4ae9-454e-b610-e7b934d59bb5",
+          "name": "Canceled",
+          "type": "canceled"
+        },
+        "startedAt": "2026-09-15T16:57:38.771Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-77",
+          "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-27",
+    "uuid": "7b00ef89-91b0-4fa1-a992-e3c59bce2b7c",
+    "title": "Inventariar escenarios y reglas de pago",
+    "description": "## Sustituida en el speedrun del 15 de septiembre de 2026\n\nEl trabajo de esta tarea se integra en [SKI-26](<https://linear.app/skilland/issue/SKI-26>). Se retira del trabajo activo por reorganización solicitada por Raúl; **no significa que el trabajo se haya ejecutado**. Las dependencias se han trasladado a las tareas concretas. El detalle anterior se conserva debajo.\n\n---\n\nIdentificar pago correcto, cancelado, fallido, reintento, duplicado y reembolso, junto con sus efectos operativos.\n\n## Objetivo\n\nIdentificar pago correcto, cancelado, fallido, reintento, duplicado y reembolso, junto con sus efectos operativos.\n\n## Criterio de terminado\n\nLa matriz de escenarios define trigger, estado, mensaje al cliente, acción interna y tratamiento de excepción.\n\n## Dependencias\n\nT001.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T002 · Stripe · 1.1 Diseño del flujo de cobro",
+    "projectMilestone": {
+      "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+      "name": "OL1 - Apertura de frentes "
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-27/inventariar-escenarios-y-reglas-de-pago",
+    "gitBranchName": "direccion/ski-27-inventariar-escenarios-y-reglas-de-pago",
+    "createdAt": "2026-09-07T05:13:30.301Z",
+    "updatedAt": "2026-09-15T16:57:25.830Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": "2026-09-15T16:57:25.821Z",
+    "dueDate": "2026-09-11",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Canceled",
+    "statusType": "canceled",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:13:30.301Z",
+        "endedAt": "2026-09-15T16:57:25.830Z"
+      },
+      {
+        "state": {
+          "id": "2bf6eb1f-4ae9-454e-b610-e7b934d59bb5",
+          "name": "Canceled",
+          "type": "canceled"
+        },
+        "startedAt": "2026-09-15T16:57:25.830Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-26",
+          "title": "Cerrar la ficha y reglas de compra de NutriWell · DEMO (100 EUR)"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-26",
+    "uuid": "e2e35bb5-ed44-4e44-95e2-b6e42a7bf08f",
+    "title": "Cerrar la ficha y reglas de compra de NutriWell · DEMO (100 EUR)",
+    "description": "## Resultado\n\nDejar el contenido único que usaremos en la página de producto y el checkout de la demo para Carmen.\n\n## Criterio de terminado\n\n- [ ] Ficha con nombre provisional NutriWell · DEMO, pago único ficticio de 100 EUR y una unidad.\n- [ ] Incluye test genético, cuestionario de hábitos/contexto, informe, plan de acción y sesión profesional; texto e imagen de producto preparados.\n- [ ] Usar los nuevos logos aportados en Nuevos-logos-de-EPI10; 01 azul para claro, 02 blanco para oscuro; #044799.\n- [ ] Reglas de compra definidas para pago correcto, rechazo, abandono, reintento, doble intento y devolución; distinguir compra duplicada de evento repetido.\n- [ ] Indicación visible de demo y siguiente paso que no prometa invitaciones ni servicios aún no ejecutados.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar speedrun_demo.md; marca.md; decisiones.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Integra el trabajo antes separado en <issue id=\"7b00ef89-91b0-4fa1-a992-e3c59bce2b7c\" href=\"https://linear.app/skilland/issue/SKI-27/inventariar-escenarios-y-reglas-de-pago\">SKI-27</issue>. Conserva el ID de <issue id=\"e2e35bb5-ed44-4e44-95e2-b6e42a7bf08f\" href=\"https://linear.app/skilland/issue/SKI-26/definir-alcance-funcional-del-mockup-de-cobro\">SKI-26</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-26/cerrar-la-ficha-y-reglas-de-compra-de-nutriwell-demo-100-eur",
+    "gitBranchName": "direccion/ski-26-cerrar-la-ficha-y-reglas-de-compra-de-nutriwell-demo-100-eur",
+    "createdAt": "2026-09-07T05:12:57.140Z",
+    "updatedAt": "2026-09-15T16:56:41.320Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": "2026-09-15T16:56:41.304Z",
+    "canceledAt": null,
+    "dueDate": "2026-09-15",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "In Progress",
+    "statusType": "started",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:12:57.140Z",
+        "endedAt": "2026-09-15T16:56:41.320Z"
+      },
+      {
+        "state": {
+          "id": "3557045f-ba80-46f9-83f0-75dcfd2cf938",
+          "name": "In Progress",
+          "type": "started"
+        },
+        "startedAt": "2026-09-15T16:56:41.320Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-37",
+          "title": "Construir la página NutriWell con marca EPI10 y botón al checkout"
+        },
+        {
+          "id": "SKI-49",
+          "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR"
+        },
+        {
+          "id": "SKI-48",
+          "title": "Crear en Stripe NutriWell · DEMO: 100 EUR, pago único y una unidad"
+        }
+      ],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-27",
+          "title": "Inventariar escenarios y reglas de pago"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-76",
+    "uuid": "dc8ca1a9-3ec3-477e-9d59-390c68b1bd99",
+    "title": "Acompañar alta y verificación de la cuenta EPI10",
+    "description": "## Sustituida en el speedrun del 15 de septiembre de 2026\n\nEl trabajo de esta tarea se integra en [SKI-77](<https://linear.app/skilland/issue/SKI-77>). Se retira del trabajo activo por reorganización solicitada por Raúl; **no significa que el trabajo se haya ejecutado**. Las dependencias se han trasladado a las tareas concretas. El detalle anterior se conserva debajo.\n\n---\n\nAyudar a EPI10 a completar el alta, verificación y roles necesarios sin asumir titularidad de la cuenta.\n\n## Objetivo\n\nAyudar a EPI10 a completar el alta, verificación y roles necesarios sin asumir titularidad de la cuenta.\n\n## Criterio de terminado\n\nCuenta creada/verificada por EPI10, owners correctos, acceso de implementación concedido y secretos gestionados de forma segura.\n\n## Dependencias\n\nT050.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T052 · Stripe · 1.3 Validación y alta de EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-76/acompanar-alta-y-verificacion-de-la-cuenta-epi10",
+    "gitBranchName": "direccion/ski-76-acompanar-alta-y-verificacion-de-la-cuenta-epi10",
+    "createdAt": "2026-09-07T05:16:15.622Z",
+    "updatedAt": "2026-09-15T16:57:32.114Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": "2026-09-15T16:57:32.036Z",
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Canceled",
+    "statusType": "canceled",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:15.622Z",
+        "endedAt": "2026-09-15T16:57:32.114Z"
+      },
+      {
+        "state": {
+          "id": "2bf6eb1f-4ae9-454e-b610-e7b934d59bb5",
+          "name": "Canceled",
+          "type": "canceled"
+        },
+        "startedAt": "2026-09-15T16:57:32.114Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [],
+      "relatedTo": [
+        {
+          "id": "SKI-77",
+          "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe"
+        }
+      ],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-50",
+    "uuid": "fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8",
+    "title": "Conectar confirmación, abandono y reintento de la compra NutriWell",
+    "description": "## Resultado\n\nCerrar lo que ve el comprador después de pagar, salir o encontrar un error.\n\n## Criterio de terminado\n\n- [ ] Confirmación que corresponde al estado real del pago, con referencia y siguiente paso comprensibles.\n- [ ] Si hay página de éxito propia, verificar el estado en servidor; visitar la URL por sí solo no marca una compra pagada.\n- [ ] Salir sin pagar mantiene la compra sin completar y ofrece volver al checkout.\n- [ ] Rechazo permite corregir/reintentar sin crear una segunda actuación de negocio.\n- [ ] Copy EPI10 coherente en todas las superficies, sin prometer emails/invitaciones que no se hayan enviado.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar guia_cliente.md; pruebas.md; bitacora.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8\" href=\"https://linear.app/skilland/issue/SKI-50/configurar-paginas-de-exito-cancelacion-y-reintento\">SKI-50</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-50/conectar-confirmacion-abandono-y-reintento-de-la-compra-nutriwell",
+    "gitBranchName": "direccion/ski-50-conectar-confirmacion-abandono-y-reintento-de-la-compra",
+    "createdAt": "2026-09-07T05:15:05.201Z",
+    "updatedAt": "2026-09-15T16:56:49.972Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-15",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:05.201Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "assignee": "Raúl",
+    "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-52",
+          "title": "Probar NutriWell: pago, rechazo, reintento, duplicados, devolución y móvil"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-37",
+          "title": "Construir la página NutriWell con marca EPI10 y botón al checkout"
+        },
+        {
+          "id": "SKI-49",
+          "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-105",
+    "uuid": "3d590737-ae59-4380-8c38-4496326db4c2",
+    "title": "Implementar entrada desde web y pago",
+    "description": "Crear/actualizar contacto y caso desde un evento de entrada/pago de forma idempotente.\n\n## Objetivo\n\nCrear/actualizar contacto y caso desde un evento de entrada/pago de forma idempotente.\n\n## Criterio de terminado\n\nEvento sintético crea un único caso, registra referencia/pago, maneja repetición/error y genera siguiente acción.\n\n## Dependencias\n\nT048, T054, T067, T068.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T081 · Odoo · 4.4 Seguridad, permisos y QA",
+    "projectMilestone": {
+      "id": "232da221-e198-45b0-99bf-6cf20c23b305",
+      "name": "OL6 - Superficies de integración y QA individual"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-105/implementar-entrada-desde-web-y-pago",
+    "gitBranchName": "direccion/ski-105-implementar-entrada-desde-web-y-pago",
+    "createdAt": "2026-09-07T05:17:45.165Z",
+    "updatedAt": "2026-09-15T16:56:31.441Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Odoo"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:17:45.165Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-122",
+          "title": "Implementar idempotencia, reintentos y recuperación"
+        },
+        {
+          "id": "SKI-115",
+          "title": "Integrar alta desde Stripe/web hacia Odoo y Healthie"
+        },
+        {
+          "id": "SKI-109",
+          "title": "Validar seguridad, permisos, auditoría y backup"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-77",
+          "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe"
+        },
+        {
+          "id": "SKI-72",
+          "title": "Cerrar contratos de datos e integración"
+        },
+        {
+          "id": "SKI-91",
+          "title": "Implementar modelo de caso EPI10 y pipeline"
+        },
+        {
+          "id": "SKI-92",
+          "title": "Implementar estados, hitos y checklist operativo"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  }
+]

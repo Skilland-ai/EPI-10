@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "checks": {
+    "api": true,
+    "description": true,
+    "images_loaded": true,
+    "new_product_portrait": true,
+    "header_logo_preserved": true,
+    "price_and_demo": true,
+    "no_payment": true,
+    "source_extraction_preserved": true
+  },
+  "screenshot_available": false,
+  "next_step": "SKI-37 pendiente; no iniciada"
+}

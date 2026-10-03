@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-09-15T19:42:39.981Z",
+  "session": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+  "status": "open",
+  "payment_status": "unpaid",
+  "payment_intent": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+  "intent_status": "requires_payment_method",
+  "decline": "generic_decline",
+  "error": "card_declined"
+}

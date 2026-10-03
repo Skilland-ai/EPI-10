@@ -1,0 +1,16 @@
+{
+  "file_id": "file_1UG02ERrJS0VSqzs5X1MupI8",
+  "file_link_id": "link_1UG02FRrJS0VSqzsD7pgzdeS",
+  "image_url": "https://files.stripe.com/links/MDB8YWNjdF8xVUZ6QnFSckpTMFZTcXpzfGZsX3Rlc3RfTHo2WVRkc3JSalBReFh4RUpKM09sdWp600MeZT2ncG",
+  "livemode": false,
+  "http_status": 200,
+  "mime_type": "image/png",
+  "original_sha256": "2a33b401f19af6fc110f74943f1094d40fa4038333a7f77b907f22e36a9c68ca",
+  "download_sha256": "c2af3bc7cadd65420e332f8d842772a72f3ba431f74bb5b2d4e3caaf2949f65c",
+  "bytes_identical": false,
+  "pixel_difference_count": 0,
+  "dimensions": [
+    824,
+    293
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  ".vercelignore": "9eab1a59cbfdba58504998f3c86eff90a642ca76a7307a1b3c35a39c93b5d359",
+  "postcss.config.mjs": "4cae941be9bc3bee9a6905e47ea7a51aee216d587d34a8cc4ae48f78fd6d8159",
+  "vercel.json": "44025c9f788646ff8a9a58aecd807115a41629a935b57ea5390bbb0acf192510",
+  ".gitignore": "a5ed0b2db48dd52e429d2f0735730b873f540a6ebee4065f7b147d05fd246e19",
+  ".openai/hosting.json": "1683a26c6457fdc0e975d957ef17cf0d8de0202d6fa421cb8c3d77e52684d630",
+  "README.md": "5aec884971421e9521d6b658ba88f884794e86d2860ecbcc10a1dc401840cbdb",
+  "app/globals.css": "067f48b91d67fadec4e8a7bb20828dab97bc0551008bd3a3b32114e3c94b1bc7",
+  "app/layout.tsx": "4bf2bdce0a295c2f201dc21ac18cc3192bcb5d9bd358ee20cac46a3e5751d977",
+  "app/page.tsx": "cb74675ffbaed0f2596c5dd5aa781ce4866a30892f09a10f15a04b859d54ae2d",
+  "eslint.config.mjs": "5c697206f302dadc0c8b7b2f7a707257dab15129a2149872b0f84ea1ac17d263",
+  "next.config.ts": "b7daaaf4e30219a77365aa2a6335238ec74142dc686d0702703dab6b52b4b7f3",
+  "package-lock.json": "bba54d349adfa37e5c369710f6e222602d421a845911b755d560cffec70ce542",
+  "package.json": "d536a9d39b5e0159d99a7e9b799f13dc7653de313ffad405d05b981857fb9bd8",
+  "public/images/epi10-blue.png": "2a33b401f19af6fc110f74943f1094d40fa4038333a7f77b907f22e36a9c68ca",
+  "public/images/epi10-white.png": "f17e38c172c2c515ee0e984408cb264079c138675b9900e00d4886431884e365",
+  "public/images/nutriwell-cover.jpg": "333292d960bdf6eb5f2d27e9f15c5542ed1b79ac37c0aaaa90bd06dae31fc5ee",
+  "public/images/nutriwell-editorial.jpg": "da563baeb6a4feaca25f1eacac55495fd6dde5fe729be0a3aa7999b199fcf152",
+  "public/og.png": "884439ed1fb5def2030bc933ad436811d538f334d4c8bfc09420c6d7e345f105",
+  "tsconfig.json": "c780dae6a57367299eb692588299f3ff31231c163d00fa03c9d1cd40c8550646",
+  "vite.config.ts": "0388f7be4819d7e40a8957c845ab1bbbcfde6e42cbfb506bfe55af7558a23c63"
+}

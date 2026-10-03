@@ -1,0 +1,18 @@
+✔ an unpaid or processing checkout never becomes a paid confirmation (2.516442ms)
+✔ verifies the paid charge and full refund; partial refund stays unconfirmed (0.343645ms)
+✔ rejects live mode, other purchases, amounts, prices and quantities (0.539159ms)
+✔ signed cookie rejects edits and malformed values (2.939344ms)
+✔ resume and paid replay create no new checkout (0.733889ms)
+✔ lost cookie response recovers the Stripe record even after 24h (0.31184ms)
+✔ expired attempts keep the purchase reference and increment attempt (0.843726ms)
+✔ concurrent initial submissions use identical idempotency keys and fixed amounts (0.622001ms)
+✔ duplicate completed payments and missing known sessions fail closed (2.144838ms)
+✔ Stripe outage cannot create a replacement checkout (0.93306ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 546.447585

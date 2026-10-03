@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "checks": {
+    "links_valid": true,
+    "no_secret_patterns": true,
+    "deployment_succeeded": true,
+    "public_access": true,
+    "public_html_checks_pass": true,
+    "text_color_pairs_pass": true,
+    "app_source_clean": true
+  },
+  "markdown_files": 22,
+  "local_links": 205,
+  "broken_links": [],
+  "secret_files": [],
+  "contrast_ratios": {
+    "082b43/f8f5ef": 13.43,
+    "526575/f8f5ef": 5.55,
+    "ffffff/044799": 8.87,
+    "bfd0db/082f49": 8.76,
+    "8ae1e5/082f49": 9.24
+  },
+  "browser_dom_qa_performed": true,
+  "browser_screenshot_available": false,
+  "payment_executed": false
+}

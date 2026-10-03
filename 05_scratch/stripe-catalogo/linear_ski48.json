@@ -1,0 +1,91 @@
+{
+  "id": "SKI-48",
+  "uuid": "766b6866-a4d6-4cdd-80df-eca1d36875c6",
+  "title": "Crear en Stripe NutriWell · DEMO: 100 EUR, pago único y una unidad",
+  "description": "## Resultado\n\nCrear el catálogo real de pruebas que alimentará la compra de la demo.\n\n## Criterio de terminado\n\n- [X] Crear o reutilizar sin duplicados el producto NutriWell · DEMO con descripción e imagen acordadas.\n- [X] Crear precio nominal de 10000 céntimos EUR, no recurrente, y guardar cantidad=1 en la configuración de compra. La cantidad fija y no ajustable se aplicará y verificará en <issue id=\"98006883-995e-4c62-926f-7d0299092eeb\" href=\"https://linear.app/skilland/issue/SKI-49/configurar-el-checkout-stripe-con-los-nuevos-logos-epi10-y-cobro-de\">SKI-49</issue> al crear el checkout.\n- [X] Comprobar producto y precio en API/Dashboard y guardar IDs públicos.\n- [X] No añadir facturación o impuestos automáticos a esta demo; no fija el tratamiento fiscal del servicio real.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar guia_cliente.md; bitacora.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"766b6866-a4d6-4cdd-80df-eca1d36875c6\" href=\"https://linear.app/skilland/issue/SKI-48/configurar-catalogo-producto-y-precio-de-prueba\">SKI-48</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.\n\n## Resultado verificado — 2026-09-15\n\nCreado y releído por API el producto `prod_epi10_nutriwell_demo_v1`, con descripción de cinco inclusiones e imagen del nuevo logo azul. Precio predeterminado `price_1UG00zRrJS0VSqzs4Uhv6g9Q`: 10000 céntimos EUR, activo, one_time, recurring=null, livemode=false. Consulta completa confirma un producto y un precio, sin duplicados.\n\nImagen alojada en Stripe: HTTP 200, PNG 824×293 RGBA, 0 píxeles diferentes frente al original. Subida resuelta con multipart usando en memoria la autorización del CLI.\n\nEvidencia: `04_outputs/modulos/stripe/evidencias/2026-09-15_catalogo_verificado.json`. Configuración sin secretos: `config/catalogo_demo.json`, con quantity=1 y checkout_settings_applied=false. Procedimiento en `docs/catalogo_stripe.md`, guía y bitácora S16 actualizadas. Trece comprobaciones PASS. La cantidad fija y opciones de facturas/impuestos se aplicarán y comprobarán en <issue id=\"98006883-995e-4c62-926f-7d0299092eeb\" href=\"https://linear.app/skilland/issue/SKI-49/configurar-el-checkout-stripe-con-los-nuevos-logos-epi10-y-cobro-de\">SKI-49</issue>; no hay checkout ni pagos ejecutados.",
+  "projectMilestone": {
+    "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+    "name": "OL3 - Validación y preparación"
+  },
+  "priority": {
+    "value": 0,
+    "name": "No priority"
+  },
+  "url": "https://linear.app/skilland/issue/SKI-48/crear-en-stripe-nutriwell-demo-100-eur-pago-unico-y-una-unidad",
+  "gitBranchName": "direccion/ski-48-crear-en-stripe-nutriwell-demo-100-eur-pago-unico-y-una",
+  "createdAt": "2026-09-07T05:15:01.045Z",
+  "updatedAt": "2026-09-15T17:25:33.004Z",
+  "archivedAt": null,
+  "completedAt": "2026-09-15T17:25:32.997Z",
+  "startedAt": "2026-09-15T17:15:53.326Z",
+  "canceledAt": null,
+  "dueDate": "2026-09-15",
+  "slaStartedAt": null,
+  "slaMediumRiskAt": null,
+  "slaHighRiskAt": null,
+  "slaBreachesAt": null,
+  "status": "Done",
+  "statusType": "completed",
+  "labels": [
+    "Stripe"
+  ],
+  "attachments": [],
+  "documents": [],
+  "stateHistory": [
+    {
+      "state": {
+        "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "startedAt": "2026-09-07T05:15:01.045Z",
+      "endedAt": "2026-09-15T17:15:53.334Z"
+    },
+    {
+      "state": {
+        "id": "3557045f-ba80-46f9-83f0-75dcfd2cf938",
+        "name": "In Progress",
+        "type": "started"
+      },
+      "startedAt": "2026-09-15T17:15:53.334Z",
+      "endedAt": "2026-09-15T17:25:33.004Z"
+    },
+    {
+      "state": {
+        "id": "1e686c27-ffdb-4585-b505-d0cfa749a3a1",
+        "name": "Done",
+        "type": "completed"
+      },
+      "startedAt": "2026-09-15T17:25:33.004Z",
+      "endedAt": null
+    }
+  ],
+  "createdBy": "Raúl",
+  "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "assignee": "Raúl",
+  "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "project": "EPI10 Salud MVP",
+  "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+  "team": "Skilland",
+  "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+  "relations": {
+    "blocks": [
+      {
+        "id": "SKI-49",
+        "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR"
+      }
+    ],
+    "blockedBy": [
+      {
+        "id": "SKI-28",
+        "title": "Conectar el CLI al entorno de pruebas EPI10 y verificar acceso"
+      },
+      {
+        "id": "SKI-26",
+        "title": "Cerrar la ficha y reglas de compra de NutriWell · DEMO (100 EUR)"
+      }
+    ],
+    "relatedTo": [],
+    "duplicateOf": null
+  }
+}

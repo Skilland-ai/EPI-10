@@ -1,0 +1,53 @@
+{
+  "id": "SKI-77",
+  "uuid": "a427f048-9a8b-410f-b7ad-241249a1aa22",
+  "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe",
+  "description": "## Resultado\n\nImplantar en la cuenta propia de EPI10 la versión aceptada por Carmen, con configuración y entrega verificadas.\n\n## Criterio de terminado\n\n- [ ] Cuenta EPI10 bajo su titularidad: alta/verificación y permisos de implementación gestionados por las personas autorizadas.\n- [ ] Replicar el catálogo, precio comercial, textos, marca y flujo de la versión aprobada; registrar diferencias de entorno.\n- [ ] Configurar credenciales, URLs y webhooks propios de EPI10 con verificación de firma, idempotencia y sin exponer secretos.\n- [ ] Ejecutar aceptación en pruebas de EPI10 y preparar el paso a producción conforme a sus decisiones y datos definitivos.\n- [ ] Entregar guía, enlaces, operación, incidencias, responsables y evidencias; registrar aceptación de entrega.\n- [ ] La factura del módulo adicional se conserva como subtarea <issue id=\"8c66f70c-fce1-44db-9817-e88b4cc2df70\" href=\"https://linear.app/skilland/issue/SKI-81/emitir-y-registrar-la-factura-del-modulo-adicional\">SKI-81</issue>, posterior a la entrega.\n\n## Configuración comercial y operativa de Stripe — alcance explícito\n\nAclaración del 15 de septiembre: esta tarea incluye preparar la cuenta real de EPI10, además de replicar el mockup. Se ejecuta con su cuenta y decisiones aprobadas; no bloquea el cierre de la demo en el sandbox actual.\n\n- [ ] EPI10 aporta titularidad, país, entidad, datos fiscales, representante y documentación de verificación/activación que solicite Stripe.\n- [ ] Cuenta bancaria receptora, moneda y calendario disponible de transferencias definidos por EPI10 y configurados.\n- [ ] Propietario, roles, segundo factor, permisos técnicos y responsable de operación establecidos.\n- [ ] Datos visibles al comprador revisados: nombre comercial, marca, web, soporte y texto del cargo en el extracto.\n- [ ] Producto, precio, moneda, modalidad y métodos de pago definitivos aprobados y configurados.\n- [ ] Tratamiento fiscal, datos de facturación, recibos y sistema emisor de facturas definidos por EPI10/asesoría e implementados donde corresponda. No activar módulos adicionales por defecto.\n- [ ] Políticas, procedimiento y responsables de devoluciones, cancelaciones, disputas y avisos documentados; ajustes aplicables configurados.\n- [ ] Coordinación con el proveedor web: URLs definitivas, retorno, claves, webhooks y siguiente paso operativo; pruebas y preparación del paso a vivo verificadas antes de abrir cobros reales.\n\nLa configuración se replica en el destino con sus propios objetos, referencias, enlaces y credenciales. No se trasladan pagos ficticios ni se considera suficiente cambiar una API key. <issue id=\"8c66f70c-fce1-44db-9817-e88b4cc2df70\" href=\"https://linear.app/skilland/issue/SKI-81/emitir-y-registrar-la-factura-del-modulo-stripe-tras-su-entrega\">SKI-81</issue> factura la entrega del módulo de Skilland; la facturación de EPI10 a compradores pertenece a la definición anterior.\n\nDesglose: 04_outputs/modulos/stripe/docs/configuracion_entornos.md. Estado: pendiente; ninguna opción de cuenta productiva se ha aplicado en este paso.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar guia_cliente.md; decisiones.md; pruebas.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Integra el trabajo antes separado en <issue id=\"dc8ca1a9-3ec3-477e-9d59-390c68b1bd99\" href=\"https://linear.app/skilland/issue/SKI-76/acompanar-alta-y-verificacion-de-la-cuenta-epi10\">SKI-76</issue>, <issue id=\"a8279848-79e9-422e-a7d7-41f144bacd89\" href=\"https://linear.app/skilland/issue/SKI-78/configurar-credenciales-enlaces-y-webhooks-del-entorno-epi10\">SKI-78</issue>, <issue id=\"f04f4b6d-c01e-4580-be2b-bec2a88456bf\" href=\"https://linear.app/skilland/issue/SKI-79/ejecutar-pruebas-de-aceptacion-en-epi10\">SKI-79</issue>, <issue id=\"2e4dcadd-4334-4d3e-9008-47f04e88ff82\" href=\"https://linear.app/skilland/issue/SKI-80/entregar-y-documentar-el-modulo-stripe\">SKI-80</issue>. Conserva el ID de <issue id=\"a427f048-9a8b-410f-b7ad-241249a1aa22\" href=\"https://linear.app/skilland/issue/SKI-77/replicar-catalogo-y-configuracion-en-epi10\">SKI-77</issue>; versión anterior guardada en el repositorio. Fase posterior al mockup validado; no se ha ejecutado todavía.",
+  "projectMilestone": {
+    "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+    "name": "OL4 - Specs y cierre de Stripe"
+  },
+  "priority": {
+    "value": 0,
+    "name": "No priority"
+  },
+  "url": "https://linear.app/skilland/issue/SKI-77/replicar-el-mockup-validado-en-la-cuenta-epi10-y-entregar-el-modulo",
+  "gitBranchName": "direccion/ski-77-replicar-el-mockup-validado-en-la-cuenta-epi10-y-entregar-el",
+  "createdAt": "2026-09-07T05:16:17.513Z",
+  "updatedAt": "2026-09-15T19:08:07.809Z",
+  "archivedAt": null,
+  "completedAt": null,
+  "startedAt": null,
+  "canceledAt": null,
+  "dueDate": null,
+  "slaStartedAt": null,
+  "slaMediumRiskAt": null,
+  "slaHighRiskAt": null,
+  "slaBreachesAt": null,
+  "status": "Todo",
+  "statusType": "unstarted",
+  "labels": [
+    "Stripe"
+  ],
+  "attachments": [],
+  "documents": [],
+  "stateHistory": [
+    {
+      "state": {
+        "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "startedAt": "2026-09-07T05:16:17.513Z",
+      "endedAt": null
+    }
+  ],
+  "createdBy": "Raúl",
+  "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "assignee": "Raúl",
+  "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "project": "EPI10 Salud MVP",
+  "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+  "team": "Skilland",
+  "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7"
+}

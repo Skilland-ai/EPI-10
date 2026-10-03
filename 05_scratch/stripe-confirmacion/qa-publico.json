@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-09-15T19:49:08.166Z",
+  "cases": [
+    {
+      "path": "/",
+      "status": 200,
+      "state": null,
+      "noSecret": true,
+      "cache": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "path": "/compra",
+      "status": 200,
+      "state": "missing",
+      "noSecret": true,
+      "cache": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "path": "/compra?session_id=cs_test_fake&estado=paid",
+      "status": 200,
+      "state": "missing",
+      "noSecret": true,
+      "cache": "private, no-cache, no-store, max-age=0, must-revalidate"
+    }
+  ],
+  "client_chunks": 14,
+  "secret_absent": true
+}

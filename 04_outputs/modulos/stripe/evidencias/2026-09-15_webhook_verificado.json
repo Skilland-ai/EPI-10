@@ -1,0 +1,294 @@
+{
+  "id": "E18",
+  "verified_at": "2026-09-15T20:44:05.146825+00:00",
+  "scope": "SKI-51 — receptor, firma y deduplicación",
+  "account_id": "acct_1UFzBqRrJS0VSqzs",
+  "livemode": false,
+  "url": "https://epi10-nutriwell-demo.vercel.app",
+  "landing_http_status": 200,
+  "deployment": {
+    "id": "dpl_357Xo8829MwqA4qNyx57XQR1on2u",
+    "status": "READY",
+    "url": "https://epi10-nutriwell-demo-j8n2r77qk-raul-1873s-projects.vercel.app"
+  },
+  "webhook": {
+    "verified_at": "2026-09-15T20:27:29.898Z",
+    "account_id": "acct_1UFzBqRrJS0VSqzs",
+    "endpoint_id": "we_1UG2wvRrJS0VSqzsL52DmF4u",
+    "url": "https://epi10-nutriwell-demo.vercel.app/api/webhooks/stripe",
+    "livemode": false,
+    "status": "enabled",
+    "api_version": "2026-08-26.dahlia",
+    "enabled_events": [
+      "checkout.session.completed",
+      "checkout.session.async_payment_succeeded",
+      "checkout.session.async_payment_failed",
+      "checkout.session.expired",
+      "charge.refunded"
+    ],
+    "signing_environment_variable": "STRIPE_WEBHOOK_SECRET",
+    "storage": {
+      "provider": "Upstash Redis",
+      "resource": "epi10-stripe-events-demo",
+      "resource_id": "store_pLsMKu4pJymUMifN",
+      "plan": "free",
+      "region": "iad1",
+      "ledger_key": "epi10:stripe:sandbox:v1",
+      "ttl": null
+    }
+  },
+  "real_stripe_delivery": {
+    "source": "Stripe CLI events resend del evento real de SKI-50; no se realizó otro cobro",
+    "delivery_1": {
+      "exit_code": 0,
+      "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+      "type": "checkout.session.completed",
+      "pending_webhooks": 1,
+      "error": null
+    },
+    "delivery_2": {
+      "exit_code": 0,
+      "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+      "type": "checkout.session.completed",
+      "pending_webhooks": 1,
+      "error": null
+    },
+    "first_ledger": {
+      "checked_at": "2026-09-15T20:30:10.216Z",
+      "events": [
+        {
+          "amount": 10000,
+          "currency": "eur",
+          "deliveries": 1,
+          "event_created": 1789501368,
+          "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+          "event_type": "checkout.session.completed",
+          "last_received_at": "2026-09-15T20:30:03.948Z",
+          "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+          "outcome": "payment_recorded",
+          "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+          "received_at": "2026-09-15T20:30:03.948Z",
+          "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+          "status": "paid"
+        }
+      ],
+      "orders": [
+        {
+          "amount": 10000,
+          "currency": "eur",
+          "first_event": "evt_1UG2FgRrJS0VSqzseygOV73y",
+          "livemode": false,
+          "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+          "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+          "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+          "status": "paid",
+          "updated_at": "2026-09-15T20:30:03.948Z"
+        }
+      ],
+      "payments": [
+        {
+          "amount": 10000,
+          "currency": "eur",
+          "livemode": false,
+          "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+          "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+          "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+          "status": "paid",
+          "updated_at": "2026-09-15T20:30:03.948Z"
+        }
+      ],
+      "business_records": [
+        {
+          "created_at": "2026-09-15T20:30:03.948Z",
+          "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+          "kind": "demo.payment_recorded",
+          "livemode": false,
+          "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+          "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+          "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R"
+        }
+      ]
+    },
+    "second_ledger": {
+      "checked_at": "2026-09-15T20:31:44.583Z",
+      "events": [
+        {
+          "amount": 10000,
+          "currency": "eur",
+          "deliveries": 2,
+          "event_created": 1789501368,
+          "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+          "event_type": "checkout.session.completed",
+          "last_received_at": "2026-09-15T20:31:12.652Z",
+          "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+          "outcome": "payment_recorded",
+          "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+          "received_at": "2026-09-15T20:30:03.948Z",
+          "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+          "status": "paid"
+        }
+      ],
+      "orders": [
+        {
+          "amount": 10000,
+          "currency": "eur",
+          "first_event": "evt_1UG2FgRrJS0VSqzseygOV73y",
+          "livemode": false,
+          "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+          "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+          "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+          "status": "paid",
+          "updated_at": "2026-09-15T20:30:03.948Z"
+        }
+      ],
+      "payments": [
+        {
+          "amount": 10000,
+          "currency": "eur",
+          "livemode": false,
+          "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+          "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+          "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+          "status": "paid",
+          "updated_at": "2026-09-15T20:30:03.948Z"
+        }
+      ],
+      "business_records": [
+        {
+          "created_at": "2026-09-15T20:30:03.948Z",
+          "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+          "kind": "demo.payment_recorded",
+          "livemode": false,
+          "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+          "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+          "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R"
+        }
+      ]
+    },
+    "business_records_unchanged": true
+  },
+  "public_http_first_deployment": {
+    "checked_at": "2026-09-15T20:31:47.892Z",
+    "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+    "invalid_signatures": [
+      {
+        "variant": "missing",
+        "status": 400
+      },
+      {
+        "variant": "wrong",
+        "status": 400
+      },
+      {
+        "variant": "tampered",
+        "status": 400
+      },
+      {
+        "variant": "expired",
+        "status": 400
+      }
+    ],
+    "invalid_requests_left_journal_unchanged": true,
+    "local_signed_replay": {
+      "status": 200,
+      "received": true,
+      "business_action_created": false,
+      "deliveries": 3,
+      "outcome": "duplicate_event"
+    },
+    "deliveries_before": 2,
+    "deliveries_after": 3,
+    "business_records_unchanged": true,
+    "journal_get_status": 405
+  },
+  "public_http_final_deployment": {
+    "checked_at": "2026-09-15T20:39:42.723Z",
+    "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+    "invalid_signatures": [
+      {
+        "variant": "missing",
+        "status": 400
+      },
+      {
+        "variant": "wrong",
+        "status": 400
+      },
+      {
+        "variant": "tampered",
+        "status": 400
+      },
+      {
+        "variant": "expired",
+        "status": 400
+      }
+    ],
+    "invalid_requests_left_journal_unchanged": true,
+    "local_signed_replay": {
+      "status": 200,
+      "received": true,
+      "business_action_created": false,
+      "deliveries": 4,
+      "outcome": "duplicate_event"
+    },
+    "deliveries_before": 3,
+    "deliveries_after": 4,
+    "business_records_unchanged": true,
+    "journal_get_status": 405
+  },
+  "qa": {
+    "checked_at": "2026-09-15T20:44:05.146825+00:00",
+    "tests": {
+      "total": 21,
+      "passed": 21,
+      "failed": 0,
+      "redis_integration_tests": 2,
+      "source": "tests.log"
+    },
+    "build_vercel": "PASS including TypeScript",
+    "lint_new_files": "PASS",
+    "visual_source_files_unchanged_from_SKI50": [
+      "app/compra/page.tsx",
+      "app/globals.css",
+      "app/layout.tsx",
+      "app/page.tsx",
+      "public/images/epi10-blue.png",
+      "public/images/epi10-white.png",
+      "public/images/nutriwell-cover.jpg",
+      "public/images/nutriwell-editorial.jpg",
+      "public/og.png"
+    ],
+    "visual_unchanged": true,
+    "actual_secret_values_scanned": 4,
+    "secret_scan_files": 94,
+    "secret_matches": [],
+    "env_local_permissions": "0o600",
+    "env_integration_permissions": "0o600",
+    "documentation_links": {
+      "checked_at": "2026-09-15T20:44:45.421205+00:00",
+      "markdown_files": 20,
+      "local_links": 208,
+      "broken_links": []
+    },
+    "git_diff_check": "PASS en repositorio principal y app"
+  },
+  "acceptance_criteria": {
+    "public_connected_receiver_and_minimal_ids": "PASS — entrega real y lectura persistente",
+    "raw_body_signature_and_invalid_rejection": "PASS — cuatro variantes HTTP 400, registro íntegro sin cambios",
+    "only_paid_state_and_documented_event_types": "PASS — API Stripe + tests + cinco tipos documentados",
+    "redelivery_without_duplicate_business_record": "PASS — dos entregas reales Stripe y concurrencia en tests",
+    "reproducible_evidence_without_external_customer_creation": "PASS — scripts y registro demo.payment_recorded; sin Healthie/Odoo"
+  },
+  "limitations": [
+    "Devolución real en sandbox, 3DS y doble intento completo pendientes en SKI-52",
+    "Revisión visual completa y guion pendientes en SKI-52/53",
+    "Carmen y cuenta propia EPI10 pendientes en SKI-74/77",
+    "Sin auditoría de dependencias: el build sigue informando 13 vulnerabilidades heredadas; este paso no las remedia",
+    "Las pruebas de eventos distintos y segundo pago usan datos sintéticos contra Redis real; no son pagos nuevos en Stripe"
+  ],
+  "detail_directory": "05_scratch/stripe-webhook/",
+  "linear": {
+    "id": "SKI-51",
+    "status": "Done",
+    "completed_at": "2026-09-15T20:44:25.967Z"
+  }
+}

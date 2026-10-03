@@ -1,28 +1,38 @@
 # EPI-10
 
-Repositorio docs-first y agentic harness para disenar, revisar y gobernar EPI10
+Repositorio docs-first, sandbox por módulos y agentic harness para disenar, revisar y gobernar EPI10
 Salud MVP 1.0: una primera base operativa y tecnica para lanzar el servicio con
 portal cliente, backoffice Odoo, trazabilidad, produccion asistida del informe
 final y control de alcance sin vender una integracion genetica automatizada que
 no existe en Fase 1.
 
-Este repo no es todavia el codigo fuente de una aplicacion. Es el workspace de
-contexto, specs, decisiones, outputs y QA usado para convertir una preventa ya
-aceptada en un sistema revisable por CTO antes de ejecutar cualquier Stage 06.
+Este workspace reúne contexto, planificación, specs, módulos, documentación y
+evidencias de QA. Desde el 15 de septiembre de 2026, el foco autorizado es
+construir y documentar el mockup de Stripe; todavía no contiene una aplicación
+implementada. Los documentos de preventa y arquitectura se conservan como
+referencia histórica.
 
 ## Estado Actual
 
 | Area | Snapshot |
 | --- | --- |
 | Producto | EPI10 Salud MVP 1.0 esta tratado como Fase 1 operativa: portal cliente, Odoo, software propio ligero en AWS Espana, Copilot Harness, documentacion, formacion y soporte inicial. |
-| Tipo de repo | Docs-first agentic harness. No contiene todavia el backend NestJS/PostgreSQL ni una app desplegable. |
-| Foco actual | CTO review, ADRs, gates de arquitectura, workshop operativo y preparacion para un primer slice controlado. |
-| Stage 06 | Deshabilitado. No crear `06_execution_plan_v1.md` salvo decision explicita posterior. |
+| Tipo de repo | Sandbox por módulos con documentación continua. Aún sin backend ni aplicación desplegable. |
+| Foco actual | Mockup Stripe para Carmen el 16 de septiembre; CLI sandbox, catálogo y checkout verificados; pantalla de demo publicada con acceso público en Vercel, pagos pendientes; spec activa [011](03_specs/now/011_now.md). |
+| Planificación vigente | [Proyecto Linear](04_outputs/planificacion/linear/README.md): ocho oleadas y horizonte de demo al 13 de noviembre de 2026. |
+| Autorización de ejecución | El mockup Stripe está autorizado desde el 15 de septiembre. El antiguo Stage 06 general no se activa para los demás bloques. |
 | Ejecucion real | Baseline actual: Raul como ejecutor principal y Fer en weekly CTO review. No disenar para un equipo ficticio amplio. |
 | TellmeGen | Externo/manual en Fase 1; sin API operativa confirmada. |
 | Copilot | Copilot Harness interno AWS Espana / EPI10-owned, con pseudonymization/anonymization y revision humana obligatoria. |
 
 ## Start Here
+
+Para retomar el trabajo actual:
+
+1. [Estado y siguiente paso](02_context/01_estado_actual.md).
+2. [Planificación de Linear](04_outputs/planificacion/linear/README.md).
+3. [Índice de módulos](04_outputs/modulos/README.md).
+4. [Stripe: trabajo, documentación y pruebas](04_outputs/modulos/stripe/README.md).
 
 Para un CTO nuevo, la ruta de lectura recomendada en los primeros 15 minutos es:
 
@@ -50,9 +60,11 @@ Lecturas de soporte:
 | `CLAUDE.md` | Instrucciones equivalentes para Claude Code. |
 | `00_inbox/` | Fuentes crudas importadas. No copiar material bruto a outputs salvo sintesis justificada. |
 | `01_harness/` | Reglas siempre activas, stack, taskflow y catalogo de skills. |
-| `02_context/` | Contexto compacto. En este repo, la fuente activa es `00_intake_context_pack.md`. |
+| `02_context/` | Contexto compacto: pack de preventa y `01_estado_actual.md` para continuidad. |
 | `03_specs/` | Specs ejecutables, backlog y decisiones. Trabajar desde una spec activa en `03_specs/now/`. |
-| `04_outputs/` | Entregables finales. Incluye spec-driving, weeklies CTO y workshops. |
+| `04_outputs/` | Entregables y módulos: planificación Linear, sandbox, guías, evidencia, spec-driving, weeklies y workshops. |
+| `04_outputs/planificacion/linear/` | Planificación vigente importada, tareas y procedencia de Linear. |
+| `04_outputs/modulos/` | Espacios de Stripe, Healthie, Odoo, Copilot, journey e integración. |
 | `05_scratch/` | Trabajo temporal o debris. No usar como entregable final. |
 | `shared/` | Skills y agentes reutilizables. Cargar solo cuando la tarea lo requiera. |
 | `runners/` | Guias breves por runner: Codex, Claude y Antigravity. |
@@ -77,6 +89,10 @@ Reglas operativas:
 - Las skills en `shared/skills/` son on-demand: no se cargan por rutina.
 - El QA gate es parte del entregable, no una nota opcional.
 - Preservar cambios del usuario o trabajo no relacionado; no revertirlos.
+- Registrar cada avance del módulo con acción, resultado observado, evidencia,
+  decisión y siguiente paso; distinguir recomendaciones de ejecución confirmada.
+- Mantener la guía cliente reutilizable separada de la bitácora interna. Servirá
+  como fuente de futuras guías PDF con marca.
 
 ## EPI10 Salud MVP 1.0
 
@@ -193,9 +209,9 @@ Fuente principal: `04_outputs/weeklies/fer-cto/2026-06-25/02_architecture_system
 
 ## Weekly Fer CTO
 
-La weekly Fer CTO se preparo para revisar criticamente la arquitectura antes de
-abrir ejecucion profunda. El criterio actual no es "construir todo", sino
-mantener Stage 06 en HOLD y avanzar con gates:
+La weekly Fer CTO se preparó en junio para revisar la arquitectura. Sus gates
+siguen siendo referencia para los bloques que todavía no se han validado; el
+foco de ejecución actual se define en la spec 011:
 
 - validar arquitectura y ADRs;
 - confirmar primer slice vertical;
@@ -240,7 +256,7 @@ Los Unknowns actuales que no deben convertirse en promesas:
 | --- | --- |
 | Healthie | Plan, API/webhooks, DPA/GDPR, residencia, idioma, coste, report upload y add-ons siguen `Unknown`. |
 | Odoo | Modalidad, version, API, permisos, campos, vistas, hosting, backups y coste real siguen `Unknown`. |
-| web/pago | Schema, auth, idempotency key, sandbox, retry behavior y owner tecnico siguen `Unknown`. |
+| web/pago | Sandbox Stripe y acceso CLI verificados para Raúl; schema, autenticación de aplicación, idempotencia y recuperación pendientes. Ver [módulo Stripe](04_outputs/modulos/stripe/README.md). |
 | Informe final | Template, inputs autorizados, regla `ready_for_report`, rubric de revision y formato final siguen `Unknown`. |
 | Copilot Harness | Runtime, servicios AWS exactos, App Codigo, LLM/model/provider, IAM, retention, logging y coste siguen `Unknown`. |
 | Datos sensibles | Matriz final de datos, retencion, logs, DPO/legal y permisos debe cerrarse antes de datos reales. |
@@ -251,12 +267,14 @@ Los Unknowns actuales que no deben convertirse en promesas:
 
 1. Leer primero `AGENTS.md` o `CLAUDE.md`.
 2. Leer `01_harness/RULES.md`, `01_harness/STACK.md` y `01_harness/TASKFLOW.md`.
-3. Usar `02_context/00_intake_context_pack.md` como contexto activo.
-4. Elegir una spec en `03_specs/now/` y ejecutarla con `/goal` si la spec lo pide.
+3. Leer `02_context/01_estado_actual.md` y el pack de contexto histórico.
+4. Trabajar desde la spec activa `03_specs/now/011_now.md`.
 5. Antes de editar, ejecutar `git status --short`.
 6. Modificar solo las rutas permitidas por la spec.
 7. Ejecutar los validation commands de la spec.
-8. Cerrar con archivos modificados, checks, acceptance criteria, Unknowns y riesgos.
+8. Actualizar bitácora, guía verificada y estado de continuidad; cerrar con archivos modificados, checks, acceptance criteria, Unknowns y riesgos.
 
-Nunca asumir que un output previo habilita Stage 06. El run state mantiene Stage
-06 pendiente y deshabilitado hasta decision explicita posterior.
+La autorización del mockup Stripe consta en la spec 011. El run state de
+preventa se conserva como histórico y no implica autorización de ejecutar otros
+bloques. La planificación remota y la evidencia local deben mantenerse
+distinguibles: una tarea documentada todavía puede estar pendiente de ejecución.

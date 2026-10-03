@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-09-15T20:31:44.583Z",
+  "events": [
+    {
+      "amount": 10000,
+      "currency": "eur",
+      "deliveries": 2,
+      "event_created": 1789501368,
+      "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+      "event_type": "checkout.session.completed",
+      "last_received_at": "2026-09-15T20:31:12.652Z",
+      "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+      "outcome": "payment_recorded",
+      "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+      "received_at": "2026-09-15T20:30:03.948Z",
+      "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+      "status": "paid"
+    }
+  ],
+  "orders": [
+    {
+      "amount": 10000,
+      "currency": "eur",
+      "first_event": "evt_1UG2FgRrJS0VSqzseygOV73y",
+      "livemode": false,
+      "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+      "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+      "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+      "status": "paid",
+      "updated_at": "2026-09-15T20:30:03.948Z"
+    }
+  ],
+  "payments": [
+    {
+      "amount": 10000,
+      "currency": "eur",
+      "livemode": false,
+      "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+      "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+      "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+      "status": "paid",
+      "updated_at": "2026-09-15T20:30:03.948Z"
+    }
+  ],
+  "business_records": [
+    {
+      "created_at": "2026-09-15T20:30:03.948Z",
+      "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+      "kind": "demo.payment_recorded",
+      "livemode": false,
+      "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+      "payment_id": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+      "session_id": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R"
+    }
+  ]
+}

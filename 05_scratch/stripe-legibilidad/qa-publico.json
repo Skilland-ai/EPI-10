@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "request_had_cookies_or_authorization": false,
+  "initial_urllib_http_status": 403,
+  "retry_client": "curl",
+  "new_cta_copy": true,
+  "checkout_link_present": true,
+  "og_present": true,
+  "public_access_verified": true
+}

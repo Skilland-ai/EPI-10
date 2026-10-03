@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-09-15T19:43:04.707Z",
+  "session": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+  "order": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+  "status": "complete",
+  "payment_status": "paid",
+  "payment_intent": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+  "intent_status": "succeeded",
+  "charge": "ch_3UG2EtRrJS0VSqzs1taKlaUI",
+  "amount": 10000,
+  "currency": "eur",
+  "livemode": false
+}

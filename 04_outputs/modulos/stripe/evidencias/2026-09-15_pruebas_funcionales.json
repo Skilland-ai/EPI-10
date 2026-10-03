@@ -1,0 +1,703 @@
+{
+  "id": "E19",
+  "verified_at": "2026-09-15T21:04:28.058335+00:00",
+  "scope": "SKI-52 — matriz funcional y visual de demo con tarjeta",
+  "result": "PASS con observación QA52-03 sobre wallets no validados",
+  "url": "https://epi10-nutriwell-demo.vercel.app",
+  "livemode": false,
+  "deployment_id": "dpl_357Xo8829MwqA4qNyx57XQR1on2u",
+  "source_files_compared": 35,
+  "source_unchanged_from_SKI51": true,
+  "new_payments_this_step": 2,
+  "full_refunds_this_step": 2,
+  "authentication_failed": {
+    "checked_at": "2026-09-15T20:54:29.960Z",
+    "account": "acct_1UFzBqRrJS0VSqzs",
+    "livemode": false,
+    "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+    "reference": "NW-60E20C9B",
+    "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+    "session_status": "open",
+    "payment_status": "unpaid",
+    "state": "pending",
+    "amount": 10000,
+    "currency": "eur",
+    "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+    "intent_status": "requires_payment_method",
+    "last_payment_error": {
+      "code": "payment_intent_authentication_failure"
+    },
+    "charge": null,
+    "sessions_for_order": [
+      {
+        "id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "open",
+        "payment_status": "unpaid"
+      }
+    ],
+    "ledger": {}
+  },
+  "authenticated_payment": {
+    "checked_at": "2026-09-15T20:55:44.760Z",
+    "account": "acct_1UFzBqRrJS0VSqzs",
+    "livemode": false,
+    "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+    "reference": "NW-60E20C9B",
+    "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+    "session_status": "complete",
+    "payment_status": "paid",
+    "state": "paid",
+    "amount": 10000,
+    "currency": "eur",
+    "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+    "intent_status": "succeeded",
+    "last_payment_error": null,
+    "charge": {
+      "id": "ch_3UG3LdRrJS0VSqzs0lwKF85E",
+      "paid": true,
+      "refunded": false,
+      "amount_refunded": 0,
+      "three_d_secure": {
+        "authentication_flow": "challenge",
+        "electronic_commerce_indicator": "05",
+        "exemption_indicator": null,
+        "result": "authenticated",
+        "result_reason": null,
+        "transaction_id": "4f19bc1a-d1cf-4dcd-a1b7-51d889851870",
+        "version": "2.1.0"
+      }
+    },
+    "sessions_for_order": [
+      {
+        "id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "complete",
+        "payment_status": "paid"
+      }
+    ],
+    "ledger": {
+      "event:evt_1UG3O1RrJS0VSqzsjO4Tasle": {
+        "amount": 10000,
+        "currency": "eur",
+        "deliveries": 1,
+        "event_created": 1789505729,
+        "event_id": "evt_1UG3O1RrJS0VSqzsjO4Tasle",
+        "event_type": "checkout.session.completed",
+        "last_received_at": "2026-09-15T20:55:30.829Z",
+        "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+        "outcome": "payment_recorded",
+        "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+        "received_at": "2026-09-15T20:55:30.829Z",
+        "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "paid"
+      },
+      "effect:60e20c9b-e6ff-4d83-b5df-6cd2d760f582": {
+        "created_at": "2026-09-15T20:55:30.829Z",
+        "event_id": "evt_1UG3O1RrJS0VSqzsjO4Tasle",
+        "kind": "demo.payment_recorded",
+        "livemode": false,
+        "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+        "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+        "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1"
+      },
+      "order:60e20c9b-e6ff-4d83-b5df-6cd2d760f582": {
+        "amount": 10000,
+        "currency": "eur",
+        "first_event": "evt_1UG3O1RrJS0VSqzsjO4Tasle",
+        "livemode": false,
+        "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+        "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+        "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "paid",
+        "updated_at": "2026-09-15T20:55:30.829Z"
+      },
+      "payment:pi_3UG3LdRrJS0VSqzs0JzNNa2f": {
+        "amount": 10000,
+        "currency": "eur",
+        "livemode": false,
+        "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+        "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+        "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "paid",
+        "updated_at": "2026-09-15T20:55:30.829Z"
+      }
+    }
+  },
+  "double_attempt": {
+    "same_session_in_two_browser_tabs": true,
+    "before": [
+      {
+        "id": "2",
+        "session": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1"
+      },
+      {
+        "id": "4",
+        "session": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1"
+      }
+    ],
+    "later_purchase_click_returns_confirmation": true,
+    "one_checkout_one_payment_one_business_record": true
+  },
+  "authenticated_refund": {
+    "checked_at": "2026-09-15T20:57:03.427Z",
+    "account": "acct_1UFzBqRrJS0VSqzs",
+    "livemode": false,
+    "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+    "reference": "NW-60E20C9B",
+    "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+    "session_status": "complete",
+    "payment_status": "paid",
+    "state": "refunded",
+    "amount": 10000,
+    "currency": "eur",
+    "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+    "intent_status": "succeeded",
+    "last_payment_error": null,
+    "charge": {
+      "id": "ch_3UG3LdRrJS0VSqzs0lwKF85E",
+      "paid": true,
+      "refunded": true,
+      "amount_refunded": 10000,
+      "three_d_secure": {
+        "authentication_flow": "challenge",
+        "electronic_commerce_indicator": "05",
+        "exemption_indicator": null,
+        "result": "authenticated",
+        "result_reason": null,
+        "transaction_id": "4f19bc1a-d1cf-4dcd-a1b7-51d889851870",
+        "version": "2.1.0"
+      }
+    },
+    "refund": {
+      "id": "re_3UG3LdRrJS0VSqzs0EAY0YAZ",
+      "status": "succeeded",
+      "amount": 10000,
+      "currency": "eur"
+    },
+    "sessions_for_order": [
+      {
+        "id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "complete",
+        "payment_status": "paid"
+      }
+    ],
+    "ledger": {
+      "effect:60e20c9b-e6ff-4d83-b5df-6cd2d760f582": {
+        "created_at": "2026-09-15T20:55:30.829Z",
+        "event_id": "evt_1UG3O1RrJS0VSqzsjO4Tasle",
+        "kind": "demo.payment_recorded",
+        "livemode": false,
+        "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+        "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+        "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1"
+      },
+      "order:60e20c9b-e6ff-4d83-b5df-6cd2d760f582": {
+        "amount": 10000,
+        "currency": "eur",
+        "first_event": "evt_1UG3O1RrJS0VSqzsjO4Tasle",
+        "livemode": false,
+        "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+        "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+        "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "refunded",
+        "updated_at": "2026-09-15T20:57:02.891Z"
+      },
+      "payment:pi_3UG3LdRrJS0VSqzs0JzNNa2f": {
+        "amount": 10000,
+        "currency": "eur",
+        "livemode": false,
+        "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+        "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+        "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "refunded",
+        "updated_at": "2026-09-15T20:57:02.891Z"
+      },
+      "event:evt_1UG3O1RrJS0VSqzsjO4Tasle": {
+        "amount": 10000,
+        "currency": "eur",
+        "deliveries": 1,
+        "event_created": 1789505729,
+        "event_id": "evt_1UG3O1RrJS0VSqzsjO4Tasle",
+        "event_type": "checkout.session.completed",
+        "last_received_at": "2026-09-15T20:55:30.829Z",
+        "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+        "outcome": "payment_recorded",
+        "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+        "received_at": "2026-09-15T20:55:30.829Z",
+        "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "paid"
+      },
+      "event:evt_3UG3LdRrJS0VSqzs0qjl13kv": {
+        "amount": 10000,
+        "currency": "eur",
+        "deliveries": 1,
+        "event_created": 1789505822,
+        "event_id": "evt_3UG3LdRrJS0VSqzs0qjl13kv",
+        "event_type": "charge.refunded",
+        "last_received_at": "2026-09-15T20:57:02.891Z",
+        "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+        "outcome": "refunded",
+        "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+        "received_at": "2026-09-15T20:57:02.891Z",
+        "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+        "status": "refunded"
+      }
+    }
+  },
+  "mobile_payment": {
+    "checked_at": "2026-09-15T20:59:16.243Z",
+    "account": "acct_1UFzBqRrJS0VSqzs",
+    "livemode": false,
+    "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+    "reference": "NW-F9F117C9",
+    "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+    "session_status": "complete",
+    "payment_status": "paid",
+    "state": "paid",
+    "amount": 10000,
+    "currency": "eur",
+    "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+    "intent_status": "succeeded",
+    "last_payment_error": null,
+    "charge": {
+      "id": "ch_3UG3R2RrJS0VSqzs0LC91VV2",
+      "paid": true,
+      "refunded": false,
+      "amount_refunded": 0,
+      "three_d_secure": null
+    },
+    "sessions_for_order": [
+      {
+        "id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+        "status": "complete",
+        "payment_status": "paid"
+      }
+    ],
+    "ledger": {
+      "effect:f9f117c9-f11c-4215-9fea-16e2c885abe1": {
+        "created_at": "2026-09-15T20:58:38.094Z",
+        "event_id": "evt_1UG3R3RrJS0VSqzs1UPYAxIm",
+        "kind": "demo.payment_recorded",
+        "livemode": false,
+        "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+        "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+        "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC"
+      },
+      "payment:pi_3UG3R2RrJS0VSqzs0PeXc4bY": {
+        "amount": 10000,
+        "currency": "eur",
+        "livemode": false,
+        "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+        "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+        "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+        "status": "paid",
+        "updated_at": "2026-09-15T20:58:38.094Z"
+      },
+      "order:f9f117c9-f11c-4215-9fea-16e2c885abe1": {
+        "amount": 10000,
+        "currency": "eur",
+        "first_event": "evt_1UG3R3RrJS0VSqzs1UPYAxIm",
+        "livemode": false,
+        "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+        "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+        "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+        "status": "paid",
+        "updated_at": "2026-09-15T20:58:38.094Z"
+      },
+      "event:evt_1UG3R3RrJS0VSqzs1UPYAxIm": {
+        "amount": 10000,
+        "currency": "eur",
+        "deliveries": 1,
+        "event_created": 1789505917,
+        "event_id": "evt_1UG3R3RrJS0VSqzs1UPYAxIm",
+        "event_type": "checkout.session.completed",
+        "last_received_at": "2026-09-15T20:58:38.094Z",
+        "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+        "outcome": "payment_recorded",
+        "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+        "received_at": "2026-09-15T20:58:38.094Z",
+        "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+        "status": "paid"
+      }
+    }
+  },
+  "mobile_refund": {
+    "checked_at": "2026-09-15T21:00:03.147Z",
+    "account": "acct_1UFzBqRrJS0VSqzs",
+    "livemode": false,
+    "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+    "reference": "NW-F9F117C9",
+    "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+    "session_status": "complete",
+    "payment_status": "paid",
+    "state": "refunded",
+    "amount": 10000,
+    "currency": "eur",
+    "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+    "intent_status": "succeeded",
+    "last_payment_error": null,
+    "charge": {
+      "id": "ch_3UG3R2RrJS0VSqzs0LC91VV2",
+      "paid": true,
+      "refunded": true,
+      "amount_refunded": 10000,
+      "three_d_secure": null
+    },
+    "refund": {
+      "id": "re_3UG3R2RrJS0VSqzs0V4KOezp",
+      "status": "succeeded",
+      "amount": 10000,
+      "currency": "eur"
+    },
+    "sessions_for_order": [
+      {
+        "id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+        "status": "complete",
+        "payment_status": "paid"
+      }
+    ],
+    "ledger": {
+      "order:f9f117c9-f11c-4215-9fea-16e2c885abe1": {
+        "amount": 10000,
+        "currency": "eur",
+        "first_event": "evt_1UG3R3RrJS0VSqzs1UPYAxIm",
+        "livemode": false,
+        "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+        "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+        "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+        "status": "refunded",
+        "updated_at": "2026-09-15T21:00:02.513Z"
+      },
+      "event:evt_1UG3R3RrJS0VSqzs1UPYAxIm": {
+        "amount": 10000,
+        "currency": "eur",
+        "deliveries": 1,
+        "event_created": 1789505917,
+        "event_id": "evt_1UG3R3RrJS0VSqzs1UPYAxIm",
+        "event_type": "checkout.session.completed",
+        "last_received_at": "2026-09-15T20:58:38.094Z",
+        "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+        "outcome": "payment_recorded",
+        "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+        "received_at": "2026-09-15T20:58:38.094Z",
+        "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+        "status": "paid"
+      },
+      "effect:f9f117c9-f11c-4215-9fea-16e2c885abe1": {
+        "created_at": "2026-09-15T20:58:38.094Z",
+        "event_id": "evt_1UG3R3RrJS0VSqzs1UPYAxIm",
+        "kind": "demo.payment_recorded",
+        "livemode": false,
+        "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+        "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+        "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC"
+      },
+      "payment:pi_3UG3R2RrJS0VSqzs0PeXc4bY": {
+        "amount": 10000,
+        "currency": "eur",
+        "livemode": false,
+        "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+        "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+        "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+        "status": "refunded",
+        "updated_at": "2026-09-15T21:00:02.513Z"
+      },
+      "event:evt_3UG3R2RrJS0VSqzs0fjsYfIK": {
+        "amount": 10000,
+        "currency": "eur",
+        "deliveries": 1,
+        "event_created": 1789506001,
+        "event_id": "evt_3UG3R2RrJS0VSqzs0fjsYfIK",
+        "event_type": "charge.refunded",
+        "last_received_at": "2026-09-15T21:00:02.513Z",
+        "order_id": "f9f117c9-f11c-4215-9fea-16e2c885abe1",
+        "outcome": "refunded",
+        "payment_id": "pi_3UG3R2RrJS0VSqzs0PeXc4bY",
+        "received_at": "2026-09-15T21:00:02.513Z",
+        "session_id": "cs_test_a1FgNRFpqXUiqr8wxuLtxeIbHHowZZbGsAo439s1NQvg1PBEnY7ByNMbQC",
+        "status": "refunded"
+      }
+    }
+  },
+  "responsive_landing": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320,
+      "title": "Tu biología.\nTu próximo\ncapítulo.",
+      "buttons": [
+        {
+          "text": "Probar compra\n↗",
+          "height": 62.796875,
+          "width": 193.65625,
+          "left": 16,
+          "right": 209.65625,
+          "font": "18px"
+        },
+        {
+          "text": "Probar compra\n↗",
+          "height": 64.796875,
+          "width": 246,
+          "left": 37,
+          "right": 283,
+          "font": "18px"
+        }
+      ],
+      "images": [
+        {
+          "alt": "EPI10",
+          "loaded": true,
+          "width": 110
+        },
+        {
+          "alt": "Retrato de la portada de NutriWell, en tonos azules y cian",
+          "loaded": true,
+          "width": 288
+        },
+        {
+          "alt": "EPI10",
+          "loaded": true,
+          "width": 100
+        }
+      ],
+      "bodyFont": "\"DM Sans\", \"DM Sans Fallback\", Arial, sans-serif",
+      "paragraphs": [
+        {
+          "text": "UNA VISIÓN MÁS COMPLETA\n\nLa información\ncobra sentido.\n\nTu ADN es el punto de partida. Lo conectamos con tus hábitos y tu contexto para ayudarte a entender qué puede ser relevante para ti.\n\n↗\n\nUna experiencia que une\nconocimiento y acompañamiento.",
+          "font": "18px"
+        }
+      ],
+      "viewportMeta": "width=device-width, initial-scale=1"
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "title": "Tu biología.\nTu próximo\ncapítulo.",
+      "buttons": [
+        {
+          "text": "Probar compra\n↗",
+          "height": 62.796875,
+          "width": 219.65625,
+          "left": 20,
+          "right": 239.65625,
+          "font": "18px"
+        },
+        {
+          "text": "Probar compra\n↗",
+          "height": 64.796875,
+          "width": 300,
+          "left": 45,
+          "right": 345,
+          "font": "18px"
+        }
+      ],
+      "images": [
+        {
+          "alt": "EPI10",
+          "loaded": true,
+          "width": 110
+        },
+        {
+          "alt": "Retrato de la portada de NutriWell, en tonos azules y cian",
+          "loaded": true,
+          "width": 350
+        },
+        {
+          "alt": "EPI10",
+          "loaded": true,
+          "width": 100
+        }
+      ],
+      "bodyFont": "\"DM Sans\", \"DM Sans Fallback\", Arial, sans-serif",
+      "paragraphs": [
+        {
+          "text": "UNA VISIÓN MÁS COMPLETA\n\nLa información\ncobra sentido.\n\nTu ADN es el punto de partida. Lo conectamos con tus hábitos y tu contexto para ayudarte a entender qué puede ser relevante para ti.\n\n↗\n\nUna experiencia que une\nconocimiento y acompañamiento.",
+          "font": "18px"
+        }
+      ],
+      "viewportMeta": "width=device-width, initial-scale=1"
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "bodyWidth": 768,
+      "title": "Tu biología.\nTu próximo\ncapítulo.",
+      "buttons": [
+        {
+          "text": "Probar compra\n↗",
+          "height": 62.796875,
+          "width": 219.65625,
+          "left": 24,
+          "right": 243.65625,
+          "font": "18px"
+        },
+        {
+          "text": "Probar compra\n↗",
+          "height": 64.796875,
+          "width": 566,
+          "left": 101,
+          "right": 667,
+          "font": "18px"
+        }
+      ],
+      "images": [
+        {
+          "alt": "EPI10",
+          "loaded": true,
+          "width": 132
+        },
+        {
+          "alt": "Retrato de la portada de NutriWell, en tonos azules y cian",
+          "loaded": true,
+          "width": 358
+        },
+        {
+          "alt": "EPI10",
+          "loaded": true,
+          "width": 100
+        }
+      ],
+      "bodyFont": "\"DM Sans\", \"DM Sans Fallback\", Arial, sans-serif",
+      "paragraphs": [
+        {
+          "text": "UNA VISIÓN MÁS COMPLETA\n\nLa información\ncobra sentido.\n\nTu ADN es el punto de partida. Lo conectamos con tus hábitos y tu contexto para ayudarte a entender qué puede ser relevante para ti.\n\n↗\n\nUna experiencia que une\nconocimiento y acompañamiento.",
+          "font": "18px"
+        }
+      ],
+      "viewportMeta": "width=device-width, initial-scale=1"
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "title": "Tu biología.\nTu próximo\ncapítulo.",
+      "buttons": [
+        {
+          "text": "Probar compra\n↗",
+          "height": 62.796875,
+          "width": 219.65625,
+          "left": 80,
+          "right": 299.65625,
+          "font": "18px"
+        },
+        {
+          "text": "Probar compra\n↗",
+          "height": 64.796875,
+          "width": 578,
+          "left": 741,
+          "right": 1319,
+          "font": "18px"
+        }
+      ],
+      "images": [
+        {
+          "alt": "EPI10",
+          "loaded": true,
+          "width": 132
+        },
+        {
+          "alt": "Retrato de la portada de NutriWell, en tonos azules y cian",
+          "loaded": true,
+          "width": 631
+        },
+        {
+          "alt": "EPI10",
+          "loaded": true,
+          "width": 100
+        }
+      ],
+      "bodyFont": "\"DM Sans\", \"DM Sans Fallback\", Arial, sans-serif",
+      "paragraphs": [
+        {
+          "text": "UNA VISIÓN MÁS COMPLETA\n\nLa información\ncobra sentido.\n\nTu ADN es el punto de partida. Lo conectamos con tus hábitos y tu contexto para ayudarte a entender qué puede ser relevante para ti.\n\n↗\n\nUna experiencia que une\nconocimiento y acompañamiento.",
+          "font": "18px"
+        }
+      ],
+      "viewportMeta": "width=device-width, initial-scale=1"
+    }
+  ],
+  "captures": [
+    {
+      "file": "2026-09-15_pruebas/landing-desktop.png",
+      "sha256": "1c8195bcbda0f09f83006ce948191f53270ce4dab8cf0765b4b8a3a392b0334d"
+    },
+    {
+      "file": "2026-09-15_pruebas/landing-mobile.png",
+      "sha256": "fb289fe00efd0c0c9abb7e797572b15c0d4f694ea3ca0cb2be1a269769b8c6cd"
+    },
+    {
+      "file": "2026-09-15_pruebas/checkout-mobile.png",
+      "sha256": "4d66bedc6dedc1b2cfe6036cead0cea4d0782b59d4090a3fae7c5a2e941d1621"
+    },
+    {
+      "file": "2026-09-15_pruebas/checkout-mobile-review.png",
+      "sha256": "810036e4953cc165132ff3283f1d3130bf6cd0ff0f60cfeab0ef74ffd88a17e4"
+    },
+    {
+      "file": "2026-09-15_pruebas/paid-mobile.png",
+      "sha256": "0fda686549ce1dfb28ab9647a157d87062d3f888b50ddacb87ccef6e4687c3bc"
+    },
+    {
+      "file": "2026-09-15_pruebas/paid-desktop.png",
+      "sha256": "745c38e8c3fe9322ec515c63c930df5647325297b6a136e2bf23eef49a17cfbb"
+    },
+    {
+      "file": "2026-09-15_pruebas/refunded-mobile.png",
+      "sha256": "09ae345456d3b9fcfef0d5bdc71ebaa8e6f03516e15766f3b6c87d5f8c8f8ac4"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "QA52-01",
+      "result": "Resuelta en herramientas de QA",
+      "detail": "La captura IAB falla con target closed. Se usa una sesión independiente de Chromium con Agent Browser; requiere --no-sandbox en este entorno Linux. No se modifica la aplicación."
+    },
+    {
+      "id": "QA52-02",
+      "result": "Resuelta en comprobación",
+      "detail": "La primera comprobación de imágenes se ejecutó antes de que el logo lazy del pie entrara en pantalla. Tras desplazarse al pie y esperar su carga, las imágenes y cuatro anchos pasan."
+    },
+    {
+      "id": "QA52-03",
+      "result": "Observación no bloqueante para demo con tarjeta",
+      "detail": "Apple Pay aparece recortado en una captura y ausente en otra en Chromium automatizado. No se determina la causa ni se certifican wallets. No afecta al formulario ni al pago de tarjeta probado. Verificar Apple Pay/Link en dispositivos compatibles si se habilitan para el servicio real."
+    }
+  ],
+  "previous_evidence": {
+    "E17": "Rechazo de tarjeta, abandono, recuperación y confirmación",
+    "E18": "Firma válida/inválida, reentrega real y concurrencia; suite de 21 tests PASS antes de esta matriz"
+  },
+  "acceptance_criteria": {
+    "payment_confirmation_stripe_event": "PASS — dos pagos con su evento automático y referencia en pantalla",
+    "failure_abandonment_retry_authentication": "PASS — E17 más fallo y reintento 3DS en E19",
+    "double_attempt_replay_invalid_signature": "PASS — dos pestañas/un checkout en E19; reentrega/firma en E18",
+    "refund_stripe_ledger_ui": "PASS — dos devoluciones completas y estado coherente",
+    "desktop_mobile_visual": "PASS para recorrido con tarjeta; capturas revisadas y sin desbordamiento en 320/390/768/1440 px; observación no bloqueante QA52-03"
+  },
+  "limitations": [
+    "Revisión móvil en viewport de Chromium, no en teléfono físico ni Safari",
+    "Apple Pay y Link no probados como métodos de pago; observación visual QA52-03",
+    "Sin cobros reales, datos sanitarios ni altas en Healthie/Odoo",
+    "Guion/paquete SKI-53 y aceptación de Carmen SKI-74 pendientes",
+    "No nueva auditoría de dependencias ni nueva publicación: código conservado del despliegue SKI-51"
+  ],
+  "detail_directory": "05_scratch/stripe-pruebas/",
+  "documentation_qa": {
+    "checked_at": "2026-09-15T21:05:05.938146+00:00",
+    "markdown_files": 21,
+    "local_links": 231,
+    "broken_links": [],
+    "secret_scan_files": 67,
+    "secret_matches": [],
+    "git_diff_check": "PASS en repo y app",
+    "source_unchanged": true,
+    "new_tests_required": false,
+    "reason": "No se cambia código: matriz nueva contra despliegue ya compilado y probado en SKI-51"
+  },
+  "linear": {
+    "id": "SKI-52",
+    "status": "Done",
+    "completed_at": "2026-09-15T21:05:47.821Z",
+    "QA52-03_follow_up": "SKI-77, pendiente"
+  }
+}

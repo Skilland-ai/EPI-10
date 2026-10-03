@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-09-15T20:44:05.146825+00:00",
+  "tests": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "redis_integration_tests": 2,
+    "source": "tests.log"
+  },
+  "build_vercel": "PASS including TypeScript",
+  "lint_new_files": "PASS",
+  "visual_source_files_unchanged_from_SKI50": [
+    "app/compra/page.tsx",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "public/images/epi10-blue.png",
+    "public/images/epi10-white.png",
+    "public/images/nutriwell-cover.jpg",
+    "public/images/nutriwell-editorial.jpg",
+    "public/og.png"
+  ],
+  "visual_unchanged": true,
+  "actual_secret_values_scanned": 4,
+  "secret_scan_files": 94,
+  "secret_matches": [],
+  "env_local_permissions": "0o600",
+  "env_integration_permissions": "0o600"
+}

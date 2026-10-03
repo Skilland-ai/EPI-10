@@ -1,0 +1,24 @@
+{
+  "account": {
+    "id": "acct_1UFzBqRrJS0VSqzs",
+    "name": "Entorno de prueba de EPI10 Salud"
+  },
+  "products": {
+    "object": "list",
+    "data": [],
+    "has_more": false,
+    "url": "/v1/products"
+  },
+  "prices": {
+    "object": "list",
+    "data": [],
+    "has_more": false,
+    "url": "/v1/prices"
+  },
+  "files": {
+    "object": "list",
+    "data": [],
+    "has_more": false,
+    "url": "/v1/files"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "SKI-52",
+  "uuid": "09924f05-08c2-401c-812f-e325176be0cc",
+  "title": "Probar NutriWell: pago, rechazo, reintento, duplicados, devolución y móvil",
+  "description": "## Resultado\n\nEjecutar la matriz contra la demo integrada y resolver defectos antes de enseñarla.\n\n## Criterio de terminado\n\n- [X] Pago correcto con tarjeta de prueba y correspondencia entre confirmación, Stripe y evento.\n- [X] Rechazo, abandono y reintento comprobados con evidencia; incluir autenticación de tarjeta si el método elegido la requiere.\n- [X] Doble intento de compra y evento repetido tratados según la regla acordada; firma inválida rechazada.\n- [X] Devolución de prueba verificada en Stripe y mensajes coherentes con su estado.\n- [X] Revisión visual en móvil y ordenador: logo, nombre, precio, contenido y botones; registrar cada caso como aprobado/fallido con evidencia.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar pruebas.md; evidencias/ tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Integra el trabajo antes separado en <issue id=\"392c12ce-043e-4402-83fc-c38688e0b197\" href=\"https://linear.app/skilland/issue/SKI-39/definir-matriz-de-pruebas-y-excepciones-de-pago\">SKI-39</issue>. Conserva el ID de <issue id=\"09924f05-08c2-401c-812f-e325176be0cc\" href=\"https://linear.app/skilland/issue/SKI-52/ejecutar-pruebas-funcionales-del-mockup\">SKI-52</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.\n\n## Verificación — 15 de septiembre de 2026\n\nPASS del recorrido de demo con tarjeta sobre [https://epi10-nutriwell-demo.vercel.app](<https://epi10-nutriwell-demo.vercel.app>). Se conserva el código y el despliegue dpl_357Xo8829MwqA4qNyx57XQR1on2u; no fue necesario corregir ni republicar.\n\n* 3DS: fallo explícito devuelve payment_intent_authentication_failure, compra open/unpaid y sin registro de cobro. Reintento con Complete autentica el mismo PaymentIntent (challenge/authenticated) y vuelve a Prueba completada, referencia NW-60E20C9B.\n* Dos pestañas abren la misma sesión; un clic al CTA después de pagar vuelve a la confirmación. Una sesión, un pago y una actuación por compra.\n* Dos nuevos pagos ficticios de 100 EUR (3DS y recorrido móvil), ambos con sus notificaciones automáticas y registro coherente. Ambos devueltos íntegramente: refund succeeded, registro refunded y Prueba devuelta en pantalla.\n* Capturas de página, checkout, confirmación y devolución revisadas. Sin desbordamientos en 320/390/768/1440 px; botones de compra de al menos 62,8 px. La compra móvil se ejecutó en viewport de Chromium.\n* Se conservan las pruebas de rechazo/abandono/recuperación de E17 y firma/reentrega/concurrencia de E18; 35 archivos de la aplicación idénticos a <issue id=\"7bb7bcac-6d1e-431d-8baa-d5542e924e42\" href=\"https://linear.app/skilland/issue/SKI-51/recibir-el-evento-de-pago-stripe-con-firma-verificada-y-deduplicacion\">SKI-51</issue>. La suite previa de 21 tests no se presenta como nueva ejecución.\n\nE19: 04_outputs/modulos/stripe/evidencias/2026-09-15_pruebas_funcionales.json. Procedimiento, referencias, capturas e incidencias: docs/validacion_demo.md. Bitácora y matriz actualizadas; 231 enlaces locales comprobados, sin secretos ni errores de diff.\n\nObservación no bloqueante QA52-03: Apple Pay aparece recortado/ausente en capturas automatizadas, causa sin determinar. El flujo validado usa tarjeta; Apple Pay/Link y teléfonos físicos/Safari no están certificados. Verificarlos en <issue id=\"a427f048-9a8b-410f-b7ad-241249a1aa22\" href=\"https://linear.app/skilland/issue/SKI-77/replicar-el-mockup-validado-en-la-cuenta-epi10-y-entregar-el-modulo\">SKI-77</issue> si se incluyen en el servicio real. Sin dinero real, datos sanitarios ni acciones en Healthie/Odoo.\n\nSiguiente: <issue id=\"a9921c7a-9091-40fa-9fa1-1a185b1c1106\" href=\"https://linear.app/skilland/issue/SKI-53/dejar-el-enlace-y-el-guion-de-demo-nutriwell-listos-para-carmen\">SKI-53</issue>, guion y paquete para Carmen. La aceptación externa permanece pendiente.",
+  "projectMilestone": {
+    "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+    "name": "OL3 - Validación y preparación"
+  },
+  "priority": {
+    "value": 0,
+    "name": "No priority"
+  },
+  "url": "https://linear.app/skilland/issue/SKI-52/probar-nutriwell-pago-rechazo-reintento-duplicados-devolucion-y-movil",
+  "gitBranchName": "direccion/ski-52-probar-nutriwell-pago-rechazo-reintento-duplicados",
+  "createdAt": "2026-09-07T05:15:07.947Z",
+  "updatedAt": "2026-09-15T21:05:47.836Z",
+  "archivedAt": null,
+  "completedAt": "2026-09-15T21:05:47.821Z",
+  "startedAt": "2026-09-15T20:51:32.978Z",
+  "canceledAt": null,
+  "dueDate": "2026-09-15",
+  "slaStartedAt": null,
+  "slaMediumRiskAt": null,
+  "slaHighRiskAt": null,
+  "slaBreachesAt": null,
+  "status": "Done",
+  "statusType": "completed",
+  "labels": [
+    "Stripe"
+  ],
+  "attachments": [],
+  "documents": [],
+  "stateHistory": [
+    {
+      "state": {
+        "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "startedAt": "2026-09-07T05:15:07.947Z",
+      "endedAt": "2026-09-15T20:51:32.986Z"
+    },
+    {
+      "state": {
+        "id": "3557045f-ba80-46f9-83f0-75dcfd2cf938",
+        "name": "In Progress",
+        "type": "started"
+      },
+      "startedAt": "2026-09-15T20:51:32.986Z",
+      "endedAt": "2026-09-15T21:05:47.836Z"
+    },
+    {
+      "state": {
+        "id": "1e686c27-ffdb-4585-b505-d0cfa749a3a1",
+        "name": "Done",
+        "type": "completed"
+      },
+      "startedAt": "2026-09-15T21:05:47.836Z",
+      "endedAt": null
+    }
+  ],
+  "createdBy": "Raúl",
+  "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "assignee": "Raúl",
+  "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "project": "EPI10 Salud MVP",
+  "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+  "team": "Skilland",
+  "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+  "relations": {
+    "blocks": [
+      {
+        "id": "SKI-53",
+        "title": "Dejar el enlace y el guion de demo NutriWell listos para Carmen"
+      }
+    ],
+    "blockedBy": [
+      {
+        "id": "SKI-37",
+        "title": "Maquetar la pantalla de entrada al mockup Stripe con marca EPI10"
+      },
+      {
+        "id": "SKI-50",
+        "title": "Conectar confirmación, abandono y reintento de la compra NutriWell"
+      },
+      {
+        "id": "SKI-51",
+        "title": "Recibir el evento de pago Stripe con firma verificada y deduplicación"
+      }
+    ],
+    "relatedTo": [
+      {
+        "id": "SKI-77",
+        "title": "Replicar el mockup validado en la cuenta EPI10 y entregar el módulo Stripe"
+      },
+      {
+        "id": "SKI-39",
+        "title": "Definir matriz de pruebas y excepciones de pago"
+      }
+    ],
+    "duplicateOf": null
+  }
+}

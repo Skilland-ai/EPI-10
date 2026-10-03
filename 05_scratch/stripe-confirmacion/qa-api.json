@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-09-15T19:37:30.839Z",
+  "order": "5dea4968-ee2b-4fb6-b903-2618b2c4df13",
+  "session": "cs_test_a1aapWbcJ84VxvvuxyXA5P2ZMwKxyFyplEXxN2DLn1zU0lY58PdJW1QYyy",
+  "initial": "pending",
+  "expired": "expired",
+  "same_session_on_retry": true,
+  "livemode": false,
+  "amount": 10000
+}

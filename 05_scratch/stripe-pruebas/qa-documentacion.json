@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-09-15T21:05:05.938146+00:00",
+  "markdown_files": 21,
+  "local_links": 231,
+  "broken_links": [],
+  "secret_scan_files": 67,
+  "secret_matches": [],
+  "git_diff_check": "PASS en repo y app",
+  "source_unchanged": true,
+  "new_tests_required": false,
+  "reason": "No se cambia código: matriz nueva contra despliegue ya compilado y probado en SKI-51"
+}

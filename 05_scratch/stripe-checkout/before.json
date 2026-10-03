@@ -1,0 +1,16 @@
+{
+  "account_id": "acct_1UFzBqRrJS0VSqzs",
+  "branding": {
+    "icon": "",
+    "logo": null,
+    "primary_color": null,
+    "secondary_color": null
+  },
+  "business_name": "Entorno de prueba de EPI10 Salud",
+  "payment_links": {
+    "object": "list",
+    "data": [],
+    "has_more": false,
+    "url": "/v1/payment_links"
+  }
+}

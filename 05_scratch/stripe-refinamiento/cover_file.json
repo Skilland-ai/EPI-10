@@ -1,0 +1,30 @@
+{
+  "id": "file_1UG0ZDRrJS0VSqzs4VzU5LOj",
+  "object": "file",
+  "created": 1789494891,
+  "expires_at": null,
+  "filename": "nutriwell-portada-brochure.jpg",
+  "links": {
+    "object": "list",
+    "data": [
+      {
+        "id": "link_1UG0ZDRrJS0VSqzsSLQX9Wqc",
+        "object": "file_link",
+        "created": 1789494891,
+        "expired": false,
+        "expires_at": null,
+        "file": "file_1UG0ZDRrJS0VSqzs4VzU5LOj",
+        "livemode": false,
+        "metadata": {},
+        "url": "https://files.stripe.com/links/MDB8YWNjdF8xVUZ6QnFSckpTMFZTcXpzfGZsX3Rlc3RfNXF4YTVsS3FtOUVrbGlURE9tRGJBN0Vu00HBlgalei"
+      }
+    ],
+    "has_more": false,
+    "url": "/v1/file_links?file=file_1UG0ZDRrJS0VSqzs4VzU5LOj"
+  },
+  "purpose": "business_logo",
+  "size": 66868,
+  "title": null,
+  "type": "jpg",
+  "url": "https://files.stripe.com/v1/files/file_1UG0ZDRrJS0VSqzs4VzU5LOj/contents"
+}

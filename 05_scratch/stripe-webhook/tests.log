@@ -1,0 +1,33 @@
+✔ atomic journal prevents concurrent duplication and late state regressions (1802.138318ms)
+ℹ 6 concurrent deliveries, different success event, second payment, pending and refund ordering: PASS
+✔ an unpaid event creates no business action (406.079923ms)
+✔ an unpaid or processing checkout never becomes a paid confirmation (1.501922ms)
+✔ verifies the paid charge and full refund; partial refund stays unconfirmed (0.174489ms)
+✔ rejects live mode, other purchases, amounts, prices and quantities (0.226458ms)
+✔ signed cookie rejects edits and malformed values (1.760755ms)
+✔ resume and paid replay create no new checkout (0.529386ms)
+✔ lost cookie response recovers the Stripe record even after 24h (0.183652ms)
+✔ expired attempts keep the purchase reference and increment attempt (0.355035ms)
+✔ concurrent initial submissions use identical idempotency keys and fixed amounts (0.320164ms)
+✔ duplicate completed payments and missing known sessions fail closed (0.427514ms)
+✔ Stripe outage cannot create a replacement checkout (0.30339ms)
+stripe_webhook_retry { event_id: 'evt_fixture', event_type: 'checkout.session.completed' }
+stripe_webhook_retry { event_id: 'evt_fixture', event_type: 'checkout.session.completed' }
+stripe_webhook_retry { event_id: 'evt_fixture', event_type: 'checkout.session.completed' }
+✔ valid raw signature produces a minimal verified observation (6.68264ms)
+✔ invalid, tampered and stale signatures cause no API or ledger changes (1.837188ms)
+✔ live and foreign-account events are rejected even with a valid signature (1.224064ms)
+✔ checkout completion does not itself prove payment (0.61416ms)
+✔ wrong amounts fail closed; unrelated sessions do not create paid observations (3.25763ms)
+✔ expired and failed notifications cannot activate an already-paid purchase (0.641877ms)
+✔ an asynchronous failure on a completed unpaid session is recorded as failed (0.351595ms)
+✔ a refund observed before a completion delivery does not create a paid action (0.484746ms)
+✔ service failures are retriable, not acknowledged as processed (0.939393ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2383.901493

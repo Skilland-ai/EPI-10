@@ -1,0 +1,6 @@
+.git
+.wrangler
+.vinext
+dist
+.env*
+*.tsbuildinfo

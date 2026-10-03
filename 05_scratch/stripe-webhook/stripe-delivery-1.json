@@ -1,0 +1,7 @@
+{
+  "exit_code": 0,
+  "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+  "type": "checkout.session.completed",
+  "pending_webhooks": 1,
+  "error": null
+}

@@ -1,0 +1,44 @@
+{
+  "evidence_id": "E20",
+  "checked_at": "2026-09-17T21:59:13.329Z",
+  "environment": "Stripe sandbox EPI10",
+  "account": "acct_1UFzBqRrJS0VSqzs",
+  "livemode": false,
+  "public_url": {
+    "url": "https://epi10-nutriwell-demo.vercel.app",
+    "http_status": 200,
+    "response_time_seconds": 0.420023
+  },
+  "purchase": {
+    "reference": "NW-8B1611D4",
+    "order_id": "8b1611d4-b561-4f1d-b816-c1804f99f7bd",
+    "session_id": "cs_test_a11dVdHOnuOot679lMeYZoUe5GZSvWUudX0difWQdzlJsveWBLDRgRKSEU",
+    "session_status": "complete",
+    "payment_status": "paid",
+    "amount": 10000,
+    "currency": "eur",
+    "payment_id": "pi_3UGnIvRrJS0VSqzs1laAB03A",
+    "payment_intent_status": "succeeded",
+    "charge_id": "ch_3UGnIvRrJS0VSqzs1D1BXyhN",
+    "charge_paid": true,
+    "refunded": false
+  },
+  "webhook": {
+    "event_id": "evt_1UGnIxRrJS0VSqzsM1vUXUy9",
+    "event_type": "checkout.session.completed",
+    "deliveries": 1,
+    "outcome": "payment_recorded",
+    "business_records_for_order": 1
+  },
+  "verification": {
+    "automated_tests": 21,
+    "tests_passed": 21,
+    "tests_failed": 0,
+    "vercel_build": "pass",
+    "typescript": "pass",
+    "critical_defects": 0
+  },
+  "decision": "GO tecnico para el ensayo de presentacion; SKI-53 permanece In Progress hasta cerrar guion, respaldo y ensayo de 3-5 minutos.",
+  "contains_personal_data": false,
+  "contains_secrets": false
+}

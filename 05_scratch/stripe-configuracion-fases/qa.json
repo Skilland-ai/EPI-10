@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "checks": {
+    "links_valid": true,
+    "both_issues_pending": true,
+    "configuration_in_ski77": true,
+    "decisions_in_ski74": true
+  },
+  "markdown_files": 17,
+  "links": 160,
+  "stripe_settings_changed": false
+}

@@ -1,0 +1,5 @@
+{
+  "type": "invalid_request_error",
+  "message": "If specifying name_collection, you must have either `name_collection[individual][enabled] = true` or `name_collection[business][enabled] = true`.",
+  "param": null
+}

@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-09-15 18:58:50 UTC",
+  "platform": "Vercel",
+  "project_id": "prj_QthJJQbTZZf1EcBzfsH7Sg63439S",
+  "team_id": "team_hGMm4RoNZKoLAKVjaw1TqM48",
+  "deployment_id": "dpl_7CZPNpCn8ypddqNHR6Znh8QVWt5H",
+  "status": "READY",
+  "target": "production",
+  "url": "https://epi10-nutriwell-demo.vercel.app",
+  "deployment_url": "https://epi10-nutriwell-demo-b7zuz4xip-raul-1873s-projects.vercel.app",
+  "access": "public",
+  "anonymous_http_status": 200,
+  "framework": "Next.js 16.2.6",
+  "build_and_typescript_pass": true,
+  "content_css_and_images_identical_to_reviewed_version": true,
+  "public_assets_http_200": true,
+  "og_and_twitter_origin_updated": true,
+  "browser_checkout_navigation_verified": true,
+  "observed_product": "NutriWell · DEMO",
+  "observed_amount_eur": 100,
+  "payment_executed": false
+}

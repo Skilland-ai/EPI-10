@@ -1,0 +1,33 @@
+{
+  "demo_notice": true,
+  "description": "Conoce tu biología y cuida tus hábitos. Incluye test genético, cuestionario, informe personalizado, plan de acción y sesión profesional.",
+  "description_white_space": "normal",
+  "images": [
+    {
+      "alt": "EPI10 Salud · DEMO logo",
+      "height": 28,
+      "loaded": true,
+      "natural_height": 293,
+      "natural_width": 824,
+      "object_fit": "fill",
+      "src": "https://d1wqzb5bdbcre6.cloudfront.net/7f73a54fac1c33de5d480068fa5e0de6d2d4e36d890c2569887c5a5df73e6f31/68747470733a2f2f66696c65732e7374726970652e636f6d2f66696c65732f4d44423859574e6a6446387856555a36516e4653636b70544d465a546358707a66475a666447567a644638354e4774774d32644f52567075557a63786145315863326c4653584a42526b5130304c634f443031794f/6d65726368616e745f69643d616363745f3155467a427152724a53305653717a7326636c69656e743d5041594d454e545f50414745",
+      "width": 79
+    },
+    {
+      "alt": "NutriWell · DEMO",
+      "height": 300,
+      "loaded": true,
+      "natural_height": 300,
+      "natural_width": 212,
+      "object_fit": "fill",
+      "src": "https://img.stripecdn.com/cdn-cgi/image/format=auto,height=300,dpr=1/https%3A%2F%2Fd1wqzb5bdbcre6.cloudfront.net%2F895229fe19d686321b56cda7414c17596fcabb7bc72fc33813f6c2903249a6a9%2F68747470733a2f2f66696c65732e7374726970652e636f6d2f6c696e6b732f4d44423859574e6a6446387856555a36516e4653636b70544d465a546358707a66475a735833526c633352664e58463459545673533346744f55567262476c555245397452474a424e305675303048426c67616c6569%2F6d65726368616e745f69643d616363745f3155467a427152724a53305653717a7326636c69656e743d5041594d454e545f50414745",
+      "width": 212
+    }
+  ],
+  "payment_submitted": false,
+  "price_visible": true,
+  "test_banner": true,
+  "verified_at": "2026-09-15T17:56:48.722Z",
+  "evidence_type": "rendered DOM and computed styles",
+  "url": "https://buy.stripe.com/test_fZufZj1Nyg7mfNQ7BkeME00?locale=es"
+}

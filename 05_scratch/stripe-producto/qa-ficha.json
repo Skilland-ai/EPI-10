@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "checks": {
+    "name_amount_quantity": true,
+    "five_inclusions": true,
+    "assets": true,
+    "rules": true,
+    "demo_and_next_step": true,
+    "local_links": true,
+    "secret_scan": true
+  },
+  "scope": "Ficha y reglas definidas; Stripe y pagos sin implementar",
+  "unknowns": [
+    "Oferta comercial de Carmen",
+    "Fotografía editorial de la página",
+    "Cuenta productiva EPI10"
+  ]
+}

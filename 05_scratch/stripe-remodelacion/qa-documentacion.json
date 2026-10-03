@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "markdown_files": 25,
+  "local_links_checked": 130,
+  "missing_links": [],
+  "files_with_secret_patterns": [],
+  "scope": "Plan remodelado, acceso CLI y documentación; implementación de pagos pendiente"
+}

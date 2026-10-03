@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "checks": {
+    "api_17_checks": true,
+    "sandbox_account": true,
+    "fixed_quantity_requested": true,
+    "no_quantity_control_rendered": true,
+    "browser_verified": true,
+    "no_payment": true,
+    "browser_claims": true,
+    "matching_url": true,
+    "evidence_limits": true,
+    "configuration_applied": true,
+    "script_syntax": true,
+    "local_links": true,
+    "no_credentials": true
+  },
+  "markdown_files": 21,
+  "local_links": 193,
+  "broken_links": [],
+  "secret_files": []
+}

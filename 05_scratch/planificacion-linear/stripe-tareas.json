@@ -1,0 +1,339 @@
+[
+  {
+    "id": "SKI-26",
+    "uuid": "e2e35bb5-ed44-4e44-95e2-b6e42a7bf08f",
+    "title": "Definir alcance funcional del mockup de cobro",
+    "projectMilestone": {
+      "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+      "name": "OL1 - Apertura de frentes "
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-26/definir-alcance-funcional-del-mockup-de-cobro",
+    "dueDate": "2026-09-11",
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:12:57.140Z",
+    "updatedAt": "2026-09-10T23:55:22.604Z"
+  },
+  {
+    "id": "SKI-27",
+    "uuid": "7b00ef89-91b0-4fa1-a992-e3c59bce2b7c",
+    "title": "Inventariar escenarios y reglas de pago",
+    "projectMilestone": {
+      "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+      "name": "OL1 - Apertura de frentes "
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-27/inventariar-escenarios-y-reglas-de-pago",
+    "dueDate": "2026-09-11",
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:13:30.301Z",
+    "updatedAt": "2026-09-10T23:55:14.215Z"
+  },
+  {
+    "id": "SKI-28",
+    "uuid": "87f30bb8-97e5-440d-b48f-9a7fb833ca15",
+    "title": "Preparar entorno Stripe de pruebas de Skilland",
+    "projectMilestone": {
+      "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+      "name": "OL1 - Apertura de frentes "
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-28/preparar-entorno-stripe-de-pruebas-de-skilland",
+    "dueDate": "2026-09-11",
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:13:31.142Z",
+    "updatedAt": "2026-09-10T23:55:15.307Z"
+  },
+  {
+    "id": "SKI-37",
+    "uuid": "7b9d744d-0ee1-4bbb-833c-97d959387444",
+    "title": "Especificar flujo de compra y estados de pago",
+    "projectMilestone": {
+      "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+      "name": "OL2 - Artefactos y diagnóstico"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-37/especificar-flujo-de-compra-y-estados-de-pago",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:14:16.902Z",
+    "updatedAt": "2026-09-07T05:14:17.129Z"
+  },
+  {
+    "id": "SKI-38",
+    "uuid": "33559f96-cd18-4253-a759-0c857794e74a",
+    "title": "Diseñar wireframes y copy del checkout",
+    "projectMilestone": {
+      "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+      "name": "OL2 - Artefactos y diagnóstico"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-38/disenar-wireframes-y-copy-del-checkout",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:14:17.651Z",
+    "updatedAt": "2026-09-07T05:14:18.029Z"
+  },
+  {
+    "id": "SKI-39",
+    "uuid": "392c12ce-043e-4402-83fc-c38688e0b197",
+    "title": "Definir matriz de pruebas y excepciones de pago",
+    "projectMilestone": {
+      "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+      "name": "OL2 - Artefactos y diagnóstico"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-39/definir-matriz-de-pruebas-y-excepciones-de-pago",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:14:18.543Z",
+    "updatedAt": "2026-09-07T05:14:18.753Z"
+  },
+  {
+    "id": "SKI-48",
+    "uuid": "766b6866-a4d6-4cdd-80df-eca1d36875c6",
+    "title": "Configurar catálogo, producto y precio de prueba",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-48/configurar-catalogo-producto-y-precio-de-prueba",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:15:01.045Z",
+    "updatedAt": "2026-09-07T05:15:01.765Z"
+  },
+  {
+    "id": "SKI-49",
+    "uuid": "98006883-995e-4c62-926f-7d0299092eeb",
+    "title": "Implementar checkout de prueba en entorno Skilland",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-49/implementar-checkout-de-prueba-en-entorno-skilland",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:15:04.013Z",
+    "updatedAt": "2026-09-07T05:15:04.523Z"
+  },
+  {
+    "id": "SKI-50",
+    "uuid": "fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8",
+    "title": "Configurar páginas de éxito, cancelación y reintento",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-50/configurar-paginas-de-exito-cancelacion-y-reintento",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:15:05.201Z",
+    "updatedAt": "2026-09-07T05:15:05.650Z"
+  },
+  {
+    "id": "SKI-51",
+    "uuid": "7bb7bcac-6d1e-431d-8baa-d5542e924e42",
+    "title": "Preparar evento o webhook de pago para el mockup",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-51/preparar-evento-o-webhook-de-pago-para-el-mockup",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:15:06.932Z",
+    "updatedAt": "2026-09-07T05:15:07.219Z"
+  },
+  {
+    "id": "SKI-52",
+    "uuid": "09924f05-08c2-401c-812f-e325176be0cc",
+    "title": "Ejecutar pruebas funcionales del mockup",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-52/ejecutar-pruebas-funcionales-del-mockup",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:15:07.947Z",
+    "updatedAt": "2026-09-07T05:15:08.202Z"
+  },
+  {
+    "id": "SKI-53",
+    "uuid": "a9921c7a-9091-40fa-9fa1-1a185b1c1106",
+    "title": "Preparar evidencia y guion de demo para Carmen",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-53/preparar-evidencia-y-guion-de-demo-para-carmen",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:15:09.408Z",
+    "updatedAt": "2026-09-07T05:15:09.626Z"
+  },
+  {
+    "id": "SKI-73",
+    "uuid": "a98734b5-f426-4afc-97b8-713dff094ac9",
+    "title": "Revisar internamente el mockup completo",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-73/revisar-internamente-el-mockup-completo",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:16:10.428Z",
+    "updatedAt": "2026-09-07T05:16:11.155Z"
+  },
+  {
+    "id": "SKI-74",
+    "uuid": "642db799-e483-47aa-87f2-e145b6fdb714",
+    "title": "Presentar mockup a Carmen y solicitar feedback",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-74/presentar-mockup-a-carmen-y-solicitar-feedback",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:16:12.703Z",
+    "updatedAt": "2026-09-07T05:16:13.373Z"
+  },
+  {
+    "id": "SKI-75",
+    "uuid": "7f5354d3-67cc-41d4-8109-ccf56672c768",
+    "title": "Incorporar feedback aprobado",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-75/incorporar-feedback-aprobado",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:16:13.828Z",
+    "updatedAt": "2026-09-07T05:16:14.051Z"
+  },
+  {
+    "id": "SKI-76",
+    "uuid": "dc8ca1a9-3ec3-477e-9d59-390c68b1bd99",
+    "title": "Acompañar alta y verificación de la cuenta EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-76/acompanar-alta-y-verificacion-de-la-cuenta-epi10",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:16:15.622Z",
+    "updatedAt": "2026-09-07T05:16:16.071Z"
+  },
+  {
+    "id": "SKI-77",
+    "uuid": "a427f048-9a8b-410f-b7ad-241249a1aa22",
+    "title": "Replicar catálogo y configuración en EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-77/replicar-catalogo-y-configuracion-en-epi10",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:16:17.513Z",
+    "updatedAt": "2026-09-07T05:16:17.768Z"
+  },
+  {
+    "id": "SKI-78",
+    "uuid": "a8279848-79e9-422e-a7d7-41f144bacd89",
+    "title": "Configurar credenciales, enlaces y webhooks del entorno EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-78/configurar-credenciales-enlaces-y-webhooks-del-entorno-epi10",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:16:18.292Z",
+    "updatedAt": "2026-09-07T05:16:18.625Z"
+  },
+  {
+    "id": "SKI-79",
+    "uuid": "f04f4b6d-c01e-4580-be2b-bec2a88456bf",
+    "title": "Ejecutar pruebas de aceptación en EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-79/ejecutar-pruebas-de-aceptacion-en-epi10",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:16:19.144Z",
+    "updatedAt": "2026-09-07T05:16:19.359Z"
+  },
+  {
+    "id": "SKI-80",
+    "uuid": "2e4dcadd-4334-4d3e-9008-47f04e88ff82",
+    "title": "Entregar y documentar el módulo Stripe",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-80/entregar-y-documentar-el-modulo-stripe",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:16:19.937Z",
+    "updatedAt": "2026-09-07T05:16:20.186Z"
+  },
+  {
+    "id": "SKI-81",
+    "uuid": "8c66f70c-fce1-44db-9817-e88b4cc2df70",
+    "title": "Emitir y registrar la factura del módulo adicional",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "status": "Todo",
+    "statusType": "unstarted",
+    "url": "https://linear.app/skilland/issue/SKI-81/emitir-y-registrar-la-factura-del-modulo-adicional",
+    "dueDate": null,
+    "archivedAt": null,
+    "createdAt": "2026-09-07T05:16:20.701Z",
+    "updatedAt": "2026-09-07T05:16:20.937Z"
+  }
+]
+

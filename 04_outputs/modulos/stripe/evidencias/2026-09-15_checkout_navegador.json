@@ -1,0 +1,33 @@
+{
+  "amount_eur": true,
+  "background": "rgb(248, 245, 239)",
+  "card": true,
+  "card_country": true,
+  "cardholder_name": true,
+  "demo_notice": true,
+  "email": true,
+  "logo_loaded": true,
+  "logo_proportions": [
+    {
+      "alt": "EPI10 Salud · DEMO logo",
+      "height": 28,
+      "width": 79
+    },
+    {
+      "alt": "NutriWell · DEMO",
+      "height": 107,
+      "width": 300
+    }
+  ],
+  "no_phone": true,
+  "no_quantity_control": true,
+  "no_shipping": true,
+  "pay_button_blue": true,
+  "payment_submitted": false,
+  "product": true,
+  "test_banner": true,
+  "title": "EPI10 Salud · DEMO",
+  "url": "https://buy.stripe.com/test_fZufZj1Nyg7mfNQ7BkeME00?locale=es",
+  "evidence_type": "rendered DOM and computed styles",
+  "screenshot_available": false
+}

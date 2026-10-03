@@ -1,0 +1,32 @@
+{
+  "cli_version": "1.50.11",
+  "context": "sandbox",
+  "read_checks": [
+    {
+      "endpoint": "/v1/account",
+      "account_id": "acct_1UFzBqRrJS0VSqzs",
+      "business_name": "Entorno de prueba de EPI10 Salud",
+      "country": "ES"
+    },
+    {
+      "endpoint": "/v1/products",
+      "objects_returned": 0,
+      "has_more": false,
+      "live_modes_returned": []
+    },
+    {
+      "endpoint": "/v1/prices",
+      "objects_returned": 0,
+      "has_more": false,
+      "live_modes_returned": []
+    },
+    {
+      "endpoint": "/v1/events",
+      "objects_returned": 1,
+      "has_more": true,
+      "live_modes_returned": [
+        false
+      ]
+    }
+  ]
+}

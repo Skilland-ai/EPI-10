@@ -1,0 +1,51 @@
+{
+  "verified_at": "2026-09-15T17:35:46.504591+00:00",
+  "account_id": "acct_1UFzBqRrJS0VSqzs",
+  "integration": "payment_link",
+  "payment_link_id": "plink_1UG0GhRrJS0VSqzsQkUTzzah",
+  "url": "https://buy.stripe.com/test_fZufZj1Nyg7mfNQ7BkeME00?locale=es",
+  "livemode": false,
+  "quantity": 1,
+  "adjustable_quantity": false,
+  "payment_method_types": [
+    "card"
+  ],
+  "automatic_tax": false,
+  "invoice_creation": false,
+  "after_completion": {
+    "hosted_confirmation": {
+      "custom_message": "Pago de prueba completado. Has completado la compra de demostración de NutriWell. No se ha realizado ningún cobro real ni contratado el servicio."
+    },
+    "type": "hosted_confirmation"
+  },
+  "branding": {
+    "icon": "",
+    "logo": "file_1UG02ERrJS0VSqzs5X1MupI8",
+    "primary_color": "#F8F5EF",
+    "secondary_color": "#044799"
+  },
+  "api_checks": {
+    "sandbox": true,
+    "active": true,
+    "card": true,
+    "currency": true,
+    "quantity": true,
+    "price": true,
+    "total": true,
+    "one_time": true,
+    "no_tax": true,
+    "no_invoice": true,
+    "no_promotion": true,
+    "no_phone": true,
+    "no_shipping": true,
+    "no_custom_fields": true,
+    "confirmation": true,
+    "demo_notice": true,
+    "branding": true
+  },
+  "browser_verified": true,
+  "payment_tested": false,
+  "browser_evidence": "../evidencias/2026-09-15_checkout_imagen_ampliada_navegador.json",
+  "presentation_verified_at": "2026-09-15T18:08:31.669Z",
+  "presentation_api_evidence": "../evidencias/2026-09-15_checkout_imagen_ampliada_api.json"
+}

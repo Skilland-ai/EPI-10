@@ -1,0 +1,97 @@
+{
+  "checked_at": "2026-09-15T19:44:42.418Z",
+  "session": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+  "abandonment": "- text: Vista de demostración\n- generic: Sin cobros reales\n- banner:\n  - link \"EPI10 Salud, inicio\":\n    - /url: /\n    - img \"EPI10\"\n  - link \"Volver a NutriWell\":\n    - /url: /\n    - text: Volver a NutriWell\n    - generic: ↗\n- main:\n  - region \"Puedes continuar.\":\n    - generic: ↗\n    - paragraph: COMPRA PENDIENTE\n    - heading \"Puedes continuar.\" [level=1]\n    - paragraph: La compra de prueba sigue pendiente. Retoma el mismo checkout para completarla; si la tarjeta fue rechazada, podrás probar con otra tarjeta de prueba.\n    - term: Producto\n    - definition: NutriWell · DEMO\n    - term: Importe de prueba\n    - definition: 100,00 €\n    - term: Referencia\n    - definition: NW-D8418096\n    - button \"Continuar al pago de prueba\":\n      - text: Continuar al pago de prueba\n      - generic: ↗\n    - link \"Volver a NutriWell\":\n      - /url: /\n    - paragraph: Demostración preparada por Skilland. Sin cobros reales ni prestación del servicio.\n- alert",
+  "decline": "- banner:\n  - link \"Volver a EPI10 Salud · DEMO\":\n    - /url: https://epi10-nutriwell-demo.vercel.app/compra\n    - generic: Atrás\n    - img \"EPI10 Salud · DEMO logo\"\n  - text: Entorno de prueba\n- img \"NutriWell · DEMO\"\n- heading \"NutriWell · DEMO\" [level=2]:\n  - generic: NutriWell · DEMO\n- generic: 100,00 €\n- generic: Conoce tu biología y cuida tus hábitos. Incluye test genético, cuestionario, informe personalizado, plan de acción y sesión profesional.\n- button:\n- main:\n  - iframe [name=\"__privateStripeFrame9694\"]:\n    - iframe:\n      - button \"Apple Pay\":\n    - button \"Paga de forma segura con Link\":\n      - text: Pagar con\n  - paragraph: O\n  - generic: Correo electrónico\n  - textbox \"Correo electrónico\":\n    - /placeholder: correoelectrónico@ejemplo.com\n  - heading \"Método de pago\" [level=2]\n  - list:\n    - generic: Tarjeta\n    - generic: Información de la tarjeta\n    - textbox \"Número de la tarjeta\":\n      - /placeholder: 1234 1234 1234 1234\n      - text: 4000 0000 0000 0002\n    - generic: La marca de tarjeta actual es Visa.\n    - textbox \"Fecha de expiración\":\n      - /placeholder: MM / AA\n      - text: 12 / 34\n    - textbox \"Tarjeta de débito o crédito CVC/CVV\":\n      - /placeholder: CVC\n      - text: \"123\"\n    - img \"Tarjeta de débito o crédito CVC/CVV\"\n    - generic: Código de 3 dígitos en el reverso de la tarjeta\n    - alert: Se ha rechazado tu tarjeta de crédito. Intenta pagar con una tarjeta de débito.\n    - group \"Dirección de facturación\":\n      - generic: Nombre del titular de la tarjeta\n      - textbox \"Nombre del titular de la tarjeta\":\n        - /placeholder: Nombre completo\n        - text: Prueba NutriWell\n      - generic: País o región\n      - combobox \"País o región\":\n  - checkbox \"Guarda mis datos para un proceso de compra más rápido\"\n  - generic: Guarda mis datos para un proceso de compra más rápido\n  - generic: Paga de forma segura en EPI10 Salud · DEMO y en todos los comercios que acepten Link.\n  - paragraph: Demostración de EPI10 Salud. Usa únicamente datos de prueba. No se realiza ningún cobro real ni se contrata el servicio.\n  - button \"Pagar\":\n    - generic: Pagar\n    - generic: Procesamiento\n  - checkbox \"I am an AI agent acting on behalf of someone else\"\n  - text: I am an AI agent acting on behalf of someone else\n- contentinfo:\n  - link \"Powered by Stripe\":\n    - /url: https://stripe.com\n    - text: Powered by\n    - img \"Stripe\"\n  - link \"Condiciones\":\n    - /url: https://stripe.com/legal/end-users\n  - link \"Privacidad\":\n    - /url: https://stripe.com/privacy",
+  "success": "- text: Vista de demostración\n- generic: Sin cobros reales\n- banner:\n  - link \"EPI10 Salud, inicio\":\n    - /url: /\n    - img \"EPI10\"\n  - link \"Volver a NutriWell\":\n    - /url: /\n    - text: Volver a NutriWell\n    - generic: ↗\n- main:\n  - region \"Prueba completada.\":\n    - generic: ✓\n    - paragraph: PAGO DE PRUEBA CONFIRMADO\n    - heading \"Prueba completada.\" [level=1]\n    - paragraph: Stripe ha confirmado tu pago de prueba de NutriWell. No se ha realizado ningún cobro real ni contratado el servicio.\n    - term: Producto\n    - definition: NutriWell · DEMO\n    - term: Importe de prueba\n    - definition: 100,00 €\n    - term: Referencia\n    - definition: NW-D8418096\n    - heading \"El siguiente paso.\" [level=2]\n    - paragraph: La demostración termina aquí. En el servicio real, EPI10 explicará cómo comenzar la experiencia NutriWell después de la compra.\n    - link \"Volver a NutriWell\":\n      - /url: /\n      - text: Volver a NutriWell\n      - generic: ↗\n    - button \"Iniciar otra prueba\"\n    - paragraph: Demostración preparada por Skilland. Sin cobros reales ni prestación del servicio.\n- alert",
+  "responsive": [
+    {
+      "buttons": [
+        {
+          "box": {
+            "bottom": 1028.0625,
+            "height": 60,
+            "left": 16,
+            "right": 289,
+            "top": 968.0625,
+            "width": 273,
+            "x": 16,
+            "y": 968.0625
+          },
+          "text": "Volver a NutriWell ↗"
+        }
+      ],
+      "heading": "38px",
+      "scrollWidth": 305,
+      "state": "paid",
+      "text": "18px",
+      "width": 320
+    },
+    {
+      "buttons": [
+        {
+          "box": {
+            "bottom": 900.90625,
+            "height": 60,
+            "left": 20,
+            "right": 355,
+            "top": 840.90625,
+            "width": 335,
+            "x": 20,
+            "y": 840.90625
+          },
+          "text": "Volver a NutriWell ↗"
+        }
+      ],
+      "heading": "38px",
+      "scrollWidth": 375,
+      "state": "paid",
+      "text": "18px",
+      "width": 390
+    },
+    {
+      "buttons": [
+        {
+          "box": {
+            "bottom": 965.84375,
+            "height": 62.796875,
+            "left": 24,
+            "right": 256.515625,
+            "top": 903.046875,
+            "width": 232.515625,
+            "x": 24,
+            "y": 903.046875
+          },
+          "text": "Volver a NutriWell ↗"
+        }
+      ],
+      "heading": "42px",
+      "scrollWidth": 753,
+      "state": "paid",
+      "text": "20px",
+      "width": 768
+    },
+    {
+      "buttons": [
+        {
+          "box": {
+            "bottom": 902.546875,
+            "height": 62.796875,
+            "left": 72.5,
+            "right": 305.015625,
+            "top": 839.75,
+            "width": 232.515625,
+            "x": 72.5,
+            "y": 839.75
+          },
+          "text": "Volver a NutriWell ↗"
+        }
+      ],
+      "heading": "68px",
+      "scrollWidth": 1425,
+      "state": "paid",
+      "text": "20px",
+      "width": 1440
+    }
+  ]
+}

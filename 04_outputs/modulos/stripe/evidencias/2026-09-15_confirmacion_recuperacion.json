@@ -1,0 +1,204 @@
+{
+  "id": "E17",
+  "verified_at": "2026-09-15T19:50:55.029744+00:00",
+  "scope": "SKI-50 — confirmación, abandono y recuperación",
+  "account_id": "acct_1UFzBqRrJS0VSqzs",
+  "livemode": false,
+  "url": "https://epi10-nutriwell-demo.vercel.app",
+  "deployment": {
+    "id": "dpl_AjZrNnbA7ajVFKwvGGSLQvMhLBRy",
+    "status": "READY",
+    "url": "https://epi10-nutriwell-demo-3d3ycvypd-raul-1873s-projects.vercel.app"
+  },
+  "api": {
+    "checked_at": "2026-09-15T19:37:30.839Z",
+    "order": "5dea4968-ee2b-4fb6-b903-2618b2c4df13",
+    "session": "cs_test_a1aapWbcJ84VxvvuxyXA5P2ZMwKxyFyplEXxN2DLn1zU0lY58PdJW1QYyy",
+    "initial": "pending",
+    "expired": "expired",
+    "same_session_on_retry": true,
+    "livemode": false,
+    "amount": 10000
+  },
+  "abandonment": {
+    "session": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+    "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+    "payment_status": "unpaid",
+    "status": "open",
+    "amount": 10000,
+    "livemode": false,
+    "checked_at": "2026-09-15T19:40:40.178Z"
+  },
+  "decline": {
+    "checked_at": "2026-09-15T19:42:39.981Z",
+    "session": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+    "status": "open",
+    "payment_status": "unpaid",
+    "payment_intent": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+    "intent_status": "requires_payment_method",
+    "decline": "generic_decline",
+    "error": "card_declined"
+  },
+  "payment": {
+    "checked_at": "2026-09-15T19:43:04.707Z",
+    "session": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+    "order": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+    "status": "complete",
+    "payment_status": "paid",
+    "payment_intent": "pi_3UG2EtRrJS0VSqzs1JKNBbyq",
+    "intent_status": "succeeded",
+    "charge": "ch_3UG2EtRrJS0VSqzs1taKlaUI",
+    "amount": 10000,
+    "currency": "eur",
+    "livemode": false
+  },
+  "purchase_replay": {
+    "checked_at": "2026-09-15T19:50:08.870Z",
+    "sessions_for_purchase": 1,
+    "paid_sessions": 1,
+    "ids": [
+      "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R"
+    ]
+  },
+  "public_checks": {
+    "checked_at": "2026-09-15T19:49:08.166Z",
+    "cases": [
+      {
+        "path": "/",
+        "status": 200,
+        "state": null,
+        "noSecret": true,
+        "cache": "private, no-cache, no-store, max-age=0, must-revalidate"
+      },
+      {
+        "path": "/compra",
+        "status": 200,
+        "state": "missing",
+        "noSecret": true,
+        "cache": "private, no-cache, no-store, max-age=0, must-revalidate"
+      },
+      {
+        "path": "/compra?session_id=cs_test_fake&estado=paid",
+        "status": 200,
+        "state": "missing",
+        "noSecret": true,
+        "cache": "private, no-cache, no-store, max-age=0, must-revalidate"
+      }
+    ],
+    "client_chunks": 14,
+    "secret_absent": true
+  },
+  "responsive": [
+    {
+      "buttons": [
+        {
+          "box": {
+            "bottom": 1028.0625,
+            "height": 60,
+            "left": 16,
+            "right": 289,
+            "top": 968.0625,
+            "width": 273,
+            "x": 16,
+            "y": 968.0625
+          },
+          "text": "Volver a NutriWell ↗"
+        }
+      ],
+      "heading": "38px",
+      "scrollWidth": 305,
+      "state": "paid",
+      "text": "18px",
+      "width": 320
+    },
+    {
+      "buttons": [
+        {
+          "box": {
+            "bottom": 900.90625,
+            "height": 60,
+            "left": 20,
+            "right": 355,
+            "top": 840.90625,
+            "width": 335,
+            "x": 20,
+            "y": 840.90625
+          },
+          "text": "Volver a NutriWell ↗"
+        }
+      ],
+      "heading": "38px",
+      "scrollWidth": 375,
+      "state": "paid",
+      "text": "18px",
+      "width": 390
+    },
+    {
+      "buttons": [
+        {
+          "box": {
+            "bottom": 965.84375,
+            "height": 62.796875,
+            "left": 24,
+            "right": 256.515625,
+            "top": 903.046875,
+            "width": 232.515625,
+            "x": 24,
+            "y": 903.046875
+          },
+          "text": "Volver a NutriWell ↗"
+        }
+      ],
+      "heading": "42px",
+      "scrollWidth": 753,
+      "state": "paid",
+      "text": "20px",
+      "width": 768
+    },
+    {
+      "buttons": [
+        {
+          "box": {
+            "bottom": 902.546875,
+            "height": 62.796875,
+            "left": 72.5,
+            "right": 305.015625,
+            "top": 839.75,
+            "width": 232.515625,
+            "x": 72.5,
+            "y": 839.75
+          },
+          "text": "Volver a NutriWell ↗"
+        }
+      ],
+      "heading": "68px",
+      "scrollWidth": 1425,
+      "state": "paid",
+      "text": "20px",
+      "width": 1440
+    }
+  ],
+  "explicit_new_demo": {
+    "verified_in_browser": true,
+    "previous_reference": "NW-D8418096",
+    "new_reference": "NW-60E20C9B",
+    "new_state": "ready"
+  },
+  "validation": {
+    "unit_tests_passed": 10,
+    "build_local": "PASS",
+    "build_vercel": "PASS",
+    "typescript": "PASS",
+    "eslint_errors": 0,
+    "eslint_image_warnings": 5,
+    "screenshots": "not available; DOM and geometry verified"
+  },
+  "pending": [
+    "SKI-51 webhook receiver, signature and deduplication",
+    "SKI-52 refund, 3DS and remaining matrix",
+    "SKI-53 presentation script",
+    "Carmen acceptance",
+    "EPI10 production configuration"
+  ],
+  "credentials": "Server-only environment variables, no values recorded; local file ignored by Git and deployment."
+}

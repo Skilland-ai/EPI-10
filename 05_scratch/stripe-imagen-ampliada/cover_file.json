@@ -1,0 +1,30 @@
+{
+  "id": "file_1UG0kdRrJS0VSqzsppDdZm7t",
+  "object": "file",
+  "created": 1789495599,
+  "expires_at": null,
+  "filename": "nutriwell-portada-cuadrada-v2.jpg",
+  "links": {
+    "object": "list",
+    "data": [
+      {
+        "id": "link_1UG0keRrJS0VSqzsy4ulhln3",
+        "object": "file_link",
+        "created": 1789495600,
+        "expired": false,
+        "expires_at": null,
+        "file": "file_1UG0kdRrJS0VSqzsppDdZm7t",
+        "livemode": false,
+        "metadata": {},
+        "url": "https://files.stripe.com/links/MDB8YWNjdF8xVUZ6QnFSckpTMFZTcXpzfGZsX3Rlc3Rfd0dKRnR6TTA5OWRRY3Q1bUxGUmpMc2hs00fhYfc2pl"
+      }
+    ],
+    "has_more": false,
+    "url": "/v1/file_links?file=file_1UG0kdRrJS0VSqzsppDdZm7t"
+  },
+  "purpose": "business_logo",
+  "size": 180542,
+  "title": null,
+  "type": "jpg",
+  "url": "https://files.stripe.com/v1/files/file_1UG0kdRrJS0VSqzsppDdZm7t/contents"
+}

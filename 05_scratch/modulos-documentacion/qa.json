@@ -1,0 +1,33 @@
+{
+  "markdown_files": 13,
+  "local_links_checked": 65,
+  "missing_local_links": [],
+  "secret_pattern_findings": [],
+  "stripe_task_ids_match": true,
+  "evidence": [
+    {
+      "file": "2026-09-15_01_descripcion_empresa.png",
+      "unchanged": true
+    },
+    {
+      "file": "2026-09-15_02_pagos_y_facturas.png",
+      "unchanged": true
+    },
+    {
+      "file": "2026-09-15_03_ventas_internacionales.png",
+      "unchanged": true
+    },
+    {
+      "file": "2026-09-15_04_funciones_adicionales.png",
+      "unchanged": true
+    },
+    {
+      "file": "2026-09-15_05_configuracion_dashboard.png",
+      "unchanged": true
+    },
+    {
+      "file": "2026-09-15_06_dashboard_pruebas.png",
+      "unchanged": true
+    }
+  ]
+}

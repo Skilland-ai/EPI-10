@@ -1,0 +1,9 @@
+HTTP/2 200 
+date: Tue, 15 Sep 2026 18:48:58 GMT
+content-type: text/html; charset=utf-8
+link: </images/nutriwell-editorial.jpg>; rel=preload; as="image"; fetchpriority="high", </_next/static/_vinext_fonts/dm-sans-90624ee039aa/dm-sans-151a53ae.woff2>; rel=preload; as=font; type=font/woff2; crossorigin, </_next/static/_vinext_fonts/instrument-serif-73160b41b3be/instrument-serif-99cc6edf.woff2>; rel=preload; as=font; type=font/woff2; crossorigin, </_next/static/_vinext_fonts/instrument-serif-73160b41b3be/instrument-serif-a20ac721.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Next-Url, X-Vinext-Interception-Context, X-Vinext-Mounted-Slots, X-Vinext-Rsc-Render-Mode
+set-cookie: __cf_bm=jjp9d.GlQJ8G3fFvEUgMuurUmD5.uH8FciQe0i5Qcfg-1789498138.5853727-1.0.1.1-kf3j459DtXigIMDJgBa0AN7nb1PnCdss_B_mX_vYM6BKzmMSAgdnldost9xMFcXxbFQLuyO6bZcKoYZ_cFlGYzuDfpBPFx_sYpe_KbTcGs7NaIKCqTnTyXIU900EL8_K; HttpOnly; SameSite=None; Secure; Path=/; Domain=chatgpt.site; Expires=Tue, 15 Sep 2026 19:18:58 GMT
+server: cloudflare
+cf-ray: a3b9cf062a7213d0-BCN
+

@@ -1,0 +1,198 @@
+[
+  {
+    "width": 320,
+    "scrollWidth": 320,
+    "bodyWidth": 320,
+    "title": "Tu biología.\nTu próximo\ncapítulo.",
+    "buttons": [
+      {
+        "text": "Probar compra\n↗",
+        "height": 62.796875,
+        "width": 193.65625,
+        "left": 16,
+        "right": 209.65625,
+        "font": "18px"
+      },
+      {
+        "text": "Probar compra\n↗",
+        "height": 64.796875,
+        "width": 246,
+        "left": 37,
+        "right": 283,
+        "font": "18px"
+      }
+    ],
+    "images": [
+      {
+        "alt": "EPI10",
+        "loaded": true,
+        "width": 110
+      },
+      {
+        "alt": "Retrato de la portada de NutriWell, en tonos azules y cian",
+        "loaded": true,
+        "width": 288
+      },
+      {
+        "alt": "EPI10",
+        "loaded": true,
+        "width": 100
+      }
+    ],
+    "bodyFont": "\"DM Sans\", \"DM Sans Fallback\", Arial, sans-serif",
+    "paragraphs": [
+      {
+        "text": "UNA VISIÓN MÁS COMPLETA\n\nLa información\ncobra sentido.\n\nTu ADN es el punto de partida. Lo conectamos con tus hábitos y tu contexto para ayudarte a entender qué puede ser relevante para ti.\n\n↗\n\nUna experiencia que une\nconocimiento y acompañamiento.",
+        "font": "18px"
+      }
+    ],
+    "viewportMeta": "width=device-width, initial-scale=1"
+  },
+  {
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "title": "Tu biología.\nTu próximo\ncapítulo.",
+    "buttons": [
+      {
+        "text": "Probar compra\n↗",
+        "height": 62.796875,
+        "width": 219.65625,
+        "left": 20,
+        "right": 239.65625,
+        "font": "18px"
+      },
+      {
+        "text": "Probar compra\n↗",
+        "height": 64.796875,
+        "width": 300,
+        "left": 45,
+        "right": 345,
+        "font": "18px"
+      }
+    ],
+    "images": [
+      {
+        "alt": "EPI10",
+        "loaded": true,
+        "width": 110
+      },
+      {
+        "alt": "Retrato de la portada de NutriWell, en tonos azules y cian",
+        "loaded": true,
+        "width": 350
+      },
+      {
+        "alt": "EPI10",
+        "loaded": true,
+        "width": 100
+      }
+    ],
+    "bodyFont": "\"DM Sans\", \"DM Sans Fallback\", Arial, sans-serif",
+    "paragraphs": [
+      {
+        "text": "UNA VISIÓN MÁS COMPLETA\n\nLa información\ncobra sentido.\n\nTu ADN es el punto de partida. Lo conectamos con tus hábitos y tu contexto para ayudarte a entender qué puede ser relevante para ti.\n\n↗\n\nUna experiencia que une\nconocimiento y acompañamiento.",
+        "font": "18px"
+      }
+    ],
+    "viewportMeta": "width=device-width, initial-scale=1"
+  },
+  {
+    "width": 768,
+    "scrollWidth": 768,
+    "bodyWidth": 768,
+    "title": "Tu biología.\nTu próximo\ncapítulo.",
+    "buttons": [
+      {
+        "text": "Probar compra\n↗",
+        "height": 62.796875,
+        "width": 219.65625,
+        "left": 24,
+        "right": 243.65625,
+        "font": "18px"
+      },
+      {
+        "text": "Probar compra\n↗",
+        "height": 64.796875,
+        "width": 566,
+        "left": 101,
+        "right": 667,
+        "font": "18px"
+      }
+    ],
+    "images": [
+      {
+        "alt": "EPI10",
+        "loaded": true,
+        "width": 132
+      },
+      {
+        "alt": "Retrato de la portada de NutriWell, en tonos azules y cian",
+        "loaded": true,
+        "width": 358
+      },
+      {
+        "alt": "EPI10",
+        "loaded": true,
+        "width": 100
+      }
+    ],
+    "bodyFont": "\"DM Sans\", \"DM Sans Fallback\", Arial, sans-serif",
+    "paragraphs": [
+      {
+        "text": "UNA VISIÓN MÁS COMPLETA\n\nLa información\ncobra sentido.\n\nTu ADN es el punto de partida. Lo conectamos con tus hábitos y tu contexto para ayudarte a entender qué puede ser relevante para ti.\n\n↗\n\nUna experiencia que une\nconocimiento y acompañamiento.",
+        "font": "18px"
+      }
+    ],
+    "viewportMeta": "width=device-width, initial-scale=1"
+  },
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "bodyWidth": 1440,
+    "title": "Tu biología.\nTu próximo\ncapítulo.",
+    "buttons": [
+      {
+        "text": "Probar compra\n↗",
+        "height": 62.796875,
+        "width": 219.65625,
+        "left": 80,
+        "right": 299.65625,
+        "font": "18px"
+      },
+      {
+        "text": "Probar compra\n↗",
+        "height": 64.796875,
+        "width": 578,
+        "left": 741,
+        "right": 1319,
+        "font": "18px"
+      }
+    ],
+    "images": [
+      {
+        "alt": "EPI10",
+        "loaded": true,
+        "width": 132
+      },
+      {
+        "alt": "Retrato de la portada de NutriWell, en tonos azules y cian",
+        "loaded": true,
+        "width": 631
+      },
+      {
+        "alt": "EPI10",
+        "loaded": true,
+        "width": 100
+      }
+    ],
+    "bodyFont": "\"DM Sans\", \"DM Sans Fallback\", Arial, sans-serif",
+    "paragraphs": [
+      {
+        "text": "UNA VISIÓN MÁS COMPLETA\n\nLa información\ncobra sentido.\n\nTu ADN es el punto de partida. Lo conectamos con tus hábitos y tu contexto para ayudarte a entender qué puede ser relevante para ti.\n\n↗\n\nUna experiencia que une\nconocimiento y acompañamiento.",
+        "font": "18px"
+      }
+    ],
+    "viewportMeta": "width=device-width, initial-scale=1"
+  }
+]

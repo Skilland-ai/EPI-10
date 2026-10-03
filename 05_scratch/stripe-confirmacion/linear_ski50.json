@@ -1,0 +1,96 @@
+{
+  "id": "SKI-50",
+  "uuid": "fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8",
+  "title": "Conectar confirmación, abandono y reintento de la compra NutriWell",
+  "description": "## Resultado\n\nCerrar lo que ve el comprador después de pagar, salir o encontrar un error.\n\n## Criterio de terminado\n\n- [X] Confirmación que corresponde al estado real del pago, con referencia y siguiente paso comprensibles.\n- [X] Si hay página de éxito propia, verificar el estado en servidor; visitar la URL por sí solo no marca una compra pagada.\n- [X] Salir sin pagar mantiene la compra sin completar y ofrece volver al checkout.\n- [X] Rechazo permite corregir/reintentar sin crear una segunda actuación de negocio.\n- [X] Copy EPI10 coherente en todas las superficies, sin prometer emails/invitaciones que no se hayan enviado.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar guia_cliente.md; pruebas.md; bitacora.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8\" href=\"https://linear.app/skilland/issue/SKI-50/configurar-paginas-de-exito-cancelacion-y-reintento\">SKI-50</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.\n\n## Resultado verificado — 15 de septiembre de 2026\n\nPublicado en [https://epi10-nutriwell-demo.vercel.app](<https://epi10-nutriwell-demo.vercel.app>). Los CTA crean o recuperan Checkout Sessions del mismo sandbox y /compra verifica el pago en servidor, con referencia y textos EPI10.\n\nRecorrido ejecutado en navegador: entrada → abandono → misma sesión → rechazo de tarjeta → reintento correcto → confirmación. Volver a comprar después del pago muestra su resultado; «Iniciar otra prueba» crea otra referencia explícitamente. Una URL sin compra asociada, incluso con parámetros de éxito, no muestra pago confirmado.\n\n* Compra visible: NW-D8418096.\n* Sesión: cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R.\n* Pago: pi_3UG2EtRrJS0VSqzs1JKNBbyq; 100 EUR; succeeded; livemode=false.\n* Una sesión pagada para esta compra, sin segunda actuación de negocio.\n* Diez pruebas automatizadas correctas, build/TypeScript y lint sin errores. Confirmación comprobada por DOM/geometría en 320, 390, 768 y 1440 px.\n* Clave sandbox de aplicación configurada como variable sensible de servidor en Vercel; sin secretos en documentación ni bundle del navegador.\n\nEvidencia E17: 04_outputs/modulos/stripe/evidencias/2026-09-15_confirmacion_recuperacion.json. Procedimiento: docs/confirmacion_recuperacion.md, guia_cliente.md y pruebas.md. Detalle en 05_scratch/stripe-confirmacion/.\n\nPendientes en <issue id=\"7bb7bcac-6d1e-431d-8baa-d5542e924e42\" href=\"https://linear.app/skilland/issue/SKI-51/recibir-el-evento-de-pago-stripe-con-firma-verificada-y-deduplicacion\">SKI-51</issue>/52/53: receptor/firma/deduplicación de eventos, devolución, 3DS, resto de matriz y guion. Sin aceptación de Carmen ni configuración de cuenta productiva.",
+  "projectMilestone": {
+    "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+    "name": "OL3 - Validación y preparación"
+  },
+  "priority": {
+    "value": 0,
+    "name": "No priority"
+  },
+  "url": "https://linear.app/skilland/issue/SKI-50/conectar-confirmacion-abandono-y-reintento-de-la-compra-nutriwell",
+  "gitBranchName": "direccion/ski-50-conectar-confirmacion-abandono-y-reintento-de-la-compra",
+  "createdAt": "2026-09-07T05:15:05.201Z",
+  "updatedAt": "2026-09-15T19:50:55.858Z",
+  "archivedAt": null,
+  "completedAt": "2026-09-15T19:50:55.851Z",
+  "startedAt": "2026-09-15T19:24:30.883Z",
+  "canceledAt": null,
+  "dueDate": "2026-09-15",
+  "slaStartedAt": null,
+  "slaMediumRiskAt": null,
+  "slaHighRiskAt": null,
+  "slaBreachesAt": null,
+  "status": "Done",
+  "statusType": "completed",
+  "labels": [
+    "Stripe"
+  ],
+  "attachments": [],
+  "documents": [],
+  "stateHistory": [
+    {
+      "state": {
+        "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "startedAt": "2026-09-07T05:15:05.201Z",
+      "endedAt": "2026-09-15T19:24:30.895Z"
+    },
+    {
+      "state": {
+        "id": "3557045f-ba80-46f9-83f0-75dcfd2cf938",
+        "name": "In Progress",
+        "type": "started"
+      },
+      "startedAt": "2026-09-15T19:24:30.895Z",
+      "endedAt": "2026-09-15T19:50:55.858Z"
+    },
+    {
+      "state": {
+        "id": "1e686c27-ffdb-4585-b505-d0cfa749a3a1",
+        "name": "Done",
+        "type": "completed"
+      },
+      "startedAt": "2026-09-15T19:50:55.858Z",
+      "endedAt": null
+    }
+  ],
+  "createdBy": "Raúl",
+  "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "assignee": "Raúl",
+  "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "project": "EPI10 Salud MVP",
+  "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+  "team": "Skilland",
+  "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+  "relations": {
+    "blocks": [
+      {
+        "id": "SKI-52",
+        "title": "Probar NutriWell: pago, rechazo, reintento, duplicados, devolución y móvil"
+      }
+    ],
+    "blockedBy": [
+      {
+        "id": "SKI-37",
+        "title": "Maquetar la pantalla de entrada al mockup Stripe con marca EPI10"
+      },
+      {
+        "id": "SKI-49",
+        "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR"
+      }
+    ],
+    "relatedTo": [
+      {
+        "id": "SKI-51",
+        "title": "Recibir el evento de pago Stripe con firma verificada y deduplicación"
+      }
+    ],
+    "duplicateOf": null
+  }
+}

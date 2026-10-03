@@ -1,0 +1,1491 @@
+[
+  {
+    "id": "SKI-81",
+    "uuid": "8c66f70c-fce1-44db-9817-e88b4cc2df70",
+    "title": "Emitir y registrar la factura del módulo adicional",
+    "description": "Facturar el trabajo separado de Stripe una vez entregado conforme al acuerdo comercial.\n\n## Objetivo\n\nFacturar el trabajo separado de Stripe una vez entregado conforme al acuerdo comercial.\n\n## Criterio de terminado\n\nFactura emitida correctamente, enviada por canal acordado y referencia/estado de cobro registrados.\n\n## Dependencias\n\nT056.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T057 · Stripe · 1.5 Facturación del módulo adicional",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-81/emitir-y-registrar-la-factura-del-modulo-adicional",
+    "gitBranchName": "direccion/ski-81-emitir-y-registrar-la-factura-del-modulo-adicional",
+    "createdAt": "2026-09-07T05:16:20.701Z",
+    "updatedAt": "2026-09-07T05:16:20.937Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:20.701Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [],
+      "blockedBy": [
+        {
+          "id": "SKI-80",
+          "title": "Entregar y documentar el módulo Stripe"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-75",
+    "uuid": "7f5354d3-67cc-41d4-8109-ccf56672c768",
+    "title": "Incorporar feedback aprobado",
+    "description": "Aplicar únicamente cambios validados que mantengan el alcance del módulo Stripe.\n\n## Objetivo\n\nAplicar únicamente cambios validados que mantengan el alcance del módulo Stripe.\n\n## Criterio de terminado\n\nCambios implementados, regresión ejecutada y cualquier petición fuera de alcance aparcada.\n\n## Dependencias\n\nT050.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T051 · Stripe · 1.3 Validación y alta de EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-75/incorporar-feedback-aprobado",
+    "gitBranchName": "direccion/ski-75-incorporar-feedback-aprobado",
+    "createdAt": "2026-09-07T05:16:13.828Z",
+    "updatedAt": "2026-09-07T05:16:14.051Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:13.828Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-77",
+          "title": "Replicar catálogo y configuración en EPI10"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-74",
+          "title": "Presentar mockup a Carmen y solicitar feedback"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-74",
+    "uuid": "642db799-e483-47aa-87f2-e145b6fdb714",
+    "title": "Presentar mockup a Carmen y solicitar feedback",
+    "description": "Validar con Carmen el recorrido de pago antes de replicarlo en el entorno del cliente.\n\n## Objetivo\n\nValidar con Carmen el recorrido de pago antes de replicarlo en el entorno del cliente.\n\n## Criterio de terminado\n\nDemo realizada o enviada con preguntas concretas; feedback, aprobación y pendientes quedan registrados.\n\n## Dependencias\n\nT049.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T050 · Stripe · 1.3 Validación y alta de EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-74/presentar-mockup-a-carmen-y-solicitar-feedback",
+    "gitBranchName": "direccion/ski-74-presentar-mockup-a-carmen-y-solicitar-feedback",
+    "createdAt": "2026-09-07T05:16:12.703Z",
+    "updatedAt": "2026-09-07T05:16:13.373Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:12.703Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-76",
+          "title": "Acompañar alta y verificación de la cuenta EPI10"
+        },
+        {
+          "id": "SKI-75",
+          "title": "Incorporar feedback aprobado"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-73",
+          "title": "Revisar internamente el mockup completo"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-49",
+    "uuid": "98006883-995e-4c62-926f-7d0299092eeb",
+    "title": "Implementar checkout de prueba en entorno Skilland",
+    "description": "Construir un recorrido funcional de pago demostrable sin depender del entorno EPI10.\n\n## Objetivo\n\nConstruir un recorrido funcional de pago demostrable sin depender del entorno EPI10.\n\n## Criterio de terminado\n\nCheckout test abre desde el punto de entrada acordado, carga el producto correcto y completa pagos simulados.\n\n## Dependencias\n\nT014, T024.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T025 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-49/implementar-checkout-de-prueba-en-entorno-skilland",
+    "gitBranchName": "direccion/ski-49-implementar-checkout-de-prueba-en-entorno-skilland",
+    "createdAt": "2026-09-07T05:15:04.013Z",
+    "updatedAt": "2026-09-07T05:15:04.523Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:04.013Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-52",
+          "title": "Ejecutar pruebas funcionales del mockup"
+        },
+        {
+          "id": "SKI-51",
+          "title": "Preparar evento o webhook de pago para el mockup"
+        },
+        {
+          "id": "SKI-50",
+          "title": "Configurar páginas de éxito, cancelación y reintento"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-38",
+          "title": "Diseñar wireframes y copy del checkout"
+        },
+        {
+          "id": "SKI-48",
+          "title": "Configurar catálogo, producto y precio de prueba"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-48",
+    "uuid": "766b6866-a4d6-4cdd-80df-eca1d36875c6",
+    "title": "Configurar catálogo, producto y precio de prueba",
+    "description": "Crear en modo test la estructura comercial mínima que alimentará el checkout demo.\n\n## Objetivo\n\nCrear en modo test la estructura comercial mínima que alimentará el checkout demo.\n\n## Criterio de terminado\n\nProducto, precio, moneda, nombre, descripción y metadata de prueba están configurados y documentados.\n\n## Dependencias\n\nT003, T013.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T024 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-48/configurar-catalogo-producto-y-precio-de-prueba",
+    "gitBranchName": "direccion/ski-48-configurar-catalogo-producto-y-precio-de-prueba",
+    "createdAt": "2026-09-07T05:15:01.045Z",
+    "updatedAt": "2026-09-07T05:15:01.765Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:01.045Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-49",
+          "title": "Implementar checkout de prueba en entorno Skilland"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-37",
+          "title": "Especificar flujo de compra y estados de pago"
+        },
+        {
+          "id": "SKI-28",
+          "title": "Preparar entorno Stripe de pruebas de Skilland"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-79",
+    "uuid": "f04f4b6d-c01e-4580-be2b-bec2a88456bf",
+    "title": "Ejecutar pruebas de aceptación en EPI10",
+    "description": "Validar la réplica en el entorno EPI10 antes de declarar entregado el módulo.\n\n## Objetivo\n\nValidar la réplica en el entorno EPI10 antes de declarar entregado el módulo.\n\n## Criterio de terminado\n\nMatriz de pruebas ejecutada en test/sandbox del cliente con evidencia y sin defectos bloqueantes.\n\n## Dependencias\n\nT053, T054.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T055 · Stripe · 1.4 Implantación en entorno EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-79/ejecutar-pruebas-de-aceptacion-en-epi10",
+    "gitBranchName": "direccion/ski-79-ejecutar-pruebas-de-aceptacion-en-epi10",
+    "createdAt": "2026-09-07T05:16:19.144Z",
+    "updatedAt": "2026-09-07T05:16:19.359Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:19.144Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-80",
+          "title": "Entregar y documentar el módulo Stripe"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-78",
+          "title": "Configurar credenciales, enlaces y webhooks del entorno EPI10"
+        },
+        {
+          "id": "SKI-77",
+          "title": "Replicar catálogo y configuración en EPI10"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-78",
+    "uuid": "a8279848-79e9-422e-a7d7-41f144bacd89",
+    "title": "Configurar credenciales, enlaces y webhooks del entorno EPI10",
+    "description": "Dejar conectados los elementos técnicos del entorno cliente con gestión segura de secretos.\n\n## Objetivo\n\nDejar conectados los elementos técnicos del entorno cliente con gestión segura de secretos.\n\n## Criterio de terminado\n\nCredenciales no expuestas, URLs y endpoints correctos, firmas verificadas y eventos esperados observables.\n\n## Dependencias\n\nT052, T053.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T054 · Stripe · 1.4 Implantación en entorno EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-78/configurar-credenciales-enlaces-y-webhooks-del-entorno-epi10",
+    "gitBranchName": "direccion/ski-78-configurar-credenciales-enlaces-y-webhooks-del-entorno-epi10",
+    "createdAt": "2026-09-07T05:16:18.292Z",
+    "updatedAt": "2026-09-07T05:16:18.625Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:18.292Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-105",
+          "title": "Implementar entrada desde web y pago"
+        },
+        {
+          "id": "SKI-79",
+          "title": "Ejecutar pruebas de aceptación en EPI10"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-77",
+          "title": "Replicar catálogo y configuración en EPI10"
+        },
+        {
+          "id": "SKI-76",
+          "title": "Acompañar alta y verificación de la cuenta EPI10"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-39",
+    "uuid": "392c12ce-043e-4402-83fc-c38688e0b197",
+    "title": "Definir matriz de pruebas y excepciones de pago",
+    "description": "Traducir escenarios de pago en casos de prueba reproducibles y criterios de aceptación.\n\n## Objetivo\n\nTraducir escenarios de pago en casos de prueba reproducibles y criterios de aceptación.\n\n## Criterio de terminado\n\nMatriz incluye happy path, cancelación, fallo, reintento, duplicado y verificación de eventos sin usar cobros reales.\n\n## Dependencias\n\nT002, T013.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T015 · Stripe · 1.1 Diseño del flujo de cobro",
+    "projectMilestone": {
+      "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+      "name": "OL2 - Artefactos y diagnóstico"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-39/definir-matriz-de-pruebas-y-excepciones-de-pago",
+    "gitBranchName": "direccion/ski-39-definir-matriz-de-pruebas-y-excepciones-de-pago",
+    "createdAt": "2026-09-07T05:14:18.543Z",
+    "updatedAt": "2026-09-07T05:14:18.753Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:14:18.543Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-52",
+          "title": "Ejecutar pruebas funcionales del mockup"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-37",
+          "title": "Especificar flujo de compra y estados de pago"
+        },
+        {
+          "id": "SKI-27",
+          "title": "Inventariar escenarios y reglas de pago"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-28",
+    "uuid": "87f30bb8-97e5-440d-b48f-9a7fb833ca15",
+    "title": "Preparar entorno Stripe de pruebas de Skilland",
+    "description": "Disponer de un entorno de pruebas independiente donde construir el mockup sin esperar al alta de EPI10.\n\n## Objetivo\n\nDisponer de un entorno de pruebas independiente donde construir el mockup sin esperar al alta de EPI10.\n\n## Criterio de terminado\n\nEntorno test identificado, accesos controlados, claves protegidas y espacio preparado para producto, precio, checkout y eventos.\n\n## Dependencias\n\nT001.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T003 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+      "name": "OL1 - Apertura de frentes "
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-28/preparar-entorno-stripe-de-pruebas-de-skilland",
+    "gitBranchName": "direccion/ski-28-preparar-entorno-stripe-de-pruebas-de-skilland",
+    "createdAt": "2026-09-07T05:13:31.142Z",
+    "updatedAt": "2026-09-10T23:55:15.307Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-11",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:13:31.142Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-48",
+          "title": "Configurar catálogo, producto y precio de prueba"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-26",
+          "title": "Definir alcance funcional del mockup de cobro"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-53",
+    "uuid": "a9921c7a-9091-40fa-9fa1-1a185b1c1106",
+    "title": "Preparar evidencia y guion de demo para Carmen",
+    "description": "Preparar una explicación breve que permita validar decisiones funcionales sin entrar en detalle técnico innecesario.\n\n## Objetivo\n\nPreparar una explicación breve que permita validar decisiones funcionales sin entrar en detalle técnico innecesario.\n\n## Criterio de terminado\n\nGuion, enlace/entorno, datos de prueba, capturas y preguntas de validación están listos.\n\n## Dependencias\n\nT028.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T029 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-53/preparar-evidencia-y-guion-de-demo-para-carmen",
+    "gitBranchName": "direccion/ski-53-preparar-evidencia-y-guion-de-demo-para-carmen",
+    "createdAt": "2026-09-07T05:15:09.408Z",
+    "updatedAt": "2026-09-07T05:15:09.626Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:09.408Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-73",
+          "title": "Revisar internamente el mockup completo"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-52",
+          "title": "Ejecutar pruebas funcionales del mockup"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-77",
+    "uuid": "a427f048-9a8b-410f-b7ad-241249a1aa22",
+    "title": "Replicar catálogo y configuración en EPI10",
+    "description": "Trasladar al entorno de EPI10 la estructura aprobada en el mockup.\n\n## Objetivo\n\nTrasladar al entorno de EPI10 la estructura aprobada en el mockup.\n\n## Criterio de terminado\n\nProducto, precio, moneda, copy, metadata y configuración coinciden con la versión aprobada.\n\n## Dependencias\n\nT051, T052.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T053 · Stripe · 1.4 Implantación en entorno EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-77/replicar-catalogo-y-configuracion-en-epi10",
+    "gitBranchName": "direccion/ski-77-replicar-catalogo-y-configuracion-en-epi10",
+    "createdAt": "2026-09-07T05:16:17.513Z",
+    "updatedAt": "2026-09-07T05:16:17.768Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:17.513Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-79",
+          "title": "Ejecutar pruebas de aceptación en EPI10"
+        },
+        {
+          "id": "SKI-78",
+          "title": "Configurar credenciales, enlaces y webhooks del entorno EPI10"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-75",
+          "title": "Incorporar feedback aprobado"
+        },
+        {
+          "id": "SKI-76",
+          "title": "Acompañar alta y verificación de la cuenta EPI10"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-73",
+    "uuid": "a98734b5-f426-4afc-97b8-713dff094ac9",
+    "title": "Revisar internamente el mockup completo",
+    "description": "Hacer un gate interno de calidad antes de presentar la solución a Carmen.\n\n## Objetivo\n\nHacer un gate interno de calidad antes de presentar la solución a Carmen.\n\n## Criterio de terminado\n\nReplay completo ejecutado, copy y branding revisados, datos de prueba limpios y defectos críticos en cero.\n\n## Dependencias\n\nT028, T029.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T049 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-73/revisar-internamente-el-mockup-completo",
+    "gitBranchName": "direccion/ski-73-revisar-internamente-el-mockup-completo",
+    "createdAt": "2026-09-07T05:16:10.428Z",
+    "updatedAt": "2026-09-07T05:16:11.155Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:10.428Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-74",
+          "title": "Presentar mockup a Carmen y solicitar feedback"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-52",
+          "title": "Ejecutar pruebas funcionales del mockup"
+        },
+        {
+          "id": "SKI-53",
+          "title": "Preparar evidencia y guion de demo para Carmen"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-37",
+    "uuid": "7b9d744d-0ee1-4bbb-833c-97d959387444",
+    "title": "Especificar flujo de compra y estados de pago",
+    "description": "Convertir el alcance inicial en una secuencia verificable desde la selección del producto hasta el resultado del pago.\n\n## Objetivo\n\nConvertir el alcance inicial en una secuencia verificable desde la selección del producto hasta el resultado del pago.\n\n## Criterio de terminado\n\nDiagrama o spec define pantallas, estados, eventos, datos mínimos, mensajes y handoff posterior.\n\n## Dependencias\n\nT001, T002.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T013 · Stripe · 1.1 Diseño del flujo de cobro",
+    "projectMilestone": {
+      "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+      "name": "OL2 - Artefactos y diagnóstico"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-37/especificar-flujo-de-compra-y-estados-de-pago",
+    "gitBranchName": "direccion/ski-37-especificar-flujo-de-compra-y-estados-de-pago",
+    "createdAt": "2026-09-07T05:14:16.902Z",
+    "updatedAt": "2026-09-07T05:14:17.129Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:14:16.902Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-48",
+          "title": "Configurar catálogo, producto y precio de prueba"
+        },
+        {
+          "id": "SKI-39",
+          "title": "Definir matriz de pruebas y excepciones de pago"
+        },
+        {
+          "id": "SKI-38",
+          "title": "Diseñar wireframes y copy del checkout"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-27",
+          "title": "Inventariar escenarios y reglas de pago"
+        },
+        {
+          "id": "SKI-26",
+          "title": "Definir alcance funcional del mockup de cobro"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-52",
+    "uuid": "09924f05-08c2-401c-812f-e325176be0cc",
+    "title": "Ejecutar pruebas funcionales del mockup",
+    "description": "Validar el mockup contra la matriz de escenarios antes de enseñarlo al cliente.\n\n## Objetivo\n\nValidar el mockup contra la matriz de escenarios antes de enseñarlo al cliente.\n\n## Criterio de terminado\n\nCasos T015 ejecutados con evidencia; defectos críticos corregidos y defectos menores registrados.\n\n## Dependencias\n\nT015, T025, T026, T027.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T028 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-52/ejecutar-pruebas-funcionales-del-mockup",
+    "gitBranchName": "direccion/ski-52-ejecutar-pruebas-funcionales-del-mockup",
+    "createdAt": "2026-09-07T05:15:07.947Z",
+    "updatedAt": "2026-09-07T05:15:08.202Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:07.947Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-73",
+          "title": "Revisar internamente el mockup completo"
+        },
+        {
+          "id": "SKI-53",
+          "title": "Preparar evidencia y guion de demo para Carmen"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-39",
+          "title": "Definir matriz de pruebas y excepciones de pago"
+        },
+        {
+          "id": "SKI-49",
+          "title": "Implementar checkout de prueba en entorno Skilland"
+        },
+        {
+          "id": "SKI-51",
+          "title": "Preparar evento o webhook de pago para el mockup"
+        },
+        {
+          "id": "SKI-50",
+          "title": "Configurar páginas de éxito, cancelación y reintento"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-38",
+    "uuid": "33559f96-cd18-4253-a759-0c857794e74a",
+    "title": "Diseñar wireframes y copy del checkout",
+    "description": "Diseñar la experiencia que se enseñará a Carmen antes de replicarla en su cuenta.\n\n## Objetivo\n\nDiseñar la experiencia que se enseñará a Carmen antes de replicarla en su cuenta.\n\n## Criterio de terminado\n\nWireframes y textos cubren entrada, checkout, confirmación, cancelación, error y siguiente paso con branding provisional.\n\n## Dependencias\n\nT013.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T014 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "4a85a52d-9b70-471a-a759-ba9daafe25d7",
+      "name": "OL2 - Artefactos y diagnóstico"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-38/disenar-wireframes-y-copy-del-checkout",
+    "gitBranchName": "direccion/ski-38-disenar-wireframes-y-copy-del-checkout",
+    "createdAt": "2026-09-07T05:14:17.651Z",
+    "updatedAt": "2026-09-07T05:14:18.029Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:14:17.651Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-49",
+          "title": "Implementar checkout de prueba en entorno Skilland"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-37",
+          "title": "Especificar flujo de compra y estados de pago"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-51",
+    "uuid": "7bb7bcac-6d1e-431d-8baa-d5542e924e42",
+    "title": "Preparar evento o webhook de pago para el mockup",
+    "description": "Demostrar que el resultado del pago puede producir un evento consumible por el journey posterior.\n\n## Objetivo\n\nDemostrar que el resultado del pago puede producir un evento consumible por el journey posterior.\n\n## Criterio de terminado\n\nEvento test documentado y observable con payload mínimo, verificación de firma o mecanismo equivalente y manejo de repetición.\n\n## Dependencias\n\nT025.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T027 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-51/preparar-evento-o-webhook-de-pago-para-el-mockup",
+    "gitBranchName": "direccion/ski-51-preparar-evento-o-webhook-de-pago-para-el-mockup",
+    "createdAt": "2026-09-07T05:15:06.932Z",
+    "updatedAt": "2026-09-07T05:15:07.219Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:06.932Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-52",
+          "title": "Ejecutar pruebas funcionales del mockup"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-49",
+          "title": "Implementar checkout de prueba en entorno Skilland"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-80",
+    "uuid": "2e4dcadd-4334-4d3e-9008-47f04e88ff82",
+    "title": "Entregar y documentar el módulo Stripe",
+    "description": "Cerrar la entrega con configuración, operación, pruebas y responsabilidades entendibles.\n\n## Objetivo\n\nCerrar la entrega con configuración, operación, pruebas y responsabilidades entendibles.\n\n## Criterio de terminado\n\nDocumento de entrega incluye alcance, enlaces, operación, incidencias, owners, evidencia y aceptación.\n\n## Dependencias\n\nT055.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T056 · Stripe · 1.4 Implantación en entorno EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-80/entregar-y-documentar-el-modulo-stripe",
+    "gitBranchName": "direccion/ski-80-entregar-y-documentar-el-modulo-stripe",
+    "createdAt": "2026-09-07T05:16:19.937Z",
+    "updatedAt": "2026-09-07T05:16:20.186Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:19.937Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-81",
+          "title": "Emitir y registrar la factura del módulo adicional"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-79",
+          "title": "Ejecutar pruebas de aceptación en EPI10"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-27",
+    "uuid": "7b00ef89-91b0-4fa1-a992-e3c59bce2b7c",
+    "title": "Inventariar escenarios y reglas de pago",
+    "description": "Identificar pago correcto, cancelado, fallido, reintento, duplicado y reembolso, junto con sus efectos operativos.\n\n## Objetivo\n\nIdentificar pago correcto, cancelado, fallido, reintento, duplicado y reembolso, junto con sus efectos operativos.\n\n## Criterio de terminado\n\nLa matriz de escenarios define trigger, estado, mensaje al cliente, acción interna y tratamiento de excepción.\n\n## Dependencias\n\nT001.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T002 · Stripe · 1.1 Diseño del flujo de cobro",
+    "projectMilestone": {
+      "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+      "name": "OL1 - Apertura de frentes "
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-27/inventariar-escenarios-y-reglas-de-pago",
+    "gitBranchName": "direccion/ski-27-inventariar-escenarios-y-reglas-de-pago",
+    "createdAt": "2026-09-07T05:13:30.301Z",
+    "updatedAt": "2026-09-10T23:55:14.215Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-11",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:13:30.301Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-39",
+          "title": "Definir matriz de pruebas y excepciones de pago"
+        },
+        {
+          "id": "SKI-37",
+          "title": "Especificar flujo de compra y estados de pago"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-26",
+          "title": "Definir alcance funcional del mockup de cobro"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-26",
+    "uuid": "e2e35bb5-ed44-4e44-95e2-b6e42a7bf08f",
+    "title": "Definir alcance funcional del mockup de cobro",
+    "description": "Delimitar qué debe demostrar el mockup de Stripe, qué recorrido verá Carmen y qué queda fuera antes de tocar configuración.\n\n## Objetivo\n\nDelimitar qué debe demostrar el mockup de Stripe, qué recorrido verá Carmen y qué queda fuera antes de tocar configuración.\n\n## Criterio de terminado\n\nExiste un scope breve con actores, producto, importe, pasos de checkout, resultados esperados, exclusiones y decisión interna de avance.\n\n## Dependencias\n\nSin dependencia dura; puede iniciarse dentro de la oleada.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T001 · Stripe · 1.1 Diseño del flujo de cobro",
+    "projectMilestone": {
+      "id": "8d71b126-b347-4569-b6cd-99dfbc69f88a",
+      "name": "OL1 - Apertura de frentes "
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-26/definir-alcance-funcional-del-mockup-de-cobro",
+    "gitBranchName": "direccion/ski-26-definir-alcance-funcional-del-mockup-de-cobro",
+    "createdAt": "2026-09-07T05:12:57.140Z",
+    "updatedAt": "2026-09-10T23:55:22.604Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": "2026-09-11",
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:12:57.140Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-37",
+          "title": "Especificar flujo de compra y estados de pago"
+        },
+        {
+          "id": "SKI-28",
+          "title": "Preparar entorno Stripe de pruebas de Skilland"
+        },
+        {
+          "id": "SKI-27",
+          "title": "Inventariar escenarios y reglas de pago"
+        }
+      ],
+      "blockedBy": [],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-76",
+    "uuid": "dc8ca1a9-3ec3-477e-9d59-390c68b1bd99",
+    "title": "Acompañar alta y verificación de la cuenta EPI10",
+    "description": "Ayudar a EPI10 a completar el alta, verificación y roles necesarios sin asumir titularidad de la cuenta.\n\n## Objetivo\n\nAyudar a EPI10 a completar el alta, verificación y roles necesarios sin asumir titularidad de la cuenta.\n\n## Criterio de terminado\n\nCuenta creada/verificada por EPI10, owners correctos, acceso de implementación concedido y secretos gestionados de forma segura.\n\n## Dependencias\n\nT050.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T052 · Stripe · 1.3 Validación y alta de EPI10",
+    "projectMilestone": {
+      "id": "cd56f54e-02ec-480b-b621-b678f7d831b0",
+      "name": "OL4 - Specs y cierre de Stripe"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-76/acompanar-alta-y-verificacion-de-la-cuenta-epi10",
+    "gitBranchName": "direccion/ski-76-acompanar-alta-y-verificacion-de-la-cuenta-epi10",
+    "createdAt": "2026-09-07T05:16:15.622Z",
+    "updatedAt": "2026-09-07T05:16:16.071Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:16:15.622Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-78",
+          "title": "Configurar credenciales, enlaces y webhooks del entorno EPI10"
+        },
+        {
+          "id": "SKI-77",
+          "title": "Replicar catálogo y configuración en EPI10"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-74",
+          "title": "Presentar mockup a Carmen y solicitar feedback"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  },
+  {
+    "id": "SKI-50",
+    "uuid": "fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8",
+    "title": "Configurar páginas de éxito, cancelación y reintento",
+    "description": "Cerrar la experiencia visible después de cada resultado principal del checkout.\n\n## Objetivo\n\nCerrar la experiencia visible después de cada resultado principal del checkout.\n\n## Criterio de terminado\n\nSuccess, cancel y retry muestran copy correcto, siguiente paso y no exponen información sensible ni técnica.\n\n## Dependencias\n\nT025.\n\n## Guardrails\n\n* Mantener el alcance de Fase 1.\n* No introducir datos reales sensibles en entornos de prueba.\n* No automatizar TellmeGen ni eliminar la revisión humana del informe.\n* Documentar decisiones, evidencias y bloqueos relevantes.\n\n---\n\n**Origen CRM:** T026 · Stripe · 1.2 Mockup funcional en entorno Skilland",
+    "projectMilestone": {
+      "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+      "name": "OL3 - Validación y preparación"
+    },
+    "priority": {
+      "value": 0,
+      "name": "No priority"
+    },
+    "url": "https://linear.app/skilland/issue/SKI-50/configurar-paginas-de-exito-cancelacion-y-reintento",
+    "gitBranchName": "direccion/ski-50-configurar-paginas-de-exito-cancelacion-y-reintento",
+    "createdAt": "2026-09-07T05:15:05.201Z",
+    "updatedAt": "2026-09-07T05:15:05.650Z",
+    "archivedAt": null,
+    "completedAt": null,
+    "startedAt": null,
+    "canceledAt": null,
+    "dueDate": null,
+    "slaStartedAt": null,
+    "slaMediumRiskAt": null,
+    "slaHighRiskAt": null,
+    "slaBreachesAt": null,
+    "status": "Todo",
+    "statusType": "unstarted",
+    "labels": [
+      "Stripe"
+    ],
+    "attachments": [],
+    "documents": [],
+    "stateHistory": [
+      {
+        "state": {
+          "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+          "name": "Todo",
+          "type": "unstarted"
+        },
+        "startedAt": "2026-09-07T05:15:05.201Z",
+        "endedAt": null
+      }
+    ],
+    "createdBy": "Raúl",
+    "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+    "project": "EPI10 Salud MVP",
+    "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+    "team": "Skilland",
+    "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+    "relations": {
+      "blocks": [
+        {
+          "id": "SKI-52",
+          "title": "Ejecutar pruebas funcionales del mockup"
+        }
+      ],
+      "blockedBy": [
+        {
+          "id": "SKI-49",
+          "title": "Implementar checkout de prueba en entorno Skilland"
+        }
+      ],
+      "relatedTo": [],
+      "duplicateOf": null
+    }
+  }
+]

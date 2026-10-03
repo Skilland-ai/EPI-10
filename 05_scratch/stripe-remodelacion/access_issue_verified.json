@@ -1,0 +1,86 @@
+{
+  "id": "SKI-28",
+  "uuid": "87f30bb8-97e5-440d-b48f-9a7fb833ca15",
+  "title": "Conectar el CLI al entorno de pruebas EPI10 y verificar acceso",
+  "description": "## Resultado\n\nPermitir que Codex configure y pruebe Stripe desde terminal usando el entorno que Raúl ya abrió en el Dashboard.\n\n## Criterio de terminado\n\n- [X] Completar autorización del dispositivo EPI10-Codex en navegador para el entorno de pruebas.\n- [X] Comprobar por CLI/API el contexto autorizado, nombre e ID de cuenta/sandbox y que las operaciones se realizan en pruebas.\n- [X] Probar lectura de catálogo y eventos sin exponer credenciales.\n- [X] Registrar el modo de acceso y el contexto no secreto en documentación; no copiar tokens ni claves al repo.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar bitacora.md; acceso_stripe.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"87f30bb8-97e5-440d-b48f-9a7fb833ca15\" href=\"https://linear.app/skilland/issue/SKI-28/conectar-el-cli-al-entorno-de-pruebas-epi10-y-verificar-acceso\">SKI-28</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.\n\n## Verificación ejecutada — 2026-09-15\n\nCLI 1.50.11 autorizado mediante navegador para Entorno de prueba de EPI10 Salud · sandbox (`acct_1UFzBqRrJS0VSqzs`). Lecturas correctas de /v1/account, /v1/products, /v1/prices y /v1/events. Catálogo vacío; evento devuelto con livemode=false. Documentado en `04_outputs/modulos/stripe/docs/acceso_stripe.md`; evidencia filtrada sin credenciales en `05_scratch/stripe-remodelacion/stripe_access_verified.json`. Producto, checkout y pagos siguen en sus tareas pendientes.",
+  "projectMilestone": {
+    "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+    "name": "OL3 - Validación y preparación"
+  },
+  "priority": {
+    "value": 0,
+    "name": "No priority"
+  },
+  "url": "https://linear.app/skilland/issue/SKI-28/conectar-el-cli-al-entorno-de-pruebas-epi10-y-verificar-acceso",
+  "gitBranchName": "direccion/ski-28-conectar-el-cli-al-entorno-de-pruebas-epi10-y-verificar",
+  "createdAt": "2026-09-07T05:13:31.142Z",
+  "updatedAt": "2026-09-15T17:03:39.096Z",
+  "archivedAt": null,
+  "completedAt": "2026-09-15T17:03:39.074Z",
+  "startedAt": "2026-09-15T16:56:42.574Z",
+  "canceledAt": null,
+  "dueDate": "2026-09-15",
+  "slaStartedAt": null,
+  "slaMediumRiskAt": null,
+  "slaHighRiskAt": null,
+  "slaBreachesAt": null,
+  "status": "Done",
+  "statusType": "completed",
+  "labels": [
+    "Stripe"
+  ],
+  "attachments": [],
+  "documents": [],
+  "stateHistory": [
+    {
+      "state": {
+        "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "startedAt": "2026-09-07T05:13:31.142Z",
+      "endedAt": "2026-09-15T16:56:42.581Z"
+    },
+    {
+      "state": {
+        "id": "3557045f-ba80-46f9-83f0-75dcfd2cf938",
+        "name": "In Progress",
+        "type": "started"
+      },
+      "startedAt": "2026-09-15T16:56:42.581Z",
+      "endedAt": "2026-09-15T17:03:39.096Z"
+    },
+    {
+      "state": {
+        "id": "1e686c27-ffdb-4585-b505-d0cfa749a3a1",
+        "name": "Done",
+        "type": "completed"
+      },
+      "startedAt": "2026-09-15T17:03:39.096Z",
+      "endedAt": null
+    }
+  ],
+  "createdBy": "Raúl",
+  "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "assignee": "Raúl",
+  "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "project": "EPI10 Salud MVP",
+  "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+  "team": "Skilland",
+  "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+  "relations": {
+    "blocks": [
+      {
+        "id": "SKI-51",
+        "title": "Recibir el evento de pago Stripe con firma verificada y deduplicación"
+      },
+      {
+        "id": "SKI-48",
+        "title": "Crear en Stripe NutriWell · DEMO: 100 EUR, pago único y una unidad"
+      }
+    ],
+    "blockedBy": [],
+    "relatedTo": [],
+    "duplicateOf": null
+  }
+}

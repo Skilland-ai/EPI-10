@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-09-15T20:39:42.723Z",
+  "event_id": "evt_1UG2FgRrJS0VSqzseygOV73y",
+  "invalid_signatures": [
+    {
+      "variant": "missing",
+      "status": 400
+    },
+    {
+      "variant": "wrong",
+      "status": 400
+    },
+    {
+      "variant": "tampered",
+      "status": 400
+    },
+    {
+      "variant": "expired",
+      "status": 400
+    }
+  ],
+  "invalid_requests_left_journal_unchanged": true,
+  "local_signed_replay": {
+    "status": 200,
+    "received": true,
+    "business_action_created": false,
+    "deliveries": 4,
+    "outcome": "duplicate_event"
+  },
+  "deliveries_before": 3,
+  "deliveries_after": 4,
+  "business_records_unchanged": true,
+  "journal_get_status": 405
+}

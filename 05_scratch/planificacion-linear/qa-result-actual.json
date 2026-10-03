@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "snapshot": "2026-09-15 17:04:31 UTC",
+  "tasks": 106,
+  "unarchived": 104,
+  "archived": 2,
+  "status_unarchived": {
+    "Done": 3,
+    "Todo": 85,
+    "In Progress": 7,
+    "Canceled": 9
+  },
+  "assigned": 13,
+  "unassigned": 93,
+  "stripe_current": 12,
+  "stripe_replaced": 9,
+  "stripe_subtask": "SKI-81 -> SKI-77",
+  "original_refs_by_id": 106,
+  "untouched_non_stripe_tasks": 85,
+  "original_documents_unchanged": 3,
+  "history_files_sha256": 9,
+  "local_links": 18,
+  "no_secret_patterns": true
+}

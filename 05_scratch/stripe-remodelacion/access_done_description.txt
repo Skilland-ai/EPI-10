@@ -1,0 +1,22 @@
+## Resultado
+
+Permitir que Codex configure y pruebe Stripe desde terminal usando el entorno que Raúl ya abrió en el Dashboard.
+
+## Criterio de terminado
+
+- [x] Completar autorización del dispositivo EPI10-Codex en navegador para el entorno de pruebas.
+- [x] Comprobar por CLI/API el contexto autorizado, nombre e ID de cuenta/sandbox y que las operaciones se realizan en pruebas.
+- [x] Probar lectura de catálogo y eventos sin exponer credenciales.
+- [x] Registrar el modo de acceso y el contexto no secreto en documentación; no copiar tokens ni claves al repo.
+
+## Evidencia y documentación
+
+Módulo: `04_outputs/modulos/stripe/`. Actualizar bitacora.md; acceso_stripe.md tras cada avance. No marcar terminado por haber redactado estas instrucciones.
+
+## Reorganización del 15 de septiembre de 2026
+
+Tarea concreta del speedrun solicitado por Raúl. Conserva el ID de SKI-28; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.
+
+## Verificación ejecutada — 2026-09-15
+
+CLI 1.50.11 autorizado mediante navegador para Entorno de prueba de EPI10 Salud · sandbox (`acct_1UFzBqRrJS0VSqzs`). Lecturas correctas de /v1/account, /v1/products, /v1/prices y /v1/events. Catálogo vacío; evento devuelto con livemode=false. Documentado en `04_outputs/modulos/stripe/docs/acceso_stripe.md`; evidencia filtrada sin credenciales en `05_scratch/stripe-remodelacion/stripe_access_verified.json`. Producto, checkout y pagos siguen en sus tareas pendientes.

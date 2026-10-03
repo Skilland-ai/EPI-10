@@ -1,0 +1,95 @@
+{
+  "id": "SKI-37",
+  "uuid": "7b9d744d-0ee1-4bbb-833c-97d959387444",
+  "title": "Maquetar la pantalla de entrada al mockup Stripe con marca EPI10",
+  "description": "## Resultado\n\nMaquetar una pantalla de entrada al mockup de la pasarela para presentar NutriWell a Carmen antes del pago. La web definitiva pertenece al otro proveedor. Raúl autoriza esta vista demostrativa y exige una presentación visual muy cuidada; no se amplía el encargo a construir la web comercial.\n\n## Criterio de terminado\n\n- [X] Página con nuevo logo, imagen coherente, explicación breve de NutriWell y sus cinco inclusiones.\n- [X] Precio de prueba 100 EUR, indicación de demo y CTA de contratación enlazado al checkout de <issue id=\"98006883-995e-4c62-926f-7d0299092eeb\" href=\"https://linear.app/skilland/issue/SKI-49/configurar-el-checkout-stripe-con-los-nuevos-logos-epi10-y-cobro-de\">SKI-49</issue>.\n- [X] Diseño usable en ordenador y móvil, con textos legibles, buen contraste y navegación por teclado.\n- [X] Guardar implementación y comandos dentro del módulo Stripe; no incluir claves en cliente ni en el repo.\n- [X] Dejar preparada la dirección de demo para el replay final; las URLs de retorno se cierran en <issue id=\"fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8\" href=\"https://linear.app/skilland/issue/SKI-50/configurar-paginas-de-exito-cancelacion-y-reintento\">SKI-50</issue>.\n\n## Evidencia y documentación\n\nMódulo: `04_outputs/modulos/stripe/`. Actualizar speedrun_demo.md; marca.md; app/ o src/ tras cada avance. No marcar terminado por haber redactado estas instrucciones.\n\n## Reorganización del 15 de septiembre de 2026\n\nTarea concreta del speedrun solicitado por Raúl. Conserva el ID de <issue id=\"7b9d744d-0ee1-4bbb-833c-97d959387444\" href=\"https://linear.app/skilland/issue/SKI-37/especificar-flujo-de-compra-y-estados-de-pago\">SKI-37</issue>; versión anterior guardada en el repositorio. Objetivo de trabajo: 15 de septiembre, para demo con Carmen el 16. Solo entorno de pruebas y datos ficticios.\n\n## Implementación y publicación — 15 de septiembre\n\nVista de demostración publicada en privado para Raúl:\n[https://epi10-nutriwell-demo.raulreboot.chatgpt.site](<https://epi10-nutriwell-demo.raulreboot.chatgpt.site>)\n\nMaquetación editorial con logos actuales, fotografía del folleto, DM Sans e Instrument Serif, marfil/azul/cian, cinco inclusiones, experiencia en tres pasos y dos CTA al Payment Link de 100 EUR ficticios. Precio, avisos de demo y ausencia de contratación real explícitos.\n\nImplementación: 04_outputs/modulos/stripe/app/. Alcance y procedimiento: docs/pantalla_demo.md. La web definitiva sigue a cargo del otro proveedor.\n\nValidación: build y TypeScript correctos; ocho controles semánticos del HTML servido (checkout, anclas, imágenes y metadatos). Código con estilos responsive, controles HTML nativos, navegación por teclado, foco visible y movimiento reducido; pares principales de color con contraste superior a 4,5:1. Publicación succeeded, fuente conservada y sin claves Stripe en cliente.\n\nEvidencia E14: 04_outputs/modulos/stripe/evidencias/2026-09-15_pantalla_demo_publicada.json. QA en 05_scratch/stripe-pantalla/qa-ssr.json y qa-documentacion.json.\n\nLímite de verificación: no se ejecutó prueba visual/interactiva del navegador ni pago en este paso. Revisión visual escritorio/móvil, recorrido completo y excepciones siguen en <issue id=\"09924f05-08c2-401c-812f-e325176be0cc\" href=\"https://linear.app/skilland/issue/SKI-52/probar-nutriwell-pago-rechazo-reintento-duplicados-devolucion-y-movil\">SKI-52</issue>. Recuperación y eventos: <issue id=\"fd16934e-3bd7-4ca1-b186-cfc9bef3e1c8\" href=\"https://linear.app/skilland/issue/SKI-50/conectar-confirmacion-abandono-y-reintento-de-la-compra-nutriwell\">SKI-50</issue>/51. Esta tarea cierra la implementación y publicación de la pantalla, no la demo completa.",
+  "projectMilestone": {
+    "id": "a747423d-3ef0-414d-953f-0b3c264c9806",
+    "name": "OL3 - Validación y preparación"
+  },
+  "priority": {
+    "value": 0,
+    "name": "No priority"
+  },
+  "url": "https://linear.app/skilland/issue/SKI-37/maquetar-la-pantalla-de-entrada-al-mockup-stripe-con-marca-epi10",
+  "gitBranchName": "direccion/ski-37-maquetar-la-pantalla-de-entrada-al-mockup-stripe-con-marca",
+  "createdAt": "2026-09-07T05:14:16.902Z",
+  "updatedAt": "2026-09-15T18:33:50.058Z",
+  "archivedAt": null,
+  "completedAt": "2026-09-15T18:33:50.052Z",
+  "startedAt": "2026-09-15T18:17:38.201Z",
+  "canceledAt": null,
+  "dueDate": "2026-09-15",
+  "slaStartedAt": null,
+  "slaMediumRiskAt": null,
+  "slaHighRiskAt": null,
+  "slaBreachesAt": null,
+  "status": "Done",
+  "statusType": "completed",
+  "labels": [
+    "Stripe"
+  ],
+  "attachments": [],
+  "documents": [],
+  "stateHistory": [
+    {
+      "state": {
+        "id": "6ee2530c-0e08-4e36-9b32-92d30633fc00",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "startedAt": "2026-09-07T05:14:16.902Z",
+      "endedAt": "2026-09-15T18:17:38.209Z"
+    },
+    {
+      "state": {
+        "id": "3557045f-ba80-46f9-83f0-75dcfd2cf938",
+        "name": "In Progress",
+        "type": "started"
+      },
+      "startedAt": "2026-09-15T18:17:38.209Z",
+      "endedAt": "2026-09-15T18:33:50.058Z"
+    },
+    {
+      "state": {
+        "id": "1e686c27-ffdb-4585-b505-d0cfa749a3a1",
+        "name": "Done",
+        "type": "completed"
+      },
+      "startedAt": "2026-09-15T18:33:50.058Z",
+      "endedAt": null
+    }
+  ],
+  "createdBy": "Raúl",
+  "createdById": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "assignee": "Raúl",
+  "assigneeId": "d1fb1f41-822a-4291-a494-64d40d7f428c",
+  "project": "EPI10 Salud MVP",
+  "projectId": "965a6f5b-d9a2-41cb-8983-266318ca939a",
+  "team": "Skilland",
+  "teamId": "c18d12a2-69bc-499c-9079-952933bf00a7",
+  "relations": {
+    "blocks": [
+      {
+        "id": "SKI-52",
+        "title": "Probar NutriWell: pago, rechazo, reintento, duplicados, devolución y móvil"
+      },
+      {
+        "id": "SKI-50",
+        "title": "Conectar confirmación, abandono y reintento de la compra NutriWell"
+      }
+    ],
+    "blockedBy": [
+      {
+        "id": "SKI-49",
+        "title": "Configurar el checkout Stripe con los nuevos logos EPI10 y cobro de 100 EUR"
+      },
+      {
+        "id": "SKI-26",
+        "title": "Cerrar la ficha y reglas de compra de NutriWell · DEMO (100 EUR)"
+      }
+    ],
+    "relatedTo": [],
+    "duplicateOf": null
+  }
+}

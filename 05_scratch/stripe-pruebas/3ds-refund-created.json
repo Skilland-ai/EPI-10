@@ -1,0 +1,106 @@
+{
+  "checked_at": "2026-09-15T20:57:03.427Z",
+  "account": "acct_1UFzBqRrJS0VSqzs",
+  "livemode": false,
+  "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+  "reference": "NW-60E20C9B",
+  "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+  "session_status": "complete",
+  "payment_status": "paid",
+  "state": "refunded",
+  "amount": 10000,
+  "currency": "eur",
+  "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+  "intent_status": "succeeded",
+  "last_payment_error": null,
+  "charge": {
+    "id": "ch_3UG3LdRrJS0VSqzs0lwKF85E",
+    "paid": true,
+    "refunded": true,
+    "amount_refunded": 10000,
+    "three_d_secure": {
+      "authentication_flow": "challenge",
+      "electronic_commerce_indicator": "05",
+      "exemption_indicator": null,
+      "result": "authenticated",
+      "result_reason": null,
+      "transaction_id": "4f19bc1a-d1cf-4dcd-a1b7-51d889851870",
+      "version": "2.1.0"
+    }
+  },
+  "refund": {
+    "id": "re_3UG3LdRrJS0VSqzs0EAY0YAZ",
+    "status": "succeeded",
+    "amount": 10000,
+    "currency": "eur"
+  },
+  "sessions_for_order": [
+    {
+      "id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+      "status": "complete",
+      "payment_status": "paid"
+    }
+  ],
+  "ledger": {
+    "effect:60e20c9b-e6ff-4d83-b5df-6cd2d760f582": {
+      "created_at": "2026-09-15T20:55:30.829Z",
+      "event_id": "evt_1UG3O1RrJS0VSqzsjO4Tasle",
+      "kind": "demo.payment_recorded",
+      "livemode": false,
+      "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+      "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+      "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1"
+    },
+    "order:60e20c9b-e6ff-4d83-b5df-6cd2d760f582": {
+      "amount": 10000,
+      "currency": "eur",
+      "first_event": "evt_1UG3O1RrJS0VSqzsjO4Tasle",
+      "livemode": false,
+      "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+      "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+      "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+      "status": "refunded",
+      "updated_at": "2026-09-15T20:57:02.891Z"
+    },
+    "payment:pi_3UG3LdRrJS0VSqzs0JzNNa2f": {
+      "amount": 10000,
+      "currency": "eur",
+      "livemode": false,
+      "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+      "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+      "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+      "status": "refunded",
+      "updated_at": "2026-09-15T20:57:02.891Z"
+    },
+    "event:evt_1UG3O1RrJS0VSqzsjO4Tasle": {
+      "amount": 10000,
+      "currency": "eur",
+      "deliveries": 1,
+      "event_created": 1789505729,
+      "event_id": "evt_1UG3O1RrJS0VSqzsjO4Tasle",
+      "event_type": "checkout.session.completed",
+      "last_received_at": "2026-09-15T20:55:30.829Z",
+      "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+      "outcome": "payment_recorded",
+      "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+      "received_at": "2026-09-15T20:55:30.829Z",
+      "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+      "status": "paid"
+    },
+    "event:evt_3UG3LdRrJS0VSqzs0qjl13kv": {
+      "amount": 10000,
+      "currency": "eur",
+      "deliveries": 1,
+      "event_created": 1789505822,
+      "event_id": "evt_3UG3LdRrJS0VSqzs0qjl13kv",
+      "event_type": "charge.refunded",
+      "last_received_at": "2026-09-15T20:57:02.891Z",
+      "order_id": "60e20c9b-e6ff-4d83-b5df-6cd2d760f582",
+      "outcome": "refunded",
+      "payment_id": "pi_3UG3LdRrJS0VSqzs0JzNNa2f",
+      "received_at": "2026-09-15T20:57:02.891Z",
+      "session_id": "cs_test_a1ldUBksGg5L5HmqzSDAi2JB2zB9fQzi9jXjnZSCkHTsDtPircGN0rP8v1",
+      "status": "refunded"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "session": "cs_test_a14oYvFfs7Av2nu5r8Ko8nmSzITwr9a0QJ7VsvteboUqTCYvXhiK7T0f1R",
+  "order_id": "d8418096-9e96-49cf-a6f0-554cad32ddc3",
+  "payment_status": "unpaid",
+  "status": "open",
+  "amount": 10000,
+  "livemode": false,
+  "checked_at": "2026-09-15T19:40:40.178Z"
+}

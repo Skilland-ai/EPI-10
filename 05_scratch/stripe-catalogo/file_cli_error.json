@@ -1,0 +1,6 @@
+{
+  "type": "invalid_request_error",
+  "code": null,
+  "message": "Invalid object",
+  "param": "file"
+}

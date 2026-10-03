@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "files": [
+    {
+      "path": "app/page.tsx",
+      "sha256": "cb74675ffbaed0f2596c5dd5aa781ce4866a30892f09a10f15a04b859d54ae2d",
+      "identical_to_reviewed_version": true
+    },
+    {
+      "path": "app/globals.css",
+      "sha256": "067f48b91d67fadec4e8a7bb20828dab97bc0551008bd3a3b32114e3c94b1bc7",
+      "identical_to_reviewed_version": true
+    },
+    {
+      "path": "public/og.png",
+      "sha256": "884439ed1fb5def2030bc933ad436811d538f334d4c8bfc09420c6d7e345f105",
+      "identical_to_reviewed_version": true
+    },
+    {
+      "path": "public/images/epi10-blue.png",
+      "sha256": "2a33b401f19af6fc110f74943f1094d40fa4038333a7f77b907f22e36a9c68ca",
+      "identical_to_reviewed_version": true
+    },
+    {
+      "path": "public/images/nutriwell-editorial.jpg",
+      "sha256": "da563baeb6a4feaca25f1eacac55495fd6dde5fe729be0a3aa7999b199fcf152",
+      "identical_to_reviewed_version": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "url": "https://epi10-nutriwell-demo.vercel.app",
+  "checks": {
+    "anonymous_http_200": true,
+    "two_checkout_links": true,
+    "new_price_block": true,
+    "og_uses_vercel": true,
+    "twitter_uses_vercel": true,
+    "no_chatgpt_origin_in_html": true,
+    "noindex": true,
+    "stylesheets_present": true,
+    "all_assets_http_200": true
+  },
+  "assets": [
+    {
+      "url": "/_next/static/chunks/0h9-e1p.wwc1h.css",
+      "status": 200
+    },
+    {
+      "url": "/images/epi10-blue.png",
+      "status": 200
+    },
+    {
+      "url": "/images/nutriwell-editorial.jpg",
+      "status": 200
+    },
+    {
+      "url": "/og.png",
+      "status": 200
+    }
+  ],
+  "request_had_cookies_or_authorization": false,
+  "payment_executed": false
+}
