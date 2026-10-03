@@ -36,4 +36,5 @@
 
 ## Siguiente paso
 
-Raúl envía los dos correos. Mientras llegan respuestas, arrancar SKI2-106 (customer journey).
+- Raúl: enviar los dos correos (Healthie/Stripe y Odoo, este último ampliado con el alojamiento del servicio) y comunicar a Carmen el cambio AWS → servidor de EPI10.
+- Fase 4 creada en Linear: SKI2-160 a SKI2-174, con dependencias. La siguiente es **SKI2-160 (esqueleto del monolito)**, que no depende de terceros. Antes de empezar, decidir con Raúl dónde va el repositorio.
