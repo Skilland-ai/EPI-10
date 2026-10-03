@@ -4,14 +4,15 @@ Validada por Raúl el 2026-10-03. Aplica a toda ejecución del roadmap de EPI10.
 
 ## Workspace «EPI-10»
 
-Directorio de trabajo: `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI-10`.
+Directorios de trabajo:
+- Documentación: `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI-10`
+- Código del orquestador: `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/epi10-orquestador` (GitHub `Skilland-ai/epi10-orquestador`, privado)
 
-| Pestaña | Quién | Para qué |
-|---|---|---|
-| 1 · orquestador | Claude Code (sesión principal) | Habla con Raúl, gobierna Linear, escribe el brief de cada issue, revisa entregas y cierra issues. |
-| 2 · ejecución | Un agente Claude Code por issue, con nombre `ski2-<n>` | Ejecuta la issue. Si toca código, trabaja en su propio git worktree (`herdr worktree create --branch ski2-<n>`). |
-| 3 · revisión | Agente revisor Claude Code | Contrasta la entrega con los criterios de la issue antes de cerrarla. |
-| 4 · servicios | Paneles normales | Logs y túneles hacia hermes-node. Los servidores, builds y tests pesados corren allí. |
+Patrón de la skill de Herdr (actualizado el 2026-10-03):
+
+- **Pestaña «Orquestador»:** solo el orquestador. A su derecha, un panel de un tercio del ancho con `watch -t -n 2 cat` de `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI10_PENDIENTES.md`, fuera de los repos. Ese archivo recoge lo que se necesita de Raúl: acciones numeradas y decisiones con recomendación. Cada novedad se avisa con `herdr notification show "Raúl, te necesito" ... --sound request`.
+- **Agentes:** en pestañas agrupadas por hito o función (p. ej. «P1 · Monolito», «P2 · Informes», «Revisión»), con 2–4 agentes por pestaña como paneles divididos. Nunca dentro de la pestaña del orquestador.
+- Los servidores, builds y Docker pesados se ejecutan en hermes-node.
 
 ## Modelos
 
