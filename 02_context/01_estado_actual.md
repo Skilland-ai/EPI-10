@@ -36,7 +36,7 @@
 
 ## Fase 4 · implementación (3 oct, noche)
 
-Repo de código: `Skilland-ai/epi10-orquestador`, un monolito NestJS + PostgreSQL. Master: `e68bd3f`.
+Repo de código: `Skilland-ai/epi10-orquestador`, un monolito NestJS + PostgreSQL. Master: `c0ee3ca`, 17 PR integrados.
 
 - **Hechas, 13 de 15:** SKI2-160 a 172.
   - core;
@@ -46,7 +46,9 @@ Repo de código: `Skilland-ai/epi10-orquestador`, un monolito NestJS + PostgreSQ
   - seudonimizador, borrador, pantalla y publicación de informes;
   - fuente única de datos de la persona y prueba vertical pago → caso.
 - **Método:** cada pieza ha pasado una revisión independiente hecha por otro agente de Claude y tiene el CI en verde. Hay unas 590 pruebas unitarias y 310 de integración.
-- **En curso:** SKI2-178, ensayo de los 5 tramos contra los simuladores con el Docker Compose real en hermes-node.
+- **Ensayo E2E de los 5 tramos (SKI2-178):** 39/39 pasos en hermes-node, contra los simuladores. Procedimiento en `docs/ensayo-e2e.md` del repo de código.
+  - Defectos corregidos: el bucle de arranque, el ID de Healthie que no llegaba a Odoo, la publicación por API (SKI2-179) y el enlace de Odoo (SKI2-180).
+  - Pendiente de decidir: SKI2-181, cierre de las actividades de Odoo (recomendado: A, que las cierre el monolito).
 - **Bloqueado por terceros:**
   - SKI2-173, despliegue en el servidor de EPI10: depende del mantenedor de Odoo (SKI2-104).
   - SKI2-174, prueba de los 5 tramos real: depende de la API de Healthie (SKI2-101) y del acceso a Odoo.

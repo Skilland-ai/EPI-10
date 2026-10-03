@@ -405,6 +405,7 @@ Llega **solo el ID** («thin payload»), nunca el recurso completo:
 - Algunos eventos traen campos extra, como `resource_organization_id` en las citas.
 - Después de recibir el evento, el monolito **consulta el recurso por GraphQL** (§2.6 y §2.7).
 - **No hay un ID de evento documentado** ni una marca de tiempo del envío. Para descartar duplicados, la clave se calcula con `event_type + resource_id + Content-Digest`. Un reintento lleva el mismo cuerpo y el mismo `Content-Digest`. **Verificar.**
+  - **Corrección (SKI2-171, revisión del PR #12):** esa clave identifica el aviso, pero **no puede descartarlo para siempre**. Dos cambios distintos del mismo recurso pueden llevar el mismo cuerpo (por ejemplo, dos cambios de hora de una cita: `appointment.updated` con `changed_fields: ["date"]`). El monolito guarda el evento con esa clave y, si llega otra vez, vuelve a encolar la relectura del recurso salvo que ya haya una pendiente. Como el trabajo siempre lee el estado actual y es idempotente, procesar dos veces no hace daño.
 - Orden de llegada garantizado: **Unknown**. El monolito no debe fiarse del orden: siempre lee el estado actual del recurso y no aplica lo que diga el evento.
 
 ### 3.4 Verificación de la firma
