@@ -1,6 +1,6 @@
 # EPI10 Salud — Customer journey MVP v2
 
-Fecha: 2026-10-03 · Linear: SKI2-106 · Estado: **borrador.** Validadas el 3 oct: D1, D3 y D6. D2 se decide en una sesión de arquitectura aparte (SKI2-159). D4, D5 y D7–D10 quedan como propuesta mientras Raúl no las cambie.
+Fecha: 2026-10-03 · Linear: SKI2-106 · Estado: **borrador.** Validadas el 3 oct: D1, D2, D3 y D6. D2 se decidió en la sesión de arquitectura (SKI2-159, [ADR](../integracion/2026-10-03_adr_orquestador_v1.md)). D4, D5 y D7–D10 quedan como propuesta mientras Raúl no las cambie.
 
 Base: journey operativo v1.0 de junio (`post_Fer_PENDING_INTEGRAR_BIEN_EN_REPO/epi10_journey_operativo_odoo_healthie_v1.md`), que sigue siendo la referencia detallada por tramo. Este v2 solo recoge lo que cambia y lo que hay que decidir para empezar a construir.
 
@@ -9,7 +9,7 @@ Base: journey operativo v1.0 de junio (`post_Fer_PENDING_INTEGRAR_BIEN_EN_REPO/e
 | Hecho nuevo | Efecto en el journey |
 |---|---|
 | Stripe construido y aprobado por Carmen (checkout, webhook firmado, pruebas) | El tramo 1 deja de estar abierto: el pago es nuestro checkout de Stripe. |
-| La propuesta firmada vende una capa propia, **EPI10 Salud MVP 1.0** (NestJS + PostgreSQL en AWS España), como orquestador | La lógica de integración vive en esa capa, no en módulos de Odoo como decía el v1. |
+| La propuesta firmada vende una capa propia, **EPI10 Salud MVP 1.0**, como orquestador. AWS queda descartado por el cliente | La lógica de integración vive en un monolito propio (NestJS + PostgreSQL) desplegado en el servidor de Odoo, no en módulos de Odoo como decía el v1 (D2). |
 | Alcance cerrado: 110 h / 4.700 € (sin contar el módulo Stripe, que se factura aparte en SKI2-21) | Cada paso tiene que justificar su coste. Lo opcional va a Fase 2. |
 | Healthie Group contratado. La API es un add-on. El white label solo existe en Enterprise | Sin API no hay automatización. Sin Enterprise, el cliente verá la marca Healthie. |
 | Odoo: mantenedor y acceso desconocidos | El diseño de Odoo queda a la espera de SKI2-104, pero el journey no depende de ello. |
@@ -19,7 +19,7 @@ Base: journey operativo v1.0 de junio (`post_Fer_PENDING_INTEGRAR_BIEN_EN_REPO/e
 ```text
 Cliente → Web EPI10 → Checkout Stripe
                           ↓ (webhook)
-              EPI10 Salud MVP 1.0 · AWS España
+              EPI10 Salud MVP 1.0 · monolito en el servidor de Odoo
               orquesta: IDs, estados, tareas, trazabilidad
                  ↓                         ↓
           Healthie (cliente)          Odoo (equipo)
@@ -32,7 +32,7 @@ TellmeGen: manual (Aitor) · Copilot: borrador interno → revisión humana → 
 Reglas de datos:
 - **Healthie** guarda los datos del cliente.
 - **Odoo** guarda solo hitos y tareas, nunca datos genéticos.
-- **La capa MVP** guarda solo IDs, estados y eventos.
+- **La capa MVP** guarda solo IDs, estados y eventos. Excepción temporal: el borrador seudonimizado del informe, que se borra al publicarlo. El entregable de TellmeGen se borra tras generar el borrador.
 
 ## Los 5 tramos
 
@@ -88,7 +88,7 @@ Columnas: **Cliente** = qué vive el cliente · **Sistema** = qué pasa automát
 | # | Decisión | Recomendación |
 |---|---|---|
 | **D1** ✅ | Entrada | **Vía A con Stripe**: web → Stripe → capa → Healthie + Odoo. Validada por Raúl. |
-| **D2** ⏳ | ¿Dónde vive la integración? | **Pendiente: sesión de arquitectura (SKI2-159).** Opciones: capa MVP en AWS España (lo vendido), módulos de Odoo, o reutilizar la app de Stripe en Vercel. |
+| **D2** ✅ | ¿Dónde vive la integración? | **Monolito propio (NestJS + PostgreSQL) en el servidor donde EPI10 tiene Odoo**, con módulos de Stripe, Healthie, Odoo e informes. Odoo solo por API, sin módulos instalados; sus cambios llegan por webhook. AWS descartado. Validada por Raúl. Detalle en el [ADR](../integracion/2026-10-03_adr_orquestador_v1.md). |
 | **D3** ✅ | Regla de «listo para pedir test» | **Onboarding de Healthie completado.** El cliente entra en el onboarding automáticamente tras el pago, y «listo» es haber completado lo que se le pida ahí. El contenido exacto del onboarding se define al configurar Healthie. Validada por Raúl. |
 | **D4** | Agenda de la cita en Healthie | **Sí**, con un tipo de cita «Realización test EPI10» y recordatorios a las 24 h y a las 2 h. |
 | **D5** | Mensajería con el cliente | **Chat de Healthie con plantillas.** Lo que haga falta escalar se convierte en tarea en Odoo. |
@@ -108,4 +108,4 @@ Columnas: **Cliente** = qué vive el cliente · **Sistema** = qué pasa automát
 
 ## Siguiente paso
 
-Validar D1–D10 → congelar el v2 → crear en Linear las issues de implementación por tramo (fase 4).
+Validar las decisiones que quedan (D4, D5, D7–D10) → congelar el v2 → crear en Linear las issues de implementación por tramo (fase 4).

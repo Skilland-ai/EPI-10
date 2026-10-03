@@ -23,6 +23,10 @@
 - La API de Healthie es un add-on de pago del plan Group. El white label (semi o full) solo existe como add-on del plan Enterprise.
 - No sabemos quién mantiene el Odoo.
 
+## Decisión D2 (3 oct, SKI2-159)
+
+- El orquestador es un monolito propio (NestJS + PostgreSQL) en el servidor donde EPI10 tiene Odoo. Odoo solo por API. AWS descartado por el cliente. [ADR](../04_outputs/modulos/integracion/2026-10-03_adr_orquestador_v1.md).
+
 ## Unknown
 
 - Coste de la API y del white label de Healthie.

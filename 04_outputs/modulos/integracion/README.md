@@ -1,15 +1,23 @@
 # Integración — recorrido entre sistemas
 
-**Estado de este espacio:** preparado el 2026-09-15; sin integraciones ni pruebas
-completas nuevas en esta carpeta.
+**Estado de este espacio:** arquitectura decidida el 2026-10-03; sin código todavía.
 
-El módulo reunirá los contratos de intercambio entre Stripe, Healthie, Odoo y
-Copilot: qué señal produce cada sistema, quién la recibe, qué estado cambia y
-cómo se recupera un error. Los contratos, endpoints y reglas concretas son `Unknown`.
+El orquestador es un monolito propio (NestJS + PostgreSQL) desplegado en el
+servidor donde EPI10 tiene Odoo, con módulos core, Stripe, Healthie, Odoo e
+informes. Odoo se usa solo por API. Decisión, componentes, despliegue y flujo de
+eventos: [ADR del orquestador](2026-10-03_adr_orquestador_v1.md).
 
-**Próximo paso:** partir del [evento de pago de Stripe](../stripe/docs/pruebas.md)
-cuando exista evidencia y definir la siguiente transición del journey. El
-laboratorio permanece manual en el MVP según la planificación vigente.
+## Bitácora
 
-[Planificación vigente](../../planificacion/linear/README.md) ·
+- 2026-10-03 · **Acción:** sesión de arquitectura D2 con Raúl (SKI2-159).
+  **Resultado:** comparadas tres opciones (capa en AWS, módulos en Odoo, app de
+  Vercel); Raúl descarta AWS y decide monolito en el servidor de Odoo.
+  **Evidencia:** ADR, línea en `03_specs/decisions.md` y D2 en el journey v2.
+  **Decisión:** confirmada por Raúl. **Pendiente de verificar:** alojamiento,
+  versión y API de Odoo (SKI2-104); API de Healthie (SKI2-101).
+
+**Próximo paso:** el orquestador trocea las issues a partir del ADR. Se puede
+empezar por el esqueleto, `core` y `stripe`, que no dependen de terceros.
+
+[Journey v2](../journey/2026-10-03_customer_journey_mvp_v2.md) ·
 [Índice y documentación continua](../README.md)
