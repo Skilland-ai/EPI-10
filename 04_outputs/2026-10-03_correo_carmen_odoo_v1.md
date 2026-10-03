@@ -30,7 +30,10 @@ No vamos a tocar nada en producción. Para planificarlo bien, nos ayudaría que 
 6. **Copias de seguridad y despliegues:** quién publica los cambios y con qué proceso.
 7. **Reglas de automatización con webhook:** si vuestra versión permite que una regla de Odoo avise a un servicio externo cuando cambia un registro (desde Odoo 17).
 8. **Desplegar un servicio pequeño en vuestro servidor:** la integración será un servicio propio (Docker, con su propia base de datos PostgreSQL), separado de Odoo y sin tocar su código ni su base de datos. Necesitaríamos saber si es posible alojarlo en el mismo servidor, qué recursos libres hay, cómo sería el acceso para desplegar y quién gestiona el dominio y los certificados HTTPS.
-9. Cualquier **restricción o forma de trabajar** que debamos respetar.
+9. **Apps instaladas**, en especial Proyecto y Reglas de automatización, y si aceptáis activar Proyecto si no está.
+10. **Configuración sin módulos:** si nos permitís que un script nuestro cree por API algunos campos, etapas, una vista y una regla de automatización, sin instalar ningún módulo.
+11. **Claves de API:** desde Odoo 18 caducan como máximo a los 90 días; cómo preferís que las renovemos.
+12. Cualquier **restricción o forma de trabajar** que debamos respetar.
 
 Con esto, nos vendría muy bien una llamada de 30 minutos para acordar cómo colaborar. ¿Qué días te vienen bien la semana que viene?
 
