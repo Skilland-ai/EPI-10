@@ -1,6 +1,6 @@
 # EPI10 Salud — Customer journey MVP v2
 
-Fecha: 2026-10-03 · Linear: SKI2-106 · Estado: **borrador.** Validadas el 3 oct: D1, D2, D3 y D6. D2 se decidió en la sesión de arquitectura (SKI2-159, [ADR](../integracion/2026-10-03_adr_orquestador_v1.md)). D4, D5 y D7–D10 quedan como propuesta mientras Raúl no las cambie.
+Fecha: 2026-10-03 · Linear: SKI2-106 · Estado: **congelado el 3 oct** (Raúl: «validamos todo esto… para adelante»). Validadas el 3 oct: D1, D2, D3 y D6. D2 se decidió en la sesión de arquitectura (SKI2-159, [ADR](../integracion/2026-10-03_adr_orquestador_v1.md)). D4, D5 y D7–D10 quedan como propuesta mientras Raúl no las cambie.
 
 Base: journey operativo v1.0 de junio (`post_Fer_PENDING_INTEGRAR_BIEN_EN_REPO/epi10_journey_operativo_odoo_healthie_v1.md`), que sigue siendo la referencia detallada por tramo. Este v2 solo recoge lo que cambia y lo que hay que decidir para empezar a construir.
 

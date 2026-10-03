@@ -10,7 +10,7 @@ Directorios de trabajo:
 
 Patrón de la skill de Herdr (actualizado el 2026-10-03):
 
-- **Pestaña «Orquestador»:** solo el orquestador. A su derecha, un panel de un tercio del ancho con `watch -t -n 2 cat` de `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI10_PENDIENTES.md`, fuera de los repos. Ese archivo recoge lo que se necesita de Raúl: acciones numeradas y decisiones con recomendación. Cada novedad se avisa con `herdr notification show "Raúl, te necesito" ... --sound request`.
+- **Pestaña «Orquestador»:** solo el orquestador. A su derecha, un panel de un tercio del ancho con `watch -t -n 2 cat` de `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI10_PENDIENTES.md`, fuera de los repos. Ese archivo recoge **solo lo que bloquea a un agente**: credenciales, decisiones sin las que construiría algo equivocado o diálogos de aprobación. Cada entrada dice qué agente espera. Las tareas generales de Raúl (correos, comunicación con el cliente) van en Linear, no aquí. Cada bloqueo nuevo se avisa con `herdr notification show "Raúl, te necesito" ... --sound request`.
 - **Agentes:** en pestañas agrupadas por hito o función (p. ej. «P1 · Monolito», «P2 · Informes», «Revisión»), con 2–4 agentes por pestaña como paneles divididos. Nunca dentro de la pestaña del orquestador.
 - Los servidores, builds y Docker pesados se ejecutan en hermes-node.
 
