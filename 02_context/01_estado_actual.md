@@ -34,7 +34,29 @@
 - Versión, alojamiento y acceso del Odoo.
 - Síntesis de la entrevista con Aitor (SKI2-14 está en Done, pero no hay síntesis registrada).
 
+## Fase 4 · implementación (3 oct, noche)
+
+Repo de código: `Skilland-ai/epi10-orquestador`, un monolito NestJS + PostgreSQL. Master: `e68bd3f`.
+
+- **Hechas, 13 de 15:** SKI2-160 a 172.
+  - core;
+  - Stripe;
+  - adaptador y webhook de Odoo, con Odoo simulado;
+  - cliente, webhooks y alternativa manual de Healthie, con Healthie simulado;
+  - seudonimizador, borrador, pantalla y publicación de informes;
+  - fuente única de datos de la persona y prueba vertical pago → caso.
+- **Método:** cada pieza ha pasado una revisión independiente hecha por otro agente de Claude y tiene el CI en verde. Hay unas 590 pruebas unitarias y 310 de integración.
+- **En curso:** SKI2-178, ensayo de los 5 tramos contra los simuladores con el Docker Compose real en hermes-node.
+- **Bloqueado por terceros:**
+  - SKI2-173, despliegue en el servidor de EPI10: depende del mantenedor de Odoo (SKI2-104).
+  - SKI2-174, prueba de los 5 tramos real: depende de la API de Healthie (SKI2-101) y del acceso a Odoo.
+- **Todo lo de Healthie y Odoo está probado solo contra simuladores.** No se ha llamado nunca a los sistemas reales.
+
 ## Siguiente paso
 
-- Raúl: enviar los dos correos (Healthie/Stripe y Odoo, este último ampliado con el alojamiento del servicio) y comunicar a Carmen el cambio AWS → servidor de EPI10.
-- Fase 4 creada en Linear: SKI2-160 a SKI2-174, con dependencias. La siguiente es **SKI2-160 (esqueleto del monolito)**, que no depende de terceros. Antes de empezar, decidir con Raúl dónde va el repositorio.
+- Raúl:
+  - enviar los correos a Carmen (SKI2-101, SKI2-103);
+  - configurar Healthie por la interfaz (SKI2-175, SKI2-176);
+  - conseguir el material de Aitor (SKI2-177).
+- Con la clave de API de Healthie: validación en el sandbox según el §4.1 del contrato y la documentación del módulo.
+- Con el acceso a Odoo: `npm run odoo:setup` en staging, validación del adaptador y del antibucle, y después el despliegue (SKI2-173).
