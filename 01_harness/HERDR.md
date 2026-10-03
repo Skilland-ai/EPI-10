@@ -39,11 +39,9 @@ herdr agent start ski2-<n> --kind claude --pane <pane-id> -- --model claude-opus
 
 - Linear es la fuente de verdad. Solo el orquestador crea o reorganiza issues.
 - Solo Raúl envía comunicaciones a terceros. Los agentes redactan borradores.
-- Paralelismo máximo mientras el PC aguante (autorizado por Raúl el 2026-10-03). Antes de lanzar cada agente, comprobar con `free -h` y `uptime`:
-  - lanzar solo si quedan **más de 3 GB de RAM disponible** y la **carga está por debajo de 12** (el equipo tiene 16 núcleos);
-  - si no se cumple, esperar a que termine algún agente;
-  - contar también los agentes de otros workspaces de Herdr.
-  Una issue por agente, cada una en su worktree. Las que dependen de otra issue esperan a que esta esté cerrada. Los builds y servidores pesados siguen yendo a hermes-node.
+- Paralelismo según necesidad (Raúl, 2026-10-03): no hay tope fijo de 2, pero tampoco se lanzan agentes porque haya recursos. Se añade un agente solo cuando una issue concreta lo justifica: trabajo independiente que gana yendo en paralelo.
+  - Techo de recursos antes de cada lanzamiento: más de 3 GB de RAM disponible y carga por debajo de 12. Se cuentan también los agentes de otros workspaces de Herdr.
+  - Una issue por agente, cada una en su worktree. Las dependientes esperan. Los builds y servidores pesados van a hermes-node.
 - Si un agente se bloquea en una aprobación o pregunta, se escala a Raúl. El orquestador no responde en su nombre.
 - Nada de datos reales de pacientes ni secretos en prompts. Las claves van en archivos (p. ej. la API de Linear en `~/.config/linear/key`).
 - Fase 3 (customer journey): la lleva el orquestador directamente con Raúl. Los agentes de ejecución entran en la fase 4.
