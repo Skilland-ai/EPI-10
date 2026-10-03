@@ -6,6 +6,7 @@ Read these files in order before starting any task:
 2. `01_harness/STACK.md` — tech stack reference
 3. `01_harness/TASKFLOW.md` — workflow phases
 4. `02_context/01_estado_actual.md` — current focus, active spec and next step
+5. `01_harness/HERDR.md` — Herdr work dynamic (tabs, agents, models, issue cycle)
 
 ## Quick reference
 
