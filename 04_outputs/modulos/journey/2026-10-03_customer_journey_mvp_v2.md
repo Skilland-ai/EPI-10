@@ -1,6 +1,6 @@
 # EPI10 Salud — Customer journey MVP v2
 
-Fecha: 2026-10-03 · Linear: SKI2-106 · Estado: **borrador. Las decisiones D1–D10 están pendientes de validar con Raúl.**
+Fecha: 2026-10-03 · Linear: SKI2-106 · Estado: **borrador.** Validadas el 3 oct: D1, D3 y D6. D2 se decide en una sesión de arquitectura aparte (SKI2-159). D4, D5 y D7–D10 quedan como propuesta mientras Raúl no las cambie.
 
 Base: journey operativo v1.0 de junio (`post_Fer_PENDING_INTEGRAR_BIEN_EN_REPO/epi10_journey_operativo_odoo_healthie_v1.md`), que sigue siendo la referencia detallada por tramo. Este v2 solo recoge lo que cambia y lo que hay que decidir para empezar a construir.
 
@@ -52,8 +52,8 @@ Columnas: **Cliente** = qué vive el cliente · **Sistema** = qué pasa automát
 
 | # | Cliente | Sistema | Equipo |
 |---|---|---|---|
-| 2.1 | Activa la cuenta en el portal o la app | Healthie lanza el onboarding (ver D3) | — |
-| 2.2 | Firma el consentimiento y rellena el formulario principal y el cuestionario | Healthie avisa de lo completado (webhook) → la capa marca los checks del caso en Odoo | — |
+| 2.1 | Activa la cuenta en el portal o la app | Al entrar tras el pago, Healthie lanza automáticamente el onboarding (D3) | — |
+| 2.2 | Completa los pasos del onboarding de Healthie | Healthie avisa de lo completado (webhook) → la capa marca los checks del caso en Odoo | — |
 | 2.3 | — | Cuando se cumple la regla de «listo para pedir test» (D3), Odoo crea la tarea | Aitor: «Pedir test» |
 
 ### Tramo 3 — Test, recepción y cita
@@ -87,12 +87,12 @@ Columnas: **Cliente** = qué vive el cliente · **Sistema** = qué pasa automát
 
 | # | Decisión | Recomendación |
 |---|---|---|
-| **D1** | Entrada: ¿web + Stripe → capa MVP → Healthie (Vía A) o Healthie primero (Vía B)? | **Vía A con Stripe.** Ya está construida y aprobada. La Vía B tira ese trabajo y mete el cobro dentro de Healthie (Nivel 3). |
-| **D2** | ¿Dónde vive la integración? | **En la capa MVP (NestJS en AWS España), como se vendió.** Odoo solo con la configuración nativa y un mínimo de campos. El webhook de Stripe se migra de Vercel a esa capa. |
-| **D3** | Onboarding y regla de «listo para pedir test» | **Onboarding mínimo:** consentimiento + formulario principal + un cuestionario. «Listo» = pago + consentimiento firmado + formulario principal completo. |
+| **D1** ✅ | Entrada | **Vía A con Stripe**: web → Stripe → capa → Healthie + Odoo. Validada por Raúl. |
+| **D2** ⏳ | ¿Dónde vive la integración? | **Pendiente: sesión de arquitectura (SKI2-159).** Opciones: capa MVP en AWS España (lo vendido), módulos de Odoo, o reutilizar la app de Stripe en Vercel. |
+| **D3** ✅ | Regla de «listo para pedir test» | **Onboarding de Healthie completado.** El cliente entra en el onboarding automáticamente tras el pago, y «listo» es haber completado lo que se le pida ahí. El contenido exacto del onboarding se define al configurar Healthie. Validada por Raúl. |
 | **D4** | Agenda de la cita en Healthie | **Sí**, con un tipo de cita «Realización test EPI10» y recordatorios a las 24 h y a las 2 h. |
 | **D5** | Mensajería con el cliente | **Chat de Healthie con plantillas.** Lo que haga falta escalar se convierte en tarea en Odoo. |
-| **D6** | White label | **Fase 1 con la marca básica del plan Group.** Se decide con la cotización de SKI2-101. Aceptamos que el cliente vea «Healthie» en algunos correos. |
+| **D6** ✅ | White label | **Fase 1 con la marca básica del plan Group.** Se decide con la cotización de SKI2-101. Aceptamos que el cliente vea «Healthie» en algunos correos. Validada por Raúl. |
 | **D7** | Alcance del Copilot | **El vendido:** checklist de inputs, pseudonimizador, borrador, revisión humana y exportación. Sin interpretación autónoma. |
 | **D8** | Código de barras | **Obligatorio al marcar «test realizado»**, para poder trazar la muestra. |
 | **D9** | Feedback post-entrega | **Fuera de Fase 1**, para proteger las 110 h. |
