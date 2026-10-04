@@ -81,3 +81,18 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
 - A Carmen y Aitor: formularios, consentimiento, membrete y material de TellmeGen anonimizado (SKI2-184, SKI2-177). El material se comparte en una **carpeta del Google Drive de EPI10**, no por correo. `…formularios_material_v2.md`.
 
 **Aplazado al martes 6 oct (decisión de Raúl):** el boletín del mes a Carmen (skill `skilland-boletin-proyecto`; configuración `proyectos/epi10-salud.toml` creada, sin activar, con el email de Carmen pendiente) y el dossier en PDF adjunto.
+
+## 4 oct (noche) · servicios reales y test mixto
+
+- Master del monolito en `bab87af`.
+- **Odoo 17 Community real de pruebas** (SKI2-182, repo `Skilland-ai/epi10-odoo-pruebas`, en hermes-node, puerto 4881).
+  - Destapó dos fallos graves del adaptador que el simulador no veía. Están corregidos (#19 y #20).
+  - El ensayo da 40/40 contra el Odoo real y 43/43 contra los simuladores.
+- **Demo visual** (#21 y #23, `docs/demo-visual.md`): Stripe en modo prueba desde la web de Vercel, el Odoo real, el portal simulado de Healthie y la pantalla de informes. La pila queda levantada en hermes-node para Raúl.
+- **Test mixto** (SKI2-186, #22): la cita es opcional y el código de barras (D8) sigue siendo obligatorio.
+- **Pendientes de Raúl:**
+  - SKI2-181: cierre de las actividades de Odoo.
+  - El texto del mensaje «Test recibido».
+  - El nombre de la etapa «Test recibido · pendiente de cita».
+  - SKI2-185: cómo se registra el código del kit con el test en casa.
+- **Comunicaciones:** 4 correos programados para el 5 oct a las 8:00. El boletín y el dossier quedan para el 6 oct.
