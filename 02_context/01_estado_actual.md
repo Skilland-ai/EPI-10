@@ -71,3 +71,13 @@ Repo de código: `Skilland-ai/epi10-orquestador`, un monolito NestJS + PostgreSQ
 - **Decisión de Raúl (4 oct):** el test es **mixto**. Por defecto en casa y una cita presencial opcional («Realización test EPI10 (presencial)», solo para «test recibido»). El ID de la cita se sacará por API. El paso 4.1 del journey y la D8 (código del kit) quedan pendientes en SKI2-185.
 - Raúl, 5 oct: SKI2-184, pedir a Carmen y Aitor sus formularios y el texto del consentimiento.
 - Detalle: nota del 4 oct en `04_outputs/modulos/healthie/2026-10-03_contrato_api_healthie_v1.md`.
+
+## Comunicaciones del 5 oct (cerradas con Raúl el 4 oct por la noche)
+
+Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_outputs/comunicaciones/` (fecha 2026-10-04):
+- A Carmen: API de Healthie, cotización del white label y Stripe (SKI2-101, SKI2-20). `…healthie_stripe_v2.md`.
+- A Carmen, para reenviar al mantenedor de Odoo: versión exacta, **backup completo y anonimizado** con el filestore, documentación y código de los módulos a medida (SKI2-103 → SKI2-104). `…odoo_v3.md`, redactado por Raúl. El despliegue en su servidor, los webhooks y el usuario de API quedan para la llamada técnica.
+- A Healthie, con Carmen en copia: fallo «Your account cannot edit custom emails» (SKI2-175). `…healthie_bug_plantillas_v1.md`.
+- A Carmen y Aitor: formularios, consentimiento, membrete y material de TellmeGen anonimizado (SKI2-184, SKI2-177). El material se comparte en una **carpeta del Google Drive de EPI10**, no por correo. `…formularios_material_v2.md`.
+
+**Aplazado al martes 6 oct (decisión de Raúl):** el boletín del mes a Carmen (skill `skilland-boletin-proyecto`; configuración `proyectos/epi10-salud.toml` creada, sin activar, con el email de Carmen pendiente) y el dossier en PDF adjunto.
