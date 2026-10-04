@@ -547,3 +547,19 @@ Los tres están creados sin flujo de onboarding (el de «nuevo cliente» se asig
 
 - *Developer features (webhooks, API keys)* sale bloqueado incluso para el owner. Probablemente depende del add-on de API (R1, SKI2-101).
 - *Reply-to:* según el artículo 352, es el email con el que se inicia sesión (`info@epi10.es`). En julio era el de Reboot. Las respuestas de los clientes ya van a EPI10.
+
+### Onboarding y tipo de cita (SKI2-176, 4 oct)
+
+| Variable | Recurso | ID |
+|---|---|---|
+| `HEALTHIE_ONBOARDING_FLOW_ID` | Intake flow «Onboarding EPI10» (asociado a «EPI10 · nuevo cliente») | `132408` |
+| — | Formulario «EPI10 · Consentimiento» (provisional, obligatorio) | `3273627` |
+| — | Formulario «EPI10 · Datos básicos» (provisional, obligatorio) | `3273666` |
+| `HEALTHIE_APPOINTMENT_TYPE_ID` | «Realización test EPI10 (presencial)» | **Unknown**: la UI no lo muestra en la URL. Sacarlo con la consulta `appointmentTypes` |
+
+- Rutas: `Forms > Your forms / Intake flows` (el ID está en la URL: `/forms/<id>`, `/intake_flows/<id>`) y `Settings > Calendar > Appointment Types` / `Appt Locations`.
+- El flujo empieza con un paso «Welcome» no obligatorio y con texto editable. La cabecera «Welcome [Client Name]» es fija y está en inglés.
+- Hay frases fijas en inglés en los formularios: «I hereby agree to the document above.» y «This will require your client's signature».
+- El tipo de cita permite «After booking, change client's group to». Se deja en «Do not change client's group», porque los cambios de grupo los hace el monolito.
+- «In Person» solo se activa si existe una ubicación (`Appt Locations`).
+- **Decisión de Raúl (4 oct):** el test es mixto, en casa por defecto y con cita presencial opcional. El monolito no debe dar por hecho que hay cita entre «test recibido» y «test realizado». Pendiente en SKI2-185 (código del kit, D8).

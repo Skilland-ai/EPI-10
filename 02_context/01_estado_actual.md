@@ -58,7 +58,16 @@ Repo de código: `Skilland-ai/epi10-orquestador`, un monolito NestJS + PostgreSQ
 
 - Raúl:
   - enviar los correos a Carmen (SKI2-101, SKI2-103);
-  - configurar Healthie por la interfaz (SKI2-175, SKI2-176);
+  - configurar Healthie por la interfaz: SKI2-175 y SKI2-176 hechas el 4 oct (ver abajo);
   - conseguir el material de Aitor (SKI2-177).
 - Con la clave de API de Healthie: validación en el sandbox según el §4.1 del contrato y la documentación del módulo.
 - Con el acceso a Odoo: `npm run odoo:setup` en staging, validación del adaptador y del antibucle, y después el despliegue (SKI2-173).
+
+## Healthie configurado por la interfaz (4 oct, SKI2-175 y SKI2-176)
+
+- Grupos en producción: nuevo cliente `92327`, test recibido `92328`, informe entregado `92329`.
+- Onboarding: intake flow `Onboarding EPI10` `132408`, asociado a «nuevo cliente». Consentimiento `3273627` y datos básicos `3273666`, los dos provisionales.
+- Marca aplicada. No hay ajuste de idioma. Las plantillas de correo no se pueden guardar («Your account cannot edit custom emails») aunque el plan es Group: el bug sale a Healthie el 5 oct a las 8:00, con Carmen en copia. Plan B: invitación propia del monolito con `set_password_link`.
+- **Decisión de Raúl (4 oct):** el test es **mixto**. Por defecto en casa y una cita presencial opcional («Realización test EPI10 (presencial)», solo para «test recibido»). El ID de la cita se sacará por API. El paso 4.1 del journey y la D8 (código del kit) quedan pendientes en SKI2-185.
+- Raúl, 5 oct: SKI2-184, pedir a Carmen y Aitor sus formularios y el texto del consentimiento.
+- Detalle: nota del 4 oct en `04_outputs/modulos/healthie/2026-10-03_contrato_api_healthie_v1.md`.
