@@ -25,3 +25,13 @@
 - 2026-10-03: D2 decidida por Raúl (SKI2-159). El orquestador es un monolito propio (TypeScript/NestJS + PostgreSQL) con módulos core, Stripe, Healthie, Odoo e informes, desplegado en el servidor de EPI10 donde está su Odoo. Odoo solo por API, sin módulos instalados; cambios por webhook. AWS descartado por el cliente. El entregable de TellmeGen se borra tras generar el borrador y el borrador se borra al publicar. ADR: `04_outputs/modulos/integracion/2026-10-03_adr_orquestador_v1.md`.
 - 2026-10-03: Módulo de informes (SKI2-159, Raúl): pantalla propia dentro del monolito con enlace desde Odoo, en TypeScript, siguiendo el patrón de Fer (skills en Markdown + YAML, ejecutor propio, plantilla Word). Borrador autónomo; publicar exige validación de Aitor. Proveedor del modelo (API de Anthropic u OAuth por suscripción) se decide al construir. Orden: esqueleto + core + stripe → odoo e informes en paralelo → healthie → despliegue en el servidor de EPI10 → prueba completa.
 - 2026-10-03: Odoo: el caso vive en `project.task`, en el proyecto «Casos EPI10» con 11 etapas (contrato de la API de Odoo, §2). Decisión técnica del orquestador, que Raúl puede revisar. Corrección: el commit c0767e2 decía «decisión de Raúl», pero era una sugerencia automática de Claude Code que se mostraba en un panel, no un mensaje suyo.
+
+## 2026-10-04 · Integraciones contra servicios reales lo antes posible (Raúl)
+
+- **Odoo, en tres niveles.**
+  - El simulador sirve para el CI y para provocar fallos.
+  - El **Odoo de pruebas EPI10** (SKI2-182) es un Odoo Community real en hermes-node, en el repo `Skilland-ai/epi10-odoo-pruebas`. Imita al de EPI10 y el monolito de desarrollo apunta a él por defecto.
+  - La **réplica del Odoo de EPI10** se montará desde su backup, que debe llegar **anonimizado** (SKI2-104).
+- **Healthie:** simulador en el CI y el sandbox real de la cuenta de EPI10 en cuanto haya clave de API (SKI2-101).
+- **Pruebas de contrato** (SKI2-183): los mismos escenarios se ejecutan contra el simulador y contra el servicio real, para que el simulador no pueda divergir sin que lo veamos.
+- **Principio:** cada integración se valida contra el servicio real en cuanto haya acceso, no al final. Lo que vaya llegando de Carmen la semana del 5 oct se integra al día siguiente.
