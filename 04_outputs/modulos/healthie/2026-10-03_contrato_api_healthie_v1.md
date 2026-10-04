@@ -509,3 +509,41 @@ Para Raúl o EPI10:
 | `POST /webhooks/healthie`: onboarding completado | §3: `completed_onboarding_item.*` + consulta de 2.6 |
 | `POST /webhooks/healthie`: cita creada, cambiada o cancelada | §3: `appointment.created`, `.updated` y `.deleted` + consulta de 2.7 |
 | Alternativa manual si falta la API | Sin cambios: actividad «Alta manual en Healthie» en Odoo |
+
+---
+
+## Nota 2026-10-04 · Configuración real en la cuenta de EPI10 (SKI2-175)
+
+Observado en la UI de producción (plan Group, confirmado en `Settings > Subscription`), operado por Raúl.
+
+**IDs de grupo en producción** (configuración por entorno, no en el código):
+
+| Variable | Grupo | ID |
+|---|---|---|
+| `HEALTHIE_GROUP_NUEVO` | «EPI10 · nuevo cliente» | `92327` |
+| `HEALTHIE_GROUP_TEST_RECIBIDO` | «EPI10 · test recibido» | `92328` |
+| `HEALTHIE_GROUP_INFORME` | «EPI10 · informe entregado» | `92329` |
+
+Los tres están creados sin flujo de onboarding (el de «nuevo cliente» se asigna en SKI2-176). Queda resuelto el nombre del grupo intermedio (§4.2, pregunta 2 de EPI10).
+
+**Rutas reales del menú:**
+
+- Grupos: `Clients > Groups > Create Group`. El ID aparece en la URL: `/groups/<id>/...`.
+- Marca: `Settings > Business > Brand` (nombre, logo, URL del portal, color de la barra, redes y membretes).
+- Plantillas de correo: `Settings > Email Templates`.
+- Permisos: `Organization > Members > <miembro> > Permissions`. También hay `Permissions Template`.
+- Plan: `Settings > Subscription`.
+
+**Marca aplicada:** nombre «EPI10 Salud», logo `Logos_EPI10-01.png`, barra de navegación `#044799` con texto `#FFFFFF`. Brand solo admite el color de la barra, no hay color secundario. URL del portal: `secure.gethealthie.com/go/epi-10`. Membretes sin cambios (pregunta para Carmen).
+
+**Idioma (R3), comprobado:** no hay ningún ajuste de idioma ni de región en Brand, en Account ni en Email Templates. Las plantillas no tienen selector de idioma.
+
+**Plantillas de correo (R3), bloqueado:** al guardar `Client Invite` sale «Your account cannot edit custom emails» y no se guarda, aunque el usuario es Org owner y administrador, tiene «Can view and edit settings that impact the organization» activado y cerró sesión y volvió a entrar. La ayuda (artículo 88) y el asistente de Healthie dicen que hace falta Plus o superior, y la cuenta es Group. Se reporta a Healthie como bug por correo, con Carmen en copia (programado para el 5 de octubre a las 8:00). Partes fijas en inglés que no se pueden editar: «Accept this invite to start using Healthie», el botón y el pie con las apps.
+
+- La API tiene `updateCustomEmail`, `customEmail` y `customEmails` (referencia del esquema): **Verificar** en el sandbox si sirve para editar las plantillas aunque la UI no deje.
+- **Plan B**, si Healthie no lo resuelve: crear el cliente con `dont_send_welcome` y que el monolito envíe su propia invitación en español con `set_password_link` (2.1). **Verificar** que el enlace funciona y caduca bien.
+
+**Otros:**
+
+- *Developer features (webhooks, API keys)* sale bloqueado incluso para el owner. Probablemente depende del add-on de API (R1, SKI2-101).
+- *Reply-to:* según el artículo 352, es el email con el que se inicia sesión (`info@epi10.es`). En julio era el de Reboot. Las respuestas de los clientes ya van a EPI10.
