@@ -5,12 +5,12 @@ Validada por Raúl el 2026-10-03. Aplica a toda ejecución del roadmap de EPI10.
 ## Workspace «EPI-10»
 
 Directorios de trabajo:
-- Documentación: `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI-10`
-- Código del orquestador: `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/epi10-orquestador` (GitHub `Skilland-ai/epi10-orquestador`, privado)
+- Documentación: `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI-10-project/EPI-10`
+- Código del orquestador: `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI-10-project/epi10-orquestador` (GitHub `Skilland-ai/epi10-orquestador`, privado)
 
 Patrón de la skill de Herdr (actualizado el 2026-10-03):
 
-- **Pestaña «Orquestador»:** solo el orquestador. A su derecha, un panel de un tercio del ancho con `watch -t -n 2 cat` de `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI10_PENDIENTES.md`, fuera de los repos. Ese archivo recoge **solo lo que bloquea a un agente**: credenciales, decisiones sin las que construiría algo equivocado o diálogos de aprobación. Cada entrada dice qué agente espera. Las tareas generales de Raúl (correos, comunicación con el cliente) van en Linear, no aquí. Cada bloqueo nuevo se avisa con `herdr notification show "Raúl, te necesito" ... --sound request`. Es el **único sonido** permitido: los sonidos automáticos de los agentes están apagados en la config de Herdr, y los subagentes nunca lanzan notificaciones.
+- **Pestaña «Orquestador»:** solo el orquestador. A su derecha, un panel de un tercio del ancho con `watch -t -n 2 cat` de `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI-10-project/EPI10_PENDIENTES.md`, fuera de los repos. Ese archivo recoge **solo lo que bloquea a un agente**: credenciales, decisiones sin las que construiría algo equivocado o diálogos de aprobación. Cada entrada dice qué agente espera. Las tareas generales de Raúl (correos, comunicación con el cliente) van en Linear, no aquí. Cada bloqueo nuevo se avisa con `herdr notification show "Raúl, te necesito" ... --sound request`. Es el **único sonido** permitido: los sonidos automáticos de los agentes están apagados en la config de Herdr, y los subagentes nunca lanzan notificaciones.
 - **Agentes:** en pestañas agrupadas por hito o función (p. ej. «P1 · Monolito», «P2 · Informes», «Revisión»), con 2–4 agentes por pestaña como paneles divididos. Nunca dentro de la pestaña del orquestador.
 - Los servidores, builds y Docker pesados se ejecutan en hermes-node.
 
