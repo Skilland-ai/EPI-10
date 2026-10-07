@@ -43,3 +43,15 @@
 - **También:** las plantillas de correo de Healthie siguen bloqueadas hasta que revisen la cuenta, y sus correos no se pueden poner en español.
 - Lo que no depende de Healthie sigue vigente: Stripe, Odoo, el core, la pantalla de informes y el seudonimizador.
 - **Siguiente:** analizar las opciones (Healthie manual, portal propio, portal de Odoo, otra plataforma, negociar) antes de decidir.
+
+## 2026-10-07 · Dirección: OpenEMR con lavado de cara (Raúl)
+
+- **Análisis previos:**
+  - Botón rojo, SKI2-205: 56–70 h.
+  - Research de alternativas, SKI2-206: ninguna plataforma externa encaja.
+  - OpenEMR, SKI2-207: cubre los 7 pasos con un módulo propio y un tema EPI10, 52–76 h.
+- **Dirección:** OpenEMR autoalojado como portal del cliente y back office clínico, con un lavado de cara a fondo y sin tocar el núcleo. Odoo sigue como back office de operaciones.
+- **Demo a Carmen el martes 13 oct** para que lo apruebe. Hito «5 · Demo OpenEMR a Carmen», SKI2-208 a 212.
+  - Primer paso: el feedback de Raúl vista por vista (SKI2-208).
+  - Después: el arquitecto de OpenEMR y el roadmap del lavado de cara (SKI2-209).
+- El plan basado en la API de Healthie queda aparcado en el hito «Cajón de sastre», en Backlog.
