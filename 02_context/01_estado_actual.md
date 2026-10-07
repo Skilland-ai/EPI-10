@@ -96,3 +96,10 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
   - El nombre de la etapa «Test recibido · pendiente de cita».
   - SKI2-185: cómo se registra el código del kit con el test en casa.
 - **Comunicaciones:** 4 correos programados para el 5 oct a las 8:00. El boletín y el dossier quedan para el 6 oct.
+
+## 7 oct · crisis de Healthie (SKI2-204)
+
+- Healthie cobra la API a 475 $/mes el primer año, 950 $/mes el segundo y 1.900 $/mes después. **EPI10 no la paga** (Raúl). Correos de Healthie restringidos y sin español. Detalle: `04_outputs/modulos/healthie/2026-10-07_noticias_healthie_v1.md`.
+- Criterio de Raúl: Healthie a mano (A) solo como último recurso; Odoo vale como back office, no como portal del cliente (C descartada). Opciones vivas: **B, portal propio** (SKI2-205) y **D, otra plataforma** (SKI2-206).
+- **SKI2-205 entregado:** `04_outputs/modulos/crisis-healthie/2026-10-07_arquitectura_boton_rojo_v1.md`. Recomendación: módulo `portal` del monolito, HTML servidor + HTMX, correo transaccional comprado en la UE, el resto construido. MVP 56–70 h + 8–12 h legales (EIPD casi segura). No cabe en lo que quede de las 110 h; horas consumidas: **Unknown**, las pone Raúl.
+- Pendiente: decisión de Raúl (B, D o A como puente) y, después, journey v3, ADR v2 y replanificación de las issues de Healthie.
