@@ -35,3 +35,11 @@
 - **Healthie:** simulador en el CI y el sandbox real de la cuenta de EPI10 en cuanto haya clave de API (SKI2-101).
 - **Pruebas de contrato** (SKI2-183): los mismos escenarios se ejecutan contra el simulador y contra el servicio real, para que el simulador no pueda divergir sin que lo veamos.
 - **Principio:** cada integración se valida contra el servicio real en cuanto haya acceso, no al final. Lo que vaya llegando de Carmen la semana del 5 oct se integra al día siguiente.
+
+## 2026-10-07 · Crisis de Healthie (SKI2-204)
+
+- **Hecho:** Healthie cobra por la API del plan Group 475 $/mes el primer año, 950 $/mes el segundo y después 1.900 $/mes. Las claves de API y los webhooks solo vienen con ella. Detalle en `04_outputs/modulos/healthie/2026-10-07_noticias_healthie_v1.md`.
+- **Decisión (Raúl):** EPI10 no va a pagar la API. El diseño que dependía de ella (alta, onboarding, mensajes, grupos, citas y publicación del informe en Healthie) queda en revisión.
+- **También:** las plantillas de correo de Healthie siguen bloqueadas hasta que revisen la cuenta, y sus correos no se pueden poner en español.
+- Lo que no depende de Healthie sigue vigente: Stripe, Odoo, el core, la pantalla de informes y el seudonimizador.
+- **Siguiente:** analizar las opciones (Healthie manual, portal propio, portal de Odoo, otra plataforma, negociar) antes de decidir.
