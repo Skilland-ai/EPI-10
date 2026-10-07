@@ -1,0 +1,406 @@
+{
+  "script": "03_encuesta",
+  "inicio": "2026-10-07T16:21:29+00:00",
+  "fin": "2026-10-07T16:21:30+00:00",
+  "openemr": "http://localhost:4896",
+  "pasos": [
+    {
+      "titulo": "Cuestionarios disponibles (FHIR Questionnaire)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/fhir/Questionnaire"
+      },
+      "respuesta": {
+        "status": 200,
+        "body": {
+          "meta": {
+            "lastUpdated": "2026-10-07T16:21:30"
+          },
+          "resourceType": "Bundle",
+          "type": "collection",
+          "total": 1,
+          "link": [
+            {
+              "relation": "self",
+              "url": "http://localhost:4896/apis/default/fhir/Questionnaire"
+            }
+          ],
+          "entry": [
+            {
+              "fullUrl": "http://localhost:4896/apis/default/fhir/Questionnaire/a2ecfff6-d319-439c-a6ee-89c26fad2028",
+              "resource": {
+                "id": "a2ecfff6-d319-439c-a6ee-89c26fad2028",
+                "meta": {
+                  "versionId": "1",
+                  "lastUpdated": "2026-10-07T16:21:30+00:00"
+                },
+                "language": "es-ES",
+                "resourceType": "Questionnaire",
+                "url": "http://localhost:4896/apis/default/fhir/Questionnaire/a2ecfff6-d319-439c-a6ee-89c26fad2028",
+                "name": "hábitosdevidaepi10",
+                "title": "Hábitos de vida EPI10",
+                "status": "active",
+                "subjectType": [
+                  "Patient"
+                ],
+                "item": [
+                  {
+                    "linkId": "1",
+                    "text": "¿Cuántas horas duermes de media cada noche?",
+                    "type": "integer",
+                    "required": true
+                  },
+                  {
+                    "linkId": "2",
+                    "text": "¿Cuántos días a la semana haces ejercicio físico de al menos 30 minutos?",
+                    "type": "integer",
+                    "required": true
+                  },
+                  {
+                    "linkId": "3",
+                    "text": "¿Fumas?",
+                    "type": "choice",
+                    "required": true,
+                    "answerOption": [
+                      {
+                        "valueCoding": {
+                          "code": "no",
+                          "display": "No"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "ocasional",
+                          "display": "Ocasionalmente"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "diario",
+                          "display": "A diario"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "4",
+                    "text": "¿Con qué frecuencia consumes alcohol?",
+                    "type": "choice",
+                    "required": true,
+                    "answerOption": [
+                      {
+                        "valueCoding": {
+                          "code": "nunca",
+                          "display": "Nunca"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "semanal",
+                          "display": "Alguna vez a la semana"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "diario",
+                          "display": "A diario"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "5",
+                    "text": "¿Sigues alguna dieta o pauta alimentaria concreta?",
+                    "type": "boolean",
+                    "required": false
+                  },
+                  {
+                    "linkId": "6",
+                    "text": "¿Hay algo más sobre tus hábitos que quieras contarnos?",
+                    "type": "text",
+                    "required": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Respuestas de la paciente (FHIR QuestionnaireResponse, equipo)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/fhir/QuestionnaireResponse",
+        "params": {
+          "patient": "2dece1c2-c262-11f1-8cf7-d2bcb2e767ca"
+        }
+      },
+      "respuesta": {
+        "status": 200,
+        "body": {
+          "meta": {
+            "lastUpdated": "2026-10-07T16:21:30"
+          },
+          "resourceType": "Bundle",
+          "type": "collection",
+          "total": 1,
+          "link": [
+            {
+              "relation": "self",
+              "url": "http://localhost:4896/apis/default/fhir/QuestionnaireResponse"
+            }
+          ],
+          "entry": [
+            {
+              "fullUrl": "http://localhost:4896/apis/default/fhir/QuestionnaireResponse/a2ed0c8a-68af-4b81-a436-a946e9f5c4e1",
+              "resource": {
+                "id": "a2ed0c8a-68af-4b81-a436-a946e9f5c4e1",
+                "meta": {
+                  "versionId": 2,
+                  "lastUpdated": "2026-10-07T16:21:30+00:00"
+                },
+                "resourceType": "QuestionnaireResponse",
+                "text": {
+                  "status": "generated",
+                  "div": "<div style=\"display: flex; flex-direction: column; flex-basis: 100%; line-height: 1.2 !important\"><form class=\"form\"></form></div>"
+                },
+                "questionnaire": "http://localhost:4896/apis/default/fhir/Questionnaire/a2ecfff6-d319-439c-a6ee-89c26fad2028",
+                "status": "in-progress",
+                "subject": {
+                  "reference": "Patient/2dece1c2-c262-11f1-8cf7-d2bcb2e767ca",
+                  "type": "Patient"
+                },
+                "encounter": {
+                  "reference": null
+                },
+                "authored": "2026-10-07T16:20:13+00:00",
+                "source": {
+                  "reference": "Patient/2dece1c2-c262-11f1-8cf7-d2bcb2e767ca",
+                  "type": "Patient"
+                },
+                "item": [
+                  {
+                    "linkId": "1",
+                    "text": "¿Cuántas horas duermes de media cada noche?",
+                    "answer": [
+                      {
+                        "valueInteger": 7
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "2",
+                    "text": "¿Cuántos días a la semana haces ejercicio físico de al menos 30 minutos?",
+                    "answer": [
+                      {
+                        "valueInteger": 3
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "3",
+                    "text": "¿Fumas?",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "no",
+                          "display": "No"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "4",
+                    "text": "¿Con qué frecuencia consumes alcohol?",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "nunca",
+                          "display": "Nunca"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "5",
+                    "text": "¿Sigues alguna dieta o pauta alimentaria concreta?",
+                    "answer": [
+                      {
+                        "valueBoolean": true
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "6",
+                    "text": "¿Hay algo más sobre tus hábitos que quieras contarnos?",
+                    "answer": [
+                      {
+                        "valueString": "Duermo peor cuando viajo. Respuesta de prueba (ficticia)."
+                      }
+                    ]
+                  }
+                ],
+                "_questionnaire": {
+                  "extension": [
+                    {
+                      "valueString": "Hábitos de vida EPI10",
+                      "url": "http://hl7.org/fhir/StructureDefinition/display"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "veredicto": "✅",
+      "nota": "status=in-progress authored=2026-10-07T16:20:13+00:00 questionnaire=http://localhost:4896/apis/default/fhir/Questionnaire/a2ecfff6-d319-439c-a6ee-89c26fad2028"
+    },
+    {
+      "titulo": "Respuestas aplanadas para el monolito",
+      "peticion": {
+        "origen": "QuestionnaireResponse.item[].answer[]"
+      },
+      "respuesta": {
+        "1 ¿Cuántas horas duermes de media cada noc": 7,
+        "2 ¿Cuántos días a la semana haces ejercici": 3,
+        "3 ¿Fumas?": "No",
+        "4 ¿Con qué frecuencia consumes alcohol?": "Nunca",
+        "5 ¿Sigues alguna dieta o pauta alimentaria": true,
+        "6 ¿Hay algo más sobre tus hábitos que quie": "Duermo peor cuando viajo. Respuesta de prueba (ficticia)."
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Respuestas con el token de la paciente (SMART patient/QuestionnaireResponse.read)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/fhir/QuestionnaireResponse"
+      },
+      "respuesta": {
+        "status": 200,
+        "body": {
+          "meta": {
+            "lastUpdated": "2026-10-07T16:21:30"
+          },
+          "resourceType": "Bundle",
+          "type": "collection",
+          "total": 1,
+          "link": [
+            {
+              "relation": "self",
+              "url": "http://localhost:4896/apis/default/fhir/QuestionnaireResponse"
+            }
+          ],
+          "entry": [
+            {
+              "fullUrl": "http://localhost:4896/apis/default/fhir/QuestionnaireResponse/a2ed0c8a-68af-4b81-a436-a946e9f5c4e1",
+              "resource": {
+                "id": "a2ed0c8a-68af-4b81-a436-a946e9f5c4e1",
+                "meta": {
+                  "versionId": 2,
+                  "lastUpdated": "2026-10-07T16:21:30+00:00"
+                },
+                "resourceType": "QuestionnaireResponse",
+                "text": {
+                  "status": "generated",
+                  "div": "<div style=\"display: flex; flex-direction: column; flex-basis: 100%; line-height: 1.2 !important\"><form class=\"form\"></form></div>"
+                },
+                "questionnaire": "http://localhost:4896/apis/default/fhir/Questionnaire/a2ecfff6-d319-439c-a6ee-89c26fad2028",
+                "status": "in-progress",
+                "subject": {
+                  "reference": "Patient/2dece1c2-c262-11f1-8cf7-d2bcb2e767ca",
+                  "type": "Patient"
+                },
+                "encounter": {
+                  "reference": null
+                },
+                "authored": "2026-10-07T16:20:13+00:00",
+                "source": {
+                  "reference": "Patient/2dece1c2-c262-11f1-8cf7-d2bcb2e767ca",
+                  "type": "Patient"
+                },
+                "item": [
+                  {
+                    "linkId": "1",
+                    "text": "¿Cuántas horas duermes de media cada noche?",
+                    "answer": [
+                      {
+                        "valueInteger": 7
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "2",
+                    "text": "¿Cuántos días a la semana haces ejercicio físico de al menos 30 minutos?",
+                    "answer": [
+                      {
+                        "valueInteger": 3
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "3",
+                    "text": "¿Fumas?",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "no",
+                          "display": "No"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "4",
+                    "text": "¿Con qué frecuencia consumes alcohol?",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "nunca",
+                          "display": "Nunca"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "5",
+                    "text": "¿Sigues alguna dieta o pauta alimentaria concreta?",
+                    "answer": [
+                      {
+                        "valueBoolean": true
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "6",
+                    "text": "¿Hay algo más sobre tus hábitos que quieras contarnos?",
+                    "answer": [
+                      {
+                        "valueString": "Duermo peor cuando viajo. Respuesta de prueba (ficticia)."
+                      }
+                    ]
+                  }
+                ],
+                "_questionnaire": {
+                  "extension": [
+                    {
+                      "valueString": "Hábitos de vida EPI10",
+                      "url": "http://hl7.org/fhir/StructureDefinition/display"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    }
+  ]
+}

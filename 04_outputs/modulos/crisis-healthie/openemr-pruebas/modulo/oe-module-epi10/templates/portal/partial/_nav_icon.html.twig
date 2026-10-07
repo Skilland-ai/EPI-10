@@ -1,0 +1,32 @@
+{# EPI10 · sobrescribe templates/portal/partial/_nav_icon.html.twig del núcleo (mismos atributos para no romper el JS del portal). #}
+{% set localLink = localLink is null ? true : localLink %}
+{% set cardGroup = cardGroup is null ? "cardgroup" : cardGroup %}
+{% set epi10Textos = {
+    'documents-go': ['Firma tu consentimiento y completa el cuestionario de hábitos.', 'Empezar'],
+    'messages-go': ['Escribe al equipo de EPI10. Te respondemos en tu espacio.', 'Abrir mensajes'],
+    'reports-go': ['Tu informe personalizado, listo para descargar.', 'Ver mi informe'],
+    'appointments-go': ['Si eliges hacer el test con nosotros, aquí verás tu cita.', 'Ver citas']
+} %}
+{% set quiet = id in ['settings-go', 'help-go', 'logout-go'] %}
+<a id="{{ id|attr }}" class="epi10-card {% if quiet %}epi10-card--quiet{% endif %}"
+   {% if localLink %}
+    data-toggle="collapse" data-parent="#{{ cardGroup|attr }}" aria-expanded="false"
+    href="#{{ url|attr_url }}"
+   {% else %}
+    href="{{ url|attr }}"
+   {% endif %}
+   {% if navText %}
+    data-window-title="{{ navText|attr }}"
+   {% endif %}
+>
+    <span class="epi10-card__icon"><i class="fa fa-2x fa-{{ icon|attr }}"></i></span>
+    <span class="epi10-card__title">
+        {% block navTextBlock %}
+        {{ navText | text }}
+        {% endblock %}
+    </span>
+    {% if epi10Textos[id] is defined %}
+        <span class="epi10-card__text">{{ epi10Textos[id][0] | text }}</span>
+        <span class="epi10-card__cta">{{ epi10Textos[id][1] | text }} →</span>
+    {% endif %}
+</a>

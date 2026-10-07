@@ -1,0 +1,132 @@
+{
+  "script": "01_alta_paciente",
+  "inicio": "2026-10-07T15:45:05+00:00",
+  "fin": "2026-10-07T15:45:07+00:00",
+  "openemr": "http://localhost:4896",
+  "pasos": [
+    {
+      "titulo": "Crear paciente por FHIR",
+      "peticion": {
+        "metodo": "POST",
+        "url": "<OE>/apis/default/fhir/Patient",
+        "json_body": {
+          "resourceType": "Patient",
+          "active": true,
+          "name": [
+            {
+              "use": "official",
+              "family": "Prueba FHIR (api2)",
+              "given": [
+                "Marta"
+              ]
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1990-06-15",
+          "telecom": [
+            {
+              "system": "email",
+              "value": "marta.api2@correo-ficticio.test",
+              "use": "home"
+            }
+          ],
+          "communication": [
+            {
+              "language": {
+                "coding": [
+                  {
+                    "system": "urn:ietf:bcp:47",
+                    "code": "es"
+                  }
+                ]
+              },
+              "preferred": true
+            }
+          ]
+        }
+      },
+      "respuesta": {
+        "status": 201,
+        "body": {
+          "pid": 4,
+          "uuid": "a2ecfffa-f8c5-4789-9565-cef18f11c051"
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Crear paciente por la API estándar",
+      "peticion": {
+        "metodo": "POST",
+        "url": "<OE>/apis/default/api/patient",
+        "json_body": {
+          "title": "",
+          "fname": "Marta",
+          "mname": "",
+          "lname": "Prueba API (api2)",
+          "street": "",
+          "postal_code": "",
+          "city": "",
+          "state": "",
+          "country_code": "ES",
+          "phone_contact": "",
+          "DOB": "1990-06-15",
+          "sex": "Female",
+          "race": "",
+          "ethnicity": "",
+          "email": "marta.api.api2@correo-ficticio.test"
+        }
+      },
+      "respuesta": {
+        "status": 201,
+        "body": {
+          "validationErrors": [],
+          "internalErrors": [],
+          "data": {
+            "pid": 5,
+            "uuid": "a2ecfffb-1410-40b7-a4f1-291264dfd88c"
+          },
+          "links": []
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Dar acceso al portal por API (ruta inexistente)",
+      "peticion": {
+        "metodo": "POST",
+        "url": "<OE>/apis/default/api/patient/a2ecfffb-1410-40b7-a4f1-291264dfd88c/portal_credentials",
+        "json_body": {
+          "username": "marta-api2"
+        }
+      },
+      "respuesta": {
+        "status": 404,
+        "body": {
+          "error": "An error occurred",
+          "message": "Route not found",
+          "code": 0
+        }
+      },
+      "veredicto": "❌",
+      "nota": "No existe ningún endpoint REST, FHIR ni del portal para crear credenciales del portal"
+    },
+    {
+      "titulo": "Dar acceso al portal con el servicio PHP de OpenEMR (módulo propio o CLI)",
+      "peticion": {
+        "php": "PatientAccessOnsiteService::saveCredentials(pid, pwd, user, user, forced_reset_disable=true)"
+      },
+      "respuesta": {
+        "pid": 5,
+        "portal_username": "marta-api2",
+        "portal_login_username": "marta-api2",
+        "portal_pwd_status": 1,
+        "hashlen": 60
+      },
+      "veredicto": "◐",
+      "nota": "Funciona, pero no es API: exige código PHP dentro de OpenEMR (módulo) o la interfaz de administración"
+    }
+  ]
+}

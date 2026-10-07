@@ -1,0 +1,5 @@
+{% extends "portal/partial/_nav_icon.html.twig" %}
+{% block navTextBlock %}
+    {{ 'Secure Messaging' | xlt }}
+    {% if newcnt > 0 %}<span class="badge badge-pill ml-1 text-white">{{ newcnt | text }}</span>{% endif %}
+{% endblock %}

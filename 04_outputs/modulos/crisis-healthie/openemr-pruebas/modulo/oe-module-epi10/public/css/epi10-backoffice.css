@@ -1,0 +1,20 @@
+/* EPI10 · back office (equipo). Solo identidad y legibilidad: el contenido clínico se deja como está. */
+body, button, input, select, textarea, .btn, .form-control, h1, h2, h3, h4, h5, h6, .navbar { font-family: var(--epi-fuente) !important; }
+.btn-primary, .btn-save { background: var(--epi-azul) !important; border-color: var(--epi-azul) !important; }
+.btn-primary:hover { background: var(--epi-azul-900) !important; }
+a { color: var(--epi-azul); }
+/* Login del equipo */
+body:has(#login-button) { background: var(--epi-marfil) !important; }
+body:has(#login-button) .login-box, body:has(#login-button) #login_form, body:has(#login-button) .card { border-radius: 18px !important; box-shadow: var(--epi-sombra) !important; border: 0 !important; }
+body:has(#login-button) .text-center p, body:has(#login-button) .login-title, body:has(#login-button) #login-title { color: var(--epi-azul); }
+body:has(#login-button) { background: linear-gradient(160deg, var(--epi-azul) 0%, var(--epi-azul-900) 40%, var(--epi-marfil) 40.1%) !important; }
+body:has(#login-button) .vertical-band { background: #fff !important; border-radius: 22px; box-shadow: 0 30px 60px rgba(0, 41, 77, .25); margin-top: 6vh; height: auto !important; min-height: 0 !important; padding: 2.5rem !important; }
+body:has(#login-button) .vertical-band img { max-height: 64px; width: auto !important; }
+body:has(#login-button) .vertical-band p, body:has(#login-button) .vertical-band label { color: var(--epi-gris) !important; }
+body:has(#login-button) .vertical-band .btn-primary, body:has(#login-button) #login-button { border-radius: 999px !important; min-height: 46px; }
+/* Barra de menú principal y pestañas */
+#mainMenu, .menuSection, #menu_logo, .navbar-light.bg-light { background: #fff !important; }
+#mainMenu .menuLabel, .menuLabel { font-weight: 600 !important; color: var(--epi-azul) !important; }
+#tabs_div .tabSpan, .tabSpan { border-radius: 10px 10px 0 0 !important; }
+#tabs_div .tabsNoHover, .tabSpan.tabsNoHover { background: var(--epi-azul) !important; color: #fff !important; }
+.bg-primary { background-color: var(--epi-azul) !important; }

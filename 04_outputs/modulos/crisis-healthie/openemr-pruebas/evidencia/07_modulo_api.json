@@ -1,0 +1,201 @@
+{
+  "script": "07_modulo_api",
+  "inicio": "2026-10-07T16:15:38+00:00",
+  "fin": "2026-10-07T16:15:39+00:00",
+  "openemr": "http://localhost:4896",
+  "pasos": [
+    {
+      "titulo": "Alta de la paciente (API estándar)",
+      "peticion": {
+        "metodo": "POST",
+        "url": "<OE>/apis/default/api/patient",
+        "json_body": {
+          "title": "",
+          "fname": "Marta",
+          "mname": "",
+          "lname": "Prueba módulo (modulo2)",
+          "street": "",
+          "postal_code": "",
+          "city": "",
+          "state": "",
+          "country_code": "ES",
+          "phone_contact": "",
+          "DOB": "1990-06-15",
+          "sex": "Female",
+          "race": "",
+          "ethnicity": "",
+          "email": "marta.modulo2@correo-ficticio.test"
+        }
+      },
+      "respuesta": {
+        "status": 201,
+        "body": {
+          "validationErrors": [],
+          "internalErrors": [],
+          "data": {
+            "pid": 7,
+            "uuid": "a2ed0ae7-0fb9-434f-987b-fb83f1246089"
+          },
+          "links": []
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Acceso al portal y enlace mágico (módulo)",
+      "peticion": {
+        "metodo": "POST",
+        "url": "<OE>/apis/default/api/patient/7/epi10_portal_access",
+        "json_body": {
+          "username": "marta-modulo2",
+          "expires_hours": 48
+        }
+      },
+      "respuesta": {
+        "status": 201,
+        "body": {
+          "pid": 7,
+          "portal_username": "marta-modulo2",
+          "magic_link": "http://localhost:4896/portal?<token de un solo uso>",
+          "expires_hours": 48
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Asignar «Consentimiento EPI10 Salud» (módulo)",
+      "peticion": {
+        "metodo": "POST",
+        "url": "<OE>/apis/default/api/patient/7/epi10_portal_template",
+        "json_body": {
+          "template": "Consentimiento EPI10 Salud"
+        }
+      },
+      "respuesta": {
+        "status": 201,
+        "body": {
+          "pid": 7,
+          "template_id": 17,
+          "template_name": "Consentimiento EPI10 Salud",
+          "category": "consentimiento"
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Asignar «Hábitos de vida EPI10» (módulo)",
+      "peticion": {
+        "metodo": "POST",
+        "url": "<OE>/apis/default/api/patient/7/epi10_portal_template",
+        "json_body": {
+          "template": "Hábitos de vida EPI10"
+        }
+      },
+      "respuesta": {
+        "status": 201,
+        "body": {
+          "pid": 7,
+          "template_id": 18,
+          "template_name": "Hábitos de vida EPI10",
+          "category": "questionnaire"
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Equipo → bandeja del portal (módulo)",
+      "peticion": {
+        "metodo": "POST",
+        "url": "<OE>/apis/default/api/patient/7/epi10_portal_message",
+        "json_body": {
+          "title": "Bienvenida a EPI10",
+          "body": "Hola Marta, ya tienes tu espacio. Empieza por el consentimiento."
+        }
+      },
+      "respuesta": {
+        "status": 201,
+        "body": {
+          "message": {
+            "id": 5,
+            "date": "2026-10-07 16:15:39",
+            "owner": "marta-modulo2",
+            "sender_id": "admin",
+            "recipient_id": "marta-modulo2",
+            "title": "Bienvenida a EPI10",
+            "message_status": "New"
+          }
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Cambios desde 2026-10-07T16:12:38Z (módulo, sustituto de webhooks)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/api/epi10_changes",
+        "params": {
+          "since": "2026-10-07T16:12:38Z"
+        }
+      },
+      "respuesta": {
+        "status": 200,
+        "body": {
+          "since": "2026-10-07 16:12:38",
+          "now": "2026-10-07 16:15:39",
+          "portal_documents": [],
+          "questionnaire_responses": [],
+          "portal_messages_from_patients": [],
+          "documents": [],
+          "portal_activity": []
+        }
+      },
+      "veredicto": "✅",
+      "nota": "portal_documents=0, questionnaire_responses=0, portal_messages_from_patients=0, documents=0, portal_activity=0"
+    },
+    {
+      "titulo": "Mensajes escritos por pacientes desde 2026-10-07T16:12:38Z (módulo)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/api/epi10_portal_message",
+        "params": {
+          "since": "2026-10-07T16:12:38Z"
+        }
+      },
+      "respuesta": {
+        "status": 200,
+        "body": {
+          "since": "2026-10-07 16:12:38",
+          "count": 0,
+          "data": []
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "Control: la misma ruta sin scope epi10 → 401/403",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/api/epi10_changes",
+        "params": {
+          "since": "2026-10-07T16:12:38Z"
+        }
+      },
+      "respuesta": {
+        "status": 401,
+        "body": {
+          "error": "An error occurred",
+          "message": "Unauthorized",
+          "code": 0
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    }
+  ]
+}

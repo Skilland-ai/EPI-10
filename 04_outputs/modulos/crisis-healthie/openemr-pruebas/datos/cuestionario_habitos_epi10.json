@@ -1,0 +1,20 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "habitos-epi10",
+  "url": "https://epi10.example/fhir/Questionnaire/habitos-epi10",
+  "name": "HabitosEPI10",
+  "title": "Hábitos de vida EPI10",
+  "status": "active",
+  "subjectType": ["Patient"],
+  "language": "es-ES",
+  "item": [
+    {"linkId": "1", "text": "¿Cuántas horas duermes de media cada noche?", "type": "integer", "required": true},
+    {"linkId": "2", "text": "¿Cuántos días a la semana haces ejercicio físico de al menos 30 minutos?", "type": "integer", "required": true},
+    {"linkId": "3", "text": "¿Fumas?", "type": "choice", "required": true,
+     "answerOption": [{"valueCoding": {"code": "no", "display": "No"}}, {"valueCoding": {"code": "ocasional", "display": "Ocasionalmente"}}, {"valueCoding": {"code": "diario", "display": "A diario"}}]},
+    {"linkId": "4", "text": "¿Con qué frecuencia consumes alcohol?", "type": "choice", "required": true,
+     "answerOption": [{"valueCoding": {"code": "nunca", "display": "Nunca"}}, {"valueCoding": {"code": "semanal", "display": "Alguna vez a la semana"}}, {"valueCoding": {"code": "diario", "display": "A diario"}}]},
+    {"linkId": "5", "text": "¿Sigues alguna dieta o pauta alimentaria concreta?", "type": "boolean", "required": false},
+    {"linkId": "6", "text": "¿Hay algo más sobre tus hábitos que quieras contarnos?", "type": "text", "required": false}
+  ]
+}

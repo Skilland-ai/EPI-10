@@ -1,0 +1,3 @@
+#!/bin/sh
+# PHP por stdin → contenedor OpenEMR en hermes-node
+ssh hermes-node 'cd ~/Projects/epi10-openemr-prueba && chmod +x oe-php.sh && ./oe-php.sh'

@@ -1,0 +1,115 @@
+/* EPI10 · lavado de cara del portal del paciente de OpenEMR 8.4 (sin tocar el núcleo). */
+html, body, .login, button, input, select, textarea, .btn, .form-control, .card, .navbar, h1, h2, h3, h4, h5, h6 {
+  font-family: var(--epi-fuente) !important;
+}
+body { background: var(--epi-marfil) !important; color: var(--epi-tinta); -webkit-font-smoothing: antialiased; }
+a { color: var(--epi-azul); }
+a:hover { color: var(--epi-cian); }
+
+/* Botones: azul profundo, sin verdes de OpenEMR */
+.btn-success, .btn-primary, .btn-save, .btn-send-msg, .btn-transmit {
+  background: var(--epi-azul) !important; border-color: var(--epi-azul) !important; color: #fff !important;
+  border-radius: 999px !important; font-weight: 600; letter-spacing: .01em; padding-left: 1.2rem; padding-right: 1.2rem;
+}
+.btn-success:hover, .btn-primary:hover { background: var(--epi-azul-900) !important; }
+.btn-outline-primary, .btn-outline-success, .btn-outline-info, .btn-outline-secondary {
+  color: var(--epi-azul) !important; border-color: var(--epi-linea) !important; background: #fff !important; border-radius: 999px !important; font-weight: 600;
+}
+.btn-outline-primary:hover, .btn-outline-success:hover { border-color: var(--epi-azul) !important; background: var(--epi-marfil) !important; }
+.btn-outline-danger, .btn-danger, .btn-delete { border-radius: 999px !important; }
+.form-control, .custom-select { border-radius: 10px !important; border-color: var(--epi-linea) !important; min-height: 44px; }
+.form-control:focus { border-color: var(--epi-cian) !important; box-shadow: 0 0 0 3px rgba(2, 154, 204, .18) !important; }
+.bg-light, .bg-white { background: transparent !important; }
+.text-success { color: var(--epi-azul) !important; }
+
+/* ---------- Acceso (portal/index.php) ---------- */
+body.login { background: linear-gradient(160deg, var(--epi-azul) 0%, var(--epi-azul-900) 45%, var(--epi-marfil) 45.1%) !important; min-height: 100vh; }
+body.login .login-wrapper, body.login #wrapper { max-width: 440px !important; margin: 7vh auto 0 !important; background: #fff !important;
+  border-radius: 22px !important; box-shadow: 0 30px 60px rgba(0, 41, 77, .25) !important; padding: 2.2rem 2rem 1.6rem !important; border: 0 !important; }
+body.login legend, body.login legend.bg-light { background: transparent !important; border: 0 !important; }
+body.login legend h2 { font-size: 1.35rem !important; font-weight: 600; color: var(--epi-tinta); margin-top: .5rem; }
+body.login .login-logo, body.login img[src*="epi10"] { max-height: 56px !important; width: auto !important; }
+body.login label { font-weight: 600; font-size: .86rem; color: var(--epi-gris); }
+body.login .btn-success, body.login button[type=submit] { width: 100%; min-height: 48px; font-size: 1rem; }
+body.login .text-muted, body.login small { color: var(--epi-gris) !important; }
+body.login select#selLanguage, body.login label[for=selLanguage], body.login .form-group:has(#selLanguage) { display: none !important; }
+body.login #passaddon { }
+
+/* ---------- Barra superior ---------- */
+#topNav, nav.navbar { background: #fff !important; border-bottom: 1px solid var(--epi-linea); margin: 0 !important; padding: .7rem 1.5rem !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .02); }
+#topNav .navbar-brand img { height: 30px !important; width: auto; }
+#topNav #quickstart_dashboard { border: 0 !important; background: var(--epi-marfil) !important; }
+.epi10-topnav__hola { margin-left: auto; color: var(--epi-gris); font-weight: 500; }
+
+/* ---------- Panel de inicio ---------- */
+#quickstart-card, .card { border: 0 !important; background: transparent !important; }
+#quickstart-div .jumbotron { background: transparent !important; }
+#quickstart-div .jumbotron.text-center { text-align: left !important; padding: 2.2rem 1.25rem .4rem !important; }
+#quickstart-div .jumbotron.text-center h2 { font-size: 2rem; font-weight: 600; color: var(--epi-azul); letter-spacing: -.01em; }
+#quickstart-div .jumbotron.text-center h2::after { content: "Aquí tienes todo tu proceso NutriWell: documentos, mensajes con el equipo y tu informe."; display: block;
+  font-size: 1rem; font-weight: 400; color: var(--epi-gris); margin-top: .5rem; }
+#inject_card { gap: 1rem 0; }
+.epi10-card { display: flex !important; flex-direction: column; align-items: flex-start; text-align: left; text-decoration: none !important;
+  background: #fff; border-radius: var(--epi-radio); box-shadow: var(--epi-sombra); padding: 1.4rem 1.4rem 1.2rem !important;
+  border: 1px solid transparent; transition: transform .15s ease, border-color .15s ease; color: var(--epi-tinta) !important; min-height: 168px;
+  flex: 0 0 calc(33.333% - 1rem) !important; max-width: calc(33.333% - 1rem) !important; margin: 0 .5rem 1rem !important; }
+.epi10-card:hover { transform: translateY(-2px); border-color: var(--epi-cian-claro); }
+.epi10-card__icon { width: 44px; height: 44px; border-radius: 12px; background: var(--epi-marfil); color: var(--epi-azul); display: grid; place-items: center; margin-bottom: .9rem; }
+.epi10-card__icon .fa-2x { font-size: 1.2rem !important; color: var(--epi-azul) !important; }
+.epi10-card__title { font-size: 1.08rem; font-weight: 700; color: var(--epi-azul); }
+.epi10-card__text { font-size: .9rem; color: var(--epi-gris); margin-top: .25rem; flex: 1; }
+.epi10-card__cta { margin-top: .8rem; font-weight: 600; font-size: .88rem; color: var(--epi-cian); }
+.epi10-card .badge { background: var(--epi-cian) !important; }
+.epi10-card--shop { background: linear-gradient(135deg, var(--epi-azul) 0%, var(--epi-azul-900) 100%) !important; }
+.epi10-card--shop .epi10-card__title, .epi10-card--shop .epi10-card__text, .epi10-card--shop .epi10-card__cta { color: #fff !important; }
+.epi10-card--shop .epi10-card__icon { background: rgba(255, 255, 255, .12); }
+.epi10-card--shop .epi10-card__icon .fa-2x { color: var(--epi-cian-claro) !important; }
+.epi10-card--quiet { min-height: 0; flex-direction: row; align-items: center; gap: .8rem; flex: 0 0 calc(25% - 1rem) !important; max-width: calc(25% - 1rem) !important; }
+.epi10-card--quiet .epi10-card__icon { margin: 0; width: 36px; height: 36px; }
+.epi10-card--quiet .epi10-card__text, .epi10-card--quiet .epi10-card__cta { display: none; }
+.epi10-card--quiet .epi10-card__title { font-size: .95rem; color: var(--epi-tinta); }
+/* Tarjetas de OpenEMR que el servicio no usa */
+#lists-go, #profile-go, #ledger-go, #payments-go, #easypro-go { display: none !important; }
+@media (max-width: 768px) {
+  .epi10-card, .epi10-card--quiet { flex: 0 0 100% !important; max-width: 100% !important; margin: 0 0 .8rem !important; }
+  #quickstart-div .jumbotron.text-center h2 { font-size: 1.5rem; }
+}
+
+/* ---------- Documentos, consentimiento y cuestionario (portal/patient/onsitedocuments) ---------- */
+.container-fluid > h2, h3.text-center, .h2.text-center { color: var(--epi-azul) !important; font-weight: 600 !important; }
+#topmenu .nav-link, .nav-pills .nav-link { border-radius: 999px !important; }
+.navbar-dark.bg-dark, .bg-dark, #docHeaderBar, .card-header.bg-dark { background: var(--epi-azul) !important; color: #fff !important; }
+#templatecontent, #editorContainer, .templateContent, #templatediv, #docpanel, .card-body { background: #fff !important; border-radius: var(--epi-radio) !important; }
+#templatecontent { padding: 2rem 2.2rem !important; box-shadow: var(--epi-sombra); border: 0 !important; line-height: 1.6; }
+#templatecontent h4 { color: var(--epi-azul); font-weight: 700; }
+img.signature { border: 2px dashed var(--epi-cian-claro) !important; border-radius: 10px; background: #fff !important; padding: 4px; }
+input.checkMark { width: 20px; height: 20px; accent-color: var(--epi-azul); vertical-align: middle; }
+#openSignModal .modal-content { border-radius: 18px; border: 0; }
+#openSignModal canvas { border: 1px solid var(--epi-linea) !important; border-radius: 12px; background: #fff; }
+/* Instrucciones genéricas de OpenEMR (en inglés y fuera de tono): se ocultan */
+#docpanel .jumbotron, .bg-dark.jumbotron, #instructions, .instructions { background: #fff !important; color: var(--epi-tinta) !important; }
+
+/* Cuestionario incrustado (runtime FHIR de OpenEMR) */
+.oe-questionnaire, .questionnaire-runtime, form.oe-q, #questionnaire-container { font-family: var(--epi-fuente) !important; }
+label.form-label, .oe-q-item label, legend { font-weight: 600; color: var(--epi-tinta); }
+input[type=radio], input[type=checkbox] { accent-color: var(--epi-azul); }
+
+/* ---------- Mensajes (portal/messaging) ---------- */
+.list-group-item.active, .nav-pills .nav-link.active, .btn.active { background: var(--epi-azul) !important; border-color: var(--epi-azul) !important; color: #fff !important; }
+.table { background: #fff; border-radius: var(--epi-radio); overflow: hidden; }
+.table thead th { border-top: 0; color: var(--epi-gris); font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+
+/* Correcciones tras la primera pasada */
+#topNav #quickstart_dashboard { color: var(--epi-azul) !important; border: 1px solid var(--epi-linea) !important; background: #fff !important; }
+.epi10-ayuda { background: #fff; color: var(--epi-tinta); padding: .5rem .5rem 0; max-width: 720px; }
+.epi10-ayuda h3 { color: var(--epi-azul); font-weight: 700; font-size: 1.6rem; }
+.epi10-ayuda__intro { color: var(--epi-gris); font-size: 1.02rem; }
+.epi10-ayuda__pasos { padding-left: 1.2rem; line-height: 1.7; }
+.epi10-ayuda__pasos li { margin-bottom: .5rem; }
+.epi10-ayuda__nota { background: var(--epi-marfil); border-radius: 12px; padding: .8rem 1rem; }
+#dropdownMenu { background: var(--epi-azul) !important; color: #fff !important; border-color: var(--epi-azul) !important; }
+.dropdown-menu { border-radius: 12px; border: 1px solid var(--epi-linea); box-shadow: var(--epi-sombra); }
+.dropdown-item.template-item { color: var(--epi-azul) !important; font-weight: 600; }
+/* Cabecera del documento abierto: nombre legible sobre azul */
+.bg-dark .bg-light, .bg-dark .text-dark, #docHeaderBar .bg-light { background: transparent !important; color: #fff !important; font-weight: 700; }

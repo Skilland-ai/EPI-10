@@ -1,0 +1,191 @@
+{
+  "script": "08_lectura_cambios",
+  "inicio": "2026-10-07T16:38:04+00:00",
+  "fin": "2026-10-07T16:38:05+00:00",
+  "openemr": "http://localhost:4896",
+  "pasos": [
+    {
+      "titulo": "Mensajes de pacientes desde 2026-10-07T00:00:00Z (módulo)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/api/epi10_portal_message",
+        "params": {
+          "since": "2026-10-07T00:00:00Z"
+        }
+      },
+      "respuesta": {
+        "status": 200,
+        "body": {
+          "since": "2026-10-07 00:00:00",
+          "count": 2,
+          "data": [
+            {
+              "id": 7,
+              "date": "2026-10-07 16:15:48",
+              "pid": 7,
+              "sender_id": "marta-modulo2",
+              "sender_name": "Marta Prueba módulo (modulo2)",
+              "recipient_id": "admin",
+              "title": "Duda sobre el kit",
+              "body": "<p>Hola, ¿el kit llega a casa o lo recojo? (mensaje de prueba, ficticio)</p>",
+              "message_status": "New",
+              "mail_chain": 7
+            },
+            {
+              "id": 9,
+              "date": "2026-10-07 16:37:46",
+              "pid": 7,
+              "sender_id": "marta-modulo2",
+              "sender_name": "Marta Prueba módulo (modulo2)",
+              "recipient_id": "operaciones.prueba",
+              "title": "Otra duda",
+              "body": "<p>¿Cuánto tarda el informe? (prueba, ficticio)</p>",
+              "message_status": "New",
+              "mail_chain": 9
+            }
+          ]
+        }
+      },
+      "veredicto": "✅",
+      "nota": "2 mensajes: pid 7 «Duda sobre el kit»; pid 7 «Otra duda»"
+    },
+    {
+      "titulo": "Cambios desde 2026-10-07T00:00:00Z (módulo)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/api/epi10_changes",
+        "params": {
+          "since": "2026-10-07T00:00:00Z"
+        }
+      },
+      "respuesta": {
+        "status": 200,
+        "body": {
+          "since": "2026-10-07 00:00:00",
+          "now": "2026-10-07 16:38:05",
+          "portal_documents": [
+            {
+              "id": 2,
+              "pid": 1,
+              "doc_type": "Consentimiento EPI10 Salud",
+              "status": "In Review",
+              "patient_signed_status": 1,
+              "patient_signed_time": "2026-10-07 15:51:02",
+              "create_date": "2026-10-07 15:50:43",
+              "review_date": "0000-00-00 00:00:00"
+            },
+            {
+              "id": 3,
+              "pid": 1,
+              "doc_type": "Hábitos de vida EPI10",
+              "status": "In Review",
+              "patient_signed_status": 0,
+              "patient_signed_time": "0000-00-00 00:00:00",
+              "create_date": "2026-10-07 16:19:59",
+              "review_date": "0000-00-00 00:00:00"
+            }
+          ],
+          "questionnaire_responses": [
+            {
+              "id": 1,
+              "pid": 1,
+              "questionnaire_name": "Hábitos de vida EPI10",
+              "status": "in-progress",
+              "create_time": "2026-10-07 16:20:13",
+              "last_updated": "2026-10-07 16:20:58"
+            }
+          ],
+          "portal_messages_from_patients": [
+            {
+              "id": 7,
+              "pid": 7,
+              "date": "2026-10-07 16:15:48",
+              "title": "Duda sobre el kit"
+            },
+            {
+              "id": 9,
+              "pid": 7,
+              "date": "2026-10-07 16:37:46",
+              "title": "Otra duda"
+            }
+          ],
+          "documents": [
+            {
+              "id": 4,
+              "pid": 1,
+              "name": "informe_epi10_prueba.pdf",
+              "mimetype": "application/pdf",
+              "date": "2026-10-07 15:51:08"
+            },
+            {
+              "id": 5,
+              "pid": 1,
+              "name": "informe_epi10_loinc.pdf",
+              "mimetype": "application/pdf",
+              "date": "2026-10-07 15:56:53"
+            },
+            {
+              "id": 6,
+              "pid": 1,
+              "name": "Consentimiento_EPI10_Salud_firmado_1.pdf",
+              "mimetype": "application/pdf",
+              "date": "2026-10-07 15:56:54"
+            }
+          ],
+          "portal_activity": [
+            {
+              "id": 1,
+              "date": "2026-10-07 15:49:14",
+              "pid": 1,
+              "activity": "document",
+              "status": "editing",
+              "pending_action": "patient submission"
+            },
+            {
+              "id": 2,
+              "date": "2026-10-07 15:50:43",
+              "pid": 1,
+              "activity": "document",
+              "status": "waiting",
+              "pending_action": "patient submission"
+            },
+            {
+              "id": 3,
+              "date": "2026-10-07 16:19:59",
+              "pid": 1,
+              "activity": "document",
+              "status": "waiting",
+              "pending_action": "patient submission"
+            }
+          ]
+        }
+      },
+      "veredicto": "✅",
+      "nota": "portal_documents=2, questionnaire_responses=1, portal_messages_from_patients=2, documents=3, portal_activity=3 · cursor siguiente=2026-10-07 16:38:05"
+    },
+    {
+      "titulo": "Segunda consulta con el cursor devuelto (debe venir vacía si nadie ha hecho nada)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/api/epi10_changes",
+        "params": {
+          "since": "2026-10-07T16:38:05Z"
+        }
+      },
+      "respuesta": {
+        "status": 200,
+        "body": {
+          "since": "2026-10-07 16:38:05",
+          "now": "2026-10-07 16:38:05",
+          "portal_documents": [],
+          "questionnaire_responses": [],
+          "portal_messages_from_patients": [],
+          "documents": [],
+          "portal_activity": []
+        }
+      },
+      "veredicto": "✅",
+      "nota": "portal_documents=0, questionnaire_responses=0, portal_messages_from_patients=0, documents=0, portal_activity=0"
+    }
+  ]
+}

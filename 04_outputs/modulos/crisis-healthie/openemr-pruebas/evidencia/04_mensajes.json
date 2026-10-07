@@ -1,0 +1,101 @@
+{
+  "script": "04_mensajes",
+  "inicio": "2026-10-07T15:46:28+00:00",
+  "fin": "2026-10-07T15:46:30+00:00",
+  "openemr": "http://localhost:4896",
+  "pasos": [
+    {
+      "titulo": "Equipo → paciente: POST /api/patient/:pid/message (pnotes)",
+      "peticion": {
+        "metodo": "POST",
+        "url": "<OE>/apis/default/api/patient/1/message",
+        "json_body": {
+          "body": "Hola Lucía, tu caso está en marcha (mensaje de prueba 2026-10-07T15:46:29Z).",
+          "groupname": "Default",
+          "from": "admin",
+          "to": "lucia",
+          "title": "Tu caso está en marcha",
+          "message_status": "New"
+        }
+      },
+      "respuesta": {
+        "status": 201,
+        "body": {
+          "mid": 1
+        }
+      },
+      "veredicto": "✅",
+      "nota": ""
+    },
+    {
+      "titulo": "¿El mensaje REST aparece en el buzón del portal? (pnotes frente a onsite_mail)",
+      "peticion": {
+        "sql": "pnotes y onsite_mail de la paciente"
+      },
+      "respuesta": {
+        "pnotes": [
+          {
+            "id": "1",
+            "pid": "1",
+            "title": "Tu caso está en marcha",
+            "message_status": "New",
+            "portal_relation": "NULL",
+            "body": "\\n2026-10-07 15:46 (admin to lucia) Hola Lucía, tu caso está en marcha (mensaje d"
+          }
+        ],
+        "onsite_mail": []
+      },
+      "veredicto": "❌",
+      "nota": "El portal lee onsite_mail; la API REST escribe en pnotes (notas internas del equipo). No son la misma bandeja."
+    },
+    {
+      "titulo": "Leer mensajes del portal por FHIR Communication (recurso no soportado)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/apis/default/fhir/Communication",
+        "params": {
+          "patient": "2dece1c2-c262-11f1-8cf7-d2bcb2e767ca"
+        }
+      },
+      "respuesta": {
+        "status": 404,
+        "body": {
+          "error": "An error occurred",
+          "message": "Route not found",
+          "code": 0
+        }
+      },
+      "veredicto": "❌",
+      "nota": "OpenEMR 8.4.1 no expone Communication"
+    },
+    {
+      "titulo": "Leer mensajes del portal por la API del portal (ruta inexistente)",
+      "peticion": {
+        "metodo": "GET",
+        "url": "<OE>/portals/default/portal/patient/message"
+      },
+      "respuesta": {
+        "status": 404,
+        "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n</body></html>\n"
+      },
+      "veredicto": "❌",
+      "nota": "La API del portal solo tiene patient, encounter y appointment"
+    },
+    {
+      "titulo": "Equipo → buzón del portal con el servicio PHP del portal (lo que haría un módulo propio)",
+      "peticion": {
+        "php": "portal/lib/portal_mail.inc.php sendMail(owner, body, title, to, …)"
+      },
+      "respuesta": {
+        "id": 1,
+        "owner": "lucia",
+        "sender_id": "1",
+        "recipient_id": "Administrator",
+        "title": "Informe en camino",
+        "message_status": "lucia"
+      },
+      "veredicto": "◐",
+      "nota": "Funciona, pero no es API: exige código PHP dentro de OpenEMR"
+    }
+  ]
+}

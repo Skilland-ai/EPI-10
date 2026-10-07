@@ -1,0 +1,24 @@
+{# EPI10 · sobrescribe templates/portal/header.html.twig: logo EPI10, saludo y botón de inicio. El menú de OpenEMR se conserva si viene. #}
+<nav id="topNav" class="navbar navbar-expand-lg navbar-light sticky-top">
+    <a class="navbar-brand" href="home.php">
+        <img class="d-inline-block align-top" height="30" src="{{ menuLogo | attr }}" alt="EPI10"/>
+    </a>
+    {% if extendVisit %}
+    <a class="btn btn-outline-primary ml-2" id="quickstart_dashboard" href="#quickstart-card" data-toggle="collapse" data-parent="#cardgroup" aria-expanded="true">
+        <i class="fas fa-house mr-1"></i>{{ 'Dashboard' | xlt }}
+    </a>
+    {% endif %}
+    {% if patientName %}<span class="epi10-topnav__hola d-none d-md-inline">Hola, {{ patientName | split(' ') | first | text }}</span>{% endif %}
+    {% if navMenu|length > 0 %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="nav">
+        <ul class="navbar-nav mt-2 mt-lg-0">
+            {% for item in navMenu %}
+                <li class="nav-item"><a class="nav-link" href="{{ item.url | attr }}" data-toggle="{{ item.dataToggle | attr }}" data-parent="#cardgroup">{{ item.label | text }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</nav>

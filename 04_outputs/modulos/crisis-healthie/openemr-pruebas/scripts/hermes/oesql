@@ -1,0 +1,3 @@
+#!/bin/sh
+# SQL por stdin → openemr en hermes-node (root de MariaDB, sin exponer la contraseña)
+ssh hermes-node 'cd ~/Projects/epi10-openemr-prueba && ./oe-sql.sh'
