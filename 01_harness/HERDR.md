@@ -43,6 +43,12 @@ herdr agent start ski2-<n> --kind claude --pane <pane-id> -- --model claude-opus
 - Paralelismo según necesidad (Raúl, 2026-10-03): no hay tope fijo de 2, pero tampoco se lanzan agentes porque haya recursos. Se añade un agente solo cuando una issue concreta lo justifica: trabajo independiente que gana yendo en paralelo.
   - Techo de recursos antes de cada lanzamiento: más de 3 GB de RAM disponible y carga por debajo de 12. Se cuentan también los agentes de otros workspaces de Herdr.
   - Una issue por agente, cada una en su worktree. Las dependientes esperan. Los builds y servidores pesados van a hermes-node.
+- **Sin CI en GitHub (Raúl, 2026-10-08).** El workflow «CI» de `Skilland-ai/epi10-orquestador` está desactivado porque cuesta dinero: la organización superaba los minutos del plan Team, con unos 6,31 $ en octubre, casi todo de este repo.
+  - Lint, typecheck y pruebas (unitarias, de integración y build) se ejecutan en **hermes-node** (`hn push` + `hn sh`) o en local.
+  - Cada PR lleva **adjunta esa evidencia**: comandos, resultado y commit probado.
+  - No se reactiva el CI sin que Raúl lo pida.
+  - En los briefs, «CI en verde» pasa a significar «batería completa en verde en hermes-node, con la evidencia en el PR».
+  - Si hermes-node no responde, se ejecuta en local y se dice en el PR.
 - Si un agente se bloquea en una aprobación o pregunta, se escala a Raúl. El orquestador no responde en su nombre.
 - Nada de datos reales de pacientes ni secretos en prompts. Las claves van en archivos (p. ej. la API de Linear en `~/.config/linear/key`).
 - Fase 3 (customer journey): la lleva el orquestador directamente con Raúl. Los agentes de ejecución entran en la fase 4.

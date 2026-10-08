@@ -55,3 +55,10 @@
   - Primer paso: el feedback de Raúl vista por vista (SKI2-208).
   - Después: el arquitecto de OpenEMR y el roadmap del lavado de cara (SKI2-209).
 - El plan basado en la API de Healthie queda aparcado en el hito «Cajón de sastre», en Backlog.
+
+## 2026-10-08 · CI de GitHub desactivado (Raúl)
+
+- Se desactiva el workflow «CI» de GitHub Actions en `Skilland-ai/epi10-orquestador`. Motivo: cuesta dinero. La organización ya superaba los minutos incluidos en el plan Team, con unos 6,31 $ en octubre, casi todo de este repo.
+- Desde ahora, lint, typecheck y pruebas se ejecutan en hermes-node (`hn push` + `hn sh`) o en local, y la evidencia se adjunta a cada PR.
+- No se reactiva sin que Raúl lo pida. Detalle en `01_harness/HERDR.md`.
+- Lo desactivó el orquestador de Senda Ecoway por encargo de Raúl.
