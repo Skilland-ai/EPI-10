@@ -1,0 +1,108 @@
+# Área 5 · Calendario de citas: componente del portal y limpieza del back office (v1, fase A)
+
+Fecha: 2026-10-11 · Linear: SKI2-235 (hija de SKI2-230) · Entrada: [feedback de Raúl](../2026-10-11_feedback_vistas_openemr_v1.md) §1.8 y §2.6 · [base del área 0](2026-10-11_base_interfaz_decision_v1.md) · repo `Skilland-ai/epi10-oe-module`, rama `renove-area-5`, carpeta `lab/area-5-citas/`.
+Estado: **fase A terminada**. Prototipo funcionando en la instancia de hermes-node con datos ficticios y probado de punta a punta con Playwright. La fase B (montarlo sobre la base del área 0 y limpiar el back office) espera a la guía `00_base_interfaz.md`.
+
+## Resumen
+
+- **Elección: isla Preact + htm propia, con Cally 0.9.2 (MIT, <9 KB) como rejilla del mes.** Encaja en la base ratificada (islas sin build, CSS plano con prefijo `epi-`). FullCalendar, Schedule-X y react-big-calendar son calendarios de *eventos*; lo que pide Raúl es un *selector de reserva* («elegir día → hueco → confirmar»), como el de Healthie.
+- **Sin backend nuevo de datos**: la disponibilidad es la del propio OpenEMR. El equipo marca bloques «En consulta» en su calendario de siempre y el portal calcula los huecos con la misma regla que el núcleo. Las citas se guardan en `openemr_postcalendar_events` con el servicio del núcleo (`AppointmentService`), así que el equipo las ve en su calendario y el monolito puede leerlas por FHIR `Appointment`.
+- **El contrato v1 no cambia**: el calendario usa la sesión de la clienta en el portal, no la API OAuth del monolito. Las citas siguen «fuera de v1» (CONTRATO.md).
+- **Probado**: reservar, rechazo de una segunda cita (409), escritura sin CSRF (403), cancelar, móvil sin scroll horizontal y ningún texto en inglés (incluidos los del componente).
+- **Back office**: el calendario de OpenEMR se queda (Raúl: «se puede quedar así»). En la fase B solo se limpia: «Your Clinic Name Here» → «EPI10 Salud», «Facultativos» → «Equipo», «ingreso»/«SALIDA» → «En consulta»/«Fuera de consulta» y las fechas en inglés de la rejilla.
+
+## Comparativa corta
+
+| Candidato | Licencia | Encaje con la base (islas Preact, sin build, OpenEMR) | Para reservar (día → hueco → confirmar) | Veredicto |
+|---|---|---|---|---|
+| **Cally 0.9.2** + isla propia | MIT | Web component ES, 38 KB sin comprimir, sin dependencias; se estiliza por `::part` y marca días con `getDayParts` / `isDateDisallowed`; accesible (teclado, lectores de pantalla) | La rejilla del mes es justo el primer paso; los huecos y la confirmación son 150 líneas de Preact | **Elegido** |
+| FullCalendar 7 | MIT el estándar; *Premium* de pago (desde 480 $) | Bundle vanilla grande; temas propios | Calendario de eventos (semana/día con franjas). En móvil es una rejilla de horas, no un selector | Descartado para el portal. Sería la opción si algún día se rehace el calendario del back office |
+| Schedule-X 2/3 | MIT el núcleo; plugins *Premium* de pago | Usa Preact por dentro; buena pinta | Calendario de eventos; crear arrastrando es de pago | Descartado: mismo problema de forma, más peso |
+| react-big-calendar | MIT | Necesita React y build | Calendario de eventos estilo Google Calendar | Descartado: rompe la regla de «sin build» |
+| Cal.com embebido | AGPLv3 (núcleo) + `ee` comercial; informes de que el repo pasó a privado en abril de 2026 (**Unknown**) | Otra aplicación entera (Next.js + Postgres) con su propia base de datos de citas | Es exactamente el flujo de Healthie | Descartado: duplica las citas fuera de OpenEMR, obliga a sincronizar, no cabe en el HP y añade otro sistema con datos de salud |
+| Rejilla de mes propia (sin Cally) | — | Cero dependencias | Igual | Plan B si Cally da problemas: ~80 líneas más y la accesibilidad corre de nuestra cuenta |
+
+## Cómo funciona
+
+### Portal: «Tus citas»
+
+Una sola pantalla con el calendario a la izquierda (arriba en móvil) y el panel del día a la derecha (debajo en móvil):
+
+1. **Elegir día.** Los días con huecos salen marcados en cian; tu cita, en verde; el resto, apagados y sin poder pulsarse. Si ya tienes cita, la pantalla abre en ese día.
+2. **Elegir hueco.** Botones de hora agrupados en «Mañana» y «Tarde». Sin facultativo, sin AM/PM, sin duración ni «razón».
+3. **Confirmar.** Resumen («Jueves, 15 de octubre, de 10:00 a 10:30», lugar) y un solo botón: «Confirmar cita». Aparece «¡Cita reservada!» con «Añadir a mi calendario» (archivo `.ics`).
+4. **Ver y cancelar** desde el mismo calendario: al pulsar tu día sale tu cita con «Cancelar cita» y una confirmación en línea («¿Cancelamos tu cita del jueves, 15 de octubre a las 10:00?»). Si queda menos de 24 h, en lugar de cancelar se ofrece escribir por Mensajes.
+
+Reglas de producto (en `config.php`, ajustables sin tocar código): una cita futura por clienta (el test mixto tiene una cita opcional), reservar y cancelar hasta 24 h antes, 60 días hacia delante, citas de 30 min (categoría nueva «Cita EPI10»).
+
+Capturas del prototipo y del «antes»: `openemr-pruebas/evidencia/capturas/renove/05-calendario/` (`antes_*`, `lab_*`).
+
+### Integración con OpenEMR (sin tocar el núcleo)
+
+```text
+Portal (sesión de la clienta)
+  citas.php ──► isla calendario.mjs (Preact + htm + Cally) ──fetch──► citas_api.php
+                                                                         │ verify_session.php (sesión del portal)
+                                                                         │ CSRF propio (asunto «epi10-citas»)
+                                                                         ▼
+                                                               Agenda.php (módulo)
+                     fetchEvents / fetchAppointments (library/appointments.inc.php)
+                     AppointmentService::insert · addPnote (aviso al equipo)
+                                                                         ▼
+                                       openemr_postcalendar_events  ◄── calendario del back office
+```
+
+| Pieza | Cómo |
+|---|---|
+| **Disponibilidad** | La del núcleo: el equipo crea en su calendario bloques «En consulta» (categoría 2) y «Fuera de consulta» (3), normalmente repetidos de lunes a viernes. Cualquier otra cita, comida o festivo ocupa tiempo. Es la regla de `portal/find_appt_popup_user.php`, portada con tres mejoras: por día y minutos locales (no se descuadra con el cambio de hora), **las citas canceladas liberan su hueco** (en el núcleo no) y se cruzan varios miembros del equipo. |
+| **Reservar** | Se vuelve a comprobar el hueco dentro de un bloqueo con nombre (`GET_LOCK`) para que dos reservas simultáneas no se pisen. Se asigna el primer miembro del equipo libre a esa hora. La cita nace con estado `-` (reservada): los huecos solo existen donde el equipo ha dicho que está. Con `estado_inicial = '^'` nace «pendiente», como en el portal de OpenEMR. |
+| **Cancelar** | Estado `x` (Cancelada), igual que el portal de OpenEMR: no se borra y queda en el historial. |
+| **Aviso al equipo** | Nota en la ficha asignada al miembro del equipo (lo mismo que hace el portal de OpenEMR): «Reserva desde el portal: Lucía … ha reservado una cita el 15/10/2026 a las 10:00». Sale en Mensajes del back office (área 3 decide cómo se ve). |
+| **Seguridad** | Solo la sesión del portal; el `pid` sale de la sesión, nunca de la petición; la clienta solo puede cancelar sus citas; escrituras con token CSRF; errores en español sin detalles internos. |
+| **Dónde vive** | Hoy, en el laboratorio `epi10-lab-5` (módulo mínimo registrado: OpenEMR solo sirve scripts de módulos activos, devuelve 401 si no). En la fase B, en `oe-module-epi10-ui` del área 0: `src/Citas/`, `public/portal/citas.php`, `public/ui/islas/calendario.mjs`, `public/ui/vendor/`. La tarjeta «Citas» del inicio del portal apuntará a esta página (con el área 1). |
+| **Datos que crea la instalación** | Categoría «Cita EPI10» (30 min, `pc_constant_id = epi10_cita`). En la demo, además, una agenda ficticia L–V 9–14 y 16–19 (`disponibilidad_demo.sql`, se quita con un script). |
+
+### Back office (2.6): limpieza, no rediseño
+
+El calendario de OpenEMR se queda tal cual (vistas día/semana/mes, huecos por persona). Inventario de lo que se ve hoy (`antes_backoffice_calendario_*.png`) y cómo se arregla en la fase B, sin núcleo:
+
+| Hoy | Después | Cómo |
+|---|---|---|
+| «Your Clinic Name Here» (leyenda y lugar de la cita) | «EPI10 Salud» | Dato del centro (`facility.name`), no código. **Coordinar**: el nombre sale en más vistas |
+| «Facultativos», «Todos los Usuarios» | «Equipo», «Todo el equipo» | Traducción propia en `lang_custom` (sobrevive a actualizaciones). Afecta a toda la app: es lo que se quiere |
+| «ingreso», «SALIDA» (traducción de *In Office* / *Out Of Office*) | «En consulta», «Fuera de consulta» | `lang_custom` (las categorías se traducen: `translate_appt_categories = 1`) |
+| «Office Visit», «New Patient», «Group Therapy»… | Ocultas; solo «Cita EPI10», «En consulta», «Fuera de consulta», «Comida», «Festivo» | `pc_active = 0` en las categorías clínicas (reversible). Por omisión |
+| Cabeceras «Mon 10/05» y mini calendario «M T W T F S S» | «lun 05/10», «L M X J V S D» | Lo pinta el JS del núcleo con su propio formato: **Unknown** si hay ajuste; si no, CSS/JS del área 0 por `ScriptFilterEvent` |
+| «(ficticio), Aitor» | Nombre y apellido | Formato de nombre de OpenEMR (ajuste global) o dato |
+| Es la vista de entrada del back office | Una tarjeta del selector | Área 1 |
+
+## Riesgos y Unknown
+
+| Riesgo | Mitigación |
+|---|---|
+| Si el equipo no marca bloques «En consulta», el portal no enseña huecos | Mensaje claro en el portal («Escríbenos por Mensajes y te buscamos uno»). Para la demo, agenda ficticia sembrada. Se documenta en la guía de Aitor |
+| **Zona horaria**: la instancia no tiene `gbl_time_zone` y PHP va en UTC (las notas salen con una hora menos que en Canarias). Los huecos se calculan y guardan en la hora del servidor, coherentes entre sí, pero «ahora» y las 24 h de antelación dependen de ella | En producción fijar `gbl_time_zone` (Atlantic/Canary o Europe/Madrid, **Unknown** cuál). No lo he cambiado en la instancia compartida |
+| Una actualización de OpenEMR cambia `fetchEvents`, `AppointmentService::insert` o `addPnote` | Son funciones estables desde hace años; la prueba Playwright lo detecta en staging |
+| Cally está en 0.x | Vendorizado y fijado; la isla solo usa 4 propiedades. Plan B: rejilla propia |
+| Dos personas reservan el mismo hueco a la vez | Bloqueo con nombre y nueva comprobación dentro; la segunda recibe «Ese hueco acaba de ocuparse» |
+| El borde del recuadro de confirmación en móvil queda fijo abajo y tapa horas mientras se hace scroll | Es el patrón de hoja inferior; en la fase B se usa el componente de la base |
+| **Unknown**: si EPI10 quiere confirmación manual del equipo (estado «pendiente») o reserva directa | Por omisión, directa; un cambio de configuración |
+| **Unknown**: lugar y tipo de la cita presencial del test mixto (SKI2-186) | El lugar sale del centro de OpenEMR o de `config.php` |
+
+## Plan de la fase B
+
+1. Mover `lab/area-5-citas/` a `oe-module-epi10-ui` (namespace y rutas de la guía del área 0), con su layout, botones, tarjetas y alertas; quitar el CSS provisional.
+2. Tarjeta «Citas» del inicio del portal → `citas.php` (coordinado con el área 1, sin cambiar ids: `#appointments-go` se conserva).
+3. Back office: traducciones en `i18n/openemr_es.tsv`, nombre del centro y categorías clínicas ocultas.
+4. Capturas antes/después (escritorio y móvil) en `capturas/renove/05-calendario/` y PR contra `main` con la evidencia.
+5. Quitar el laboratorio (`scripts/quitar_lab.sh`).
+
+Estimación: fase A ~4 h (hecha); fase B 3–5 h.
+
+## Fuentes
+
+- FullCalendar: [licencia y Premium](https://fullcalendar.io/license), [precios](https://fullcalendar.io/premium), [cambios v7](https://v7.fullcalendar.io/changelog)
+- Schedule-X: [términos de Premium](https://schedule-x.dev/terms-and-conditions), [paquete npm](https://classic.yarnpkg.com/en/package/@schedule-x/calendar)
+- Cally: [README 0.9.2](https://cdn.jsdelivr.net/npm/cally@0.9.2/README.md), [ficha en Socket](https://socket.dev/npm/package/cally/overview/0.9.2)
+- Cal.com: [introducción y licencia](https://mintlify.com/calcom/cal.com/introduction), [autoalojado en 2026](https://lucaberton.com/blog/cal-com-open-source-scheduling-self-hosted-2026/)
+- Código de OpenEMR 8.4.1 leído en el contenedor: `portal/find_appt_popup_user.php`, `portal/add_edit_event_user.php`, `library/appointments.inc.php`, `src/Services/AppointmentService.php`, `src/Core/ModulesApplication.php`.
