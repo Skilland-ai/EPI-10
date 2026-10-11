@@ -12,6 +12,7 @@ Código: rama `renove-area-4` de `Skilland-ai/epi10-oe-module` (parte de `renove
 - **Solo lo publicado:** la biblioteca lee `Informes::publicados()` del contrato (R4). No repite la regla: la usa. Un PDF de la ficha que no se publicó da 404 también por URL.
 - **Estados de interacción:** `nuevo` (publicado y nunca abierto) y `visto` (abierto en el visor o descargado), en una tabla mínima `epi10_documentos_vistos`. `pendiente` son las tareas que le faltan (consentimiento, cuestionario), con el mismo cálculo que `estado_formularios`. La tarjeta del inicio lleva una insignia con lo nuevo más lo pendiente.
 - **Back office:** pestaña Documentos con **tres filas y nada más** (Consentimiento, Cuestionario, Informe) y «Subir otro documento» como enlace secundario. El informe va de **sin informe → borrador → validado → publicado**; «Publicar informe» usa la misma clase del contrato con la referencia del caso, así que una llamada posterior del monolito es idempotente. **El contrato v1 no cambia.**
+- **PR:** https://github.com/Skilland-ai/epi10-oe-module/pull/10 (contra `main`, sin fusionar). E2E 44/44 también en `MODO=modulo` sobre la instancia integrada.
 - **Prueba E2E: 44/44 en verde** (Playwright, escritorio y móvil, portal y back office). Rama `renove-area-4`, commit `2516ffc` (rebasada sobre `renove-area-0` 19a7b8b, sin conflictos con `renove-integracion`), enviada al área 0 para integrarla; el área 7 ya la incluye en su ficha (`90d3685`).
 
 ## Comparativa del visor
