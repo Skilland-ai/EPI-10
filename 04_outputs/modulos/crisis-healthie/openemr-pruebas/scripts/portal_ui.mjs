@@ -171,28 +171,41 @@ try {
     const filas = await page.locator('table tbody tr, .message-list li, .list-group-item').allInnerTexts();
     log('mensajes visibles:', JSON.stringify(filas.slice(0, 10)));
   } else if (accion === 'documentos' || accion === 'descargar') {
-    if (!(await page.locator('#reports-go').isVisible())) await page.locator('#quickstart_dashboard').click().catch(() => {});
-    await page.locator('#reports-go').click();
-    await page.waitForTimeout(2000);
+    // Desde el renove (área 4), «Mi informe» es biblioteca.php y la tarjeta #reports-go ya no abre la
+    // sección del núcleo. Se va por URL. La biblioteca solo enseña lo publicado por el contrato
+    // (Informes::publicados, regla R4): un PDF subido por la API estándar (05_informe_pdf.py) ya NO
+    // aparece en el portal, y es lo correcto.
+    // El origen de la sesión (el del enlace mágico, p. ej. localhost) y no OE_BASE: las cookies van por host.
+    const MODULO_UI = `${new URL(page.url()).origin}/interface/modules/custom_modules/oe-module-epi10-ui/public/portal`;
+    await page.goto(`${MODULO_UI}/biblioteca.php`);
+    await page.waitForLoadState('networkidle');
+    await page.locator('[data-epi10-biblioteca]').waitFor({ state: 'attached', timeout: 30000 });
     await captura('30_mi_informe');
-    await page.locator('#download-documents-go').click();
-    await page.waitForTimeout(3000);
-    const scope = page.frames().find((f) => f.url().includes('get_patient_documents')) || page;
-    log('marco:', scope.url ? scope.url() : 'page');
-    const lista = (await scope.locator('body').innerText()).replace(/\s+/g, ' ');
+    const lista = (await page.locator('[data-epi10-biblioteca]').innerText()).replace(/\s+/g, ' ');
     log('lista:', JSON.stringify(lista.slice(0, 500)));
-    await captura('31_lista_documentos');
     if (accion === 'descargar') {
-      const nombre = args[0];
-      const fila = scope.locator(`label:has-text("${nombre}")`).first();
-      await fila.click();
-      const [download] = await Promise.all([
-        page.waitForEvent('download', { timeout: 30000 }),
-        scope.locator('button[type=submit]:has-text("Descargar"), button[type=submit]').last().click(),
-      ]);
-      const destino = join(CAPTURAS, `descarga_${download.suggestedFilename()}`);
-      await download.saveAs(destino);
-      log('descargado →', destino);
+      const nombre = args[0] ?? '';
+      const raiz = nombre.replace(/\.pdf$/i, '');
+      // Cada documento enlaza a su visor (biblioteca-documento.php?id=…); el PDF es biblioteca-pdf.php?id=…&descargar=1.
+      const enlaces = page.locator('a[data-epi10-accion="abrir-documento"]');
+      let id = null;
+      for (let i = 0; i < (await enlaces.count()); i++) {
+        const a = enlaces.nth(i);
+        if (raiz === '' || (await a.innerText()).includes(raiz)) {
+          id = new URL(await a.getAttribute('href'), page.url()).searchParams.get('id');
+          break;
+        }
+      }
+      if (id === null) {
+        log(`«${nombre}» no está en «Mi informe»: solo se ven los informes publicados por el contrato (R4)`);
+        process.exitCode = 1;
+      } else {
+        const r = await page.request.get(`${MODULO_UI}/biblioteca-pdf.php?id=${encodeURIComponent(id)}&descargar=1`);
+        const cuerpo = await r.body();
+        const destino = join(CAPTURAS, `descarga_${nombre || 'informe.pdf'}`);
+        writeFileSync(destino, cuerpo);
+        log('descargado →', destino, `(${r.status()}, ${r.headers()['content-type'] ?? '?'}, ${cuerpo.subarray(0, 5).toString('latin1')})`);
+      }
     }
   } else if (accion === 'tarjeta') {
     // Exploración: abre una tarjeta por su texto y vuelca enlaces, botones y marcos para afinar selectores.

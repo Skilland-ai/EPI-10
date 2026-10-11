@@ -30,7 +30,7 @@ python3 02_consentimiento.py && python3 03_encuesta.py
 python3 04_mensajes.py && python3 05_informe_pdf.py && python3 06_polling.py
 ENLACE_FILE=/tmp/enlace.txt python3 07_modulo_api.py      # journey completo con el módulo
 ENLACE_FILE=/tmp/enlace.txt node portal_ui.mjs mensaje "Asunto" "Texto"
-node portal_ui.mjs descargar informe_epi10_prueba.pdf
+node portal_ui.mjs descargar "Informe EPI10.pdf"   # «Mi informe» (biblioteca.php): solo lo publicado por el contrato
 python3 08_lectura_cambios.py
 node capturas_tema.mjs despues && node capturas_tema.mjs despues movil
 ```
@@ -43,3 +43,13 @@ node capturas_tema.mjs despues && node capturas_tema.mjs despues movil
 - Plantillas «Consentimiento EPI10 Salud» y «Hábitos de vida EPI10» (paciente 1 y repositorio). Cuestionario en `questionnaire_repository`.
 - Pacientes ficticias nuevas (pid 2 a 7) y usuario de back office `operaciones.prueba` (grupo Front Office, contraseña `OPS_PASS` en el `.env` del HP).
 - Nada del núcleo de OpenEMR se ha modificado. El módulo se pierde si se recrea el contenedor; se reinstala con `instalar_modulo.sh`.
+
+## Desde SKI2-210 y el lavado de cara (11 oct)
+
+- **Regla de publicación (R4).** El portal solo enseña los informes publicados por `publicar_informe`, el contrato v1 de `oe-module-epi10` (repo `Skilland-ai/epi10-oe-module`). El PDF que sube `05_informe_pdf.py` por la API estándar ya no aparece en el portal, y es lo correcto. `portal_ui.mjs descargar` lo dice así y termina con error.
+- **Rutas del portal.** `portal_ui.mjs` ya no depende de las tarjetas del inicio:
+  - «Mi informe» va a `oe-module-epi10-ui/public/portal/biblioteca.php` y descarga de `biblioteca-pdf.php?id=…&descargar=1`;
+  - los mensajes van al buzón clásico, por `home.php?landOn=SecureMessaging`;
+  - el campo de correo del login se rellena solo si existe.
+- **Recorrido del monolito.** El de punta a punta está en `epi10-orquestador`, `npm run demo:visual -- probar`.
+

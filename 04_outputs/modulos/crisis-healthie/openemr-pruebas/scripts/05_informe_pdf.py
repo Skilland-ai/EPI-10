@@ -6,6 +6,7 @@ Qué prueba:
   c) que la paciente lo vea con SU token: GET /fhir/DocumentReference (patient/*.read) y descargue el Binary;
   d) descargarlo por la API estándar (GET /api/patient/:puuid/document/:did) y comparar el hash.
 La visualización en el portal web se comprueba aparte con portal_ui.mjs documentos / descargar.
+Desde SKI2-210 (regla de publicación R4), un PDF subido así ya NO aparece en el portal: solo los publicados por el contrato.
 """
 import hashlib
 import io
