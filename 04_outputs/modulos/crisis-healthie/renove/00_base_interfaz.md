@@ -91,7 +91,17 @@ echo Vista::portal('@epi10/paginas/mis-documentos.html.twig', [
 {% endblock %}
 ```
 
-URL: `/interface/modules/custom_modules/oe-module-epi10-ui/public/portal/mis-documentos.php`. Para llegar desde el inicio, el área 1 apunta la tarjeta allí (`templates/sobrescritas/portal/partial/_nav_icon.html.twig`).
+URL: `/interface/modules/custom_modules/oe-module-epi10-ui/public/portal/mis-documentos.php`.
+
+**Apuntar una tarjeta del inicio a tu página** (mecanismo del área 1): añade el id del núcleo a `config.php › destinos_tarjetas`, con la ruta desde el webroot:
+
+```php
+'destinos_tarjetas' => [
+    'documents-go' => '/interface/modules/custom_modules/oe-module-epi10-ui/public/portal/mis-documentos.php',
+],
+```
+
+La tarjeta conserva su id (y los `data-epi10-*`), deja de abrir la sección del núcleo y navega a tu página. Si el archivo no está instalado, sigue con el comportamiento del núcleo. Al volver al inicio desde una página propia se abre siempre el panel: `Vista::portal()` reinicia la sección recordada (`whereto`).
 
 `Vista::portal()` ya pone: cabecera (logo → inicio, «volver» si pasas `volver`), menú de usuario (Ajustes, Ayuda, Cerrar sesión), nombre e iniciales de la clienta, `csrf` (token del portal) y el global `epi10` (`epi10.ui`, `epi10.img`, `epi10.webroot`, `epi10.v`, `epi10.marca`).
 
@@ -127,6 +137,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !CsrfUtils::verifyCsrfToken($_SERVE
 header('Content-Type: application/json; charset=utf-8');
 echo json_encode(['mensajes' => [/* … solo lo de $pid … */]]);
 ```
+
+**Sesión caducada en una API.** `verify_session.php` no devuelve 401: redirige (302) al login, y `fetch` sigue la redirección y recibe HTML con estado 200. En la isla, trata como «sesión caducada» cualquier respuesta que no sea JSON:
+
+```js
+const r = await fetch(api, { credentials: 'same-origin' });
+if (r.redirected || !(r.headers.get('content-type') || '').includes('application/json')) {
+  window.EPI10.toast('Tu sesión ha caducado. Vuelve a entrar.', { tipo: 'error' });
+  location.href = window.EPI10.uiBase.replace(/\/interface\/.*$/, '') + '/portal/index.php';
+  return;
+}
+```
+
+(Pendiente en la base: un ayudante que responda 401 JSON sin pasar por la redirección.)
 
 Reutiliza los servicios de `oe-module-epi10` (`OpenEMR\Modules\Epi10\Portal\…`) para leer formularios, mensajes o informes: no dupliques reglas como la de publicación de informes (R4). **El contrato v1 no cambia.**
 
@@ -223,7 +246,7 @@ import 'https://…'                                                     // NO: 
 ## 8. Idioma (nunca en inglés)
 
 - **Textos propios**: en español, directamente en la plantilla o en la isla. No hace falta `xlt` para textos que solo existen en español.
-- **Textos del núcleo** (los que pasan por `xl`/`xlt`/`xla`): añade la línea a `oe-module-epi10-ui/i18n/openemr_es.tsv` (`constante<TAB>traducción`) y vuelve a instalar. Se escriben en `lang_definitions` y en `lang_custom`, así que sobreviven a la sincronización de idiomas.
+- **Textos del núcleo** (los que pasan por `xl`/`xlt`/`xla`): añade la línea a `oe-module-epi10-ui/i18n/openemr_es.tsv` (`constante<TAB>traducción`) y ejecuta `scripts/i18n-a-sql.sh --table`, que regenera `table.sql`. `instalar-ui.sh` las aplica al instalar, y el module manager también al pulsar «Instalar». Se escriben en `lang_definitions` y en `lang_custom`, así que sobreviven a la sincronización de idiomas.
   - Las constantes son **globales**: «Close» cambia en todo OpenEMR, portal y back office. Traduce solo las que faltan o están mal, con un texto que valga en cualquier pantalla. Si una pantalla necesita un texto distinto, cámbialo en su plantilla sobrescrita, no en la constante.
 - **Textos dentro del JS del núcleo** (p. ej. «Yes/No» del motor de cuestionarios): no pasan por `xl`. Se arreglan en la vista que los pinta (sobrescritura o isla).
 
