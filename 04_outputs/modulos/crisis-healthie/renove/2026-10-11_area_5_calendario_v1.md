@@ -84,12 +84,12 @@ El calendario de OpenEMR se queda tal cual (vistas día/semana/mes, huecos por p
 | Riesgo | Mitigación |
 |---|---|
 | Si el equipo no marca bloques «En consulta», el portal no enseña huecos | Mensaje claro en el portal («Escríbenos por Mensajes y te buscamos uno»). Para la demo, agenda ficticia sembrada. Se documenta en la guía de Aitor |
-| **Zona horaria**: la instancia iba en UTC (`gbl_time_zone` vacío) | **Resuelto el 11 oct**: `Europe/Madrid`, acordado con SKI2-210. Comprobado: reservas y notas se guardan en hora de España. Lo anterior al cambio queda en UTC (solo datos ficticios). **Unknown**: si la clínica está en Canarias habría que usar `Atlantic/Canary` |
+| **Zona horaria**: la instancia iba en UTC (`gbl_time_zone` vacío) | **Resuelto el 11 oct**: `Atlantic/Canary`, porque EPI10 está en Canarias (pendiente de que Raúl lo ratifique). Antes pasó por `Europe/Madrid`, acordado con SKI2-210. Comprobado: reservas y notas en hora de Canarias. Lo anterior conserva su hora. SQL: `oe-module-epi10-ui/sql/zona_horaria.sql` |
 | Una actualización de OpenEMR cambia `fetchEvents`, `AppointmentService::insert` o `addPnote` | Son funciones estables desde hace años; la prueba Playwright lo detecta en staging |
 | Cally está en 0.x | Vendorizado y fijado; la isla solo usa 4 propiedades. Plan B: rejilla propia |
 | Dos personas reservan el mismo hueco a la vez | Bloqueo con nombre y nueva comprobación dentro; la segunda recibe «Ese hueco acaba de ocuparse» |
 | En móvil, la confirmación es una hoja inferior fija | El panel reserva espacio debajo para que no tape las últimas horas |
-| **Unknown**: si EPI10 quiere confirmación manual del equipo (estado «pendiente») o reserva directa | Por omisión, directa; un cambio de configuración |
+| Confirmación manual de cada cita por el equipo | **Fuera del MVP** (orquestador, 11 oct): mejora para después. Ya se puede activar con `estado_inicial = '^'` |
 | **Unknown**: lugar y tipo de la cita presencial del test mixto (SKI2-186) | El lugar sale del centro de OpenEMR o de `config.php` |
 
 ## Fase B: qué se ha hecho
@@ -102,9 +102,9 @@ El calendario de OpenEMR se queda tal cual (vistas día/semana/mes, huecos por p
 | Isla con componentes de la base (`epi-btn`, `epi-card`, `epi-alert`, iconos Lucide); en móvil la confirmación es una hoja inferior fija | `public/ui/islas/calendario.mjs`, `calendario.css`, `vendor/cally/` |
 | Tarjeta de citas del núcleo en el inicio, sin inglés, con botón a «Tus citas» (no redirige sola: evita atrapar a la clienta al volver al inicio) | `templates/sobrescritas/portal/partial/cards/_appointment_card.html.twig` |
 | Back office: «Mon 10/05» → «lun 05/10», mini calendario «L M X J V S D» y avisos «Ir al DD/MM/AAAA» | `public/ui/vistas/calendario-backoffice.js` (`config.php › scripts_por_vista`). El calendario no usa el Twig con sobrescrituras: va en JS |
-| Back office: **fallo del núcleo** con el cambio de hora. `CalendarViewModel::buildMiniCalendar()` suma 86 400 s por día; en el mes del cambio de octubre repite el 25 y pierde la última semana (salió al pasar a `Europe/Madrid`) | Mismo JS: regenera las filas que faltan con las clases, ids y clic (`ChangeDate`) del núcleo. Las vistas de mes, semana y día no están afectadas. Conviene reportarlo a OpenEMR |
+| Back office: **fallo del núcleo** con el cambio de hora. `CalendarViewModel::buildMiniCalendar()` suma 86 400 s por día; en el mes del cambio de octubre repite el 25 y pierde la última semana (salió al fijar una zona con cambio de hora; pasa igual con `Atlantic/Canary`) | Mismo JS: regenera las filas que faltan con las clases, ids y clic (`ChangeDate`) del núcleo. Las vistas de mes, semana y día no están afectadas. Conviene reportarlo a OpenEMR |
 | Traducciones globales del área 5 | `i18n/openemr_es.tsv` (consolidadas por el área 0). Nombre del centro «EPI10 Salud»: en el script de configuración del área 7 |
-| Zona horaria `Europe/Madrid` (decisión con SKI2-210) | aplicada en la instancia; SQL en la evidencia del laboratorio, `sql/zona_horaria.sql` |
+| Zona horaria `Atlantic/Canary` | aplicada en la instancia; SQL `oe-module-epi10-ui/sql/zona_horaria.sql` |
 | Prueba E2E | `scripts/prueba-citas.mjs` (+ `scripts/prueba-citas-limpiar.sql`) |
 
 Comprobado en la instancia integrada (11 oct): E2E en verde y capturas `despues_*` (portal y back office, escritorio y móvil).
