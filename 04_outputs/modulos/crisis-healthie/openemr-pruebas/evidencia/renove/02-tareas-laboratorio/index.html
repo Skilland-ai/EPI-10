@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tus documentos · EPI10</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="epi10-tokens.css">
+  <link rel="stylesheet" href="epi10-tareas.css">
+  <style>
+    /* Shell PROVISIONAL del laboratorio. En la fase B lo sustituye el layout del área 0. */
+    body { margin: 0; background: var(--epi-marfil); }
+    .lab-barra { background: #fff; border-bottom: 1px solid var(--epi-linea); }
+    .lab-barra__dentro { max-width: 760px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-family: var(--epi-fuente); }
+    .lab-barra img { height: 28px; display: block; }
+    .lab-usuario { width: 36px; height: 36px; border-radius: 50%; background: var(--epi-azul); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 15px; }
+    .lab-pie { max-width: 760px; margin: 0 auto; padding: 0 16px 160px; font: 13px var(--epi-fuente); color: var(--epi-gris); }
+    .lab-pie button { font: inherit; color: var(--epi-azul); background: none; border: 0; text-decoration: underline; cursor: pointer; padding: 0; }
+  </style>
+</head>
+<body>
+  <header class="lab-barra">
+    <div class="lab-barra__dentro">
+      <a href="#/" aria-label="EPI10 · Tu espacio"><img src="img/epi10-azul.png" alt="EPI10 Salud"></a>
+      <span class="lab-usuario" aria-label="Lucía (ficticia)">L</span>
+    </div>
+  </header>
+  <main id="app" data-epi10-isla="tareas"></main>
+  <footer class="lab-pie">
+    Laboratorio del área 2 (SKI2-232) · datos ficticios ·
+    <button type="button" id="lab-reiniciar">Reiniciar la demostración</button>
+  </footer>
+  <script src="vendor/signature_pad.umd.min.js"></script>
+  <script type="module">
+    import { montar } from './tareas.mjs';
+    import { api } from './adaptador-demo.mjs';
+
+    const rutas = {
+      inicio: () => '#/',
+      lista: () => '#/',
+      tarea: (f) => `#/tarea/${encodeURIComponent(f)}`,
+      adjuntar: () => '#/',
+    };
+    const el = document.getElementById('app');
+    const pintar = () => {
+      const m = location.hash.match(/^#\/tarea\/([\w-]+)/);
+      el.innerHTML = '';
+      montar(el, m ? { vista: 'tarea', formulario: m[1], api, rutas } : { vista: 'lista', api, rutas });
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('hashchange', pintar);
+    document.getElementById('lab-reiniciar').addEventListener('click', () => { api.reiniciar(); location.hash = '#/'; pintar(); });
+    pintar();
+  </script>
+</body>
+</html>

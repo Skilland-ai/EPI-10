@@ -1,6 +1,6 @@
 # Área 2 · Tareas y documentos firmables: research, elección e integración (v1)
 
-Fecha: 2026-10-11 · Linear: SKI2-232 (hija de SKI2-230) · Fase A (research y prototipo aislado) · Estado: **prototipo funcionando en la instancia, pendiente de la guía del área 0 para la fase B**
+Fecha: 2026-10-11 · Linear: SKI2-232 (hija de SKI2-230) · Fases A y B · Estado: **fase B integrada en la instancia (rama `renove-integracion` del área 0) y probada con pacientes ficticias; PR [#7](https://github.com/Skilland-ai/epi10-oe-module/pull/7) contra `main`, sin fusionar**
 Entrada: [feedback de Raúl §1.3, 1.4 y 1.5](../2026-10-11_feedback_vistas_openemr_v1.md) · [base de interfaz (área 0)](2026-10-11_base_interfaz_decision_v1.md) · [prototipo SKI2-207](../2026-10-07_openemr_headless_v1.md) · contrato v1 (`CONTRATO.md`, PR #1 de `Skilland-ai/epi10-oe-module`).
 
 ## Veredicto en cinco líneas
@@ -167,3 +167,55 @@ La tarjeta del inicio (`#documents-go`) conserva su id y pasa a apuntar a `tarea
 | Capturas antes y después (escritorio y móvil) en `capturas/renove/02-tareas/` y el PR | 1–2 |
 | Margen de integración con las áreas 0, 1 y 7 | 1 |
 | **Total** | **10–14 h** |
+
+## 9. Fase B: lo hecho (11 oct)
+
+Rama `renove-area-2` de `Skilland-ai/epi10-oe-module`, rebasada sobre `renove-area-0`. Lleva encima los dos commits del contrato v1 (PR #1): los necesita porque lee `Formularios` y `EstadoFormularios`, pero no los cambia. Integrada e instalada por el área 0 (`renove-integracion`).
+
+### Qué cambió respecto al diseño de la fase A
+
+- **Todo va en el módulo de interfaz `oe-module-epi10-ui`**, servicio incluido (`src/Tareas/`), porque la guía del área 0 pide no tocar `oe-module-epi10`. Del contrato solo se *leen* `config.php › formularios`, `Formularios` y `EstadoFormularios`.
+- **El documento lo pinta el render nativo** (`DocumentTemplateRender::doRender`), y `DocumentoFirmable` convierte su HTML en el visor: título, párrafos, aceptaciones (`check0`…) y firma (`patient_signature0`). Así sirven todos los marcadores de OpenEMR sin reimplementarlos. Si un campo no se puede pintar (texto libre, radios, firma de testigo), la API da un error claro en vez de un documento a medias.
+- **Componentes de la base**: `epi-visor`, `epi-choice`, `epi-steps`, `epi-progress`, `epi-list` y `epi-btn`, más una hoja propia acotada (`public/ui/epi10-tareas.css`) con la barra fija del CTA, la firma, el número con − y + y la confirmación.
+
+### Piezas
+
+| Pieza | Qué hace |
+|---|---|
+| `public/portal/mis-documentos.php` y `tarea.php?f=…` | Layout del portal con la isla `tareas` y los datos iniciales (sin parpadeo de carga) |
+| `public/portal/api/tareas.php` | `GET lista` y `tarea`; `POST borrador` y `enviar` con `X-CSRF-Token`. El `pid` sale siempre de la sesión |
+| `src/Tareas/Tareas.php` | Lee el estado como el contrato y escribe como el portal nativo (§5.2): `onsite_documents`, `onsite_signatures`, `onsite_portal_activity` y `QuestionnaireResponse` + `form_questionnaire_assessments` con los servicios de OpenEMR |
+| `src/Tareas/DocumentoFirmable.php` y `Cuestionario.php` | Funciones puras con pruebas: HTML nativo → visor, `template_data` nativo, validación de la firma (PNG ≤ 512 KB), limpieza y validación de respuestas contra el FHIR `Questionnaire` (con `enableWhen`) y construcción del `QuestionnaireResponse` |
+| `config_tareas.php` | Textos de cada tarea (título, propósito, minutos, CTA, confirmación) |
+| `public/ui/islas/tareas.mjs` + `vendor/signature_pad/` (5.1.4, build ES, MIT) | Lista, plantilla de tarea, visor, firma, cuestionario por pasos y confirmación |
+
+Ids y selectores: `#documents-go` lleva a `mis-documentos.php` (mecanismo `destinos_tarjetas` del área 1). En el consentimiento, `#signTemplate` va en la zona de firma y `#sendTemplate` en el CTA. `data-epi10-*` según la guía (`data-epi10-lista="tareas"` > `data-epi10-item`, `data-epi10-estado`, `data-epi10-accion="firmar-enviar|enviar|siguiente|anterior|volver|abrir-tarea"`, `data-epi10-campo`, `data-epi10-pregunta`, `data-epi10-opcion`). El ensayo E2E de SKI2-210 sigue con el flujo nativo por URL (decisión del orquestador, opción b).
+
+### Pruebas
+
+| Prueba | Resultado |
+|---|---|
+| PHPUnit (sin OpenEMR): 41 pruebas, 11 nuevas (`TareasTest`), con el HTML real del render nativo | ✅ 41/41, 139 aserciones |
+| Servicio contra la base real con una paciente ficticia nueva (pid 18), sin instalar | ✅ rechaza el envío sin aceptaciones o sin firma, es idempotente, el borrador se relee, y `estado_formularios` del contrato da `completos: true` |
+| **Back office**: el consentimiento enviado desde la vista nueva, abierto en el visor nativo como administrador | ✅ las dos casillas marcadas, la firma, «In Review» y «Chart to Onsite Portal Reviewed» disponible. Despeja el riesgo «media» del §7 |
+| Recorrido real en la instancia (Playwright, 1366 px e iPhone 13 táctil), con dos pacientes ficticias nuevas con enlace mágico (pid 24 y 25) | ✅ lista → consentimiento (aviso, firma, envío) → confirmación → cuestionario (aviso, guardado parcial que retoma en la pregunta 4 tras recargar, repaso, envío) → lista «Todo listo» → consentimiento en lectura. **0 errores de consola** |
+
+Fallo encontrado y corregido en el recorrido real: el «volver» de la cabecera hace `history.back()`, y desde una tarea abierta tras otra llevaba a la tarea anterior. La cabecera admite ahora `volver.modo = 'href'`, y las tareas vuelven siempre a la lista.
+
+Unknown cerrados: el formulario del cuestionario guarda `user = portal-user` en sesión de portal, como el nativo, y el servicio de respuestas acepta `status: completed` sin efectos visibles en el back office.
+
+### Capturas
+
+`openemr-pruebas/evidencia/capturas/renove/02-tareas/`:
+
+- `antes/`: documentos, consentimiento (con «Editando… New Version… Status: In Review», la barra de siete botones y «Borrar documento») y cuestionario (con «Yes»), en escritorio; documentos en móvil.
+- `despues/`: `despues_{escritorio,movil}_00…11`, del inicio a la lista completa.
+
+El laboratorio de la fase A pasa a `openemr-pruebas/evidencia/renove/02-tareas-laboratorio/`.
+
+### Pendiente (después de la demo)
+
+- **Adjuntar un archivo**: oculto. La subida nativa del portal vive en la página Phreeze que se ha dejado de enlazar; falta decidir entre una subida propia sencilla o reutilizar la nativa.
+- **Fechas en formato español en el documento**: «nacida el 1990-06-15» sale del formato de fecha global de OpenEMR (`Y-m-d`). Cambiarlo es configuración global de la instancia, no del área.
+- Migrar el ensayo E2E de SKI2-210 a los pasos nuevos (opción a): anotado por el orquestador para después de la demo.
+- Pacientes ficticias que dejan las pruebas: 18 («Prueba Área Dos»), 19, 20, 24 y 25 (Carla, Marina, Elena y Sara «Área Dos Ficticia»). Se pueden borrar sin afectar a Lucía.

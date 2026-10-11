@@ -1,0 +1,280 @@
+/*
+ * EPI10 · Área 2 · Tareas y documentos firmables (SKI2-232).
+ * Prototipo aislado: todo va bajo .epi-tareas y con prefijo epi-, sin capas, para convivir con el
+ * Bootstrap 4 de OpenEMR. Los tokens repiten los de epi10-tokens.css como respaldo: si la base del
+ * área 0 define los suyos en :root, mandan los de la base.
+ */
+.epi-tareas {
+  --t-azul: var(--epi-azul, #01447b);
+  --t-azul-900: var(--epi-azul-900, #00294d);
+  --t-cian: var(--epi-cian, #029acc);
+  --t-marfil: var(--epi-marfil, #fdf4ed);
+  --t-blanco: var(--epi-blanco, #ffffff);
+  --t-tinta: var(--epi-tinta, #101828);
+  --t-gris: var(--epi-gris, #5b6474);
+  --t-linea: var(--epi-linea, #e6dfd8);
+  --t-ok: var(--epi-ok, #1f8a5b);
+  --t-ok-fondo: #e7f4ee;
+  --t-aviso: #9a5b00;
+  --t-aviso-fondo: #fdf0dc;
+  --t-suave: #f4f7fa;
+  --t-radio: var(--epi-radio, 14px);
+  --t-radio-s: 10px;
+  --t-sombra: var(--epi-sombra, 0 1px 2px rgba(1, 68, 123, .06), 0 8px 24px rgba(1, 68, 123, .08));
+  --t-foco: 0 0 0 3px rgba(2, 154, 204, .35);
+  --t-fuente: var(--epi-fuente, "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+
+  font-family: var(--t-fuente);
+  color: var(--t-tinta);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.epi-tareas :where(*, *::before, *::after) { box-sizing: border-box; }
+/* Reset con especificidad (0,1,0): gana al Bootstrap de OpenEMR (0,0,1) y empata con las clases epi-, que van detrás y mandan. */
+.epi-tareas :where(h1, h2, h3, p, ol, ul) { margin: 0; padding: 0; }
+.epi-tareas :where(ol, ul) { list-style: none; }
+.epi-tareas :where(a) { color: var(--t-azul); }
+.epi-tareas button { font: inherit; }
+.epi-tareas :focus-visible { outline: none; box-shadow: var(--t-foco); border-radius: 8px; }
+
+.epi-contenedor { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+
+/* ---------- Botones ---------- */
+.epi-boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid transparent;
+  background: var(--t-azul); color: var(--t-blanco); font-weight: 600; font-size: 15px;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background .15s ease, transform .1s ease, box-shadow .15s ease;
+}
+.epi-tareas a.epi-boton { color: var(--t-blanco); }
+.epi-boton:hover { background: var(--t-azul-900); }
+.epi-boton:active { transform: translateY(1px); }
+.epi-boton--grande { min-height: 56px; padding: 0 28px; font-size: 17px; width: 100%; }
+.epi-boton--secundario { background: var(--t-blanco); color: var(--t-azul); border-color: var(--t-linea); }
+.epi-tareas a.epi-boton--secundario { color: var(--t-azul); }
+.epi-boton--secundario:hover { background: var(--t-suave); }
+.epi-boton--texto { background: none; color: var(--t-azul); padding: 0 8px; min-height: 40px; }
+.epi-boton--texto:hover { background: var(--t-suave); }
+/* Apagado pero pulsable: al pulsar, la tarea explica qué falta. */
+.epi-boton--apagado, .epi-boton--apagado:hover { background: #9fb3c6; }
+
+/* ---------- Etiquetas de estado ---------- */
+.epi-estado {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;
+  padding: 2px 10px; border-radius: 999px; background: var(--t-suave); color: var(--t-gris);
+}
+.epi-estado::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.epi-estado--en_curso { background: var(--t-aviso-fondo); color: var(--t-aviso); }
+.epi-estado--completado { background: var(--t-ok-fondo); color: var(--t-ok); }
+
+/* ---------- Cabecera de página ---------- */
+.epi-volver {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600;
+  text-decoration: none; color: var(--t-azul); margin-bottom: 16px; min-height: 32px;
+}
+.epi-volver:hover { text-decoration: underline; }
+.epi-titulo { font-size: 28px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; color: var(--t-azul); }
+.epi-entradilla { margin-top: 8px; color: var(--t-gris); font-size: 16px; max-width: 56ch; }
+.epi-antetitulo { font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--t-cian); margin-bottom: 6px; }
+
+/* ---------- Progreso ---------- */
+.epi-progreso { margin-top: 20px; }
+.epi-progreso__texto { display: flex; justify-content: space-between; font-size: 14px; color: var(--t-gris); margin-bottom: 8px; }
+.epi-progreso__texto strong { color: var(--t-tinta); }
+.epi-progreso__barra { height: 8px; border-radius: 999px; background: #e3e9ef; overflow: hidden; }
+.epi-progreso__relleno { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--t-azul), var(--t-cian)); transition: width .35s ease; }
+
+/* ---------- Lista de tareas («Tus documentos») ---------- */
+.epi-lista-tareas { margin-top: 28px; display: grid; gap: 12px; }
+.epi-tarea-item {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px;
+  background: var(--t-blanco); border: 1px solid var(--t-linea); border-radius: var(--t-radio);
+  padding: 18px 20px; box-shadow: var(--t-sombra);
+}
+.epi-tarea-item__num {
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--t-suave); color: var(--t-azul); font-weight: 700; font-size: 17px;
+}
+.epi-tarea-item--completado .epi-tarea-item__num { background: var(--t-ok); color: var(--t-blanco); }
+.epi-tarea-item__titulo { font-size: 17px; font-weight: 700; color: var(--t-tinta); }
+.epi-tarea-item__texto { font-size: 14px; color: var(--t-gris); margin: 2px 0 8px; }
+.epi-tarea-item--siguiente { border-color: var(--t-azul); box-shadow: 0 0 0 1px var(--t-azul), var(--t-sombra); }
+
+.epi-aviso-listo {
+  margin-top: 24px; display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px;
+  border-radius: var(--t-radio); background: var(--t-ok-fondo); color: #145c3c;
+}
+.epi-aviso-listo strong { display: block; font-size: 16px; color: #0f4a30; }
+
+.epi-mas { margin-top: 32px; border-top: 1px solid var(--t-linea); padding-top: 8px; }
+.epi-mas > summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; min-height: 44px;
+  font-size: 14px; font-weight: 600; color: var(--t-gris);
+}
+.epi-mas > summary::-webkit-details-marker { display: none; }
+.epi-mas > summary::before { content: "›"; font-size: 18px; transition: transform .15s ease; }
+.epi-mas[open] > summary::before { transform: rotate(90deg); }
+.epi-mas__cuerpo { display: grid; gap: 20px; padding: 8px 0 0 18px; }
+.epi-mas__bloque h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.epi-mas__bloque p { font-size: 14px; color: var(--t-gris); }
+.epi-historial { display: grid; gap: 6px; margin-top: 8px; }
+.epi-historial li { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; padding: 8px 0; border-bottom: 1px dashed var(--t-linea); }
+.epi-historial time { color: var(--t-gris); white-space: nowrap; }
+
+/* ---------- Plantilla única de tarea ---------- */
+.epi-tarea { max-width: 760px; margin: 0 auto; padding: 24px 16px 140px; }
+.epi-tarea__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; font-size: 14px; color: var(--t-gris); }
+.epi-chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; background: var(--t-blanco); border: 1px solid var(--t-linea); font-weight: 600; color: var(--t-azul); font-size: 13px; }
+
+.epi-pasos { display: flex; gap: 6px; margin-top: 20px; counter-reset: paso; }
+.epi-pasos li {
+  flex: 1; font-size: 12px; font-weight: 600; color: var(--t-gris); padding-top: 10px;
+  border-top: 4px solid #dfe6ed; counter-increment: paso; transition: border-color .2s ease, color .2s ease;
+}
+.epi-pasos li[data-estado="hecho"] { border-color: var(--t-cian); color: var(--t-azul); }
+.epi-pasos li[data-estado="actual"] { border-color: var(--t-azul); color: var(--t-tinta); }
+.epi-pasos li[data-estado="hecho"]::before { content: "✓ "; }
+
+.epi-tarea__cuerpo { margin-top: 24px; }
+
+.epi-tarea__accion {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  background: rgba(253, 244, 237, .92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--t-linea); padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+}
+.epi-tarea__accion-dentro { max-width: 760px; margin: 0 auto; display: grid; gap: 8px; }
+.epi-tarea__accion-fila { display: flex; align-items: center; gap: 8px; }
+.epi-tarea__accion-fila .epi-boton--grande { flex: 1; }
+.epi-tarea__ayuda { font-size: 13px; color: var(--t-gris); text-align: center; min-height: 1.4em; }
+.epi-tarea__ayuda--error { color: #b42318; font-weight: 600; }
+.epi-guardado { font-size: 13px; color: var(--t-gris); text-align: center; }
+
+/* ---------- Visor de documento (consentimiento) ---------- */
+.epi-papel {
+  background: var(--t-blanco); border-radius: 6px; padding: 40px 44px;
+  box-shadow: 0 1px 1px rgba(16, 24, 40, .04), 0 2px 6px rgba(16, 24, 40, .06), 0 18px 40px rgba(1, 68, 123, .10);
+  border: 1px solid #ece6e0; font-size: 16px; line-height: 1.7;
+}
+.epi-papel__marca { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 18px; margin-bottom: 22px; border-bottom: 1px solid var(--t-linea); }
+.epi-papel__marca img { height: 26px; width: auto; }
+.epi-papel__marca span { font-size: 12px; color: var(--t-gris); text-align: right; }
+.epi-papel h2 { font-size: 21px; line-height: 1.3; color: var(--t-azul); margin-bottom: 16px; }
+.epi-papel p + p { margin-top: 12px; }
+.epi-papel__fin { margin-top: 24px; font-size: 13px; color: var(--t-gris); text-align: center; }
+
+.epi-seccion { margin-top: 28px; }
+.epi-seccion__titulo { font-size: 18px; font-weight: 700; color: var(--t-tinta); margin-bottom: 4px; }
+.epi-seccion__texto { font-size: 14px; color: var(--t-gris); margin-bottom: 12px; }
+
+.epi-acepto {
+  display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; cursor: pointer;
+  background: var(--t-blanco); border: 1px solid var(--t-linea); border-radius: var(--t-radio-s);
+  padding: 16px 18px; margin-top: 10px; transition: border-color .15s ease, background .15s ease;
+}
+.epi-acepto:hover { border-color: #bcd0e2; }
+.epi-acepto input { position: absolute; opacity: 0; pointer-events: none; }
+.epi-acepto__caja {
+  width: 26px; height: 26px; border-radius: 7px; border: 2px solid #9fb3c6; display: grid; place-items: center;
+  color: transparent; font-weight: 800; font-size: 16px; transition: all .15s ease; background: var(--t-blanco);
+}
+.epi-acepto input:checked + .epi-acepto__caja { background: var(--t-azul); border-color: var(--t-azul); color: var(--t-blanco); }
+.epi-acepto input:focus-visible + .epi-acepto__caja { box-shadow: var(--t-foco); }
+.epi-acepto--marcado, .epi-acepto--marcado:hover { border-color: var(--t-azul); background: #f5f9fd; }
+.epi-acepto__texto { font-size: 15px; font-weight: 500; padding-top: 1px; }
+
+.epi-firma { margin-top: 10px; }
+.epi-firma__zona {
+  position: relative; height: 200px; border-radius: var(--t-radio-s); background: var(--t-blanco);
+  border: 2px dashed #9fb3c6; touch-action: none; overflow: hidden;
+}
+.epi-firma__zona--firmada { border-style: solid; border-color: var(--t-azul); }
+.epi-firma__zona canvas { position: absolute; inset: 0; width: 100%; height: 100%; cursor: crosshair; }
+.epi-firma__guia {
+  position: absolute; left: 24px; right: 24px; bottom: 44px; border-bottom: 1px solid #c9d4de;
+  pointer-events: none;
+}
+.epi-firma__marca { position: absolute; left: 24px; bottom: 48px; font-size: 22px; color: #9fb3c6; pointer-events: none; }
+.epi-firma__indicacion {
+  position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none;
+  color: var(--t-gris); font-size: 15px; font-weight: 500; padding-bottom: 30px;
+}
+.epi-firma__pie { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px; font-size: 13px; color: var(--t-gris); }
+.epi-firma__vista { display: block; max-height: 120px; max-width: 100%; margin: 6px 0; }
+
+/* ---------- Cuestionario ---------- */
+.epi-pregunta { background: var(--t-blanco); border: 1px solid var(--t-linea); border-radius: var(--t-radio); padding: 28px 24px; box-shadow: var(--t-sombra); }
+.epi-pregunta fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.epi-pregunta legend, .epi-pregunta__enunciado { font-size: 21px; line-height: 1.35; font-weight: 700; color: var(--t-tinta); padding: 0; margin-bottom: 6px; }
+.epi-pregunta__nota { font-size: 14px; color: var(--t-gris); margin-bottom: 18px; }
+.epi-opciones { display: grid; gap: 10px; }
+.epi-opcion {
+  display: flex; align-items: center; gap: 14px; cursor: pointer; min-height: 56px; padding: 12px 16px;
+  border: 1.5px solid var(--t-linea); border-radius: var(--t-radio-s); background: var(--t-blanco);
+  font-weight: 600; transition: border-color .15s ease, background .15s ease;
+}
+.epi-opcion:hover { border-color: #bcd0e2; }
+.epi-opcion input { position: absolute; opacity: 0; pointer-events: none; }
+.epi-opcion__punto { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #9fb3c6; flex: none; transition: all .15s ease; }
+.epi-opcion input:checked ~ .epi-opcion__punto { border: 7px solid var(--t-azul); }
+.epi-opcion input:focus-visible ~ .epi-opcion__punto { box-shadow: var(--t-foco); }
+.epi-opcion--marcada, .epi-opcion--marcada:hover { border-color: var(--t-azul); background: #f5f9fd; }
+.epi-opciones--dos { grid-template-columns: 1fr 1fr; }
+
+.epi-numero { display: flex; align-items: center; gap: 12px; }
+.epi-numero button {
+  width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid var(--t-linea); background: var(--t-blanco);
+  font-size: 24px; font-weight: 600; color: var(--t-azul); cursor: pointer;
+}
+.epi-numero button:hover { background: var(--t-suave); }
+.epi-numero input {
+  width: 110px; height: 60px; text-align: center; font: inherit; font-size: 28px; font-weight: 700; color: var(--t-tinta);
+  border: 1.5px solid var(--t-linea); border-radius: var(--t-radio-s); background: var(--t-blanco);
+  -moz-appearance: textfield;
+}
+.epi-numero input::-webkit-outer-spin-button, .epi-numero input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.epi-numero__unidad { font-size: 15px; color: var(--t-gris); }
+.epi-texto {
+  width: 100%; min-height: 140px; font: inherit; padding: 14px 16px; border: 1.5px solid var(--t-linea);
+  border-radius: var(--t-radio-s); resize: vertical; background: var(--t-blanco); color: var(--t-tinta);
+}
+.epi-numero input:focus, .epi-texto:focus { outline: none; border-color: var(--t-cian); box-shadow: var(--t-foco); }
+.epi-opcional { font-size: 12px; font-weight: 600; color: var(--t-gris); background: var(--t-suave); padding: 2px 8px; border-radius: 999px; vertical-align: middle; margin-left: 6px; }
+
+.epi-repaso { display: grid; gap: 0; background: var(--t-blanco); border: 1px solid var(--t-linea); border-radius: var(--t-radio); box-shadow: var(--t-sombra); }
+.epi-repaso li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 16px 20px; border-bottom: 1px solid var(--t-linea); }
+.epi-repaso li:last-child { border-bottom: 0; }
+.epi-repaso__pregunta { font-size: 14px; color: var(--t-gris); }
+.epi-repaso__respuesta { font-weight: 600; grid-column: 1; }
+.epi-repaso__respuesta--vacia { color: var(--t-gris); font-weight: 500; font-style: italic; }
+.epi-repaso .epi-boton--texto { grid-row: 1 / span 2; grid-column: 2; align-self: center; }
+
+/* ---------- Confirmación ---------- */
+.epi-confirmacion { text-align: center; padding: 48px 8px 24px; max-width: 520px; margin: 0 auto; }
+.epi-confirmacion__icono {
+  width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 20px; display: grid; place-items: center;
+  background: var(--t-ok-fondo); color: var(--t-ok); font-size: 40px; font-weight: 800;
+  animation: epi-aparece .4s ease both;
+}
+.epi-confirmacion h1 { font-size: 26px; line-height: 1.25; color: var(--t-azul); }
+.epi-confirmacion p { margin-top: 10px; color: var(--t-gris); }
+.epi-confirmacion__acciones { display: grid; gap: 10px; margin-top: 28px; }
+@keyframes epi-aparece { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.epi-cargando { padding: 64px 0; text-align: center; color: var(--t-gris); }
+.epi-error { margin-top: 16px; padding: 14px 16px; border-radius: var(--t-radio-s); background: #fdecea; color: #8a1c13; font-size: 14px; }
+
+/* ---------- Móvil ---------- */
+@media (max-width: 560px) {
+  .epi-titulo { font-size: 24px; }
+  .epi-tarea-item { grid-template-columns: auto 1fr; padding: 16px; }
+  .epi-tarea-item .epi-boton { grid-column: 1 / -1; width: 100%; }
+  .epi-papel { padding: 24px 20px; font-size: 15.5px; }
+  .epi-pregunta { padding: 22px 18px; }
+  .epi-pregunta legend, .epi-pregunta__enunciado { font-size: 19px; }
+  .epi-pasos li { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .epi-tareas * { transition: none !important; animation: none !important; }
+}
