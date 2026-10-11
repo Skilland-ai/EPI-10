@@ -1,0 +1,126 @@
+/* Área 5 · calendario de citas del portal. Prototipo aislado: todo con prefijo epi-cal- (y epi-btn provisional);
+   en la fase B los botones, tarjetas y alertas pasan a los componentes de la base del área 0. */
+.epi-cal-pagina {
+  --c-azul: var(--epi-azul, #01447b);
+  --c-cian: var(--epi-cian, #029acc);
+  --c-cian-suave: #e3f5fb;
+  --c-marfil: var(--epi-marfil, #fdf4ed);
+  --c-tinta: var(--epi-tinta, #101828);
+  --c-gris: var(--epi-gris, #5b6474);
+  --c-linea: var(--epi-linea, #e6dfd8);
+  --c-ok: var(--epi-ok, #1f8a5b);
+  --c-peligro: #b42318;
+  --c-radio: var(--epi-radio, 14px);
+  --c-sombra: var(--epi-sombra, 0 1px 2px rgba(1, 68, 123, .06), 0 8px 24px rgba(1, 68, 123, .08));
+  margin: 0;
+  min-height: 100vh;
+  background: var(--c-marfil);
+  color: var(--c-tinta);
+  font: 400 16px/1.5 var(--epi-fuente, "Manrope", system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+.epi-cal-pagina *, .epi-cal-pagina *::before, .epi-cal-pagina *::after { box-sizing: border-box; }
+
+.epi-cal-barra { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: #fff; border-bottom: 1px solid var(--c-linea); }
+.epi-cal-volver { color: var(--c-azul); font-weight: 600; text-decoration: none; padding: 6px 10px; margin-left: -10px; border-radius: 10px; }
+.epi-cal-volver:hover { background: var(--c-cian-suave); }
+.epi-cal-logo { height: 28px; }
+
+.epi-cal-main { max-width: 1040px; margin: 0 auto; padding: 32px 20px 64px; }
+.epi-cal-titulo { margin: 0 0 6px; font-size: clamp(28px, 4vw, 40px); line-height: 1.1; font-weight: 700; letter-spacing: -.02em; color: var(--c-azul); }
+.epi-cal-intro { margin: 0 0 24px; color: var(--c-gris); max-width: 56ch; }
+.epi-cal-cargando { color: var(--c-gris); }
+
+.epi-cal-rejilla { display: grid; gap: 20px; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 840px) { .epi-cal-rejilla { grid-template-columns: minmax(340px, 400px) 1fr; } }
+.epi-cal-tarjeta { background: #fff; border: 1px solid var(--c-linea); border-radius: calc(var(--c-radio) + 6px); box-shadow: var(--c-sombra); padding: 20px; scroll-margin-top: 16px; }
+.epi-cal-panel { min-height: 320px; }
+
+/* Banda «tu próxima cita» */
+.epi-cal-banda { display: flex; width: 100%; align-items: center; gap: 12px; margin: 0 0 20px; padding: 14px 18px; border: 0; border-radius: var(--c-radio); background: var(--c-azul); color: #fff; font: inherit; text-align: left; cursor: pointer; }
+.epi-cal-banda span:first-child { opacity: .8; font-size: 14px; }
+.epi-cal-banda strong { flex: 1; font-weight: 600; }
+.epi-cal-banda:focus-visible { outline: 3px solid var(--c-cian); outline-offset: 2px; }
+
+/* Calendario (Cally, web component: se estiliza por ::part) */
+.epi-cal-mes { --color-accent: var(--c-azul); --color-text-on-accent: #fff; width: 100%; display: flex; }
+.epi-cal-mes::part(container) { width: 100%; }
+.epi-cal-mes::part(container) { position: relative; }
+/* La cabecera de Cally (flechas + año) se superpone a la del mes: una sola fila «‹  Octubre  ›». */
+.epi-cal-mes::part(header) { position: absolute; inset: 0 0 auto 0; height: 44px; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
+.epi-cal-mes::part(button) { pointer-events: auto; width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--c-linea); background: #fff; color: var(--c-azul); font-size: 22px; line-height: 1; cursor: pointer; }
+.epi-cal-mes::part(button):hover { background: var(--c-cian-suave); }
+.epi-cal-mes::part(button):focus-visible { outline: 3px solid var(--c-cian); outline-offset: 2px; }
+.epi-cal-mes::part(disabled) { opacity: .3; cursor: default; background: #fff; }
+.epi-cal-mes::part(heading) { visibility: hidden; }
+.epi-cal-flecha { display: grid; place-items: center; }
+.epi-cal-vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+calendar-month { width: 100%; }
+calendar-month::part(table) { width: 100%; }
+calendar-month::part(heading) { height: 44px; line-height: 44px; margin-bottom: 6px; font-weight: 700; font-size: 18px; color: var(--c-tinta); text-transform: capitalize; }
+calendar-month::part(th) { font-size: 12px; font-weight: 600; color: var(--c-gris); text-transform: uppercase; letter-spacing: .04em; }
+calendar-month::part(button) { font-family: inherit; position: relative; width: 100%; max-width: 48px; height: 44px; margin: 2px auto; display: block; border-radius: 12px; font-weight: 600; font-size: 15px; color: var(--c-tinta); }
+calendar-month::part(disallowed) { color: #b7bcc6; font-weight: 400; opacity: 1; }
+calendar-month::part(con-huecos) { background: var(--c-cian-suave); color: var(--c-azul); }
+calendar-month::part(today) { box-shadow: inset 0 0 0 1.5px var(--c-gris); }
+calendar-month::part(mi-cita) { background: var(--c-ok); color: #fff; }
+calendar-month::part(selected) { background: var(--c-azul); color: #fff; }
+calendar-month::part(mi-cita selected) { background: #156c47; box-shadow: 0 0 0 3px #bfe6d2; }
+calendar-month::part(outside) { visibility: hidden; }
+.epi-cal-leyenda { display: flex; gap: 18px; margin: 14px 0 0; padding: 0; list-style: none; font-size: 13px; color: var(--c-gris); }
+.epi-cal-leyenda li { display: flex; align-items: center; gap: 6px; }
+.epi-cal-punto { width: 12px; height: 12px; border-radius: 4px; display: inline-block; }
+.epi-cal-punto--libre { background: var(--c-cian-suave); box-shadow: inset 0 0 0 1px #b9e4f2; }
+.epi-cal-punto--mia { background: var(--c-ok); }
+
+/* Panel del día */
+.epi-cal-panel-titulo { margin: 0; font-size: 22px; font-weight: 700; color: var(--c-tinta); }
+.epi-cal-sub { margin: 2px 0 16px; color: var(--c-gris); font-size: 14px; }
+.epi-cal-grupo { border: 0; margin: 0 0 16px; padding: 0; }
+.epi-cal-grupo legend { padding: 0; margin-bottom: 8px; font-size: 13px; font-weight: 600; color: var(--c-gris); text-transform: uppercase; letter-spacing: .04em; }
+.epi-cal-chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+.epi-cal-chip { height: 46px; border-radius: 12px; border: 1.5px solid var(--c-linea); background: #fff; color: var(--c-azul); font: 600 16px/1 var(--epi-fuente, inherit); font-variant-numeric: tabular-nums; cursor: pointer; transition: border-color .15s, background .15s; }
+.epi-cal-chip:hover { border-color: var(--c-cian); background: var(--c-cian-suave); }
+.epi-cal-chip.is-elegida { background: var(--c-azul); border-color: var(--c-azul); color: #fff; }
+.epi-cal-chip:focus-visible, .epi-btn:focus-visible { outline: 3px solid var(--c-cian); outline-offset: 2px; }
+
+.epi-cal-resumen { position: sticky; bottom: 12px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-top: 8px; padding: 16px; border-radius: var(--c-radio); background: var(--c-marfil); border: 1px solid var(--c-linea); }
+.epi-cal-resumen p { margin: 0; }
+.epi-cal-resumen span { color: var(--c-gris); font-size: 14px; }
+
+/* Mi cita */
+.epi-cal-cita { border-left: 4px solid var(--c-ok); padding: 4px 0 4px 16px; }
+.epi-cal-etiqueta { margin: 0; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--c-ok); }
+.epi-cal-cita-dia { margin: 4px 0 0; font-size: 22px; font-weight: 700; }
+.epi-cal-cita-hora { margin: 0; font-size: 18px; color: var(--c-azul); font-weight: 600; font-variant-numeric: tabular-nums; }
+.epi-cal-cita-lugar { margin: 4px 0 0; color: var(--c-gris); }
+.epi-cal-acciones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.epi-cal-confirma { margin-top: 16px; padding: 16px; border-radius: var(--c-radio); background: #fff4f2; border: 1px solid #f6d0ca; }
+.epi-cal-confirma p { margin: 0; font-weight: 600; }
+.epi-cal-nota { margin: 12px 0 0; font-size: 14px; color: var(--c-gris); }
+.epi-cal-hecho { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.epi-cal-hecho h2 { margin: 0; font-size: 22px; }
+.epi-cal-check { width: 36px; height: 36px; border-radius: 999px; display: grid; place-items: center; background: var(--c-ok); color: #fff; font-weight: 700; }
+.epi-cal-vacio { color: var(--c-gris); margin: 8px 0 16px; }
+.epi-cal-alerta { margin-bottom: 16px; padding: 12px 14px; border-radius: 12px; background: #fff4f2; border: 1px solid #f6d0ca; color: var(--c-peligro); font-size: 15px; }
+.epi-cal-alerta.is-ok { background: #ecf8f2; border-color: #bfe6d2; color: var(--c-ok); }
+.epi-cal-pagina a { color: var(--c-azul); }
+
+/* Botones provisionales (los sustituye epi-btn de la base del área 0) */
+.epi-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px; border-radius: 12px; border: 1.5px solid transparent; font: 600 16px/1 var(--epi-fuente, inherit); text-decoration: none; cursor: pointer; }
+.epi-btn:disabled { opacity: .6; cursor: progress; }
+.epi-btn--primario { background: var(--c-azul); color: #fff; }
+.epi-btn--primario:hover { background: #00335d; }
+.epi-btn--secundario { background: #fff; color: var(--c-azul); border-color: var(--c-linea); }
+.epi-btn--secundario:hover { border-color: var(--c-cian); }
+.epi-btn--texto { background: transparent; color: var(--c-gris); padding: 0 8px; }
+.epi-btn--texto:hover { color: var(--c-tinta); }
+.epi-btn--peligro { background: var(--c-peligro); color: #fff; }
+.epi-cal-pagina a.epi-btn--secundario { color: var(--c-azul); }
+
+@media (max-width: 839px) {
+  .epi-cal-main { padding: 20px 16px 48px; }
+  .epi-cal-tarjeta { padding: 16px; }
+  .epi-cal-resumen .epi-btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .epi-cal-chip { transition: none; } }

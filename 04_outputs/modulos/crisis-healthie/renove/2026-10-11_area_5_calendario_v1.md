@@ -1,7 +1,7 @@
 # Área 5 · Calendario de citas: componente del portal y limpieza del back office (v1, fase A)
 
-Fecha: 2026-10-11 · Linear: SKI2-235 (hija de SKI2-230) · Entrada: [feedback de Raúl](../2026-10-11_feedback_vistas_openemr_v1.md) §1.8 y §2.6 · [base del área 0](2026-10-11_base_interfaz_decision_v1.md) · repo `Skilland-ai/epi10-oe-module`, rama `renove-area-5`, carpeta `lab/area-5-citas/`.
-Estado: **fase A terminada; fase B en integración** (rama `renove-area-5`, 944c831, sobre la base del área 0). Instala el área 0 en `renove-integracion`. Prototipo funcionando en la instancia de hermes-node con datos ficticios y probado de punta a punta con Playwright. La fase B (montarlo sobre la base del área 0 y limpiar el back office) espera a la guía `00_base_interfaz.md`.
+Fecha: 2026-10-11 · Linear: SKI2-235 (hija de SKI2-230) · Entrada: [feedback de Raúl](../2026-10-11_feedback_vistas_openemr_v1.md) §1.8 y §2.6 · [base del área 0](2026-10-11_base_interfaz_decision_v1.md) · repo `Skilland-ai/epi10-oe-module`, rama `renove-area-5`, módulo `oe-module-epi10-ui/`. Prototipo de la fase A: [`openemr-pruebas/evidencia/renove/05-calendario-laboratorio/`](../openemr-pruebas/evidencia/renove/05-calendario-laboratorio/README.md).
+Estado: **fase A terminada; fase B integrada en la instancia** (rama `renove-area-5`, sobre la base del área 0; instala el área 0 desde `renove-integracion`). Laboratorio `epi10-lab-5` quitado de la instancia el 11 oct. Prototipo funcionando en la instancia de hermes-node con datos ficticios y probado de punta a punta con Playwright. La fase B (montarlo sobre la base del área 0 y limpiar el back office) espera a la guía `00_base_interfaz.md`.
 
 ## Resumen
 
@@ -100,12 +100,12 @@ El calendario de OpenEMR se queda tal cual (vistas día/semana/mes, huecos por p
 | JSON de la isla (sesión del portal + CSRF) | `public/portal/api/citas.php` |
 | Reglas de agenda (sin cambios desde la fase A; la categoría «Cita EPI10» se crea sola si falta) | `src/Citas/Agenda.php`, `config.citas.php` |
 | Isla con componentes de la base (`epi-btn`, `epi-card`, `epi-alert`, iconos Lucide); en móvil la confirmación es una hoja inferior fija | `public/ui/islas/calendario.mjs`, `calendario.css`, `vendor/cally/` |
-| Tarjeta de citas del núcleo en el inicio, sin inglés y redirigida | `templates/sobrescritas/portal/partial/cards/_appointment_card.html.twig` |
-| Back office: mini calendario «L M X J V S D» | `templates/sobrescritas/calendar/default/views/_mini_calendar.html.twig` |
-| Back office: «Mon 10/05» → «lun 05/10» | `public/ui/vistas/calendario-backoffice.js` (`config.php › scripts_por_vista`) |
-| Traducciones globales del área 5 | `i18n/openemr_es.tsv` (consolidadas por el área 0) |
-| Zona horaria `Europe/Madrid` (decisión con SKI2-210) | aplicada en la instancia; SQL en `lab/area-5-citas/sql/zona_horaria.sql` |
-| Prueba E2E | `scripts/prueba-citas.mjs` |
+| Tarjeta de citas del núcleo en el inicio, sin inglés, con botón a «Tus citas» (no redirige sola: evita atrapar a la clienta al volver al inicio) | `templates/sobrescritas/portal/partial/cards/_appointment_card.html.twig` |
+| Back office: «Mon 10/05» → «lun 05/10», mini calendario «L M X J V S D» y avisos «Ir al DD/MM/AAAA» | `public/ui/vistas/calendario-backoffice.js` (`config.php › scripts_por_vista`). El calendario no usa el Twig con sobrescrituras: va en JS |
+| Back office: **fallo del núcleo** con el cambio de hora. `CalendarViewModel::buildMiniCalendar()` suma 86 400 s por día; en el mes del cambio de octubre repite el 25 y pierde la última semana (salió al pasar a `Europe/Madrid`) | Mismo JS: regenera las filas que faltan con las clases, ids y clic (`ChangeDate`) del núcleo. Las vistas de mes, semana y día no están afectadas. Conviene reportarlo a OpenEMR |
+| Traducciones globales del área 5 | `i18n/openemr_es.tsv` (consolidadas por el área 0). Nombre del centro «EPI10 Salud»: en el script de configuración del área 7 |
+| Zona horaria `Europe/Madrid` (decisión con SKI2-210) | aplicada en la instancia; SQL en la evidencia del laboratorio, `sql/zona_horaria.sql` |
+| Prueba E2E | `scripts/prueba-citas.mjs` (+ `scripts/prueba-citas-limpiar.sql`) |
 
 Queda: confirmar en la instancia integrada, capturas «después» y PR contra `main`.
 
