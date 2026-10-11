@@ -162,6 +162,7 @@ Para vestir una pantalla del núcleo (Phreeze de documentos, mensajes, citas) si
 2. Añade una sección a `epi10-nucleo.css` encabezada con la vista. Ahí sí se permiten selectores del núcleo, acotados a esa vista.
 3. Si la vista es Twig, puedes sobrescribir su plantilla en `templates/sobrescritas/<misma ruta>` (gana sobre el núcleo y sobre `oe-module-epi10`). Conserva ids y atributos que use su JS.
 4. Si la vista es PHP sin plantilla (login del portal), el JS puede envolver el HTML existente **moviendo** nodos, nunca clonándolos (ver `epi10-login-portal.js`).
+5. **Ajuste ligero sin renovar la vista** (p. ej. traducir con JS las cabeceras del calendario, que el núcleo pinta con `date()`): `config.php › scripts_por_vista` y `estilos_por_vista` (`'/interface/main/calendar/index.php' => ['ui/vistas/calendario-backoffice.js']`). Se inyecta solo en esa vista, sin shell y sin apagar el tema heredado. Los archivos van en `public/ui/vistas/`.
 
 Lo que ya está renovado por el área 0:
 
@@ -237,7 +238,7 @@ import 'https://…'                                                     // NO: 
 | 7 | Back office | «Search by any demographic», «Medical Record Dashboard», «Care Team», «Treatment Intervention Preferences», «Care Experience Preferences», «Finder», «Flow Board», pestañas «Unknown» |
 | 1 | Acceso e inicio | Ya traducidos por el área 0: avisos de sesión cerrada, enlace caducado o no válido, «Log In», «Username» |
 
-Detector: `scripts/detectar-ingles.mjs` recorre las vistas con sesión y lista los textos visibles en inglés (ver §9).
+Detector: `scripts/detectar-ingles.mjs [portal|backoffice|todo]` recorre las vistas con sesión y lista los textos visibles en inglés. Resultado del 11 oct (evidencia: `capturas/renove/00-base/detector_ingles_2026-10-11.md`): acceso, inicio, ajustes, mi informe y documentos del portal, limpios; quedan los de mensajes (área 3), citas (área 5) y el back office (área 7). El área 0 lo repite antes de cada integración.
 
 ## 9. Probar en hermes-node
 
@@ -254,7 +255,7 @@ OE_BASE=http://localhost:4896 PORTAL_USER=lucia PORTAL_PASS=… PORTAL_EMAIL=…
   node <repo>/scripts/capturas-renove.mjs <EPI-10>/…/capturas/renove/<NN-area>/ despues
 ```
 
-- **Una sola instancia y varias áreas instalando**: `instalar-ui.sh` copia la carpeta entera. Si dos áreas instalan desde ramas distintas, la última pisa a la anterior. Regla: cada área trabaja en una rama que parte de `renove-area-0`, hace *rebase* sobre las demás antes de instalar en la instancia, y avisa al orquestador cuando instala.
+- **Instalaciones centralizadas en el área 0** (acordado con el orquestador): `instalar-ui.sh` copia la carpeta entera, así que **solo el área 0 lo ejecuta** en la instancia compartida. Cada área desarrolla en `renove-area-<n>` (desde `renove-area-0`), prueba en su laboratorio, hace push y escribe a la sesión «EPI-10 renove área 0» con la rama y el commit. El área 0 lo fusiona en **`renove-integracion`** (lo que está instalado), repite el detector, instala y confirma. Los pasos 1 y 2 de arriba quedan para el área 0.
 - **Caché**: OpenEMR añade `?v=<versión de assets del sitio>` a los CSS y JS inyectados, que no cambia al desplegar. En Playwright cada contexto es nuevo; en el navegador, recarga forzada. Las páginas propias usan `?v=<version.php>`: sube el *patch* al publicar para la demo.
 - No reinicies OpenEMR ni toques la pila `epi10-demo`.
 
@@ -276,7 +277,7 @@ Selectores en las pruebas: `page.locator('[data-epi10-accion="salir"]')`, nunca 
 
 ## 11. Desplegar al módulo y entregar
 
-1. Rama `renove-area-<n>` desde `renove-area-0` (hasta que se fusione en `main`).
+1. Rama `renove-area-<n>` desde `renove-area-0` (hasta que se fusione en `main`). Para verla en la instancia, pide la integración al área 0 (§9).
 2. Commits con `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`. No hay CI: pega en el PR la salida de lo que ejecutes (capturas, detector, pruebas del contrato si tocas `oe-module-epi10`).
 3. PR contra `main` en `Skilland-ai/epi10-oe-module`, sin fusionar, con capturas antes/después en `crisis-healthie/openemr-pruebas/evidencia/capturas/renove/<NN-area>/`.
 4. En producción, `oe-module-epi10-ui` va en la misma imagen derivada que `oe-module-epi10` (`COPY` de las dos carpetas) y se activa en el module manager.
