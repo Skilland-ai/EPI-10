@@ -62,3 +62,9 @@
 - Desde ahora, lint, typecheck y pruebas se ejecutan en hermes-node (`hn push` + `hn sh`) o en local, y la evidencia se adjunta a cada PR.
 - No se reactiva sin que Raúl lo pida. Detalle en `01_harness/HERDR.md`.
 - Lo desactivó el orquestador de Senda Ecoway por encargo de Raúl.
+
+## 2026-10-11 · Base de interfaz del plan renove: «EPI10 UI» (Raúl)
+
+- Tras el feedback vista por vista (SKI2-208) y la research del arquitecto (SKI2-209), Raúl ratifica la base: el sistema de diseño de **shadcn/ui** tomado de **Basecoat** (shadcn sin React, MIT), reescrito como **CSS plano con prefijo `epi-` y sin build**, más **islas Preact** para chat, firma, calendario y visor. Vive en un módulo hermano `oe-module-epi10-ui`, separado del módulo del contrato.
+- Motivo: los kits sobre Tailwind v4 (Basecoat, daisyUI, Flowbite, Preline) pierden contra el Bootstrap 4 de OpenEMR por las capas y chocan en clases y reset; no existe ninguna plantilla open source madura de portal de pacientes.
+- Portal y back office comparten esta base. El portal, precioso; el back office, usable.
