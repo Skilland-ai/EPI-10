@@ -60,3 +60,19 @@ Configuración del área 7: `config-instancia/area-7/aplicar.sh --revertir`. Con
 - **APCu**: si una página da 500 con «Class … not found» y la CLI sí encuentra la clase, vacía APCu reinstalando con `instalar-ui.sh`.
 - **Caché del navegador**: OpenEMR versiona los assets inyectados con la versión del sitio, que no cambia al desplegar. Antes de la demo, recarga forzada o ventana privada.
 - **Una paciente nueva por enlace mágico** entra directamente al inicio, sin crear contraseña. Si en la demo se quiere enseñar la pantalla de primer acceso, hay que abrir `index.php?password_update=1`.
+
+## Limpieza de pacientes de prueba (hecha el 11 oct)
+
+Para que el back office de la demo no enseñe las ~30 pacientes ficticias de las pruebas de los agentes:
+
+```bash
+cd openemr-pruebas/scripts/limpieza_demo
+./limpiar_pacientes_prueba.sh contar      # qué se tocaría (no cambia nada)
+./limpiar_pacientes_prueba.sh limpiar     # respalda en epi10_limpieza_bak_* y borra (pids 2–35)
+./limpiar_pacientes_prueba.sh restaurar   # vuelta atrás completa
+./limpiar_pacientes_prueba.sh soltar      # borra los respaldos (después de la demo)
+```
+
+- **Se conserva** Lucía (pid 1) con sus documentos, mensajes e informe, los clientes OAuth de SKI2-210 y el registro de auditoría (`log`). Los archivos de documentos en disco tampoco se tocan.
+- **Se borró** (pids 2–35): 34 pacientes, 29 accesos al portal, 33 documentos con sus categorías, 24 documentos del portal, 54 mensajes, 32 referencias del contrato y sus filas de las tablas `epi10_*`, plantillas asignadas, cuestionarios y firmas.
+- Recorrido tras la limpieza: **63 de 63**.
