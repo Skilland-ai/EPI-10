@@ -1,0 +1,100 @@
+{
+  "fecha": "2026-10-11T19:03:01.006Z",
+  "resultados": [
+    {
+      "nombre": "menú de operaciones = Calendario, Buscador, Mensajes, Clientes, Informes, Ajustes",
+      "ok": true,
+      "detalle": "Calendario · Buscador · Mensajes · Clientes · Ficha del cliente · Citas del cliente · Informes · Listado de clientes · Citas · Ajustes · Mis preferencias · Cambiar contraseña · Funciones avanzadas"
+    },
+    {
+      "nombre": "lista: hay clientes y columnas legibles",
+      "ok": true,
+      "detalle": "15 filas"
+    },
+    {
+      "nombre": "búsqueda en vivo «Lucía» → 1 resultado",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "ficha: cabecera con nombre y fase",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "ficha: 5 pestañas",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "ficha: nada clínico a la vista",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "pestaña documentos visible",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "pestaña mensajes visible",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "pestaña citas visible",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "pestaña datos visible",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "teclado: Inicio vuelve a Resumen",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "datos: formulario solo con el inventario",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "volver: «← Clientes» regresa a la lista con la búsqueda",
+      "ok": true,
+      "detalle": "http://localhost:4896/portal/epi10-lab-7/clientes.php?q=Luc%C3%ADa"
+    },
+    {
+      "nombre": "funciones avanzadas: lista lo escondido según permisos",
+      "ok": true,
+      "detalle": "Generales · Paciente · Informes · Varios · Los menús emergentes"
+    },
+    {
+      "nombre": "móvil sin scroll horizontal: movil_01_clientes",
+      "ok": true,
+      "detalle": "390px"
+    },
+    {
+      "nombre": "móvil sin scroll horizontal: movil_03_ficha_resumen",
+      "ok": true,
+      "detalle": "390px"
+    },
+    {
+      "nombre": "móvil sin scroll horizontal: movil_04_ficha_datos",
+      "ok": true,
+      "detalle": "390px"
+    },
+    {
+      "nombre": "admin conserva el menú estándar",
+      "ok": true,
+      "detalle": "Calendario · Finder · Flujo · Recalls · Mensajes · Paciente · Nuevo/búsqueda · Dashboard · Visitas · Crear visita · Actual · Histórico de Visitas · Registros · Solicitud Registro de Paciente · Honorarios · Hoja de honorarios · Pago · Comprobación · Administrador de Facturación · Serie de Pagos · Posting Payments · EDI History · Modules · Manage Modules · Carecoordination · Procedimientos · Equipo · Configuración · Load Compendium · Revisión Pendientes · Resultados del paciente · Lab Overview · Resultados de la serie (Batch) · Electronic Reports · Lab Documents · Administrador · Config · Clínica · Centros · Calendario · Import Holidays · Pacientes · Recordatorios del Paciente · Merge Patients · Manage Duplicates · Práctica · Ajustes del Centro · Reglas · Alertas · Codificando · Códigos · Native Data Loads · Carga de datos externos · Formularios · Formas de administración · Disposición · Listas · Documentos · Document Templates · Sistema · Ficheros · Idioma · Registros · Audit Log Tamper · Diagnostics · Email Send Test · API Clients · Usuarios · Libreta de Direcciones · ACL · Informes · Clientes · Lista · Receta · Patient List Creation · Message List · Clínico · Derivados · Registro Vacunación · Clínica · Report Results · Medidas estándar · Medidas Automatizadas · 2026 Real World Testing Report · Registro de alertas · Visitas · Daily Report · Citas · Patient Flow Board · Visitas · Citas-Visitas · Superbill · Elegibilidad · Elegibilidad de Respuesta · Gráfico de Actividad · Gráficas retiradas · Servicios · Vigilancia de Síndrome · Financiero · Ventas · Entradas Efectivo · Rec. Oficina Central · Método de pago · Collections and Aging · Pat Ledger · Resumen Financiero por Código de Servicio · Payment Processing · Prepay Balances · Procedimientos · Ordenes pendientes · Estadísticas · Seguro · Distribución · Indigentes · Pacientes Distintos Vistos · Formularios en Blanco · Core · Datos demográficos · Superbill/Hoja de precios · Servicios · Background Services · Registro Mens. Directo · IP Tracker · Varios · Portal Dashboard · Dicom Viewer · Material Educativo para el Paciente · Autorizaciones · Gráfico de seguimiento · Notas de la Oficina · Herramienta de Comunicación del Batch · New Documents · Formularios en Blanco · Datos demográficos · Superbill/Hoja de precios · Derivación · Los menús emergentes · Incidencias · Exportar · Importar · Citas · Superbill · Pago · Carta · Chart Label · Barcode Label · Etiqueta de Dirección"
+    },
+    {
+      "nombre": "sin errores de JavaScript",
+      "ok": true,
+      "detalle": ""
+    }
+  ]
+}
