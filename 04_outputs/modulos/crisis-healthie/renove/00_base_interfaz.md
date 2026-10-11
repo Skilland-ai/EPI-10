@@ -1,7 +1,7 @@
 # Guía de la base de interfaz EPI10 UI para las áreas 1–7
 
 Fecha: 2026-10-11 · Linear: SKI2-209 (área 0) · Decisión: [2026-10-11_base_interfaz_decision_v1.md](2026-10-11_base_interfaz_decision_v1.md), ratificada por Raúl
-Código: repo `Skilland-ai/epi10-oe-module`, rama `renove-area-0`, carpeta `oe-module-epi10-ui/`
+Código: repo `Skilland-ai/epi10-oe-module`, carpeta `oe-module-epi10-ui/`, en `main` desde el PR #2 (base) y los PR de las áreas
 Muestra en vivo (hermes-node, con sesión): portal `http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/portal/kit.php` · back office `…/public/backoffice/kit.php`
 
 ## 1. Qué es, en cinco líneas
@@ -280,6 +280,7 @@ OE_BASE=http://localhost:4896 PORTAL_USER=lucia PORTAL_PASS=… PORTAL_EMAIL=…
 
 - **Instalaciones centralizadas en el área 0** (acordado con el orquestador): `instalar-ui.sh` copia la carpeta entera, así que **solo el área 0 lo ejecuta** en la instancia compartida. Cada área desarrolla en `renove-area-<n>` (desde `renove-area-0`), prueba en su laboratorio, hace push y escribe a la sesión «EPI-10 renove área 0» con la rama y el commit. El área 0 lo fusiona en **`renove-integracion`** (lo que está instalado), repite el detector, instala y confirma. Los pasos 1 y 2 de arriba quedan para el área 0.
 - **Caché**: OpenEMR añade `?v=<versión de assets del sitio>` a los CSS y JS inyectados, que no cambia al desplegar. En Playwright cada contexto es nuevo; en el navegador, recarga forzada. Las páginas propias usan `?v=<version.php>`: sube el *patch* al publicar para la demo.
+- **APCu y clases nuevas**: el autoloader de Composer de OpenEMR guarda en APCu también las clases que **no** encontró. Si una vista pregunta por una clase de otra área (`class_exists`) antes de que esté instalada, seguirá «sin existir» hasta vaciar APCu, y la página dará 500 con «Class … not found». `instalar-ui.sh` vacía APCu al terminar (PR #8). Si lo ves fuera del instalador, la CLI encuentra la clase y la web no.
 - No reinicies OpenEMR ni toques la pila `epi10-demo`.
 
 ## 10. Convenciones `data-epi10-*` (para Playwright)
