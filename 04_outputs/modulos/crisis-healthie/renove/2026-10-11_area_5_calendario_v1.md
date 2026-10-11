@@ -1,7 +1,7 @@
 # Área 5 · Calendario de citas: componente del portal y limpieza del back office (v1, fase A)
 
 Fecha: 2026-10-11 · Linear: SKI2-235 (hija de SKI2-230) · Entrada: [feedback de Raúl](../2026-10-11_feedback_vistas_openemr_v1.md) §1.8 y §2.6 · [base del área 0](2026-10-11_base_interfaz_decision_v1.md) · repo `Skilland-ai/epi10-oe-module`, rama `renove-area-5`, carpeta `lab/area-5-citas/`.
-Estado: **fase A terminada**. Prototipo funcionando en la instancia de hermes-node con datos ficticios y probado de punta a punta con Playwright. La fase B (montarlo sobre la base del área 0 y limpiar el back office) espera a la guía `00_base_interfaz.md`.
+Estado: **fase A terminada**; de la fase B ya están aplicados el nombre del centro y las traducciones del calendario del back office. Prototipo funcionando en la instancia de hermes-node con datos ficticios y probado de punta a punta con Playwright. La fase B (montarlo sobre la base del área 0 y limpiar el back office) espera a la guía `00_base_interfaz.md`.
 
 ## Resumen
 
@@ -35,7 +35,9 @@ Una sola pantalla con el calendario a la izquierda (arriba en móvil) y el panel
 
 Reglas de producto (en `config.php`, ajustables sin tocar código): una cita futura por clienta (el test mixto tiene una cita opcional), reservar y cancelar hasta 24 h antes, 60 días hacia delante, citas de 30 min (categoría nueva «Cita EPI10»).
 
-Capturas del prototipo y del «antes»: `openemr-pruebas/evidencia/capturas/renove/05-calendario/` (`antes_*`, `lab_*`).
+Capturas del prototipo y del «antes»: `openemr-pruebas/evidencia/capturas/renove/05-calendario/` (`antes_*`, `lab_*`, `despues_backoffice_*`).
+
+**URL de la vista** (para la tarjeta «Citas» del inicio, área 1): hoy, en el laboratorio, `/interface/modules/custom_modules/epi10-lab-5/public/portal/citas.php`. Final, en la fase B: `/interface/modules/custom_modules/oe-module-epi10-ui/public/portal/citas.php` (la ruta exacta la fija la guía del área 0; se confirma en el PR).
 
 ### Integración con OpenEMR (sin tocar el núcleo)
 
@@ -66,14 +68,15 @@ Portal (sesión de la clienta)
 
 El calendario de OpenEMR se queda tal cual (vistas día/semana/mes, huecos por persona). Inventario de lo que se ve hoy (`antes_backoffice_calendario_*.png`) y cómo se arregla en la fase B, sin núcleo:
 
-| Hoy | Después | Cómo |
-|---|---|---|
-| «Your Clinic Name Here» (leyenda y lugar de la cita) | «EPI10 Salud» | Dato del centro (`facility.name`), no código. **Coordinar**: el nombre sale en más vistas |
-| «Facultativos», «Todos los Usuarios» | «Equipo», «Todo el equipo» | Traducción propia en `lang_custom` (sobrevive a actualizaciones). Afecta a toda la app: es lo que se quiere |
-| «ingreso», «SALIDA» (traducción de *In Office* / *Out Of Office*) | «En consulta», «Fuera de consulta» | `lang_custom` (las categorías se traducen: `translate_appt_categories = 1`) |
-| «Office Visit», «New Patient», «Group Therapy»… | Ocultas; solo «Cita EPI10», «En consulta», «Fuera de consulta», «Comida», «Festivo» | `pc_active = 0` en las categorías clínicas (reversible). Por omisión |
-| Cabeceras «Mon 10/05» y mini calendario «M T W T F S S» | «lun 05/10», «L M X J V S D» | Lo pinta el JS del núcleo con su propio formato: **Unknown** si hay ajuste; si no, CSS/JS del área 0 por `ScriptFilterEvent` |
-| «(ficticio), Aitor» | Nombre y apellido | Formato de nombre de OpenEMR (ajuste global) o dato |
+| Hoy | Después | Cómo | Estado |
+|---|---|---|---|
+| «Your Clinic Name Here» (leyenda y lugar de la cita) | «EPI10 Salud» | Dato del centro (`facility.name`), no código | **Hecho** (11 oct, decisión del orquestador) |
+| «Facultativos», «Facultativo», «Todos los Usuarios» | «Equipo», «Profesional», «Todo el equipo» | Traducción propia en `lang_definitions` + `lang_custom` (sobrevive a actualizaciones). Global: es lo que se quiere | **Hecho** |
+| «ingreso», «SALIDA» (constantes `IN`/`OUT` de los bloques) y *In Office* / *Out Of Office* | «En consulta», «Fuera de consulta» | Igual, `lang_custom` | **Hecho** |
+| Cabeceras «Mon 10/05» | «lun 05/10» | El núcleo lo genera con `date('D m/d')` en `CalendarRenderDataBuilder` y luego `xlt` sobre la cadena entera: no se puede traducir. Plantilla Twig sobrescrita desde el módulo o JS pequeño | Fase B |
+| Mini calendario «M T W T F S S» | «L M X J V S D» | `dayNames` de `_mini_calendar.html.twig`; mismo camino | Fase B |
+| «Office Visit», «New Patient», «Group Therapy»… | Ocultas | `pc_active = 0` en las categorías clínicas (reversible) | Después de la demo (el orquestador limita el back office a textos) |
+| «(ficticio), Aitor» | Nombre y apellido | Formato de nombre de OpenEMR (ajuste global) o dato | Después de la demo |
 | Es la vista de entrada del back office | Una tarjeta del selector | Área 1 |
 
 ## Riesgos y Unknown
@@ -93,7 +96,7 @@ El calendario de OpenEMR se queda tal cual (vistas día/semana/mes, huecos por p
 
 1. Mover `lab/area-5-citas/` a `oe-module-epi10-ui` (namespace y rutas de la guía del área 0), con su layout, botones, tarjetas y alertas; quitar el CSS provisional.
 2. Tarjeta «Citas» del inicio del portal → `citas.php` (coordinado con el área 1, sin cambiar ids: `#appointments-go` se conserva).
-3. Back office: traducciones en `i18n/openemr_es.tsv`, nombre del centro y categorías clínicas ocultas.
+3. Back office: «Mon 10/05» y el mini calendario en español. Las traducciones ya aplicadas (`lab/area-5-citas/sql/backoffice_calendario_es.sql`) pasan al `i18n/openemr_es.tsv` que consolida el área 0; el nombre del centro, al script de configuración del área 7.
 4. Capturas antes/después (escritorio y móvil) en `capturas/renove/05-calendario/` y PR contra `main` con la evidencia.
 5. Quitar el laboratorio (`scripts/quitar_lab.sh`).
 
