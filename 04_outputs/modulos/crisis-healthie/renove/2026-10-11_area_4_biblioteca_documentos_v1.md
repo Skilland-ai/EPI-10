@@ -53,6 +53,8 @@ Referencia de patrón para la lista con estados: la bandeja de documentos de Hea
 
 **Back office (pestaña Documentos, usable):** las tres filas con insignia de estado, fecha, una nota corta («La clienta lo abrió: hoy», «La clienta todavía no lo ve») y la acción que toca: «Ver PDF», «Ver respuestas», «Subir informe», «Marcar validado», «Publicar informe» (con confirmación). «Subir otro documento» es un enlace secundario que guarda el PDF en «Documentos del equipo EPI10»: **nunca llega al portal** (R4). Ver un documento usa el mismo visor que el portal.
 
+**Decisiones del orquestador (11 oct):** «validado» se marca en el monolito; publicar desde la ficha es un atajo de demo sin aviso a la clienta y sin que el monolito se entere (contrato v1.1 después de la demo). Ver «Riesgos».
+
 Datos de prueba: un informe **ficticio** de Lucía de 3 páginas con la marca EPI10 (`04-documentos-laboratorio/datos/informe-ficticio.html` → PDF con Playwright), publicado por el contrato real (`POST epi10_v1_informe`, referencia `lab4-lucia-informe-ficticio-v1`, documento 26). El flujo subir → validar → publicar se probó en la paciente ficticia pid 12 («Marta Contrato Ficticia»).
 
 ## Cómo se engancha sin tocar el núcleo
@@ -90,9 +92,9 @@ Datos de prueba: un informe **ficticio** de Lucía de 3 páginas con la marca EP
 | Peso de PDF.js | 1,7 MB sin comprimir la primera vez; **Apache de la instancia no comprime `.mjs`** | Carga perezosa (solo al abrir un documento) y caché del navegador. En producción, gzip/brotli en el proxy |
 | Navegadores antiguos | PDF.js 6 pide navegador moderno | Si falla, la isla enseña «Descargar PDF» (probado el camino de error en código, no en un navegador viejo) |
 | Accesibilidad del PDF | El canvas no tiene capa de texto: no se puede seleccionar ni lo lee un lector de pantalla | Fase posterior: activar la capa de texto de PDF.js (`TextLayer`). La descarga queda siempre |
-| «Validado» | El contrato no lo conoce: es una marca del equipo en OpenEMR. **Unknown:** si la validación la hace Carmen en el monolito | Si el monolito valida, la fila puede leer ese estado en una versión compatible del contrato (1.1, después de la demo) |
-| El monolito no se entera de una publicación hecha desde la ficha | No hay operación para leerlo; solo la idempotencia por referencia | Para la demo, publicar desde la ficha o desde el monolito, no de los dos. Después: operación de lectura `estado_informe` en 1.1 |
-| Aviso a la clienta | Publicar desde la ficha no manda mensaje; el monolito sí en sus hitos | **Unknown:** si se añade un mensaje automático («Tu informe está listo») con `Mensajes` del contrato |
+| «Validado» | **Decidido (orquestador, 11 oct):** lo marcan Aitor o Carmen en la pantalla de informes del monolito, que es donde se revisa el borrador; OpenEMR solo lo refleja | El botón «Marcar validado» de la pestaña queda como atajo de demo. Para reflejar la validación del monolito hace falta el contrato v1.1 (después de la demo) |
+| El monolito no se entera de una publicación hecha desde la ficha | **Decidido:** publicar desde la ficha es un atajo de demo; lo normal es publicar desde el monolito por el contrato (idempotente por `case_id`, comprobado). **Limitación:** desde la ficha, el monolito no se entera | Después de la demo, contrato v1.1: `publicado_en` o un evento en `mensajes_nuevos` |
+| Aviso a la clienta | **Decidido:** lo manda el monolito con el mensaje de hito «informe disponible» cuando publica por el contrato. **Limitación:** si se publica desde la ficha, no hay aviso | Ninguna para la demo: se publica desde el monolito |
 | Rutas del núcleo aún accesibles por URL | `portal/report/portal_patient_report.php` («Customized Medical History Report», que en español sale como «Resumen de mi historial») respondía si alguien escribía la URL | **Decidido por el orquestador:** `allow_custom_report = 0` y `ccda_alt_service_enable = 0`. Los fija el `aplicar.sh` del área 7, que ya los ha aplicado en la instancia (con `--revertir`) |
 | Fechas | Las tablas nuevas guardan la hora de la sesión de OpenEMR (Madrid); la consola de MariaDB está en UTC | Mismo riesgo R2 del área 7; la interfaz solo enseña días |
 | Varias versiones | El portal enseña todas las publicadas, la más reciente primero | Basta para la demo |
