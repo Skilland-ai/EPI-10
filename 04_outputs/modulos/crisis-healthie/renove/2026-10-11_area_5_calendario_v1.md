@@ -1,7 +1,7 @@
 # Área 5 · Calendario de citas: componente del portal y limpieza del back office (v1, fase A)
 
 Fecha: 2026-10-11 · Linear: SKI2-235 (hija de SKI2-230) · Entrada: [feedback de Raúl](../2026-10-11_feedback_vistas_openemr_v1.md) §1.8 y §2.6 · [base del área 0](2026-10-11_base_interfaz_decision_v1.md) · repo `Skilland-ai/epi10-oe-module`, rama `renove-area-5`, carpeta `lab/area-5-citas/`.
-Estado: **fase A terminada**; de la fase B ya están aplicados el nombre del centro y las traducciones del calendario del back office. Prototipo funcionando en la instancia de hermes-node con datos ficticios y probado de punta a punta con Playwright. La fase B (montarlo sobre la base del área 0 y limpiar el back office) espera a la guía `00_base_interfaz.md`.
+Estado: **fase A terminada; fase B en integración** (rama `renove-area-5`, 944c831, sobre la base del área 0). Instala el área 0 en `renove-integracion`. Prototipo funcionando en la instancia de hermes-node con datos ficticios y probado de punta a punta con Playwright. La fase B (montarlo sobre la base del área 0 y limpiar el back office) espera a la guía `00_base_interfaz.md`.
 
 ## Resumen
 
@@ -37,7 +37,7 @@ Reglas de producto (en `config.php`, ajustables sin tocar código): una cita fut
 
 Capturas del prototipo y del «antes»: `openemr-pruebas/evidencia/capturas/renove/05-calendario/` (`antes_*`, `lab_*`, `despues_backoffice_*`).
 
-**URL de la vista** (para la tarjeta «Citas» del inicio, área 1): hoy, en el laboratorio, `/interface/modules/custom_modules/epi10-lab-5/public/portal/citas.php`. Final, en la fase B: `/interface/modules/custom_modules/oe-module-epi10-ui/public/portal/citas.php` (la ruta exacta la fija la guía del área 0; se confirma en el PR).
+**URL de la vista** (tarjeta «Citas» del inicio, área 1): `/interface/modules/custom_modules/oe-module-epi10-ui/public/portal/citas.php`. El colapsable de citas del núcleo (`#appointmentcard`, con Future/Past Appointments y el formulario técnico) se sustituye por una plantilla sin inglés que redirige a esa vista. El laboratorio `epi10-lab-5` queda como evidencia hasta la demo.
 
 ### Integración con OpenEMR (sin tocar el núcleo)
 
@@ -84,21 +84,30 @@ El calendario de OpenEMR se queda tal cual (vistas día/semana/mes, huecos por p
 | Riesgo | Mitigación |
 |---|---|
 | Si el equipo no marca bloques «En consulta», el portal no enseña huecos | Mensaje claro en el portal («Escríbenos por Mensajes y te buscamos uno»). Para la demo, agenda ficticia sembrada. Se documenta en la guía de Aitor |
-| **Zona horaria**: la instancia no tiene `gbl_time_zone` y PHP va en UTC (las notas salen con una hora menos que en Canarias). Los huecos se calculan y guardan en la hora del servidor, coherentes entre sí, pero «ahora» y las 24 h de antelación dependen de ella | En producción fijar `gbl_time_zone` (Atlantic/Canary o Europe/Madrid, **Unknown** cuál). No lo he cambiado en la instancia compartida |
+| **Zona horaria**: la instancia iba en UTC (`gbl_time_zone` vacío) | **Resuelto el 11 oct**: `Europe/Madrid`, acordado con SKI2-210. Comprobado: reservas y notas se guardan en hora de España. Lo anterior al cambio queda en UTC (solo datos ficticios). **Unknown**: si la clínica está en Canarias habría que usar `Atlantic/Canary` |
 | Una actualización de OpenEMR cambia `fetchEvents`, `AppointmentService::insert` o `addPnote` | Son funciones estables desde hace años; la prueba Playwright lo detecta en staging |
 | Cally está en 0.x | Vendorizado y fijado; la isla solo usa 4 propiedades. Plan B: rejilla propia |
 | Dos personas reservan el mismo hueco a la vez | Bloqueo con nombre y nueva comprobación dentro; la segunda recibe «Ese hueco acaba de ocuparse» |
-| El borde del recuadro de confirmación en móvil queda fijo abajo y tapa horas mientras se hace scroll | Es el patrón de hoja inferior; en la fase B se usa el componente de la base |
+| En móvil, la confirmación es una hoja inferior fija | El panel reserva espacio debajo para que no tape las últimas horas |
 | **Unknown**: si EPI10 quiere confirmación manual del equipo (estado «pendiente») o reserva directa | Por omisión, directa; un cambio de configuración |
 | **Unknown**: lugar y tipo de la cita presencial del test mixto (SKI2-186) | El lugar sale del centro de OpenEMR o de `config.php` |
 
-## Plan de la fase B
+## Fase B: qué se ha hecho
 
-1. Mover `lab/area-5-citas/` a `oe-module-epi10-ui` (namespace y rutas de la guía del área 0), con su layout, botones, tarjetas y alertas; quitar el CSS provisional.
-2. Tarjeta «Citas» del inicio del portal → `citas.php` (coordinado con el área 1, sin cambiar ids: `#appointments-go` se conserva).
-3. Back office: «Mon 10/05» y el mini calendario en español. Las traducciones ya aplicadas (`lab/area-5-citas/sql/backoffice_calendario_es.sql`) pasan al `i18n/openemr_es.tsv` que consolida el área 0; el nombre del centro, al script de configuración del área 7.
-4. Capturas antes/después (escritorio y móvil) en `capturas/renove/05-calendario/` y PR contra `main` con la evidencia.
-5. Quitar el laboratorio (`scripts/quitar_lab.sh`).
+| Pieza | Dónde (`oe-module-epi10-ui/`) |
+|---|---|
+| Vista «Tus citas» con el layout común (cabecera, volver, menú de usuario) | `public/portal/citas.php`, `templates/epi10/paginas/citas.html.twig` |
+| JSON de la isla (sesión del portal + CSRF) | `public/portal/api/citas.php` |
+| Reglas de agenda (sin cambios desde la fase A; la categoría «Cita EPI10» se crea sola si falta) | `src/Citas/Agenda.php`, `config.citas.php` |
+| Isla con componentes de la base (`epi-btn`, `epi-card`, `epi-alert`, iconos Lucide); en móvil la confirmación es una hoja inferior fija | `public/ui/islas/calendario.mjs`, `calendario.css`, `vendor/cally/` |
+| Tarjeta de citas del núcleo en el inicio, sin inglés y redirigida | `templates/sobrescritas/portal/partial/cards/_appointment_card.html.twig` |
+| Back office: mini calendario «L M X J V S D» | `templates/sobrescritas/calendar/default/views/_mini_calendar.html.twig` |
+| Back office: «Mon 10/05» → «lun 05/10» | `public/ui/vistas/calendario-backoffice.js` (`config.php › scripts_por_vista`) |
+| Traducciones globales del área 5 | `i18n/openemr_es.tsv` (consolidadas por el área 0) |
+| Zona horaria `Europe/Madrid` (decisión con SKI2-210) | aplicada en la instancia; SQL en `lab/area-5-citas/sql/zona_horaria.sql` |
+| Prueba E2E | `scripts/prueba-citas.mjs` |
+
+Queda: confirmar en la instancia integrada, capturas «después» y PR contra `main`.
 
 Estimación: fase A ~4 h (hecha); fase B 3–5 h.
 
