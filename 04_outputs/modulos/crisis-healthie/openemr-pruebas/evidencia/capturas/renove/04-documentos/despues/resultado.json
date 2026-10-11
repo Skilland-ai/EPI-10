@@ -1,0 +1,181 @@
+{
+  "fecha": "2026-10-11T19:39:35.321Z",
+  "resultados": [
+    [
+      true,
+      "[escritorio] la biblioteca carga con la base EPI10 UI"
+    ],
+    [
+      true,
+      "[escritorio] hay al menos un documento publicado (26)"
+    ],
+    [
+      true,
+      "[escritorio] R4: no aparece ningún documento no publicado de la ficha"
+    ],
+    [
+      true,
+      "[escritorio] hay «volver» al inicio"
+    ],
+    [
+      true,
+      "[escritorio] biblioteca sin scroll horizontal"
+    ],
+    [
+      true,
+      "[escritorio] biblioteca sin textos en inglés"
+    ],
+    [
+      true,
+      "[escritorio] API de novedades responde JSON"
+    ],
+    [
+      true,
+      "[escritorio] R4: pdf.php de un documento no publicado da 404"
+    ],
+    [
+      true,
+      "[escritorio] PDF en línea para el visor"
+    ],
+    [
+      true,
+      "[escritorio] el visor pinta el PDF (3 páginas)"
+    ],
+    [
+      true,
+      "[escritorio] indicador de página"
+    ],
+    [
+      true,
+      "[escritorio] «volver» lleva a Mi informe"
+    ],
+    [
+      true,
+      "[escritorio] visor sin scroll horizontal"
+    ],
+    [
+      true,
+      "[escritorio] zoom"
+    ],
+    [
+      true,
+      "[escritorio] descarga directa en PDF (Informe EPI10.pdf), nunca ZIP"
+    ],
+    [
+      true,
+      "[escritorio] tras abrirlo, el documento pasa a «visto»"
+    ],
+    [
+      true,
+      "[movil] la biblioteca carga con la base EPI10 UI"
+    ],
+    [
+      true,
+      "[movil] hay al menos un documento publicado (26)"
+    ],
+    [
+      true,
+      "[movil] R4: no aparece ningún documento no publicado de la ficha"
+    ],
+    [
+      true,
+      "[movil] hay «volver» al inicio"
+    ],
+    [
+      true,
+      "[movil] biblioteca sin scroll horizontal"
+    ],
+    [
+      true,
+      "[movil] biblioteca sin textos en inglés"
+    ],
+    [
+      true,
+      "[movil] API de novedades responde JSON"
+    ],
+    [
+      true,
+      "[movil] R4: pdf.php de un documento no publicado da 404"
+    ],
+    [
+      true,
+      "[movil] PDF en línea para el visor"
+    ],
+    [
+      true,
+      "[movil] el visor pinta el PDF (3 páginas)"
+    ],
+    [
+      true,
+      "[movil] indicador de página"
+    ],
+    [
+      true,
+      "[movil] «volver» lleva a Mi informe"
+    ],
+    [
+      true,
+      "[movil] visor sin scroll horizontal"
+    ],
+    [
+      true,
+      "[movil] zoom"
+    ],
+    [
+      true,
+      "[movil] descarga directa en PDF (Informe EPI10.pdf), nunca ZIP"
+    ],
+    [
+      true,
+      "[movil] tras abrirlo, el documento pasa a «visto»"
+    ],
+    [
+      true,
+      "[equipo escritorio] tres filas y nada más (consentimiento, cuestionario, informe)"
+    ],
+    [
+      true,
+      "[equipo escritorio] el informe de Lucía figura como publicado"
+    ],
+    [
+      true,
+      "[equipo escritorio] pestaña sin scroll horizontal"
+    ],
+    [
+      true,
+      "[equipo] «Ver respuestas» enseña las respuestas del cuestionario"
+    ],
+    [
+      true,
+      "[equipo] el consentimiento firmado se abre en el mismo visor"
+    ],
+    [
+      true,
+      "[equipo] tras subirlo, el informe queda en borrador"
+    ],
+    [
+      true,
+      "[equipo] «Marcar validado» lo pasa a validado"
+    ],
+    [
+      true,
+      "[equipo] «Publicar informe» lo publica por la clase del contrato"
+    ],
+    [
+      true,
+      "[equipo movil] tres filas y nada más (consentimiento, cuestionario, informe)"
+    ],
+    [
+      true,
+      "[equipo movil] el informe de Lucía figura como publicado"
+    ],
+    [
+      true,
+      "[equipo movil] pestaña sin scroll horizontal"
+    ],
+    [
+      true,
+      "sin errores de JavaScript"
+    ]
+  ]
+}

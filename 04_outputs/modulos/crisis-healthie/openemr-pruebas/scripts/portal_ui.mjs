@@ -29,7 +29,10 @@ async function login() {
   await page.goto(`${BASE}/portal/index.php?site=default`);
   await page.fill('#uname', process.env.PORTAL_USER);
   await page.fill('#pass', process.env.PORTAL_PASS);
-  if (process.env.PORTAL_EMAIL) await page.fill('#passaddon', process.env.PORTAL_EMAIL);
+  // Desde el renove (área 1) el login puede no pedir el correo (enforce_signin_email=0): solo si el campo existe.
+  if (process.env.PORTAL_EMAIL && (await page.locator('#passaddon').count()) > 0) {
+    await page.fill('#passaddon', process.env.PORTAL_EMAIL);
+  }
   await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle' }), page.click('button[type=submit]')]);
   // Si pide cambio de contraseña o muestra un aviso, lo registramos.
   log('url tras login:', page.url(), '| título:', await page.title());
@@ -142,8 +145,8 @@ try {
     }
   } else if (accion === 'mensaje') {
     const [asunto, texto] = args;
-    if (!(await page.locator('#messages-go').isVisible())) await page.locator('#quickstart_dashboard').click().catch(() => {});
-    await page.locator('#messages-go').click();
+    // Desde el renove, #messages-go lleva al chat nuevo (oe-module-epi10-ui): se abre el buzón clásico por URL.
+    await page.goto(`${BASE}/portal/home.php?landOn=SecureMessaging`);
     await page.waitForTimeout(3000);
     const scope = page.frames().find((f) => f.url().includes('messaging')) || page;
     await captura('21_buzon_paciente');
