@@ -1,0 +1,105 @@
+<!doctype html>
+<!--
+  Informe EPI10 FICTICIO de Lucía (pid 1 de la instancia de prueba) para el laboratorio del área 4 (SKI2-234).
+  Sin datos reales ni valor clínico. Se imprime a PDF con lab/area-4/datos/generar-pdf.mjs (Chromium de Playwright).
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Informe EPI10 · Lucía Peñalver (ficticio)</title>
+<style>
+  @font-face { font-family: M; font-weight: 400; src: url("../../../oe-module-epi10-ui/public/fonts/manrope-latin-400-normal.woff2"); }
+  @font-face { font-family: M; font-weight: 600; src: url("../../../oe-module-epi10-ui/public/fonts/manrope-latin-600-normal.woff2"); }
+  @font-face { font-family: M; font-weight: 700; src: url("../../../oe-module-epi10-ui/public/fonts/manrope-latin-700-normal.woff2"); }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: M, sans-serif; color: #101828; font-size: 10.5pt; line-height: 1.6; }
+  .pag { width: 210mm; height: 297mm; padding: 22mm 20mm 18mm; position: relative; page-break-after: always; background: #fff; overflow: hidden; }
+  .pag:last-child { page-break-after: auto; }
+  .portada { background: #00294d; color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
+  .portada::after { content: ""; position: absolute; right: -60mm; top: 40mm; width: 170mm; height: 170mm; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(128,223,241,.55), rgba(2,154,204,.15) 60%, transparent 70%); }
+  .logo { height: 9mm; width: auto; align-self: flex-start; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 9pt; font-weight: 700; color: #80dff1; }
+  h1 { font-size: 34pt; line-height: 1.1; margin: 4mm 0 6mm; font-weight: 700; max-width: 140mm; }
+  .portada p { color: #d6e6f3; max-width: 120mm; font-size: 12pt; }
+  .ficha { display: grid; grid-template-columns: repeat(3, auto); gap: 4mm 12mm; font-size: 9.5pt; position: relative; z-index: 1; }
+  .ficha b { display: block; color: #80dff1; font-size: 8pt; text-transform: uppercase; letter-spacing: .1em; }
+  .aviso { font-size: 8pt; color: #9fb8cf; position: relative; z-index: 1; }
+  .cab { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eadfd5; padding-bottom: 5mm; margin-bottom: 9mm; font-size: 8.5pt; color: #5b6474; }
+  .cab img { height: 8mm; }
+  h2 { color: #01447b; font-size: 18pt; margin: 0 0 3mm; }
+  h3 { color: #00294d; font-size: 12pt; margin: 7mm 0 2mm; }
+  .lead { font-size: 12pt; color: #5b6474; margin: 0 0 8mm; }
+  .edad { display: flex; gap: 8mm; margin: 6mm 0 8mm; }
+  .edad div { flex: 1; background: #fdf4ed; border-radius: 5mm; padding: 6mm; }
+  .edad b { display: block; font-size: 30pt; color: #01447b; line-height: 1.1; }
+  .edad span { font-size: 9pt; color: #5b6474; }
+  .barra { margin: 3mm 0 5mm; }
+  .barra .t { display: flex; justify-content: space-between; font-weight: 600; font-size: 9.5pt; }
+  .barra .b { height: 3mm; background: #eef4fa; border-radius: 2mm; overflow: hidden; margin-top: 1.5mm; }
+  .barra .b span { display: block; height: 100%; background: linear-gradient(90deg, #029acc, #01447b); border-radius: 2mm; }
+  .tarjetas { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .tarjeta { border: 1px solid #eadfd5; border-radius: 4mm; padding: 5mm; }
+  .tarjeta b { color: #01447b; display: block; margin-bottom: 1mm; }
+  .pie { position: absolute; left: 20mm; right: 20mm; bottom: 10mm; font-size: 7.5pt; color: #98a1b0; display: flex; justify-content: space-between; }
+  ul { padding-left: 5mm; margin: 0; }
+  li { margin-bottom: 1.5mm; }
+</style>
+</head>
+<body>
+  <section class="pag portada">
+    <img class="logo" src="../../../oe-module-epi10-ui/public/img/epi10-blanco.png" alt="EPI10 Salud">
+    <div style="position:relative; z-index:1">
+      <p class="eyebrow">Informe epigenético personalizado</p>
+      <h1>Tu edad biológica y tu plan de hábitos</h1>
+      <p>Lo que dice tu test EPI10, explicado en claro, y los cambios que más te van a ayudar en los próximos seis meses.</p>
+    </div>
+    <div>
+      <div class="ficha">
+        <div><b>Para</b>Lucía Peñalver Ortiz</div>
+        <div><b>Código del kit</b>EPI-0000-FICT</div>
+        <div><b>Fecha del informe</b>11 de octubre de 2026</div>
+      </div>
+      <p class="aviso">Documento ficticio de demostración. No contiene datos reales ni tiene valor clínico.</p>
+    </div>
+  </section>
+
+  <section class="pag">
+    <div class="cab"><img src="../../../oe-module-epi10-ui/public/img/epi10-azul.png" alt="EPI10"><span>Informe de Lucía Peñalver · ficticio</span></div>
+    <h2>Tu resultado, en una frase</h2>
+    <p class="lead">Tu cuerpo funciona como el de una persona algo más joven que tú. Bien: hay margen para mejorar todavía más.</p>
+    <div class="edad">
+      <div><b>38</b><span>Edad cronológica</span></div>
+      <div><b>35,4</b><span>Edad biológica estimada</span></div>
+      <div><b>−2,6</b><span>Años de diferencia</span></div>
+    </div>
+    <h3>Cómo están tus sistemas</h3>
+    <div class="barra"><div class="t"><span>Metabolismo</span><span>Muy bien</span></div><div class="b"><span style="width:82%"></span></div></div>
+    <div class="barra"><div class="t"><span>Inflamación</span><span>Bien</span></div><div class="b"><span style="width:68%"></span></div></div>
+    <div class="barra"><div class="t"><span>Descanso y estrés</span><span>Mejorable</span></div><div class="b"><span style="width:47%"></span></div></div>
+    <div class="barra"><div class="t"><span>Sistema cardiovascular</span><span>Muy bien</span></div><div class="b"><span style="width:79%"></span></div></div>
+    <h3>Qué significa</h3>
+    <p>Los marcadores que más pesan en tu resultado son los del metabolismo y el corazón. Donde más puedes ganar es en el descanso: tus respuestas del cuestionario de hábitos apuntan a pocas horas de sueño entre semana y picos de estrés por la tarde.</p>
+    <div class="pie"><span>EPI10 Salud · Informe ficticio de demostración</span><span>2 / 3</span></div>
+  </section>
+
+  <section class="pag">
+    <div class="cab"><img src="../../../oe-module-epi10-ui/public/img/epi10-azul.png" alt="EPI10"><span>Informe de Lucía Peñalver · ficticio</span></div>
+    <h2>Tu plan para los próximos seis meses</h2>
+    <p class="lead">Tres cambios, por orden de impacto. Empieza por el primero.</p>
+    <div class="tarjetas">
+      <div class="tarjeta"><b>1 · Dormir siete horas</b>Adelanta la hora de acostarte 30 minutos entre semana. Es el cambio que más mueve tu edad biológica.</div>
+      <div class="tarjeta"><b>2 · Moverte después de comer</b>Un paseo de 15 minutos tras la comida principal mejora tu respuesta a la glucosa.</div>
+      <div class="tarjeta"><b>3 · Más verde en el plato</b>Dos raciones de verdura al día, una de ellas de hoja verde.</div>
+      <div class="tarjeta"><b>Y después</b>Repetir el test dentro de seis meses para ver cuánto has avanzado.</div>
+    </div>
+    <h3>Próximos pasos</h3>
+    <ul>
+      <li>Si tienes dudas sobre tu informe, escríbenos desde «Mensajes» en tu espacio EPI10.</li>
+      <li>Puedes reservar una sesión de revisión con el equipo desde «Citas».</li>
+    </ul>
+    <div class="pie"><span>EPI10 Salud · Informe ficticio de demostración</span><span>3 / 3</span></div>
+  </section>
+</body>
+</html>
