@@ -1,8 +1,8 @@
 # Área 7 · Back office de Aitor: menús por omisión, lista de clientes y ficha EPI10 (v1)
 
-Fecha: 2026-10-11 · Linear: SKI2-236 (hija de SKI2-230) · Estado: **fase A terminada** (research, prototipo y configuración aplicada en la instancia); fase B en curso sobre la base del área 0
+Fecha: 2026-10-11 · Linear: SKI2-236 (hija de SKI2-230) · Estado: **fase A terminada**; **fase B integrada en la rama** `renove-area-7` sobre la base del área 0 (vistas en `oe-module-epi10-ui`), pendiente de que el área 0 la instale y del PR
 Entrada: [feedback de Raúl](../2026-10-11_feedback_vistas_openemr_v1.md) §2.2, 2.3, 2.4 y 2.7 · [guía de la base](00_base_interfaz.md) · [informe SKI2-207](../2026-10-07_openemr_headless_v1.md) §3.4
-Código: repo `Skilland-ai/epi10-oe-module`, rama `renove-area-7` (`config-instancia/area-7/`, `lab/area-7/`)
+Código: repo `Skilland-ai/epi10-oe-module`, rama `renove-area-7` (`config-instancia/area-7/` para la configuración, `oe-module-epi10-ui/…/backoffice` y `src/Backoffice/` para las vistas)
 
 ## En cinco líneas
 
@@ -113,6 +113,15 @@ Capturas de la fase A: `openemr-pruebas/evidencia/capturas/renove/07-backoffice/
 
 ## 5. Integración (fase B)
 
+**Hecho en la rama (commit eb4a869):** las tres vistas pasan a `oe-module-epi10-ui/public/backoffice/{clientes,ficha,avanzadas}.php` con `Vista::backoffice(…, compacto)`, plantillas `@epi10/paginas/backoffice/*`, componentes de la base (`epi-table`, `epi-tabs`, `epi-steps`, `epi-list`, `epi-badge`, `epi-card--destacada`) y una hoja propia por vista (`ui/vistas/backoffice-clientes.css/.js`, prefijo `epi-bo-`). Configuración por instalación en `config-backoffice.php` (enlace del caso a la pantalla de informes del monolito, `https://localhost:4893/informes/casos/{case_id}` en la demo). **Aterrizaje** aprobado por el orquestador: un listener de `patientDemographics.view` lleva a la ficha EPI10 a quien está en «EPI10 Operaciones» y abre un cliente desde el núcleo (calendario, buscador global); admin sigue en el dashboard. El chat del equipo (área 3) va incrustado en la pestaña Mensajes (`mensajes.php?pid=…&solo=1`) y el menú «Mensajes» apunta a su vista.
+
+Acordado con el área 1: una sola regla de fase para el portal y el back office (su `Inicio\FaseCaso`); cuando las dos ramas estén en `renove-integracion`, `Backoffice\FaseCaso` delega en ella y conserva los textos del equipo. Su panel «Hoy» abre `ficha.php?set_pid={pid}#documentos|#mensajes|#resumen`.
+
+Capturas «antes» (vistas del núcleo que admin conserva y el menú de operaciones de SKI2-207): `capturas/renove/07-backoffice/antes_*`.
+
+### Plan de la fase B (referencia)
+
+
 | Pieza | Fase A (prototipo) | Fase B (base del área 0) |
 |---|---|---|
 | Páginas | `/portal/epi10-lab-7/*.php`, CSS propio aislado (`body.epi-lab7`) | `oe-module-epi10-ui/public/backoffice/{clientes,ficha,avanzadas}.php` con `Vista::backoffice(..., compacto)` y plantillas `@epi10/paginas/*.html.twig`; componentes del kit (`epi-table`, `epi-tabs`, `epi-badge`, `epi-steps`, `epi-list`) |
@@ -128,11 +137,11 @@ Lo que no cambia: el contrato v1 (solo se leen sus servicios internos: `Portal\F
 | # | Riesgo o Unknown | Mitigación |
 |---|---|---|
 | R1 | El estado se calcula por cliente al listar (tope 300 por búsqueda). Con miles de clientes, el filtro por estado se vuelve lento | Para producción: calcularlo en una consulta agregada o cachearlo por `pid` al cambiar formularios o informes |
-| R2 | **Fechas con dos zonas horarias en la instancia**: OpenEMR abre la BD en hora de Madrid, pero hay filas escritas en UTC (rutas de la API o scripts). «Última actividad» puede desviarse hasta 2 h | Revisar con SKI2-210 en qué rutas se escribe con `NOW()` en UTC; Unknown |
+| R2 | **Fechas con dos zonas horarias en la instancia**: las filas anteriores al ajuste de zona (Europe/Madrid, área 5) quedan 2 h desplazadas en «última actividad» | Aceptado como cosmético por el orquestador: solo afecta a datos ficticios anteriores al cambio |
 | R3 | `main_menu_role` es por usuario: un usuario nuevo de operaciones ve el menú estándar si nadie se lo asigna | `aplicar.sh` con `USUARIOS=…` en el alta; anotarlo en la guía de despliegue |
 | R4 | Si la cabecera del área 0 cambia el modelo de vista de las pestañas de OpenEMR, la ficha deja de fijar el cliente en la cabecera | Envuelto en `try/catch`: la ficha sigue funcionando |
 | R5 | En «Funciones avanzadas» aparecen etiquetas del núcleo sin traducir («Posting Payments», «Lab Overview») | Es la zona avanzada; las que vea Aitor se añaden a `i18n/openemr_es.tsv` |
-| U1 | URL de Odoo para abrir un caso por `x_epi10_case_id` | Una redirección en el monolito (`/casos/<case_id>/odoo`) sería lo más limpio; fuera del contrato v1 |
+| U1 | URL de Odoo para abrir un caso por `x_epi10_case_id` | Para el martes, el botón abre la pantalla de informes del monolito por `case_id` (decisión del orquestador). El enlace directo a la tarea de Odoo, después de la demo |
 | U2 | Si el código del kit se duplica en OpenEMR | Pregunta a Raúl (§3) |
 | U3 | Qué informes de OpenEMR usará de verdad Aitor | Hoy quedan Listado de clientes y Citas |
 
