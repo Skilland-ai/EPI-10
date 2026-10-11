@@ -5,7 +5,7 @@ Instancia: OpenEMR 8.4.1 en hermes-node, `http://localhost:4896` (túnel `hn ope
 
 ## Cuándo
 
-Cuando `main` de `Skilland-ai/epi10-oe-module` tenga los PR de las seis áreas: #2, #3, #4, #5, #6, #7, #8, #9 y el del área 4. Hasta entonces la instancia corre `renove-demo` 2bb052b (`main` 28c48b7 + rama del área 4), verificado con el mismo recorrido.
+Cuando `main` de `Skilland-ai/epi10-oe-module` tenga los PR de las seis áreas: #2 a #9, el del área 4 (#10) y el del menú de admin. Hasta entonces la instancia corre `renove-demo` 1412e3d (`main` 28c48b7 + rama del área 4 + menú de admin), verificado con el mismo recorrido.
 
 ## Comando
 
@@ -41,16 +41,16 @@ Las contraseñas están en `~/Projects/epi10-openemr-prueba/.env` del HP. El scr
 | Portal · Lucía | Login con el shell EPI10 y sin pedir correo · entra al inicio · cabecera y «Hola, Lucía» · menú de usuario con Ajustes, Ayuda y Cerrar sesión · cada tarjeta abre su vista: «Mis documentos» (isla tareas), «Citas» (isla calendario), «Mensajes» (isla chat) y «Mi informe» (biblioteca) · ninguna pantalla desborda · volver al inicio muestra el panel · cero errores de JS y cero 5xx |
 | Portal · primer acceso | `index.php?password_update=1` en español («Crea tu contraseña»), sin «Account Name» ni «New Password» |
 | Back office · operaciones.prueba | Login con el shell EPI10 · primera pestaña = inicio EPI10, nunca el calendario · main.php sin desbordar en móvil · clientes, ficha (pid 1), mensajes y kit cargan con EPI10 UI · calendario del núcleo carga · cero errores |
-| Back office · admin (escritorio) | Primera pestaña = inicio EPI10. **Informativo**: el menú completo de OpenEMR desborda a 1366 px y sigue en inglés («Finder», «Recalls», «Modules»…). Es decisión del área 7: admin conserva todo y no es la persona de la demo |
+| Back office · admin (escritorio) | Primera pestaña = inicio EPI10 · el menú completo de OpenEMR cabe a 1366 px (a 1280, en dos líneas). Sigue en inglés en parte («Finder», «Recalls», «Modules»…): admin conserva el menú del núcleo por decisión del área 7. La comprobación de desborde es informativa |
 
 Además, el detector de inglés: `node <repo>/scripts/detectar-ingles.mjs todo` (con `OE_USER=operaciones.prueba OE_PASS=$OPS_PASS`). Resultado esperado: portal sin inglés; en el back office solo «Portal» y nombres de pacientes ficticias (falsos positivos).
 
-Ensayo del 11 oct sobre `renove-demo` 2bb052b: **62 de 63 correctas**. La que falla es la informativa de admin.
+Ensayo del 11 oct sobre `renove-demo` 1412e3d: **63 de 63 correctas**, con la de admin.
 
 ## Vuelta atrás
 
 ```bash
-SIN_CONTRATO=1 ./instalar_demo.sh origin/renove-demo   # último estado verificado (2bb052b), sin tocar el contrato
+SIN_CONTRATO=1 ./instalar_demo.sh origin/renove-demo   # último estado verificado (1412e3d), sin tocar el contrato
 ```
 
 Configuración del área 7: `config-instancia/area-7/aplicar.sh --revertir`. Configuración del área 1: `oe-module-epi10-ui/sql/*_quitar.sql`.
