@@ -1,6 +1,6 @@
 # Área 7 · Back office de Aitor: menús por omisión, lista de clientes y ficha EPI10 (v1)
 
-Fecha: 2026-10-11 · Linear: SKI2-236 (hija de SKI2-230) · Estado: **fase A terminada**; **fase B integrada en la rama** `renove-area-7` sobre la base del área 0 (vistas en `oe-module-epi10-ui`), pendiente de que el área 0 la instale y del PR
+Fecha: 2026-10-11 · Linear: SKI2-236 (hija de SKI2-230) · Estado: **fases A y B terminadas**. Instalado por el área 0 en la instancia (`renove-integracion`), recorrido 24/24 y PR abierto contra `main`
 Entrada: [feedback de Raúl](../2026-10-11_feedback_vistas_openemr_v1.md) §2.2, 2.3, 2.4 y 2.7 · [guía de la base](00_base_interfaz.md) · [informe SKI2-207](../2026-10-07_openemr_headless_v1.md) §3.4
 Código: repo `Skilland-ai/epi10-oe-module`, rama `renove-area-7` (`config-instancia/area-7/` para la configuración, `oe-module-epi10-ui/…/backoffice` y `src/Backoffice/` para las vistas)
 
@@ -117,7 +117,22 @@ Capturas de la fase A: `openemr-pruebas/evidencia/capturas/renove/07-backoffice/
 
 Acordado con el área 1: una sola regla de fase para el portal y el back office (su `Inicio\FaseCaso`); cuando las dos ramas estén en `renove-integracion`, `Backoffice\FaseCaso` delega en ella y conserva los textos del equipo. Su panel «Hoy» abre `ficha.php?set_pid={pid}#documentos|#mensajes|#resumen`.
 
-Capturas «antes» (vistas del núcleo que admin conserva y el menú de operaciones de SKI2-207): `capturas/renove/07-backoffice/antes_*`.
+Capturas «antes» (vistas del núcleo que admin conserva y el menú de operaciones de SKI2-207): `capturas/renove/07-backoffice/antes_*`. Capturas «después» de la instancia integrada: `capturas/renove/07-backoffice/despues/` (escritorio 1440 px y móvil 390 px).
+
+**Recorrido final sobre la instancia integrada (`scripts/area-7-recorrido.mjs`), 24/24 en verde el 11 oct:**
+- menú exacto (Inicio · Calendario · Buscador · Mensajes · Clientes · Informes · Ajustes) y sin las entradas escondidas;
+- lista con columnas legibles y búsqueda en vivo;
+- ficha con nombre, fase y 5 pestañas, sin nada clínico;
+- hilo del chat del área 3 dentro de Mensajes;
+- teclado en las pestañas y formulario de Datos con los 10 campos;
+- «← Clientes» conserva la búsqueda;
+- aterrizaje desde `demographics.php` a la ficha EPI10;
+- Funciones avanzadas;
+- móvil sin scroll horizontal en 4 vistas;
+- admin con el menú completo y su dashboard;
+- ni errores de JavaScript ni recursos 404.
+
+Pestaña Documentos: enchufada a la biblioteca del área 4 (`Biblioteca\Paginas::varsFicha`) cuando su código está instalado; si no, sale la lista simple. Globals por omisión en `aplicar.sh`: `allow_custom_report = 0` (sin «Resumen de mi historial») y `ccda_alt_service_enable = 0`.
 
 ### Plan de la fase B (referencia)
 
@@ -132,7 +147,27 @@ Capturas «antes» (vistas del núcleo que admin conserva y el menú de operacio
 
 Lo que no cambia: el contrato v1 (solo se leen sus servicios internos: `Portal\Formularios`, `epi10_informes_publicados`, `epi10_referencias`) y los ids del núcleo.
 
-## 6. Riesgos y Unknown
+## 6. Despliegue en el servidor de EPI10 (receta reproducible)
+
+Todo es configuración nativa o código de módulo. Nada toca el núcleo. Orden, con OpenEMR ya arrancado:
+
+| # | Paso | Qué | Cómo |
+|---|---|---|---|
+| 1 | Módulos | `oe-module-epi10` (contrato) y `oe-module-epi10-ui` (interfaz, con las vistas del área 7 y el **aterrizaje**, que va en su `Bootstrap`) en la imagen derivada | `COPY` de las dos carpetas a `interface/modules/custom_modules/`, y registrar y activar en el module manager (`oe-module-epi10-ui/sql/registrar_modulo.sql`) |
+| 2 | Configuración del módulo | Enlace del caso | `oe-module-epi10-ui/config-backoffice.php` › `enlace_caso` = `<INFORMES_URL_PUBLICA>/informes/casos/{referencia}` |
+| 3 | Entrada del back office (área 1) | Pestaña «Inicio» al entrar; el calendario y los mensajes dejan de abrirse solos | `oe-module-epi10-ui/sql/inicio_backoffice.sql` (`default_open_tabs`; deshacer: `…_quitar.sql`) |
+| 4 | Centro y citas (área 5) | Nombre del centro «EPI10 Salud», categoría «Cita EPI10» | `lab/area-5-citas/sql/backoffice_calendario_es.sql` (rama `renove-area-5`) |
+| 5 | **Área 7: ACL y menús** | Grupo «EPI10 Operaciones», menú principal y menú de ficha, asignados a los usuarios de operaciones | `USUARIOS=aitor,carmen ./config-instancia/area-7/aplicar.sh --menu-principal`, con `HN` (host ssh) y `C` (contenedor) del servidor. Idempotente. Deshacer: `--revertir` |
+| 6 | Comprobación | Menú, lista, ficha, aterrizaje, móvil y admin intacto | `scripts/area-7-recorrido.mjs` con `OE_BASE` del servidor (Playwright) |
+
+Notas:
+
+- Los menús JSON van a `sites/default/documents/custom_menus/` (volumen `sites`): sobreviven a las actualizaciones de la imagen.
+- El grupo y los permisos viven en la BD (phpGACL): entran en la copia diaria de MariaDB.
+- Cada usuario nuevo de operaciones necesita el paso 5 (`main_menu_role` es por usuario). Si no, ve el menú estándar.
+- Nombres reales de usuario de Aitor y Carmen: **Unknown** (se crean al desplegar).
+
+## 7. Riesgos y Unknown
 
 | # | Riesgo o Unknown | Mitigación |
 |---|---|---|
@@ -145,7 +180,7 @@ Lo que no cambia: el contrato v1 (solo se leen sus servicios internos: `Portal\F
 | U2 | Si el código del kit se duplica en OpenEMR | Pregunta a Raúl (§3) |
 | U3 | Qué informes de OpenEMR usará de verdad Aitor | Hoy quedan Listado de clientes y Citas |
 
-## 7. Coordinación
+## 8. Coordinación
 
 - **SKI2-210**: quitado `simplifyMenu` y sus claves de `config.php` (commit c41f29f del PR #1), reinstalado y contrato 35/35.
 - **Área 3**: ACL del chat del equipo (`patients/notes` y `patients/docs`) en el grupo; su E2E pasa 12/12 con `operaciones.prueba`. Menú «Mensajes» y pestaña Mensajes enchufados a su vista.

@@ -1,0 +1,125 @@
+{
+  "fecha": "2026-10-11T19:23:50.351Z",
+  "resultados": [
+    {
+      "nombre": "menú de operaciones = Inicio, Calendario, Buscador, Mensajes, Clientes, Informes, Ajustes",
+      "ok": true,
+      "detalle": "Inicio · Calendario · Buscador · Mensajes · Clientes · Ficha del cliente · Citas del cliente · Informes · Listado de clientes · Citas · Ajustes · Mis preferencias · Cambiar contraseña · Funciones avanzadas"
+    },
+    {
+      "nombre": "lista: hay clientes y columnas legibles",
+      "ok": true,
+      "detalle": "22 filas"
+    },
+    {
+      "nombre": "búsqueda en vivo «Lucía» → 1 resultado",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "ficha: cabecera con nombre y fase",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "ficha: 5 pestañas",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "ficha: nada clínico a la vista",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "pestaña documentos visible",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "pestaña mensajes visible",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "mensajes: el hilo del cliente (área 3) se carga dentro de la ficha",
+      "ok": true,
+      "detalle": "1693 caracteres"
+    },
+    {
+      "nombre": "pestaña citas visible",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "pestaña datos visible",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "teclado: Inicio vuelve a Resumen",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "datos: formulario solo con el inventario",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "volver: «← Clientes» regresa a la lista con la búsqueda",
+      "ok": true,
+      "detalle": "http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/clientes.php?q=Luc%C3%ADa"
+    },
+    {
+      "nombre": "aterrizaje: abrir un cliente desde el núcleo lleva a la ficha EPI10",
+      "ok": true,
+      "detalle": "http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/ficha.php?set_pid=1"
+    },
+    {
+      "nombre": "funciones avanzadas: lista lo escondido según permisos",
+      "ok": true,
+      "detalle": "Generales · Paciente · Informes · Varios · Los menús emergentes"
+    },
+    {
+      "nombre": "móvil sin scroll horizontal: movil_01_clientes",
+      "ok": true,
+      "detalle": "390px"
+    },
+    {
+      "nombre": "móvil sin scroll horizontal: movil_03_ficha_resumen",
+      "ok": true,
+      "detalle": "390px"
+    },
+    {
+      "nombre": "móvil sin scroll horizontal: movil_04_ficha_datos",
+      "ok": true,
+      "detalle": "390px"
+    },
+    {
+      "nombre": "móvil sin scroll horizontal: movil_06_avanzadas",
+      "ok": true,
+      "detalle": "390px"
+    },
+    {
+      "nombre": "admin conserva el menú estándar",
+      "ok": true,
+      "detalle": "147 entradas"
+    },
+    {
+      "nombre": "admin sigue abriendo el dashboard de OpenEMR",
+      "ok": true,
+      "detalle": "http://localhost:4896/interface/patient_file/summary/demographics.php?set_pid=1"
+    },
+    {
+      "nombre": "sin errores de JavaScript",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "sin recursos 404 en las vistas",
+      "ok": true,
+      "detalle": ""
+    }
+  ]
+}
