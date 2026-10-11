@@ -102,7 +102,7 @@ Los formularios se leen con `Portal\Formularios::estado()` y los informes con `I
 | 4 · Laboratorio | `muestra_enviada`, `entregable` | Informe en preparación → El equipo está preparando tu informe | Mensajes (en `entregable`) |
 | 5 · Tu informe | `entregado`, `cerrado` | Informe listo → Ya puedes leer tu informe | Mi informe |
 
-**Propuesta para después de la demo (contrato v1.1, cambio compatible, coordinado con SKI2-210):**
+**Propuesta para SKI2-210, después de la demo del 13 oct (contrato v1.1, cambio compatible; aprobada por el orquestador el 11 oct):**
 
 ```sql
 CREATE TABLE IF NOT EXISTS `epi10_fase_caso` (
