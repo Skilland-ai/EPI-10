@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-11T19:23:50.351Z",
+  "fecha": "2026-10-11T19:29:19.687Z",
   "resultados": [
     {
       "nombre": "menú de operaciones = Inicio, Calendario, Buscador, Mensajes, Clientes, Informes, Ajustes",
@@ -9,7 +9,7 @@
     {
       "nombre": "lista: hay clientes y columnas legibles",
       "ok": true,
-      "detalle": "22 filas"
+      "detalle": "25 filas"
     },
     {
       "nombre": "búsqueda en vivo «Lucía» → 1 resultado",
@@ -44,7 +44,7 @@
     {
       "nombre": "mensajes: el hilo del cliente (área 3) se carga dentro de la ficha",
       "ok": true,
-      "detalle": "1693 caracteres"
+      "detalle": "2239 caracteres"
     },
     {
       "nombre": "pestaña citas visible",
@@ -63,6 +63,11 @@
     },
     {
       "nombre": "datos: formulario solo con el inventario",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "datos: «Más datos» existe y está plegado por defecto",
       "ok": true,
       "detalle": ""
     },
