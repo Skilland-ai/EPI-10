@@ -1,7 +1,7 @@
 # Área 5 · Calendario de citas: componente del portal y limpieza del back office (v1, fase A)
 
 Fecha: 2026-10-11 · Linear: SKI2-235 (hija de SKI2-230) · Entrada: [feedback de Raúl](../2026-10-11_feedback_vistas_openemr_v1.md) §1.8 y §2.6 · [base del área 0](2026-10-11_base_interfaz_decision_v1.md) · repo `Skilland-ai/epi10-oe-module`, rama `renove-area-5`, módulo `oe-module-epi10-ui/`. Prototipo de la fase A: [`openemr-pruebas/evidencia/renove/05-calendario-laboratorio/`](../openemr-pruebas/evidencia/renove/05-calendario-laboratorio/README.md).
-Estado: **fase A terminada; fase B integrada en la instancia** (rama `renove-area-5`, sobre la base del área 0; instala el área 0 desde `renove-integracion`). Laboratorio `epi10-lab-5` quitado de la instancia el 11 oct. Prototipo funcionando en la instancia de hermes-node con datos ficticios y probado de punta a punta con Playwright. La fase B (montarlo sobre la base del área 0 y limpiar el back office) espera a la guía `00_base_interfaz.md`.
+Estado: **fase A y fase B terminadas; PR abierto** (ver abajo). Fase B integrada en la instancia (rama `renove-area-5`, sobre la base del área 0; instala el área 0 desde `renove-integracion`). Laboratorio `epi10-lab-5` quitado de la instancia el 11 oct. Prototipo funcionando en la instancia de hermes-node con datos ficticios y probado de punta a punta con Playwright. La fase B (montarlo sobre la base del área 0 y limpiar el back office) espera a la guía `00_base_interfaz.md`.
 
 ## Resumen
 
@@ -107,7 +107,7 @@ El calendario de OpenEMR se queda tal cual (vistas día/semana/mes, huecos por p
 | Zona horaria `Europe/Madrid` (decisión con SKI2-210) | aplicada en la instancia; SQL en la evidencia del laboratorio, `sql/zona_horaria.sql` |
 | Prueba E2E | `scripts/prueba-citas.mjs` (+ `scripts/prueba-citas-limpiar.sql`) |
 
-Queda: confirmar en la instancia integrada, capturas «después» y PR contra `main`.
+Comprobado en la instancia integrada (11 oct): E2E en verde y capturas `despues_*` (portal y back office, escritorio y móvil).
 
 Estimación: fase A ~4 h (hecha); fase B 3–5 h.
 
