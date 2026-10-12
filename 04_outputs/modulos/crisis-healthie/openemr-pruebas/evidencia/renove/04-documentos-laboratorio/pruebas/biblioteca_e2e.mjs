@@ -67,7 +67,7 @@ async function portal(movil) {
   const inline = await page.request.get(`${U.pdf}?id=${id}`);
   ok(inline.ok() && inline.headers()['content-type'] === 'application/pdf' && inline.headers()['content-disposition'].startsWith('inline'), `[${sufijo}] PDF en línea para el visor`);
 
-  await Promise.all([page.waitForNavigation(), page.locator(`[data-epi10-lista="documentos"] [data-epi10-item="${id}"] a`).click()]);
+  await Promise.all([page.waitForNavigation(), page.locator(`[data-epi10-lista="documentos"] [data-epi10-item="${id}"] a[data-epi10-accion="abrir-documento"]`).click()]);
   await page.waitForSelector('[data-epi10-visor-estado="listo"]');
   await page.waitForFunction(() => { const c = document.querySelector('[data-epi10-pagina="1"] canvas'); return c && c.width > 0; });
   await page.waitForTimeout(800);
