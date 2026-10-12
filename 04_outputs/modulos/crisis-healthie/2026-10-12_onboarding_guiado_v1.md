@@ -28,3 +28,13 @@ Al entrar, si faltan pasos obligatorios, el portal no muestra el inicio: muestra
 - **Contrato v1 (oe-module-epi10):** `estado_formularios` devuelve también `test` (modalidad, envío, cita) y `completos` exige los tres; nueva lectura mínima, sin romper v1.
 - **Monolito:** D3 con tres pasos; campos de Odoo nuevos (`odoo:setup` los crea); actividad «Pedir test» con los datos; etapa «Cita» si hay cita.
 - **NutriWell:** texto de la página de éxito.
+
+## Tramo 3 · Espera del kit y test (acordado con Raúl, 12 oct, 20:50)
+1. **Mientras llega el kit** (a casa o a la sede): en el chat del portal, un acceso rápido «¿Quieres preguntar por tu pedido?» que responde solo con la plantilla común de plazos («Tu kit sale en 3–5 días laborables…», texto de EPI10) y añade «Si tienes otra pregunta, escribe al equipo». Lo mismo si la clienta pregunta por el pedido: se le ofrece esa respuesta antes de molestar al equipo.
+2. **Llega el kit a la sede** (modalidad sede): plantilla para Aitor, un clic: «Tu test ya está aquí: reserva tu cita para hacértelo».
+3. **Llega el kit a casa**: plantilla para Aitor, un clic: pedir el código de barras. La clienta, cuando se lo haga, lo dice por el chat.
+4. **Guía del kit**: plantilla de indicaciones con la marca EPI10, muy visual (hisopo por la lengua, cerrar, enviar el código de barras: foto o escrito por el chat). Un documento con marca que se adjunta o se enlaza desde la plantilla.
+5. **Código de barras recibido** (foto o texto por el chat): el código se registra (D8, SKI2-185) y salta una tarea a Aitor: gestionar con el proveedor la recogida en casa o en la sede y el envío al laboratorio.
+6. **Laboratorio**: sin automatización por ahora; Aitor marca «Entregable disponible» cuando llegan los resultados.
+
+Reparto: plantillas (1–4) → SKI2-266 (sembrarlas y el acceso rápido del portal); registro del código y tarea de recogida (5) → SKI2-185 + monolito, después de la demo; guía del kit con marca (4) → documento de diseño, SKI2-268.
