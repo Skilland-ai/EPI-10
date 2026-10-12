@@ -1,0 +1,120 @@
+<title>EPI10 tras Healthie</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: un relato en una columna de lectura, con una línea de tiempo, dos tablas de decisión y una galería de pantallas. */
+:root{--bg:#f7f8f6;--fg:#1d2a2a;--muted:#5c6b6b;--line:#d9dfdc;--panel:#ffffff;--accent:#0f5a63;--chip:#e3eeef;--azul:#0b3d6b;--ok:#1d7a4a;--aviso:#9a4b00;
+--display:"Fraunces",Georgia,serif;--body:"Source Sans 3",system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141b1b;--fg:#e8eeec;--muted:#9fb0ad;--line:#2b3838;--panel:#1c2525;--accent:#7fc9d1;--chip:#243535;--azul:#9cc4ea;--ok:#7fd0a1;--aviso:#f0b070;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141b1b;--fg:#e8eeec;--muted:#9fb0ad;--line:#2b3838;--panel:#1c2525;--accent:#7fc9d1;--chip:#243535;--azul:#9cc4ea;--ok:#7fd0a1;--aviso:#f0b070;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px;padding-inline:20px}
+.eyebrow{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:var(--display);font-weight:500;font-size:42px;line-height:1.08;margin:6px 0 12px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:27px;margin:44px 0 10px;text-wrap:balance}
+h3{font-size:17px;margin:22px 0 6px}
+p{max-width:68ch;margin:0 0 12px}
+.lead{font-size:20px;color:var(--muted)}
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.cifra{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.cifra b{display:block;font-family:var(--display);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--azul)}
+.cifra span{font-size:14px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tabla{overflow-x:auto}
+.linea{list-style:none;padding:0;margin:16px 0;border-left:2px solid var(--line)}
+.linea li{position:relative;padding:0 0 18px 22px}
+.linea li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.linea b{display:block}
+.linea small{color:var(--muted)}
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.galeria figure{margin:0;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px}
+.galeria img{display:block;width:100%;height:auto;border-radius:6px}
+.galeria figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+.movil{grid-template-columns:1fr 260px}
+.ok{color:var(--ok);font-weight:600}.aviso{color:var(--aviso);font-weight:600}
+.pie{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+ol.pasos{padding-left:22px}ol.pasos li{margin-bottom:8px}
+@media (max-width:640px){.galeria,.movil{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+<div class="wrap">
+<div class="eyebrow">EPI10 Salud · NutriWell · 13 de octubre de 2026</div>
+<h1>Qué ha pasado con Healthie y qué te enseñamos hoy</h1>
+<p class="lead">En cinco días hemos sustituido Healthie por una plataforma propia sobre software libre, sin coste de licencia, con el portal y el back office a la medida de EPI10. Esta página resume la decisión, lo construido y lo que vas a ver en la demo.</p>
+
+<div class="cifras">
+  <div class="cifra"><b>0 €</b><span>licencia mensual de la plataforma nueva</span></div>
+  <div class="cifra"><b>475 → 1.900 $</b><span>al mes que costaba la API de Healthie</span></div>
+  <div class="cifra"><b>5 días</b><span>del aviso de Healthie a la demo</span></div>
+  <div class="cifra"><b>72 s</b><span>de la compra al informe entregado, ensayo automático</span></div>
+</div>
+
+<h2>1. El problema</h2>
+<p>El plan original usaba Healthie como portal de la clienta: ahí firmaría el consentimiento, respondería el cuestionario, hablaría con el equipo y leería su informe. El 7 de octubre Healthie confirmó dos cosas que no sabíamos al contratar el plan Group:</p>
+<ul>
+  <li><b>La API es un añadido de pago:</b> 475 $ al mes el primer año, 950 $ el segundo y 1.900 $ a partir del tercero. Sin API no hay automatización: cada alta, cada tarea y cada informe habría que hacerlos a mano.</li>
+  <li><b>Las plantillas de correo están restringidas</b> en ese plan: no podíamos mandar los correos con la marca y los textos de EPI10.</li>
+</ul>
+<p>Operar Healthie a mano con Aitor cargando datos no era una opción seria. Y pagar la API tampoco.</p>
+
+<h2>2. Qué valoramos</h2>
+<div class="tabla"><table>
+<tr><th>Opción</th><th>Coste</th><th>Lo que resuelve</th><th>Veredicto</th></tr>
+<tr><td>Healthie con API</td><td>475 a 1.900 $/mes</td><td>Todo, pero dependiendo de un proveedor que cambia precios</td><td class="aviso">Descartada por coste</td></tr>
+<tr><td>Otra plataforma de salud con API</td><td>Variable</td><td>Analizamos 36 plataformas; ninguna ofrece portal de cliente con API asequible</td><td class="aviso">Ninguna encaja</td></tr>
+<tr><td>Portal propio desde cero</td><td>56 a 70 horas</td><td>Control total, pero hay que construir calendario, mensajería, documentos y firma</td><td>Reserva</td></tr>
+<tr><td><b>OpenEMR con interfaz propia</b></td><td>0 € de licencia, 52 a 76 horas</td><td>Historia clínica, portal, citas, mensajes, documentos y firma ya resueltos; nosotros ponemos la cara de EPI10</td><td class="ok">Elegida</td></tr>
+</table></div>
+<p>OpenEMR es un sistema de historia clínica de software libre, con veinte años de uso en clínicas de todo el mundo y licencia pública. Lo instalamos en vuestro servidor, los datos de salud quedan en casa y nadie puede subir el precio.</p>
+
+<h2>3. Qué hemos construido</h2>
+<ul class="linea">
+  <li><b>7 de octubre</b><small>Aviso de Healthie. Análisis de alternativas y decisión por OpenEMR el mismo día.</small></li>
+  <li><b>8 al 10 de octubre</b><small>El motor que ya teníamos (pago en Stripe, caso en Odoo, generación del informe) aprende a hablar con OpenEMR en lugar de con Healthie.</small></li>
+  <li><b>11 de octubre</b><small>Revisión vista por vista y rediseño completo de la interfaz: portal de la clienta y back office del equipo con la marca EPI10, en español, para móvil y ordenador.</small></li>
+  <li><b>12 de octubre</b><small>Segunda ronda de mejoras y el recorrido guiado de bienvenida: la clienta entra y el portal la lleva paso a paso.</small></li>
+  <li><b>13 de octubre</b><small>Demo contigo.</small></li>
+</ul>
+
+<h3>El portal de la clienta</h3>
+<div class="galeria movil">
+  <figure><img src="img/02_portal_inicio.png" alt="Inicio del portal en ordenador"><figcaption>Inicio: en qué paso está, qué le falta y acceso a documentos, citas, mensajes e informe.</figcaption></figure>
+  <figure><img src="img/02_portal_inicio_movil.png" alt="Inicio del portal en móvil"><figcaption>El mismo inicio en el móvil.</figcaption></figure>
+</div>
+<div class="galeria">
+  <figure><img src="img/04_portal_mis-documentos.png" alt="Mis documentos"><figcaption>Consentimiento y cuestionario, con su estado.</figcaption></figure>
+  <figure><img src="img/04_portal_mensajes.png" alt="Mensajes"><figcaption>Chat con el equipo, con adjuntos.</figcaption></figure>
+  <figure><img src="img/04_portal_mi-informe.png" alt="Mi informe"><figcaption>El informe, para leer en el portal o descargar.</figcaption></figure>
+  <figure><img src="img/04_portal_citas.png" alt="Citas"><figcaption>Reserva de cita para el test en la sede.</figcaption></figure>
+</div>
+
+<h3>El back office del equipo</h3>
+<div class="galeria">
+  <figure><img src="img/11_backoffice_inicio_ops.png" alt="Inicio del back office"><figcaption>Inicio de Aitor: qué hay que hacer hoy.</figcaption></figure>
+  <figure><img src="img/12_backoffice_ficha.png" alt="Ficha de la clienta"><figcaption>Ficha de la clienta: datos, fase, documentos, mensajes, citas y toda la actividad.</figcaption></figure>
+</div>
+<p>Odoo sigue siendo el centro de operaciones de EPI10: cada compra crea su caso en el tablero y avanza solo según lo que la clienta hace en el portal. Aitor sigue trabajando donde ya trabaja.</p>
+
+<h2>4. Lo que verás en la demo</h2>
+<ol class="pasos">
+  <li>Una clienta compra NutriWell en la web y paga con tarjeta.</li>
+  <li>En segundos recibe el correo de acceso a su espacio EPI10 y crea su contraseña.</li>
+  <li>El portal la guía: firma el consentimiento, responde el cuestionario de hábitos y elige si hace el test en casa, con su dirección de envío, o en la sede, con cita.</li>
+  <li>En Odoo, el caso aparece y avanza solo hasta «Listo para pedir test», con los datos de envío.</li>
+  <li>Aitor y la clienta hablan por el chat. Aitor marca los hitos en Odoo y la clienta ve los avisos en el portal.</li>
+  <li>Llega el resultado del laboratorio: Aitor lo sube, el sistema prepara el borrador del informe, Aitor lo revisa y lo publica. La clienta lo lee en su portal.</li>
+</ol>
+
+<h2>5. Lo que te pedimos</h2>
+<ul>
+  <li><b>Aprobar OpenEMR</b> como plataforma del portal y del back office.</li>
+  <li><b>Los textos reales</b> del consentimiento y del cuestionario de hábitos, para sustituir los de prueba.</li>
+  <li><b>La plantilla del informe</b> en Word y un ejemplo anonimizado de resultados del laboratorio.</li>
+  <li><b>El contacto del mantenedor de Odoo</b>, para conectar con vuestro Odoo real.</li>
+</ul>
+
+<h2>6. Qué viene después</h2>
+<p>Con tu aprobación: instalación en vuestro servidor, conexión con vuestro Odoo, los formularios y el informe reales, y el endurecimiento de seguridad para producción. Lo que has visto hoy funciona de punta a punta en nuestro entorno de pruebas; lo que queda es llevarlo a casa.</p>
+
+<div class="pie">Skilland.ai para EPI10 Salud · Entorno de pruebas con datos ficticios · Las cifras de coste de Healthie son las comunicadas por Healthie el 7 de octubre de 2026.</div>
+</div>
