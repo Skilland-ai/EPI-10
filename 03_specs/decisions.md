@@ -75,3 +75,9 @@
 - **Licencias:** no se copia código de 23rd (sin licencia), de la parte Pro de Arc UI, de AlignUI Pro ni de Framer; Transitions.dev solo como patrón reescrito; React Bits (Commons Clause) descartado.
 - **Decisiones de producto tomadas por el orquestador, pendientes de ratificar:** actividad en la ficha y no en «Hoy»; carpetas planas; modal de subida completo pospuesto (necesita endpoint que toca R4); las 11 preguntas estéticas del consolidado quedan en «Después».
 - **Versionado del módulo UI:** `version.php` sube de patch en cada PR que toca CSS o JS (caché por `?v=`); hoy 0.1.11.
+
+## 2026-10-12 (18:30) · Ratificación de Raúl tras la v1.2
+
+- **Ratificado:** línea de actividad en la ficha y no en el panel «Hoy»; carpetas planas (las 3D, descartadas para el portal); modal de subida completo pospuesto hasta el contrato v1.1.
+- **Decisiones estéticas delegadas al orquestador** («toma las mejores decisiones de diseño»), resueltas así: pasos del consentimiento en barra horizontal; opciones del cuestionario con radio (sin letras A/B/C); al terminar, halo cian sobrio (sin confeti); logins con panel liso y grano (sin halo de anillos); inicio en marfil liso; sin anillo «4 de 5» junto a la fase; sin indicador «escribiendo…» sin señal real; sin resalte deslizante en la lista de clientas; sin notas de voz en el chat; el grano en los azules se queda. «Mi informe» agrupado en carpetas planas cuando haya más de un documento: después de la demo.
+- **Siguen vigentes como aplicadas** (pendientes de que Raúl las toque en el repaso): texto de «Test recibido», chat sin adjuntos del equipo, Atlantic/Canary, ficha con código del kit visible y «Más datos» plegado.
