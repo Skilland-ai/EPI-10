@@ -68,3 +68,10 @@
 - Tras el feedback vista por vista (SKI2-208) y la research del arquitecto (SKI2-209), Raúl ratifica la base: el sistema de diseño de **shadcn/ui** tomado de **Basecoat** (shadcn sin React, MIT), reescrito como **CSS plano con prefijo `epi-` y sin build**, más **islas Preact** para chat, firma, calendario y visor. Vive en un módulo hermano `oe-module-epi10-ui`, separado del módulo del contrato.
 - Motivo: los kits sobre Tailwind v4 (Basecoat, daisyUI, Flowbite, Preline) pierden contra el Bootstrap 4 de OpenEMR por las capas y chocan en clases y reset; no existe ninguna plantilla open source madura de portal de pacientes.
 - Portal y back office comparten esta base. El portal, precioso; el back office, usable.
+
+## 2026-10-12 · v1.2 de EPI10 UI tras la batida de componentes
+
+- **Entra en la v1.2** lo elegido en el inventario consolidado (SKI2-254): 24 componentes en 7 áreas, todos reescritos en CSS `epi-` o islas propias; nada vendorizado nuevo. Criterio: sobrio, portal de salud, por omisión.
+- **Licencias:** no se copia código de 23rd (sin licencia), de la parte Pro de Arc UI, de AlignUI Pro ni de Framer; Transitions.dev solo como patrón reescrito; React Bits (Commons Clause) descartado.
+- **Decisiones de producto tomadas por el orquestador, pendientes de ratificar:** actividad en la ficha y no en «Hoy»; carpetas planas; modal de subida completo pospuesto (necesita endpoint que toca R4); las 11 preguntas estéticas del consolidado quedan en «Después».
+- **Versionado del módulo UI:** `version.php` sube de patch en cada PR que toca CSS o JS (caché por `?v=`); hoy 0.1.11.
