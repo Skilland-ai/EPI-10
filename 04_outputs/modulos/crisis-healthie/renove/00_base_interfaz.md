@@ -170,10 +170,33 @@ Todos están en la página de muestra con su HTML. Copia el bloque que necesites
 | Modal | `<dialog class="epi-dialog">` `__header` `__title` `__close` `__body` `__footer` | Abrir: `data-epi10-abrir-modal="id"`; cerrar: `data-epi10-cerrar-modal` |
 | Visor de documento | `epi-visor` `__toolbar` `__title` `__meta` `__scroll` `__paper` (HTML) o `__frame` (iframe PDF) `__footer` (CTA fijo) · `epi-firma` | Contenedor para el área 2 (consentimiento) y el área 4 (PDF) |
 | Toast | `EPI10.toast('Texto', {tipo: 'ok'|'error'|'info', duracion: 5000})` | |
-| Pestañas | `epi-tabs` `epi-tabs__tab` con `aria-current="page"` | Ficha de cliente del área 7 |
+| Pestañas | `epi-tabs` `epi-tabs__tab` con `aria-current="page"` o `aria-selected="true"` | Ficha de cliente del área 7. **v1.2:** el indicador deslizante `.epi-tabs__ind` lo crea `epi10-ui.js` solo; para pestañas pintadas después, `EPI10.pestanas(raiz)` |
 | Tabla | `epi-table-wrap` > `epi-table` | Back office |
 | Maquetación | `epi-main` (`--estrecho`), `epi-page-head`, `epi-eyebrow`, `epi-title`, `epi-lead`, `epi-h2`, `epi-stack` (`--sm` `--lg`), `epi-row` (`--between` `--end`), `epi-grid` (`--epi-col: 280px`) | |
-| Iconos | `ui.icono('arrow-left')` en Twig · `EPI10.icono('check')` en JS | Sprite de 40 iconos Lucide. Para añadir uno, copia su `<symbol>` de lucide-static en `public/ui/iconos.svg` |
+| Iconos | `ui.icono('arrow-left')` en Twig · `EPI10.icono('check')` en JS | Sprite de 51 iconos Lucide (v1.2 añade `undo-2`, `phone`, `cake`, `package`, `activity`, `log-in`). Para añadir uno, copia su `<symbol>` de lucide-static en `public/ui/iconos.svg` |
+
+
+### Piezas v1.2 (SKI2-256, área 0)
+
+Contrato completo en la tabla «Contrato del área 0» de [batida/2026-10-12_inventario_consolidado_v1.md](batida/2026-10-12_inventario_consolidado_v1.md). Todas están en la página de muestra (secciones «Carga», «Ficheros», «Segmentado», «Actividad», «Dato vivo y grano» y «Comportamientos»).
+
+| Componente | Clases y API | Notas |
+|---|---|---|
+| Movimiento | `--epi10-dur-1` (120 ms) `--epi10-dur-2` (200 ms) `--epi10-dur-3` (300 ms) · `--epi10-ease-salida` (lo que entra) `--epi10-ease-entrada` (lo que sale) | ≤ 200 ms en microinteracciones, ≤ 300 ms en pantallas, sin rebotes, siempre con `prefers-reduced-motion` |
+| Esqueleto | `epi-skeleton` `--linea` `--circulo` `--tarjeta` (ancho con `--ancho`) · `ui.esqueleto('lista'|'tarjeta'|'tabla', n)` · `EPI10.esqueleto(tipo, n)` (HTML) · `epi-revela` | Aparece a los 150 ms; el bloque lleva `role="status"` y `aria-busy`. El contenido real entra con `epi-revela` |
+| Tipo de fichero | `epi-tipo` `--pdf` `--doc` `--img` `--otro` · `--sm` `--lg` · `ui.fichero(tipo, 'sm'|'lg')` · `EPI10.fichero(tipo, tamaño)` | `tipo` admite extensión, nombre o MIME |
+| Nombre de fichero | `epi-fichero-nombre` · `ui.nombre_fichero(n)` · `EPI10.nombreFichero(n)` · `ui.peso(bytes)` · `EPI10.peso(bytes)` | Trunca la base y conserva la extensión; peso «148 KB», «1,2 MB» |
+| Chip de adjunto | `epi-adjunto` + `__meta` · `ui.adjunto({nombre, url, tipo?, peso?})` | |
+| Fila de archivo | `epi-archivos` > `epi-archivo[data-epi10-estado="pendiente|hecho|error"]` con `--valor`, `__nombre`, `__peso`, `__estado` | Barra de progreso solo en `pendiente` |
+| Zona de arrastre | `<label class="epi-dropzone">` + `<input type="file" class="epi-sr-only">`, `__titulo` (`data-epi10-texto-arrastrando`), `__ayuda` | Sin JS funciona como selector. Con JS: `data-epi10-estado="arrastrando"` y evento `epi10:archivos` `{archivos, origen}` |
+| Carpeta plana | `epi-carpeta` `--suave` `--marfil` con `__trasera`, `__papel` ×1–2, `__frente` | En `epi-empty` sustituye a `__icon` |
+| Control segmentado | `epi-segmentado[data-epi10-segmentado="nombre"]` (`--iconos`) con `button[aria-pressed][value]` | Evento `epi10:segmentado` `{nombre, valor, boton}`. Filtra dentro de una vista; para cambiar de vista, `epi-tabs` |
+| Línea de actividad | `ol.epi-actividad` > `li.__periodo` + `li.__item[data-epi10-tipo="clienta|hito|sistema"]` con `__icono`, `__frase`, `__fecha`, `__detalle` · `ui.actividad(periodos)` | `periodos = [{titulo, items: [{tipo, icono, actor, accion, objeto, resto?, frase?, fecha, fecha_iso?, detalle?, adjunto?, clave?}]}]` |
+| Dato vivo | `epi-card__vivo` `--cifra` (número en `<strong>`) `--chip` (`data-epi10-estado`) `--barra` (`--valor`) | También sobre `epi-card--destacada` |
+| Grano | `epi-grano` | Ya aplicado a `.epi-fase` y `.epi-auth__brand` (el panel azul de los logins) |
+| Botón con estado | `<form data-epi10-ocupado-al-enviar>` · `EPI10.conFeedback(boton, promesa, {retardo: 200, minimo: 500})` | `aria-busy` y luego `data-epi10-estado="hecho|error"` 1,2 s. No desactiva el submit |
+| Sacudida | `EPI10.sacudir(el)` | Automática al pasar a `aria-invalid="true"` y, al cargar, en el primer campo inválido |
+| Check dibujado | `epi-check` con `input[type=checkbox]` | Sin cambios de marcado |
 
 Tokens en `:root` (`--epi10-azul`, `--epi10-cian`, `--epi10-marfil`, `--epi10-tinta`, `--epi10-radius`, `--epi10-shadow`…). Úsalos en vez de colores sueltos. Si un área necesita un componente que no está, lo añade a `epi10-ui.css` con su sección y lo pone en la página de muestra; avisa al orquestador para que el resto lo vea.
 
