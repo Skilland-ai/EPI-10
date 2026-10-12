@@ -1,0 +1,70 @@
+PHPUnit 11.5.57 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /app/phpunit.xml.dist
+
+..................................................                50 / 50 (100%)
+
+Time: 00:00.046, Memory: 10.00 MB
+
+Estado Formularios (Epi10\Tests\EstadoFormularios)
+ ✔ Sin asignar
+ ✔ Asignados sin empezar
+ ✔ Borrador guardado es en curso
+ ✔ Consentimiento enviado sin firma no cuenta
+ ✔ Los dos enviados y el consentimiento firmado
+ ✔ Gana el documento mas reciente
+ ✔ Fecha
+
+Kit (Epi10\Tests\Kit)
+ ✔ Normaliza espacios y minusculas
+ ✔ Rechaza codigos invalidos
+ ✔ Sin fila no hay codigo
+ ✔ Fila con codigo y foto
+ ✔ El contrato sube de menor
+ ✔ Foto como los adjuntos del chat solo imagenes
+ ✔ Tarea del kit solo con el test en casa o ya enviado
+ ✔ Guia en el inicio en fase de test salvo cita
+ ✔ La tarea del kit tiene textos
+
+Portal (Epi10\Tests\Portal)
+ ✔ Solo pasan los informes publicados
+ ✔ Detecta el listado de documentos del nucleo
+ ✔ Cuerpo del mensaje en parrafos y escapado
+ ✔ Cada operacion tiene su recurso y sus scopes
+ ✔ Table sql coincide con el esquema
+ ✔ El modulo no tiene las rutas del prototipo
+
+Tareas (Epi10\Tests\Tareas)
+ ✔ Documento del render nativo
+ ✔ Campo no soportado
+ ✔ Firma de testigo no soportada
+ ✔ Template data con los nombres nativos
+ ✔ Firma valida
+ ✔ Preguntas sin grupos ni textos
+ ✔ Limpiar descarta lo invalido
+ ✔ Numeros negativos o decimales en enteros
+ ✔ Condicion y obligatoria
+ ✔ Respuesta fhir y vuelta
+ ✔ Tipo no soportado
+
+Validacion (Epi10\Tests\Validacion)
+ ✔ Crear acceso normaliza y pone valores por defecto
+ ✔ Crear acceso acepta fecha sexo y caducidad
+ ✔ Crear acceso rechaza entradas invalidas with data set "referencia con espacios"
+ ✔ Crear acceso rechaza entradas invalidas with data set "referencia larga"
+ ✔ Crear acceso rechaza entradas invalidas with data set "email sin arroba"
+ ✔ Crear acceso rechaza entradas invalidas with data set "nombre vacío"
+ ✔ Crear acceso rechaza entradas invalidas with data set "fecha imposible"
+ ✔ Crear acceso rechaza entradas invalidas with data set "sexo libre"
+ ✔ Crear acceso rechaza entradas invalidas with data set "caducidad excesiva"
+ ✔ Crear acceso rechaza entradas invalidas with data set "caducidad cero"
+ ✔ Crear acceso sin paciente
+ ✔ Asignar formularios solo los conocidos y sin repetir
+ ✔ Asignar formularios exige lista
+ ✔ Pid exige entero positivo
+ ✔ Enviar mensaje
+ ✔ Mensajes nuevos valores por defecto y limites
+ ✔ Publicar informe exige un pdf
+
+OK (50 tests, 181 assertions)
