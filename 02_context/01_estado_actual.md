@@ -119,3 +119,7 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
 - **Instancia de hermes-node:** zona horaria Atlantic/Canary; instalación final desde `main` en curso (`renove/instalacion_demo.md`), seguida del recorrido automático (63 comprobaciones) y del ensayo `probar` + `limpiar`.
 - **Pendiente de Raúl (en el panel):** ratificar el texto de «Test recibido», el chat sin adjuntos del equipo, la zona horaria, las decisiones de la ficha (código del kit, «Más datos») y el inventario de campos (§3 del doc del área 7); las horas consumidas de las 110.
 - **Después de la demo:** contrato v1.1 (`epi10_fase_caso`, `fijar_fase`, publicado_en, republicar informe), migrar el ensayo E2E a los pasos nuevos del portal, aviso por correo de mensaje nuevo, tabla propia de adjuntos del chat, ayudante 401 JSON, `table.sql` desde el module manager, tipografía definitiva.
+
+## 12 oct · documento de arquitectura del sistema v1
+
+- **SKI2-238:** [documento de arquitectura del sistema v1](../04_outputs/modulos/integracion/2026-10-12_arquitectura_sistema_v1.md), escrito desde el código (`epi10-orquestador` 65bb925, `epi10-oe-module` b013569) y la instancia de hermes-node en solo lectura: componentes, flujos, contrato v1, modelo de datos, vistas, seguridad, operación y deuda (A1–A10, D1–D16). En revisión.
