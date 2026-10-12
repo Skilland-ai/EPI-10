@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maqueta área 2 · v1.2</title>
+<!-- Maqueta local (no entra en el PR): monta la isla «tareas» real con una API simulada. Datos ficticios.
+     ?e=lista|lista-carga|consentimiento|consentimiento-hecho|cuestionario|tarea-carga  &v=antes -->
+<script>
+  const q = new URLSearchParams(location.search);
+  // «antes»: base de main; «después»: base del PR 1 del área 0 (copia local en maquetas/ui-a0).
+  const base = q.get('v') === 'antes' ? '../oe-module-epi10-ui/public/ui' : 'ui-a0';
+  document.write(`<link rel="stylesheet" href="${base}/epi10-ui.css"><script src="${base}/epi10-ui.js"><\/script>`);
+  document.write(`<link rel="stylesheet" href="../oe-module-epi10-ui/public/ui/${q.get('v') === 'antes' ? 'epi10-tareas-antes.css' : 'epi10-tareas.css'}">`);
+</script>
+</head>
+<body class="epi-app" data-epi10-cara="portal">
+<main class="epi-main" id="contenido"><div id="isla" data-epi10-isla-maqueta></div></main>
+<script type="module">
+const q = new URLSearchParams(location.search);
+const e = q.get('e') || 'lista';
+const mod = await import(`../oe-module-epi10-ui/public/ui/islas/${q.get('v') === 'antes' ? 'tareas-antes.mjs' : 'tareas.mjs'}`);
+const espera = (ms, v) => new Promise((r) => setTimeout(() => r(v), ms));
+const hoy = '2026-10-12T10:20:00';
+const lista = {
+  tareas: [
+    { formulario: 'consentimiento', titulo: 'Consentimiento', resumen: 'Autoriza el uso de tus datos para tu informe', minutos: 2, estado: 'completado', accion: 'Firmar', completado_en: hoy },
+    { formulario: 'encuesta_habitos', titulo: 'Cuestionario de hábitos', resumen: 'Unas preguntas sobre sueño, ejercicio y alimentación', minutos: 3, estado: 'pendiente', accion: 'Rellenar' },
+  ],
+  historial: [{ titulo: 'Consentimiento', estado: 'Firmado', fecha: hoy }],
+};
+const consentimiento = (estado) => ({
+  formulario: 'consentimiento', tipo: 'documento', orden: 1, total: 2, titulo_tarea: 'Firma tu consentimiento',
+  proposito: 'Nos autoriza a usar tus datos de salud y genéticos solo para preparar tu informe. Es corto: léelo con calma.',
+  minutos: 2, estado, completado_en: estado === 'completado' ? hoy : null, cta: 'Firmar y enviar a EPI10',
+  pasos: ['Leer', 'Aceptar', 'Firmar', 'Enviar'],
+  confirmacion: { titulo: 'Consentimiento firmado', texto: 'Ya lo tenemos. Puedes volver a verlo cuando quieras en Tus documentos.' },
+  borrador: estado === 'completado' ? { firma: '' } : null,
+  documento: {
+    titulo: 'Consentimiento informado para el test EPI10', firma: true, firmante: 'Lucía Peñalver (datos ficticios)',
+    bloques: [
+      { tipo: 'parrafo', texto: 'Con este documento autorizas a EPI10 Salud a tratar tus datos de salud y la muestra que nos envías con un único fin: preparar tu informe personal.' },
+      { tipo: 'subtitulo', texto: 'Qué hacemos con tus datos' },
+      { tipo: 'punto', texto: 'Los analiza el equipo de EPI10 y nadie más.' },
+      { tipo: 'punto', texto: 'No los cedemos a terceros ni los usamos para publicidad.' },
+      { tipo: 'subtitulo', texto: 'Tus derechos' },
+      { tipo: 'parrafo', texto: 'Puedes pedirnos en cualquier momento que los borremos escribiendo al equipo desde Mensajes.' },
+    ],
+    aceptaciones: [
+      { nombre: 'acepto_tratamiento', texto: 'Acepto el tratamiento de mis datos de salud para preparar mi informe.' },
+      { nombre: 'mayor_edad', texto: 'Soy mayor de edad.' },
+    ],
+  },
+});
+const opc = (pares) => pares.map(([code, display]) => ({ valueCoding: { code, display } }));
+const cuestionario = {
+  formulario: 'encuesta_habitos', tipo: 'cuestionario', orden: 2, total: 2, titulo_tarea: 'Cuéntanos tus hábitos',
+  proposito: 'Con tus respuestas personalizamos tu informe. Puedes dejarlo a medias: guardamos cada respuesta.',
+  minutos: 3, estado: 'pendiente', cta: 'Enviar a EPI10', borrador: null,
+  confirmacion: { titulo: 'Cuestionario enviado', texto: 'Gracias. Tus respuestas ya están con el equipo de EPI10.' },
+  cuestionario: { item: [
+    { linkId: 'sueno', text: '¿Cuántas horas duermes de media?', type: 'choice', required: true, answerOption: opc([['menos6', 'Menos de 6'], ['6a8', 'Entre 6 y 8'], ['mas8', 'Más de 8']]) },
+    { linkId: 'ejercicio', text: '¿Haces ejercicio al menos dos días por semana?', type: 'boolean', required: true },
+    { linkId: 'cafes', text: '¿Cuántos cafés tomas al día?', type: 'integer', required: true },
+    { linkId: 'notas', text: '¿Algo más que quieras contarnos?', type: 'text', required: false },
+  ] },
+};
+const tareas = { consentimiento: consentimiento('pendiente'), 'consentimiento-hecho': consentimiento('completado'), cuestionario, 'tarea-carga': consentimiento('pendiente') };
+const lento = q.get('lento') ? Number(q.get('lento')) : 1800;
+const apiDemo = {
+  lista: () => espera(e === 'lista-carga' ? lento : 50, lista),
+  tarea: () => espera(lento, tareas['tarea-carga']),
+  guardarBorrador: () => espera(150, { ok: true }),
+  enviar: () => espera(400, { ok: true }),
+};
+const el = document.getElementById('isla');
+const urls = { tarea: '#tarea=', lista: '#lista', adjuntar: '#adjuntar', logo: '../oe-module-epi10-ui/public/img/epi10-azul.png' };
+if (e === 'lista' || e === 'lista-carga') mod.default(el, { vista: 'lista', apiDemo, urls, inicial: e === 'lista' ? lista : null });
+else mod.default(el, { vista: 'tarea', formulario: 'x', apiDemo, urls, inicial: e === 'tarea-carga' ? null : tareas[e] });
+document.body.dataset.listo = '1';
+</script>
+</body>
+</html>
