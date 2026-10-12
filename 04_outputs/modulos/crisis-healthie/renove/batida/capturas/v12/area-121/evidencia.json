@@ -1,0 +1,35 @@
+{
+ "halo_1366": {
+  "nombre": "epi10-tareas-halo",
+  "duracion": 600,
+  "retraso": 300,
+  "iteraciones": 1
+ },
+ "halo_final_opacidad_1366": "0",
+ "abierta_1366": {
+  "hash": "#carpeta-informes",
+  "visibles": [
+   "informes"
+  ],
+  "filas": 2,
+  "desborda": false
+ },
+ "atras_1366": 0,
+ "halo_390": {
+  "nombre": "epi10-tareas-halo",
+  "duracion": 600,
+  "retraso": 300,
+  "iteraciones": 1
+ },
+ "halo_final_opacidad_390": "0",
+ "abierta_390": {
+  "hash": "#carpeta-informes",
+  "visibles": [
+   "informes"
+  ],
+  "filas": 2,
+  "desborda": false
+ },
+ "atras_390": 0,
+ "reduced_motion_halo_display": "none"
+}
