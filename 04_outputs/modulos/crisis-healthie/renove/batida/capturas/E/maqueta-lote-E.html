@@ -1,0 +1,264 @@
+<!doctype html>
+<!-- Maqueta del lote E (SKI2-255). Solo referencia para el integrador: CSS propuesto con prefijo epi- y tokens de epi10-ui.css. {{UI}} = ruta a public/ui; {{SPRITE}} = contenido de iconos.svg. No es código del módulo. -->
+<html lang="es"><head><meta charset="utf-8"><title>Maqueta lote E</title>
+<link rel="stylesheet" href="{{UI}}/epi10-ui.css">
+<style>
+body { margin: 0; }
+.demo { padding: 32px; display: flex; flex-direction: column; gap: 40px; }
+.demo > section { background: var(--epi10-bg); padding: 28px; border-radius: 16px; width: fit-content; }
+.demo h2.lbl { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--epi10-cian); margin: 0 0 16px; }
+
+/* ===== Propuesta 1 · epi-carpeta (plana, profundidad leve) ===== */
+.epi-carpeta { --c-fondo: var(--epi10-azul); --c-frente: #0a5ea3; position: relative; width: 132px; aspect-ratio: 4 / 3; flex: none; }
+.epi-carpeta__trasera { position: absolute; inset: 0; border-radius: 10px; background: var(--c-fondo);
+  clip-path: polygon(0 0, 38% 0, 46% 12%, 100% 12%, 100% 100%, 0 100%); }
+.epi-carpeta__papel { position: absolute; left: 14%; right: 14%; top: 10%; height: 62%; border-radius: 6px; background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 41, 77, .18); transition: transform .25s var(--epi10-ease);
+  background-image: linear-gradient(var(--epi10-linea) 0 0), linear-gradient(var(--epi10-linea) 0 0), linear-gradient(var(--epi10-linea) 0 0);
+  background-size: 60% 4px, 46% 4px, 52% 4px; background-position: 14% 22%, 14% 38%, 14% 54%; background-repeat: no-repeat; }
+.epi-carpeta__papel + .epi-carpeta__papel { left: 26%; right: 6%; top: 16%; transform: rotate(5deg); }
+.epi-carpeta__frente { position: absolute; left: 0; right: 0; bottom: 0; height: 66%; border-radius: 10px;
+  background: linear-gradient(180deg, var(--c-frente), var(--c-fondo)); box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
+  display: grid; place-items: center; color: rgba(255,255,255,.9); transform-origin: bottom; transition: transform .25s var(--epi10-ease); }
+.epi-carpeta__frente .epi-icon { width: 28px; height: 28px; }
+:is(a, button, .epi-carpetas__item):hover .epi-carpeta__papel { transform: translateY(-8px); }
+:is(a, button, .epi-carpetas__item):hover .epi-carpeta__papel + .epi-carpeta__papel { transform: translateY(-5px) rotate(7deg); }
+:is(a, button, .epi-carpetas__item):hover .epi-carpeta__frente { transform: perspective(400px) rotateX(-14deg); }
+.epi-carpeta--suave { --c-fondo: #b9dff0; --c-frente: #e6f6fb; }
+.epi-carpeta--suave .epi-carpeta__frente { color: var(--epi10-cian); background: linear-gradient(180deg, #f3fbfe, var(--epi10-cian-50)); border: 1px solid #c9ebf6; }
+.epi-carpeta--marfil { --c-fondo: var(--epi10-linea-fuerte); --c-frente: var(--epi10-marfil-2); }
+.epi-carpeta--marfil .epi-carpeta__frente { color: var(--epi10-gris); background: linear-gradient(180deg, #fffaf5, var(--epi10-marfil-2)); border: 1px solid var(--epi10-linea); }
+@media (prefers-reduced-motion: reduce) { .epi-carpeta * { transition: none !important; } }
+
+/* ===== Propuesta 2 · rejilla de carpetas ===== */
+.epi-carpetas { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; width: 720px; }
+.epi-carpetas__item { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 24px 16px 18px; border-radius: var(--epi10-radius-lg);
+  text-decoration: none; color: inherit; border: 1px solid transparent; transition: background .15s, border-color .15s; position: relative; }
+.epi-carpetas__item:hover, .epi-carpetas__item.is-hover { background: #fff; border-color: var(--epi10-border); box-shadow: var(--epi10-shadow); }
+.epi-carpetas__title { font-weight: 700; margin: 0; }
+.epi-carpetas__meta { font-size: .86rem; color: var(--epi10-muted-fg); margin: -10px 0 0; }
+.epi-carpeta .epi-chip { position: absolute; z-index: 2; bottom: 8px; right: 8px; }
+.epi-chip { display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: 999px; font-size: .72rem; font-weight: 700;
+  background: rgba(255,255,255,.22); color: #fff; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,.3); }
+.epi-carpeta--suave .epi-chip, .epi-carpeta--marfil .epi-chip { background: #fff; color: var(--epi10-azul); border-color: var(--epi10-linea); }
+.epi-avatares { position: absolute; z-index: 2; left: 8px; bottom: 8px; display: flex; }
+.epi-avatares span { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: .6rem; font-weight: 700;
+  background: var(--epi10-cian-claro); color: var(--epi10-azul-900); border: 2px solid var(--c-frente); }
+.epi-avatares span + span { margin-left: -6px; background: #fff; }
+.epi-carpetas .epi-carpeta { width: 150px; }
+
+/* ===== Propuesta 3 · carpeta 3D «vidrio» (opción fiel) ===== */
+.epi-carpeta3d { position: relative; width: 220px; height: 170px; }
+.epi-carpeta3d__trasera { position: absolute; inset: 14% 2% 0 2%; border-radius: 14px; background: linear-gradient(180deg, #002f57, #01447b);
+  clip-path: polygon(0 0, 36% 0, 42% 8%, 100% 8%, 100% 100%, 0 100%); }
+.epi-carpeta3d__papel { position: absolute; top: 0; width: 44%; height: 60%; border-radius: 10px; background: linear-gradient(180deg,#fff,#f4f6fa);
+  box-shadow: 0 8px 18px rgba(0,41,77,.25); }
+.epi-carpeta3d__papel:nth-of-type(2) { left: 10%; transform: rotate(-8deg); }
+.epi-carpeta3d__papel:nth-of-type(3) { right: 10%; transform: rotate(7deg); }
+.epi-carpeta3d__frente { position: absolute; left: 0; right: 0; bottom: 0; height: 64%; border-radius: 16px;
+  background: linear-gradient(180deg, rgba(128,223,241,.55), rgba(1,68,123,.85)); backdrop-filter: blur(10px) saturate(1.4);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 18px 40px rgba(0,41,77,.35); border: 1px solid rgba(255,255,255,.35);
+  display: flex; align-items: flex-end; justify-content: space-between; padding: 12px; }
+.epi-carpeta3d__frente .epi-chip { background: rgba(255,255,255,.18); }
+
+/* ===== Propuesta 4 · zona de arrastre ===== */
+.epi-dropzone { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 28px 20px; border-radius: var(--epi10-radius-lg);
+  border: 1.5px dashed var(--epi10-linea-fuerte); background: #fff; text-align: center; cursor: pointer; transition: background .15s, border-color .15s, box-shadow .15s; width: 460px; }
+.epi-dropzone__titulo { font-weight: 700; margin-top: 10px; }
+.epi-dropzone__ayuda { font-size: .84rem; color: var(--epi10-muted-fg); }
+.epi-dropzone[data-epi10-estado="arrastrando"], .epi-dropzone:focus-within { border: 1.5px solid var(--epi10-cian); background: var(--epi10-cian-50);
+  box-shadow: 0 0 0 4px rgba(2,154,204,.15); }
+.epi-dropzone[data-epi10-estado="arrastrando"] .epi-carpeta__papel { transform: translateY(-8px); }
+.epi-dropzone .epi-carpeta { width: 84px; }
+
+/* ===== Propuesta 5 · fila de archivo con estado ===== */
+.epi-archivos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; width: 460px; }
+.epi-archivo { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #fff; border: 1px solid var(--epi10-border); border-radius: var(--epi10-radius);
+  position: relative; overflow: hidden; animation: epi-archivo-entra .25s var(--epi10-ease); }
+@keyframes epi-archivo-entra { from { opacity: 0; transform: translateY(-6px); } }
+.epi-archivo::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: calc(var(--valor, 0) * 1%); background: var(--epi10-cian); transition: width .3s; }
+.epi-archivo[data-epi10-estado="hecho"]::after, .epi-archivo[data-epi10-estado="error"]::after { display: none; }
+.epi-tipo { flex: none; width: 28px; height: 34px; border-radius: 4px 9px 4px 4px; display: grid; place-items: end center; padding-bottom: 4px;
+  font-size: .5rem; font-weight: 800; color: #fff; background: var(--tipo, var(--epi10-gris)); }
+.epi-tipo--pdf { --tipo: var(--epi10-error); } .epi-tipo--img { --tipo: var(--epi10-ok); } .epi-tipo--doc { --tipo: var(--epi10-azul); }
+.epi-archivo__nombre { flex: 1; min-width: 0; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.epi-archivo__peso { font-weight: 500; color: var(--epi10-muted-fg); font-size: .82rem; margin-left: 6px; }
+.epi-archivo__estado { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 600; color: var(--epi10-muted-fg); font-variant-numeric: tabular-nums; }
+.epi-archivo[data-epi10-estado="hecho"] .epi-archivo__estado { color: var(--epi10-ok); }
+.epi-archivo[data-epi10-estado="error"] { border-color: #f1b8b2; background: var(--epi10-error-50); }
+.epi-archivo[data-epi10-estado="error"] .epi-archivo__estado { color: var(--epi10-error); }
+.epi-archivo .epi-btn--icon { width: 32px; height: 32px; min-height: 32px; }
+.epi-girando { animation: epi-spin .9s linear infinite; }
+
+/* ===== Propuesta 6 · modal ===== */
+.modal-demo { position: relative; width: 620px; height: 720px; background: rgba(0,25,48,.45); display: grid; place-items: center; border-radius: 16px; }
+.modal-demo .epi-dialog { position: static; display: flex; flex-direction: column; max-height: 680px; }
+.epi-subida__cola { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; max-height: 210px; overflow: auto;
+  mask-image: linear-gradient(#000 80%, transparent); -webkit-mask-image: linear-gradient(#000 80%, transparent); }
+.epi-subida__cuenta { font-size: .82rem; font-weight: 600; color: var(--epi10-muted-fg); }
+.modal-demo .epi-dropzone, .modal-demo .epi-archivos { width: auto; }
+.epi-dialog__footer--borde { border-top: 1px solid var(--epi10-border); padding-top: 16px; background: #fffcf9; border-radius: 0 0 var(--epi10-radius-xl) var(--epi10-radius-xl); }
+
+/* ===== Propuesta 7 · control segmentado ===== */
+.epi-segmentado { display: inline-flex; gap: 2px; padding: 3px; border-radius: 12px; background: var(--epi10-muted); border: 1px solid var(--epi10-border); }
+.epi-segmentado button { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; border: 0; border-radius: 9px; background: transparent;
+  font: 600 .88rem var(--epi10-font); color: var(--epi10-muted-fg); cursor: pointer; }
+.epi-segmentado button[aria-pressed="true"] { background: #fff; color: var(--epi10-fg); box-shadow: 0 1px 2px rgba(16,24,40,.08), 0 0 0 1px var(--epi10-border); }
+.epi-segmentado button:focus-visible { outline: none; box-shadow: var(--epi10-focus); }
+.epi-segmentado--iconos button { width: 36px; padding: 0; justify-content: center; }
+
+/* ===== Propuesta 8 · línea de actividad ===== */
+.epi-actividad { list-style: none; margin: 0; padding: 0; width: 640px; font-family: var(--epi10-font); }
+.epi-actividad__periodo { font-size: .8rem; font-weight: 700; color: var(--epi10-muted-fg); margin: 22px 0 10px; }
+.epi-actividad__item { display: grid; grid-template-columns: 34px 1fr auto; column-gap: 14px; position: relative; padding-bottom: 18px; }
+.epi-actividad__item:not(:last-child)::before { content: ""; position: absolute; left: 16.5px; top: 38px; bottom: 4px; width: 1px; background: var(--epi10-linea-fuerte); }
+.epi-actividad__icono { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: #fff; border: 1px solid var(--epi10-border);
+  color: var(--epi10-gris); box-shadow: var(--epi10-shadow-sm); }
+.epi-actividad__item[data-epi10-tipo="hito"] .epi-actividad__icono { color: var(--epi10-ok); background: var(--epi10-ok-50); border-color: #cfe9db; }
+.epi-actividad__item[data-epi10-tipo="clienta"] .epi-actividad__icono { color: var(--epi10-cian); background: var(--epi10-cian-50); border-color: #c9ebf6; }
+.epi-actividad__frase { margin: 6px 0 0; color: var(--epi10-muted-fg); line-height: 1.4; }
+.epi-actividad__frase b { color: var(--epi10-fg); font-weight: 600; }
+.epi-actividad__fecha { margin-top: 6px; font-size: .82rem; color: var(--epi10-gris-claro); white-space: nowrap; }
+.epi-actividad__detalle { grid-column: 2 / 4; margin-top: 10px; padding: 14px 16px; border-radius: var(--epi10-radius); background: #fffcf9; border: 1px solid var(--epi10-border);
+  color: var(--epi10-fg); font-size: .94rem; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+
+/* ===== Propuesta 9 · chip de adjunto ===== */
+.epi-adjunto { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; border: 1px solid var(--epi10-border); border-radius: 10px;
+  background: #fff; color: var(--epi10-fg); text-decoration: none; font-weight: 600; font-size: .9rem; max-width: 100%; }
+.epi-adjunto:hover { border-color: var(--epi10-linea-fuerte); box-shadow: var(--epi10-shadow-sm); }
+.epi-adjunto .epi-tipo { width: 22px; height: 26px; font-size: .42rem; padding-bottom: 3px; }
+.epi-adjunto__meta { font-weight: 500; color: var(--epi10-muted-fg); font-size: .8rem; }
+
+/* ===== Propuesta 10 · compositor de nota ===== */
+.epi-compositor { width: 640px; background: #fff; border: 1px solid var(--epi10-border); border-radius: var(--epi10-radius-lg); padding: 14px 14px 12px; box-shadow: var(--epi10-shadow-sm); }
+.epi-compositor textarea { width: 100%; border: 0; resize: none; font: 1rem var(--epi10-font); color: var(--epi10-fg); min-height: 44px; outline: none; }
+.epi-compositor__pie { display: flex; align-items: center; gap: 10px; }
+.epi-compositor__pie .epi-segmentado { margin-right: auto; }
+.epi-tecla { font: 600 .78rem var(--epi10-font); color: var(--epi10-muted-fg); background: var(--epi10-muted); border-radius: 6px; padding: 4px 7px; }
+</style></head>
+<body class="epi-app">
+{{SPRITE}}
+<div class="demo">
+
+<section id="c01"><h2 class="lbl">epi-carpeta · ilustración plana (vacíos, subida, tarjeta)</h2>
+  <div class="epi-row" style="gap:40px; align-items:flex-end">
+    <div class="epi-carpeta"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__papel"></div><div class="epi-carpeta__papel"></div><div class="epi-carpeta__frente"></div></div>
+    <a href="#" class="epi-carpetas__item is-hover" style="padding:0;border:0;background:none;box-shadow:none"><div class="epi-carpeta"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__papel" style="transform:translateY(-8px)"></div><div class="epi-carpeta__papel" style="transform:translateY(-5px) rotate(7deg)"></div><div class="epi-carpeta__frente" style="transform:perspective(400px) rotateX(-14deg)"></div></div></a>
+    <div class="epi-carpeta epi-carpeta--suave"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__papel"></div><div class="epi-carpeta__frente"><svg class="epi-icon"><use href="#i-upload"/></svg></div></div>
+    <div class="epi-carpeta epi-carpeta--marfil"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__frente"><svg class="epi-icon"><use href="#i-inbox"/></svg></div></div>
+  </div>
+  <p style="margin-top:14px;font-size:.84rem;color:var(--epi10-muted-fg)">Reposo · hover (papeles suben, frente se inclina) · variante suave con icono (subida) · marfil vacía (estado vacío)</p>
+</section>
+
+<section id="c02"><h2 class="lbl">Rejilla de carpetas · opción plana (recomendada)</h2>
+  <div class="epi-carpetas">
+    <a href="#" class="epi-carpetas__item is-hover">
+      <div class="epi-carpeta"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__papel" style="transform:translateY(-8px)"></div><div class="epi-carpeta__papel" style="transform:translateY(-5px) rotate(7deg)"></div>
+        <div class="epi-carpeta__frente" style="transform:perspective(400px) rotateX(-14deg)"></div><span class="epi-chip">Nuevo</span></div>
+      <p class="epi-carpetas__title">Tu informe</p><p class="epi-carpetas__meta">1 documento · hoy</p></a>
+    <a href="#" class="epi-carpetas__item">
+      <div class="epi-carpeta epi-carpeta--suave"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__papel"></div><div class="epi-carpeta__papel"></div>
+        <div class="epi-carpeta__frente"><svg class="epi-icon"><use href="#i-file-signature"/></svg></div><span class="epi-chip">2 firmados</span></div>
+      <p class="epi-carpetas__title">Lo que has firmado</p><p class="epi-carpetas__meta">Consentimiento · cuestionario</p></a>
+    <a href="#" class="epi-carpetas__item">
+      <div class="epi-carpeta epi-carpeta--marfil"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__papel"></div>
+        <div class="epi-carpeta__frente"><svg class="epi-icon"><use href="#i-paperclip"/></svg></div><span class="epi-chip">PDF · 1,2 MB</span></div>
+      <p class="epi-carpetas__title">Lo que nos has enviado</p><p class="epi-carpetas__meta">1 archivo · adjuntos del chat</p></a>
+  </div>
+</section>
+
+<section id="c03"><h2 class="lbl">Carpeta 3D «vidrio» · opción fiel al original (no recomendada en portal de salud)</h2>
+  <div class="epi-row" style="gap:40px">
+    <div style="text-align:center">
+      <div class="epi-carpeta3d"><div class="epi-carpeta3d__trasera"></div><div class="epi-carpeta3d__papel"></div><div class="epi-carpeta3d__papel"></div>
+        <div class="epi-carpeta3d__frente"><span class="epi-avatares" style="position:static"><span>LP</span><span>EQ</span></span><span class="epi-chip">Actualizado hace 2 h</span></div></div>
+      <p class="epi-carpetas__title" style="margin-top:14px">Tu informe</p><p class="epi-carpetas__meta" style="margin:0">3 documentos · 1 subcarpeta</p>
+    </div>
+  </div>
+</section>
+
+<section id="c04"><h2 class="lbl">Zona de arrastre · reposo y arrastrando</h2>
+  <div class="epi-stack">
+    <div class="epi-dropzone"><div class="epi-carpeta epi-carpeta--suave"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__papel"></div><div class="epi-carpeta__frente"><svg class="epi-icon"><use href="#i-upload"/></svg></div></div>
+      <span class="epi-dropzone__titulo">Elige o arrastra aquí tus archivos</span><span class="epi-dropzone__ayuda">PDF, JPG o PNG · hasta 25 MB cada uno</span></div>
+    <div class="epi-dropzone" data-epi10-estado="arrastrando"><div class="epi-carpeta epi-carpeta--suave"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__papel"></div><div class="epi-carpeta__frente"><svg class="epi-icon"><use href="#i-upload"/></svg></div></div>
+      <span class="epi-dropzone__titulo">Suelta para subir</span><span class="epi-dropzone__ayuda">PDF, JPG o PNG · hasta 25 MB cada uno</span></div>
+  </div>
+</section>
+
+<section id="c05"><h2 class="lbl">Fila de archivo con estado</h2>
+  <ul class="epi-archivos">
+    <li class="epi-archivo" data-epi10-estado="pendiente" style="--valor:38"><span class="epi-tipo epi-tipo--pdf">PDF</span><span class="epi-archivo__nombre">Analitica_octubre.pdf<span class="epi-archivo__peso">2,4 MB</span></span>
+      <span class="epi-archivo__estado">38 % · subiendo <svg class="epi-icon epi-girando"><use href="#i-loader-circle"/></svg></span><button class="epi-btn epi-btn--ghost epi-btn--icon" aria-label="Cancelar"><svg class="epi-icon"><use href="#i-x"/></svg></button></li>
+    <li class="epi-archivo" data-epi10-estado="hecho"><span class="epi-tipo epi-tipo--pdf">PDF</span><span class="epi-archivo__nombre">Informe_EPI10_Lucia.pdf<span class="epi-archivo__peso">148 KB</span></span>
+      <span class="epi-archivo__estado">Subido <svg class="epi-icon"><use href="#i-check"/></svg></span><button class="epi-btn epi-btn--ghost epi-btn--icon" aria-label="Quitar"><svg class="epi-icon"><use href="#i-x"/></svg></button></li>
+    <li class="epi-archivo" data-epi10-estado="hecho"><span class="epi-tipo epi-tipo--img">JPG</span><span class="epi-archivo__nombre">Foto_receta.jpg<span class="epi-archivo__peso">820 KB</span></span>
+      <span class="epi-archivo__estado">Subido <svg class="epi-icon"><use href="#i-check"/></svg></span><button class="epi-btn epi-btn--ghost epi-btn--icon" aria-label="Quitar"><svg class="epi-icon"><use href="#i-x"/></svg></button></li>
+    <li class="epi-archivo" data-epi10-estado="error"><span class="epi-tipo epi-tipo--doc">DOC</span><span class="epi-archivo__nombre">Notas_medico.docx<span class="epi-archivo__peso">31 MB</span></span>
+      <span class="epi-archivo__estado">Supera 25 MB <svg class="epi-icon"><use href="#i-circle-alert"/></svg></span><button class="epi-btn epi-btn--ghost epi-btn--icon" aria-label="Quitar"><svg class="epi-icon"><use href="#i-x"/></svg></button></li>
+  </ul>
+</section>
+
+<section id="c06"><h2 class="lbl">Modal de subida (epi-dialog + zona + cola)</h2>
+  <div class="modal-demo"><div class="epi-dialog" open>
+    <div class="epi-dialog__header"><h2 class="epi-dialog__title">Subir informe de Lucía</h2><button class="epi-dialog__close" aria-label="Cerrar"><svg class="epi-icon"><use href="#i-x"/></svg></button></div>
+    <div class="epi-dialog__body">
+      <div class="epi-segmentado" role="group" aria-label="Origen" style="margin-bottom:14px"><button aria-pressed="true"><svg class="epi-icon"><use href="#i-upload"/></svg>Desde tu equipo</button><button aria-pressed="false"><svg class="epi-icon"><use href="#i-folder-open"/></svg>De sus documentos</button></div>
+      <div class="epi-dropzone" data-epi10-estado="arrastrando"><div class="epi-carpeta epi-carpeta--suave"><div class="epi-carpeta__trasera"></div><div class="epi-carpeta__papel"></div><div class="epi-carpeta__frente"><svg class="epi-icon"><use href="#i-upload"/></svg></div></div>
+        <span class="epi-dropzone__titulo">Elige o arrastra aquí el PDF</span><span class="epi-dropzone__ayuda">PDF · hasta 25 MB</span></div>
+      <div class="epi-subida__cola"><span class="epi-subida__cuenta">3 archivos añadidos</span>
+        <ul class="epi-archivos">
+          <li class="epi-archivo" data-epi10-estado="pendiente" style="--valor:72"><span class="epi-tipo epi-tipo--pdf">PDF</span><span class="epi-archivo__nombre">Informe_EPI10_Lucia.pdf</span><span class="epi-archivo__estado">72 % · subiendo <svg class="epi-icon epi-girando"><use href="#i-loader-circle"/></svg></span></li>
+          <li class="epi-archivo" data-epi10-estado="hecho"><span class="epi-tipo epi-tipo--pdf">PDF</span><span class="epi-archivo__nombre">Analitica_octubre.pdf</span><span class="epi-archivo__estado">Subido <svg class="epi-icon"><use href="#i-check"/></svg></span></li>
+          <li class="epi-archivo" data-epi10-estado="error"><span class="epi-tipo epi-tipo--img">JPG</span><span class="epi-archivo__nombre">Escaner.jpg</span><span class="epi-archivo__estado">No se ha subido · Reintentar</span></li>
+        </ul></div>
+    </div>
+    <div class="epi-dialog__footer epi-dialog__footer--borde"><button class="epi-btn epi-btn--ghost">Cancelar</button><button class="epi-btn" aria-busy="true" disabled>Publicar informe</button></div>
+  </div></div>
+</section>
+
+<section id="c07"><h2 class="lbl">Control segmentado · texto e iconos</h2>
+  <div class="epi-stack">
+    <div class="epi-segmentado" role="group" aria-label="Filtrar actividad"><button aria-pressed="true">Todo</button><button aria-pressed="false">Notas</button><button aria-pressed="false">Mensajes</button><button aria-pressed="false">Documentos</button><button aria-pressed="false">Sistema</button></div>
+    <div class="epi-segmentado epi-segmentado--iconos" role="group" aria-label="Tipo de nota"><button aria-pressed="true" aria-label="Nota"><svg class="epi-icon"><use href="#i-file-text"/></svg></button><button aria-pressed="false" aria-label="Llamada"><svg class="epi-icon"><use href="#i-message-circle"/></svg></button><button aria-pressed="false" aria-label="Correo"><svg class="epi-icon"><use href="#i-mail"/></svg></button><button aria-pressed="false" aria-label="Cita"><svg class="epi-icon"><use href="#i-calendar"/></svg></button></div>
+  </div>
+</section>
+
+<section id="c08"><h2 class="lbl">Línea de actividad · ficha de clienta (Resumen)</h2>
+  <div class="epi-segmentado" role="group" aria-label="Filtrar actividad" style="margin-bottom:6px"><button aria-pressed="true">Todo</button><button aria-pressed="false">Mensajes</button><button aria-pressed="false">Documentos</button><button aria-pressed="false">Sistema</button></div>
+  <p class="epi-actividad__periodo">Esta semana</p>
+  <ol class="epi-actividad">
+    <li class="epi-actividad__item" data-epi10-tipo="hito"><span class="epi-actividad__icono"><svg class="epi-icon"><use href="#i-file-check"/></svg></span>
+      <p class="epi-actividad__frase"><b>Aitor</b> publicó el informe <b>«Informe EPI10»</b></p><span class="epi-actividad__fecha">dom 11 oct</span>
+      <div class="epi-actividad__detalle">Lucía lo abrió el mismo día a las 18:42.<a class="epi-adjunto" href="#"><span class="epi-tipo epi-tipo--pdf">PDF</span>Informe_EPI10_Lucia.pdf<span class="epi-adjunto__meta">PDF · 148 KB</span></a></div></li>
+    <li class="epi-actividad__item" data-epi10-tipo="clienta"><span class="epi-actividad__icono"><svg class="epi-icon"><use href="#i-message-circle"/></svg></span>
+      <p class="epi-actividad__frase"><b>Lucía</b> escribió en <b>Mensajes</b></p><span class="epi-actividad__fecha">dom 11 oct</span>
+      <div class="epi-actividad__detalle">¿Podemos comentar el apartado de sueño en la próxima cita? Me sorprendió el resultado.</div></li>
+    <li class="epi-actividad__item" data-epi10-tipo="clienta"><span class="epi-actividad__icono"><svg class="epi-icon"><use href="#i-file-signature"/></svg></span>
+      <p class="epi-actividad__frase"><b>Lucía</b> firmó el <b>Consentimiento</b></p><span class="epi-actividad__fecha">dom 11 oct</span></li>
+  </ol>
+  <p class="epi-actividad__periodo">Octubre</p>
+  <ol class="epi-actividad">
+    <li class="epi-actividad__item" data-epi10-tipo="clienta"><span class="epi-actividad__icono"><svg class="epi-icon"><use href="#i-clipboard-list"/></svg></span>
+      <p class="epi-actividad__frase"><b>Lucía</b> envió el <b>Cuestionario de hábitos</b></p><span class="epi-actividad__fecha">mié 7 oct</span></li>
+    <li class="epi-actividad__item"><span class="epi-actividad__icono"><svg class="epi-icon"><use href="#i-lock"/></svg></span>
+      <p class="epi-actividad__frase"><b>Acceso al portal creado</b> tras la compra en la tienda</p><span class="epi-actividad__fecha">lun 5 oct</span></li>
+  </ol>
+</section>
+
+<section id="c09"><h2 class="lbl">Chip de adjunto</h2>
+  <div class="epi-row" style="gap:10px">
+    <a class="epi-adjunto" href="#"><span class="epi-tipo epi-tipo--pdf">PDF</span>Informe_EPI10_Lucia.pdf<span class="epi-adjunto__meta">PDF · 148 KB</span></a>
+    <a class="epi-adjunto" href="#"><span class="epi-tipo epi-tipo--img">JPG</span>Foto_receta.jpg<span class="epi-adjunto__meta">JPG · 820 KB</span></a>
+  </div>
+</section>
+
+<section id="c10"><h2 class="lbl">Compositor de nota interna</h2>
+  <div class="epi-compositor"><textarea placeholder="Escribe una nota interna o registra una llamada… (solo la ve el equipo)"></textarea>
+    <div class="epi-compositor__pie">
+      <div class="epi-segmentado epi-segmentado--iconos" role="group" aria-label="Tipo"><button aria-pressed="true" aria-label="Nota"><svg class="epi-icon"><use href="#i-file-text"/></svg></button><button aria-pressed="false" aria-label="Llamada"><svg class="epi-icon"><use href="#i-message-circle"/></svg></button><button aria-pressed="false" aria-label="Correo"><svg class="epi-icon"><use href="#i-mail"/></svg></button><button aria-pressed="false" aria-label="Cita"><svg class="epi-icon"><use href="#i-calendar"/></svg></button></div>
+      <span class="epi-tecla">Ctrl ↵</span><button class="epi-btn epi-btn--sm">Guardar nota</button></div>
+  </div>
+</section>
+
+</div></body></html>
