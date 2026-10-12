@@ -319,6 +319,19 @@ OE_BASE=http://localhost:4896 PORTAL_USER=lucia PORTAL_PASS=… PORTAL_EMAIL=…
 | `data-epi10-tarjeta` | tarjetas del inicio | igual que el id del núcleo: `documents-go` |
 | `data-epi10-campo` / `data-epi10-form` | formularios | `usuario`, `contrasena`; `login-portal` |
 | `data-epi10-isla` | punto de montaje | `chat`, `firma`, `calendario`, `visor-pdf` |
+| `data-epi10-estado="arrastrando"` | `.epi-dropzone` con ficheros encima (lo pone `epi10-ui.js`, v1.2) | también `pendiente`/`hecho`/`error` en `.epi-archivo` y `hecho`/`error` en un botón tras `EPI10.conFeedback` |
+| `data-epi10-dropzone` | zona de arrastre que se quiere localizar en pruebas (v1.2) | `<label class="epi-dropzone" data-epi10-dropzone="adjuntos-chat">` |
+| `data-epi10-texto-arrastrando` | `__titulo` de la zona: texto mientras se arrastra (v1.2) | `Suelta para adjuntar` |
+| `data-epi10-segmentado` | grupo del control segmentado; su valor es el nombre que viaja en `epi10:segmentado` (v1.2) | `filtro-conversaciones` |
+| `data-epi10-valor` | botón del segmentado sin `value` (opcional, v1.2) | `sin-responder` |
+| `data-epi10-tipo` | elemento de la línea de actividad (v1.2) | `clienta`, `hito`, `sistema` |
+| `data-epi10-actividad` / `data-epi10-actividad-item` | `ol.epi-actividad` y cada elemento con `clave` (v1.2) | `data-epi10-actividad-item="consentimiento-firmado"` |
+| `data-epi10-esqueleto` | bloque de carga de `ui.esqueleto`/`EPI10.esqueleto` (v1.2) | `lista`, `tarjeta`, `tabla` |
+| `data-epi10-adjunto` | chip de `ui.adjunto`, con el nombre del fichero (v1.2) | `Informe_EPI10_Lucia.pdf` |
+| `data-epi10-ocupado-al-enviar` / `data-epi10-enviando` | `<form>` con botón con estado; el segundo lo pone el JS mientras envía (v1.2) | El botón **no** se desactiva: su `name`/`value` viaja en el POST |
+| `data-epi10-ind` | `.epi-tabs` que ya tiene su indicador `.epi-tabs__ind` (v1.2) | lo pone `epi10-ui.js` |
+
+Eventos (v1.2, burbujean desde la pieza): `epi10:archivos` `{archivos, origen: 'soltar'|'elegir'}` en `.epi-dropzone`; `epi10:segmentado` `{nombre, valor, boton}` en `[data-epi10-segmentado]`.
 
 Selectores en las pruebas: `page.locator('[data-epi10-accion="salir"]')`, nunca por clase `epi-` ni por texto (los textos cambiarán).
 
