@@ -9,7 +9,8 @@ export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Tu compra de prueba · NutriWell · EPI10' };
 type View = PurchaseState | 'missing' | 'unavailable' | 'ready' | 'not-started';
 const copy: Record<View, { title: string; text: string; label: string; icon: string }> = {
-  paid: { title: 'Prueba completada.', text: 'Stripe ha confirmado tu pago de prueba de NutriWell. No se ha realizado ningún cobro real ni contratado el servicio.', label: 'PAGO DE PRUEBA CONFIRMADO', icon: '✓' },
+  // SKI2-267: texto aprobado por Raúl (onboarding guiado, tramo 1.4). La etiqueta sigue diciendo que es un pago de prueba.
+  paid: { title: 'Hecho.', text: 'Revisa tu correo: te hemos enviado el acceso a tu espacio EPI10.', label: 'PAGO DE PRUEBA CONFIRMADO', icon: '✓' },
   refunded: { title: 'Prueba devuelta.', text: 'Stripe ha confirmado la devolución completa de los 100 € de esta demostración.', label: 'DEVOLUCIÓN CONFIRMADA', icon: '↶' },
   pending: { title: 'Puedes continuar.', text: 'La compra de prueba sigue pendiente. Retoma el mismo checkout para completarla; si la tarjeta fue rechazada, podrás probar con otra tarjeta de prueba.', label: 'COMPRA PENDIENTE', icon: '↗' },
   expired: { title: 'Retomamos cuando quieras.', text: 'El checkout anterior ha caducado sin completar el pago. Puedes abrir otro intento para esta misma compra de prueba.', label: 'INTENTO CADUCADO', icon: '↻' },
@@ -44,7 +45,8 @@ export default async function PurchasePage({ searchParams }: { searchParams: Pro
         <h1 id="result-title">{content.title}</h1>
         <p className="result-description">{content.text}</p>
         {order && <dl className="result-summary"><div><dt>Producto</dt><dd>NutriWell · DEMO</dd></div><div><dt>Importe de prueba</dt><dd>100,00 €</dd></div><div><dt>Referencia</dt><dd>{orderReference(order)}</dd></div></dl>}
-        {finished && <div className="result-next"><h2>El siguiente paso.</h2><p>La demostración termina aquí. En el servicio real, EPI10 explicará cómo comenzar la experiencia NutriWell después de la compra.</p></div>}
+        {state === 'paid' && <div className="result-next"><h2>El siguiente paso.</h2><p>Abre el correo «Tu espacio EPI10 Salud ya está listo» y pulsa «Entrar en mi espacio»: solo tendrás que crear tu contraseña. Es un pago de prueba: no se ha cobrado nada.</p></div>}
+        {state === 'refunded' && <div className="result-next"><h2>El siguiente paso.</h2><p>La demostración termina aquí. En el servicio real, EPI10 explicará cómo comenzar la experiencia NutriWell después de la compra.</p></div>}
         <div className="result-actions">
           {canContinue && <form action={continuePurchase}><SubmitButton>Continuar al pago de prueba <span aria-hidden="true">↗</span></SubmitButton></form>}
           {['processing', 'unavailable'].includes(state) && <a className="button button--blue" href="/compra">Comprobar de nuevo <span aria-hidden="true">↻</span></a>}
