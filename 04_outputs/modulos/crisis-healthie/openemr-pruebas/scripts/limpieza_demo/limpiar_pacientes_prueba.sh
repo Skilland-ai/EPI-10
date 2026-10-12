@@ -12,7 +12,7 @@ set -eu
 MODO=${1:?contar | limpiar | restaurar | soltar}
 DB=${DB:-epi10-openemr-prueba-mysql-1}
 # Lista EXPLÍCITA de pids de prueba (patient_data del 11 oct, 20:57). Nunca el 1.
-PIDS="2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35"
+PIDS=${PIDS:-"2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35"}  # se puede pasar PIDS="9102 9103" por entorno
 
 # tabla:columna con pid (o usuario del portal, «u:»)
 TABLAS="patient_data:pid patient_access_onsite:pid onetime_auth:pid onsite_documents:pid onsite_signatures:pid
