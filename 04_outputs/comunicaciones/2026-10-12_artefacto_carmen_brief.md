@@ -33,3 +33,11 @@ Transcripción ordenada del feedback de Raúl sobre el primer borrador (https://
 ## Lo que NO va
 - Horas, costes internos, commits, repos, issues, herramientas, nombres de agentes.
 - La demo en vivo (va en pestañas aparte).
+
+## Segunda ronda de feedback de Raúl (13 oct, 00:40) · v4
+1. **Todo plegado por defecto.** Un índice (toggle) por sección, plegado; y dentro, cada subsección también plegable. Los títulos de sección y subsección van **en grande** (no como eyebrow): «1.1 · Qué pasó con Healthie», etc. Al desplegar, el mismo contenido.
+2. **2.1 Alternativas:** demasiado. La tabla resumen, colapsada; cada candidata, colapsada. Lo mismo con las tarjetas de cifras y cualquier bloque largo: nada de «ochocientas opciones» a la vista.
+3. **Capturas de Healthie reales.** Varias son las de Raúl, el resto son material público o inventadas: hay que hacer capturas de verdad en la cuenta de Healthie (vista de profesional y de clienta). Raúl autoriza en el panel del agente.
+4. **Regulación y protección de datos (sección 5):** explicarlo mejor y con menos texto. Dejar claro: qué obligaciones hay (RGPD, datos de salud = categoría especial, responsable y encargado, DPA), qué cubre OpenEMR de serie (cifrado, auditoría, roles), qué hay que hacer para montarlo en el servidor de EPI10 (alojamiento en la UE, copias, acceso, registro de actividades, evaluación de impacto si procede) y **si hace falta alguna certificación o no** (respuesta clara: para operar no se exige certificación; Healthie aportaba certificaciones del proveedor que aquí sustituyen el control propio y buenas prácticas documentadas).
+5. **Cierre nuevo:** todo esto ha sido un experimento para comprobar que era posible, absorbido de buena fe en nuestros costes por decisión discrecional nuestra. Se puede dejar aquí. Si EPI10 quiere seguir por esta vía, hay que sentarse (Carmen y Tomás) y encontrar un encaje justo para las dos partes, porque el trabajo realizado ha sido grande.
+6. **Bloque «antes vs después» de Healthie** arriba, en 1.1 (lo que disparó todo): condiciones de antes (API incluida en el plan Group, probada en verano) frente a después (API como add-on de 475 → 950 → 1.900 $/mes o plan Enterprise sin precio público). Visual.
