@@ -14,6 +14,8 @@ Instancia contrastada: hermes-node, consultada **en solo lectura** el 12 oct por
 
 Documentos que este sustituye como descripción del sistema (siguen valiendo como historia de las decisiones): [ADR del orquestador](2026-10-03_adr_orquestador_v1.md) (D2, escrito cuando el portal era Healthie), [OpenEMR headless](../crisis-healthie/2026-10-07_openemr_headless_v1.md) (SKI2-207) y los documentos del plan renove en [`crisis-healthie/renove/`](../crisis-healthie/renove/).
 
+Versión anterior, para comparar: [arquitectura v0 con Healthie](2026-10-12_arquitectura_sistema_v0_healthie.md) (SKI2-247), el sistema tal como estaba antes de la crisis del 7 oct.
+
 ### Cómo se citan las rutas
 
 - `orq/…` = raíz de `epi10-orquestador`.
