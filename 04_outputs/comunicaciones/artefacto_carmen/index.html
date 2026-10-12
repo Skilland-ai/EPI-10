@@ -65,7 +65,7 @@ img{max-width:100%}
 
 /* Estructura */
 .wrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;max-width:1180px;margin:0 auto;padding-inline:24px;padding-block:48px 80px}
-nav.toc{position:sticky;top:24px;align-self:start;font-size:13.5px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;font-size:13.5px}
 nav.toc .h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
 nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px;border-left:1px solid var(--rule)}
 nav.toc a{display:block;padding:5px 0 5px 14px;color:var(--body);text-decoration:none;margin-left:-1px;border-left:2px solid transparent;line-height:1.35}
