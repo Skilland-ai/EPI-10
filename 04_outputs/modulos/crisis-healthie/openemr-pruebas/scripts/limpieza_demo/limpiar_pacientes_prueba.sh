@@ -19,7 +19,7 @@ TABLAS="patient_data:pid patient_access_onsite:pid onetime_auth:pid onsite_docum
 onsite_portal_activity:patient_id document_templates:pid forms:pid form_questionnaire_assessments:pid
 questionnaire_response:patient_id pnotes:pid openemr_postcalendar_events:pc_pid documents:foreign_id
 epi10_referencias:pid epi10_mensajes_enviados:pid epi10_informes_publicados:pid epi10_informes_validados:pid
-epi10_documentos_vistos:pid"
+epi10_documentos_vistos:pid epi10_onboarding:pid"
 
 sql() { ssh hermes-node "docker exec -i $DB sh -c 'mariadb -uroot -p\"\$MYSQL_ROOT_PASSWORD\" openemr'"; }
 existe() { echo "SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='$1';" | sql | tail -1; }
