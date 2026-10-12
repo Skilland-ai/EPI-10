@@ -1,0 +1,55 @@
+{
+  "res": {
+    "tarjeta-documentos": "/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/documentos.php",
+    "tarjeta-calendario": "/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/calendario.php",
+    "api": {
+      "solape": "409 {\"error\":\"Revisa la hora antes de guardar.\",\"avisos\":[\"Se cruza con la cita de Lucía Peñalver Ortiz (ficticia) a las 16:00.\"]}",
+      "sin_csrf": 403,
+      "plantillas": [
+        "Bienvenida",
+        "Recordatorio · consentimiento",
+        "Recordatorio · cuestionario de hábitos",
+        "Datos de envío del test",
+        "Plazos del kit",
+        "Tu test ya está en la sede: reserva tu cita",
+        "Pídenos el código de barras",
+        "Guía del kit",
+        "Test en camino",
+        "Informe disponible"
+      ]
+    },
+    "texto-elegido": "Hola, Lucía. Soy Operaciones, del equipo de EPI10. Ya tienes tu espacio activo: ahí verás tus documentos, tu cita y, al final, tu informe. Cualquier duda, escríbenos por aquí.",
+    "tarjeta-documentos_movil": "/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/documentos.php",
+    "tarjeta-calendario_movil": "/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/calendario.php",
+    "texto-elegido_movil": "Hola, Lucía. Soy Operaciones, del equipo de EPI10. Ya tienes tu espacio activo: ahí verás tus documentos, tu cita y, al final, tu informe. Cualquier duda, escríbenos por aquí."
+  },
+  "ingles": {
+    "30_documentos": [],
+    "10_plantillas": [],
+    "20_calendario_semana": [],
+    "21_calendario_dia_23oct": [],
+    "23_calendario_cita": [],
+    "22_calendario_mes": [],
+    "11_chat_selector_plantillas": [],
+    "12_chat_plantilla_elegida": [],
+    "30_documentos_movil": [],
+    "10_plantillas_movil": [],
+    "20_calendario_semana_movil": [],
+    "11_chat_selector_plantillas_movil": [],
+    "12_chat_plantilla_elegida_movil": []
+  },
+  "errores": [
+    " HTTP 409 http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/api/calendario.php",
+    " http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/calendario.php?compacto=0&fecha=2026-10-23&vista=mes Failed to load resource: the server responded with a status of 409 (Conflict)",
+    " HTTP 403 http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/api/calendario.php",
+    " http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/calendario.php?compacto=0&fecha=2026-10-23&vista=mes Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    " HTTP 404 http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/adjunto.php?id=18",
+    " http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/mensajes.php?compacto=0&pid=1 Failed to load resource: the server responded with a status of 404 (Not Found)",
+    " HTTP 404 http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/adjunto.php?id=17",
+    " http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/mensajes.php?compacto=0&pid=1 Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "_movil HTTP 404 http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/adjunto.php?id=17",
+    "_movil http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/mensajes.php?compacto=0&pid=1 Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "_movil HTTP 404 http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/adjunto.php?id=18",
+    "_movil http://localhost:4896/interface/modules/custom_modules/oe-module-epi10-ui/public/backoffice/mensajes.php?compacto=0&pid=1 Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

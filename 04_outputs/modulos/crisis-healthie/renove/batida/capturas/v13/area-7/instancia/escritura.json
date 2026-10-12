@@ -1,0 +1,14 @@
+{
+  "r": [
+    "✅ crear plantilla",
+    "✅ editar plantilla (persiste tras recargar)",
+    "✅ ordenar plantilla (subir) — Prueba SKI2-266 / Informe disponible",
+    "✅ usar plantilla desde el compositor — Hola, Lucía. Mensaje de prueba editado por Operaciones.",
+    "✅ borrar plantilla",
+    "✅ crear cita (AppointmentService) — sin aviso",
+    "✅ mover cita y cambiar estado",
+    "✅ cancelar cita",
+    "✅ sin errores de JavaScript"
+  ],
+  "eid": "25"
+}
