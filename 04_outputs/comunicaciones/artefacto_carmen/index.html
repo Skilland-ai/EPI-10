@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap">
 <style>
-/* Layout: relato en una columna de lectura con índice lateral fijo; cada sección abre con kicker, una frase-tesis y una composición dominante (cifras, infografía, tabla, galería o recorrido). */
+/* Layout: una columna de lectura; la intro y el cierre a la vista, y entre ambos un índice de secciones plegables (details/summary) con subsecciones y bloques largos también plegados. */
 :root{
   --ink:#0B1B3D; --ink-2:#1F4171; --ink-3:#2D6BA5;
   --body:#1F2A47; --muted:#68718A;
@@ -46,7 +46,7 @@ strong{color:var(--ink);font-weight:600}
 img{max-width:100%}
 
 /* Cabecera */
-.hero{background:var(--hero);color:#fff;padding-block:40px 46px;padding-inline:max(16px,calc((100vw - 1180px)/2 + 24px));position:relative;overflow:hidden}
+.hero{background:var(--hero);color:#fff;padding-block:40px 46px;padding-inline:max(16px,calc((100vw - 1040px)/2 + 24px));position:relative;overflow:hidden}
 .hero .mark-bg{position:absolute;right:-70px;bottom:-150px;width:380px;opacity:.16;pointer-events:none}
 .brandrow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative}
 .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:#fff}
@@ -64,17 +64,95 @@ img{max-width:100%}
 .meta dd{margin:4px 0 0;color:#fff;font-weight:500;font-size:15px}
 
 /* Estructura */
-.wrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;max-width:1180px;margin:0 auto;padding-inline:24px;padding-block:48px 80px}
-nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;font-size:13.5px}
-nav.toc .h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
-nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px;border-left:1px solid var(--rule)}
-nav.toc a{display:block;padding:5px 0 5px 14px;color:var(--body);text-decoration:none;margin-left:-1px;border-left:2px solid transparent;line-height:1.35}
-nav.toc a:hover{color:var(--ink);border-left-color:var(--accent)}
-nav.toc a.active{color:var(--ink);font-weight:700;border-left-color:var(--accent);background:linear-gradient(90deg,var(--accent-soft),transparent)}
-nav.toc .n{color:var(--accent-ink);font-weight:700;font-variant-numeric:tabular-nums;margin-right:6px}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:24px;padding-block:48px 80px}
 main{min-width:0}
-section{padding-block:48px;border-top:1px solid var(--rule)}
-section:first-child{border-top:0;padding-top:0}
+section{padding-block:0 48px}
+
+/* Plegables */
+details > summary{list-style:none;cursor:pointer}
+details > summary::-webkit-details-marker{display:none}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
+.chev{flex:none;position:relative;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--rule-ink);background:var(--paper);transition:background .2s,border-color .2s,transform .25s}
+.chev::before,.chev::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;margin:-1px 0 0 -7px;background:var(--ink);border-radius:2px;transition:transform .25s}
+.chev::after{transform:rotate(90deg)}
+details[open] > summary > .chev{background:var(--accent);border-color:var(--accent)}
+details[open] > summary > .chev::before,details[open] > summary > .chev::after{background:#0B1B3D}
+details[open] > summary > .chev::after{transform:rotate(0deg)}
+summary:hover > .chev{border-color:var(--accent)}
+@media (prefers-reduced-motion: reduce){.chev,.chev::before,.chev::after{transition:none}}
+.toc-h{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-top:8px}
+.toc-h .kick{margin:0}
+.tools{display:flex;gap:8px}
+.tools[hidden]{display:none}
+.tools button{font:600 13px var(--font);color:var(--ink);background:var(--paper);border:1px solid var(--rule-ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.tools button:hover{border-color:var(--accent)}
+.tools button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details.sec{border-bottom:1px solid var(--rule)}
+details.sec > summary{display:flex;align-items:center;gap:clamp(14px,2.4vw,26px);padding:clamp(22px,3vw,32px) 0}
+details.sec > summary .no{flex:none;width:1.25em;font-size:clamp(42px,6vw,68px);font-weight:800;letter-spacing:-.06em;line-height:.85;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+details.sec > summary .tt{flex:1;min-width:0}
+details.sec > summary .t{display:block;font-size:clamp(25px,3.4vw,38px);line-height:1.08;letter-spacing:-.028em;font-weight:700;color:var(--ink);text-wrap:balance}
+details.sec > summary .d{display:block;font-size:15px;line-height:1.45;color:var(--muted);margin-top:8px;max-width:62ch}
+details.sec > summary:hover .t{color:var(--ink-3)}
+details.sec > summary .chev{width:44px;height:44px}
+.sec-b{padding:4px 0 44px}
+details.sub{border-top:1px solid var(--rule)}
+.sec-b > details.sub:first-child,.sec-b > .intro-s + details.sub{margin-top:8px}
+details.sub > summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0}
+details.sub > summary .st{font-size:clamp(20px,2.5vw,27px);line-height:1.15;letter-spacing:-.02em;font-weight:700;color:var(--ink)}
+details.sub > summary .st b{color:var(--accent-ink);font-weight:800;font-variant-numeric:tabular-nums}
+details.sub > summary:hover .st{color:var(--ink-3)}
+.sub-b{padding:0 0 40px}
+.sub-b > h2:first-child{margin-top:0}
+details.fold{border:1px solid var(--rule);border-radius:12px;margin-top:18px;background:var(--paper)}
+details.fold > summary{display:flex;align-items:center;gap:12px;padding:14px 16px 14px 20px}
+details.fold > summary .ft{flex:1;min-width:0;font-weight:600;font-size:16.5px;color:var(--ink);letter-spacing:-.01em}
+details.fold > summary .fm{font-size:12.5px;color:var(--muted);white-space:nowrap}
+details.fold > summary .chev{width:32px;height:32px}
+details.fold > summary .chev::before,details.fold > summary .chev::after{width:12px;margin-left:-6px}
+details.fold[open]{background:var(--paper)}
+details.fold[open] > summary{border-bottom:1px solid var(--rule)}
+.fold-b{padding:6px 20px 22px}
+.fold-b > :first-child{margin-top:16px}
+.intro-s{font-size:16px;color:var(--body);max-width:68ch;margin:0 0 4px}
+
+/* Antes y después */
+.ba{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.25fr);gap:16px;align-items:stretch;margin-top:26px}
+.ba-c{border-radius:14px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.ba-c.before{border:1px solid var(--rule);background:var(--paper-2)}
+.ba-c.after{background:var(--orq);color:#fff}
+.ba-l{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--ok)}
+.ba-c.after .ba-l{color:#E2BC6A}
+.ba-v{font-size:clamp(28px,3.6vw,38px);font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--ink)}
+.ba-c.after .ba-v{color:#fff}
+.ba-c p{font-size:14.5px;margin:0}
+.ba-c.after p{color:#D3DBEC}
+.ba-c.after strong{color:#fff}
+.ba-chips{list-style:none;margin:auto 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
+.ba-chips li{font-size:12.5px;font-weight:600;border-radius:999px;padding:4px 11px;background:var(--ok-soft);color:var(--ok)}
+.ba-ar{align-self:center;font-size:30px;font-weight:700;color:var(--accent-ink)}
+.ba-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:end}
+.ba-steps > div{border-radius:8px;background:rgba(255,255,255,.08);padding:10px 10px 9px;display:flex;flex-direction:column;justify-content:flex-end}
+.ba-steps > div:nth-child(1){min-height:64px}
+.ba-steps > div:nth-child(2){min-height:84px}
+.ba-steps > div.hot{min-height:112px;background:#D5A749;color:#0B1B3D}
+.ba-steps b{font-size:clamp(18px,2.2vw,23px);font-weight:800;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+.ba-steps span{font-size:11.5px;line-height:1.3;opacity:.85;margin-top:2px}
+
+/* Protección de datos */
+.answer{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,34px);align-items:center;background:var(--orq);color:#fff;border-radius:14px;padding:clamp(22px,3.4vw,36px);margin-top:22px}
+.answer .big{font-size:clamp(56px,8vw,92px);font-weight:800;letter-spacing:-.06em;line-height:.85;color:#E2BC6A}
+.answer .q{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#4DA9D9;margin-bottom:8px}
+.answer p{margin:0;color:#D3DBEC;font-size:16px;max-width:56ch}
+.answer p strong{color:#fff}
+.swap{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:stretch;margin-top:22px}
+.swap > div{border:1px solid var(--rule);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.swap > div.acc{border:2px solid var(--accent);background:var(--accent-soft)}
+.swap .l{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--muted)}
+.swap .acc .l{color:var(--accent-ink)}
+.swap b{color:var(--ink);font-size:16px;font-weight:700;line-height:1.3}
+.swap span:not(.l){font-size:14px;color:var(--body)}
+.swap .ar{align-self:center;border:0;padding:0;font-size:26px;font-weight:700;color:var(--accent-ink)}
 .kick{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:var(--accent-ink)}
 .kick::before{content:"";width:28px;height:4px;background:var(--accent);flex:none}
 h2{font-size:clamp(24px,2.9vw,32px);line-height:1.12;letter-spacing:-.022em;font-weight:700;color:var(--ink);margin:12px 0 12px;text-wrap:balance;max-width:30ch}
@@ -195,10 +273,15 @@ tr.win td{background:var(--ok-soft)!important}
 .cmp td.now{color:var(--ink)}
 
 /* Candidatas */
-.cands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}
-.cand{border:1px solid var(--rule);border-radius:12px;padding:20px 20px 18px;background:var(--paper);display:flex;flex-direction:column;gap:10px;min-width:0}
-.cand .hd{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-.cand h3{margin:0}
+.cands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px;align-items:start}
+.cand{border:1px solid var(--rule);border-radius:12px;background:var(--paper);min-width:0}
+.cand > summary.hd{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 18px}
+.cand > summary.hd > div{flex:1;min-width:0}
+.cand > summary .chev{width:30px;height:30px}
+.cand > summary .chev::before,.cand > summary .chev::after{width:11px;margin-left:-5.5px}
+.cand[open] > summary.hd{border-bottom:1px solid var(--rule)}
+.cand-b{padding:14px 18px 18px;display:flex;flex-direction:column;gap:10px}
+.cand h3{margin:0;font-size:17.5px}
 .cand .org{font-size:12.5px;color:var(--muted);margin-top:2px}
 .cand p{font-size:14.5px;margin:0}
 .fit{list-style:none;margin:2px 0 0;padding:10px 0 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px}
@@ -326,6 +409,9 @@ tr.win td{background:var(--ok-soft)!important}
 .closing .mark-bg{position:absolute;right:-60px;top:-90px;width:300px;opacity:.12;transform:rotate(180deg);pointer-events:none}
 .closing .l{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#4DA9D9;font-weight:700;position:relative}
 .closing h2{color:#fff;font-size:clamp(26px,3.6vw,40px);max-width:22ch;margin:14px 0 0;position:relative}
+.closing p.cl{color:#D3DBEC;font-size:clamp(16px,1.8vw,18px);line-height:1.55;max-width:60ch;margin:0 0 26px;position:relative}
+.closing p.cl strong{color:#fff}
+.closing .sign{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.18);color:#B6C4DE;font-size:14.5px;position:relative}
 .closing .rule{width:62px;height:4px;background:#D5A749;margin:24px 0}
 .closing ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;position:relative}
 .closing ol li{border-top:1px solid rgba(255,255,255,.22);padding-top:14px;color:#D3DBEC;font-size:15px}
@@ -342,9 +428,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
 .lb-stage img{max-width:100%;max-height:100%;border-radius:8px;background:#fff}
 
 @media (max-width: 960px){
-  .wrap{grid-template-columns:minmax(0,1fr);gap:24px;padding-inline:16px}
-  nav.toc{position:static}
-  nav.toc ol{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+  .wrap{padding-inline:16px}
   .kpi{grid-template-columns:repeat(2,minmax(0,1fr))}
   .kpi > div:nth-child(3){border-left:0}
   .kpi > div:nth-child(n+3){border-top:1px solid var(--rule)}
@@ -355,6 +439,14 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
 }
 @media (max-width: 720px){
   .split,.cands,.fork,.also{grid-template-columns:minmax(0,1fr)}
+  .ba,.swap{grid-template-columns:minmax(0,1fr)}
+  .ba-ar,.swap .ar{justify-self:center;transform:rotate(90deg);line-height:1}
+  .answer{grid-template-columns:minmax(0,1fr);gap:12px}
+  details.sec > summary .d{display:none}
+  details.sec > summary .chev{width:38px;height:38px}
+  .fold-b{padding:4px 14px 18px}
+  details.fold > summary{padding:12px 12px 12px 14px}
+  details.fold > summary .fm{display:none}
   .tl{grid-template-columns:minmax(0,1fr);gap:18px;border-left:2px solid var(--rule);margin-left:7px;padding-left:22px}
   .tl li{padding:0}
   .tl li::before{display:none}
@@ -406,21 +498,6 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
 </header>
 
 <div class="wrap">
-  <nav class="toc" aria-label="Índice">
-    <div class="h">Índice</div>
-    <ol>
-      <li><a href="#intro"><span class="n">00</span>En una página</a></li>
-      <li><a href="#que-paso"><span class="n">1.1</span>Qué pasó con Healthie</a></li>
-      <li><a href="#para-que"><span class="n">1.2</span>Para qué queríamos Healthie</a></li>
-      <li><a href="#alternativas"><span class="n">2.1</span>Alternativas evaluadas</a></li>
-      <li><a href="#propio"><span class="n">2.2</span>Una plataforma propia</a></li>
-      <li><a href="#recorrido"><span class="n">3</span>El recorrido de la clienta</a></li>
-      <li><a href="#interfaz"><span class="n">4</span>EPI10 frente a Healthie</a></li>
-      <li><a href="#arquitectura"><span class="n">5</span>Arquitectura, datos y futuro</a></li>
-      <li><a href="#cierre"><span class="n">→</span>Cierre</a></li>
-    </ol>
-  </nav>
-
   <main>
     <!-- 00 -->
     <section id="intro">
@@ -450,25 +527,50 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
             <li>El <strong>recorrido de la clienta</strong> planteado al principio: compra, bienvenida, test, informe y entrega.</li>
             <li><strong>Odoo</strong> sigue siendo el centro de operaciones del equipo.</li>
             <li>El pago con tarjeta en la web y el <strong>generador de informes</strong> con validación humana.</li>
-            <li>El <strong>presupuesto</strong> del proyecto: este trabajo se ha absorbido en él.</li>
+            <li>El <strong>presupuesto</strong> acordado: este trabajo lo hemos asumido nosotros.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 1.1 -->
-    <section id="que-paso">
-      <div class="kick">1.1 · Qué pasó con Healthie</div>
+    <div class="toc-h"><div class="kick">El documento, sección a sección</div><div class="tools" hidden><button type="button" data-all="open">Desplegarlo todo</button><button type="button" data-all="close">Plegarlo todo</button></div></div>
+
+    <!-- 1 -->
+    <details class="sec" id="crisis"><summary><span class="no">1</span><span class="tt"><span class="t">La crisis de Healthie</span><span class="d">Qué cambió en sus condiciones y qué pieza del proyecto nos dejaba sin cubrir.</span></span><span class="chev" aria-hidden="true"></span></summary><div class="sec-b">
+<details class="sub" id="que-paso"><summary><span class="st"><b>1.1</b> · Qué pasó con Healthie</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
       <h2>Healthie sacó la conexión de su plan y la convirtió en un añadido de pago.</h2>
       <p class="lead">La automatización del proyecto se apoya en una conexión (API) con la que nuestro sistema da de alta a cada clienta, le asigna sus formularios y le entrega el informe sin trabajo manual. Esa conexión venía incluida. Dejó de estarlo.</p>
 
+      <div class="ba" role="group" aria-label="Condiciones de Healthie, antes y después">
+        <div class="ba-c before">
+          <div class="ba-l">Antes · hasta el verano de 2026</div>
+          <div class="ba-v">API incluida</div>
+          <p>Venía dentro del <strong>plan Group</strong> que contrató EPI10, sin coste añadido. La probamos en verano y funcionaba.</p>
+          <ul class="ba-chips"><li>Plan Group</li><li>API sin coste extra</li></ul>
+        </div>
+        <div class="ba-ar" aria-hidden="true">→</div>
+        <div class="ba-c after">
+          <div class="ba-l">Después · desde septiembre</div>
+          <div class="ba-v">API de pago</div>
+          <div class="ba-steps" aria-label="Precio mensual del añadido de API">
+            <div><b>475&nbsp;$</b><span>al mes · año 1</span></div>
+            <div><b>950&nbsp;$</b><span>al mes · año 2</span></div>
+            <div class="hot"><b>1.900&nbsp;$</b><span>al mes · año 3 y siguientes</span></div>
+          </div>
+          <p>Como añadido, <strong>además del plan Group</strong>. O dentro del plan <strong>Enterprise</strong>, sin precio público.</p>
+        </div>
+      </div>
+
+      <details class="fold"><summary><span class="ft">Cómo se desarrolló</span><span class="fm">verano → 7 de octubre</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
       <ol class="tl">
         <li><div class="when">Verano 2026</div><div class="what">Plan de prueba</div><div class="det">La API de desarrollo viene incluida. La llegamos a probar.</div></li>
         <li><div class="when">Plan Group</div><div class="what">Contratado por EPI10</div><div class="det">La API sigue incluida en el plan.</div></li>
         <li class="hit"><div class="when">Septiembre</div><div class="what">Healthie cambia las reglas</div><div class="det">Saca la API del plan: pasa a ser un añadido de pago o parte del plan Enterprise.</div></li>
         <li class="hit"><div class="when">7 de octubre</div><div class="what">Precio confirmado por escrito</div><div class="det">Healthie responde a la consulta de EPI10 con la tarifa del añadido.</div></li>
       </ol>
+      </div></details>
 
+      <details class="fold"><summary><span class="ft">Lo que pasaba a costar la API, año a año</span><span class="fm">≈ 22.800 $ al año desde el tercero</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
       <div class="price">
         <div class="bars" role="group" aria-label="Precio mensual del añadido de API de Healthie">
           <h4>Lo que pasaba a costar la API · al mes</h4>
@@ -483,16 +585,18 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         </div>
       </div>
 
+      </div></details>
+
+      <details class="fold"><summary><span class="ft">Otras fricciones con Healthie</span><span class="fm">idioma y correos</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
       <div class="also">
         <div><b>Sin español</b><span>Healthie no tiene ajuste de idioma. Remite a un artículo sobre uso internacional.</span></div>
         <div><b>Correos en inglés</b><span>Los botones y el pie de sus correos no se pueden traducir; lo apuntan como mejora futura.</span></div>
         <div><b>Correos bloqueados</b><span>En cuentas nuevas, las plantillas de correo están restringidas hasta que Healthie revisa el negocio.</span></div>
       </div>
-    </section>
+      </div></details>
+    </div></details>
 
-    <!-- 1.2 -->
-    <section id="para-que">
-      <div class="kick">1.2 · Para qué queríamos Healthie</div>
+    <details class="sub" id="para-que"><summary><span class="st"><b>1.2</b> · Para qué queríamos Healthie</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
       <h2>Healthie era toda la experiencia de la clienta. Sin su conexión, perdíamos el bloque entero.</h2>
       <p class="lead">El sistema que diseñamos tenía un centro propio de EPI10, el orquestador, que conecta el pago, el portal de la clienta y Odoo, y que genera los informes. Healthie ponía la cara: todo lo que la clienta ve y hace.</p>
 
@@ -596,14 +700,21 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         <div class="rule"></div>
         <p>Era un sacrificio asumido: EPI10 no podía permitirse una aplicación a medida, y Healthie daba un portal completo por una cuota razonable. Pero era un gran riesgo, y se materializó en septiembre.</p>
       </div>
-    </section>
+    </div></details>
+    </div></details>
 
-    <!-- 2.1 -->
-    <section id="alternativas">
-      <div class="kick">2.1 · Alternativas de terceros</div>
+    <!-- 2 -->
+    <details class="sec" id="respuesta"><summary><span class="no">2</span><span class="tt"><span class="t">Qué hemos hecho para absorber el impacto</span><span class="d">Buscamos sustituto en el mercado y, al no encontrarlo, construimos una plataforma propia de EPI10.</span></span><span class="chev" aria-hidden="true"></span></summary><div class="sec-b">
+<details class="sub" id="alternativas"><summary><span class="st"><b>2.1</b> · Alternativas de terceros</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
       <h2>Buscamos un sustituto en el mercado. Ninguna plataforma encaja.</h2>
       <p class="lead">Revisamos 40 plataformas en cinco familias: práctica clínica, nutrición, historia clínica programable y software libre, portales genéricos y software español. Medimos cada una con cuatro requisitos: <strong>portal para la clienta en español, automatizable, datos en la UE y coste asumible y estable</strong>.</p>
 
+      <div class="verdict">
+        <div class="big">0<small>de 40</small></div>
+        <p>No hay en el mercado nada que, por funciones y por coste, se parezca a lo que Healthie ofrecía antes.</p>
+      </div>
+
+      <details class="fold"><summary><span class="ft">Tabla resumen: las 40 plataformas y por qué se descartaron</span><span class="fm">5 familias</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
       <div class="tbl">
         <table class="stack" aria-label="Plataformas evaluadas y motivo del descarte">
           <thead><tr><th>Aplicación</th><th>Enlace</th><th>Motivo del descarte</th></tr></thead>
@@ -658,86 +769,73 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         </table>
       </div>
       <p class="src">Precios y condiciones consultados en las webs oficiales de cada plataforma el 7 de octubre de 2026. «Conexión» es la API que permite automatizar el recorrido desde nuestro sistema.</p>
+      </div></details>
 
-      <h3 class="sub">Las candidatas que más se acercaron</h3>
-      <p>Siete plataformas merecían una mirada de cerca, y cada una falla en al menos uno de los cuatro requisitos. La octava es la que elegimos como base.</p>
+      <details class="fold"><summary><span class="ft">Las candidatas que más se acercaron</span><span class="fm">8 fichas</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
+      <p>Siete plataformas merecían una mirada de cerca, y cada una falla en al menos uno de los cuatro requisitos. La octava es la que elegimos como base. Abre cada ficha para ver por qué.</p>
       <div class="legend" aria-hidden="true"><span><i class="y"></i>Cumple</span><span><i class="h"></i>A medias</span><span><i></i>No cumple</span></div>
       <div class="cands">
-        <article class="cand">
-          <div class="hd"><div><h3>InsideTracker</h3><div class="org">EE. UU. · la propuesta de EPI10</div></div><span class="tag mute">Descartada</span></div>
+        <details class="cand"><summary class="hd"><div><h3>InsideTracker</h3><div class="org">EE. UU. · la propuesta de EPI10</div></div><span class="tag mute">Descartada</span><span class="chev" aria-hidden="true"></span></summary><div class="cand-b">
           <p>Análisis de sangre, ADN y hábitos con recomendaciones de nutrición, vendido directamente al consumidor.</p>
           <ul class="fit">
             <li><i></i>Portal en español</li><li><i></i>Automatizable</li><li><i></i>Datos en la UE</li><li><i></i>Coste asumible</li>
           </ul>
           <p class="no">Es justo lo que EPI10 quiere construir para sí misma, no una herramienta para hacerlo: su app es para sus clientes, sin formularios, chat ni conexión, y sus análisis solo funcionan en EE. UU.</p>
-        </article>
-        <article class="cand">
-          <div class="hd"><div><h3>Practice Better</h3><div class="org">Canadá · práctica clínica y nutrición</div></div><span class="tag mute">Descartada</span></div>
+        </div></details>
+        <details class="cand"><summary class="hd"><div><h3>Practice Better</h3><div class="org">Canadá · práctica clínica y nutrición</div></div><span class="tag mute">Descartada</span><span class="chev" aria-hidden="true"></span></summary><div class="cand-b">
           <p>El sustituto más directo de Healthie: portal, app, consentimiento con firma, chat, documentos y venta de programas.</p>
           <ul class="fit">
             <li><i></i>Portal en español</li><li><i class="y"></i>Automatizable</li><li><i></i>Datos en la UE</li><li><i class="h"></i>Coste asumible</li>
           </ul>
           <p class="no">La interfaz es solo en inglés, los datos quedarían en Norteamérica y su conexión, hoy gratis en pruebas, tendrá precio «cuando acabe la beta». Repetiríamos la crisis de Healthie.</p>
-        </article>
-        <article class="cand">
-          <div class="hd"><div><h3>Carepatron</h3><div class="org">Nueva Zelanda · práctica clínica</div></div><span class="tag mute">Descartada</span></div>
+        </div></details>
+        <details class="cand"><summary class="hd"><div><h3>Carepatron</h3><div class="org">Nueva Zelanda · práctica clínica</div></div><span class="tag mute">Descartada</span><span class="chev" aria-hidden="true"></span></summary><div class="cand-b">
           <p>El mejor portal en español por menos dinero: idioma por clienta, firma, formularios, chat y documentos desde el plan gratuito.</p>
           <ul class="fit">
             <li><i class="y"></i>Portal en español</li><li><i></i>Automatizable</li><li><i class="h"></i>Datos en la UE</li><li><i class="y"></i>Coste asumible</li>
           </ul>
           <p class="no">Su conexión, recién lanzada, solo exporta contactos: no crea clientas, no envía formularios ni avisa de nada. Volveríamos a hacerlo todo a mano.</p>
-        </article>
-        <article class="cand">
-          <div class="hd"><div><h3>Nutrium</h3><div class="org">Portugal · nutrición</div></div><span class="tag mute">Descartada</span></div>
+        </div></details>
+        <details class="cand"><summary class="hd"><div><h3>Nutrium</h3><div class="org">Portugal · nutrición</div></div><span class="tag mute">Descartada</span><span class="chev" aria-hidden="true"></span></summary><div class="cand-b">
           <p>App en siete idiomas con español, servidores en Europa y foco en nutricionistas.</p>
           <ul class="fit">
             <li><i class="y"></i>Portal en español</li><li><i></i>Automatizable</li><li><i class="y"></i>Datos en la UE</li><li><i class="y"></i>Coste asumible</li>
           </ul>
           <p class="no">No tiene ninguna conexión. Todo el alta, el seguimiento y la entrega del informe serían manuales.</p>
-        </article>
-        <article class="cand">
-          <div class="hd"><div><h3>Softr</h3><div class="org">Alemania · portales genéricos</div></div><span class="tag mute">Descartada</span></div>
+        </div></details>
+        <details class="cand"><summary class="hd"><div><h3>Softr</h3><div class="org">Alemania · portales genéricos</div></div><span class="tag mute">Descartada</span><span class="chev" aria-hidden="true"></span></summary><div class="cand-b">
           <p>Portal «montable» con acceso por enlace, formularios con firma, pago con tarjeta y alojamiento en Alemania.</p>
           <ul class="fit">
             <li><i class="h"></i>Portal en español</li><li><i class="y"></i>Automatizable</li><li><i class="y"></i>Datos en la UE</li><li><i class="y"></i>Coste asumible</li>
           </ul>
           <p class="no">No es sanitaria y no dice nada de datos de salud ni genéticos; el chat son comentarios y todo el español se escribe a mano.</p>
-        </article>
-        <article class="cand">
-          <div class="hd"><div><h3>Cliniko</h3><div class="org">Australia · datos en Irlanda</div></div><span class="tag mute">Descartada</span></div>
+        </div></details>
+        <details class="cand"><summary class="hd"><div><h3>Cliniko</h3><div class="org">Australia · datos en Irlanda</div></div><span class="tag mute">Descartada</span><span class="chev" aria-hidden="true"></span></summary><div class="cand-b">
           <p>Gestión de consulta con conexión gratuita y documentada, quince años en el mercado.</p>
           <ul class="fit">
             <li><i></i>Portal en español</li><li><i class="h"></i>Automatizable</li><li><i class="y"></i>Datos en la UE</li><li><i class="y"></i>Coste asumible</li>
           </ul>
           <p class="no">No tiene portal ni app para la clienta, ni chat. Serviría como back office, y ese papel ya lo cumple Odoo.</p>
-        </article>
-        <article class="cand">
-          <div class="hd"><div><h3>Medplum</h3><div class="org">EE. UU. · software libre</div></div><span class="tag mute">Descartada</span></div>
+        </div></details>
+        <details class="cand"><summary class="hd"><div><h3>Medplum</h3><div class="org">EE. UU. · software libre</div></div><span class="tag mute">Descartada</span><span class="chev" aria-hidden="true"></span></summary><div class="cand-b">
           <p>Plataforma de datos sanitarios moderna y alojable en un servidor propio.</p>
           <ul class="fit">
             <li><i></i>Portal en español</li><li><i class="y"></i>Automatizable</li><li><i class="y"></i>Datos en la UE</li><li><i class="h"></i>Coste asumible</li>
           </ul>
           <p class="no">No trae portal para la clienta: habría que construirlo desde cero, con el mismo esfuerzo que una aplicación a medida.</p>
-        </article>
-        <article class="cand">
-          <div class="hd"><div><h3>OpenEMR</h3><div class="org">EE. UU. · software libre</div></div><span class="tag ok">Elegida como base</span></div>
+        </div></details>
+        <details class="cand"><summary class="hd"><div><h3>OpenEMR</h3><div class="org">EE. UU. · software libre</div></div><span class="tag ok">Elegida como base</span><span class="chev" aria-hidden="true"></span></summary><div class="cand-b">
           <p>Historia clínica de referencia en software libre, con portal del paciente, firma, mensajería, documentos y conexión, alojable en el servidor de EPI10.</p>
           <ul class="fit">
             <li><i class="h"></i>Portal en español</li><li><i class="y"></i>Automatizable</li><li><i class="y"></i>Datos en la UE</li><li><i class="y"></i>Coste asumible</li>
           </ul>
           <p class="no">Su portal es de otra época y su español, irregular. Era el único fallo, y podía arreglarse: es lo que hicimos.</p>
-        </article>
+        </div></details>
       </div>
+      </div></details>
+    </div></details>
 
-      <div class="verdict">
-        <div class="big">0<small>de 40</small></div>
-        <p>No hay en el mercado nada que, por funciones y por coste, se parezca a lo que Healthie ofrecía antes.</p>
-      </div>
-    </section>
-
-    <!-- 2.2 -->
-    <section id="propio">
-      <div class="kick">2.2 · Una plataforma propia</div>
+    <details class="sub" id="propio"><summary><span class="st"><b>2.2</b> · Una plataforma propia</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
       <h2>Construimos algo interno, propiedad de EPI10, sobre una base de software libre.</h2>
       <p class="lead">Si el mercado no tenía la pieza, había que hacerla. Había dos caminos, y elegimos el que cabía en el presupuesto y encajaba con cómo ya trabaja EPI10.</p>
 
@@ -776,7 +874,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
 
       <p style="margin-top:28px">Estos días lo hemos construido. Esta es la versión actual, <strong>vista a vista</strong>: todo en español, con la marca de EPI10, para ordenador y móvil. Pulsa cualquier captura para verla en grande.</p>
 
-      <div class="grp"><h3>Lo que ve la clienta</h3></div>
+      <details class="fold"><summary><span class="ft">Lo que ve la clienta · acceso</span><span class="fm">vistas 01–02</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
       <div class="views">
         <div class="vrow">
           <div class="media has-phone">
@@ -791,8 +889,10 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         </div>
       </div>
 
-      <div class="grp"><h3>La bienvenida guiada</h3></div>
-      <p style="font-size:15px;margin-top:10px">Mientras falte algo obligatorio, el portal no enseña el inicio: lleva a la clienta paso a paso por el consentimiento, el cuestionario y el test, con el progreso siempre a la vista. Si sale a medias, vuelve justo donde lo dejó.</p>
+      </div></details>
+
+      <details class="fold"><summary><span class="ft">Lo que ve la clienta · la bienvenida guiada</span><span class="fm">vistas 03–08</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
+      <p style="font-size:15px">Mientras falte algo obligatorio, el portal no enseña el inicio: lleva a la clienta paso a paso por el consentimiento, el cuestionario y el test, con el progreso siempre a la vista. Si sale a medias, vuelve justo donde lo dejó.</p>
       <div class="rail">
         <figure><div class="shot"><img src="img/p03_bienvenida.png" alt="Bienvenida con los tres pasos" width="1366" height="900" loading="lazy"></div><figcaption><b>Vista 03 · Bienvenida.</b> «Antes de empezar necesitamos tres cosas», con el tiempo de cada una.</figcaption></figure>
         <figure><div class="shot"><img src="img/p04_consentimiento.png" alt="Firma del consentimiento" width="1366" height="900" loading="lazy"></div><figcaption><b>Vista 04 · Consentimiento.</b> Lee, marca sus conformidades y firma con el dedo o el ratón.</figcaption></figure>
@@ -801,8 +901,10 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         <figure><div class="shot"><img src="img/p07_envio.png" alt="Datos de envío del kit" width="1366" height="900" loading="lazy"></div><figcaption><b>Vista 07 · Envío del kit.</b> Dirección, teléfono y franja horaria para recibirlo.</figcaption></figure>
         <figure><div class="shot"><img src="img/p08_listo.png" alt="Todo listo" width="1366" height="900" loading="lazy"></div><figcaption><b>Vista 08 · Todo listo.</b> El equipo ya tiene lo que necesita; le avisaremos cuando salga su kit.</figcaption></figure>
       </div>
+      </div></details>
 
-      <div class="views" style="margin-top:44px">
+      <details class="fold"><summary><span class="ft">Lo que ve la clienta · su espacio</span><span class="fm">vistas 09–13</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
+      <div class="views">
         <div class="vrow">
           <div class="media has-phone">
             <figure class="shot"><div class="wb"><i></i><i></i><i></i><span>Tu espacio EPI10 · Inicio</span></div><img src="img/p09_inicio.png" alt="Inicio del portal con la fase actual" width="1366" height="900" loading="lazy"></figure>
@@ -840,7 +942,9 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         </div>
       </div>
 
-      <div class="grp"><h3>Lo que ve el equipo</h3></div>
+      </div></details>
+
+      <details class="fold"><summary><span class="ft">Lo que ve el equipo</span><span class="fm">vistas 14–20</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
       <div class="views">
         <div class="vrow">
           <div class="media has-phone">
@@ -874,13 +978,15 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
           <div class="vtxt"><div class="num">Vista 20</div><h3>Calendario</h3><p>El equipo marca sus horas «En consulta» y ahí aparecen las citas que reservan las clientas.</p></div>
         </div>
       </div>
+      </div></details>
 
       <div class="note sky"><p><strong>Odoo sigue siendo el centro de operaciones.</strong> Cada compra crea su caso en el tablero de Odoo, que avanza solo según lo que la clienta hace en el portal. Aitor sigue trabajando donde ya trabaja.</p></div>
-    </section>
+    </div></details>
+    </div></details>
 
     <!-- 3 -->
-    <section id="recorrido">
-      <div class="kick">3 · El recorrido de la clienta</div>
+    <details class="sec" id="recorrido"><summary><span class="no">3</span><span class="tt"><span class="t">El recorrido de la clienta, hoy</span><span class="d">Los cinco tramos de la experiencia, de la web al informe, en la versión actual del experimento (v0.5).</span></span><span class="chev" aria-hidden="true"></span></summary><div class="sec-b">
+    <div class="intro-s">
       <h2>Así vive hoy una clienta el experimento EPI10, de la web al informe.</h2>
       <p class="lead">Los cinco tramos del recorrido que diseñamos al principio, recorridos en la versión actual (v0.5) con datos ficticios. En cada paso, lo que vive la clienta y lo que pasa detrás.</p>
 
@@ -891,9 +997,10 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         <li><b>Laboratorio e informe</b>Borrador y validación</li>
         <li><b>Entrega</b>La clienta lee su informe</li>
       </ol>
+    </div>
 
-      <div class="tramo">
-        <div class="tramo-h"><div class="nb">01</div><div><h3>Compra y alta</h3><p>De descubrir NutriWell a tener su espacio, sin que nadie del equipo intervenga.</p></div></div>
+    <details class="sub" id="tramo-1"><summary><span class="st"><b>3.1</b> · Compra y alta</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <p class="intro-s">De descubrir NutriWell a tener su espacio, sin que nadie del equipo intervenga.</p>
         <ol class="stages">
           <li class="stg">
             <div class="th pv"><figure class="phone"><img src="img/j01_web_m.png" alt="Web de NutriWell en el móvil" width="780" height="1688" loading="lazy"></figure></div>
@@ -912,10 +1019,10 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
             <div><h4>Paso 4</h4><h3>Crea su contraseña</h3><div class="who"><div><span>La clienta</span><span>Entra y elige su usuario y contraseña para volver cuando quiera.</span></div></div></div>
           </li>
         </ol>
-      </div>
+    </div></details>
 
-      <div class="tramo">
-        <div class="tramo-h"><div class="nb">02</div><div><h3>Bienvenida y documentos</h3><p>El portal la guía y el equipo recibe el caso listo para pedir el test.</p></div></div>
+    <details class="sub" id="tramo-2"><summary><span class="st"><b>3.2</b> · Bienvenida y documentos</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <p class="intro-s">El portal la guía y el equipo recibe el caso listo para pedir el test.</p>
         <ol class="stages">
           <li class="stg">
             <div class="th pv"><figure class="phone"><img src="img/p03_bienvenida_m.png" alt="Bienvenida guiada en el móvil" width="780" height="1688" loading="lazy"></figure></div>
@@ -938,10 +1045,10 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
             <div><h4>Paso 9</h4><h3>Todo listo</h3><div class="who"><div><span>La clienta</span><span>Ve el resumen de lo hecho y entra en su espacio.</span></div><div class="bk"><span>Detrás</span><span>Con los tres pasos completos, el caso pasa en Odoo a «Listo para pedir test», con la modalidad y la dirección. Aitor recibe la tarea «Pedir test».</span></div></div></div>
           </li>
         </ol>
-      </div>
+    </div></details>
 
-      <div class="tramo">
-        <div class="tramo-h"><div class="nb">03</div><div><h3>Test</h3><p>El kit viaja y la clienta nunca se queda sin respuesta.</p></div></div>
+    <details class="sub" id="tramo-3"><summary><span class="st"><b>3.3</b> · Test</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <p class="intro-s">El kit viaja y la clienta nunca se queda sin respuesta.</p>
         <ol class="stages">
           <li class="stg">
             <div class="th pv"><figure class="phone"><img src="img/p12_mensajes_m.png" alt="Chat con respuesta inmediata sobre el kit" width="390" height="844" loading="lazy"></figure></div>
@@ -952,122 +1059,116 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
             <div><h4>Paso 11</h4><h3>Se hace el test</h3><div class="who"><div><span>La clienta</span><span>En casa, siguiendo la guía del kit, o en la sede, en la cita que reservó.</span></div><div class="bk"><span>Detrás</span><span>Aitor registra el código del kit en Odoo y gestiona la recogida y el envío al laboratorio.</span></div></div></div>
           </li>
         </ol>
-      </div>
+    </div></details>
 
-      <div class="tramo">
-        <div class="tramo-h"><div class="nb">04</div><div><h3>Laboratorio e informe</h3><p>El sistema prepara el borrador; una persona decide qué se publica.</p></div></div>
+    <details class="sub" id="tramo-4"><summary><span class="st"><b>3.4</b> · Laboratorio e informe</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <p class="intro-s">El sistema prepara el borrador; una persona decide qué se publica.</p>
         <ol class="stages">
           <li class="stg">
             <div class="th"><figure class="shot"><img src="img/b07_documentos.png" alt="Informes por revisar y publicar" width="1366" height="900" loading="lazy"></figure></div>
             <div><h4>Paso 12</h4><h3>Del resultado del laboratorio al informe</h3><div class="who"><div><span>La clienta</span><span>Ve en su inicio en qué fase está su caso.</span></div><div class="bk"><span>Detrás</span><span>Llegan los resultados de TellmeGen. El generador de informes prepara un borrador sin datos identificativos; Aitor lo revisa, lo corrige y lo valida. Sin validación humana no se publica nada.</span></div></div></div>
           </li>
         </ol>
-      </div>
+    </div></details>
 
-      <div class="tramo">
-        <div class="tramo-h"><div class="nb">05</div><div><h3>Entrega</h3><p>El informe llega a su espacio y el caso se cierra.</p></div></div>
+    <details class="sub" id="tramo-5"><summary><span class="st"><b>3.5</b> · Entrega</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <p class="intro-s">El informe llega a su espacio y el caso se cierra.</p>
         <ol class="stages">
           <li class="stg">
             <div class="th pv"><figure class="phone"><img src="img/p13_informe_m.png" alt="Informe disponible en el móvil" width="390" height="844" loading="lazy"></figure></div>
             <div><h4>Paso 13</h4><h3>Lee su informe</h3><div class="who"><div><span>La clienta</span><span>Recibe el aviso, abre «Mi informe» y lo lee o lo descarga. Puede escribir al equipo con sus dudas.</span></div><div class="bk"><span>Detrás</span><span>El caso se cierra en Odoo tras la revisión de cierre del equipo.</span></div></div></div>
           </li>
         </ol>
-      </div>
+    </div></details>
 
-      <div class="note"><p>La demostración en vivo de este recorrido va aparte. Todas las capturas son de la versión actual en el entorno de pruebas, con clientas y datos ficticios.</p></div>
-    </section>
+      <div class="note" style="margin-top:28px"><p>La demostración en vivo de este recorrido va aparte. Todas las capturas son de la versión actual en el entorno de pruebas, con clientas y datos ficticios.</p></div>
+    </div></details>
 
     <!-- 4 -->
-    <section id="interfaz">
-      <div class="kick">4 · Comparativa de interfaz</div>
-      <h2>EPI10 frente a Healthie: la misma función, con vuestra marca y en vuestro idioma.</h2>
-      <p class="lead">Cada vista de la plataforma EPI10 junto a su equivalente en Healthie. Donde Healthie ponía su marca y su inglés, ahora está EPI10.</p>
-      <p style="font-size:14.5px;color:var(--muted)">Las imágenes de Healthie salen de la cuenta de EPI10 con el plan Group o, donde se indica, del material público de su web y su centro de ayuda oficiales: muestran su interfaz estándar.</p>
+    <details class="sec" id="interfaz"><summary><span class="no">4</span><span class="tt"><span class="t">EPI10 frente a Healthie</span><span class="d">Cada vista de la plataforma EPI10 junto a su equivalente en Healthie, con capturas reales de la cuenta de EPI10.</span></span><span class="chev" aria-hidden="true"></span></summary><div class="sec-b">
+      <h2>La misma función, con vuestra marca y en vuestro idioma.</h2>
+      <p class="lead">Donde Healthie ponía su inglés y su forma de trabajar, ahora está EPI10. Las capturas de Healthie son de la cuenta de EPI10 (plan Group), tomadas el 12 de octubre de 2026; la única clienta que aparece es la ficha de ejemplo que Healthie crea por defecto.</p>
 
-      <div class="tbl">
+    <details class="sub" id="interfaz-resumen"><summary><span class="st"><b>4.1</b> · En resumen</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <div class="tbl" style="margin-top:0">
         <table class="cmp stack" aria-label="Comparativa de funciones de interfaz">
           <thead><tr><th>Aspecto</th><th>Plataforma EPI10</th><th>Healthie · plan Group</th></tr></thead>
           <tbody>
-            <tr><td class="k">Idioma</td><td class="now" data-l="EPI10">Todo en español, también correos y botones.</td><td data-l="Healthie">Sin ajuste de idioma; botones y pie de los correos en inglés.</td></tr>
-            <tr><td class="k">Marca</td><td class="now" data-l="EPI10">EPI10 en cada pantalla y en el correo.</td><td data-l="Healthie">Marca de Healthie visible; la marca propia solo existe en Enterprise.</td></tr>
-            <tr><td class="k">Correo de acceso</td><td class="now" data-l="EPI10">Uno, en español, con enlace personal de un solo uso.</td><td data-l="Healthie">Invitación con las plantillas de Healthie, restringidas en cuentas nuevas.</td></tr>
+            <tr><td class="k">Idioma</td><td class="now" data-l="EPI10">Todo en español, también correos y botones.</td><td data-l="Healthie">Sin ajuste de idioma: acceso, menús y correos en inglés.</td></tr>
+            <tr><td class="k">Marca</td><td class="now" data-l="EPI10">EPI10 en cada pantalla y en el correo.</td><td data-l="Healthie">Logo y color de EPI10; el resto, de Healthie. La marca propia completa solo existe en Enterprise.</td></tr>
+            <tr><td class="k">Correo de acceso</td><td class="now" data-l="EPI10">Uno, en español, con enlace personal de un solo uso.</td><td data-l="Healthie">Invitación en inglés que pide «empezar a usar Healthie».</td></tr>
             <tr><td class="k">Bienvenida</td><td class="now" data-l="EPI10">Carril guiado de tres pasos que no deja perderse.</td><td data-l="Healthie">Formularios de alta genéricos.</td></tr>
             <tr><td class="k">Test en casa o en sede</td><td class="now" data-l="EPI10">Elección y datos de envío dentro de la bienvenida.</td><td data-l="Healthie">No previsto: habría que resolverlo con una cita o un formulario.</td></tr>
             <tr><td class="k">Chat</td><td class="now" data-l="EPI10">Respuestas al momento para las dudas frecuentes y plantillas para el equipo.</td><td data-l="Healthie">Chat estándar.</td></tr>
-            <tr><td class="k">Back office</td><td class="now" data-l="EPI10">Hecho para Aitor: panel «Hoy» y ficha sin campos clínicos de más.</td><td data-l="Healthie">Herramienta general de clínica, en inglés.</td></tr>
+            <tr><td class="k">Back office</td><td class="now" data-l="EPI10">Hecho para Aitor: panel «Hoy» y ficha sin campos clínicos de más.</td><td data-l="Healthie">Herramienta general de clínica, con facturación, seguros, fax y laboratorios de EE. UU.</td></tr>
             <tr><td class="k">Móvil</td><td class="now" data-l="EPI10">Desde el navegador del móvil, sin instalar nada.</td><td data-l="Healthie">App nativa de Healthie.</td></tr>
             <tr><td class="k">Quién decide los cambios</td><td class="now" data-l="EPI10">EPI10.</td><td data-l="Healthie">Healthie.</td></tr>
           </tbody>
         </table>
       </div>
+    </div></details>
 
-      <div class="grp"><h3>Lo que ve la clienta</h3></div>
+    <details class="sub" id="interfaz-clienta"><summary><span class="st"><b>4.2</b> · Lo que ve la clienta</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <p class="intro-s">Lo primero que vive la clienta: el correo que abre la puerta, la pantalla de acceso y el consentimiento. El interior del portal de Healthie solo se ve invitando a una clienta real, así que comparamos lo que la cuenta permite ver sin hacerlo.</p>
       <div class="pairs">
         <div class="pair">
-          <div class="pair-h"><h3>Correo de acceso</h3><p>La primera impresión: el correo que abre la puerta.</p></div>
+          <div class="pair-h"><h3>Correo de acceso</h3><p>La primera impresión.</p></div>
           <div class="side e"><div class="who-l">EPI10</div><figure class="phone" style="max-width:240px"><img src="img/j05_correo_m.png" alt="Correo de acceso de EPI10, en español" width="780" height="800" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hr_correo_invitacion.png" alt="Invitación de Healthie, en inglés" width="1142" height="725" loading="lazy"></figure><p class="src">Cuenta de Healthie de EPI10 (plan Group). La invitación sale en inglés y pide «empezar a usar Healthie».</p></div>
+          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hr_correo_invitacion.png" alt="Invitación de Healthie, en inglés" width="1142" height="725" loading="lazy"></figure><p class="src">Invitación real enviada desde Healthie. Sale en inglés y pide «empezar a usar Healthie».</p></div>
         </div>
         <div class="pair">
-          <div class="pair-h"><h3>Inicio de la clienta</h3><p>Dónde está y qué le toca.</p></div>
-          <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/p09_inicio.png" alt="Inicio del portal EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/h_inicio.png" alt="Inicio del portal del cliente en Healthie" width="1400" height="705" loading="lazy"></figure><p class="src">Material público de Healthie · <a href="https://help.gethealthie.com/article/100-tracking-clients-activity-on-website-and-mobile-apps">help.gethealthie.com</a>.</p></div>
+          <div class="pair-h"><h3>Entrar al portal</h3><p>La puerta de cada visita, en el ordenador y en el móvil.</p></div>
+          <div class="side e"><div class="who-l">EPI10</div><div class="media has-phone"><figure class="shot"><img src="img/p01_login.png" alt="Acceso al portal EPI10" width="1366" height="900" loading="lazy"></figure><figure class="phone"><img src="img/p01_login_m.png" alt="Acceso al portal EPI10 en el móvil" width="390" height="844" loading="lazy"></figure></div></div>
+          <div class="side h"><div class="who-l">Healthie</div><div class="media has-phone"><figure class="shot"><img src="img/hl_portal_acceso.png" alt="Acceso al portal de EPI10 en Healthie, en inglés" width="960" height="600" loading="lazy"></figure><figure class="phone"><img src="img/hl_portal_acceso_m.png" alt="Acceso al portal de Healthie en el móvil" width="780" height="1688" loading="lazy"></figure></div><p class="src">Dirección de acceso de EPI10 en Healthie. Logo de EPI10, pero «Sign-in», «Log In» y todo lo demás en inglés.</p></div>
         </div>
         <div class="pair">
-          <div class="pair-h"><h3>Formularios y consentimiento</h3><p>Lo que la clienta firma y responde.</p></div>
+          <div class="pair-h"><h3>Consentimiento</h3><p>Lo que la clienta lee y firma.</p></div>
           <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/p04_consentimiento.png" alt="Consentimiento en la plataforma EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/h_formularios.png" alt="Formulario para el cliente en Healthie" width="1400" height="718" loading="lazy"></figure><p class="src">Material público de Healthie · <a href="https://help.gethealthie.com/article/704-have-clients-complete-form-from-your-website">help.gethealthie.com</a>. La anotación en rojo es de Healthie.</p></div>
-        </div>
-        <div class="pair">
-          <div class="pair-h"><h3>Documentos e informe</h3><p>Dónde recibe su informe.</p></div>
-          <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/p13_informe.png" alt="Mi informe en la plataforma EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/h_documentos.png" alt="Documentos del cliente en Healthie" width="1400" height="615" loading="lazy"></figure><p class="src">Material público de Healthie · <a href="https://help.gethealthie.com/article/512-clients-viewing-and-uploading-documents">help.gethealthie.com</a>. La flecha en rojo es de Healthie.</p></div>
-        </div>
-        <div class="pair">
-          <div class="pair-h"><h3>Citas</h3><p>Reserva para hacerse el test en la sede.</p></div>
-          <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/p11_citas.png" alt="Citas en la plataforma EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/h_citas.png" alt="Reserva de cita del cliente en Healthie" width="1400" height="718" loading="lazy"></figure><p class="src">Material público de Healthie · <a href="https://help.gethealthie.com/article/1283-require-a-credit-card-during-client-booking">help.gethealthie.com</a>.</p></div>
+          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hl_consentimiento.png" alt="Formulario de consentimiento de EPI10 configurado en Healthie" width="1440" height="810" loading="lazy"></figure><p class="src">El consentimiento de EPI10 montado en Healthie, en su editor de formularios: un formulario genérico, sin firma guiada ni pasos.</p></div>
         </div>
       </div>
+    </div></details>
 
-      <div class="grp"><h3>Lo que ve el equipo</h3></div>
+    <details class="sub" id="interfaz-equipo"><summary><span class="st"><b>4.3</b> · Lo que ve el equipo</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <p class="intro-s">Seis vistas del día a día de Aitor, frente a las mismas en la cuenta de Healthie de EPI10.</p>
       <div class="pairs">
         <div class="pair">
-          <div class="pair-h"><h3>Inicio del equipo</h3><p>Lo primero que se ve al entrar.</p></div>
+          <div class="pair-h"><h3>Inicio</h3><p>Lo primero que se ve al entrar.</p></div>
           <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/b02_hoy.png" alt="Panel Hoy del equipo EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hr_inicio_equipo.png" alt="Inicio del profesional en Healthie" width="1355" height="607" loading="lazy"></figure><p class="src">Cuenta de Healthie de EPI10 (plan Group).</p></div>
-        </div>
-        <div class="pair">
-          <div class="pair-h"><h3>Mensajes</h3><p>La conversación con cada clienta.</p></div>
-          <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/b06_plantillas.png" alt="Plantillas de mensaje del equipo EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hr_mensajes.png" alt="Chat del profesional en Healthie" width="1353" height="604" loading="lazy"></figure><p class="src">Cuenta de Healthie de EPI10 (plan Group). Datos personales difuminados.</p></div>
-        </div>
-        <div class="pair">
-          <div class="pair-h"><h3>Formularios y documentos</h3><p>Lo que han enviado las clientas.</p></div>
-          <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/b07_documentos.png" alt="Documentos e informes del equipo EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hr_formularios.png" alt="Formularios en Healthie" width="1353" height="604" loading="lazy"></figure><p class="src">Cuenta de Healthie de EPI10 (plan Group).</p></div>
+          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hl_inicio_equipo.png" alt="Inicio del profesional en Healthie" width="1440" height="810" loading="lazy"></figure><p class="src">«Good evening»: citas y tareas, sin nada del recorrido de EPI10.</p></div>
         </div>
         <div class="pair">
           <div class="pair-h"><h3>Clientes</h3><p>La lista de trabajo diaria.</p></div>
           <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/b03_clientes.png" alt="Lista de clientas en la plataforma EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/h_clientes.png" alt="Lista de clientes en Healthie" width="1400" height="702" loading="lazy"></figure><p class="src">Material público de Healthie · <a href="https://help.gethealthie.com/article/1354-client-list-and-management">help.gethealthie.com</a>.</p></div>
+          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hl_clientes.png" alt="Lista de clientes en Healthie" width="1440" height="810" loading="lazy"></figure><p class="src">Lista sin fases del recorrido; solo la clienta de ejemplo de Healthie.</p></div>
         </div>
         <div class="pair">
           <div class="pair-h"><h3>Ficha de la clienta</h3><p>Todo lo de una clienta en una pantalla.</p></div>
           <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/b04_ficha.png" alt="Ficha de clienta en la plataforma EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/h_ficha.png" alt="Ficha del cliente en Healthie" width="1400" height="707" loading="lazy"></figure><p class="src">Material público de Healthie · <a href="https://help.gethealthie.com/article/1249-client-profile-overview">help.gethealthie.com</a>.</p></div>
+          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hl_ficha.png" alt="Ficha de la clienta de ejemplo en Healthie" width="1440" height="810" loading="lazy"></figure><p class="src">Ficha clínica general: planes de cuidado, diario, métricas, facturación…</p></div>
+        </div>
+        <div class="pair">
+          <div class="pair-h"><h3>Mensajes</h3><p>La conversación con cada clienta.</p></div>
+          <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/b06_plantillas.png" alt="Plantillas de mensaje del equipo EPI10" width="1366" height="900" loading="lazy"></figure></div>
+          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hl_mensajes.png" alt="Chat del profesional en Healthie" width="1440" height="810" loading="lazy"></figure><p class="src">Chat estándar, con el «Welcome to Healthie» automático.</p></div>
+        </div>
+        <div class="pair">
+          <div class="pair-h"><h3>Formularios y documentos</h3><p>Lo que envían las clientas.</p></div>
+          <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/b07_documentos.png" alt="Documentos e informes del equipo EPI10" width="1366" height="900" loading="lazy"></figure></div>
+          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hl_formularios.png" alt="Formularios en Healthie" width="1440" height="810" loading="lazy"></figure><p class="src">Los dos formularios de EPI10 entre las plantillas de nutrición en inglés de Healthie.</p></div>
         </div>
         <div class="pair">
           <div class="pair-h"><h3>Calendario</h3><p>Huecos del equipo y citas.</p></div>
           <div class="side e"><div class="who-l">EPI10</div><figure class="shot"><img src="img/b08_calendario.png" alt="Calendario del equipo EPI10" width="1366" height="900" loading="lazy"></figure></div>
-          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hr_calendario.png" alt="Calendario en Healthie" width="1353" height="604" loading="lazy"></figure><p class="src">Cuenta de Healthie de EPI10 (plan Group).</p></div>
+          <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hl_calendario.png" alt="Calendario en Healthie" width="1440" height="810" loading="lazy"></figure><p class="src">Calendario semanal, en inglés.</p></div>
         </div>
       </div>
-    </section>
+    </div></details>
+    </div></details>
 
-    <!-- 5 -->
-    <section id="arquitectura">
-      <div class="kick">5 · Arquitectura, datos y futuro</div>
+    
+<details class="sec" id="arquitectura"><summary><span class="no">5</span><span class="tt"><span class="t">Arquitectura, datos y futuro</span><span class="d">Dónde vive cada pieza, qué pide la protección de datos y qué gana EPI10.</span></span><span class="chev" aria-hidden="true"></span></summary><div class="sec-b">
+<details class="sub" id="arq-ahora"><summary><span class="st"><b>5.1</b> · La arquitectura, antes y ahora</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
       <h2>Ahora EPI10 es dueña de todas las piezas, y todas viven en su casa.</h2>
       <p class="lead">La arquitectura conserva su forma: el orquestador en el centro, Odoo a la derecha y TellmeGen aparte. Cambia el bloque de la izquierda, que deja de ser un servicio alquilado en la nube de un tercero y pasa a ser una plataforma de EPI10, en el servidor de EPI10.</p>
 
@@ -1166,7 +1267,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         <figcaption>Arquitectura actual. El portal de la clienta y el panel del equipo son ahora una plataforma de EPI10 sobre OpenEMR, en el mismo servidor que el orquestador y Odoo.</figcaption>
       </figure>
 
-      <h3 class="sub">Antes y ahora</h3>
+<details class="fold"><summary><span class="ft">Antes y ahora, punto por punto</span><span class="fm">8 dimensiones</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
       <div class="tbl">
         <table class="cmp stack" aria-label="Comparativa de arquitectura: con Healthie y ahora">
           <thead><tr><th>Dimensión</th><th>Ahora · plataforma EPI10</th><th>Antes · Healthie</th></tr></thead>
@@ -1182,34 +1283,52 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
           </tbody>
         </table>
       </div>
+      </div></details>
+    </div></details>
 
-      <h3 class="sub">Regulación y protección de datos</h3>
-      <p>Hablamos de datos de salud y genéticos, la categoría más protegida del RGPD. Con cualquier opción, EPI10 es la responsable del tratamiento; lo que cambia es dónde está la carga: en contratos con un tercero fuera de la UE o en la seguridad de un sistema propio.</p>
+    <details class="sub" id="datos"><summary><span class="st"><b>5.2</b> · Protección de datos</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <p class="intro-s">Hablamos de datos de salud y genéticos, los más protegidos del RGPD. La pregunta clave tiene una respuesta corta.</p>
+      <div class="answer">
+        <div class="big">No.</div>
+        <div>
+          <div class="q">¿Hace falta alguna certificación para montarlo en el servidor de EPI10?</div>
+          <p>Para operar no se exige ninguna certificación. Lo que exige el RGPD es <strong>cumplir unas obligaciones y poder demostrarlo</strong>, con buenas prácticas documentadas.</p>
+        </div>
+      </div>
       <div class="reg">
         <div>
-          <h4>Healthie · certificaciones del proveedor</h4>
-          <p>Healthie declara cumplir HIPAA, la norma de privacidad sanitaria de EE. UU., y tener auditorías SOC 2 tipo II y HITRUST. Guarda los datos en EE. UU., sobre AWS y Aptible, bajo el marco de privacidad de datos UE–EE. UU. Son garantías serias, pero del proveedor y para su mercado, sobre datos que salen de la UE.</p>
+          <h4>Lo que pide la ley</h4>
+          <ul class="tick">
+            <li><strong>RGPD</strong>: los datos de salud y genéticos son categoría especial.</li>
+            <li><strong>EPI10</strong> es la responsable del tratamiento.</li>
+            <li><strong>Skilland</strong>, como encargada, con un contrato de encargo firmado.</li>
+          </ul>
         </div>
         <div>
-          <h4>OpenEMR · lo que trae de serie</h4>
+          <h4>Lo que trae OpenEMR de serie</h4>
           <ul class="tick">
-            <li>Nació para el sistema sanitario de EE. UU.: su versión 7.0 obtuvo en 2022 la certificación de la ONC, el organismo que certifica historias clínicas allí.</li>
-            <li>Documentos cifrados en disco.</li>
+            <li>Documentos cifrados.</li>
             <li>Registro de auditoría de accesos y cambios.</li>
-            <li>Permisos por rol: cada persona ve solo lo que le toca.</li>
+            <li>Permisos por rol: cada persona ve solo lo suyo.</li>
           </ul>
         </div>
         <div class="acc">
-          <h4>EPI10 · control y soberanía del dato</h4>
+          <h4>Lo que hay que hacer al montarlo</h4>
           <ul class="tick">
-            <li>Alojamiento en su servidor, en la UE: sin transferencias internacionales.</li>
-            <li>La clienta solo ve lo publicado; los resultados del laboratorio se usan para el borrador y se borran.</li>
-            <li>Como responsable, le corresponden la evaluación de impacto, los textos legales y la política de conservación, que preparamos juntos.</li>
+            <li>Alojamiento en la UE, en el servidor de EPI10.</li>
+            <li>Copias de seguridad con restauración probada.</li>
+            <li>Control de acceso, con doble factor para el equipo.</li>
+            <li>Registro de actividades de tratamiento.</li>
+            <li>Evaluación de impacto, si procede.</li>
           </ul>
         </div>
       </div>
-
-      <h4 style="margin-top:28px">Dónde vive cada dato</h4>
+      <div class="swap">
+        <div><span class="l">Con Healthie</span><b>Certificaciones del proveedor</b><span>Las que Healthie declara para el mercado de EE. UU. (HIPAA, SOC 2, HITRUST), con los datos fuera de la UE.</span></div>
+        <div class="ar" aria-hidden="true">→</div>
+        <div class="acc"><span class="l">Con la plataforma EPI10</span><b>Control propio y buenas prácticas documentadas</b><span>Los datos no salen del servidor de EPI10 y cada medida queda por escrito.</span></div>
+      </div>
+      <details class="fold"><summary><span class="ft">Dónde vive cada dato</span><span class="fm">5 tipos de dato</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
       <ul class="dmap">
         <li><span>Pago</span><span>En Stripe, como hasta ahora.</span></li>
         <li><span>Consentimiento, cuestionario, mensajes e informe</span><span>Solo en la plataforma EPI10, en el servidor de EPI10.</span></li>
@@ -1217,13 +1336,16 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         <li><span>Resultados del laboratorio</span><span>Se usan para preparar el borrador y se borran. No se guardan.</span></li>
         <li><span>Borrador del informe</span><span>Sin datos identificativos; se borra al publicar el informe.</span></li>
       </ul>
-      <div class="note sky"><p><strong>Antes de pasar a producción</strong> completaremos el endurecimiento de seguridad del servidor: doble factor de acceso para el equipo, copias de seguridad con restauración probada y revisión de los registros. Lo que ves hoy funciona de punta a punta en el entorno de pruebas.</p></div>
+      </div></details>
+    </div></details>
 
-      <h3 class="sub">Mantenimiento</h3>
+    <details class="sub" id="mantenimiento"><summary><span class="st"><b>5.3</b> · Mantenimiento</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      
       <p>Con Healthie, el mantenimiento estaba dentro de la cuota. Ahora no hay cuota: la plataforma es de EPI10. Para que siga al día, proponemos un <strong>contrato de mantenimiento con Skilland</strong> que cubra las actualizaciones de seguridad de OpenEMR, las copias, la vigilancia del servicio y el soporte al equipo.</p>
+    </div></details>
 
-      <h3 class="sub">Oportunidades</h3>
-      <div class="opps">
+    <details class="sub" id="oportunidades"><summary><span class="st"><b>5.4</b> · Oportunidades</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
+      <div class="opps" style="margin-top:0">
         <div><div class="n">01</div><h3>Nadie puede retirar el servicio</h3><p>Sin proveedor que cambie condiciones a mitad de camino. La crisis de septiembre no puede repetirse con esta pieza.</p></div>
         <div><div class="n">02</div><h3>Mantenimiento con quien lo construyó</h3><p>Un solo interlocutor que conoce cada pieza y responde en vuestro idioma.</p></div>
         <div><div class="n">03</div><h3>Evolución libre</h3><p>EPI10 es dueña del código, documentado. Puede experimentar, probar y crear productos y experiencias nuevas sin pedir permiso a nadie.</p></div>
@@ -1231,20 +1353,23 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         <div><div class="n">05</div><h3>Web y plataforma, un solo ecosistema</h3><p>Podemos plantear un paquete «web + nueva interfaz» que lleve los diseños del nuevo diseñador de EPI10 a la web y a la plataforma a la vez. Aunque creemos que la hemos clavado.</p></div>
         <div><div class="n">06</div><h3>Datos en casa</h3><p>Los datos de salud de las clientas no salen del servidor de EPI10, una ventaja real para comunicar confianza.</p></div>
       </div>
-    </section>
+    </div></details>
+    </div></details>
 
     <!-- Cierre -->
-    <section id="cierre">
+    <section id="cierre" style="padding-top:48px">
       <div class="closing">
         <img class="mark-bg" src="img/skilland-mark.svg" alt="">
         <div class="l">Cierre</div>
-        <h2>El proyecto sigue siendo el que planteamos. Ahora, además, es de EPI10.</h2>
+        <h2>Un experimento para comprobar que era posible.</h2>
         <div class="rule"></div>
+        <p class="cl">Todo lo que recoge este documento nació como un experimento: demostrar que EPI10 podía tener su propia plataforma sin depender de las condiciones de un tercero. Lo hemos <strong>absorbido de buena fe en nuestros costes</strong>, por decisión propia.</p>
         <ol>
           <li><b>Completo</b>Esta versión recorre todos los pasos de la experiencia de cliente planteada al principio, de la compra al informe.</li>
-          <li><b>Sin cambiar el proyecto</b>Es la solución para mantener el proyecto tal como lo acordamos, sin depender de las condiciones de un tercero.</li>
-          <li class="gold"><b>De buena fe</b>Todo este desarrollo se ha absorbido en el presupuesto actual del proyecto.</li>
+          <li><b>Puede quedarse aquí</b>El experimento ha cumplido su propósito, y puede cerrarse en este punto.</li>
+          <li class="gold"><b>Si EPI10 quiere seguir</b>Nos sentaremos, Carmen y Tomás, para encontrar un encaje justo para las dos partes, a la medida del trabajo realizado.</li>
         </ol>
+        <p class="sign">Gracias por la confianza durante estas semanas. Ha sido un placer construirlo para EPI10.</p>
       </div>
       <footer><span>Skilland para EPI10 Salud · Gestión de la crisis de Healthie</span><span>Octubre 2026 · Entorno de pruebas con datos ficticios</span></footer>
     </section>
@@ -1272,19 +1397,11 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
 })();
 
 (function(){
-  var links=[].slice.call(document.querySelectorAll('nav.toc a[href^="#"]'));
-  var map={}; links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a;});
-  var sections=links.map(function(a){return document.getElementById(a.getAttribute("href").slice(1));}).filter(Boolean);
-  function update(){
-    var line=window.innerHeight*0.3, current=sections[0];
-    for(var i=0;i<sections.length;i++){ if(sections[i].getBoundingClientRect().top<=line) current=sections[i]; }
-    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4) current=sections[sections.length-1];
-    links.forEach(function(a){a.classList.remove("active");a.removeAttribute("aria-current");});
-    if(current){map[current.id].classList.add("active");map[current.id].setAttribute("aria-current","true");}
-  }
-  var ticking=false;
-  window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(function(){update();ticking=false;});}},{passive:true});
-  window.addEventListener("resize",update);
-  update();
+  var all=[].slice.call(document.querySelectorAll("main details"));
+  var tools=document.querySelector(".tools");
+  if(tools){tools.hidden=false;tools.addEventListener("click",function(e){var b=e.target.closest("button[data-all]");if(!b)return;var open=b.getAttribute("data-all")==="open";all.forEach(function(d){d.open=open;});});}
+  function reveal(){var id=location.hash.slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;for(var d=el;d;d=d.parentElement){if(d.tagName==="DETAILS")d.open=true;}el.scrollIntoView();}
+  window.addEventListener("hashchange",reveal);reveal();
+  window.addEventListener("beforeprint",function(){all.forEach(function(d){d.open=true;});});
 })();
 </script>
