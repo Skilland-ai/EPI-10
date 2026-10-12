@@ -35,7 +35,7 @@ Antes: [99-demo/01_portal_login.png](../../openemr-pruebas/evidencia/capturas/re
 |---|---|---|---|---|
 | Sacudida en error | HextaUI `use-invalid-shake` (MIT). Gana a Transitions.dev error-state-shake (licencia propia; mismo patrón) | El área 0 crea `@keyframes epi-shake` (±4 px, 300 ms) sobre `[aria-invalid="true"]` y `.epi-alert--error`, más `EPI10.sacudir(el)`. El área 1 llama a `EPI10.sacudir` cuando el núcleo devuelve error | S | `public/ui/epi10-login-portal.js` (área 1) |
 | Botón «Entrar» con estado | HextaUI Button feedback + `use-delayed-loading` (MIT). Gana a beUI stateful (depende de `motion`) | `aria-busy` al enviar, con 200 ms de retardo, sin doble clic (atributo `data-epi10-ocupado-al-enviar` en el `<form>`, lo resuelve `epi10-ui.js`) | S | `epi10-login-portal.js` (área 1) |
-| Grano en el panel azul | Grainient (solo patrón; ruido SVG `feTurbulence` propio, sin sus assets) | `.epi-grano` del área 0 aplicado a `.epi-auth__panel` | S | `epi10-ui.css` (área 0) |
+| Grano en el panel azul | Grainient (solo patrón; ruido SVG `feTurbulence` propio, sin sus assets) | `.epi-grano` del área 0 aplicado a `.epi-auth__brand` | S | `epi10-ui.css` (área 0) |
 
 **Después:** fondo con anillos concéntricos (Arc Login centered, AlignUI Auth Card). *Pregunta para Raúl: ¿añadimos un halo de anillos detrás del logo o dejamos el panel liso con grano?* · Estado «Te hemos enviado el enlace / Entrando…» (Kargul): mirar antes si el área 1 ya lo pinta.
 **Descartado:** OTP de 6 dígitos (affectUI, Arc, beUI, BoardUI, Kobra): el portal entra por enlace, no por código. Shader de 23rd: sin licencia y es efecto de landing. Velo luminoso animado (Grainient): decisión de marca, va a Después en el inicio.
@@ -154,7 +154,7 @@ Antes: [99-demo/10_backoffice_login.png](../../openemr-pruebas/evidencia/captura
 | Componente | Fuente elegida y por qué | Cómo se traslada | Esf. | Fichero que toca |
 |---|---|---|---|---|
 | Sacudida en error y «Entrar» con estado | HextaUI (MIT), vía área 0 | `data-epi10-ocupado-al-enviar` en el `<form>` y `EPI10.sacudir` sobre el aviso de error | S | `templates/epi10/login/backoffice.html.twig` (área 1) |
-| Grano en el panel azul | Grainient (patrón propio) | `.epi-auth__panel` ya lo recibe del área 0 | — | `epi10-ui.css` (área 0) |
+| Grano en el panel azul | Grainient (patrón propio) | `.epi-auth__brand` ya lo recibe del área 0 | — | `epi10-ui.css` (área 0) |
 
 **Después y descartado:** como en el login del portal.
 
@@ -266,7 +266,7 @@ Nombres tomados de la [maqueta del lote E](capturas/E/maqueta-lote-E.html) cuand
 | Pieza | API |
 |---|---|
 | Esqueleto | `<div class="epi-skeleton epi-skeleton--linea|--circulo|--tarjeta" aria-hidden="true">` dentro de un contenedor con `aria-busy="true"`; `ui.esqueleto('lista'|'tarjeta'|'tabla', n)`; contenido real con `.epi-revela` |
-| Tipo de fichero | `<span class="epi-tipo epi-tipo--pdf|--doc|--img">`; `ui.fichero('pdf', tamaño)` en Twig y `EPI10.fichero('pdf')` en islas devuelven ese marcado |
+| Tipo de fichero | `<span class="epi-tipo epi-tipo--pdf|--doc|--img">`; `ui.fichero('pdf', 'sm'|'lg')` (el 2.º parámetro es el tamaño del icono; el peso en bytes va en `ui.peso(bytes)` o `ui.adjunto({peso})`) en Twig y `EPI10.fichero('pdf')` en islas devuelven ese marcado |
 | Chip de adjunto | `<a class="epi-adjunto">` con `.epi-tipo`, nombre truncado (`<span class="epi-fichero-nombre"><span>Guia-kit</span><span>.pdf</span></span>`) y `.epi-adjunto__meta` («PDF · 148 KB») |
 | Fila de archivo | `ul.epi-archivos` > `li.epi-archivo` con `data-epi10-estado="pendiente|hecho|error"`, `style="--valor: 38"`, `.epi-tipo`, `__nombre`, `__peso`, `__estado` |
 | Zona de arrastre | `<label class="epi-dropzone">` con `<input type="file" class="epi-sr-only">`, `.epi-carpeta--suave`, `__titulo`, `__ayuda`; `epi10-ui.js` pone `data-epi10-estado="arrastrando"` y lanza `epi10:archivos` con los ficheros soltados |
@@ -278,7 +278,7 @@ Nombres tomados de la [maqueta del lote E](capturas/E/maqueta-lote-E.html) cuand
 | Check dibujado | `epi-check` con `input[type=checkbox]` (sin cambios de marcado) |
 | Pestañas | `epi-tabs` sin cambios de marcado; el indicador se crea solo y sigue `aria-selected` o `aria-current` |
 | Dato vivo en tarjeta | `<p class="epi-card__vivo epi-card__vivo--cifra|--chip|--barra">` dentro de `epi-card` |
-| Grano | Clase `epi-grano` en cualquier superficie azul; ya aplicada por CSS a `.epi-fase` y `.epi-auth__panel` |
+| Grano | Clase `epi-grano` en cualquier superficie azul; ya aplicada por CSS a `.epi-fase` y `.epi-auth__brand` |
 | Movimiento | `--epi10-dur-1|2|3`, `--epi10-ease-salida|entrada` |
 
 ### Áreas
@@ -418,7 +418,7 @@ Tras cada fusión, el área 0 instala, sube el *patch* de `version.php` (caché 
           "esfuerzo": "S"
         },
         {
-          "nombre": "Textura de grano (.epi-grano) aplicada a .epi-fase y .epi-auth__panel",
+          "nombre": "Textura de grano (.epi-grano) aplicada a .epi-fase y .epi-auth__brand",
           "fuente": "Grainient (patrón propio, sin assets)",
           "vista": "logins, inicio, mi informe",
           "fichero": "public/ui/epi10-ui.css",
