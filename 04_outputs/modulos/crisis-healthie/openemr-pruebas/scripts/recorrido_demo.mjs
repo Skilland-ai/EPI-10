@@ -1,7 +1,9 @@
 // Recorrido final de la demo del renove (SKI2-230): portal de Lucía y back office de operaciones.prueba y admin,
 // en escritorio (1366 px) y móvil (390 px), con capturas y una tabla de comprobaciones en Markdown.
 // Uso: node recorrido_demo.mjs <carpeta-capturas> > informe.md      (desde esta carpeta: usa su node_modules/playwright)
-// Entorno: OE_BASE (http://localhost:4896), PORTAL_PASS (lucia), OE_PASS (admin), OPS_PASS (operaciones.prueba).
+// Entorno: OE_BASE (http://localhost:4896), PORTAL_PASS (lucia), OE_PASS (admin), OPS_PASS (operaciones.prueba),
+// CARRIL_PASS (clara.carril; por omisión la ficticia de config-instancia/onboarding/onboarding_demo.sql).
+// Tramo «Carril» (SKI2-267): antes de cada recorrido, aplicar onboarding_demo.sql (deja a Clara en cero y a Lucía con el test hecho).
 // Solo datos ficticios. Sale con código 1 si alguna comprobación falla.
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
@@ -71,6 +73,81 @@ for (const [vp, viewport, isMobile] of VPS) {
     await page.goto(`${BASE}/portal/home.php`, { waitUntil: 'networkidle' }); await page.waitForTimeout(800);
     ok('Portal', vp, 'Vuelta al inicio muestra el panel', await page.locator('#documents-go').isVisible());
     ok('Portal', vp, 'Sin errores de JS ni 5xx', errores.length === 0, errores.slice(0, 3).join(' · '));
+    await ctx.close();
+  }
+
+  // ───────── Portal · Carril de onboarding (SKI2-267) · Clara Carril Ficticia ─────────
+  // Escritorio: el carril entero (bienvenida → consentimiento → cuestionario → test en casa con envío → Todo listo).
+  // Móvil (después): Clara ya lo ha terminado, así que entra siempre al inicio normal.
+  {
+    const { ctx, page, errores } = await nuevaPagina(browser, viewport, isMobile);
+    const paso = (id) => page.waitForSelector(`[data-epi10-onboarding][data-epi10-onboarding-paso="${id}"]`, { timeout: 30000 }).then(() => true).catch(() => false);
+    await page.goto(`${BASE}/portal/index.php?site=default`, { waitUntil: 'networkidle' });
+    await page.fill('#uname', 'clara.carril');
+    await page.fill('#pass', process.env.CARRIL_PASS || 'Carril-Demo-2026');
+    await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle' }), page.click('form[action="get_patient_info.php"] button[type=submit]')]);
+    await page.waitForTimeout(1200);
+    if (vp === 'escritorio') {
+      ok('Carril', vp, 'Al entrar, el carril en lugar del inicio', page.url().includes('/portal/onboarding.php'), page.url().replace(BASE, ''));
+      ok('Carril', vp, 'Bienvenida «Hola, Clara» con los 3 pasos', await paso('bienvenida')
+        && /Hola, Clara/.test(await page.locator('[data-epi10-onboarding-paso="bienvenida"] h1').textContent().catch(() => ''))
+        && (await page.locator('[data-epi10-onboarding-paso="bienvenida"] [data-epi10-paso]').count()) === 3);
+      ok('Carril', vp, 'Bienvenida sin desbordar', await sinDesborde(page));
+      await foto(page, '06_carril_bienvenida', sufijo);
+
+      await page.click('[data-epi10-accion="empezar"]');
+      ok('Carril', vp, 'Paso 1 · consentimiento con el stepper visible', await paso('consentimiento')
+        && (await page.locator('[data-epi10-region="pasos-onboarding"]').isVisible()));
+      await page.waitForSelector('[data-epi10-region="tarea"]');
+      for (const c of await page.locator('[data-epi10-bloque="aceptaciones"] input[type=checkbox]').all()) await c.check();
+      const lienzo = await page.locator('#signTemplate canvas').boundingBox();
+      if (lienzo) {
+        await page.mouse.move(lienzo.x + lienzo.width * 0.2, lienzo.y + lienzo.height * 0.6); await page.mouse.down();
+        for (let i = 1; i <= 12; i++) await page.mouse.move(lienzo.x + lienzo.width * (0.2 + i * 0.05), lienzo.y + lienzo.height * (0.6 - Math.sin(i / 2) * 0.25));
+        await page.mouse.up();
+      }
+      await foto(page, '07_carril_consentimiento', sufijo);
+      await page.click('#sendTemplate');
+      ok('Carril', vp, 'Al firmar y enviar, pasa directo al paso 2', await paso('encuesta_habitos'));
+
+      // Cuestionario: sea cual sea, responde lo primero de cada pregunta y lo envía.
+      for (let i = 0; i < 40; i++) {
+        await page.waitForTimeout(350);
+        if (await page.locator('[data-epi10-bloque="repaso"]').isVisible().catch(() => false)) {
+          await page.click('[data-epi10-accion="enviar"]'); break;
+        }
+        const pregunta = page.locator('[data-epi10-pregunta]').first();
+        const opcion = pregunta.locator('label.epi-choice').first();
+        if (await opcion.count()) await opcion.click();
+        else if (await pregunta.locator('input[type=number]').count()) await pregunta.locator('input[type=number]').fill('7');
+        else if (await pregunta.locator('input[type=date]').count()) await pregunta.locator('input[type=date]').fill('2026-01-01');
+        else if (await pregunta.locator('textarea, input[type=text]').count()) await pregunta.locator('textarea, input[type=text]').first().fill('Nada que añadir');
+        await page.click('[data-epi10-accion="siguiente"]');
+      }
+      ok('Carril', vp, 'Al enviar el cuestionario, pasa directo al paso 3', await paso('test'));
+      await foto(page, '08_carril_test', sufijo);
+
+      await page.click('label[data-epi10-modalidad="casa"]');
+      await page.waitForSelector('form[data-epi10-envio]');
+      await page.fill('form[data-epi10-envio] input[name=nombre]', 'Clara Carril Ficticia');
+      await page.fill('form[data-epi10-envio] input[name=direccion]', 'Calle Ficticia 7, 1.º A');
+      await page.fill('form[data-epi10-envio] input[name=cp]', '28010');
+      await page.fill('form[data-epi10-envio] input[name=ciudad]', 'Madrid');
+      await page.fill('form[data-epi10-envio] input[name=telefono]', '600000101');
+      await page.click('label[data-epi10-franja="manana"]');
+      ok('Carril', vp, 'Paso 3 · formulario de envío sin desbordar', await sinDesborde(page));
+      await foto(page, '09_carril_envio', sufijo);
+      await page.click('form[data-epi10-envio] button[type=submit]');
+      ok('Carril', vp, '«Todo listo» tras el envío', await paso('listo')
+        && /Todo listo/.test(await page.locator('[data-epi10-onboarding-paso="listo"] h1').textContent().catch(() => '')));
+      await foto(page, '10_carril_listo', sufijo);
+      await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle' }).catch(() => {}), page.click('[data-epi10-accion="ir-al-inicio"]')]);
+      await page.waitForTimeout(1200);
+    }
+    ok('Carril', vp, 'Con los tres pasos hechos, entra al inicio normal', page.url().includes('/portal/home.php')
+      && await page.locator('#documents-go').isVisible().catch(() => false), page.url().replace(BASE, ''));
+    await foto(page, '11_carril_inicio_despues', sufijo);
+    ok('Carril', vp, 'Sin errores de JS ni 5xx', errores.length === 0, errores.slice(0, 3).join(' · '));
     await ctx.close();
   }
 
