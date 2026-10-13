@@ -4,12 +4,12 @@ Briefing para Raúl · demo con Carmen y Romi · 13 oct 2026 · SKI2-274
 
 ## TL;DR
 
-**Responsable de los tres tipos de dato, antes y ahora: EPI10.** Lo que cambia es dónde viven y quién los custodia técnicamente.
+**Responsable de los tres tipos de dato, antes y ahora: EPI10.** Lo que cambia es dónde viven: con Healthie, en su nube (EE. UU.); ahora, en el software y el servidor de EPI10, que es quien los custodia. Skilland solo presta el mantenimiento técnico.
 
 | Dato | Antes · con Healthie | Ahora · EPI10 Salud MVP v0.5 | ¿Trabajo extra frente a Healthie? |
 |---|---|---|---|
-| **Personales** (nombre, email, dirección, pago) | Healthie (EE. UU.) + Stripe + Odoo. Custodia: Healthie y Stripe | Stripe + Odoo + plataforma EPI10 (UE). Custodia: Stripe, Odoo y Skilland | **Poco.** Contrato con Skilland y con el proveedor de correo. Stripe y Odoo, igual que antes |
-| **Salud y hábitos** (consentimiento, cuestionario, mensajes, informe) | Healthie, en EE. UU. Custodia: Healthie (sin contrato de datos firmado) | Plataforma EPI10, en el servidor de EPI10 (UE). Custodia: Skilland (+ hosting) | **Sí, es lo nuevo.** Seguridad del servidor (copias, doble factor, accesos, logs) y contrato con Skilland y el hosting. A cambio, deja de haber envío a EE. UU. |
+| **Personales** (nombre, email, dirección, pago) | Healthie (EE. UU.) + Stripe + Odoo. Custodia: Healthie y Stripe | Stripe + Odoo + plataforma EPI10 (UE). Custodia: EPI10 (y Stripe, el pago) | **Poco.** Contrato de mantenimiento con Skilland (como encargada con acceso técnico) y con el proveedor de correo. Stripe y Odoo, igual que antes |
+| **Salud y hábitos** (consentimiento, cuestionario, mensajes, informe) | Healthie, en EE. UU. Custodia: Healthie (sin contrato de datos firmado) | Plataforma EPI10, en el servidor de EPI10 (UE). Custodia: EPI10 | **Sí, es lo nuevo.** La seguridad del servidor pasa a ser de EPI10 (copias, doble factor, accesos, logs); Skilland la ejecuta dentro del mantenimiento, con contrato de encargo. A cambio, deja de haber envío a EE. UU. |
 | **Genéticos** (resultado de TellmeGen) | TellmeGen → el orquestador lo usa en memoria y lo borra; a la IA, solo texto seudonimizado; el informe final, en Healthie (EE. UU.) | Igual, pero el informe final queda en la plataforma EPI10 (UE) | **No por la arquitectura.** Lo pendiente (consentimiento genético, papel de TellmeGen, evaluación de impacto) ya hacía falta con Healthie |
 
 **Certificaciones:** ninguna obligatoria, ni antes ni ahora. Las de Healthie eran suyas y para EE. UU.
