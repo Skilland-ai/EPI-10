@@ -2,6 +2,18 @@
 
 Briefing para Raúl · demo con Carmen y Romi · 13 oct 2026 · SKI2-274
 
+## TL;DR
+
+**Responsable de los tres tipos de dato, antes y ahora: EPI10.** Lo que cambia es dónde viven y quién los custodia técnicamente.
+
+| Dato | Antes · con Healthie | Ahora · EPI10 Salud MVP v0.5 | ¿Trabajo extra frente a Healthie? |
+|---|---|---|---|
+| **Personales** (nombre, email, dirección, pago) | Healthie (EE. UU.) + Stripe + Odoo. Custodia: Healthie y Stripe | Stripe + Odoo + plataforma EPI10 (UE). Custodia: Stripe, Odoo y Skilland | **Poco.** Contrato con Skilland y con el proveedor de correo. Stripe y Odoo, igual que antes |
+| **Salud y hábitos** (consentimiento, cuestionario, mensajes, informe) | Healthie, en EE. UU. Custodia: Healthie (sin contrato de datos firmado) | Plataforma EPI10, en el servidor de EPI10 (UE). Custodia: Skilland (+ hosting) | **Sí, es lo nuevo.** Seguridad del servidor (copias, doble factor, accesos, logs) y contrato con Skilland y el hosting. A cambio, deja de haber envío a EE. UU. |
+| **Genéticos** (resultado de TellmeGen) | TellmeGen → el orquestador lo usa en memoria y lo borra; a la IA, solo texto seudonimizado; el informe final, en Healthie (EE. UU.) | Igual, pero el informe final queda en la plataforma EPI10 (UE) | **No por la arquitectura.** Lo pendiente (consentimiento genético, papel de TellmeGen, evaluación de impacto) ya hacía falta con Healthie |
+
+**Certificaciones:** ninguna obligatoria, ni antes ni ahora. Las de Healthie eran suyas y para EE. UU.
+
 > **Aviso.** Esto es orientación de consultoría tecnológica, no asesoramiento jurídico. Sirve para preparar la conversación y ordenar el trabajo; las decisiones (bases jurídicas, EIPD, DPD, contratos) las valida el abogado o DPD de EPI10.
 >
 > Leyenda: **[seguro]** = lo dice la norma de forma directa · **[interpretación]** = criterio razonable nuestro · **[abogado]** = hay que confirmarlo.
@@ -33,7 +45,7 @@ Briefing para Raúl · demo con Carmen y Romi · 13 oct 2026 · SKI2-274
 | **Registro de actividades** | RGPD art. 30 | Obligatorio aunque sea pyme, porque trata categorías especiales (la excepción del 30.5 no aplica). **[seguro]** |
 | **Seguridad** adecuada al riesgo | RGPD art. 32 | Medidas técnicas y organizativas, documentadas. |
 | **Brechas**: notificar a la AEPD en 72 h y, si el riesgo es alto, a las clientas | RGPD arts. 33-34 | Procedimiento y registro de incidencias. Ya aplicaba con Healthie (Healthie avisaba a EPI10; EPI10 notificaba). |
-| **DPD** si procede | RGPD art. 37; LOPDGDD art. 34 | Ver H.9. Probablemente sí. **[abogado]** |
+| **DPD** si procede | RGPD art. 37; LOPDGDD art. 34 | Ver H.7. Probablemente sí. **[abogado]** |
 | Normativa sectorial del **test genético** | Ley 14/2007 de Investigación Biomédica (análisis genéticos, consentimiento escrito, consejo genético) | No depende de la plataforma: aplica igual con Healthie u OpenEMR. **[abogado]** |
 
 Mensaje: **cambiar de herramienta no cambia quién es responsable**. Lo que cambia es quién hace el trabajo técnico.
