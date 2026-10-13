@@ -1,0 +1,16 @@
+import { createRequire } from 'node:module';
+const require = createRequire('/home/reboot/Escritorio/Skilland.ai/skilland-finance-c-dashboard-controller/apps/dashboard/');
+const { chromium } = require('playwright');
+const b = await chromium.launch();
+const ctx = await b.newContext({ ignoreHTTPSErrors: true });
+const p = await ctx.newPage();
+p.on('request', r => { if (r.method()==='POST') r.allHeaders().then(h=>console.log('POST hdrs', JSON.stringify({cookie:h.cookie, origin:h.origin, sfs:h['sec-fetch-site'], host:h.host}))); });
+p.on('response', r => r.allHeaders().then(h=>{ if(h['set-cookie']) console.log(r.status(), r.url(), 'SET', h['set-cookie'].replace(/=[^;]{10,}/g,'=…')); }));
+await p.goto(process.argv[2] ?? 'https://localhost:4893/informes/login');
+console.log('cookies tras GET', (await ctx.cookies()).map(c=>c.name));
+await p.fill('input[name=usuario]', 'aitor');
+await p.fill('input[name=contrasena]', process.env.PW);
+await Promise.all([p.waitForLoadState(), p.click('button[type=submit]')]);
+await p.waitForTimeout(1500);
+console.log('URL final', p.url(), (await p.textContent('body')).slice(0,200).replace(/\s+/g,' '));
+await b.close();

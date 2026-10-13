@@ -1,0 +1,154 @@
+
+/*
+ * Piel EPI10 (SKI2-276): mismos tokens, tipografía y logo que el back office (epi10-ui.css del
+ * módulo EPI10 UI), copiados aquí y servidos desde /informes/marca: nada se carga de otro dominio.
+ */
+@font-face { font-family: "EPI10 Manrope"; font-weight: 400; font-display: swap; src: url("/informes/marca/manrope-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "EPI10 Manrope"; font-weight: 600; font-display: swap; src: url("/informes/marca/manrope-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "EPI10 Manrope"; font-weight: 700; font-display: swap; src: url("/informes/marca/manrope-latin-700-normal.woff2") format("woff2"); }
+:root {
+  color-scheme: light;
+  --epi10-azul: #01447b; --epi10-azul-900: #00294d; --epi10-azul-50: #eef4fa;
+  --epi10-cian: #029acc; --epi10-cian-50: #e6f6fb;
+  --epi10-marfil: #fdf4ed; --epi10-blanco: #fff; --epi10-tinta: #101828;
+  --epi10-gris: #5b6474; --epi10-gris-claro: #98a1b0; --epi10-linea: #eadfd5; --epi10-linea-fuerte: #d9ccc0;
+  --epi10-ok: #1f7a52; --epi10-ok-50: #e8f5ee; --epi10-error: #b42318; --epi10-error-50: #fdecea;
+  --epi10-ring: #0284b5; --epi10-radius-sm: 8px; --epi10-radius: 12px; --epi10-max: 1120px;
+  --epi10-font: "EPI10 Manrope", "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --epi10-shadow: 0 1px 2px rgba(1, 68, 123, .05), 0 8px 24px rgba(1, 68, 123, .07);
+  /* Roles de la pantalla sobre los tokens EPI10. */
+  --fondo: var(--epi10-marfil); --superficie: var(--epi10-blanco); --texto: var(--epi10-tinta); --suave: var(--epi10-gris);
+  --borde: var(--epi10-linea-fuerte); --acento: var(--epi10-azul); --acento-texto: #fff;
+  --ok-fondo: var(--epi10-ok-50); --ok-texto: var(--epi10-ok); --error-fondo: var(--epi10-error-50); --error-texto: var(--epi10-error);
+  --foco: var(--epi10-ring);
+  --acento-fondo: var(--epi10-azul-50); --carpeta-fondo: #b9d3ef; --carpeta-frente: #eaf3fc;
+  --tipo-pdf: var(--epi10-error); --papel: #fff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 var(--epi10-font); background: var(--fondo); color: var(--texto); }
+main { max-width: var(--epi10-max); margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
+a { color: var(--acento); }
+:focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .95em; word-break: break-all; }
+h1 { font-size: 1.45rem; line-height: 1.15; font-weight: 700; letter-spacing: -.02em; color: var(--epi10-azul-900); }
+h2 { font-size: 1.1rem; margin-top: 0; color: var(--epi10-azul-900); }
+.saltar { position: absolute; left: -999px; }
+.saltar:focus { left: 1rem; top: .5rem; background: var(--superficie); padding: .5rem; z-index: 2; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* Cabecera epi-header con miga epi-miga, como el back office. */
+.cabecera { position: sticky; top: 0; z-index: 1; background: rgba(255, 255, 255, .94); border-bottom: 1px solid var(--epi10-linea); }
+.cabecera__fila { max-width: var(--epi10-max); margin: 0 auto; min-height: 64px; padding: 0 24px; display: flex; align-items: center; gap: 12px; }
+.marca { display: inline-flex; flex: none; }
+.marca img { height: 26px; width: auto; display: block; }
+.cabecera__sep { width: 1px; height: 24px; background: var(--epi10-linea); flex: none; }
+.cabecera__contexto { font-size: .95rem; font-weight: 600; white-space: nowrap; }
+.cabecera__hueco { flex: 1; }
+.volver { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 999px; white-space: nowrap;
+  background: var(--epi10-azul-50); color: var(--epi10-azul); font-weight: 600; font-size: .92rem; text-decoration: none; }
+.volver:hover { background: #dde9f5; }
+.volver__corto { display: none; }
+.salir { display: flex; gap: .5rem; align-items: center; color: var(--suave); font-size: .9rem; }
+.salir button { min-height: 40px; padding: .4rem .8rem; }
+.miga { max-width: var(--epi10-max); margin: 0 auto; padding: 0 16px 6px; font: 500 .88rem/1.2 var(--epi10-font); }
+.miga ol { display: flex; align-items: center; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; }
+.miga li { display: flex; align-items: center; color: var(--suave); min-height: 32px; }
+.miga li + li::before { content: ""; width: 6px; height: 6px; margin: 0 9px 0 5px; border-top: 1.5px solid var(--epi10-gris-claro);
+  border-right: 1.5px solid var(--epi10-gris-claro); transform: rotate(45deg); }
+.miga a { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 8px; border-radius: var(--epi10-radius-sm);
+  color: var(--suave); text-decoration: none; }
+.miga a:hover { background: var(--epi10-azul-50); color: var(--epi10-azul); }
+.miga [aria-current] { padding: 0 2px; color: var(--texto); font-weight: 600; }
+.miga__atras { display: none; }
+.tarjeta { background: var(--superficie); border: 1px solid var(--epi10-linea); border-radius: var(--epi10-radius);
+  padding: 1.25rem; margin: 1rem 0; box-shadow: var(--epi10-shadow); }
+.formulario { display: grid; gap: .5rem; max-width: 32rem; }
+.formulario label { font-weight: 600; }
+.en-linea { display: inline; }
+input[type=text], input[type=password], input[type=file] { font: inherit; padding: .5rem;
+  border: 1px solid var(--borde); border-radius: .375rem; background: var(--superficie); color: var(--texto); width: 100%; }
+.casilla { display: flex; gap: .5rem; align-items: flex-start; }
+.casilla input { margin-top: .3rem; width: 1.1rem; height: 1.1rem; }
+.casilla label { font-weight: 400; }
+button, .boton { font: inherit; font-weight: 600; padding: .6rem 1.1rem; border-radius: 999px;
+  border: 1px solid var(--acento); background: var(--acento); color: var(--acento-texto);
+  cursor: pointer; text-decoration: none; display: inline-block; min-height: 44px; }
+button:hover, .boton:hover { background: var(--epi10-azul-900); border-color: var(--epi10-azul-900); }
+button.secundario { background: transparent; color: var(--acento); border-color: var(--epi10-linea-fuerte); }
+button.secundario:hover { background: var(--epi10-azul-50); }
+.ayuda { color: var(--suave); font-size: .9rem; margin: 0; }
+.aviso, .error { padding: .75rem 1rem; border-radius: .375rem; }
+.aviso { background: var(--ok-fondo); color: var(--ok-texto); }
+.error { background: var(--error-fondo); color: var(--error-texto); }
+.estado { display: inline-block; padding: .1rem .5rem; border-radius: 999px; border: 1px solid var(--borde); font-size: .9rem; }
+.datos { display: grid; grid-template-columns: max-content 1fr; gap: .25rem 1rem; }
+.datos dt { font-weight: 600; }
+.datos dd { margin: 0; }
+table.casos { width: 100%; border-collapse: collapse; background: var(--superficie); }
+.casos th, .casos td { text-align: left; padding: .6rem; border-bottom: 1px solid var(--borde); vertical-align: top; }
+.casos thead th { font-size: .9rem; color: var(--suave); }
+/*
+ * Zona de arrastre (lote E, epi-dropzone), sin JS: el input ocupa toda la zona (la carpeta y el
+ * título van debajo, sin recibir el puntero), así que recibe el archivo al soltarlo en cualquier punto.
+ */
+.epi-dropzone { position: relative; border: 1.5px dashed var(--borde); border-radius: .75rem; background: var(--superficie);
+  transition: background .15s, border-color .15s, box-shadow .15s; }
+.epi-dropzone__decoracion { position: absolute; top: 1.25rem; left: 0; right: 0; display: flex; flex-direction: column;
+  align-items: center; gap: .5rem; pointer-events: none; }
+.epi-dropzone__titulo { font-weight: 700; }
+.formulario .epi-dropzone input[type=file] { position: relative; display: block; width: 100%; margin: 0;
+  padding: 8rem 1rem 1.25rem; border: 0; border-radius: inherit; background: transparent; cursor: pointer;
+  color: var(--suave); text-align: center; }
+.epi-dropzone input[type=file]::file-selector-button { font: inherit; font-weight: 600; margin-right: .75rem;
+  padding: .45rem .9rem; border-radius: .375rem; border: 1px solid var(--acento); background: var(--superficie);
+  color: var(--acento); cursor: pointer; }
+.epi-dropzone input[type=file]:focus-visible { outline: none; }
+.epi-dropzone:hover, .epi-dropzone:focus-within { border: 1.5px solid var(--acento); background: var(--acento-fondo);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--acento) 18%, transparent); }
+.epi-dropzone:has(:focus-visible) { outline: 3px solid var(--foco); outline-offset: 2px; }
+.epi-dropzone:has(input:valid) { border-style: solid; border-color: var(--ok-texto); }
+.epi-carpeta { position: relative; width: 84px; aspect-ratio: 4 / 3; flex: none; }
+.epi-carpeta__trasera { position: absolute; inset: 0; border-radius: 10px; background: var(--carpeta-fondo);
+  clip-path: polygon(0 0, 38% 0, 46% 12%, 100% 12%, 100% 100%, 0 100%); }
+.epi-carpeta__papel { position: absolute; left: 14%; right: 14%; top: 10%; height: 62%; border-radius: 6px; background: var(--papel);
+  box-shadow: 0 2px 6px rgba(0, 41, 77, .18); transition: transform .25s ease;
+  background-image: linear-gradient(var(--borde) 0 0), linear-gradient(var(--borde) 0 0), linear-gradient(var(--borde) 0 0);
+  background-size: 60% 3px, 46% 3px, 52% 3px; background-position: 14% 22%, 14% 38%, 14% 54%; background-repeat: no-repeat; }
+.epi-carpeta__frente { position: absolute; left: 0; right: 0; bottom: 0; height: 66%; border-radius: 10px;
+  background: linear-gradient(180deg, var(--carpeta-frente), var(--acento-fondo)); border: 1px solid var(--carpeta-fondo);
+  display: grid; place-items: center; color: var(--acento); }
+.epi-dropzone:is(:hover, :focus-within) .epi-carpeta__papel { transform: translateY(-8px); }
+/* Fila de archivo en estado «hecho» (lote E, epi-archivo). */
+.epi-archivos { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-direction: column; gap: .5rem; max-width: 32rem; }
+.epi-archivo { display: flex; align-items: center; gap: .75rem; padding: .625rem .75rem; background: var(--superficie);
+  border: 1px solid var(--borde); border-radius: .5rem; }
+.epi-tipo { flex: none; width: 28px; height: 34px; border-radius: 4px 9px 4px 4px; display: grid; place-items: end center;
+  padding-bottom: 4px; font-size: .55rem; font-weight: 800; color: #fff; background: var(--tipo, var(--suave)); }
+.epi-tipo--pdf { --tipo: var(--tipo-pdf); }
+.epi-archivo__nombre { flex: 1; min-width: 0; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.epi-archivo__peso { font-weight: 500; color: var(--suave); font-size: .82rem; margin-left: .375rem; }
+.epi-archivo__estado { display: inline-flex; align-items: center; gap: .375rem; font-size: .85rem; font-weight: 600; color: var(--suave); }
+.epi-archivo[data-epi10-estado="hecho"] .epi-archivo__estado { color: var(--ok-texto); }
+@media (prefers-reduced-motion: reduce) {
+  .epi-dropzone, .epi-carpeta__papel { transition: none; }
+  .epi-dropzone:is(:hover, :focus-within) .epi-carpeta__papel { transform: none; }
+}
+@media (max-width: 40rem) {
+  .cabecera__fila { padding: 0 16px; gap: 8px; min-height: 56px; }
+  .marca img { height: 22px; }
+  .cabecera__sep, .cabecera__contexto, .volver__largo, .salir__usuario { display: none; }
+  .volver__corto { display: inline; }
+  .volver { padding: 0 12px; }
+  main { padding: 1rem 1rem 2rem; }
+  /* Como epi-miga en móvil: solo «‹ Informes» (la carpeta madre) o la página actual. */
+  .miga { padding: 0 8px 6px; }
+  .miga ol:has(.miga__madre) li:not(.miga__madre) { display: none; }
+  .miga .miga__madre::before { display: none; }
+  .miga .miga__madre a { color: var(--epi10-azul); font-weight: 600; font-size: .95rem; padding: 0 10px 0 4px; }
+  .miga__atras { display: inline; font-size: 1.2rem; line-height: 1; }
+  .casos thead { display: none; }
+  .casos tr { display: block; border-bottom: 1px solid var(--borde); padding: .5rem 0; }
+  .casos th, .casos td { display: block; border: 0; padding: .2rem .6rem; }
+  .casos td::before { content: attr(data-titulo) ": "; font-weight: 600; }
+  .datos { grid-template-columns: 1fr; }
+  .datos dd { margin-bottom: .5rem; }
+}

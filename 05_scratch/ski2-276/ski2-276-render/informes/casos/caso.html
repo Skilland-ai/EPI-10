@@ -1,0 +1,107 @@
+<!doctype html>
+    <html lang="es">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Caso 0b6f4c1e-2f4b-4c8e-9a51-6f0f3f2b8a11 · Informes EPI10</title>
+        <link rel="stylesheet" href="/informes/estilos.css" />
+      </head>
+      <body>
+        <a class="saltar" href="#principal">Saltar al contenido</a>
+        <header class="cabecera">
+          <div class="cabecera__fila">
+            <a class="marca" href="/informes"
+              ><img src="/informes/marca/epi10-azul.png" alt="EPI10 Salud" width="94" height="26"
+            /></a>
+            <span class="cabecera__sep" aria-hidden="true"></span>
+            <span class="cabecera__contexto">Informes</span>
+            <span class="cabecera__hueco"></span>
+            <a class="volver" href="http://localhost:4896/interface/main/tabs/main.php"
+                    ><span aria-hidden="true">←</span
+                    ><span class="volver__largo">Volver al back office</span
+                    ><span class="volver__corto">Back office</span></a
+                  >
+            <form method="post" action="/informes/logout" class="salir">
+                    <span class="salir__usuario">aitor</span>
+                    <input type="hidden" name="_csrf" value="x" />
+                    <button type="submit" class="secundario">Cerrar sesión</button>
+                  </form>
+          </div>
+          <nav class="miga" aria-label="Estás aquí">
+    <ol>
+      <li>
+              <a href="http://localhost:4896/interface/main/tabs/main.php"><span aria-hidden="true">⌂</span> Back office</a>
+            </li>
+      <li class="miga__madre">
+        <a href="/informes"
+                ><span class="miga__atras" aria-hidden="true">‹</span>Informes</a
+              >
+      </li>
+      <li>
+            <span aria-current="page">Caso 0b6f4c1e</span>
+          </li>
+    </ol>
+  </nav>
+        </header>
+        <main id="principal"><h1>Caso <code>0b6f4c1e-2f4b-4c8e-9a51-6f0f3f2b8a11</code></h1>
+      
+      <dl class="datos tarjeta">
+        <dt>Estado</dt>
+        <dd><span class="estado estado-entregable_disponible">Entregable disponible</span></dd>
+        <dt>En este estado desde</dt>
+        <dd><time datetime="2026-10-13T08:40:00.000Z">13 oct 2026, 10:40</time></dd>
+        <dt>Caso creado</dt>
+        <dd><time datetime="2026-10-06T09:12:00.000Z">6 oct 2026, 11:12</time></dd>
+        
+        
+        
+      </dl>
+      <section aria-labelledby="paso-entregable" class="tarjeta">
+        <h2 id="paso-entregable">1. Subir el entregable de TellmeGen</h2>
+        
+        <form
+                method="post"
+                action="/informes/casos/0b6f4c1e-2f4b-4c8e-9a51-6f0f3f2b8a11/entregable"
+                enctype="multipart/form-data"
+                class="formulario"
+              >
+                <input type="hidden" name="_csrf" value="x" />
+                <label for="entregable">Entregable (PDF)</label>
+    <div class="epi-dropzone">
+      <span class="epi-dropzone__decoracion" aria-hidden="true">
+        <span class="epi-carpeta">
+  <span class="epi-carpeta__trasera"></span>
+  <span class="epi-carpeta__papel"></span>
+  <span class="epi-carpeta__frente">
+    <svg
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M12 15V3M7 8l5-5 5 5M5 21h14" />
+    </svg>
+  </span>
+</span>
+        <span class="epi-dropzone__titulo">Elige o arrastra aquí el PDF</span>
+      </span>
+      <input
+        id="entregable"
+        name="archivo"
+        type="file"
+        accept="application/pdf,.pdf"
+        required
+        aria-describedby="entregable-ayuda"
+      />
+    </div>
+    <p id="entregable-ayuda" class="ayuda">PDF de hasta 20 MB. Se procesa en segundo plano y el original no se guarda.</p>
+                <button type="submit">Subir y generar borrador</button>
+              </form>
+      </section></main>
+      </body>
+    </html>

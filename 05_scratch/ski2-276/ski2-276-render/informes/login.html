@@ -1,0 +1,72 @@
+<!doctype html>
+    <html lang="es">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Acceso · Informes EPI10</title>
+        <link rel="stylesheet" href="/informes/estilos.css" />
+      </head>
+      <body>
+        <a class="saltar" href="#principal">Saltar al contenido</a>
+        <header class="cabecera">
+          <div class="cabecera__fila">
+            <a class="marca" href="/informes"
+              ><img src="/informes/marca/epi10-azul.png" alt="EPI10 Salud" width="94" height="26"
+            /></a>
+            <span class="cabecera__sep" aria-hidden="true"></span>
+            <span class="cabecera__contexto">Informes</span>
+            <span class="cabecera__hueco"></span>
+            <a class="volver" href="http://localhost:4896/interface/main/tabs/main.php"
+                    ><span aria-hidden="true">←</span
+                    ><span class="volver__largo">Volver al back office</span
+                    ><span class="volver__corto">Back office</span></a
+                  >
+            
+          </div>
+          <nav class="miga" aria-label="Estás aquí">
+    <ol>
+      <li>
+              <a href="http://localhost:4896/interface/main/tabs/main.php"><span aria-hidden="true">⌂</span> Back office</a>
+            </li>
+      <li class="miga__madre">
+        <a href="/informes"
+                ><span class="miga__atras" aria-hidden="true">‹</span>Informes</a
+              >
+      </li>
+      <li>
+            <span aria-current="page">Acceso</span>
+          </li>
+    </ol>
+  </nav>
+        </header>
+        <main id="principal"><h1>Acceso a informes</h1>
+      <p class="aviso" role="status">El enlace del back office ha caducado o ya se ha usado. Vuelve a abrirlo desde el back office o entra con tu usuario.</p>
+      <form method="post" action="/informes/login" class="tarjeta formulario">
+        <input type="hidden" name="_csrf" value="x" />
+        
+        <label for="usuario">Usuario</label>
+        <input
+          id="usuario"
+          name="usuario"
+          type="text"
+          autocomplete="username"
+          required
+          autofocus
+          autocapitalize="none"
+          spellcheck="false"
+          maxlength="32"
+        />
+        <label for="contrasena">Contraseña</label>
+        <input
+          id="contrasena"
+          name="contrasena"
+          type="password"
+          autocomplete="current-password"
+          required
+          maxlength="256"
+        />
+        <button type="submit">Entrar</button>
+      </form></main>
+      </body>
+    </html>

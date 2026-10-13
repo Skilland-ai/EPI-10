@@ -1,0 +1,91 @@
+<!doctype html>
+    <html lang="es">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Casos · Informes EPI10</title>
+        <link rel="stylesheet" href="/informes/estilos.css" />
+      </head>
+      <body>
+        <a class="saltar" href="#principal">Saltar al contenido</a>
+        <header class="cabecera">
+          <div class="cabecera__fila">
+            <a class="marca" href="/informes"
+              ><img src="/informes/marca/epi10-azul.png" alt="EPI10 Salud" width="94" height="26"
+            /></a>
+            <span class="cabecera__sep" aria-hidden="true"></span>
+            <span class="cabecera__contexto">Informes</span>
+            <span class="cabecera__hueco"></span>
+            <a class="volver" href="http://localhost:4896/interface/main/tabs/main.php"
+                    ><span aria-hidden="true">←</span
+                    ><span class="volver__largo">Volver al back office</span
+                    ><span class="volver__corto">Back office</span></a
+                  >
+            <form method="post" action="/informes/logout" class="salir">
+                    <span class="salir__usuario">aitor</span>
+                    <input type="hidden" name="_csrf" value="x" />
+                    <button type="submit" class="secundario">Cerrar sesión</button>
+                  </form>
+          </div>
+          <nav class="miga" aria-label="Estás aquí">
+    <ol>
+      <li>
+              <a href="http://localhost:4896/interface/main/tabs/main.php"><span aria-hidden="true">⌂</span> Back office</a>
+            </li>
+      <li class="">
+        <span aria-current="page">Informes</span>
+      </li>
+      
+    </ol>
+  </nav>
+        </header>
+        <main id="principal"><h1>Casos listos para informe</h1>
+      <p class="ayuda">
+        Los casos no muestran datos de la persona: se identifican por su código de caso.
+      </p>
+      <table class="casos">
+              <caption class="oculto">
+                Casos con entregable, borrador en revisión o pendientes de publicar
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Caso</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">En este estado desde</th>
+                  <th scope="col">Caso creado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+        <th scope="row" data-titulo="Caso">
+          <a href="/informes/casos/0b6f4c1e-2f4b-4c8e-9a51-6f0f3f2b8a11"><code>0b6f4c1e-2f4b-4c8e-9a51-6f0f3f2b8a11</code></a>
+        </th>
+        <td data-titulo="Estado">
+          <span class="estado estado-entregable_disponible">Entregable disponible</span>
+        </td>
+        <td data-titulo="En este estado desde"><time datetime="2026-10-13T08:40:00.000Z">13 oct 2026, 10:40</time></td>
+        <td data-titulo="Caso creado"><time datetime="2026-10-06T09:12:00.000Z">6 oct 2026, 11:12</time></td>
+      </tr><tr>
+        <th scope="row" data-titulo="Caso">
+          <a href="/informes/casos/7d21a9e0-5c3b-4f1a-8e22-1a9b0c4d5e66"><code>7d21a9e0-5c3b-4f1a-8e22-1a9b0c4d5e66</code></a>
+        </th>
+        <td data-titulo="Estado">
+          <span class="estado estado-borrador_en_revision">Borrador en revisión</span>
+        </td>
+        <td data-titulo="En este estado desde"><time datetime="2026-10-12T16:05:00.000Z">12 oct 2026, 18:05</time></td>
+        <td data-titulo="Caso creado"><time datetime="2026-10-06T09:12:00.000Z">6 oct 2026, 11:12</time></td>
+      </tr><tr>
+        <th scope="row" data-titulo="Caso">
+          <a href="/informes/casos/c4e8b2d7-9a10-4b6e-b3f5-2e7d8c9a0b17"><code>c4e8b2d7-9a10-4b6e-b3f5-2e7d8c9a0b17</code></a>
+        </th>
+        <td data-titulo="Estado">
+          <span class="estado estado-informe_validado">Validado, pendiente de publicar</span>
+        </td>
+        <td data-titulo="En este estado desde"><time datetime="2026-10-11T11:30:00.000Z">11 oct 2026, 13:30</time></td>
+        <td data-titulo="Caso creado"><time datetime="2026-10-06T09:12:00.000Z">6 oct 2026, 11:12</time></td>
+      </tr>
+              </tbody>
+            </table></main>
+      </body>
+    </html>
