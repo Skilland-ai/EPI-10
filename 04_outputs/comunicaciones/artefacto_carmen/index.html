@@ -139,6 +139,15 @@ details.fold[open] > summary{border-bottom:1px solid var(--rule)}
 .ba-steps b{font-size:clamp(18px,2.2vw,23px);font-weight:800;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
 .ba-steps span{font-size:11.5px;line-height:1.3;opacity:.85;margin-top:2px}
 
+.yr{display:grid;grid-template-columns:minmax(0,1.25fr) auto minmax(0,1fr);gap:16px;align-items:stretch;margin-top:16px;border:2px solid var(--accent);border-radius:14px;padding:20px 22px;background:var(--accent-soft)}
+.yr-c{display:flex;flex-direction:column;gap:8px;min-width:0}
+.yr .ba-l{color:var(--accent-ink)}
+.yr-v{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.yr-v small{font-size:.5em;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:3px}
+.yr-c.pend .yr-v{color:var(--muted)}
+.yr p{font-size:14.5px;margin:0}
+.yr-plus{align-self:center;font-size:34px;font-weight:700;color:var(--accent-ink);line-height:1}
+
 /* Protección de datos */
 .answer{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,34px);align-items:center;background:var(--orq);color:#fff;border-radius:14px;padding:clamp(22px,3.4vw,36px);margin-top:22px}
 .answer .big{font-size:clamp(56px,8vw,92px);font-weight:800;letter-spacing:-.06em;line-height:.85;color:#E2BC6A}
@@ -176,6 +185,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:.75em;width:10px;heig
 .kpi > div:first-child{border-left:0}
 .kpi .l{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-ink);font-weight:700}
 .kpi .v{font-size:27px;font-weight:700;color:var(--ink);letter-spacing:-.025em;font-variant-numeric:tabular-nums;line-height:1.15;margin-top:6px}
+.kpi .v small{font-size:.55em;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:2px}
 .kpi .s{font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:4px}
 .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:28px}
 .split > div{border-top:2px solid var(--ink);padding-top:12px}
@@ -370,6 +380,24 @@ tr.win td{background:var(--ok-soft)!important}
 .who > div > span:first-child{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--ink-2);padding-top:3px}
 .who > div.bk > span:first-child{color:var(--muted)}
 
+/* Recorrido en vídeo */
+.rv{background:var(--hero);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.rv video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:9px;background:#000}
+.rv-d{display:flex;flex-wrap:wrap;gap:6px 18px;color:#D3DBEC;font-size:13px;padding:0 4px 2px;font-variant-numeric:tabular-nums}
+ol.rp{list-style:none;margin:0;padding:0;display:grid}
+.rp-i{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:center;padding:20px 0;border-top:1px solid var(--rule)}
+.rp-i:first-child{border-top:0;padding-top:4px}
+.rp-t{min-width:0;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.rp-t h3{margin:0;font-size:20px}
+.rp-t p{margin:0;font-size:15px;max-width:52ch}
+.rp-m{display:flex;align-items:center;gap:10px}
+.rp-n{font-weight:800;font-size:14px;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.rp-c{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--paper-3)}
+.rp-c.web{color:var(--ink-2)}.rp-c.stripe{color:var(--hl)}.rp-c.correo{color:var(--ink-3)}.rp-c.portal{color:var(--epi)}.rp-c.bo{color:var(--ok)}.rp-c.odoo{color:var(--odoo)}.rp-c.inf{color:var(--accent-ink)}
+.rp-ir{font:600 13.5px var(--font);color:var(--epi);background:none;border:1px solid var(--rule-ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+.rp-ir:hover{border-color:var(--epi)}
+.rp-ir:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
 /* Comparativa de interfaz */
 .pairs{display:grid;gap:34px;margin-top:26px}
 .pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
@@ -403,6 +431,7 @@ tr.win td{background:var(--ok-soft)!important}
 .opps .n{font-size:30px;font-weight:800;letter-spacing:-.04em;color:var(--accent-ink);line-height:1;font-variant-numeric:tabular-nums}
 .opps h3{font-size:16.5px;margin:10px 0 6px}
 .opps p{font-size:14.5px;margin:0}
+.opps.why4{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:14px}
 
 /* Cierre */
 .closing{background:var(--orq);color:#fff;border-radius:14px;padding:clamp(26px,4.5vw,52px);margin-top:10px;position:relative;overflow:hidden}
@@ -439,7 +468,8 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
 }
 @media (max-width: 720px){
   .split,.cands,.fork,.also{grid-template-columns:minmax(0,1fr)}
-  .ba,.swap{grid-template-columns:minmax(0,1fr)}
+  .ba,.swap,.yr{grid-template-columns:minmax(0,1fr)}
+  .yr-plus{justify-self:center}
   .ba-ar,.swap .ar{justify-self:center;transform:rotate(90deg);line-height:1}
   .answer{grid-template-columns:minmax(0,1fr);gap:12px}
   details.sec > summary .d{display:none}
@@ -463,7 +493,8 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
   .stg .th{max-width:280px}
   .stg .th.pv{max-width:180px}
   .pair{grid-template-columns:minmax(0,1fr)}
-  .opps{grid-template-columns:minmax(0,1fr)}
+  .rp-i{grid-template-columns:minmax(0,1fr);gap:12px}
+  .opps,.opps.why4{grid-template-columns:minmax(0,1fr)}
   .verdict{grid-template-columns:minmax(0,1fr);gap:10px}
   .oe .facts li,.dmap li{grid-template-columns:minmax(0,1fr);gap:2px}
   .who > div{grid-template-columns:minmax(0,1fr);gap:0}
@@ -506,7 +537,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
       <p class="lead">El portal de la clienta dependía de Healthie. Cuando Healthie convirtió en un añadido de pago la conexión que necesitábamos, buscamos sustituto en el mercado, no lo encontramos y construimos una <strong>plataforma propia de EPI10</strong> sobre software libre. El recorrido de la clienta que diseñamos al principio sigue intacto.</p>
 
       <div class="kpi" role="group" aria-label="Cifras de la crisis">
-        <div><div class="l">Healthie</div><div class="v">1.900&nbsp;$</div><div class="s">al mes por la conexión, a partir del tercer año</div></div>
+        <div><div class="l">Healthie</div><div class="v">1.900&nbsp;$<small>/mes</small></div><div class="s"><strong>≈ 22.800&nbsp;$ al año</strong> por la conexión, a partir del tercer año</div></div>
         <div><div class="l">Mercado</div><div class="v">40</div><div class="s">plataformas alternativas evaluadas</div></div>
         <div><div class="l">Licencia</div><div class="v">0&nbsp;€</div><div class="s">al mes con la plataforma propia</div></div>
         <div><div class="l">Recorrido</div><div class="v">5 de 5</div><div class="s">tramos de la experiencia de cliente cubiertos</div></div>
@@ -558,6 +589,20 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
             <div class="hot"><b>1.900&nbsp;$</b><span>al mes · año 3 y siguientes</span></div>
           </div>
           <p>Como añadido, <strong>además del plan Group</strong>. O dentro del plan <strong>Enterprise</strong>, sin precio público.</p>
+        </div>
+      </div>
+
+      <div class="yr" role="group" aria-label="Coste anual de Healthie con la API de pago">
+        <div class="yr-c">
+          <div class="ba-l">Al año · API de pago</div>
+          <div class="yr-v">≈ 22.800&nbsp;$<small>/año</small></div>
+          <p>A partir del tercer año (1.900&nbsp;$ × 12). Antes, unos 5.700&nbsp;$ el primero y 11.400&nbsp;$ el segundo. Siempre además del plan Group.</p>
+        </div>
+        <div class="yr-plus" aria-hidden="true">+</div>
+        <div class="yr-c pend">
+          <div class="ba-l">Además · marca blanca</div>
+          <div class="yr-v">Por cotizar</div>
+          <p>La app con la marca de EPI10 en Google Play. Healthie todavía no ha respondido cuánto cuesta.</p>
         </div>
       </div>
 
@@ -872,6 +917,18 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         </ul>
       </div>
 
+      <details class="fold"><summary><span class="ft">Saber más sobre OpenEMR</span><span class="fm">¿es una base fiable a tres años?</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
+      <p>OpenEMR nació en 2001 como MP Pro (MedicalPractice Professional). En julio de 2002 se reescribió para cumplir la normativa sanitaria de EE. UU. (HIPAA), adoptó el nombre de OpenEMR y se liberó como software libre con licencia GPL. Con más de veinte años de trayectoria, es uno de los proyectos de salud digital más antiguos y consolidados del mundo.</p>
+      <p><strong>¿Es fiable para construir sobre él un proyecto propio a tres años vista? Sí.</strong> Estos son los motivos:</p>
+      <div class="opps why4">
+        <div><div class="n">01</div><h3>Desarrollo muy activo</h3><p>El proyecto está lejos de estar abandonado. La versión 8 salió en febrero de 2026 y desde entonces siguen llegando parches de seguridad y mejoras.</p></div>
+        <div><div class="n">02</div><h3>Respaldo institucional</h3><p>No depende de un programador independiente. Lo respalda la OpenEMR Foundation, una entidad sin ánimo de lucro que canaliza fondos y patrocinios y mantiene al día la certificación oficial de EE. UU. (ONC). En España no se exige, pero obliga al proyecto a seguir estándares médicos muy estrictos.</p></div>
+        <div><div class="n">03</div><h3>Pensado para construir encima</h3><p>Ofrece conexiones abiertas (API REST y el estándar sanitario FHIR R4). Así se usa como base segura sin tocar su núcleo, y encima se construye una aplicación propia y moderna, como hemos hecho con la cara de EPI10.</p></div>
+        <div><div class="n">04</div><h3>Sin riesgo de quedarse obsoleto</h3><p>Funciona con versiones actuales de su lenguaje y su base de datos (PHP y MariaDB), así que encaja en cualquier servidor durante los próximos años. Tiene miles de instalaciones en el mundo, foros de desarrolladores activos a diario y una red de proveedores profesionales para soporte avanzado.</p></div>
+      </div>
+      <p style="margin-top:18px"><strong>En conclusión:</strong> es una base probada que ahorra cientos de horas en lo más delicado (datos médicos, privacidad y flujos clínicos básicos) y que tiene recorrido de sobra para el plan a tres años.</p>
+      </div></details>
+
       <p style="margin-top:28px">Estos días lo hemos construido. Esta es la versión actual, <strong>vista a vista</strong>: todo en español, con la marca de EPI10, para ordenador y móvil. Pulsa cualquier captura para verla en grande.</p>
 
       <details class="fold"><summary><span class="ft">Lo que ve la clienta · acceso</span><span class="fm">vistas 01–02</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
@@ -985,103 +1042,79 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
     </div></details>
 
     <!-- 3 -->
-    <details class="sec" id="recorrido"><summary><span class="no">3</span><span class="tt"><span class="t">El recorrido de la clienta, hoy</span><span class="d">Los cinco tramos de la experiencia, de la web al informe, en la versión actual del experimento (v0.5).</span></span><span class="chev" aria-hidden="true"></span></summary><div class="sec-b">
+    <details class="sec" id="recorrido"><summary><span class="no">3</span><span class="tt"><span class="t">El recorrido de la clienta, hoy</span><span class="d">De la compra en la web al informe en su espacio, grabado de verdad sobre el sistema de demostración.</span></span><span class="chev" aria-hidden="true"></span></summary><div class="sec-b">
     <div class="intro-s">
-      <h2>Así vive hoy una clienta el experimento EPI10, de la web al informe.</h2>
-      <p class="lead">Los cinco tramos del recorrido que diseñamos al principio, recorridos en la versión actual (v0.5) con datos ficticios. En cada paso, lo que vive la clienta y lo que pasa detrás.</p>
-
-      <ol class="tramos">
-        <li><b>Compra y alta</b>Web, pago y acceso</li>
-        <li><b>Bienvenida y documentos</b>Consentimiento, cuestionario y test</li>
-        <li><b>Test</b>Kit en casa o en la sede</li>
-        <li><b>Laboratorio e informe</b>Borrador y validación</li>
-        <li><b>Entrega</b>La clienta lee su informe</li>
-      </ol>
+      <h2>El recorrido completo, paso a paso.</h2>
+      <p class="lead">De la compra en la web al informe en el portal de la clienta, grabado de verdad sobre el sistema de demostración: web, pago con Stripe, correo, portal, back office, Odoo y pantalla de informes.</p>
     </div>
 
-    <details class="sub" id="tramo-1"><summary><span class="st"><b>3.1</b> · Compra y alta</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
-      <p class="intro-s">De descubrir NutriWell a tener su espacio, sin que nadie del equipo intervenga.</p>
-        <ol class="stages">
-          <li class="stg">
-            <div class="th pv"><figure class="phone"><img src="img/j01_web_m.png" alt="Web de NutriWell en el móvil" width="780" height="1688" loading="lazy"></figure></div>
-            <div><h4>Paso 1</h4><h3>Descubre NutriWell</h3><div class="who"><div><span>La clienta</span><span>Conoce el servicio y pulsa comprar. Hoy es una web de demostración; mañana, la web de EPI10 donde se compren todos sus productos.</span></div></div></div>
-          </li>
-          <li class="stg">
-            <div class="th pv"><figure class="phone"><img src="img/j03_pago_m.png" alt="Pago con tarjeta en el entorno de pruebas" width="780" height="1688" loading="lazy"></figure></div>
-            <div><h4>Paso 2</h4><h3>Paga con tarjeta</h3><div class="who"><div><span>La clienta</span><span>Paga en una página segura con la marca de EPI10.</span></div><div class="bk"><span>Detrás</span><span>El pago confirmado lo pone todo en marcha: crea su espacio en la plataforma con el consentimiento y el cuestionario asignados, y abre su caso en Odoo como «Nuevo · pago confirmado».</span></div></div></div>
-          </li>
-          <li class="stg">
-            <div class="th pv"><figure class="phone"><img src="img/j05_correo_m.png" alt="Correo de acceso a tu espacio EPI10" width="780" height="800" loading="lazy"></figure></div>
-            <div><h4>Paso 3</h4><h3>Recibe su acceso</h3><div class="who"><div><span>La clienta</span><span>Un único correo, en español: «Tu espacio EPI10 Salud ya está listo», con un botón para entrar.</span></div><div class="bk"><span>Detrás</span><span>El enlace es personal, sirve una sola vez y caduca. Si ya tenía cuenta con ese correo, no se duplica.</span></div></div></div>
-          </li>
-          <li class="stg">
-            <div class="th"><figure class="shot"><img src="img/p02_primer_acceso.png" alt="Crear la contraseña" width="1366" height="900" loading="lazy"></figure></div>
-            <div><h4>Paso 4</h4><h3>Crea su contraseña</h3><div class="who"><div><span>La clienta</span><span>Entra y elige su usuario y contraseña para volver cuando quiera.</span></div></div></div>
-          </li>
-        </ol>
-    </div></details>
+      <div class="rv" role="group" aria-label="Vídeo del recorrido">
+        <video id="rec-video" src="rec/epi10_recorrido.mp4" poster="rec/poster.jpg" controls playsinline preload="metadata"></video>
+        <div class="rv-d"><span>3 min 20 s</span><span>Con voz en off</span><span>Clienta ficticia: Marta Spot Ficticia</span><span>Datos de prueba, sin cobros reales</span></div>
+      </div>
 
-    <details class="sub" id="tramo-2"><summary><span class="st"><b>3.2</b> · Bienvenida y documentos</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
-      <p class="intro-s">El portal la guía y el equipo recibe el caso listo para pedir el test.</p>
-        <ol class="stages">
-          <li class="stg">
-            <div class="th pv"><figure class="phone"><img src="img/p03_bienvenida_m.png" alt="Bienvenida guiada en el móvil" width="780" height="1688" loading="lazy"></figure></div>
-            <div><h4>Paso 5</h4><h3>Bienvenida guiada</h3><div class="who"><div><span>La clienta</span><span>«Hola, Lucía. Antes de empezar necesitamos tres cosas.» Un botón: Empezar.</span></div></div></div>
-          </li>
-          <li class="stg">
-            <div class="th"><figure class="shot"><img src="img/p04_consentimiento.png" alt="Firma del consentimiento" width="1366" height="900" loading="lazy"></figure></div>
-            <div><h4>Paso 6</h4><h3>Firma el consentimiento</h3><div class="who"><div><span>La clienta</span><span>Lee el documento, marca sus conformidades y firma. Pasa sola al paso siguiente.</span></div></div></div>
-          </li>
-          <li class="stg">
-            <div class="th"><figure class="shot"><img src="img/p05_cuestionario.png" alt="Cuestionario de hábitos" width="1366" height="900" loading="lazy"></figure></div>
-            <div><h4>Paso 7</h4><h3>Responde el cuestionario de hábitos</h3><div class="who"><div><span>La clienta</span><span>Sueño, ejercicio y alimentación, en unos minutos.</span></div></div></div>
-          </li>
-          <li class="stg">
-            <div class="th"><figure class="shot"><img src="img/p06_test.png" alt="Elegir dónde hacerse el test" width="1366" height="900" loading="lazy"></figure></div>
-            <div><h4>Paso 8</h4><h3>Elige dónde hacerse el test</h3><div class="who"><div><span>La clienta</span><span>En casa, con su dirección de envío, o en la sede, reservando cita.</span></div></div></div>
-          </li>
-          <li class="stg">
-            <div class="th"><figure class="shot"><img src="img/p08_listo.png" alt="Todo listo" width="1366" height="900" loading="lazy"></figure></div>
-            <div><h4>Paso 9</h4><h3>Todo listo</h3><div class="who"><div><span>La clienta</span><span>Ve el resumen de lo hecho y entra en su espacio.</span></div><div class="bk"><span>Detrás</span><span>Con los tres pasos completos, el caso pasa en Odoo a «Listo para pedir test», con la modalidad y la dirección. Aitor recibe la tarea «Pedir test».</span></div></div></div>
-          </li>
-        </ol>
-    </div></details>
+      <details class="fold"><summary><span class="ft">Paso a paso</span><span class="fm">14 momentos del vídeo</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
+      <ol class="rp">
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/01_web.jpg" alt="Compra en la web: captura de Web NutriWell" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">01</span><span class="rp-c web">Web NutriWell</span></div><h3>Compra en la web</h3><p>Todo empieza en la web de NutriWell.</p><button type="button" class="rp-ir" data-t="5.3" hidden>Ver en el vídeo · 0:05</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/02_stripe.jpg" alt="Pago seguro con Stripe: captura de Stripe" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">02</span><span class="rp-c stripe">Stripe</span></div><h3>Pago seguro con Stripe</h3><p>La clienta paga con Stripe, en un entorno seguro. Pago confirmado.</p><button type="button" class="rp-ir" data-t="12.9" hidden>Ver en el vídeo · 0:12</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/03_correo.jpg" alt="Tu espacio, listo en segundos: captura de Correo de la clienta" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">03</span><span class="rp-c correo">Correo de la clienta</span></div><h3>Tu espacio, listo en segundos</h3><p>En segundos le llega el correo de bienvenida. Un botón, y ya está en su espacio.</p><button type="button" class="rp-ir" data-t="31.2" hidden>Ver en el vídeo · 0:31</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/04_carril1.jpg" alt="Tres pasos y ya está: captura de Portal de la clienta" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">04</span><span class="rp-c portal">Portal de la clienta</span></div><h3>Tres pasos y ya está</h3><p>Tres pasos y ya está. Primero, su fecha de nacimiento y el consentimiento, firmado en pantalla.</p><button type="button" class="rp-ir" data-t="47.1" hidden>Ver en el vídeo · 0:47</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/05_carril2.jpg" alt="Cuestionario y test en casa: captura de Portal de la clienta" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">05</span><span class="rp-c portal">Portal de la clienta</span></div><h3>Cuestionario y test en casa</h3><p>Después, el cuestionario de hábitos y el test, que recibe en casa. Todo listo.</p><button type="button" class="rp-ir" data-t="59.8" hidden>Ver en el vídeo · 0:59</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/06_espacio.jpg" alt="Su espacio la guía paso a paso: captura de Portal de la clienta" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">06</span><span class="rp-c portal">Portal de la clienta</span></div><h3>Su espacio la guía paso a paso</h3><p>Su espacio le enseña en qué paso está, y puede escribir al equipo cuando quiera.</p><button type="button" class="rp-ir" data-t="83.1" hidden>Ver en el vídeo · 1:23</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/07_bo1.jpg" alt="Aitor lo ve todo desde el back office: captura de Back office" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">07</span><span class="rp-c bo">Back office</span></div><h3>Aitor lo ve todo desde el back office</h3><p>Aitor lo ve todo desde el back office: los casos que le esperan y la ficha de cada clienta.</p><button type="button" class="rp-ir" data-t="93.2" hidden>Ver en el vídeo · 1:33</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/08_bo2.jpg" alt="Revisa y responde en un clic: captura de Back office" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">08</span><span class="rp-c bo">Back office</span></div><h3>Revisa y responde en un clic</h3><p>Revisa sus documentos y le responde con una plantilla.</p><button type="button" class="rp-ir" data-t="102.9" hidden>Ver en el vídeo · 1:42</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/09_odoo.jpg" alt="El kit se sigue en Odoo: captura de Odoo" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">09</span><span class="rp-c odoo">Odoo</span></div><h3>El kit se sigue en Odoo</h3><p>El kit se sigue en Odoo: test pedido, recibido, realizado, muestra en el laboratorio y entregable disponible.</p><button type="button" class="rp-ir" data-t="117.4" hidden>Ver en el vídeo · 1:57</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/10_avisos.jpg" alt="Cada avance, un aviso a la clienta: captura de Portal de la clienta" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">10</span><span class="rp-c portal">Portal de la clienta</span></div><h3>Cada avance, un aviso a la clienta</h3><p>Cada avance le llega a la clienta como un mensaje en su portal.</p><button type="button" class="rp-ir" data-t="138.7" hidden>Ver en el vídeo · 2:18</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/11_informe1.jpg" alt="El informe, en un clic: captura de Pantalla de informes" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">11</span><span class="rp-c inf">Pantalla de informes</span></div><h3>El informe, en un clic</h3><p>Desde la ficha, Aitor prepara el informe: sube el entregable del laboratorio y obtiene un borrador seudonimizado.</p><button type="button" class="rp-ir" data-t="145.5" hidden>Ver en el vídeo · 2:25</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/12_informe2.jpg" alt="Validado y publicado: captura de Pantalla de informes" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">12</span><span class="rp-c inf">Pantalla de informes</span></div><h3>Validado y publicado</h3><p>Lo revisa, lo valida y lo publica.</p><button type="button" class="rp-ir" data-t="157.5" hidden>Ver en el vídeo · 2:37</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/13_entrega.jpg" alt="Su informe, en su espacio: captura de Portal de la clienta" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">13</span><span class="rp-c portal">Portal de la clienta</span></div><h3>Su informe, en su espacio</h3><p>Y la clienta ya tiene su informe en su espacio, listo para leer.</p><button type="button" class="rp-ir" data-t="173.8" hidden>Ver en el vídeo · 2:53</button></div>
+        </li>
+        <li class="rp-i">
+          <figure class="shot"><img src="rec/14_cierre.jpg" alt="Entregado: captura de Back office" width="960" height="540" loading="lazy"></figure>
+          <div class="rp-t"><div class="rp-m"><span class="rp-n">14</span><span class="rp-c bo">Back office</span></div><h3>Entregado</h3><p>En el back office, el caso queda cerrado: informe entregado.</p><button type="button" class="rp-ir" data-t="186.3" hidden>Ver en el vídeo · 3:06</button></div>
+        </li>
+      </ol>
+      </div></details>
 
-    <details class="sub" id="tramo-3"><summary><span class="st"><b>3.3</b> · Test</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
-      <p class="intro-s">El kit viaja y la clienta nunca se queda sin respuesta.</p>
-        <ol class="stages">
-          <li class="stg">
-            <div class="th pv"><figure class="phone"><img src="img/p12_mensajes_m.png" alt="Chat con respuesta inmediata sobre el kit" width="390" height="844" loading="lazy"></figure></div>
-            <div><h4>Paso 10</h4><h3>Espera su kit con respuestas al momento</h3><div class="who"><div><span>La clienta</span><span>Pregunta por su pedido y recibe al instante los plazos de envío; si tiene otra duda, escribe al equipo.</span></div><div class="bk"><span>Detrás</span><span>Aitor avisa con plantillas de un clic: «tu test ya está aquí, reserva tu cita» o «envíanos el código de barras».</span></div></div></div>
-          </li>
-          <li class="stg">
-            <div class="th pv"><figure class="phone"><img src="img/p11_citas_m.png" alt="Reserva de cita en el móvil" width="390" height="844" loading="lazy"></figure></div>
-            <div><h4>Paso 11</h4><h3>Se hace el test</h3><div class="who"><div><span>La clienta</span><span>En casa, siguiendo la guía del kit, o en la sede, en la cita que reservó.</span></div><div class="bk"><span>Detrás</span><span>Aitor registra el código del kit en Odoo y gestiona la recogida y el envío al laboratorio.</span></div></div></div>
-          </li>
-        </ol>
-    </div></details>
-
-    <details class="sub" id="tramo-4"><summary><span class="st"><b>3.4</b> · Laboratorio e informe</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
-      <p class="intro-s">El sistema prepara el borrador; una persona decide qué se publica.</p>
-        <ol class="stages">
-          <li class="stg">
-            <div class="th"><figure class="shot"><img src="img/b07_documentos.png" alt="Informes por revisar y publicar" width="1366" height="900" loading="lazy"></figure></div>
-            <div><h4>Paso 12</h4><h3>Del resultado del laboratorio al informe</h3><div class="who"><div><span>La clienta</span><span>Ve en su inicio en qué fase está su caso.</span></div><div class="bk"><span>Detrás</span><span>Llegan los resultados de TellmeGen. El generador de informes prepara un borrador sin datos identificativos; Aitor lo revisa, lo corrige y lo valida. Sin validación humana no se publica nada.</span></div></div></div>
-          </li>
-        </ol>
-    </div></details>
-
-    <details class="sub" id="tramo-5"><summary><span class="st"><b>3.5</b> · Entrega</span><span class="chev" aria-hidden="true"></span></summary><div class="sub-b">
-      <p class="intro-s">El informe llega a su espacio y el caso se cierra.</p>
-        <ol class="stages">
-          <li class="stg">
-            <div class="th pv"><figure class="phone"><img src="img/p13_informe_m.png" alt="Informe disponible en el móvil" width="390" height="844" loading="lazy"></figure></div>
-            <div><h4>Paso 13</h4><h3>Lee su informe</h3><div class="who"><div><span>La clienta</span><span>Recibe el aviso, abre «Mi informe» y lo lee o lo descarga. Puede escribir al equipo con sus dudas.</span></div><div class="bk"><span>Detrás</span><span>El caso se cierra en Odoo tras la revisión de cierre del equipo.</span></div></div></div>
-          </li>
-        </ol>
-    </div></details>
-
-      <div class="note" style="margin-top:28px"><p>La demostración en vivo de este recorrido va aparte. Todas las capturas son de la versión actual en el entorno de pruebas, con clientas y datos ficticios.</p></div>
+      <div class="note" style="margin-top:28px"><p>Grabado el 13 de octubre de 2026 en el entorno de demostración de EPI10. Todas las personas, pagos y documentos son ficticios.</p></div>
     </div></details>
 
     <!-- 4 -->
@@ -1113,7 +1146,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
       <div class="pairs">
         <div class="pair">
           <div class="pair-h"><h3>Correo de acceso</h3><p>La primera impresión.</p></div>
-          <div class="side e"><div class="who-l">EPI10</div><figure class="phone" style="max-width:240px"><img src="img/j05_correo_m.png" alt="Correo de acceso de EPI10, en español" width="780" height="800" loading="lazy"></figure></div>
+          <div class="side e"><div class="who-l">EPI10</div><figure class="phone" style="max-width:240px"><img src="img/j05_correo_m.png" alt="Correo de acceso de EPI10, en español" width="780" height="1864" loading="lazy"></figure></div>
           <div class="side h"><div class="who-l">Healthie</div><figure class="shot"><img src="img/hr_correo_invitacion.png" alt="Invitación de Healthie, en inglés" width="1142" height="725" loading="lazy"></figure><p class="src">Invitación real enviada desde Healthie. Sale en inglés y pide «empezar a usar Healthie».</p></div>
         </div>
         <div class="pair">
@@ -1307,7 +1340,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         <div>
           <h4>Lo que trae OpenEMR de serie</h4>
           <ul class="tick">
-            <li>Documentos cifrados.</li>
+            <li>Documentos cifrados. La base de datos se protege aparte, cifrando el disco del servidor.</li>
             <li>Registro de auditoría de accesos y cambios.</li>
             <li>Permisos por rol: cada persona ve solo lo suyo.</li>
           </ul>
@@ -1319,14 +1352,14 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
             <li>Copias de seguridad con restauración probada.</li>
             <li>Control de acceso, con doble factor para el equipo.</li>
             <li>Registro de actividades de tratamiento.</li>
-            <li>Evaluación de impacto, si procede.</li>
+            <li>Evaluación de impacto (necesaria al tratar datos genéticos).</li>
           </ul>
         </div>
       </div>
       <div class="swap">
         <div><span class="l">Con Healthie</span><b>Certificaciones del proveedor</b><span>Las que Healthie declara para el mercado de EE. UU. (HIPAA, SOC 2, HITRUST), con los datos fuera de la UE.</span></div>
         <div class="ar" aria-hidden="true">→</div>
-        <div class="acc"><span class="l">Con la plataforma EPI10</span><b>Control propio y buenas prácticas documentadas</b><span>Los datos no salen del servidor de EPI10 y cada medida queda por escrito.</span></div>
+        <div class="acc"><span class="l">Con la plataforma EPI10</span><b>Control propio y buenas prácticas documentadas</b><span>Los datos de salud se quedan en el servidor de EPI10; a la IA que ayuda a redactar el informe solo llega texto seudonimizado, y el pago y los datos de contacto van a Stripe. Cada medida queda por escrito.</span></div>
       </div>
       <details class="fold"><summary><span class="ft">Dónde vive cada dato</span><span class="fm">5 tipos de dato</span><span class="chev" aria-hidden="true"></span></summary><div class="fold-b">
       <ul class="dmap">
@@ -1351,7 +1384,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
         <div><div class="n">03</div><h3>Evolución libre</h3><p>EPI10 es dueña del código, documentado. Puede experimentar, probar y crear productos y experiencias nuevas sin pedir permiso a nadie.</p></div>
         <div><div class="n">04</div><h3>Móvil hoy, app mañana</h3><p>Hoy funciona en el navegador del móvil, como el LMS de Skilland. Una app para Android e iOS es explorable en una fase posterior.</p></div>
         <div><div class="n">05</div><h3>Web y plataforma, un solo ecosistema</h3><p>Podemos plantear un paquete «web + nueva interfaz» que lleve los diseños del nuevo diseñador de EPI10 a la web y a la plataforma a la vez. Aunque creemos que la hemos clavado.</p></div>
-        <div><div class="n">06</div><h3>Datos en casa</h3><p>Los datos de salud de las clientas no salen del servidor de EPI10, una ventaja real para comunicar confianza.</p></div>
+        <div><div class="n">06</div><h3>Datos en casa</h3><p>Los datos de salud de las clientas se quedan en el servidor de EPI10, una ventaja real para comunicar confianza.</p></div>
       </div>
     </div></details>
     </div></details>
@@ -1403,5 +1436,13 @@ footer{border-top:1px solid var(--rule);padding-top:20px;margin-top:40px;font-si
   function reveal(){var id=location.hash.slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;for(var d=el;d;d=d.parentElement){if(d.tagName==="DETAILS")d.open=true;}el.scrollIntoView();}
   window.addEventListener("hashchange",reveal);reveal();
   window.addEventListener("beforeprint",function(){all.forEach(function(d){d.open=true;});});
+})();
+(function(){
+  var v=document.getElementById("rec-video");if(!v)return;
+  document.querySelectorAll(".rp-ir").forEach(function(b){b.hidden=false;b.addEventListener("click",function(){
+    v.currentTime=parseFloat(b.getAttribute("data-t"));
+    v.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});
+    var r=v.play();if(r&&r.catch)r.catch(function(){});
+  });});
 })();
 </script>
