@@ -2,7 +2,7 @@
 
 SKI2-277 · 13 oct 2026 · para el artefacto que verá Carmen en la demo del 14 oct.
 
-- **Duración:** 134 s.
+- **Duración:** 200 s (3 min 20 s).
 - **Formato:** H.264, 1280×720 a 30 fps, voz en off en AAC.
 - **Tono:** anuncio en presente que cuenta qué pasa y en qué pantalla. Salta entre entornos y cada escena lleva su faldón («NN · entorno» + rótulo).
 - **Datos:** grabación real del recorrido completo con una clienta ficticia, Marta Spot Ficticia. Todos los datos son inventados.
@@ -30,5 +30,5 @@ SKI2-277 · 13 oct 2026 · para el artefacto que verá Carmen en la demo del 14 
 
 - **Voz en off:** Piper (TTS local y sin conexión), voz `es_ES-sharvard-medium`, hablante femenina. Va instalada en un entorno virtual del scratchpad, nada en el sistema. Para que suene bien, la locución usa una grafía fonética que no cambia el texto: «Épi diez», «Estráip», «bak ófis», «Nutriuél», «Odú». No lleva música.
 - **Rótulos:** Manrope, la tipografía del portal EPI10, en faldón azul noche (`#0B1B3D`) con acento cielo (`#4DA9D9`) y el logo EPI10 arriba a la derecha.
-- **Ritmo:** los tramos lentos van de ×1,5 a ×8. Las esperas de Odoo (~70 s por etapa, mientras el monolito aplica el hito) están recortadas. Entre escenas hay fundidos de 0,45 s.
+- **Ritmo:** las pantallas y los menús van a velocidad real o como mucho ×1,3 para que dé tiempo a leerlos; solo el tecleo de la tarjeta (×5) y las esperas del procesado del informe (×2,5) van más rápidos. Las esperas de Odoo (~70 s por etapa, mientras el monolito aplica el hito) están recortadas. Entre escenas hay fundidos de 0,45 s.
 - **Privacidad:** el enlace mágico del correo no sale en pantalla. El texto con URL va difuminado y el vídeo no muestra la barra de direcciones. Las horas y los identificadores que aparecen son de la instancia de pruebas, y no hay datos reales.

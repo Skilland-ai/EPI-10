@@ -1,6 +1,6 @@
 # Spot del recorrido EPI10 (SKI2-277)
 
-- `epi10_recorrido.mp4`: el spot. 134 s, H.264 1280×720, AAC, 5,9 MB.
+- `epi10_recorrido.mp4`: el spot. 200 s, H.264 1280×720, AAC, 7,4 MB.
 - `guion.md`: escenas, rótulos y locución.
 - `escenas.json`: el guion en datos. Indica qué tramo de cada clip va en cada escena y a qué velocidad. Lo leen el montaje y los rótulos.
 - `capturas/`: una captura por paso del guion (1280×720).
