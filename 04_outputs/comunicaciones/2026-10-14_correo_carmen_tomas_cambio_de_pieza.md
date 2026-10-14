@@ -1,18 +1,20 @@
 # Correo a Carmen (Tomás en copia) · 14 de octubre de 2026 · SKI2-286
 
-Borrador v3 para que lo envíe Raúl. Adjunto: el one-pager «Audentes fortuna iuvat» en PDF (SKI2-287).
+Borrador v4 para que lo envíe Raúl. Adjunto: el one-pager «Audentes fortuna iuvat» en PDF (SKI2-287).
 
 Fechas verificadas en el correo de direccion@skilland.ai: Carmen escribió a Healthie el lunes 5; Healthie respondió con las nuevas condiciones el miércoles 7 (13:33); el jueves 8 (9:06) Carmen aceptó la reunión del martes 13, que ella misma movió al miércoles 14 a las 8:15. La caída del proveedor de la web no consta por correo; Raúl la sitúa el jueves 8.
 
 **Para:** Carmen Sosa (EPI10 Salud)
 **CC:** Tomás · Romina Ojeda (Skilland)
-**Asunto:** EPI10 Salud · recap de estos días y la semana del plan «Audentes fortuna iuvat»
+**Asunto:** EPI10 Salud · recap de estos días y plan para esta semana
 
 ---
 
 Hola, Carmen:
 
-Tal y como hemos hablado esta mañana, te escribo para dejar por escrito un recap de lo que ha pasado en los últimos días y de cómo hemos alineado redirigir las horas del proyecto de esta semana hacia lo que podemos llamar la semana del plan «Audentes fortuna iuvat»: la fortuna favorece a los audaces. Pongo a Tomás en copia para que tenga la foto completa.
+Tal y como hemos hablado esta mañana, te escribo para dejar por escrito un recap de lo que ha pasado en los últimos días y de cómo hemos alineado redirigir las horas del proyecto de esta semana hacia un plan para adaptarnos a todo lo que ha ocurrido. Pongo a Tomás en copia para que tenga la foto completa.
+
+Hay un proverbio romano que me gusta mucho y que, en las ocasiones en las que toca adaptarse, siempre resuena conmigo: siempre me ha acompañado y siempre me acompañará. *Audentes fortuna iuvat*, la fortuna favorece a los audaces. Está en nuestra mano, siempre lo está, convertir un revés en una oportunidad para salir más fuertes.
 
 **Dónde estamos.** Hasta ahora hemos avanzado casi un 60 % del proyecto: el orquestador está listo, el generador de borradores de informe está bastante avanzado, las automatizaciones con Odoo están ya casi todas hechas y las de Healthie también estaban casi todas hechas.
 
