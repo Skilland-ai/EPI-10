@@ -172,10 +172,10 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
 .tl .dot{position:absolute;top:0;left:0;width:12pt;height:12pt;border-radius:50%;background:var(--ink);box-shadow:0 0 0 3pt var(--paper-2)}
 .tl .ev.off .dot{background:var(--paper-2);box-shadow:0 0 0 3pt var(--paper-2),inset 0 0 0 2px var(--muted)}
 .tl .ev.now .dot{background:var(--accent);box-shadow:0 0 0 3pt var(--paper-2),0 0 0 4.5pt var(--accent-line)}
-.tl .dd{font-weight:800;font-size:12pt;letter-spacing:-.015em;color:var(--ink);line-height:1}
+.tl .dd{font-weight:800;font-size:13.5pt;letter-spacing:-.015em;color:var(--ink);line-height:1}
 .tl .ev.off .dd{color:var(--muted)}
 .tl .ev.now .dd{color:var(--accent-ink)}
-.tl .tx{font-size:8.4pt;line-height:1.42;color:var(--body-2);margin-top:5pt;padding-right:2pt}
+.tl .tx{font-size:8.9pt;line-height:1.42;color:var(--body-2);margin-top:5pt;padding-right:2pt}
 .tl .ev.now .tx{color:var(--ink);font-weight:600}
 /* líneas 2.1 / 2.2 */
 .line{display:grid;grid-template-columns:24mm 1fr;gap:4mm;padding:13pt 16pt}
@@ -204,6 +204,83 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
 .chip img{height:34pt;width:auto;display:block}
 .latin{font-weight:700;font-size:62pt;line-height:.98;letter-spacing:-.04em;color:#fff}
 .trans{font-weight:500;font-size:17pt;letter-spacing:-.012em;color:var(--sky);line-height:1.2}
+
+/* v2 · progreso */
+.prow{display:grid;grid-template-columns:16mm 1fr 30mm;gap:0 6pt;align-items:center;padding:15pt 0 16pt;border-bottom:1px solid var(--rule)}
+.prow .n{font-weight:800;font-size:17pt;letter-spacing:-.02em;color:var(--accent-ink);line-height:1;align-self:start;padding-top:2pt}
+.prow .t{font-weight:700;font-size:10.6pt;color:var(--ink);letter-spacing:-.01em}
+.prow .d{font-size:8.5pt;color:var(--body-2);margin-top:2pt;line-height:1.4}
+.prow .bar{height:5pt;border-radius:2pt;background:var(--paper-3);margin-top:7pt;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(11,27,61,.05)}
+.prow .bar i{display:block;height:100%;background:var(--accent);border-radius:2pt}
+.prow .bar.empty{background:transparent;box-shadow:inset 0 0 0 1px var(--rule-ink)}
+.prow .pc{text-align:right;font-weight:800;font-size:24pt;letter-spacing:-.035em;line-height:1;color:var(--ink);font-feature-settings:"tnum"}
+.prow .pc small{font-size:12pt;color:var(--accent-ink);margin-left:1pt;font-weight:700}
+.prow .pc.tbd{font-size:7.2pt;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);line-height:1.3}
+.prow.pend .t{color:var(--ink-2)}
+/* web, una sola tarjeta */
+.web{display:grid;grid-template-columns:44mm 1fr 1fr;gap:0 6mm;align-items:start;border-top:3px solid var(--accent)}
+.web .k{font-size:6.9pt;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--muted)}
+.web .k.acc{color:var(--accent-ink)}
+.web .x{font-size:9pt;line-height:1.45;color:var(--body-2);margin-top:4pt}
+.web .x.now{color:var(--ink);font-weight:600}
+/* v2 · Healthie antes / después (artefacto_carmen) */
+.hb{background:var(--ink);border-radius:9px;padding:15pt 17pt 16pt;color:#fff}
+.hba{display:grid;grid-template-columns:1fr 9mm 1.3fr;align-items:stretch}
+.hc{border-radius:7px;padding:11pt 12pt;display:flex;flex-direction:column;gap:6pt}
+.hc.before{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.hl{font-size:6.9pt;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--sky)}
+.hc.after .hl{color:var(--accent)}
+.hv{font-weight:800;font-size:19pt;letter-spacing:-.03em;line-height:1;color:#fff}
+.hc p{font-size:8.3pt;line-height:1.42;color:#C9D3E8}.hc strong{color:#fff}
+.chips{display:flex;gap:5pt;flex-wrap:wrap;margin-top:auto}
+.chips span{font-size:7.4pt;font-weight:700;border-radius:999px;padding:3pt 8pt;background:var(--sky-soft);color:var(--ink)}
+.har{align-self:center;text-align:center;font-size:17pt;font-weight:700;color:var(--accent)}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:5pt;align-items:end}
+.steps3>div{border-radius:6px;background:rgba(255,255,255,.08);padding:7pt 8pt;display:flex;flex-direction:column;justify-content:flex-end}
+.steps3>div:nth-child(1){min-height:34pt}.steps3>div:nth-child(2){min-height:44pt}
+.steps3>div.hot{min-height:58pt;background:var(--accent);color:var(--ink)}
+.steps3 b{font-size:13pt;font-weight:800;letter-spacing:-.02em;line-height:1.1;font-feature-settings:"tnum"}
+.steps3 span{font-size:6.9pt;line-height:1.3;opacity:.85;margin-top:2pt}
+.yr{display:grid;grid-template-columns:1.3fr 8mm 1fr;margin-top:10pt;border:1.5px solid var(--accent);border-radius:8px;padding:11pt 13pt;background:rgba(213,167,73,.08)}
+.yr .hl{color:var(--accent)}
+.yv{font-weight:800;font-size:20pt;letter-spacing:-.03em;line-height:1;color:#fff;margin-top:5pt;font-feature-settings:"tnum"}
+.yv small{font-size:10pt;font-weight:600;color:#A8B6D0;margin-left:2pt;letter-spacing:0}
+.yr .pend .yv{color:#A8B6D0}
+.yr p{font-size:8pt;line-height:1.42;color:#C9D3E8;margin-top:5pt}
+.yplus{align-self:center;text-align:center;font-size:17pt;font-weight:700;color:var(--accent)}
+/* v2 · diagrama (artefacto_carmen, colores Skilland) */
+.dgc{background:var(--ink);border-radius:9px;padding:11pt 11pt 12pt}
+.dgbox{background:var(--paper-2);border-radius:6px;padding:6pt}
+.dgc svg{display:block;width:100%;height:auto}
+.dgc .cap{font-size:8.4pt;line-height:1.45;color:#C9D3E8;margin-top:9pt;padding:0 4pt}
+.dgc .cap strong{color:#fff}
+.dg{--hl:#2D6BA5;--hl-soft:#E3EDF6;--odoo:#714B67;--odoo-soft:#F3ECF1;--orq:#0B1B3D;--font:"Sora",sans-serif}
+.dg .bd{fill:none;stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:6 5}
+.dg .bd-l{font:800 11px var(--font);letter-spacing:.14em;fill:var(--ink-2)}
+.dg .cloud-l{font:800 11px var(--font);letter-spacing:.14em;fill:var(--hl)}
+.dg .n-hl{fill:var(--hl-soft);stroke:var(--hl);stroke-width:2.5}
+.dg .n-odoo{fill:var(--odoo-soft);stroke:var(--odoo);stroke-width:2}
+.dg .n-orq{fill:var(--orq)}
+.dg .n-tg{fill:#fff;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:5 4}
+.dg .pill{fill:#fff;stroke:var(--ink-2);stroke-width:1.5}
+.dg .t{font:700 20px var(--font);fill:var(--ink);letter-spacing:-.01em}
+.dg .t-hl{fill:#1F4171}.dg .t-odoo{fill:var(--odoo)}
+.dg .s{font:500 12.5px var(--font);fill:var(--muted)}
+.dg .i{font:500 14px var(--font);fill:var(--body)}
+.dg .dot{fill:var(--accent)}
+.dg .tw{font:700 20px var(--font);fill:#fff}
+.dg .sw{font:500 12.5px var(--font);fill:#B6C4DE}
+.dg .chip{fill:rgba(255,255,255,.08);stroke:rgba(255,255,255,.22)}
+.dg .chip-acc{fill:rgba(213,167,73,.16);stroke:#D5A749}
+.dg .cw{font:500 13.5px var(--font);fill:#fff}
+.dg .p{font:600 14px var(--font);fill:var(--ink)}
+.dg .ln{fill:none;stroke:var(--ink-2);stroke-width:2}
+.dg .ln-d{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-dasharray:5 4}
+.dg .ah{fill:var(--ink-2)}.dg .ah-m{fill:var(--muted)}
+.dg .lab{font:600 11.5px var(--font);fill:var(--muted);text-anchor:middle;paint-order:stroke;stroke:var(--paper-2);stroke-width:5px;stroke-linejoin:round}
+.dg .lose{fill:#D5A749}
+.dg .lose-t{font:800 11px var(--font);letter-spacing:.12em;fill:#0B1B3D}
+.dg .mid{text-anchor:middle}
 </style>
 </head>
 <body>
@@ -247,34 +324,13 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
     <div class="gap6"></div><div class="kick">01 · Dónde estamos y qué pasó</div><div class="gap14"></div>
     <div class="h2" style="max-width:160mm">Casi un 60 % avanzado, y dos noticias ajenas al proyecto.</div><div class="gap10"></div>
     <p class="lead sm2">Hasta ahora hemos avanzado casi un 60 % del proyecto. La semana pasada se juntaron dos noticias que <strong>no dependen ni de vosotros ni de nosotros</strong>.</p>
-    <div class="gap14"></div>
-    <div class="nrows">
-      <div class="nrow"><div class="n">01</div><div><div class="t">El orquestador</div><div class="d">La pieza que coordina el resto del sistema.</div></div><div class="s"><span class="tag ink">Listo</span></div></div>
-      <div class="nrow"><div class="n">02</div><div><div class="t">El generador de borradores de informe</div><div class="d">Bastante avanzado.</div></div><div class="s"><span class="tag sky">Avanzado</span></div></div>
-      <div class="nrow"><div class="n">03</div><div><div class="t">Las automatizaciones con Odoo</div><div class="d">Ya casi todas hechas.</div></div><div class="s"><span class="tag sky">Casi hechas</span></div></div>
-      <div class="nrow"><div class="n">04</div><div><div class="t">Las automatizaciones con Healthie</div><div class="d">También estaban casi todas hechas cuando cambiaron las condiciones.</div></div><div class="s"><span class="tag acc">Casi hechas</span></div></div>
-    </div>
     <div class="gap16"></div>
-    <div class="h4">Lo que cambió la semana pasada</div><div class="gap8"></div>
-    <div class="chg">
-      <div class="wcard">
-        <div class="lbl acc">Pieza del portal de cliente</div>
-        <div class="nm">Healthie</div>
-        <div class="st">
-          <div><div class="k">Antes</div><div class="x">La API con la que trabajábamos estaba incluida en vuestro plan. La probamos en verano.</div></div>
-          <div><div class="k acc">Ahora</div><div class="x now">Pasa a ser un complemento de pago aparte, con un coste que sube cada año, o exige saltar al plan Enterprise.</div></div>
-        </div>
-        <div class="out"><strong>Deja de ser una base razonable</strong> sobre la que construir.</div>
-      </div>
-      <div class="wcard">
-        <div class="lbl acc">Pieza externa al proyecto</div>
-        <div class="nm">Web de EPI10</div>
-        <div class="st">
-          <div><div class="k">Antes</div><div class="x">La llevaba un proveedor externo.</div></div>
-          <div><div class="k acc">Ahora</div><div class="x now">El proveedor se ha caído del proyecto.</div></div>
-        </div>
-        <div class="out"><strong>La pieza queda sin cubrir</strong> y os ha dejado un poco tirados.</div>
-      </div>
+    <div class="nrows">
+      <div class="prow"><div class="n">01</div><div><div class="t">El orquestador</div><div class="bar"><i style="width:100%"></i></div></div><div class="pc">100<small>%</small></div></div>
+      <div class="prow"><div class="n">02</div><div><div class="t">El generador de borradores de informe</div><div class="bar"><i style="width:60%"></i></div></div><div class="pc">60<small>%</small></div></div>
+      <div class="prow"><div class="n">03</div><div><div class="t">Las automatizaciones con Odoo</div><div class="bar"><i style="width:90%"></i></div></div><div class="pc">90<small>%</small></div></div>
+      <div class="prow"><div class="n">04</div><div><div class="t">Las automatizaciones con Healthie</div><div class="d">Hechas sobre la conexión que Healthie acaba de retirar.</div><div class="bar"><i style="width:85%"></i></div></div><div class="pc">85<small>%</small></div></div>
+      <div class="prow pend"><div class="n">05</div><div><div class="t">El portal de la clienta</div><div class="d">Era la pieza de Healthie; se estudia esta semana.</div><div class="bar empty"></div></div><div class="pc tbd">Pieza a<br>sustituir</div></div>
     </div>
     <div class="grow" style="min-height:14pt"></div>
     <div class="h4">Cronología · octubre de 2026</div><div class="gap14"></div>
@@ -285,21 +341,118 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
       <div class="ev off"><div class="dot"></div><div class="dd">Lun 12</div><div class="tx">Festivo.</div></div>
       <div class="ev now"><div class="dot"></div><div class="dd">Mié 14</div><div class="tx">Nos vemos y lo alineamos.</div></div>
     </div>
-    <div class="gap6"></div>
+    <div class="grow" style="min-height:14pt"></div>
+    <div class="wcard web" style="padding:16pt 17pt 17pt">
+      <div><div class="lbl acc">La otra noticia</div><div class="h3" style="margin-top:5pt">Web de EPI10</div></div>
+      <div><div class="k">Antes</div><div class="x">La llevaba un proveedor externo.</div></div>
+      <div><div class="k acc">Ahora</div><div class="x now">El proveedor se ha caído del proyecto. La pieza queda sin cubrir.</div></div>
+    </div>
   </div>
   <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">02</div><div class="ln"></div></div>
 </section>
 
-<!-- 03 · QUÉ HACEMOS ESTA SEMANA -->
-<section class="page paper" data-screen-label="03 Esta semana">
-  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">02 · Esta semana</div><div class="ln"></div></div>
+<!-- 03 · QUÉ PASÓ CON HEALTHIE -->
+<section class="page paper" data-screen-label="03 Healthie">
+  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">02 · Healthie</div><div class="ln"></div></div>
   <div class="body">
-    <div class="gap6"></div><div class="kick">02 · Qué hacemos esta semana y cómo seguimos</div><div class="gap14"></div>
+    <div class="gap6"></div><div class="kick">02 · Qué pasó con Healthie</div><div class="gap14"></div>
+    <div class="h2" style="max-width:165mm">Healthie sacó la conexión de su plan y la convirtió en un añadido de pago.</div><div class="gap10"></div>
+    <p class="lead sm2" style="font-size:10.4pt">La automatización del proyecto se apoya en una conexión (API) con la que nuestro sistema da de alta a cada clienta, le asigna sus formularios y le entrega el informe sin trabajo manual. Esa conexión venía incluida. <strong>Dejó de estarlo.</strong></p>
+    <div class="gap14"></div>
+    <div class="hb">
+      <div class="hba">
+        <div class="hc before">
+          <div class="hl">Antes · hasta el verano de 2026</div>
+          <div class="hv">API incluida</div>
+          <p>Venía dentro del <strong>plan Group</strong> que contrató EPI10, sin coste añadido. La probamos en verano y funcionaba.</p>
+          <div class="chips"><span>Plan Group</span><span>API sin coste extra</span></div>
+        </div>
+        <div class="har">→</div>
+        <div class="hc after" style="padding:11pt 0 0">
+          <div class="hl">Después · desde septiembre</div>
+          <div class="hv">API de pago</div>
+          <div class="steps3">
+            <div><b>475&nbsp;$</b><span>al mes · año 1</span></div>
+            <div><b>950&nbsp;$</b><span>al mes · año 2</span></div>
+            <div class="hot"><b>1.900&nbsp;$</b><span>al mes · año 3 y siguientes</span></div>
+          </div>
+          <p>Como añadido, <strong>además del plan Group</strong>. O dentro del plan <strong>Enterprise</strong>, sin precio público.</p>
+        </div>
+      </div>
+      <div class="yr">
+        <div><div class="hl">Al año · API de pago</div><div class="yv">≈ 22.800&nbsp;$<small>/año</small></div><p>A partir del tercer año (1.900&nbsp;$ × 12). Antes, unos 5.700&nbsp;$ el primero y 11.400&nbsp;$ el segundo. Siempre además del plan Group.</p></div>
+        <div class="yplus">+</div>
+        <div class="pend"><div class="hl">Además · marca blanca</div><div class="yv">Por cotizar</div><p>La app con la marca de EPI10 en Google Play. Healthie todavía no ha respondido cuánto cuesta.</p></div>
+      </div>
+    </div>
+    <div class="grow" style="min-height:10pt"></div>
+    <div class="dgc">
+      <div class="dgbox dg">
+<svg viewBox="0 20 1120 562" role="img" aria-labelledby="dg0-t">
+            <title id="dg0-t">Arquitectura anterior: Healthie como portal de la clienta, a la izquierda; el orquestador de EPI10 en el centro; Odoo a la derecha; TellmeGen aparte</title>
+            <defs>
+              <marker id="a0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0,0 L10,5 L0,10 z"/></marker>
+              <marker id="a0m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah-m" d="M0,0 L10,5 L0,10 z"/></marker>
+            </defs>
+            <rect class="bd" x="372" y="116" width="718" height="358" rx="14"/>
+            <text class="bd-l" x="580" y="142">SERVIDOR DE EPI10 · UE</text>
+            <text class="cloud-l" x="30" y="140">NUBE DE HEALTHIE · EE. UU.</text>
+            <rect class="pill" x="180" y="34" width="160" height="40" rx="20"/><text class="p mid" x="260" y="59">Clienta</text>
+            <path class="ln" d="M260,74 V146" marker-end="url(#a0)"/>
+            <rect class="pill" x="440" y="34" width="240" height="40" rx="20"/><text class="p mid" x="560" y="59">Web NutriWell · pago</text>
+            <path class="ln" d="M560,74 V166" marker-end="url(#a0)"/>
+            <rect class="pill" x="835" y="34" width="160" height="40" rx="20"/><text class="p mid" x="915" y="59">Equipo EPI10</text>
+            <path class="ln" d="M915,74 V166" marker-end="url(#a0)"/>
+            <rect class="n-hl" x="30" y="150" width="290" height="300" rx="14"/>
+            <text class="t t-hl" x="54" y="188">Healthie</text>
+            <text class="s" x="54" y="210">Portal de la clienta</text>
+            <g class="i"><circle class="dot" cx="58" cy="246" r="4"/><text x="72" y="251">Mensajes y avisos</text>
+            <circle class="dot" cx="58" cy="276" r="4"/><text x="72" y="281">Consentimiento</text>
+            <circle class="dot" cx="58" cy="306" r="4"/><text x="72" y="311">Cuestionarios de hábitos</text>
+            <circle class="dot" cx="58" cy="336" r="4"/><text x="72" y="341">Citas</text>
+            <circle class="dot" cx="58" cy="366" r="4"/><text x="72" y="371">Informe final</text>
+            <circle class="dot" cx="58" cy="396" r="4"/><text x="72" y="401">App móvil</text></g>
+            <rect class="lose" x="30" y="466" width="212" height="28" rx="14"/><text class="lose-t" x="136" y="485" text-anchor="middle">LO QUE PERDEMOS</text>
+            <path class="ln" d="M326,300 H404" marker-start="url(#a0)" marker-end="url(#a0)"/>
+            <text class="lab" x="365" y="284">API</text><text class="lab" x="365" y="324">de pago</text>
+            <rect class="n-orq" x="410" y="170" width="300" height="262" rx="14"/>
+            <text class="tw" x="434" y="206">Orquestador EPI10</text>
+            <text class="sw" x="434" y="227">Capa de software propia de EPI10</text>
+            <rect class="chip chip-acc" x="434" y="246" width="252" height="34" rx="8"/><text class="cw" x="450" y="268">Generador de informes</text>
+            <rect class="chip" x="434" y="288" width="252" height="34" rx="8"/><text class="cw" x="450" y="310">Casos y estados de cada clienta</text>
+            <rect class="chip" x="434" y="330" width="252" height="34" rx="8"/><text class="cw" x="450" y="352">Automatizaciones y avisos</text>
+            <rect class="chip" x="434" y="372" width="252" height="34" rx="8"/><text class="cw" x="450" y="394">Conexión con el pago</text>
+            <path class="ln" d="M716,300 H764" marker-start="url(#a0)" marker-end="url(#a0)"/>
+            <rect class="n-odoo" x="770" y="170" width="290" height="230" rx="14"/>
+            <text class="t t-odoo" x="794" y="208">Odoo</text>
+            <text class="s" x="794" y="230">Back office de operaciones</text>
+            <g class="i"><circle class="dot" cx="798" cy="266" r="4"/><text x="812" y="271">Caso de cada clienta</text>
+            <circle class="dot" cx="798" cy="296" r="4"/><text x="812" y="301">Etapas del recorrido</text>
+            <circle class="dot" cx="798" cy="326" r="4"/><text x="812" y="331">Tareas del equipo</text>
+            <circle class="dot" cx="798" cy="356" r="4"/><text x="812" y="361">Código del kit</text></g>
+            <rect class="n-tg" x="770" y="506" width="290" height="62" rx="12"/>
+            <text class="p" x="794" y="533">TellmeGen · laboratorio</text>
+            <text class="s" x="794" y="554">Fuera del sistema; resultados a mano</text>
+            <path class="ln-d" d="M770,537 H560 V438" marker-end="url(#a0m)"/>
+            <text class="lab" x="664" y="527">resultados</text>
+</svg>
+      </div>
+      <p class="cap"><strong>Arquitectura con Healthie.</strong> El orquestador, Odoo y el generador de informes siguen sirviendo tal cual. Lo que se cae es el bloque de la izquierda: el portal de la clienta entero.</p>
+    </div>
+  </div>
+  <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">03</div><div class="ln"></div></div>
+</section>
+
+<!-- 04 · QUÉ HACEMOS ESTA SEMANA -->
+<section class="page paper" data-screen-label="04 Esta semana">
+  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">03 · Esta semana</div><div class="ln"></div></div>
+  <div class="body">
+    <div class="gap6"></div><div class="kick">03 · Qué hacemos esta semana y cómo seguimos</div><div class="gap14"></div>
     <div class="h2" style="max-width:165mm">Paramos el roadmap y dedicamos la semana a investigar a fondo.</div><div class="gap10"></div>
     <p class="lead sm2">Lo asumimos como una seña de identidad: <strong>tomar el toro por los cuernos</strong> y convertir el revés en una oportunidad para que EPI10 dependa menos de terceros.</p>
     <div class="gap14"></div>
     <div class="wcard line">
-      <div class="big">2.1</div>
+      <div class="big">3.1</div>
       <div>
         <div class="lbl acc">Primera línea</div>
         <div class="tt" style="margin-top:5pt">La pieza del portal de cliente</div>
@@ -313,7 +466,7 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
     </div>
     <div class="gap10"></div>
     <div class="wcard line">
-      <div class="big">2.2</div>
+      <div class="big">3.2</div>
       <div>
         <div class="lbl acc">Segunda línea</div>
         <div class="tt" style="margin-top:5pt">La web como sistema integrado</div>
@@ -332,11 +485,11 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
       <div class="close">Sin cronómetro: <span>lo importante es decidir bien.</span></div>
     </div>
   </div>
-  <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">03</div><div class="ln"></div></div>
+  <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">04</div><div class="ln"></div></div>
 </section>
 
-<!-- 04 · CONTRAPORTADA -->
-<section class="page cover dark back" data-screen-label="04 Cierre">
+<!-- 05 · CONTRAPORTADA -->
+<section class="page cover dark back" data-screen-label="05 Cierre">
   <div class="mark-corner lg"><img src="img/skilland-mark.svg" alt=""></div>
   <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec" style="color:#fff">Cierre</div><div class="ln"></div></div>
   <div class="body">
