@@ -206,14 +206,14 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
 .trans{font-weight:500;font-size:17pt;letter-spacing:-.012em;color:var(--sky);line-height:1.2}
 
 /* v2 · progreso */
-.prow{display:grid;grid-template-columns:16mm 1fr 30mm;gap:0 6pt;align-items:center;padding:15pt 0 16pt;border-bottom:1px solid var(--rule)}
+.prow{display:grid;grid-template-columns:16mm 1fr 30mm;gap:0 6pt;align-items:center;padding:21pt 0 22pt;border-bottom:1px solid var(--rule)}
 .prow .n{font-weight:800;font-size:17pt;letter-spacing:-.02em;color:var(--accent-ink);line-height:1;align-self:start;padding-top:2pt}
-.prow .t{font-weight:700;font-size:10.6pt;color:var(--ink);letter-spacing:-.01em}
+.prow .t{font-weight:700;font-size:11.4pt;color:var(--ink);letter-spacing:-.01em}
 .prow .d{font-size:8.5pt;color:var(--body-2);margin-top:2pt;line-height:1.4}
 .prow .bar{height:5pt;border-radius:2pt;background:var(--paper-3);margin-top:7pt;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(11,27,61,.05)}
 .prow .bar i{display:block;height:100%;background:var(--accent);border-radius:2pt}
 .prow .bar.empty{background:transparent;box-shadow:inset 0 0 0 1px var(--rule-ink)}
-.prow .pc{text-align:right;font-weight:800;font-size:24pt;letter-spacing:-.035em;line-height:1;color:var(--ink);font-feature-settings:"tnum"}
+.prow .pc{text-align:right;font-weight:800;font-size:28pt;letter-spacing:-.035em;line-height:1;color:var(--ink);font-feature-settings:"tnum"}
 .prow .pc small{font-size:12pt;color:var(--accent-ink);margin-left:1pt;font-weight:700}
 .prow .pc.tbd{font-size:7.2pt;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);line-height:1.3}
 .prow.pend .t{color:var(--ink-2)}
@@ -223,64 +223,83 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
 .web .k.acc{color:var(--accent-ink)}
 .web .x{font-size:9pt;line-height:1.45;color:var(--body-2);margin-top:4pt}
 .web .x.now{color:var(--ink);font-weight:600}
-/* v2 · Healthie antes / después (artefacto_carmen) */
-.hb{background:var(--ink);border-radius:9px;padding:15pt 17pt 16pt;color:#fff}
-.hba{display:grid;grid-template-columns:1fr 9mm 1.3fr;align-items:stretch}
-.hc{border-radius:7px;padding:11pt 12pt;display:flex;flex-direction:column;gap:6pt}
-.hc.before{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
-.hl{font-size:6.9pt;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--sky)}
-.hc.after .hl{color:var(--accent)}
-.hv{font-weight:800;font-size:19pt;letter-spacing:-.03em;line-height:1;color:#fff}
-.hc p{font-size:8.3pt;line-height:1.42;color:#C9D3E8}.hc strong{color:#fff}
-.chips{display:flex;gap:5pt;flex-wrap:wrap;margin-top:auto}
-.chips span{font-size:7.4pt;font-weight:700;border-radius:999px;padding:3pt 8pt;background:var(--sky-soft);color:var(--ink)}
-.har{align-self:center;text-align:center;font-size:17pt;font-weight:700;color:var(--accent)}
-.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:5pt;align-items:end}
-.steps3>div{border-radius:6px;background:rgba(255,255,255,.08);padding:7pt 8pt;display:flex;flex-direction:column;justify-content:flex-end}
-.steps3>div:nth-child(1){min-height:34pt}.steps3>div:nth-child(2){min-height:44pt}
-.steps3>div.hot{min-height:58pt;background:var(--accent);color:var(--ink)}
-.steps3 b{font-size:13pt;font-weight:800;letter-spacing:-.02em;line-height:1.1;font-feature-settings:"tnum"}
-.steps3 span{font-size:6.9pt;line-height:1.3;opacity:.85;margin-top:2pt}
-.yr{display:grid;grid-template-columns:1.3fr 8mm 1fr;margin-top:10pt;border:1.5px solid var(--accent);border-radius:8px;padding:11pt 13pt;background:rgba(213,167,73,.08)}
-.yr .hl{color:var(--accent)}
-.yv{font-weight:800;font-size:20pt;letter-spacing:-.03em;line-height:1;color:#fff;margin-top:5pt;font-feature-settings:"tnum"}
-.yv small{font-size:10pt;font-weight:600;color:#A8B6D0;margin-left:2pt;letter-spacing:0}
-.yr .pend .yv{color:#A8B6D0}
-.yr p{font-size:8pt;line-height:1.42;color:#C9D3E8;margin-top:5pt}
-.yplus{align-self:center;text-align:center;font-size:17pt;font-weight:700;color:var(--accent)}
-/* v2 · diagrama (artefacto_carmen, colores Skilland) */
-.dgc{background:var(--ink);border-radius:9px;padding:11pt 11pt 12pt}
-.dgbox{background:var(--paper-2);border-radius:6px;padding:6pt}
-.dgc svg{display:block;width:100%;height:auto}
-.dgc .cap{font-size:8.4pt;line-height:1.45;color:#C9D3E8;margin-top:9pt;padding:0 4pt}
-.dgc .cap strong{color:#fff}
-.dg{--hl:#2D6BA5;--hl-soft:#E3EDF6;--odoo:#714B67;--odoo-soft:#F3ECF1;--orq:#0B1B3D;--font:"Sora",sans-serif}
-.dg .bd{fill:none;stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:6 5}
-.dg .bd-l{font:800 11px var(--font);letter-spacing:.14em;fill:var(--ink-2)}
-.dg .cloud-l{font:800 11px var(--font);letter-spacing:.14em;fill:var(--hl)}
-.dg .n-hl{fill:var(--hl-soft);stroke:var(--hl);stroke-width:2.5}
-.dg .n-odoo{fill:var(--odoo-soft);stroke:var(--odoo);stroke-width:2}
-.dg .n-orq{fill:var(--orq)}
-.dg .n-tg{fill:#fff;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:5 4}
-.dg .pill{fill:#fff;stroke:var(--ink-2);stroke-width:1.5}
-.dg .t{font:700 20px var(--font);fill:var(--ink);letter-spacing:-.01em}
-.dg .t-hl{fill:#1F4171}.dg .t-odoo{fill:var(--odoo)}
-.dg .s{font:500 12.5px var(--font);fill:var(--muted)}
-.dg .i{font:500 14px var(--font);fill:var(--body)}
-.dg .dot{fill:var(--accent)}
-.dg .tw{font:700 20px var(--font);fill:#fff}
-.dg .sw{font:500 12.5px var(--font);fill:#B6C4DE}
-.dg .chip{fill:rgba(255,255,255,.08);stroke:rgba(255,255,255,.22)}
-.dg .chip-acc{fill:rgba(213,167,73,.16);stroke:#D5A749}
-.dg .cw{font:500 13.5px var(--font);fill:#fff}
-.dg .p{font:600 14px var(--font);fill:var(--ink)}
-.dg .ln{fill:none;stroke:var(--ink-2);stroke-width:2}
-.dg .ln-d{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-dasharray:5 4}
-.dg .ah{fill:var(--ink-2)}.dg .ah-m{fill:var(--muted)}
-.dg .lab{font:600 11.5px var(--font);fill:var(--muted);text-anchor:middle;paint-order:stroke;stroke:var(--paper-2);stroke-width:5px;stroke-linejoin:round}
-.dg .lose{fill:#D5A749}
-.dg .lose-t{font:800 11px var(--font);letter-spacing:.12em;fill:#0B1B3D}
-.dg .mid{text-anchor:middle}
+.note{background:#fff;border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:6px;padding:11pt 14pt;font-size:8.6pt;line-height:1.45;color:var(--body)}
+/* v3 · tarjetas de cambio (estilo tarjetas Proveedor / Entidad, CICCP) */
+.sub{display:flex;align-items:baseline;gap:9pt;padding-bottom:7pt;border-bottom:1px solid var(--rule-ink)}
+.sub b{font-weight:800;font-size:15pt;letter-spacing:-.02em;color:var(--accent-ink);font-feature-settings:"tnum"}
+.sub span{font-weight:700;font-size:11pt;color:var(--ink);letter-spacing:-.01em}
+.cc{background:#fff;border:1px solid var(--rule);border-top:3px solid var(--accent);border-radius:8px;padding:14pt 15pt 15pt;display:flex;flex-direction:column}
+.cc.navy{border-top-color:var(--ink)}
+.cc .ttl{font-weight:700;font-size:19pt;letter-spacing:-.025em;line-height:1.05;color:var(--ink);margin-top:6pt}
+.cc .hr{height:1px;background:var(--rule);margin:11pt 0 10pt}
+.cc p{font-size:9pt;line-height:1.5;color:var(--body)}
+.chips{display:flex;gap:5pt;flex-wrap:wrap;margin-top:auto;padding-top:11pt}
+.chips span{font-size:7.6pt;font-weight:700;border-radius:999px;padding:3.5pt 9pt;background:var(--sky-soft);color:var(--ink)}
+.ba2{display:grid;grid-template-columns:1fr 9mm 1.25fr;align-items:stretch}
+.ba2 .ar2{align-self:center;text-align:center;font-size:17pt;font-weight:700;color:var(--accent-ink)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:5pt;align-items:end}
+.tiles>div{border-radius:6px;background:var(--paper-2);padding:8pt 9pt;display:flex;flex-direction:column;justify-content:flex-end}
+.tiles>div:nth-child(1){min-height:40pt}.tiles>div:nth-child(2){min-height:52pt}
+.tiles>div.hot{min-height:68pt;background:var(--accent)}
+.tiles b{font-size:14pt;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--ink);font-feature-settings:"tnum"}
+.tiles span{font-size:7.2pt;line-height:1.3;color:var(--body-2);margin-top:3pt}
+.tiles .hot span{color:var(--ink)}
+.cc .after-note{margin-top:10pt;font-size:8.6pt;color:var(--body-2)}
+.yr2{display:grid;grid-template-columns:1.25fr 9mm 1fr;background:#fff;border:1.5px solid var(--accent);border-radius:8px;padding:14pt 16pt}
+.yr2 .yv{font-weight:800;font-size:24pt;letter-spacing:-.035em;line-height:1;color:var(--ink);margin-top:6pt;font-feature-settings:"tnum"}
+.yr2 .yv small{font-size:11pt;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:2pt}
+.yr2 .pend .yv{color:var(--muted)}
+.yr2 p{font-size:8.5pt;line-height:1.45;color:var(--body-2);margin-top:6pt}
+.yr2 .plus{align-self:center;text-align:center;font-size:17pt;font-weight:700;color:var(--accent-ink)}
+.web2{display:grid;grid-template-columns:1fr 9mm 1fr;align-items:stretch}
+.web2 .ar2{align-self:center;text-align:center;font-size:17pt;font-weight:700;color:var(--accent-ink)}
+/* v3 · cronología vertical */
+.vt{border-top:2px solid var(--ink)}
+.vt .r{display:grid;grid-template-columns:30mm 10mm 1fr;align-items:start;padding:22pt 0;border-bottom:1px solid var(--rule);position:relative}
+.vt .dd{font-weight:800;font-size:19pt;letter-spacing:-.025em;color:var(--ink);line-height:1}
+.vt .dd small{display:block;font-size:6.9pt;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-top:5pt}
+.vt .dt{width:11pt;height:11pt;border-radius:50%;background:var(--ink);margin-top:3pt}
+.vt .r.off .dd{color:var(--muted)}.vt .r.off .dt{background:transparent;box-shadow:inset 0 0 0 2px var(--muted)}
+.vt .r.now .dd{color:var(--accent-ink)}.vt .r.now .dt{background:var(--accent);box-shadow:0 0 0 3pt var(--accent-soft)}
+.vt .t{font-weight:700;font-size:12pt;color:var(--ink);letter-spacing:-.01em}
+.vt .d{font-size:9.3pt;color:var(--body-2);margin-top:3pt;line-height:1.45}
+.ptr{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.ptr .cc{padding:13pt 15pt}
+.ptr .pn{font-weight:800;font-size:22pt;letter-spacing:-.03em;color:var(--accent-ink);line-height:1}
+.ptr .pt2{font-weight:700;font-size:11.5pt;color:var(--ink);margin-top:7pt}
+.ptr p{font-size:8.6pt;color:var(--body-2);margin-top:3pt}
+/* v3 · diagrama redibujado, paleta de página clara */
+.dgw{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:14pt 13pt 13pt}
+.dgw svg{display:block;width:100%;height:auto}
+.dgw .cap{font-size:8.8pt;line-height:1.5;color:var(--body);margin-top:12pt;padding-top:10pt;border-top:1px solid var(--rule)}
+.legend2{display:flex;gap:16pt;font-size:7.8pt;font-weight:600;color:var(--body-2);margin-top:9pt}
+.legend2 i{display:inline-block;width:10pt;height:10pt;border-radius:3pt;margin-right:5pt;vertical-align:-1.5pt}
+.arq{font-family:"Sora",sans-serif}
+.arq .pill{fill:#fff;stroke:var(--ink);stroke-width:1.6}
+.arq .pt{font-weight:600;font-size:18px;fill:var(--ink)}
+.arq .mid{text-anchor:middle}
+.arq .ln{fill:none;stroke:var(--ink);stroke-width:2.2}
+.arq .ln-d{fill:none;stroke:var(--ink-2);stroke-width:1.8;stroke-dasharray:6 5}
+.arq .ah{fill:var(--ink)}.arq .ahm{fill:var(--ink-2)}
+.arq .zone{font-weight:800;font-size:13.5px;letter-spacing:.14em;fill:var(--ink-2)}
+.arq .srv{fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:7 6}
+.arq .n-hl{fill:#D6E8F2;stroke:var(--ink);stroke-width:1.6}
+.arq .n-orq{fill:var(--ink)}
+.arq .n-odoo{fill:#fff;stroke:var(--ink);stroke-width:1.6}
+.arq .n-tg{fill:var(--paper-2);stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:6 5}
+.arq .tt{font-weight:700;font-size:27px;letter-spacing:-.02em;fill:var(--ink)}
+.arq .st{font-weight:500;font-size:14.5px;fill:var(--body-2)}
+.arq .hair{stroke:rgba(11,27,61,.18);stroke-width:1.2}
+.arq .it{font-weight:500;font-size:17.5px;fill:var(--body)}
+.arq .dot{fill:var(--accent)}
+.arq .tw{font-weight:700;font-size:25px;letter-spacing:-.02em;fill:#fff}
+.arq .sw{font-weight:500;font-size:14px;fill:#B6C4DE}
+.arq .chip{fill:rgba(255,255,255,.07);stroke:rgba(255,255,255,.28);stroke-width:1.2}
+.arq .chip.acc{fill:rgba(213,167,73,.18);stroke:var(--accent);stroke-width:1.6}
+.arq .cw{font-weight:500;font-size:15.5px;fill:#fff}
+.arq .lab{font-weight:600;font-size:14px;fill:var(--ink-2)}
+.arq .lose{fill:var(--accent)}
+.arq .lose-t{font-weight:800;font-size:14px;letter-spacing:.13em;fill:var(--ink)}
 </style>
 </head>
 <body>
@@ -303,7 +322,7 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
     <p class="lg" style="max-width:145mm;color:#DCE3F2;font-size:12pt;line-height:1.45">Lo que ha cambiado en el proyecto, qué hacemos esta semana y cómo seguimos.</p>
     <div class="grow"></div>
     <div class="g3" style="max-width:150mm;gap:0 6mm">
-      <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:9pt"><div class="lbl">Avance</div><div style="font-weight:700;font-size:22pt;color:#fff;margin-top:7pt">60 %</div><div style="font-size:7.6pt;color:#A8B6D0;margin-top:3pt">avance aproximado</div></div>
+      <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:9pt"><div class="lbl">Construido</div><div style="font-weight:700;font-size:22pt;color:#fff;margin-top:7pt">6</div><div style="font-size:7.6pt;color:#A8B6D0;margin-top:3pt">piezas construidas</div></div>
       <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:9pt"><div class="lbl">Esta semana</div><div style="font-weight:700;font-size:22pt;color:#fff;margin-top:7pt">2</div><div style="font-size:7.6pt;color:#A8B6D0;margin-top:3pt">líneas de trabajo</div></div>
       <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:9pt"><div class="lbl">Dossier</div><div style="font-weight:700;font-size:22pt;color:#fff;margin-top:7pt">21 oct</div><div style="font-size:7.6pt;color:#A8B6D0;margin-top:3pt">entrega del dossier</div></div>
     </div>
@@ -317,134 +336,183 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
   </div>
 </section>
 
-<!-- 02 · DÓNDE ESTAMOS Y QUÉ PASÓ -->
+<!-- 02 · DÓNDE ESTAMOS · PIEZAS -->
 <section class="page paper" data-screen-label="02 Dónde estamos">
   <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">01 · Dónde estamos</div><div class="ln"></div></div>
   <div class="body">
-    <div class="gap6"></div><div class="kick">01 · Dónde estamos y qué pasó</div><div class="gap14"></div>
-    <div class="h2" style="max-width:160mm">Casi un 60 % avanzado, y dos noticias ajenas al proyecto.</div><div class="gap10"></div>
-    <p class="lead sm2">Hasta ahora hemos avanzado casi un 60 % del proyecto. La semana pasada se juntaron dos noticias que <strong>no dependen ni de vosotros ni de nosotros</strong>.</p>
-    <div class="gap16"></div>
+    <div class="gap6"></div><div class="kick">01 · Dónde estamos</div><div class="gap14"></div>
+    <div class="h2" style="max-width:160mm">Lo construido hasta hoy, pieza a pieza.</div><div class="gap10"></div>
+    <p class="lead sm2">Así estaba el proyecto cuando llegaron las dos noticias: <strong>lo que ya funciona</strong> y lo que teníamos mapeado.</p>
+    <div class="gap20"></div>
+    <div class="h4">Grado de avance de cada pieza</div><div class="gap8"></div>
     <div class="nrows">
       <div class="prow"><div class="n">01</div><div><div class="t">El orquestador</div><div class="bar"><i style="width:100%"></i></div></div><div class="pc">100<small>%</small></div></div>
       <div class="prow"><div class="n">02</div><div><div class="t">El generador de borradores de informe</div><div class="bar"><i style="width:60%"></i></div></div><div class="pc">60<small>%</small></div></div>
       <div class="prow"><div class="n">03</div><div><div class="t">Las automatizaciones con Odoo</div><div class="bar"><i style="width:90%"></i></div></div><div class="pc">90<small>%</small></div></div>
-      <div class="prow"><div class="n">04</div><div><div class="t">Las automatizaciones con Healthie</div><div class="d">Hechas sobre la conexión que Healthie acaba de retirar.</div><div class="bar"><i style="width:85%"></i></div></div><div class="pc">85<small>%</small></div></div>
-      <div class="prow pend"><div class="n">05</div><div><div class="t">El portal de la clienta</div><div class="d">Era la pieza de Healthie; se estudia esta semana.</div><div class="bar empty"></div></div><div class="pc tbd">Pieza a<br>sustituir</div></div>
+      <div class="prow"><div class="n">04</div><div><div class="t">Las automatizaciones con Healthie</div><div class="d">Sobre la conexión que Healthie acaba de retirar.</div><div class="bar"><i style="width:85%"></i></div></div><div class="pc">85<small>%</small></div></div>
+      <div class="prow"><div class="n">05</div><div><div class="t">El portal de la clienta en Healthie</div><div class="d">Personalizado con la marca EPI10.</div><div class="bar"><i style="width:80%"></i></div></div><div class="pc">80<small>%</small></div></div>
+      <div class="prow"><div class="n">06</div><div><div class="t">La pasarela de pago con Stripe</div><div class="bar"><i style="width:100%"></i></div></div><div class="pc">100<small>%</small></div></div>
     </div>
     <div class="grow" style="min-height:14pt"></div>
-    <div class="h4">Cronología · octubre de 2026</div><div class="gap14"></div>
-    <div class="tl">
-      <div class="ev"><div class="dot"></div><div class="dd">Lun 5</div><div class="tx">Escribís a Healthie.</div></div>
-      <div class="ev"><div class="dot"></div><div class="dd">Mié 7</div><div class="tx">Healthie confirma las nuevas condiciones.</div></div>
-      <div class="ev"><div class="dot"></div><div class="dd">Jue 8</div><div class="tx">El proveedor de la web se cae. Convocamos reunión.</div></div>
-      <div class="ev off"><div class="dot"></div><div class="dd">Lun 12</div><div class="tx">Festivo.</div></div>
-      <div class="ev now"><div class="dot"></div><div class="dd">Mié 14</div><div class="tx">Nos vemos y lo alineamos.</div></div>
-    </div>
-    <div class="grow" style="min-height:14pt"></div>
-    <div class="wcard web" style="padding:16pt 17pt 17pt">
-      <div><div class="lbl acc">La otra noticia</div><div class="h3" style="margin-top:5pt">Web de EPI10</div></div>
-      <div><div class="k">Antes</div><div class="x">La llevaba un proveedor externo.</div></div>
-      <div><div class="k acc">Ahora</div><div class="x now">El proveedor se ha caído del proyecto. La pieza queda sin cubrir.</div></div>
-    </div>
+    <div class="note" style="font-size:9.2pt;padding:13pt 16pt"><strong>Lo que ya funciona sigue sirviendo.</strong> El orquestador, Odoo y el generador de informes no dependen de Healthie; lo que cambia es la pieza del portal de la clienta.</div>
   </div>
   <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">02</div><div class="ln"></div></div>
 </section>
 
-<!-- 03 · QUÉ PASÓ CON HEALTHIE -->
-<section class="page paper" data-screen-label="03 Healthie">
-  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">02 · Healthie</div><div class="ln"></div></div>
+<!-- 03 · DÓNDE ESTAMOS · ARQUITECTURA -->
+<section class="page paper" data-screen-label="03 Arquitectura">
+  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">01 · Dónde estamos</div><div class="ln"></div></div>
   <div class="body">
-    <div class="gap6"></div><div class="kick">02 · Qué pasó con Healthie</div><div class="gap14"></div>
-    <div class="h2" style="max-width:165mm">Healthie sacó la conexión de su plan y la convirtió en un añadido de pago.</div><div class="gap10"></div>
-    <p class="lead sm2" style="font-size:10.4pt">La automatización del proyecto se apoya en una conexión (API) con la que nuestro sistema da de alta a cada clienta, le asigna sus formularios y le entrega el informe sin trabajo manual. Esa conexión venía incluida. <strong>Dejó de estarlo.</strong></p>
-    <div class="gap14"></div>
-    <div class="hb">
-      <div class="hba">
-        <div class="hc before">
-          <div class="hl">Antes · hasta el verano de 2026</div>
-          <div class="hv">API incluida</div>
-          <p>Venía dentro del <strong>plan Group</strong> que contrató EPI10, sin coste añadido. La probamos en verano y funcionaba.</p>
-          <div class="chips"><span>Plan Group</span><span>API sin coste extra</span></div>
-        </div>
-        <div class="har">→</div>
-        <div class="hc after" style="padding:11pt 0 0">
-          <div class="hl">Después · desde septiembre</div>
-          <div class="hv">API de pago</div>
-          <div class="steps3">
-            <div><b>475&nbsp;$</b><span>al mes · año 1</span></div>
-            <div><b>950&nbsp;$</b><span>al mes · año 2</span></div>
-            <div class="hot"><b>1.900&nbsp;$</b><span>al mes · año 3 y siguientes</span></div>
-          </div>
-          <p>Como añadido, <strong>además del plan Group</strong>. O dentro del plan <strong>Enterprise</strong>, sin precio público.</p>
-        </div>
-      </div>
-      <div class="yr">
-        <div><div class="hl">Al año · API de pago</div><div class="yv">≈ 22.800&nbsp;$<small>/año</small></div><p>A partir del tercer año (1.900&nbsp;$ × 12). Antes, unos 5.700&nbsp;$ el primero y 11.400&nbsp;$ el segundo. Siempre además del plan Group.</p></div>
-        <div class="yplus">+</div>
-        <div class="pend"><div class="hl">Además · marca blanca</div><div class="yv">Por cotizar</div><p>La app con la marca de EPI10 en Google Play. Healthie todavía no ha respondido cuánto cuesta.</p></div>
-      </div>
-    </div>
-    <div class="grow" style="min-height:10pt"></div>
-    <div class="dgc">
-      <div class="dgbox dg">
-<svg viewBox="0 20 1120 562" role="img" aria-labelledby="dg0-t">
-            <title id="dg0-t">Arquitectura anterior: Healthie como portal de la clienta, a la izquierda; el orquestador de EPI10 en el centro; Odoo a la derecha; TellmeGen aparte</title>
-            <defs>
-              <marker id="a0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0,0 L10,5 L0,10 z"/></marker>
-              <marker id="a0m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah-m" d="M0,0 L10,5 L0,10 z"/></marker>
-            </defs>
-            <rect class="bd" x="372" y="116" width="718" height="358" rx="14"/>
-            <text class="bd-l" x="580" y="142">SERVIDOR DE EPI10 · UE</text>
-            <text class="cloud-l" x="30" y="140">NUBE DE HEALTHIE · EE. UU.</text>
-            <rect class="pill" x="180" y="34" width="160" height="40" rx="20"/><text class="p mid" x="260" y="59">Clienta</text>
-            <path class="ln" d="M260,74 V146" marker-end="url(#a0)"/>
-            <rect class="pill" x="440" y="34" width="240" height="40" rx="20"/><text class="p mid" x="560" y="59">Web NutriWell · pago</text>
-            <path class="ln" d="M560,74 V166" marker-end="url(#a0)"/>
-            <rect class="pill" x="835" y="34" width="160" height="40" rx="20"/><text class="p mid" x="915" y="59">Equipo EPI10</text>
-            <path class="ln" d="M915,74 V166" marker-end="url(#a0)"/>
-            <rect class="n-hl" x="30" y="150" width="290" height="300" rx="14"/>
-            <text class="t t-hl" x="54" y="188">Healthie</text>
-            <text class="s" x="54" y="210">Portal de la clienta</text>
-            <g class="i"><circle class="dot" cx="58" cy="246" r="4"/><text x="72" y="251">Mensajes y avisos</text>
-            <circle class="dot" cx="58" cy="276" r="4"/><text x="72" y="281">Consentimiento</text>
-            <circle class="dot" cx="58" cy="306" r="4"/><text x="72" y="311">Cuestionarios de hábitos</text>
-            <circle class="dot" cx="58" cy="336" r="4"/><text x="72" y="341">Citas</text>
-            <circle class="dot" cx="58" cy="366" r="4"/><text x="72" y="371">Informe final</text>
-            <circle class="dot" cx="58" cy="396" r="4"/><text x="72" y="401">App móvil</text></g>
-            <rect class="lose" x="30" y="466" width="212" height="28" rx="14"/><text class="lose-t" x="136" y="485" text-anchor="middle">LO QUE PERDEMOS</text>
-            <path class="ln" d="M326,300 H404" marker-start="url(#a0)" marker-end="url(#a0)"/>
-            <text class="lab" x="365" y="284">API</text><text class="lab" x="365" y="324">de pago</text>
-            <rect class="n-orq" x="410" y="170" width="300" height="262" rx="14"/>
-            <text class="tw" x="434" y="206">Orquestador EPI10</text>
-            <text class="sw" x="434" y="227">Capa de software propia de EPI10</text>
-            <rect class="chip chip-acc" x="434" y="246" width="252" height="34" rx="8"/><text class="cw" x="450" y="268">Generador de informes</text>
-            <rect class="chip" x="434" y="288" width="252" height="34" rx="8"/><text class="cw" x="450" y="310">Casos y estados de cada clienta</text>
-            <rect class="chip" x="434" y="330" width="252" height="34" rx="8"/><text class="cw" x="450" y="352">Automatizaciones y avisos</text>
-            <rect class="chip" x="434" y="372" width="252" height="34" rx="8"/><text class="cw" x="450" y="394">Conexión con el pago</text>
-            <path class="ln" d="M716,300 H764" marker-start="url(#a0)" marker-end="url(#a0)"/>
-            <rect class="n-odoo" x="770" y="170" width="290" height="230" rx="14"/>
-            <text class="t t-odoo" x="794" y="208">Odoo</text>
-            <text class="s" x="794" y="230">Back office de operaciones</text>
-            <g class="i"><circle class="dot" cx="798" cy="266" r="4"/><text x="812" y="271">Caso de cada clienta</text>
-            <circle class="dot" cx="798" cy="296" r="4"/><text x="812" y="301">Etapas del recorrido</text>
-            <circle class="dot" cx="798" cy="326" r="4"/><text x="812" y="331">Tareas del equipo</text>
-            <circle class="dot" cx="798" cy="356" r="4"/><text x="812" y="361">Código del kit</text></g>
-            <rect class="n-tg" x="770" y="506" width="290" height="62" rx="12"/>
-            <text class="p" x="794" y="533">TellmeGen · laboratorio</text>
-            <text class="s" x="794" y="554">Fuera del sistema; resultados a mano</text>
-            <path class="ln-d" d="M770,537 H560 V438" marker-end="url(#a0m)"/>
-            <text class="lab" x="664" y="527">resultados</text>
+    <div class="gap6"></div><div class="kick">01 · Dónde estamos</div><div class="gap14"></div>
+    <div class="h2" style="max-width:160mm">Esto es lo que teníamos mapeado.</div><div class="gap10"></div>
+    <p class="lead sm2">El sistema tiene un centro propio de EPI10, el orquestador, que conecta el pago, el portal de la clienta y Odoo, y que genera los informes. <strong>Healthie ponía la cara:</strong> todo lo que la clienta ve y hace.</p>
+    <div class="grow" style="min-height:12pt"></div>
+    <div class="dgw">
+<svg viewBox="0 0 1000 905" role="img" aria-labelledby="arq-t" class="arq">
+  <title id="arq-t">Arquitectura con Healthie: el portal de la clienta en Healthie a la izquierda; el orquestador de EPI10 y Odoo dentro del servidor de EPI10 en la UE; TellmeGen aparte</title>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path class="ah" d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="arm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path class="ahm" d="M0,0 L10,5 L0,10 z"/></marker>
+  </defs>
+  <!-- actores -->
+  <rect class="pill" x="48" y="14" width="220" height="52" rx="26"/><text class="pt mid" x="158" y="47">Clienta</text>
+  <rect class="pill" x="405" y="14" width="270" height="52" rx="26"/><text class="pt mid" x="540" y="47">Web NutriWell · pago</text>
+  <rect class="pill" x="734" y="14" width="220" height="52" rx="26"/><text class="pt mid" x="844" y="47">Equipo EPI10</text>
+  <path class="ln" d="M158,66 V178" marker-end="url(#ar)"/>
+  <path class="ln" d="M540,66 V218" marker-end="url(#ar)"/>
+  <path class="ln" d="M844,66 V218" marker-end="url(#ar)"/>
+  <!-- zonas -->
+  <text class="zone hlz" x="16" y="752">NUBE DE HEALTHIE · EE. UU.</text>
+  <rect class="srv" x="384" y="128" width="600" height="610" rx="16"/>
+  <text class="zone" x="964" y="718" text-anchor="end">SERVIDOR DE EPI10 · UE</text>
+  <!-- Healthie -->
+  <rect class="n-hl" x="16" y="182" width="290" height="470" rx="14"/>
+  <text class="tt" x="42" y="226">Healthie</text>
+  <text class="st" x="42" y="254">Portal de la clienta</text>
+  <line class="hair" x1="42" y1="276" x2="280" y2="276"/>
+  <g class="it">
+    <circle class="dot" cx="48" cy="314" r="5"/><text x="66" y="320">Mensajes y avisos</text>
+    <circle class="dot" cx="48" cy="368" r="5"/><text x="66" y="374">Consentimiento</text>
+    <circle class="dot" cx="48" cy="422" r="5"/><text x="66" y="428">Cuestionarios de hábitos</text>
+    <circle class="dot" cx="48" cy="476" r="5"/><text x="66" y="482">Citas</text>
+    <circle class="dot" cx="48" cy="530" r="5"/><text x="66" y="536">Informe final</text>
+    <circle class="dot" cx="48" cy="584" r="5"/><text x="66" y="590">App móvil</text>
+  </g>
+  <rect class="lose" x="16" y="672" width="250" height="40" rx="20"/><text class="lose-t mid" x="141" y="698">LO QUE PERDEMOS</text>
+  <!-- API -->
+  <path class="ln" d="M310,410 H394" marker-start="url(#ar)" marker-end="url(#ar)"/>
+  <text class="lab mid" x="347" y="392">API</text>
+  <text class="lab mid" x="347" y="438">de pago</text>
+  <!-- Orquestador -->
+  <rect class="n-orq" x="400" y="222" width="282" height="400" rx="14"/>
+  <text class="tw" x="420" y="266">Orquestador EPI10</text>
+  <text class="sw" x="420" y="294">Capa de software propia de EPI10</text>
+  <rect class="chip acc" x="420" y="324" width="248" height="54" rx="9"/><text class="cw" x="438" y="358">Generador de informes</text>
+  <rect class="chip" x="420" y="392" width="248" height="54" rx="9"/><text class="cw" x="438" y="426">Casos y estados</text>
+  <rect class="chip" x="420" y="460" width="248" height="54" rx="9"/><text class="cw" x="438" y="494">Automatizaciones y avisos</text>
+  <rect class="chip" x="420" y="528" width="248" height="54" rx="9"/><text class="cw" x="438" y="562">Conexión con el pago</text>
+  <!-- Odoo -->
+  <path class="ln" d="M686,410 H716" marker-start="url(#ar)" marker-end="url(#ar)"/>
+  <rect class="n-odoo" x="720" y="222" width="248" height="400" rx="14"/>
+  <text class="tt" x="744" y="266">Odoo</text>
+  <text class="st" x="744" y="294">Back office de operaciones</text>
+  <line class="hair" x1="744" y1="316" x2="944" y2="316"/>
+  <g class="it">
+    <circle class="dot" cx="750" cy="354" r="5"/><text x="768" y="360">Caso de cada clienta</text>
+    <circle class="dot" cx="750" cy="408" r="5"/><text x="768" y="414">Etapas del recorrido</text>
+    <circle class="dot" cx="750" cy="462" r="5"/><text x="768" y="468">Tareas del equipo</text>
+    <circle class="dot" cx="750" cy="516" r="5"/><text x="768" y="522">Código del kit</text>
+  </g>
+  <!-- TellmeGen -->
+  <rect class="n-tg" x="620" y="786" width="344" height="100" rx="12"/>
+  <text class="pt" x="646" y="828">TellmeGen · laboratorio</text>
+  <text class="st" x="646" y="858">Fuera del sistema; resultados a mano</text>
+  <path class="ln-d" d="M620,836 H540 V628" marker-end="url(#arm)"/>
+  <text class="lab" x="554" y="780">resultados</text>
 </svg>
-      </div>
+
+      <div class="legend2"><span><i style="background:var(--ink)"></i>Pieza propia de EPI10</span><span><i style="background:#fff;box-shadow:inset 0 0 0 1.5px var(--ink)"></i>Herramienta del equipo</span><span><i style="background:#D6E8F2;box-shadow:inset 0 0 0 1.5px var(--ink)"></i>Portal en Healthie</span><span><i style="background:var(--accent)"></i>Lo que perdemos</span></div>
       <p class="cap"><strong>Arquitectura con Healthie.</strong> El orquestador, Odoo y el generador de informes siguen sirviendo tal cual. Lo que se cae es el bloque de la izquierda: el portal de la clienta entero.</p>
     </div>
+    <div class="grow"></div>
   </div>
   <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">03</div><div class="ln"></div></div>
 </section>
 
-<!-- 04 · QUÉ HACEMOS ESTA SEMANA -->
-<section class="page paper" data-screen-label="04 Esta semana">
+<!-- 04 · QUÉ PASÓ · CRONOLOGÍA -->
+<section class="page paper" data-screen-label="04 Qué pasó">
+  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">02 · Qué pasó</div><div class="ln"></div></div>
+  <div class="body">
+    <div class="gap6"></div><div class="kick">02 · Qué pasó</div><div class="gap14"></div>
+    <div class="h2" style="max-width:160mm">Dos noticias que no dependen ni de vosotros ni de nosotros.</div><div class="gap10"></div>
+    <p class="lead sm2">Se juntaron la semana pasada, con cuatro días de diferencia. Lo hemos hablado y <strong>lo hemos alineado con vosotros</strong>.</p>
+    <div class="gap20"></div>
+    <div class="h4">Cronología · octubre de 2026</div><div class="gap8"></div>
+    <div class="vt">
+      <div class="r"><div class="dd">Lun 5<small>Octubre</small></div><div class="dt"></div><div><div class="t">Escribís a Healthie.</div><div class="d">Nuestras automatizaciones con Healthie empiezan a fallar.</div></div></div>
+      <div class="r"><div class="dd">Mié 7<small>Octubre</small></div><div class="dt"></div><div><div class="t">Healthie confirma las nuevas condiciones.</div><div class="d">Por escrito: la conexión pasa a ser un añadido de pago, o exige el plan Enterprise.</div></div></div>
+      <div class="r"><div class="dd">Jue 8<small>Octubre</small></div><div class="dt"></div><div><div class="t">El proveedor de la web se cae; convocamos reunión.</div><div class="d">La web de EPI10 se queda sin proveedor.</div></div></div>
+      <div class="r off"><div class="dd">Lun 12<small>Octubre</small></div><div class="dt"></div><div><div class="t" style="color:var(--muted)">Festivo.</div></div></div>
+      <div class="r now"><div class="dd">Mié 14<small>Octubre</small></div><div class="dt"></div><div><div class="t">Nos vemos y lo alineamos.</div><div class="d">Paramos el roadmap y dedicamos la semana a investigar a fondo.</div></div></div>
+    </div>
+    <div class="grow" style="min-height:16pt"></div>
+    <div class="ptr">
+      <div class="cc"><div class="pn">2.1</div><div class="pt2">Healthie</div><p>La conexión que usábamos deja de estar incluida en el plan.</p></div>
+      <div class="cc"><div class="pn">2.2</div><div class="pt2">Web de EPI10</div><p>El proveedor externo se cae del proyecto.</p></div>
+    </div>
+  </div>
+  <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">04</div><div class="ln"></div></div>
+</section>
+
+<!-- 05 · QUÉ PASÓ · HEALTHIE Y WEB -->
+<section class="page paper" data-screen-label="05 Healthie y web">
+  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">02 · Qué pasó</div><div class="ln"></div></div>
+  <div class="body">
+    <div class="gap6"></div><div class="kick">2.1 · Healthie</div><div class="gap14"></div>
+    <div class="h2" style="max-width:168mm;font-size:19.5pt">Healthie sacó de su plan la conexión que usábamos para automatizar: se nos caen las automatizaciones.</div><div class="gap10"></div>
+    <p class="sm" style="font-size:9.6pt;line-height:1.5;color:var(--body);max-width:165mm">La automatización del proyecto se apoya en una conexión (API) con la que nuestro sistema da de alta a cada clienta, le asigna sus formularios y le entrega el informe sin trabajo manual. Esa conexión venía incluida. <strong>Dejó de estarlo.</strong></p>
+    <div class="grow" style="min-height:14pt"></div>
+    <div class="ba2">
+      <div class="cc navy">
+        <div class="lbl acc">Antes · hasta el verano de 2026</div>
+        <div class="ttl">API incluida</div>
+        <div class="hr"></div>
+        <p>Venía dentro del <strong>plan Group</strong> que contrató EPI10, sin coste añadido. La probamos en verano y funcionaba.</p>
+        <div class="chips"><span>Plan Group</span><span>API sin coste extra</span></div>
+      </div>
+      <div class="ar2">→</div>
+      <div class="cc">
+        <div class="lbl acc">Después · desde septiembre</div>
+        <div class="ttl">API de pago</div>
+        <div class="hr"></div>
+        <div class="tiles">
+          <div><b>475&nbsp;$</b><span>al mes · año 1</span></div>
+          <div><b>950&nbsp;$</b><span>al mes · año 2</span></div>
+          <div class="hot"><b>1.900&nbsp;$</b><span>al mes · año 3 y siguientes</span></div>
+        </div>
+        <p class="after-note">Como añadido, <strong>además del plan Group</strong>. O dentro del plan <strong>Enterprise</strong>, sin precio público.</p>
+      </div>
+    </div>
+    <div class="grow" style="min-height:10pt;max-height:22pt"></div>
+    <div class="yr2">
+      <div><div class="lbl acc">Al año · API de pago</div><div class="yv">≈ 22.800&nbsp;$<small>/año</small></div><p>A partir del tercer año (1.900&nbsp;$ × 12). Antes, unos 5.700&nbsp;$ el primero y 11.400&nbsp;$ el segundo. Siempre además del plan Group.</p></div>
+      <div class="plus">+</div>
+      <div class="pend"><div class="lbl acc">Además · marca blanca</div><div class="yv">Por cotizar</div><p>La app con la marca de EPI10 en Google Play. Healthie no ha respondido cuánto cuesta.</p></div>
+    </div>
+    <div class="grow" style="min-height:14pt"></div>
+    <div class="kick">2.2 · Web de EPI10</div>
+    <div class="gap12"></div>
+    <div class="web2">
+      <div class="cc navy"><div class="lbl acc">Antes</div><div class="ttl">Proveedor externo</div><div class="hr"></div><p>La llevaba un proveedor externo.</p></div>
+      <div class="ar2">→</div>
+      <div class="cc"><div class="lbl acc">Ahora</div><div class="ttl">Sin cubrir</div><div class="hr"></div><p style="color:var(--ink);font-weight:600">El proveedor se ha caído del proyecto y la pieza queda sin cubrir.</p></div>
+    </div>
+  </div>
+  <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">05</div><div class="ln"></div></div>
+</section>
+
+<!-- 06 · QUÉ HACEMOS ESTA SEMANA -->
+<section class="page paper" data-screen-label="06 Esta semana">
   <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">03 · Esta semana</div><div class="ln"></div></div>
   <div class="body">
     <div class="gap6"></div><div class="kick">03 · Qué hacemos esta semana y cómo seguimos</div><div class="gap14"></div>
@@ -485,11 +553,11 @@ table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;backgrou
       <div class="close">Sin cronómetro: <span>lo importante es decidir bien.</span></div>
     </div>
   </div>
-  <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">04</div><div class="ln"></div></div>
+  <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">06</div><div class="ln"></div></div>
 </section>
 
-<!-- 05 · CONTRAPORTADA -->
-<section class="page cover dark back" data-screen-label="05 Cierre">
+<!-- 07 · CONTRAPORTADA -->
+<section class="page cover dark back" data-screen-label="07 Cierre">
   <div class="mark-corner lg"><img src="img/skilland-mark.svg" alt=""></div>
   <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec" style="color:#fff">Cierre</div><div class="ln"></div></div>
   <div class="body">
