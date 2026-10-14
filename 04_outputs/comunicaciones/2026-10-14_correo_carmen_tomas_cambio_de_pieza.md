@@ -1,6 +1,6 @@
 # Correo a Carmen (Tomás en copia) · 14 de octubre de 2026 · SKI2-286
 
-Borrador v4 para que lo envíe Raúl. Adjunto: el one-pager «Audentes fortuna iuvat» en PDF (SKI2-287).
+Borrador v4 para que lo envíe Raúl. Adjunto: la nota «Convertir un revés en una oportunidad» en PDF, 4 páginas (SKI2-287, `04_outputs/comunicaciones/nota_reves_oportunidad/convertir_un_reves_en_una_oportunidad.pdf`).
 
 Fechas verificadas en el correo de direccion@skilland.ai: Carmen escribió a Healthie el lunes 5; Healthie respondió con las nuevas condiciones el miércoles 7 (13:33); el jueves 8 (9:06) Carmen aceptó la reunión del martes 13, que ella misma movió al miércoles 14 a las 8:15. La caída del proveedor de la web no consta por correo; Raúl la sitúa el jueves 8.
 
