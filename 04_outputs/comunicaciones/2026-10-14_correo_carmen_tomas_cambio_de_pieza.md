@@ -1,57 +1,36 @@
-# Correo oficial a Carmen (Tomás en copia) · 14 de octubre de 2026 · SKI2-286
+# Correo a Carmen (Tomás en copia) · 14 de octubre de 2026 · SKI2-286
 
-Borrador para que lo envíe Raúl. Adjunto: el one-pager «Audentes fortuna iuvat» en PDF (SKI2-287).
+Borrador v2 para que lo envíe Raúl. Adjunto: el one-pager «Audentes fortuna iuvat» en PDF (SKI2-287).
+
+Fechas verificadas en el correo de direccion@skilland.ai: Carmen escribió a Healthie el lunes 5; Healthie respondió con las nuevas condiciones el miércoles 7 (13:33); el jueves 8 (9:06) Carmen aceptó la reunión del martes 13, que ella misma movió al miércoles 14 a las 8:15. La caída del proveedor de la web no consta por correo; Raúl la sitúa el jueves 8.
 
 **Para:** Carmen Sosa (EPI10 Salud)
 **CC:** Tomás · Romina Ojeda (Skilland)
-**Asunto:** EPI10 Salud · estado del proyecto, lo que ha cambiado y cómo seguimos (dossier el 21 de octubre)
+**Asunto:** EPI10 Salud · recap de estos días y la semana del plan «Audentes fortuna iuvat»
 
 ---
 
 Hola, Carmen:
 
-Te escribo para dejar por escrito, negro sobre blanco, lo que hemos hablado hoy: dónde está el proyecto, qué ha pasado en los últimos días y qué vamos a hacer de aquí al miércoles 21. Pongo a Tomás en copia para que tenga la foto completa.
+Tal y como hemos hablado esta mañana, te escribo para dejar por escrito un recap de lo que ha pasado en los últimos días y de cómo hemos alineado redirigir las horas del proyecto de esta semana hacia lo que podemos llamar la semana del plan «Audentes fortuna iuvat»: la fortuna favorece a los audaces. Pongo a Tomás en copia para que tenga la foto completa.
 
-## 1. Dónde está el proyecto
+**Dónde estamos.** Hasta ahora hemos avanzado casi un 60 % del proyecto: el orquestador está listo, el generador de borradores de informe está bastante avanzado, las automatizaciones con Odoo están ya casi todas hechas y las de Healthie también estaban casi todas hechas.
 
-El proyecto avanza cerca del 60 %. En concreto:
+**Qué pasó la semana pasada.** Se juntaron dos noticias que no dependen ni de vosotros ni de nosotros:
 
-- El orquestador, la pieza central que conecta la compra, el caso y el equipo, está listo.
-- El generador de borradores de informe está bastante avanzado.
-- Las automatizaciones con Odoo están casi todas hechas.
-- Las automatizaciones con Healthie estaban también casi todas hechas.
+- Nuestras automatizaciones con Healthie empezaron a fallar. Escribisteis a Healthie el lunes 5 y el miércoles 7 nos confirmaron por escrito que han cambiado las reglas del juego: la API con la que trabajábamos, incluida en vuestro plan cuando la probamos en verano, pasa a ser un complemento de pago aparte con un coste que sube cada año, o bien exige saltar al plan Enterprise. Con esas condiciones, Healthie deja de ser una base razonable sobre la que construir.
+- El jueves 8 el proveedor de la web de EPI10 también parece haberse caído del proyecto y os ha dejado un poco tirados.
 
-## 2. Qué pasó la semana pasada
+Entre el puente y la agenda de todos, nos hemos vuelto a ver hoy, miércoles 14, y lo hemos alineado contigo.
 
-A finales de la semana pasada se juntaron dos noticias que no dependen de nosotros ni de vosotros.
-
-**La primera.** El jueves 8 nuestras automatizaciones con Healthie empezaron a fallar. Escribimos a Healthie y ahí descubrimos que han cambiado las reglas del juego a mitad del proyecto: la API con la que trabajábamos, incluida en vuestro plan cuando la probamos en verano, ha pasado a ser un complemento de pago aparte, con un coste que sube cada año, o bien exige saltar al plan Enterprise. Con esas condiciones, Healthie deja de ser una base razonable sobre la que construir.
-
-**La segunda.** El proveedor de la web de EPI10 parece haberse caído del proyecto y os ha dejado sin esa pieza.
-
-Cronología, para que quede clara: jueves 8 detectamos el fallo y escribimos a Healthie; viernes 9 confirmamos el cambio de condiciones; el lunes 12 era festivo; el martes 13 nos reconectamos y analizamos opciones; hoy, miércoles 14, lo hemos alineado contigo.
-
-## 3. Qué vamos a hacer esta semana
-
-Hemos acordado contigo parar el roadmap tal y como lo teníamos y dedicar las horas de esta semana del proyecto a una investigación en profundidad. Es un reto que cualquier otro proveedor se tomaría con más calma. Nosotros lo asumimos como parte de nuestra forma de trabajar: tomar el toro por los cuernos y convertir una jugarreta de dos proveedores en una oportunidad para que EPI10 dependa menos de terceros.
+**Qué hemos acordado para esta semana.** Paramos el roadmap tal y como lo teníamos y asignamos las horas de esta semana del proyecto a una investigación en profundidad. Ya es bastante reto, y cualquier otro proveedor se tomaría más tiempo, pero lo asumimos como una seña de identidad nuestra: tomar el toro por los cuernos, ser un poco audaces y convertir la jugarreta de estos dos proveedores en una oportunidad para que EPI10 dependa menos de terceros.
 
 Dos líneas de trabajo:
 
-**Línea 1 · La pieza del portal de cliente.** Healthie era la mejor opción que habíamos encontrado; si ya no sirve, hay que sustituirla. Estudiaremos dos caminos y los pondremos en números:
+1. **La pieza del portal de cliente.** Healthie era la mejor opción que habíamos encontrado; si ya no sirve, hay que sustituirla. Estudiaremos dos caminos: (a) encontrar otra plataforma en el mercado, con una investigación a fondo de las alternativas, y (b) un desarrollo propio, sabiendo que todavía queda presupuesto de lo contratado. En los dos casos haremos el ejercicio de qué puede costar este cambio de pieza por nuestra parte, qué parte absorbe lo ya comprometido y qué parte no, para sentarnos a ver opciones.
+2. **En qué podemos ayudar con la web.** Aprovechando la idea del portal propio y lo que podemos aportar en la web, planteamos un sistema todo integrado, con la misma interfaz y la misma imagen de marca, sin ningún salto duro entre una pieza y otra. Para eso también necesitamos hacer números.
 
-- (a) Otra plataforma del mercado. Investigación a fondo de las alternativas, con sus condiciones y sus límites.
-- (b) Desarrollo propio, sobre una base de software libre, de forma que la pieza sea de EPI10.
-
-En ambos casos haremos el ejercicio de qué parte absorbe el presupuesto ya comprometido, qué parte no, y qué supone cada opción para el calendario.
-
-**Línea 2 · La web.** Aprovechando que hay que rehacer la web y que el portal puede ser propio, planteamos un sistema integrado: web, portal de cliente y herramientas del equipo con la misma interfaz y la misma imagen de marca, sin saltos bruscos entre una pieza y otra. También lo pondremos en números.
-
-## 4. Cómo seguimos
-
-- **Miércoles 21 de octubre:** os enviamos un dossier en profundidad con las opciones, sus costes y sus plazos, para que lo podáis procesar internamente con calma.
-- **Después:** buscamos una fecha para sentarnos todos, resolver dudas y decidir juntos cómo seguir.
-
-Hasta entonces no hay ningún cronómetro encima: lo importante es decidir bien.
+**Cómo seguimos.** Esto nos ocupa de aquí al miércoles 21. Cuando terminemos, os enviaremos un dossier en profundidad con las opciones que planteamos, para que podáis procesarlo internamente con calma. En base a eso, buscamos una fecha para sentarnos todos, seguramente unos días después, y vemos cómo seguimos adelante.
 
 Gracias por la confianza y por la conversación de hoy. Cualquier duda, aquí estamos.
 
@@ -64,7 +43,7 @@ Skilland
 
 ## Notas internas (no van en el correo)
 
-- Cifras de Healthie para quien pregunte: la API pasó de estar incluida en el plan Group a ser un add-on de 475 → 950 → 1.900 $/mes, o plan Enterprise. No van en el correo para no abrir ese melón por escrito; están en el one-pager de forma cualitativa.
+- Cifras de Healthie: la API pasó de estar incluida en el plan Group a ser un add-on de 475 → 950 → 1.900 $/mes, o plan Enterprise (correo de Mike Giuliana, 7 oct, hilo #855904). No van en el correo; en el one-pager van en cualitativo.
 - No se menciona nada de lo construido sobre OpenEMR, ni demos, ni vídeo. Se presenta como «investigación de esta semana».
 - El tramo pagado (primer pago, 2.500 €: orquestador y automatizaciones) se mantiene; lo que se sustituye es la pieza de Healthie, que era el resto del presupuesto del proyecto A.
 - Tomás: no tenemos su apellido ni su correo en el repo; los pone Raúl.
