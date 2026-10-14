@@ -1,18 +1,18 @@
 # Correo a Carmen (Tomás en copia) · 14 de octubre de 2026 · SKI2-286
 
-Borrador v5 para que lo envíe Raúl. Adjunto: la nota «Convertir un revés en una oportunidad» en PDF, 7 páginas (SKI2-287, `04_outputs/comunicaciones/nota_reves_oportunidad/convertir_un_reves_en_una_oportunidad.pdf`).
+Borrador v6 para que lo envíe Raúl. Adjunto: la nota «Convertir un revés en una oportunidad» en PDF, 7 páginas (SKI2-287, `04_outputs/comunicaciones/nota_reves_oportunidad/convertir_un_reves_en_una_oportunidad.pdf`).
 
 Fechas verificadas en el correo de direccion@skilland.ai: Carmen escribió a Healthie el lunes 5; Healthie respondió con las nuevas condiciones el miércoles 7 (13:33); el jueves 8 (9:06) Carmen aceptó la reunión del martes 13, que ella misma movió al miércoles 14 a las 8:15. La caída del proveedor de la web no consta por correo; Raúl la sitúa el jueves 8.
 
 **Para:** Carmen Sosa (EPI10 Salud)
 **CC:** Tomás · Romina Ojeda (Skilland)
-**Asunto:** EPI10 Salud · recap de estos días y plan para esta semana
+**Asunto:** EPI10 Salud · recap de estos días y qué hacemos esta semana
 
 ---
 
 Hola, Carmen:
 
-Tal y como hemos hablado esta mañana, te escribo para dejar por escrito un recap de lo que ha pasado en los últimos días y de cómo hemos alineado redirigir las horas del proyecto de esta semana hacia un plan para adaptarnos a todo lo que ha ocurrido. Pongo a Tomás en copia para que tenga la foto completa.
+Tal y como hemos hablado esta mañana, te escribo para dejar por escrito un recap de lo que ha pasado en los últimos días y de cómo hemos alineado redirigir las horas del proyecto de esta semana a mapear y cuantificar las opciones que tenemos para adaptarnos a todo lo que ha ocurrido, y así poder sentarnos todos juntos, tomar decisiones y hacer un plan. Pongo a Tomás en copia para que tenga la foto completa.
 
 Hay un proverbio romano que me gusta mucho y que, en las ocasiones en las que toca adaptarse, siempre resuena conmigo: siempre me ha acompañado y siempre me acompañará. *Audentes fortuna iuvat*, la fortuna favorece a los audaces. Está en nuestra mano, siempre lo está, convertir un revés en una oportunidad para salir más fuertes.
 
@@ -26,12 +26,12 @@ Hay un proverbio romano que me gusta mucho y que, en las ocasiones en las que to
 
 Lo hemos hablado entre ayer y hoy y lo hemos alineado contigo.
 
-**2. Dos líneas de trabajo.** Paramos el roadmap tal y como lo teníamos y asignamos las horas de esta semana del proyecto a una investigación en profundidad. Ya es bastante reto, y cualquier otro proveedor se tomaría más tiempo, pero lo asumimos como una seña de identidad nuestra: tomar el toro por los cuernos, ser un poco audaces y convertir la jugarreta de estos dos proveedores en una oportunidad para que EPI10 dependa menos de terceros.
+**2. Dos líneas de trabajo.** Paramos el roadmap tal y como lo teníamos y asignamos las horas de esta semana del proyecto a mapear y cuantificar las opciones que tenemos. No es todavía un plan: es el mapa de opciones con sus números, para que el plan lo hagamos juntos. Ya es bastante reto, y cualquier otro proveedor se tomaría más tiempo, pero lo asumimos como una seña de identidad nuestra: tomar el toro por los cuernos, ser un poco audaces y convertir la jugarreta de estos dos proveedores en una oportunidad para que EPI10 dependa menos de terceros.
 
 **2.1. La pieza del portal de cliente.** Healthie era la mejor opción que habíamos encontrado; si ya no sirve, hay que sustituirla. Estudiaremos dos caminos: (a) encontrar otra plataforma en el mercado, con una investigación a fondo de las alternativas, y (b) un desarrollo propio, sabiendo que todavía queda presupuesto de lo contratado. En los dos casos haremos el ejercicio de qué puede costar este cambio de pieza por nuestra parte, qué parte absorbe lo ya comprometido y qué parte no, para sentarnos a ver opciones.
 **2.2. En qué podemos ayudar con la web.** Aprovechando la idea del portal propio y lo que podemos aportar en la web, planteamos un sistema todo integrado, con la misma interfaz y la misma imagen de marca, sin ningún salto duro entre una pieza y otra. Para eso también necesitamos hacer números.
 
-**Cómo seguimos.** Esto nos ocupa de aquí al miércoles 21. Cuando terminemos, os enviaremos un dossier en profundidad con las opciones que planteamos, para que podáis procesarlo internamente con calma. En base a eso, buscamos una fecha para sentarnos todos, seguramente unos días después, y vemos cómo seguimos adelante juntos para construir algo incluso mejor y sobreponernos a estos dos pequeños baches, que en absoluto nos van a detener: son, como siempre, oportunidades de futuro.
+**Cómo seguimos.** Esto nos ocupa de aquí al miércoles 21. Cuando terminemos, os enviaremos un dossier en profundidad con las opciones mapeadas y cuantificadas, para que podáis procesarlo internamente con calma. En base a eso, buscamos una fecha para sentarnos todos, seguramente unos días después, tomar decisiones y hacer el plan juntos, para construir algo incluso mejor y sobreponernos a estos dos pequeños baches, que en absoluto nos van a detener: son, como siempre, oportunidades de futuro.
 
 Gracias por la confianza y por la conversación de hoy. Cualquier duda, aquí estamos.
 
