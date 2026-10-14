@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="es" class="t-gold">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convertir un revés en una oportunidad · Skilland para EPI10 Salud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap">
+<style>
+/* Base A4 · copiada de skilland-brand 1.1.1 templates/_a4.css (tema t-gold) */
+:root{
+  --ink:#0B1B3D;--ink-2:#1F4171;--ink-3:#2D6BA5;--sky:#4DA9D9;--sky-soft:#D6E8F2;
+  --paper:#FFFFFF;--paper-2:#F4F5F8;--paper-3:#EDEFF3;--rule:#E1E5EC;--rule-ink:rgba(11,27,61,.13);
+  --muted:#68718A;--body:#23304F;--body-2:#46506A;
+  --gold:#D5A749;--gold-ink:#8A6A1E;
+  --sans:"Sora",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --page-w:210mm;--page-h:297mm;--margin-x:20mm;--margin-y:19mm;
+}
+html.t-gold,html:not([class*="t-"]){--accent:#D5A749;--accent-ink:#8A6A1E;--accent-soft:rgba(213,167,73,.12);--accent-line:rgba(213,167,73,.4)}
+html.t-sky{--accent:#2D6BA5;--accent-ink:#1F4171;--accent-soft:rgba(45,107,165,.09);--accent-line:rgba(45,107,165,.32)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#D3D6DD;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+body{padding:30px 0}
+a{color:var(--accent-ink);text-decoration:none}a:hover{color:var(--ink)}
+.doc{display:flex;flex-direction:column;align-items:center;gap:16px}
+.page{width:var(--page-w);height:var(--page-h);background:var(--paper);position:relative;overflow:hidden;box-shadow:0 1px 0 rgba(11,27,61,.04),0 24px 48px -24px rgba(11,27,61,.18);color:var(--ink);page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto}
+/* chrome */
+.ph{position:absolute;top:13mm;left:var(--margin-x);right:var(--margin-x);display:flex;justify-content:space-between;align-items:center;font-size:8pt;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+.ph .mk{display:flex;align-items:center;gap:7px}.ph .mk img{height:12.5px;width:auto;display:block}
+.ph .mk b{font-weight:700;letter-spacing:-.01em;text-transform:none;font-size:9.5pt}
+.ph .sec{color:var(--muted);font-weight:600}
+.ph .ln{position:absolute;left:0;right:0;top:calc(100% + 6px);height:1px;background:var(--rule-ink)}
+.pf{position:absolute;bottom:11mm;left:var(--margin-x);right:var(--margin-x);display:flex;justify-content:space-between;align-items:flex-end;font-size:7.6pt;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.pf .num{color:var(--ink);font-weight:700}
+.pf .ln{position:absolute;left:0;right:0;bottom:calc(100% + 6px);height:1px;background:var(--rule-ink)}
+.body{position:absolute;top:23mm;bottom:21mm;left:var(--margin-x);right:var(--margin-x);display:flex;flex-direction:column}
+.body.nc{top:var(--margin-y);bottom:var(--margin-y)}
+.dark .ph,.dark .ph .mk b{color:#fff}.dark .ph .sec{color:var(--sky)}
+.dark .ph .ln,.dark .pf .ln{background:rgba(255,255,255,.18)}
+.dark .pf{color:rgba(255,255,255,.62)}.dark .pf .num{color:#fff}
+.whitemk{filter:brightness(1.7) saturate(.5)}
+/* type */
+.kick{display:inline-flex;align-items:center;gap:10px;font-size:8.4pt;font-weight:800;letter-spacing:.13em;text-transform:uppercase;line-height:1;color:var(--accent-ink)}
+.kick::before{content:"";width:24px;height:4px;background:var(--accent);flex:none}
+.eyebrow{font-size:8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);font-weight:700}
+.h1{font-weight:700;font-size:37pt;line-height:1;letter-spacing:-.03em}
+.h2{font-weight:700;font-size:21pt;line-height:1.08;letter-spacing:-.024em}
+.h3{font-weight:700;font-size:12.5pt;line-height:1.2;letter-spacing:-.014em}
+.h4{font-weight:700;font-size:8.4pt;line-height:1.2;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2)}
+.lead{font-size:12pt;line-height:1.42;color:var(--ink);letter-spacing:-.006em}
+p,li{font-size:9.4pt;line-height:1.5;color:var(--body);text-wrap:pretty;margin:0}
+p.sm{font-size:8.6pt;line-height:1.44;color:var(--body-2)}p.xs{font-size:7.8pt;line-height:1.4;color:var(--muted)}p.lg{font-size:10.6pt;line-height:1.5}
+strong{font-weight:700;color:var(--ink)}
+.dark .h1,.dark .h2,.dark .h3{color:#fff}.dark .h4{color:var(--sky)}.dark p,.dark li{color:#D3DBEC}.dark strong{color:#fff}.dark .kick,.dark .eyebrow{color:var(--sky)}.dark .kick::before{background:var(--accent)}
+.rule{height:1px;background:var(--rule-ink);width:100%}.dark .rule{background:rgba(255,255,255,.2)}
+.gap4{height:4pt}.gap6{height:6pt}.gap8{height:8pt}.gap10{height:10pt}.gap12{height:12pt}.gap14{height:14pt}.gap16{height:16pt}.gap20{height:20pt}.gap24{height:24pt}
+.grow{flex:1}.row{display:flex;gap:9mm}.col{flex:1}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:6mm 8mm}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm 6mm}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm 5mm}
+/* variables */
+.v{font-style:normal}
+body.vars .v{background:var(--accent-soft);box-shadow:0 0 0 1px var(--accent-line);border-radius:2px;padding:0 2px}
+body.vars .dark .v{background:rgba(77,169,217,.18);box-shadow:0 0 0 1px rgba(77,169,217,.5)}
+/* surfaces */
+.card{padding:11pt 13pt;background:#fff;border:1px solid var(--rule);border-radius:7px}
+.card.tint{background:var(--paper-2);border-color:transparent}
+.card.ink{background:var(--ink);border:none;color:#fff}
+.card.ink p,.card.ink li{color:#C9D3E8}.card.ink .h3,.card.ink .h4,.card.ink strong{color:#fff}.card.ink .ix{color:var(--sky)}
+.card.acc{background:var(--accent-soft);border-color:var(--accent-line)}
+.card .ix{font-size:7.4pt;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:800;margin-bottom:5pt}
+.panel-ink{background:var(--ink);color:#fff}.panel-cream{background:var(--paper-2)}
+.band{background:var(--ink);color:#fff;border-radius:8px;padding:14pt 17pt}.band .h2,.band .h3,.band .h4{color:#fff}
+.tag{display:inline-flex;align-items:center;font-size:7.2pt;letter-spacing:.1em;text-transform:uppercase;font-weight:800;padding:3.4pt 7.5pt;border-radius:999px;white-space:nowrap}
+.tag.acc{background:var(--accent-soft);color:var(--accent-ink);box-shadow:inset 0 0 0 1px var(--accent-line)}
+.tag.sky{background:var(--sky-soft);color:var(--ink-2)}.tag.ink{background:var(--ink);color:#fff}.tag.solid{background:var(--accent);color:#fff}.tag.onsky{background:var(--sky);color:var(--ink)}.tag.ghost{box-shadow:inset 0 0 0 1px rgba(255,255,255,.32);color:#fff}
+/* lists */
+ul.tick{list-style:none;padding:0;margin:0}ul.tick li{position:relative;padding:2.6pt 0 2.6pt 14pt;font-size:9.2pt;line-height:1.46}
+ul.tick li::before{content:"";position:absolute;left:0;top:8.4pt;width:7.5pt;height:2pt;background:var(--accent)}ul.tick.sky li::before{background:var(--sky)}
+ul.dot{list-style:none;padding:0;margin:0}ul.dot li{position:relative;padding:2.2pt 0 2.2pt 12pt;font-size:8.8pt;line-height:1.44}
+ul.dot li::before{content:"";position:absolute;left:0;top:7.4pt;width:4pt;height:4pt;border-radius:50%;background:var(--accent)}ul.dot.sky li::before{background:var(--sky)}
+ul.bare{list-style:none;padding:0;margin:0}ul.bare li{padding:5pt 0;border-bottom:1px solid var(--rule);font-size:9pt;font-weight:500;display:flex;justify-content:space-between;gap:10pt}
+ul.bare li:last-child{border-bottom:none}ul.bare li .k{color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:7.6pt;align-self:center}
+/* kpi */
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule-ink);border-radius:8px;overflow:hidden}
+.kpi>div{padding:11pt 12pt;border-right:1px solid var(--rule-ink)}.kpi>div:last-child{border-right:none}
+.kpi .kl{font-size:6.9pt;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-ink);font-weight:800}
+.kpi .kv{font-weight:700;font-size:16pt;letter-spacing:-.025em;line-height:1.05;margin-top:5pt;color:var(--ink);font-feature-settings:"tnum"}
+.kpi .kn{font-size:7.6pt;color:var(--body-2);margin-top:3pt;line-height:1.32}
+.dark .kpi{border-color:rgba(255,255,255,.18)}.dark .kpi>div{border-right-color:rgba(255,255,255,.16)}.dark .kpi .kl{color:var(--sky)}.dark .kpi .kv{color:#fff}.dark .kpi .kn{color:#A8B6D0}
+/* stat / motif / pull */
+.stat-n{font-weight:700;font-size:40pt;line-height:.92;letter-spacing:-.035em;color:var(--ink);font-feature-settings:"tnum"}.stat-n .u{font-size:19pt;color:var(--accent);margin-left:2px;font-weight:600}
+.pull{position:relative;padding:4pt 0 4pt 16pt;border-left:3px solid var(--accent)}
+.pull .q{font-weight:500;font-size:14.5pt;line-height:1.32;color:var(--ink);letter-spacing:-.015em}.pull .src{margin-top:8pt;font-size:7.5pt;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;font-weight:600}
+/* before/after */
+.bahd{display:grid;grid-template-columns:1fr 13mm 1fr;font-size:7.4pt;letter-spacing:.13em;text-transform:uppercase;font-weight:800;padding-bottom:6pt}.bahd .a{color:var(--muted)}.bahd .b{color:var(--accent-ink)}
+.ba{display:grid;grid-template-columns:1fr 13mm 1fr;align-items:center;border-top:1px solid var(--rule)}.ba>div{padding:7.5pt 0}
+.ba .from{font-size:9pt;line-height:1.4;color:var(--body-2)}.ba .to{font-size:9.4pt;line-height:1.4;color:var(--ink);font-weight:600}.ba .ar{text-align:center;color:var(--accent);font-size:12pt;font-weight:700}
+/* table */
+table.dt{width:100%;border-collapse:collapse;font-size:9pt}
+table.dt thead th{font-size:7.4pt;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:800;text-align:left;padding:7.5pt 9pt;border-bottom:2px solid var(--ink)}
+table.dt tbody td{padding:7.5pt 9pt;border-bottom:1px solid var(--rule);color:var(--body);vertical-align:middle;line-height:1.36}
+table.dt tbody tr:nth-child(even){background:var(--paper-2)}.panel-cream table.dt tbody tr:nth-child(even){background:#fff}
+table.dt td.num,table.dt th.num{text-align:right;font-feature-settings:"tnum";white-space:nowrap}table.dt .cap{font-weight:700;color:var(--ink)}
+table.dt tr.hi td{background:var(--accent-soft);border-bottom-color:var(--accent-line)}table.dt tr.hi td.cap{color:var(--accent-ink)}
+table.dt tr.total td{border-top:2px solid var(--ink);border-bottom:none;background:var(--ink);color:#fff;font-weight:700}
+/* logo wall / cred / sign */
+.wall{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--rule-ink);border-left:1px solid var(--rule-ink)}
+.wall .lc{display:flex;align-items:center;justify-content:center;height:40pt;padding:6pt 10pt;border-right:1px solid var(--rule-ink);border-bottom:1px solid var(--rule-ink);background:#fff}
+.wall .lc img{max-width:100%;max-height:21pt;object-fit:contain;filter:grayscale(1);opacity:.62}
+.cred{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-bottom:1px solid var(--rule-ink)}
+.cred>div{padding:11pt 12pt 12pt 0}.cred .cn{font-weight:800;font-size:26pt;letter-spacing:-.04em;line-height:1;color:var(--ink);font-feature-settings:"tnum"}
+.cred .cn small{font-size:13pt;color:var(--accent);font-weight:700;margin-left:1px}.cred .cd{font-size:8pt;color:var(--body-2);margin-top:6pt;line-height:1.38;padding-right:6pt}
+.sign{border:1px dashed rgba(255,255,255,.26);border-radius:8px;padding:13pt 16pt}.sigline{border-bottom:1px solid rgba(255,255,255,.55);height:24pt}
+.siglab{font-size:7.2pt;letter-spacing:.12em;text-transform:uppercase;color:#A8B6D0;font-weight:700;margin-top:5pt}
+.lchip{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--rule);border-radius:11px;padding:8pt 12pt}.lchip img{height:24px;width:auto;display:block}
+/* cover */
+.cover{background:var(--ink);color:#fff}.cover .h1{color:#fff;font-size:44pt;line-height:.99}.cover p{color:#C9D3E8}
+.mark-bg{position:absolute;right:-72mm;bottom:-72mm;width:230mm;height:230mm;opacity:.13;pointer-events:none}.mark-bg img{width:100%;height:100%;object-fit:contain}
+/* house style 2026 (ICAP / CICCP proposals) */
+.page.paper{background:var(--paper-2)}                       /* light pages on cool gray; content sits in white cards */
+.ph .mk .ai{color:var(--sky);font-weight:400;margin-left:1px} /* wordmark suffix: <b>Skilland<span class="ai">.ai</span></b> */
+.mark-corner{position:absolute;right:-38mm;bottom:-46mm;width:118mm;pointer-events:none} /* full-colour faceted mark bleeding off the bottom-right corner of navy covers */
+.mark-corner img{width:100%;display:block}
+.mark-corner.lg{right:-44mm;bottom:-40mm;width:150mm}           /* back cover */
+/* print + nav */
+@page{size:A4 portrait;margin:0}
+@media print{
+  html,body{background:#fff !important;padding:0 !important;margin:0 !important}
+  body *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important}
+  body.vars .v{background:none !important;box-shadow:none !important;padding:0 !important}
+  .doc{gap:0 !important;display:block !important}
+  .page{display:block !important;width:210mm;height:297mm;margin:0 !important;box-shadow:none !important;overflow:hidden;position:relative;page-break-inside:avoid;break-inside:avoid}
+  .page + .page{page-break-before:always;break-before:page}
+  .topnav,.no-print,template{display:none !important}
+}
+.topnav{position:fixed;top:12px;left:12px;z-index:60;display:flex;gap:5px}
+.topnav a,.topnav button{padding:7px 11px;background:#fff;border:1px solid var(--rule);color:var(--ink);border-radius:4px;cursor:pointer;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+.topnav a:hover,.topnav button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* Componentes · templates/propuesta-formativa.html */
+.wcard{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:13pt 15pt}
+.lbl{font-size:6.9pt;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--ink-2)}
+.lbl.acc{color:var(--accent-ink)}
+.nrows{border-top:2px solid var(--ink)}
+.nrow{display:grid;grid-template-columns:16mm 1fr 30mm;gap:6pt;align-items:start;padding:9pt 0;border-bottom:1px solid var(--rule)}
+.nrow .n{font-weight:800;font-size:17pt;letter-spacing:-.02em;color:var(--accent-ink);line-height:1}
+.nrow .t{font-weight:700;font-size:10.6pt;color:var(--ink);letter-spacing:-.01em}
+.nrow .d{font-size:8.6pt;color:var(--body-2);margin-top:3pt;line-height:1.45}
+.nrow .s{text-align:right;padding-top:1pt}
+.callout{background:var(--ink);border-radius:9px;padding:16pt 18pt;color:#fff}
+.callout .lbl{color:var(--sky)}.callout p{color:#D3DBEC}.callout strong{color:#fff}
+.cover .lbl{color:var(--sky)}
+/* Propias de esta nota */
+.lead.sm2{font-size:11pt;line-height:1.45;color:var(--body);max-width:160mm}
+/* antes → ahora */
+.chg{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.chg .wcard{border-top:3px solid var(--accent);padding:12pt 14pt 13pt;display:flex;flex-direction:column}
+.chg .nm{font-weight:700;font-size:13pt;letter-spacing:-.014em;color:var(--ink);margin-top:5pt}
+.chg .st{margin-top:8pt;margin-bottom:9pt;border-top:1px solid var(--rule)}
+.chg .st>div{display:grid;grid-template-columns:15mm 1fr;gap:6pt;padding:6pt 0;border-bottom:1px solid var(--rule)}
+.chg .st>div:last-child{border-bottom:none}
+.chg .k{font-size:6.9pt;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--muted);padding-top:2pt}
+.chg .k.acc{color:var(--accent-ink)}
+.chg .x{font-size:8.5pt;line-height:1.45;color:var(--body-2)}
+.chg .x.now{color:var(--ink);font-weight:600}
+.chg .out{margin-top:auto;font-size:8.6pt;line-height:1.45;color:var(--body);background:var(--paper-2);border-radius:6px;padding:8pt 10pt}
+/* cronología */
+.tl{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0 4mm}
+.tl::before{content:"";position:absolute;left:5pt;right:5pt;top:5pt;height:2px;background:var(--ink);opacity:.85}
+.tl .ev{position:relative;padding-top:20pt}
+.tl .dot{position:absolute;top:0;left:0;width:12pt;height:12pt;border-radius:50%;background:var(--ink);box-shadow:0 0 0 3pt var(--paper-2)}
+.tl .ev.off .dot{background:var(--paper-2);box-shadow:0 0 0 3pt var(--paper-2),inset 0 0 0 2px var(--muted)}
+.tl .ev.now .dot{background:var(--accent);box-shadow:0 0 0 3pt var(--paper-2),0 0 0 4.5pt var(--accent-line)}
+.tl .dd{font-weight:800;font-size:12pt;letter-spacing:-.015em;color:var(--ink);line-height:1}
+.tl .ev.off .dd{color:var(--muted)}
+.tl .ev.now .dd{color:var(--accent-ink)}
+.tl .tx{font-size:8.4pt;line-height:1.42;color:var(--body-2);margin-top:5pt;padding-right:2pt}
+.tl .ev.now .tx{color:var(--ink);font-weight:600}
+/* líneas 2.1 / 2.2 */
+.line{display:grid;grid-template-columns:24mm 1fr;gap:4mm;padding:13pt 16pt}
+.line .big{font-weight:800;font-size:30pt;letter-spacing:-.04em;line-height:.9;color:var(--accent-ink);font-feature-settings:"tnum"}
+.line .tt{font-weight:700;font-size:13.5pt;letter-spacing:-.016em;line-height:1.15;color:var(--ink)}
+.line .ds{font-size:9.2pt;line-height:1.5;color:var(--body);margin-top:6pt}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:9pt}
+.opt{background:var(--paper-2);border-radius:7px;padding:10pt 12pt}
+.opt .ol{font-weight:800;font-size:13pt;color:var(--accent-ink);line-height:1}
+.opt .ot{font-weight:700;font-size:9.6pt;color:var(--ink);margin-top:5pt;letter-spacing:-.005em}
+.opt p{font-size:8.5pt;line-height:1.45;color:var(--body-2);margin-top:3pt}
+.innum{display:flex;gap:8pt;align-items:baseline;margin-top:9pt;padding-top:8pt;border-top:1px solid var(--rule)}
+.innum .lbl{flex:none}
+.innum p{font-size:8.6pt;line-height:1.45;color:var(--body)}
+/* cómo seguimos */
+.steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 6mm;margin-top:12pt}
+.steps>div{border-top:1px solid rgba(255,255,255,.22);padding-top:10pt}
+.steps .sn{font-weight:800;font-size:17pt;color:var(--accent);line-height:1}
+.steps .sw{font-size:6.9pt;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--sky);margin-top:8pt}
+.steps .sd{font-weight:600;font-size:9.6pt;line-height:1.38;color:#fff;margin-top:4pt}
+.steps .sx{font-size:8.2pt;line-height:1.42;color:#B6C4DE;margin-top:4pt}
+.close{margin-top:15pt;padding-top:12pt;border-top:1px solid rgba(255,255,255,.22);font-weight:600;font-size:12.5pt;letter-spacing:-.012em;color:#fff}
+.close span{color:var(--accent)}
+/* portada y contraportada */
+.chip{display:inline-flex;align-items:center;background:#fff;border-radius:12px;padding:12pt 20pt}
+.chip img{height:34pt;width:auto;display:block}
+.latin{font-weight:700;font-size:62pt;line-height:.98;letter-spacing:-.04em;color:#fff}
+.trans{font-weight:500;font-size:17pt;letter-spacing:-.012em;color:var(--sky);line-height:1.2}
+</style>
+</head>
+<body>
+<nav class="topnav no-print"><a href="javascript:window.print()">Imprimir / PDF</a></nav>
+<div class="doc">
+
+<!-- 01 · PORTADA -->
+<section class="page cover dark" data-screen-label="01 Portada">
+  <div class="mark-corner"><img src="img/skilland-mark.svg" alt=""></div>
+  <div class="body nc">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:7pt"><img src="img/skilland-mark.svg" alt="" style="width:12pt"><div style="font-weight:700;font-size:11pt;color:#fff">Skilland<span style="color:var(--sky);font-weight:400"> .ai</span></div></div>
+      <div style="font-size:7pt;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#fff">Nota de posicionamiento</div>
+    </div>
+    <div style="height:30mm"></div>
+    <div class="eyebrow" style="color:var(--sky)">EPI10 Salud · Octubre 2026</div>
+    <div class="gap20"></div>
+    <div class="h1" style="max-width:160mm">Convertir un revés en una oportunidad</div>
+    <div class="gap14"></div><div style="width:52mm;height:3px;background:var(--accent)"></div><div class="gap16"></div>
+    <p class="lg" style="max-width:145mm;color:#DCE3F2;font-size:12pt;line-height:1.45">Lo que ha cambiado en el proyecto, qué hacemos esta semana y cómo seguimos.</p>
+    <div class="grow"></div>
+    <div class="g3" style="max-width:150mm;gap:0 6mm">
+      <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:9pt"><div class="lbl">Avance</div><div style="font-weight:700;font-size:22pt;color:#fff;margin-top:7pt">60 %</div><div style="font-size:7.6pt;color:#A8B6D0;margin-top:3pt">avance aproximado</div></div>
+      <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:9pt"><div class="lbl">Esta semana</div><div style="font-weight:700;font-size:22pt;color:#fff;margin-top:7pt">2</div><div style="font-size:7.6pt;color:#A8B6D0;margin-top:3pt">líneas de trabajo</div></div>
+      <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:9pt"><div class="lbl">Dossier</div><div style="font-weight:700;font-size:22pt;color:#fff;margin-top:7pt">21 oct</div><div style="font-size:7.6pt;color:#A8B6D0;margin-top:3pt">entrega del dossier</div></div>
+    </div>
+    <div class="gap24"></div>
+    <div><span class="chip"><img src="img/epi10-logo.png" alt="EPI10 Salud"></span></div>
+    <div class="gap20"></div>
+    <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:11pt;display:grid;grid-template-columns:1.2fr 1fr;max-width:150mm">
+      <div><div class="lbl">Preparada para</div><div style="font-weight:600;font-size:8.4pt;color:#fff;margin-top:5pt;line-height:1.4">EPI10 Salud · Carmen Sosa</div></div>
+      <div><div class="lbl">14 de octubre de 2026</div><div style="font-weight:600;font-size:7.4pt;letter-spacing:.1em;color:#fff;margin-top:5pt">REF. EPI10-2026-10</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · DÓNDE ESTAMOS Y QUÉ PASÓ -->
+<section class="page paper" data-screen-label="02 Dónde estamos">
+  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">01 · Dónde estamos</div><div class="ln"></div></div>
+  <div class="body">
+    <div class="gap6"></div><div class="kick">01 · Dónde estamos y qué pasó</div><div class="gap14"></div>
+    <div class="h2" style="max-width:160mm">Casi un 60 % avanzado, y dos noticias ajenas al proyecto.</div><div class="gap10"></div>
+    <p class="lead sm2">Hasta ahora hemos avanzado casi un 60 % del proyecto. La semana pasada se juntaron dos noticias que <strong>no dependen ni de vosotros ni de nosotros</strong>.</p>
+    <div class="gap14"></div>
+    <div class="nrows">
+      <div class="nrow"><div class="n">01</div><div><div class="t">El orquestador</div><div class="d">La pieza que coordina el resto del sistema.</div></div><div class="s"><span class="tag ink">Listo</span></div></div>
+      <div class="nrow"><div class="n">02</div><div><div class="t">El generador de borradores de informe</div><div class="d">Bastante avanzado.</div></div><div class="s"><span class="tag sky">Avanzado</span></div></div>
+      <div class="nrow"><div class="n">03</div><div><div class="t">Las automatizaciones con Odoo</div><div class="d">Ya casi todas hechas.</div></div><div class="s"><span class="tag sky">Casi hechas</span></div></div>
+      <div class="nrow"><div class="n">04</div><div><div class="t">Las automatizaciones con Healthie</div><div class="d">También estaban casi todas hechas cuando cambiaron las condiciones.</div></div><div class="s"><span class="tag acc">Casi hechas</span></div></div>
+    </div>
+    <div class="gap16"></div>
+    <div class="h4">Lo que cambió la semana pasada</div><div class="gap8"></div>
+    <div class="chg">
+      <div class="wcard">
+        <div class="lbl acc">Pieza del portal de cliente</div>
+        <div class="nm">Healthie</div>
+        <div class="st">
+          <div><div class="k">Antes</div><div class="x">La API con la que trabajábamos estaba incluida en vuestro plan. La probamos en verano.</div></div>
+          <div><div class="k acc">Ahora</div><div class="x now">Pasa a ser un complemento de pago aparte, con un coste que sube cada año, o exige saltar al plan Enterprise.</div></div>
+        </div>
+        <div class="out"><strong>Deja de ser una base razonable</strong> sobre la que construir.</div>
+      </div>
+      <div class="wcard">
+        <div class="lbl acc">Pieza externa al proyecto</div>
+        <div class="nm">Web de EPI10</div>
+        <div class="st">
+          <div><div class="k">Antes</div><div class="x">La llevaba un proveedor externo.</div></div>
+          <div><div class="k acc">Ahora</div><div class="x now">El proveedor se ha caído del proyecto.</div></div>
+        </div>
+        <div class="out"><strong>La pieza queda sin cubrir</strong> y os ha dejado un poco tirados.</div>
+      </div>
+    </div>
+    <div class="grow" style="min-height:14pt"></div>
+    <div class="h4">Cronología · octubre de 2026</div><div class="gap14"></div>
+    <div class="tl">
+      <div class="ev"><div class="dot"></div><div class="dd">Lun 5</div><div class="tx">Escribís a Healthie.</div></div>
+      <div class="ev"><div class="dot"></div><div class="dd">Mié 7</div><div class="tx">Healthie confirma las nuevas condiciones.</div></div>
+      <div class="ev"><div class="dot"></div><div class="dd">Jue 8</div><div class="tx">El proveedor de la web se cae. Convocamos reunión.</div></div>
+      <div class="ev off"><div class="dot"></div><div class="dd">Lun 12</div><div class="tx">Festivo.</div></div>
+      <div class="ev now"><div class="dot"></div><div class="dd">Mié 14</div><div class="tx">Nos vemos y lo alineamos.</div></div>
+    </div>
+    <div class="gap6"></div>
+  </div>
+  <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">02</div><div class="ln"></div></div>
+</section>
+
+<!-- 03 · QUÉ HACEMOS ESTA SEMANA -->
+<section class="page paper" data-screen-label="03 Esta semana">
+  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec">02 · Esta semana</div><div class="ln"></div></div>
+  <div class="body">
+    <div class="gap6"></div><div class="kick">02 · Qué hacemos esta semana y cómo seguimos</div><div class="gap14"></div>
+    <div class="h2" style="max-width:165mm">Paramos el roadmap y dedicamos la semana a investigar a fondo.</div><div class="gap10"></div>
+    <p class="lead sm2">Lo asumimos como una seña de identidad: <strong>tomar el toro por los cuernos</strong> y convertir el revés en una oportunidad para que EPI10 dependa menos de terceros.</p>
+    <div class="gap14"></div>
+    <div class="wcard line">
+      <div class="big">2.1</div>
+      <div>
+        <div class="lbl acc">Primera línea</div>
+        <div class="tt" style="margin-top:5pt">La pieza del portal de cliente</div>
+        <div class="ds">Healthie era la mejor opción que habíamos encontrado. Si ya no sirve, hay que sustituirla. Estudiamos dos caminos.</div>
+        <div class="opts">
+          <div class="opt"><div class="ol">a</div><div class="ot">Otra plataforma del mercado</div><p>Una investigación a fondo de las alternativas disponibles.</p></div>
+          <div class="opt"><div class="ol">b</div><div class="ot">Desarrollo propio sobre software libre</div><p>La pieza pasa a ser de EPI10.</p></div>
+        </div>
+        <div class="innum"><div class="lbl">En números</div><p>Qué absorbe lo ya comprometido, qué no y su efecto en el calendario.</p></div>
+      </div>
+    </div>
+    <div class="gap10"></div>
+    <div class="wcard line">
+      <div class="big">2.2</div>
+      <div>
+        <div class="lbl acc">Segunda línea</div>
+        <div class="tt" style="margin-top:5pt">La web como sistema integrado</div>
+        <div class="ds">Aprovechando la idea del portal propio, planteamos un sistema todo integrado: <strong>la web, el portal y las herramientas del equipo</strong> con la misma interfaz y la misma imagen de marca, sin saltos entre una pieza y otra.</div>
+        <div class="innum"><div class="lbl">En números</div><p>Qué supone integrar la web en el mismo sistema, con su alcance y su plazo.</p></div>
+      </div>
+    </div>
+    <div class="grow" style="min-height:14pt"></div>
+    <div class="callout">
+      <div class="lbl">Cómo seguimos</div>
+      <div class="steps">
+        <div><div class="sn">01</div><div class="sw">Miércoles 21 de octubre</div><div class="sd">Os enviamos un dossier en profundidad.</div><div class="sx">Con las opciones que planteamos, sus costes y sus plazos.</div></div>
+        <div><div class="sn">02</div><div class="sw">Después</div><div class="sd">EPI10 lo procesa internamente.</div><div class="sx">Con calma, el tiempo que haga falta.</div></div>
+        <div><div class="sn">03</div><div class="sw">Fecha por acordar</div><div class="sd">Reunión conjunta.</div><div class="sx">Nos sentamos todos y decidimos juntos cómo seguimos.</div></div>
+      </div>
+      <div class="close">Sin cronómetro: <span>lo importante es decidir bien.</span></div>
+    </div>
+  </div>
+  <div class="pf"><div>Convertir un revés en una oportunidad · EPI10 Salud</div><div class="num">03</div><div class="ln"></div></div>
+</section>
+
+<!-- 04 · CONTRAPORTADA -->
+<section class="page cover dark back" data-screen-label="04 Cierre">
+  <div class="mark-corner lg"><img src="img/skilland-mark.svg" alt=""></div>
+  <div class="ph"><div class="mk"><img src="img/skilland-mark.svg" alt=""><b>Skilland<span class="ai">.ai</span></b></div><div class="sec" style="color:#fff">Cierre</div><div class="ln"></div></div>
+  <div class="body">
+    <div style="height:40mm"></div>
+    <div class="latin">Audentes<br>fortuna iuvat.</div>
+    <div class="gap20"></div><div style="width:52mm;height:3px;background:var(--accent)"></div><div class="gap20"></div>
+    <div class="trans">La fortuna favorece a los audaces.</div>
+    <div class="gap24"></div>
+    <p style="max-width:120mm;font-size:11pt;line-height:1.5;color:#D3DBEC">Está en nuestra mano convertir un revés en una oportunidad para salir más fuertes.</p>
+    <div class="grow"></div>
+    <div><span class="chip"><img src="img/epi10-logo.png" alt="EPI10 Salud" style="height:28pt"></span></div>
+    <div class="gap20"></div>
+    <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:11pt;display:grid;grid-template-columns:1fr 1fr;max-width:105mm">
+      <div><div class="lbl">Contacto</div><p class="sm" style="color:#fff;margin-top:5pt">direccion@skilland.ai<br>skilland.ai</p></div>
+      <div><div class="lbl">Documento confidencial</div><p class="sm" style="color:#fff;margin-top:5pt">Preparado para<br>EPI10 Salud</p></div>
+    </div>
+  </div>
+  <div class="pf"><div>Documento confidencial · Ref. EPI10-2026-10</div><div class="ln"></div></div>
+</section>
+
+</div>
+</body>
+</html>
