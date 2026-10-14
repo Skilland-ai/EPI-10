@@ -1,6 +1,6 @@
 # Correo a Carmen (Tomás en copia) · 14 de octubre de 2026 · SKI2-286
 
-Borrador v6 para que lo envíe Raúl. Adjunto: la nota «Convertir un revés en una oportunidad» en PDF, 7 páginas (SKI2-287, `04_outputs/comunicaciones/nota_reves_oportunidad/convertir_un_reves_en_una_oportunidad.pdf`).
+Borrador v7 para que lo envíe Raúl. Adjunto: la nota «Convertir un revés en una oportunidad» en PDF, 7 páginas (SKI2-287, `04_outputs/comunicaciones/nota_reves_oportunidad/convertir_un_reves_en_una_oportunidad.pdf`).
 
 Fechas verificadas en el correo de direccion@skilland.ai: Carmen escribió a Healthie el lunes 5; Healthie respondió con las nuevas condiciones el miércoles 7 (13:33); el jueves 8 (9:06) Carmen aceptó la reunión del martes 13, que ella misma movió al miércoles 14 a las 8:15. La caída del proveedor de la web no consta por correo; Raúl la sitúa el jueves 8.
 
@@ -20,7 +20,7 @@ Hay un proverbio romano que me gusta mucho y que, en las ocasiones en las que to
 
 **1. Qué pasó la semana pasada.** Se juntaron dos noticias que no dependen ni de vosotros ni de nosotros:
 
-**1.1.** Nuestras automatizaciones con Healthie empezaron a fallar. Escribisteis a Healthie el lunes 5 y el miércoles 7 nos confirmaron por escrito que han cambiado las reglas del juego: la API con la que trabajábamos, incluida en vuestro plan cuando la probamos en verano, pasa a ser un complemento de pago aparte con un coste que sube cada año, o bien exige saltar al plan Enterprise. Con esas condiciones, Healthie deja de ser una base razonable sobre la que construir.
+**1.1.** Nuestras automatizaciones con Healthie empezaron a fallar. Escribisteis de nuestra parte, con nuestro wording, a Healthie, y nos confirmaron por escrito que han cambiado las reglas del juego: la API con la que trabajábamos, incluida en vuestro plan cuando la probamos en verano, pasa a ser un complemento de pago aparte, además del plan Group: 475 $ al mes el primer año, 950 $ al mes el segundo y 1.900 $ al mes a partir del tercero, es decir, unos 5.700 $ el primer año, 11.400 $ el segundo y cerca de 22.800 $ al año después. La alternativa es saltar al plan Enterprise, sin precio público. Con esas condiciones, Healthie deja de ser una base razonable sobre la que construir.
 
 **1.2.** El jueves 8 el proveedor de la web de EPI10 también parece haberse caído del proyecto y os ha dejado un poco tirados.
 
