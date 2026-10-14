@@ -1,6 +1,6 @@
 # Correo a Carmen (Tomás en copia) · 14 de octubre de 2026 · SKI2-286
 
-Borrador v4 para que lo envíe Raúl. Adjunto: la nota «Convertir un revés en una oportunidad» en PDF, 7 páginas (SKI2-287, `04_outputs/comunicaciones/nota_reves_oportunidad/convertir_un_reves_en_una_oportunidad.pdf`).
+Borrador v5 para que lo envíe Raúl. Adjunto: la nota «Convertir un revés en una oportunidad» en PDF, 7 páginas (SKI2-287, `04_outputs/comunicaciones/nota_reves_oportunidad/convertir_un_reves_en_una_oportunidad.pdf`).
 
 Fechas verificadas en el correo de direccion@skilland.ai: Carmen escribió a Healthie el lunes 5; Healthie respondió con las nuevas condiciones el miércoles 7 (13:33); el jueves 8 (9:06) Carmen aceptó la reunión del martes 13, que ella misma movió al miércoles 14 a las 8:15. La caída del proveedor de la web no consta por correo; Raúl la sitúa el jueves 8.
 
@@ -20,8 +20,9 @@ Hay un proverbio romano que me gusta mucho y que, en las ocasiones en las que to
 
 **1. Qué pasó la semana pasada.** Se juntaron dos noticias que no dependen ni de vosotros ni de nosotros:
 
-- Nuestras automatizaciones con Healthie empezaron a fallar. Escribisteis a Healthie el lunes 5 y el miércoles 7 nos confirmaron por escrito que han cambiado las reglas del juego: la API con la que trabajábamos, incluida en vuestro plan cuando la probamos en verano, pasa a ser un complemento de pago aparte con un coste que sube cada año, o bien exige saltar al plan Enterprise. Con esas condiciones, Healthie deja de ser una base razonable sobre la que construir.
-- El jueves 8 el proveedor de la web de EPI10 también parece haberse caído del proyecto y os ha dejado un poco tirados.
+**1.1.** Nuestras automatizaciones con Healthie empezaron a fallar. Escribisteis a Healthie el lunes 5 y el miércoles 7 nos confirmaron por escrito que han cambiado las reglas del juego: la API con la que trabajábamos, incluida en vuestro plan cuando la probamos en verano, pasa a ser un complemento de pago aparte con un coste que sube cada año, o bien exige saltar al plan Enterprise. Con esas condiciones, Healthie deja de ser una base razonable sobre la que construir.
+
+**1.2.** El jueves 8 el proveedor de la web de EPI10 también parece haberse caído del proyecto y os ha dejado un poco tirados.
 
 Lo hemos hablado entre ayer y hoy y lo hemos alineado contigo.
 
@@ -30,7 +31,7 @@ Lo hemos hablado entre ayer y hoy y lo hemos alineado contigo.
 **2.1. La pieza del portal de cliente.** Healthie era la mejor opción que habíamos encontrado; si ya no sirve, hay que sustituirla. Estudiaremos dos caminos: (a) encontrar otra plataforma en el mercado, con una investigación a fondo de las alternativas, y (b) un desarrollo propio, sabiendo que todavía queda presupuesto de lo contratado. En los dos casos haremos el ejercicio de qué puede costar este cambio de pieza por nuestra parte, qué parte absorbe lo ya comprometido y qué parte no, para sentarnos a ver opciones.
 **2.2. En qué podemos ayudar con la web.** Aprovechando la idea del portal propio y lo que podemos aportar en la web, planteamos un sistema todo integrado, con la misma interfaz y la misma imagen de marca, sin ningún salto duro entre una pieza y otra. Para eso también necesitamos hacer números.
 
-**3. Cómo seguimos.** Esto nos ocupa de aquí al miércoles 21. Cuando terminemos, os enviaremos un dossier en profundidad con las opciones que planteamos, para que podáis procesarlo internamente con calma. En base a eso, buscamos una fecha para sentarnos todos, seguramente unos días después, y vemos cómo seguimos adelante juntos para construir algo incluso mejor y sobreponernos a estos dos pequeños baches, que en absoluto nos van a detener: son, como siempre, oportunidades de futuro.
+**Cómo seguimos.** Esto nos ocupa de aquí al miércoles 21. Cuando terminemos, os enviaremos un dossier en profundidad con las opciones que planteamos, para que podáis procesarlo internamente con calma. En base a eso, buscamos una fecha para sentarnos todos, seguramente unos días después, y vemos cómo seguimos adelante juntos para construir algo incluso mejor y sobreponernos a estos dos pequeños baches, que en absoluto nos van a detener: son, como siempre, oportunidades de futuro.
 
 Gracias por la confianza y por la conversación de hoy. Cualquier duda, aquí estamos.
 
