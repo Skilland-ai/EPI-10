@@ -144,8 +144,21 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
 
 ## 18 oct · repaso de plataformas de mercado (SKI2-288, dossier 2.1 a)
 
-- Documento: `04_outputs/modulos/crisis-healthie/2026-10-18_repaso_plataformas_mercado_v1.md`. 127 plataformas con fuentes del 18 oct; solo información pública, sin cuentas ni contactos.
-- Ningún descarte del 7 oct se revoca. Se reabre **Odoo como portal** (opción C) por el punto 2.2 (web, tienda y portal con la misma marca).
-- **Lista corta:** Pabau (nueva, casi viable, pendiente de demo), Practice Better (empeora: AWS EE. UU., inglés, API de pago tras la beta), Odoo como portal, Knack o Noloco con portal fino (art. 9) y Simply.Coach (español nativo, semiautomático).
-- Cifras (estimación): licencias a 3 años 0–6.200 € frente a ≈ 43.300 € de Healthie con API; construcción 15–82 h frente a 52–76 h (OpenEMR vía 1) y 56–70 h (botón rojo).
-- **Pendiente de Raúl:** OK para la demo y la prueba de 1–2 h de Pabau (U1–U3); si reabre la C; preguntas escritas a Practice Better, Knack, Noloco y Softr. Revisión independiente: la lanza el orquestador.
+- Documento: `04_outputs/modulos/crisis-healthie/2026-10-18_repaso_plataformas_mercado_v1.md`. Estado: revisado («apto con cambios»), con las correcciones aplicadas.
+  - 137 plataformas con fuentes del 18 oct; 4 sin poder evaluar.
+  - Solo información pública, sin cuentas ni contactos.
+- Ningún descarte del 7 oct se revoca. **Odoo como portal (opción C) sigue descartado**, por decisión de Raúl del 18 oct: ya hay portal propio sobre OpenEMR y Odoo no aporta nada encima.
+- **Lista corta, con horas desde hoy y licencias a 3 años** (estimación):
+
+| Opción | Horas desde hoy | Licencias 3 años |
+|---|---|---|
+| Pabau, casi viable | 69–107 h | 4.100–6.200 €, extrapolado |
+| Practice Better | ≥ 59 h | ≥ 2.955 € + API; 8.200–34.400 € con una API al estilo de Healthie |
+| Noloco con portal fino | 68–107 h | ≈ 2.150 € |
+| Simply.Coach, semiautomático | 34–56 h + trabajo manual | 2.950–4.600 € |
+
+  Knack sale porque excluye el art. 9 sin excepción.
+- **Referencia, el propio sobre OpenEMR (ya construido):** 39–62 h hasta producción (SKI2-239 a 242 y 173) y 0–1.440 €. Ninguna plataforma ahorra horas frente a lo construido.
+- **Pendiente:**
+  - demo de Pabau, que la pide Raúl (SKI2-289), y después la prueba de 1–2 h;
+  - preguntas escritas a Practice Better y Noloco, si Raúl las autoriza.

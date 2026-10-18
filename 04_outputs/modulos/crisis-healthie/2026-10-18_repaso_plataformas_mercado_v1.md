@@ -1,23 +1,56 @@
 # Repaso de plataformas de mercado para el portal de cliente (v1)
 
-Fecha: 2026-10-18 · Linear: SKI2-288 (dossier del 21 oct, línea 2.1 (a) «otra plataforma del mercado») · Estado: **entregado, pendiente de revisión independiente**
-Antecedente: [research del 7 oct, SKI2-206](2026-10-07_research_alternativas_healthie_v1.md) · Contexto: [arquitectura del sistema v1](../integracion/2026-10-12_arquitectura_sistema_v1.md) · [requisitos legales](../../comunicaciones/2026-10-13_requisitos_legales_operar_openemr_vs_healthie.md) · [correo del 14 oct](../../comunicaciones/2026-10-14_correo_carmen_tomas_cambio_de_pieza.md) · contrato del portal en `epi10-orquestador` (`src/modules/portal`, `healthie`, `openemr`)
+Fecha: 2026-10-18 · Linear: SKI2-288 (dossier del 21 oct, línea 2.1 (a) «otra plataforma del mercado») · Estado: **revisado, con correcciones aplicadas** (revisión independiente «apto con cambios», 18 oct; decisiones de Raúl del 18 oct)
+Antecedente: [research del 7 oct, SKI2-206](2026-10-07_research_alternativas_healthie_v1.md) · Contexto: [arquitectura del sistema v1](../integracion/2026-10-12_arquitectura_sistema_v1.md) · [requisitos legales](../../comunicaciones/2026-10-13_requisitos_legales_operar_openemr_vs_healthie.md) · [correo del 14 oct](../../comunicaciones/2026-10-14_correo_carmen_tomas_cambio_de_pieza.md) · contrato del portal en `epi10-orquestador` (`src/modules/openemr/contrato.ts`, v1.2.0)
 
 **Qué es este documento.** Repasa una a una las plataformas de mercado que podrían hacer de portal de cliente de EPI10. No busca confirmar el veredicto del 7 oct. Busca la plataforma viable que se nos escapó, aunque obligue a ceder en algo.
 
-**Método.** Todas las fuentes se consultaron el **2026-10-18**, solo información pública. No se ha abierto ninguna cuenta ni prueba, no se ha contactado con ningún proveedor y no se ha pagado nada. Lo que no está en una fuente primaria va como **Unknown** o como «terciaria». **Todas las horas y todos los costes son estimaciones** (1 $ ≈ 0,92 €; 1 £ ≈ 1,15 €; 1 CAD ≈ 0,66 €). Cinco investigadores en paralelo por grupos de plataformas; la síntesis es de este documento.
+**Método.**
+- Todas las fuentes se consultaron el **2026-10-18**, solo información pública.
+- No se ha abierto ninguna cuenta ni prueba, no se ha contactado con ningún proveedor y no se ha pagado nada.
+- Lo que no está en una fuente primaria va como **Unknown** o como «terciaria».
+- **Todas las horas y todos los costes son estimaciones.** Cambio usado: 1 $ ≈ 0,92 €; 1 £ ≈ 1,15 €; 1 CAD ≈ 0,66 €.
+- Cinco investigadores trabajaron en paralelo por grupos de plataformas. La síntesis es de este documento.
+
+**Decisiones de Raúl (18 oct, comentario en SKI2-288).**
+1. Sí a la demo de Pabau; la pide él (SKI2-289).
+2. Odoo como portal (opción C) **no se reabre**: ya hay portal propio sobre OpenEMR y Odoo no aporta nada encima.
 
 ## Resumen en cinco líneas
 
-1. **Revisamos 127 plataformas:** las 41 del 7 oct (incluidas Healthie e InsideTracker), Odoo como portal y 85 nuevas.
-   - **Ningún descarte del 7 oct se revoca.**
-   - Dos se suavizan sin llegar a ser viables: InsideTracker y Halaxy ya tienen API pública.
-   - Cinco empeoran: Practice Better, Softr, Assembly, Oystehr y Fasten.
-   - **Se reabre una opción descartada:** Odoo como portal (la opción C de SKI2-204).
-2. **Sí hay una que se nos escapó: Pabau** (Reino Unido, nueva). Sobre el papel cubre las 7 operaciones del contrato por API pública con webhooks, tiene región UE, DPA y venta adicional nativa. Es **casi viable**: falta confirmar el precio (solo con demo), el español del portal y que lo enviado por API se vea en el portal. Concesión: un producto pensado para clínicas estéticas.
-3. **Practice Better sigue siendo la que mejor automatiza, pero empeora.** Los datos están ahora en AWS EE. UU., la interfaz es solo en inglés y la API seguirá siendo de pago tras la beta, con precio sin anunciar. Es el patrón de Healthie.
-4. **Hallazgo nuevo:** muchos portales no-code **prohíben por escrito datos de salud o genéticos** (Glide, Bubble, Budibase Cloud, Circle, Kajabi). Los que tienen la UE (Knack, Noloco, Softr) solo valdrían con una excepción escrita o con un «portal fino» que no guarde salud. Las plataformas genéticas B2B2C solo entregan su propio test.
-5. **En cifras:** cualquier opción de la lista corta cuesta entre 0 y 6.200 € a 3 años en licencias, frente a unos 43.300 € de Healthie con la API. **Salvo Simply.Coach, que deja trabajo manual en cada caso, ninguna ahorra más de unas 15–25 h de construcción** frente al desarrollo propio. A cambio, se depende de un tercero y de su precio. La línea 2.1 (a) tiene una candidata real que hay que confirmar con una demo antes del 21.
+1. **Revisamos 137 plataformas;** 4 de ellas no se pudieron evaluar por falta de fuente.
+   - Son las 41 del 7 oct (incluidas Healthie e InsideTracker), Odoo como portal y 95 nuevas.
+   - **Ningún descarte del 7 oct se revoca.** Dos se suavizan sin llegar a ser viables: InsideTracker y Halaxy ya tienen API pública. Cinco empeoran: Practice Better, Softr, Assembly, Oystehr y Fasten.
+   - **Odoo como portal sigue descartado** (Raúl, 18 oct).
+2. **Sí hay una que se nos escapó: Pabau** (Reino Unido, nueva). Es **casi viable**.
+   - Su API pública con webhooks cubre buena parte de las 7 operaciones. Tiene región UE, DPA y venta adicional nativa.
+   - Pero no tiene ruta de invitación al portal ni de buzón, el precio solo se da con demo y falta confirmar el español del portal.
+   - Raúl pide la demo (SKI2-289).
+3. **Practice Better sigue siendo la que mejor automatiza, pero empeora:** los datos están ahora en AWS EE. UU., la interfaz es solo en inglés y la API tendrá precio tras la beta, sin anunciar. Es el patrón de Healthie.
+   - Hallazgo nuevo: muchos portales no-code **prohíben por escrito los datos de salud o genéticos**. Knack los excluye sin excepción.
+4. **Licencias a 3 años (estimación):**
+
+| Opción | Licencias 3 años |
+|---|---|
+| Noloco | ≈ 2.150 € |
+| Simply.Coach | 2.950–4.600 € |
+| Pabau | 4.100–6.200 € (extrapolado de una fuente terciaria con 1 usuario; techo real Unknown) |
+| Practice Better | ≥ 2.955 € más una API sin precio; con una API al estilo de Healthie, 8.200–34.400 € |
+| Portal propio sobre OpenEMR | 0–1.440 € |
+| Healthie con API | ≈ 43.300 € |
+
+5. **Horas desde hoy hasta producción (estimación).** El portal propio sobre OpenEMR ya está construido (v1.3 en `main`).
+
+| Opción | Horas desde hoy |
+|---|---|
+| Portal propio sobre OpenEMR | 39–62 h (SKI2-239 a 242 y 173) |
+| Simply.Coach | 34–56 h, más 5–10 min manuales por caso |
+| Pabau | 69–107 h |
+| Noloco | 68–107 h |
+| Practice Better | ≥ 59 h |
+| Healthie con API | 23–37 h |
+
+   **Ninguna plataforma ahorra horas frente a lo ya construido:** cuestan más horas y añaden licencia y dependencia. Healthie con API sería la más corta, pero cuesta ≈ 43.300 € a 3 años.
 
 ---
 
@@ -25,79 +58,122 @@ Antecedente: [research del 7 oct, SKI2-206](2026-10-07_research_alternativas_hea
 
 **La plataforma solo sustituye el portal de cliente.** Stripe, Odoo, el generador de informes y la ficha de la persona ya están construidos en el orquestador. Por eso cada plataforma se valora por lo que costaría enchufarla al monolito, no como sistema completo.
 
-**El contrato del portal**, tal como lo usa hoy el orquestador (`src/modules/portal/portal-cliente.ts` y módulo `openemr`, contrato v1.2), tiene 7 operaciones:
+**El contrato del portal** está en `src/modules/openemr/contrato.ts` (v1.2.0). `src/modules/portal/portal-cliente.ts` solo traduce los nombres de los trabajos del outbox (`alta`, `mensaje`, `grupo`). El contrato tiene 7 operaciones:
 
 | # | Operación | Qué hace | Crítica |
 |---|---|---|---|
 | 1 | `crear_acceso` | Alta de la clienta tras pagar en Stripe e invitación al portal | Sí |
 | 2 | `asignar_formularios` | Consentimiento con firma y encuesta de hábitos | Sí |
-| 3 | `estado_formularios` | Saber cuándo los ha completado, incluido el paso «test en casa o en la sede» (D3) | Sí |
+| 3 | `estado_formularios` | Saber cuándo los ha completado, incluido el paso «test en casa o en la sede» con datos de envío o cita (D3, SKI2-267) | Sí |
 | 4 | `enviar_mensaje` | Mensajes de hito en el buzón del portal | Alta |
 | 5 | `mensajes_nuevos` | Leer lo que escribe la clienta | Alta |
 | 6 | `publicar_informe` | Subir el PDF y que la clienta lo vea y descargue | Sí |
-| 7 | `actualizar_caso` | Resumen o etiqueta de estado en la ficha | Deseable |
+| 7 | `actualizar_caso` | Resumen del caso en la ficha, para guiar a Aitor | Deseable |
 
-**Cambiar de portal es añadir un módulo hermano de `healthie` y `openemr`** en `src/modules/` y registrarlo en `PORTALES_CLIENTE`. Los trabajos del outbox (alta, mensaje), el publicador de informes y la consulta de formularios cambian de implementación, no de contrato. Odoo, Stripe e informes no se tocan.
+**Qué cambia en el monolito si cambia el portal.** Más de lo que decía la primera versión de este documento:
+- un módulo nuevo, hermano de `healthie` y `openemr`;
+- cableado en `core/external-ids.ts` y `core/case-events.service.ts` (`EVENT_SOURCES`);
+- una migración: id externo de la clienta, restricción `source` y cursor de mensajes, como hizo la `0004_openemr`;
+- `config/env.ts`, un `config/<portal>-env.ts` y `app.module.ts`;
+- el puerto `PUBLICADOR_INFORME` de `informes/pantalla`;
+- los listeners de hitos de `odoo/milestones`;
+- `stripe/stripe.jobs.ts`.
 
-**Requisitos críticos del 7 oct:** R1 portal en español con marca EPI10; R2/R8 automatización por API gratis o barata; R6 venta adicional; R9 datos de salud y genéticos en la UE con DPA. **Punto extra (línea 2.2):** integrar la web de EPI10 con la misma marca.
+**Además, el servidor de OpenEMR hacía parte del trabajo.** El módulo PHP propio ya da resueltos la idempotencia, el enlace mágico, el estado agregado de los formularios y el paso 3 del onboarding. Con una plataforma genérica, todo eso lo tiene que hacer el monolito. El back office de Aitor también se apoya hoy en OpenEMR: el resumen del caso y el enlace firmado a la pantalla de informes. Con otra plataforma, ese back office cambia (Unknown).
+
+**Línea fija en cada estimación de plataforma** (estimación):
+- cableado en core, configuración y migración: 3–5 h;
+- simulador y pruebas de integración, como exige el método del proyecto: 8–15 h;
+- back office de Aitor: Unknown.
+
+**Requisitos críticos del 7 oct:**
+- R1: portal en español con marca EPI10.
+- R2/R8: automatización por API gratis o barata.
+- R6: venta adicional.
+- R9: datos de salud y genéticos en la UE, con DPA.
+
+**Punto extra (línea 2.2):** integrar la web de EPI10 con la misma marca. Se anota en el inventario, pero el argumento de la web va a otra parte del dossier (Raúl, 18 oct).
+
+**Horas comunes a cualquier opción desde hoy** (estimación; ya están en Linear, sin estimar allí):
+- SKI2-173, despliegue del monolito en el servidor de EPI10: 8–12 h;
+- SKI2-240, purga de `jobs` y estado en memoria: 3–5 h;
+- SKI2-241, retirar Healthie y fijar el portal por defecto, sin la migración del ensayo E2E: 3–5 h.
+
+**Total común: 14–22 h.** El bloque legal (EIPD, registro, contrato de encargo, consentimiento revisado) también es común: 8–12 h, que ya hacían falta con Healthie. Va aparte.
 
 ---
 
-## 2. Lista corta: cinco viables o casi viables
+## 2. Lista corta: cuatro viables o casi viables
 
 Orden: de más a menos encaje con los cuatro críticos. Ninguna los cumple todos hoy sin ceder en algo.
 
 ### 2.1 Pabau (Reino Unido · nueva) — la que se nos escapó
 
-**Qué es.** Software clínico en la nube (estética, bienestar y medicina) con portal de paciente en todos los planes, app Pabau Go, web y soporte en español. Lo encontraron por separado dos de los cinco investigadores.
+**Qué es.** Software clínico en la nube (estética, bienestar y medicina) con portal de paciente en todos los planes, app Pabau Go, web y soporte en español. Lo encontraron por separado dos de los cinco investigadores. **Raúl pide la demo (SKI2-289).**
 
-**Contrato 1–7.** API REST pública con documentación en Postman sin login («Pabau Legacy», ejemplos de marzo de 2026):
-1 `clients/create` (si envía la invitación al portal: **Unknown**) · 2 `clients/{id}/medical-forms/create` · 3 `complete-forms` + webhooks de formularios y documentos · 4 `send/email`, `send/sms`, `send/WhatsApp` (si escribe en el buzón del portal: **Unknown**) · 5 `clients/{id}/communications` por consulta · 6 `clients/{id}/documents/upload` (si la clienta lo ve en el portal: **Unknown**) · 7 notas, etiquetas y campos propios.
-Límites: 110 peticiones/min y 25.000/día. Claves de API y webhooks aparecen en la tabla de planes; coste propio de la API: no se anuncia.
+**Contrato 1–7.** API REST pública, con documentación en Postman sin login: colección «Pabau Legacy», 212 rutas, ejemplos de marzo de 2026. Operación por operación:
+
+1. `clients/create`. **No hay ruta de invitación al portal**: cómo se da el acceso es Unknown.
+2. `clients/{id}/medical-forms/create`.
+3. `complete-forms` más webhooks de formularios y documentos. Sacar los datos de envío del kit de las respuestas es Unknown.
+4. Solo `send/email`, `send/sms` y `send/WhatsApp`. **No hay ruta de buzón del portal.**
+5. `clients/{id}/communications`, por consulta.
+6. `clients/{id}/documents/upload`. Si la clienta lo ve en el portal es Unknown.
+7. Notas, etiquetas y campos propios.
+
+Límites: 110 peticiones/min y 25.000/día. Las claves de API y los webhooks aparecen en todas las columnas de la tabla de planes; no se anuncia un coste aparte por la API.
 
 | Punto | Dato (18 oct) |
 |---|---|
-| R1 español y marca | Web, soporte y ficha del portal en español. Idioma de la interfaz del portal y de los correos: **Unknown**. «Quitar la marca Pabau»: probablemente en el complemento Marketing Plus (inferido de la tabla). |
-| R3/R4/R5 | Formularios de admisión y médicos en el portal, que pueden exigirse antes de reservar; mensajería segura; documentos compartidos. Firma del consentimiento: no la menciona la página del portal (Unknown). |
+| R1 español y marca | Web, soporte y ficha del portal en español. Idioma de la interfaz del portal y de los correos: **Unknown**. «Quitar la marca Pabau» parece ir en el complemento Marketing Plus (inferido de la tabla; precio Unknown). |
+| R3/R4/R5 | Formularios de admisión y médicos en el portal, que pueden exigirse antes de reservar; mensajería segura; documentos compartidos. Firma del consentimiento: la página del portal no la menciona (Unknown). |
 | R6 venta | Paquetes, membresías, bonos regalo, enlaces de pago y productos con inventario; Stripe y Klarna. |
-| R9 datos | Trust Centre: DigitalOcean y AWS en «EU & US regions». No dice si el cliente elige la UE. DPA de UK GDPR con subencargados, a petición. SCC no mencionadas. Subencargados en EE. UU. (SendGrid, Sentry, Vercel…). ISO 27001 del centro de datos, no de Pabau; SOC 2 solo como «readiness». |
+| R9 datos | Trust Centre: DigitalOcean y AWS en «EU & US regions»; no dice si el cliente elige la UE. DPA de UK GDPR con subencargados, a petición; no menciona SCC. Subencargados en EE. UU. (SendGrid, Sentry, Vercel…). ISO 27001 del centro de datos, no de Pabau; SOC 2 solo como «readiness». |
 | 2.2 web | Reservas en la web propia y enlaces de pago. Web o tienda en la plataforma: no. |
 
-**Coste total a 3 años (estimación).** Precio no publicado: los planes van por número de usuarios (Team = 2–3) y piden demo. Fuentes terciarias: «desde 59–69 $/mes» con 1 usuario.
+**Coste total a 3 años (estimación, extrapolado).**
+- La página oficial no da cifras. Los planes van por número de usuarios (Team = 2–3), por sede y por país, con hasta un 20 % de descuento anual.
+- **Fórmula:** 62 $/usuario/mes (blog del fabricante, vía fuente terciaria) × 2–3 usuarios × 12 × 0,92 = 1.370–2.050 €/año.
+- Las fuentes terciarias (ToolRadar, Software Advice) dan 59–69 $/mes **para 1 usuario**. Llevarlo a 2–3 usuarios es una suposición nuestra.
+- No incluye el complemento de marca ni el posible recargo por sede.
 
 | Concepto | Año 1 | Año 2 | Año 3 |
 |---|---|---|---|
-| Licencia Team, 2–3 usuarios (terciaria, **Unknown**) | 1.370–2.050 € | 1.370–2.050 € | 1.370–2.050 € |
+| Licencia Team, 2–3 usuarios (extrapolada) | 1.370–2.050 € | 1.370–2.050 € | 1.370–2.050 € |
 | API y webhooks | 0 € anunciado (Unknown) | ídem | ídem |
-| **Total 3 años** | | | **≈ 4.100–6.200 €** |
+| Complemento de marca (Marketing Plus) | Unknown | Unknown | Unknown |
+| **Total 3 años** | | | **≈ 4.100–6.200 € + marca (techo real Unknown)** |
 
-**Horas de integración (estimación): 35–55 h.**
-- Módulo `pabau`:
-  - cliente REST y alta, 6–9 h;
-  - formularios y paso D3, 8–12 h;
-  - receptor de webhooks, 4–6 h;
-  - mensajes, 4–6 h;
-  - informe y caso, 4–6 h.
-- Configuración de Pabau (plantillas en español, formularios, portal): 6–10 h.
-- Ensayo E2E y demo: 3–6 h.
+**Horas de integración (estimación): 55–85 h.** Desde hoy, con las comunes, son **69–107 h**. Por qué se sube de las 35–55 h de la primera versión: sin ruta de invitación ni de buzón, y sin el trabajo que hacía el módulo PHP de OpenEMR, el monolito tiene que resolverlo todo él. Desglose:
+- cliente REST, cableado y migración: 6–10 h;
+- alta y acceso sin ruta de invitación: 6–10 h;
+- formularios, D3 y paso 3 desde las respuestas: 10–16 h;
+- receptor de webhooks: 4–6 h;
+- mensajes por correo o SMS y lectura de comunicaciones: 5–8 h;
+- informe y caso: 4–6 h;
+- simulador y pruebas de integración: 8–15 h;
+- configuración de Pabau (plantillas en español, formularios y portal): 6–10 h;
+- ensayo E2E y demo: 3–5 h;
+- back office de Aitor: Unknown.
 
-Cambian `src/modules/portal` (nuevo valor) y un módulo nuevo. Mantenimiento: 6–12 h/año.
+Mantenimiento: 6–12 h/año.
 
 **Riesgos.**
-- **Precio:** opaco y por demo. La colección de la API se llama «Legacy»: puede haber migración.
+- **Precio:** opaco y por demo. La colección se llama «Legacy»: puede haber migración.
 - **Idioma:** el del portal y los correos no está confirmado.
 - **Datos de salud:** la región UE no está garantizada por escrito, el DPA es de UK GDPR y hay subencargados en EE. UU.
 - **Dependencia:** producto orientado a estética, con mucho que ocultar a Aitor.
 
 **Qué tendría que aceptar EPI10.**
-- Un software clínico de terceros con aspecto propio, no el de EPI10.
+- Un software clínico de terceros con aspecto propio.
+- Mensajes de hito por correo o SMS en vez del buzón, si se confirma que no hay buzón por API.
 - Una licencia anual.
-- Unos datos de salud alojados en la UE o el Reino Unido con DPA y subencargados en EE. UU.
+- Datos de salud en la UE o en el Reino Unido, con DPA y subencargados en EE. UU.
 
-**Prueba de 1–2 h que lo confirme (necesita el OK de Raúl: implica demo o cuenta).**
-1. Demo con presupuesto para Team y la pregunta sobre la región UE.
-2. En un sandbox, con la colección de Postman: crear una clienta, asignarle un formulario, subir un PDF y enviar un mensaje.
-3. Comprobar en el portal, en español, que llega la invitación, que se ven el formulario, el PDF y el mensaje, y que salta el webhook al completar.
+**Prueba de 1–2 h que lo confirme (tras la demo de SKI2-289).** En un sandbox, con la colección de Postman:
+1. Crear una clienta, asignarle un formulario, subir un PDF y enviar un mensaje.
+2. Comprobar en el portal, en español, cómo recibe el acceso.
+3. Comprobar que se ven el formulario, el PDF y el mensaje, y que salta el webhook al completar.
 
 Si falla el punto 3, Pabau baja a «puente semiautomático».
 
@@ -105,198 +181,207 @@ Fuentes (2026-10-18): [precios](https://pabau.com/pricing/), [precios ES](https:
 
 ### 2.2 Practice Better (Canadá · descartada el 7 oct, sigue casi) — automatiza, en inglés y con datos en EE. UU.
 
-**Contrato 1–7.** Por API: 1 (o Zapier «Add Client»), 2, 4 y 6. Por webhook: 3, solo según una guía terciaria de 2024. Unknown: 5 y 7. API REST de lectura y escritura en beta pública gratuita, en planes de pago y con revisión del soporte. Las docs solo se ven tras activarla. Zapier oficial: 6 disparadores y 1 acción.
+**Contrato 1–7.**
+- Por API: 1 (o Zapier «Add Client»), 2, 4 y 6.
+- Por webhook: 3, solo según una guía terciaria de 2024.
+- Unknown: 5 y 7.
+
+La API REST de lectura y escritura está en beta pública gratuita, en planes de pago y con revisión del soporte. Las docs solo se ven tras activarla. Zapier: 6 disparadores y 1 acción.
 
 | Punto | Dato (18 oct) |
 |---|---|
 | R1 | **Interfaz solo en inglés**, sin selector (artículo oficial). Los campos fijos de los formularios salen en inglés. El contenido propio sí puede ir en español. Marca y URL personalizada en Plus. |
 | R6 | Paquetes y programas con Stripe, desde Plus. |
 | R9 | **Nuevo: servidores consolidados en AWS EE. UU.** (artículo «Data Residency»; 403, leído en el extracto del buscador). DPA desde la cuenta. SCC/DPF: Unknown. |
-| API | «Pricing … will be introduced … once the beta period has concluded». Sin precio ni fecha. |
+| API | Cita del 7 oct, **no reverificada el 18** (403 y la búsqueda no la encuentra): «Pricing … will be introduced … once the beta period has concluded». Sin precio ni fecha. |
 
-**Coste total a 3 años (estimación).** Plus anual 89 $/mes ≈ 985 €/año (1 profesional + 3 administradores). Año 1 ≈ 985 € · año 2 ≈ 985 € + API (Unknown) · año 3 ≈ 985 € + API (Unknown). **Total ≥ 2.955 € + API.** Con un precio de API al estilo de Healthie (475–1.900 $/mes), se va a 8.000–30.000 € a 3 años.
+**Coste total a 3 años (estimación).** Plus anual: 89 $/mes ≈ 985 €/año, con 1 profesional y 3 administradores.
+- **Sin API de pago: ≥ 2.955 €** (985 € × 3).
+- **Escenario «API al estilo de Healthie»: 8.200–34.400 €.** El suelo supone una API de 475 $/mes solo el año 3 (2.955 + 5.244). El techo supone 950 $/mes el año 2 y 1.900 $/mes el año 3 (2.955 + 10.488 + 20.976).
 
-**Horas (estimación): 30–45 h.** Módulo `practicebetter`, 22–32 h; plantillas en español, 6–10 h; E2E, 2–3 h. Riesgo técnico: sin ver las docs no se puede estimar en serio. Mantenimiento: 6–12 h/año.
+**Horas (estimación): Unknown, ≥ 45 h.** Sin ver las docs no se puede estimar en serio.
+- Suelo: cliente y alta, 22–32 h; plantillas en español, 6–10 h; más la línea fija (cableado 3–5 h y simulador 8–15 h).
+- **Desde hoy: ≥ 59 h.**
+
+Mantenimiento: 6–12 h/año.
 
 **Riesgos.**
-- **Precio:** alto, porque la API pasará a ser de pago.
-- **Idioma:** inglés en la interfaz.
-- **Datos:** genéticos en EE. UU.
-- **Dependencia:** roadmap de un tercero.
+- **Precio:** alto; la API pasará a ser de pago.
+- **Idioma:** inglés.
+- **Datos:** los genéticos, en EE. UU.
+- **Dependencia:** el roadmap de un tercero.
 
-**Qué tendría que aceptar EPI10.** Un portal con botones en inglés. Datos genéticos en EE. UU. con DPA y SCC, más una evaluación de la transferencia. Y un precio futuro desconocido.
+**Qué tendría que aceptar EPI10.**
+- Un portal con botones en inglés.
+- Datos genéticos en EE. UU., con DPA y SCC y una evaluación de la transferencia.
+- Un precio futuro desconocido.
 
-**Prueba de 1–2 h.** Pedir por escrito el precio de la API tras la beta y la fecha en que acaba (Raúl o Carmen). Solo si es asumible: activar el complemento en una cuenta de prueba y verificar el alta, el formulario, el PDF y los webhooks.
+**Prueba de 1–2 h.**
+1. Pedir por escrito el precio de la API tras la beta y la fecha en que acaba (Raúl o Carmen).
+2. Solo si es asumible: activar el complemento en una cuenta de prueba y verificar el alta, el formulario, el PDF y los webhooks.
 
 Fuentes (2026-10-18): [precios](https://practicebetter.io/pricing), [API beta](https://help.practicebetter.io/hc/en-us/articles/16637584053275-Getting-Started-with-the-Practice-Better-API-Beta) (403, extracto), [residencia de datos](https://help.practicebetter.io/hc/en-us/articles/47681541627931-Practice-Better-Data-Residency) (403, extracto), [Zapier](https://zapier.com/apps/practice-better/integrations).
 
-### 2.3 Odoo como portal (Bélgica · reabierta: era la opción C del 7 oct)
+### 2.3 Noloco (Irlanda · nueva) con «portal fino»
 
-**Por qué se reabre.**
-- El 7 oct Raúl descartó Odoo como portal: «vale como back office, pero el cliente necesita una app web propia».
-- Hoy hay un dato nuevo: el proveedor de la web de EPI10 se ha caído (correo del 14 oct, punto 1.2).
-- Odoo es la única opción del inventario que junta en un mismo dominio y con la misma marca la web pública, la tienda (venta adicional) y el portal. Es exactamente el punto 2.2.
-- Además, el orquestador ya tiene un adaptador de Odoo probado contra un Odoo 17 real.
-
-**Contrato 1–7.** Todo por la API de Odoo (XML-RPC/JSON-RPC), que el orquestador ya usa:
-1. Crear el contacto y darle acceso al portal, que envía la invitación.
-2. Encuesta con *Survey* (Community) y firma con *Sign* (solo en las ediciones de pago).
-3. Por consulta, o con reglas automáticas (los webhooks de Odoo 17 no se han vuelto a comprobar hoy).
-4. `message_post` en el caso, que la clienta ve en el portal.
-5. Consulta de `mail.message`.
-6. Adjunto en el caso, descargable en el portal.
-7. Etapa o etiqueta.
+**La idea.** Noloco pone la interfaz, alojada en la UE. El orquestador, en el servidor de EPI10, guarda lo sensible: las respuestas de salud y el PDF.
+- El portal guarda nombre, correo, estado y mensajes de hito.
+- El PDF se sirve con un enlace firmado y caducable del orquestador.
+- Reduce el riesgo del art. 9 en el proveedor, pero no lo elimina: los mensajes y el formulario pueden contener datos de salud.
 
 | Punto | Dato (18 oct) |
 |---|---|
-| R1 | Portal con traducción oficial es_ES y tema web con marca EPI10. Aspecto «Odoo», mejorable con el constructor web. El chat es un hilo de mensajes. |
-| R6 | **Nativa:** eCommerce, presupuestos firmables y pago en el portal. |
-| R9 | Odoo Online en Bélgica (terciaria); DPA en el acuerdo de suscripción; **datos de salud no mencionados**. Si es autoalojado en el servidor de EPI10, no hay encargado nuevo. |
-| 2.2 | **Sí, la mejor del inventario:** web, tienda y portal en el mismo Odoo y dominio. |
+| R1 | **Sin localización nativa:** textos a mano y login con código. Correos de invitación editables. |
+| Contrato | Por GraphQL: 1, 2, 4, 6 y 7. Con workflows y webhook saliente: 3 y 5. Si crear la clienta por API envía la invitación: Unknown. |
+| R3/R4/R5 | Firma, formularios, comentarios por registro (no hay chat en tiempo real) y archivos. |
+| R6 | Stripe como fuente de datos sincronizada; botón de pago nativo: Unknown. |
+| R9 | AWS Irlanda e ISO 27001:2022 propia. **DPA no publicado.** No menciona los datos de salud: ni los prohíbe ni los acepta. |
+| Precio | Build 65 $/mes anual ≈ 720 €/año, con 1.000 clientas activas. **Total 3 años ≈ 2.150 €.** |
+| 2.2 | No. |
 
-**Coste total a 3 años (estimación).** Los usuarios del portal no pagan.
-- Si EPI10 ya tiene la API externa (plan Custom, Community o Enterprise autoalojado): **0 € extra**.
-- Si está en Online Standard, el paso a Custom con 3 usuarios internos cuesta ≈ 1.004 € el año 1 y ≈ 1.220 €/año después.
-- **Total: 0–3.450 €.**
+**Horas (estimación): 54–85 h** (desde hoy, **68–107 h**):
+- montaje: 30–45 h;
+- portal fino: 8–12 h;
+- español: 5–8 h;
+- línea fija (cableado y simulador): 11–20 h.
 
-**Horas (estimación): 40–70 h.**
-- Portal y plantillas en español: 10–15 h.
-- Encuesta y consentimiento: 8–15 h.
-- Hilo y avisos: 6–10 h.
-- Informe: 4–6 h.
-- Reglas o webhooks: 6–12 h.
-- Integración: 6–12 h.
-
-Cambia sobre todo el módulo `odoo`, que ya existe, y se añade el valor `odoo` en `PORTALES_CLIENTE`. Mantenimiento: 6–12 h/año.
+Mantenimiento: 6–12 h/año.
 
 **Riesgos.**
-- **Experiencia:** es lo que Raúl rechazó.
-- **Datos:** salud y genética en el mismo ERP que operaciones (permisos y registro de accesos), y DPA sin mención del art. 9.
-- **Dependencia:** depende del Odoo de EPI10, cuya versión, edición y mantenedor siguen siendo Unknown (SKI2-104).
+- **Legal:** el bloqueante es tener por escrito que acepta datos del art. 9 y un DPA.
+- **Idioma:** sin localización nativa.
+- **Chat:** pobre, son comentarios.
+- **Dependencia:** empresa pequeña.
 
-**Qué tendría que aceptar EPI10.** Un portal con aspecto Odoo en vez de una app propia. Y concentrar web, tienda, operaciones y datos de salud en Odoo.
-
-**Prueba de 1–2 h** (sin cuentas nuevas: el Odoo 17 de pruebas de SKI2-182, en hermes-node). Crear una clienta con acceso al portal, asignarle una encuesta, publicar un mensaje y un PDF en el caso, y verlo desde el portal en español. **Antes, decisión de Raúl:** ¿se reabre la C con el argumento de la web?
-
-Fuentes (2026-10-18): [precios](https://www.odoo.com/pricing-plan), [Sign](https://www.odoo.com/app/sign), [RGPD](https://www.odoo.com/gdpr), [seguridad](https://www.odoo.com/security), [addon HMS portal](https://apps.odoo.com/apps/modules/18.0/acs_hms_portal).
-
-### 2.4 No-code en la UE con «portal fino»: Knack (Frankfurt) o Noloco (Irlanda)
-
-**La idea.** Un constructor no-code alojado en la UE pone la interfaz. El orquestador, en el servidor de EPI10, guarda lo sensible: las respuestas de salud y el PDF. El portal guarda nombre, correo, estado y mensajes de hito, y sirve el PDF con un enlace firmado del orquestador. Reduce el riesgo del art. 9 en el proveedor, pero no lo elimina, porque los mensajes y el formulario pueden contener datos de salud.
-
-| | **Knack** | **Noloco** |
-|---|---|---|
-| R1 | App en español (16 idiomas); login y correos: Unknown | **Sin localización nativa**: textos a mano y login con código |
-| Contrato | 1, 2, 4, 6 y 7 por API REST; 3 y 5 con Flows (webhook saliente) | 1, 2, 4, 6 y 7 por GraphQL; 3 y 5 con workflows y webhook |
-| R3/R4/R5 | Firma dibujada, formularios, comentarios (sin tiempo real), archivos | Firma, formularios, comentarios, archivos |
-| R6 | Stripe desde Pro | Stripe sincronizado; pago nativo: Unknown |
-| R9 | **Frankfurt en todos los planes.** Pero los términos (§3(a), 24 ago 2026) **excluyen el art. 9** salvo el plan HIPAA | AWS Irlanda, ISO 27001:2022. **DPA no publicado.** Salud: no mencionada |
-| Precio | Pro 110 $/mes anual ≈ 1.215 €/año | Build 65 $/mes anual ≈ 720 €/año (1.000 clientas) |
-| **Total 3 años** | **≈ 3.650 €** | **≈ 2.150 €** |
-| Horas (estimación) | 40–70 h + 8–12 h de portal fino | 30–45 h + 8–12 h de portal fino + 5–8 h de español |
-| 2.2 | No | No |
-
-(Softr, en Alemania, es técnicamente la más completa: enlace mágico por API, Stripe nativo y web pública 2.2. Pero su propia documentación dice «PHI cannot be transmitted to or stored inside Softr». Por eso queda detrás: 1.200–1.900 €/año, 30–45 h.)
-
-**Riesgos.**
-- **Legal:** el bloqueante es la aceptación escrita del art. 9.
-- **Idioma:** sobre todo en Noloco.
-- **Chat:** pobre (comentarios).
-- **Horas:** en total se acercan a las del portal propio.
-
-**Qué tendría que aceptar EPI10.**
-- Un portal hecho con un constructor, con limitaciones de diseño.
-- Una excepción contractual del proveedor para el art. 9, o el portal fino.
-- Más piezas que mantener.
+**Qué tendría que aceptar EPI10.** Un portal hecho con un constructor, con limitaciones de diseño. Un DPA negociado. Y más piezas que mantener.
 
 **Prueba de 1–2 h.**
-1. Antes, pregunta escrita a Knack y a Noloco: ¿aceptan datos del art. 9 bajo su DPA?
-2. Si dicen que sí, en una cuenta de prueba: crear una clienta por API, ver si llega la invitación, ver el español del login y de los correos, y ver si hay un disparador de «comentario nuevo».
+1. Antes, pregunta escrita: ¿aceptan datos del art. 9 bajo un DPA?
+2. Si dicen que sí, en una cuenta de prueba: crear una clienta por API, ver si llega la invitación, ver el español del login y de los correos, y ver si hay disparador de «comentario nuevo».
 
-Fuentes (2026-10-18): [Knack precios](https://www.knack.com/pricing/), [Knack términos](https://www.knack.com/terms-of-service/), [Knack límites de API](https://docs.knack.com/docs/api-limits), [Noloco precios](https://noloco.io/pricing), [Noloco seguridad](https://noloco.io/security), [Noloco MSA](https://noloco.io/msa), [Softr HIPAA](https://docs.softr.io/security/hipaa-compliance).
+Fuentes (2026-10-18): [precios](https://noloco.io/pricing), [seguridad](https://noloco.io/security), [MSA](https://noloco.io/msa), [comunidad: localización](https://community.noloco.io/t/multi-language-portals/569).
 
-### 2.5 Simply.Coach (India/EE. UU. · nueva) — el mejor español, semiautomático
+**Knack sale de la lista corta (corrección de la revisión).**
+- Sus términos (§3(a), rev. 24 ago 2026) dicen que el servicio no está pensado para «Sensitive Personal Data», que el §1(18) define por el art. 9 del RGPD. **No hay ninguna excepción: ni siquiera el plan HIPAA la cubre.** La excepción HIPAA solo vale para la PHI.
+- La página de precios ofrece región «US, Europe, or Asia»; Frankfurt sin confirmar.
+- Solo valdría con una enmienda escrita del contrato.
+
+**Softr** también queda fuera: su documentación dice «PHI cannot be transmitted to or stored inside Softr» y no firma BAA.
+
+### 2.4 Simply.Coach (India/EE. UU. · nueva) — el mejor español, semiautomático
 
 **Por qué entra.** Es la única del inventario con R1 resuelto de verdad. La FAQ oficial dice que está disponible de forma nativa en inglés, español y francés «across the web app, mobile app, and even email notifications». El plan Leap da marca blanca y dominio propio por 69 $/mes.
 
-**Contrato 1–7.** Sin API pública, con Zapier oficial (12 disparadores y 5 acciones):
+**Contrato 1–7.** Sin API pública. Tiene integración con Zapier: 11 disparadores, 6 acciones (una es «Find or Create») y 3 búsquedas. La página de Zapier no dice que sea oficial.
 - Por Zapier: 1 «Create Contact» (si invita: Unknown), 2 «Create Engagement» (en parte), 3 «New Response Submitted for Form» y 7 «Create Note».
 - **A mano: 4, 5 y 6** (mensajes de hito, lectura de mensajes y PDF). Son 2–3 tareas por caso, unos 5–10 min para Aitor.
 
 | Punto | Dato (18 oct) |
 |---|---|
-| R3/R4/R5 | Formularios, contratos con firma, chat y archivos |
-| R6 | Paquetes, suscripciones, página escaparate, Stripe y PayPal |
-| R9 | AWS, región **no publicada**; dice SOC 2, HIPAA y GDPR; **DPA no publicado** |
-| 2.2 | Dominio propio y página escaparate |
+| R3/R4/R5 | Formularios, contratos con firma, chat y archivos. |
+| R6 | Paquetes, suscripciones, página escaparate, Stripe y PayPal. |
+| R9 | AWS, región **no publicada**. Dice SOC 2, HIPAA y GDPR. **DPA no publicado.** |
+| 2.2 | Dominio propio y página escaparate. |
 
-**Coste total a 3 años (estimación).** Leap ≈ 760 €/año más Zapier de pago (≈ 220–770 €/año): ≈ 980–1.530 €/año. **Total ≈ 2.950–4.600 €.** Los planes anuales anuncian «hasta −52 %» (no aplicado).
+**Coste total a 3 años (estimación).** Leap ≈ 760 €/año más Zapier de pago (≈ 220–770 €/año): ≈ 980–1.530 €/año. **Total ≈ 2.950–4.600 €.** Los planes anuales anuncian «hasta −52 %»; no está aplicado.
 
-**Horas (estimación): 15–25 h.**
-- Flujos de Zapier: 6–10 h.
-- Módulo puente en el monolito (como la alternativa manual de Healthie, SKI2-172): 6–10 h.
-- Guía para Aitor: 3–5 h.
-
-**Más el trabajo manual: 5–10 min por caso.**
+**Horas (estimación): 20–34 h** (desde hoy, **34–56 h**), más el trabajo manual de cada caso:
+- flujos de Zapier: 6–10 h;
+- módulo puente en el monolito, como la alternativa manual de Healthie (SKI2-172): 6–10 h;
+- cableado: 3–5 h;
+- pruebas: 2–4 h;
+- guía para Aitor: 3–5 h.
 
 **Riesgos.**
-- **Dependencia:** producto de coaching, no clínico. Zapier es una pieza más y cobra por tarea.
+- **Dependencia:** es un producto de coaching, no clínico. Zapier es una pieza más y cobra por tarea.
 - **Automatización:** incompleta.
-- **Datos de salud:** región y DPA desconocidos.
+- **Datos de salud:** la región y el DPA son Unknown.
 
-**Qué tendría que aceptar EPI10.** Automatizar solo la entrada y los formularios, con mensajes e informe a mano, y negociar el DPA.
+**Qué tendría que aceptar EPI10.** Automatizar solo la entrada y los formularios, con los mensajes y el informe a mano, y negociar el DPA.
 
-**Prueba de 1–2 h** (con el OK de Raúl: prueba gratuita de 14 días). Crear un contacto por Zapier, comprobar la invitación y el español de los correos, enviar un formulario y recibir el disparador. Antes, pregunta escrita: región de los datos y DPA.
+**Prueba de 1–2 h** (con el OK de Raúl; prueba gratuita de 14 días).
+1. Antes, pregunta escrita: región de los datos y DPA.
+2. Crear un contacto por Zapier y comprobar la invitación y el español de los correos.
+3. Enviar un formulario y recibir el disparador.
 
 Fuentes (2026-10-18): [precios y FAQ](https://simply.coach/pricing-for-solopreneurs/), [integraciones](https://simply.coach/business-management/integrations/), [seguridad](https://simply.coach/security/), [Zapier](https://zapier.com/apps/simplycoach/integrations).
 
-### 2.6 Se quedan fuera de la lista corta por poco
+### 2.5 Fuera de la lista corta
 
-- **Tellescope** (EE. UU., nueva): API pública muy completa que cubre las 7 operaciones, portal de marca blanca en dominio propio y formularios traducibles. Pero no publica precio (implementación más tarifa por paciente) y su región y DPA son Unknown (lo probable es EE. UU.). Merece una pregunta de precio y RGPD.
-- **CoachAccountable** (EE. UU., nueva): API madura incluida en el plan, con alta e invitación, acuerdo con firma y archivo compartido, por 120–250 $/mes. Interfaz en inglés, datos en Chicago y declara «NOT HIPAA compliant».
-- **Carepatron** (NZ): el mejor puente manual en español, con DPA UE que cubre datos de salud. Su API sigue siendo la misma del 2 oct (4 rutas, sin webhooks). No automatiza nada.
-- **IntakeQ/PracticeQ** (Canadá, nueva): automatiza bien formularios y consentimientos (API + webhook «Intake Submitted»), con datos en Canadá y DPA estándar. Mensajes y PDF a mano; 500 peticiones/día.
+- **Odoo como portal (opción C): descartado.** Raúl, 18 oct: «ya hay portal propio sobre OpenEMR y Odoo no aporta nada encima». Odoo sigue como back office. El argumento de la web (2.2) va a otra parte del dossier. Allí, la caída del proveedor de la web va como «parece haberse caído», como dice el correo del 14 oct; no consta por escrito.
+- **Knack:** excluye el art. 9 sin excepción (§2.3).
+- **Tellescope** (EE. UU., nueva): API pública muy completa que cubre las 7 operaciones, portal de marca blanca en dominio propio y formularios traducibles. Pero no publica precio (implementación más tarifa por paciente) y su región y DPA son Unknown (lo probable es EE. UU.).
+- **CoachAccountable** (EE. UU., nueva): API madura incluida en el plan (alta e invitación, acuerdo con firma, archivo compartido) por 120–250 $/mes. Interfaz en inglés, datos en Chicago y declara «NOT HIPAA compliant».
+- **Carepatron** (NZ): el mejor puente manual en español, con DPA de la UE que cubre datos de salud. Su API sigue igual que el 2 oct (4 rutas, sin webhooks).
+- **IntakeQ/PracticeQ** (Canadá, nueva): automatiza bien formularios y consentimientos, con datos en Canadá y DPA estándar. Mensajes y PDF a mano; 500 peticiones/día.
 - **DriCloud** (España, nueva): español, Azure en Europa, firma remota y tienda online. Pero su API solo cubre pacientes y citas, sin webhooks: ≈ 2.810 € el año 1.
 
 ---
 
 ## 3. Comparación con el desarrollo propio, solo en cifras
 
-Mismo formato para todas. Licencias en € (estimación). Horas de construcción e integración (estimación). No incluye el bloque legal común (EIPD, registro, contrato de encargo, consentimiento revisado): **8–12 h en todas las opciones**, porque ya hacía falta con Healthie. Las opciones con datos fuera de la UE suman 2–4 h de evaluación de la transferencia (estimación).
+Mismo formato para todas. Licencias en € y horas, todo estimación.
+- **«Horas desde hoy»** = lo que falta hasta producción, sumadas las 14–22 h comunes (SKI2-173, 240 y parte de 241).
+- **«Construcción (histórico)»** = lo que cuesta construir la opción desde cero. Sirve para comparar en igualdad, pero en el portal propio sobre OpenEMR ya está gastado.
+- No incluye el bloque legal común (8–12 h en todas). Las opciones con datos fuera de la UE suman 2–4 h de evaluación de la transferencia.
 
-| Opción | Año 1 | Año 2 | Año 3 | **Total 3 años** | Horas de construcción | Mantenimiento h/año | Trabajo manual por caso |
-|---|---|---|---|---|---|---|---|
-| Healthie con API (línea base) | 7.440 € | 12.690 € | 23.170 € | **≈ 43.300 €** | 6–10 (validar lo hecho) | 6–12 | 0 |
-| Pabau | 1.370–2.050 € (U) | 1.370–2.050 € (U) | 1.370–2.050 € (U) | **≈ 4.100–6.200 €** | 35–55 | 6–12 | 0 (U) |
-| Practice Better | 985 € | 985 € + API (U) | 985 € + API (U) | **≥ 2.955 € + API** | 30–45 | 6–12 | 0 |
-| Odoo como portal | 0–1.004 € | 0–1.220 € | 0–1.220 € | **0–3.450 €** | 40–70 | 6–12 | 0 |
-| Knack con portal fino | 1.215 € | 1.215 € | 1.215 € | **≈ 3.650 €** | 48–82 | 6–12 | 0 |
-| Noloco con portal fino | 720 € | 720 € | 720 € | **≈ 2.150 €** | 43–65 | 6–12 | 0 |
-| Simply.Coach + Zapier | 980–1.530 € | 980–1.530 € | 980–1.530 € | **≈ 2.950–4.600 €** | 15–25 | 6–12 | 5–10 min |
-| **Propio: portal en el monolito («botón rojo», SKI2-205)** | 60–240 € | 60–240 € | 60–240 € | **≈ 180–720 €** | 56–70 (60–76 con venta) | 12–24 | 0 |
-| **Propio: OpenEMR autoalojado + módulo (vía 1, SKI2-207)** | 0–480 € | 0–480 € | 0–480 € | **≈ 0–1.440 €** | 52–76 | 24–48 | 0 |
+| Opción | Año 1 | Año 2 | Año 3 | **Total 3 años** | **Horas desde hoy** | Construcción (histórico) | Mantenimiento h/año | Manual por caso |
+|---|---|---|---|---|---|---|---|---|
+| **Propio: portal sobre OpenEMR + módulo (vía 1, ya construido)** | 0–480 € | 0–480 € | 0–480 € | **≈ 0–1.440 €** | **39–62** | 52–76 (gastadas) | 24–48 | 0 |
+| Healthie con API (línea base) | 7.440 € | 12.690 € | 23.170 € | **≈ 43.300 €** | 23–37 | — | 6–12 | 0 |
+| Pabau | 1.370–2.050 € (ext.) | ídem | ídem | **≈ 4.100–6.200 € + marca (U)** | 69–107 | 55–85 | 6–12 | 0 (U) |
+| Practice Better, sin API de pago | 985 € | 985 € | 985 € | **≥ 2.955 €** | ≥ 59 (U) | ≥ 45 (U) | 6–12 | 0 |
+| Practice Better, API al estilo de Healthie | 985 € | 985–11.473 € | 6.229–21.961 € | **8.200–34.400 €** | ≥ 59 (U) | ≥ 45 (U) | 6–12 | 0 |
+| Noloco con portal fino | 720 € | 720 € | 720 € | **≈ 2.150 €** | 68–107 | 54–85 | 6–12 | 0 |
+| Simply.Coach + Zapier | 980–1.530 € | ídem | ídem | **≈ 2.950–4.600 €** | 34–56 | 20–34 | 6–12 | 5–10 min |
+| Propio alternativo: portal en el monolito («botón rojo», SKI2-205, no elegido) | 60–240 € | 60–240 € | 60–240 € | **≈ 180–720 €** | 70–92 | 56–70 (60–76 con venta) | 12–24 | 0 |
 
-Cómo se calcula cada fila:
-- **Healthie:** Group con 2 clínicos (199 $/mes) más la API, a 475, 950 y 1.900 $/mes.
-- **Botón rojo:** solo el coste recurrente nuevo de 5–20 €/mes (correo transaccional en la UE).
-- **OpenEMR:** 0 € en el servidor de EPI10, o DINAO Performance a 39,90 €/mes + IVA.
+**Cómo se calculan las horas desde hoy del propio sobre OpenEMR (39–62 h).** Linear no tiene estimaciones; estas son nuestras, a partir de cada issue:
 
-**Nota interna** (no va al dossier tal cual): la vía 1 de OpenEMR ya está construida en buena parte (v1.3 en `main`). Las horas de la línea 2.1 (b) las pone su propio documento. Este cuadro solo deja las cifras lado a lado.
+| Issue | Qué falta | Horas |
+|---|---|---|
+| SKI2-239 | Contrato v1.1: fase única del caso, hitos por el monolito y republicar el informe | 10–16 h |
+| SKI2-242 | OpenEMR reproducible: compose versionado, imagen fijada, ajustes de producción y *authorization code* | 8–12 h |
+| SKI2-241 (parte) | Migrar el ensayo E2E al portal de OpenEMR | 3–5 h |
+| SKI2-173 (parte) | Desplegar OpenEMR en el servidor de EPI10, además del monolito | 3–5 h |
+| SKI2-268 | Integrar las ramas del kit, ya revisadas | 1–2 h |
+| **Propias de OpenEMR** | | **25–40 h** |
+| Comunes a todas las opciones | SKI2-173, 240 y parte de 241 | 14–22 h |
+
+**Cómo se calcula el resto de filas.**
+- **Healthie, 23–37 h desde hoy:**
+  - 6–10 h para validar en el sandbox lo construido;
+  - 6–10 h para el paso 3 del onboarding y el resumen del caso, que su módulo no tiene;
+  - 11–17 h comunes, porque no hay que retirar Healthie.
+- **Licencias:**
+  - Healthie: Group con 2 clínicos (199 $/mes) más la API, a 475, 950 y 1.900 $/mes.
+  - Portal propio sobre OpenEMR: 0 € en el servidor de EPI10, o DINAO Performance a 39,90 €/mes + IVA.
+  - Botón rojo: 5–20 €/mes de correo transaccional en la UE.
+- **Nota para el dossier:** cómo se presenta lo ya construido lo decide Raúl. El correo del 14 oct no lo menciona.
 
 Lectura en tres frases:
-1. **En licencias**, todas las plataformas de la lista corta cuestan entre 7 y 20 veces menos que Healthie con API. Ninguna es gratis, salvo Odoo si ya tiene la API.
-2. **En horas de construcción**, solo Simply.Coach (con trabajo manual) y Pabau o Practice Better (de 10 a 25 h menos) ahorran algo frente al propio. **En mantenimiento**, una plataforma pide menos que operar OpenEMR (unas 20–35 h/año menos).
-3. **En riesgo**, las plataformas cambian horas por dependencia: precio que puede cambiar (Practice Better ya lo ha anunciado), idioma y dónde viven los datos genéticos.
+1. **En licencias**, todas las plataformas de la lista corta cuestan bastante menos que Healthie con API, salvo Practice Better si su API acaba costando como la de Healthie. El portal propio sobre OpenEMR es el más barato.
+2. **En horas desde hoy, ninguna plataforma ahorra frente a lo ya construido:**
+   - Simply.Coach se queda en 34–56 h, frente a 39–62 h, solo porque deja mensajes e informe a mano.
+   - Pabau y Noloco suman entre 6 y 68 h más que terminar OpenEMR. Practice Better, al menos lo mismo (Unknown).
+   - **En mantenimiento**, una plataforma pide unas 20–35 h/año menos que operar OpenEMR.
+3. **En riesgo**, las plataformas cambian horas por dependencia: un precio que puede cambiar (Practice Better ya lo ha anunciado), el idioma y dónde viven los datos genéticos.
 
 ---
 
 ## 4. Inventario completo
 
-127 plataformas, una fila por plataforma. **Todas las fuentes se consultaron el 2026-10-18.** Se marca «terciaria» cuando no hubo fuente primaria.
+137 plataformas, una fila por plataforma. **Todas las fuentes se consultaron el 2026-10-18**, también las de cada fila. Se marca «terciaria» cuando no hubo fuente primaria.
+
+**Recuento de «las 41 del 7 oct».**
+- El research del 7 oct decía «36», pero sus tablas tienen 39 filas más InsideTracker.
+- Aquí se suma Healthie como línea base: 41.
+- Odoo como portal (la opción C de SKI2-204) va aparte.
+- Hay 95 nuevas, 10 de ellas añadidas en la corrección.
+- **Cuatro filas no se pudieron evaluar por falta de fuente:** Eugenomic, Medicapp, Dietbox e indya.
 
 Leyenda de **Estado:**
 - **D**: descartada.
-- **R**: reabierta.
 - **N**: nueva.
 - **N★**: nueva y en la lista corta.
 - **D★**: descartada el 7 oct que sigue en la lista corta.
@@ -308,7 +393,7 @@ En la columna «¿Se mantiene?»:
 - **No**: el motivo ya no vale.
 
 Columna **2.2**: ✅ integra la web con la misma marca · ◐ en parte · — no.
-Costes: años 1 / 2 / 3, en € para 2–3 personas (estimación); U = Unknown.
+Costes: años 1 / 2 / 3, en € para 2–3 personas (estimación), salvo donde se indica; U = Unknown.
 
 ### 4.1 Práctica clínica y bienestar (SaaS)
 
@@ -318,11 +403,11 @@ Costes: años 1 / 2 / 3, en € para 2–3 personas (estimación); U = Unknown.
 | Practice Better (CA) | D★ | Inglés, región U, API de pago tras la beta · **Sí, y peor**: datos en AWS EE. UU. | Inglés, EE. UU. y precio de API futuro | 985 / 985+API / 985+API | ◐ | [precios](https://practicebetter.io/pricing) |
 | Carepatron (NZ) | D | API embrionaria, sin webhooks · **Sí**: spec del 2026-10-02 idéntica, 4 rutas | Puente manual (15–25 min/caso) | 515–1.030 / 1.030 / 1.030 | — | [OpenAPI](https://developer.carepatron.com/openapi.yaml) |
 | Zanda (AU) | D | API beta de solo lectura · **Sí**: «Zanda API – coming soon» | Todo manual, sin chat | 405 / 540 / 540 | ◐ | [precios](https://www.zandahealth.com/pricing/) |
-| Cliniko (AU) | D | Sin portal ni webhooks · **Sí** | Construir el portal igualmente | 495 / 495 / 495 | — | [API](https://docs.api.cliniko.com/) |
+| Cliniko (AU) | D | Sin portal ni webhooks · **Sí** | Construir el portal igualmente | 960–1.050 ×3 (2–5 profesionales; 495 con 1) | — | [API](https://docs.api.cliniko.com/) |
 | Jane (CA) | D | API solo para partners · **Sí**: la API no crea pacientes ni tiene formularios ni mensajes | Ser partner o todo manual | ≈ 790 / 790 / 790 | ✅ Jane Websites | [developers](https://developers.jane.app/) |
 | SimplePractice (EE. UU.) | D | Sin API · **Sí**; además, solo USD y CAD | Todo manual, EE. UU. | ≈ 870 / 870 / 870 | ◐ | [precios](https://www.simplepractice.com/pricing/) |
 | Halaxy (AU) | D | Sin docs públicas ni UE · **En parte**: ya hay docs, API UE (`eu-api.halaxy.com`) y webhooks, pero sin formularios, mensajes ni documentos | Formularios, mensajes y PDF a mano | U | U | [webhooks](https://developers.halaxy.com/docs/webhooks.md) |
-| Pabau (UK) | N★ | No estaba | Producto de estética, precio por demo, ES y región U | 1.370–2.050 ×3 (U) | ◐ | [API](https://documenter.getpostman.com/view/4391324/2sAYJAdxBb) |
+| Pabau (UK) | N★ | No estaba | Producto de estética; sin ruta de invitación ni buzón por API; precio por demo; ES y región U | 1.370–2.050 ×3 (extrapolado, U) | ◐ | [API](https://documenter.getpostman.com/view/4391324/2sAYJAdxBb) |
 | Simply.Coach (IN/EE. UU.) | N★ | No estaba | Mensajes y PDF a mano; DPA y región U | 980–1.530 ×3 | ✅ dominio y escaparate | [precios](https://simply.coach/pricing-for-solopreneurs/) |
 | CoachAccountable (EE. UU.) | N | No estaba | Inglés, EE. UU. (Chicago); mensajes a mano | 1.325–2.760 ×3 | ◐ widget | [API](https://www.coachaccountable.com/APIDocs) |
 | IntakeQ / PracticeQ (EE. UU./CA) | N | No estaba | Mensajes y PDF a mano; datos en Canadá | ≈ 940 ×3 | — | [API](https://support.intakeq.com/article/31-intakeq-api) |
@@ -334,6 +419,10 @@ Costes: años 1 / 2 / 3, en € para 2–3 personas (estimación); U = Unknown.
 | Heallist (UK) | N | No estaba | Marketplace, sin formularios ni PDF | 220–265 ×3 | ◐ | [precios](https://www.heallist.com/pricing) |
 | WriteUpp (UK) | N | No estaba | Todo manual, inglés | ≈ 395 ×3 | ◐ | [precios](https://www.writeupp.com/pricing) |
 | Paperbell (EE. UU.) | N | No estaba | Zapier solo de salida; solo serviría como tienda | U | ✅ | [Zapier](https://zapier.com/apps/paperbell/integrations) |
+| Owl Practice (CA) | N | No estaba | Inglés y francés; portal como extra; sin API conocida | ≈ 300–540 ×3 (terciaria) | — | [Capterra, terciaria](https://www.capterra.com/p/160519/OwlPractice/pricing/) |
+| TherapyNotes (EE. UU.) | N | No estaba | Sin API pública oficial (solo una integración no oficial de terceros) | U | — | [Supergood, terciaria](https://docs.supergood.ai/therapynotes-api) |
+| CharmHealth (EE. UU.) | N | No estaba | Programa de API, HL7 y FHIR; EE. UU.; webhooks y precio U | U | — | [Capterra, terciaria](https://www.capterra.in/compare/120340/129169/charm-ehr/vs/tebra) |
+| Tebra / Kareo (EE. UU.) | N | No estaba | Portal y API citados sin detalle; mercado de EE. UU. | U | — | [GetApp, terciaria](https://www.getapp.co.uk/compare/102859/102863/tebra/vs/therapynotes-com) |
 
 ### 4.2 Nutrición y software clínico español y europeo
 
@@ -362,6 +451,12 @@ Costes: años 1 / 2 / 3, en € para 2–3 personas (estimación); U = Unknown.
 | Clinni (ES) | N | No estaba | Sin API | ≈ 155 ×3 + IVA | — | [precios](https://clinni.com/precios) |
 | Flowww (ES) | N | No estaba | Estética; API «abierta» sin docs públicas | 708–2.988 ×3 + IVA (terciaria) | U | [precios, terciaria](https://pabau.com/es/blog/precios-de-flowww/) |
 | Doctolib (FR/DE) | N | No estaba | API para partners (Francia); sin programa público en España | U | — | [integración, terciaria](https://www.nextmotion.net/blog/integration-doctolib-logiciel-clinique-esthetique) |
+| Dietowin (ES) | N | No estaba | Programa de escritorio con nube; portal de paciente citado; sin API | U | — | [softwaredoit, terciaria](https://www.softwaredoit.es/dietowin/dietowin.html) |
+| Nutrimind (MX/ES) | N | No estaba | Fuentes contradictorias sobre el portal; sin marca blanca ni API | U | — | [softwaredoit, terciaria](https://www.softwaredoit.es/nutrimind/nutrimind.html) |
+| Ofimedic (ES) | N | No estaba | Portal de paciente y firma (Namirial); sin API pública; precio no publicado | U | — | [Namirial](https://www.namirial.com/de/partners/marketplace/ofimedic/) |
+| Doctena (LU/DE) | N | No estaba | Agenda; la API de Okta es solo de identidad del personal | U | — | [Okta, terciaria](https://www.okta.com/integrations/doctena/) |
+| Jameda (DE) | N | No estaba | Solo interfaces de agenda con software alemán | U | — | [Ärzte Zeitung, terciaria](https://www.aerztezeitung.de/Wirtschaft/jameda-und-medatixx-kooperieren-298080.html) |
+| NutriSoft (EE. UU.) | N | No estaba | Programa de análisis nutricional, no portal | n/a | — | [directorio, terciaria](https://oldavista.com/dirs/business_and_economy/companies/health/software/personal_health/nutrition) |
 | Nutrilog (FR) | N | No estaba | Solo francés; API sin docs | U | — | [web](https://nutrilog.com/) |
 | Evry (NL) | N | No estaba | Solo neerlandés y mercado NL | U | — | [web](https://www.evry.nl/) |
 | Luscii (NL) | N | No estaba | Telemonitorización hospitalaria | U | — | [web](https://www.luscii.com/) |
@@ -383,7 +478,7 @@ Costes: años 1 / 2 / 3, en € para 2–3 personas (estimación); U = Unknown.
 | OpenMRS O3 | D | Sin portal · **Sí** (3.7.1, jul 2026) | Construir el portal | 0 + > 120 h | — | [descargas](https://openmrs.org/download/) |
 | LibreHealth EHR (EE. UU.) | D | Sin portal · **Sí**; actividad dudosa | Mejor OpenEMR, que es el original | n/a | — | [GitLab](https://gitlab.com/librehealth/ehr/lh-ehr) |
 | Juno EMR (CA) | D | Sin portal · **Sí** | Datos en Canadá | U | — | [GetApp, terciaria](https://www.getapp.com/all-software/a/juno-emr/) |
-| Odoo como portal (BE) | **R** | Opción C, descartada por Raúl por la experiencia · **En parte**: la caída de la web de EPI10 le da el argumento 2.2 | Portal con aspecto Odoo; salud en el ERP | 0–1.004 / 0–1.220 / 0–1.220 | ✅ | [precios](https://www.odoo.com/pricing-plan) |
+| Odoo como portal (BE) | D | Opción C de SKI2-204 (7 oct) · **Sí**: Raúl, 18 oct, «ya hay portal propio sobre OpenEMR y Odoo no aporta nada encima». Sigue como back office | No aplica | Custom con 3 usuarios, precio completo: 1.004 / 1.220 / 1.220 (0 € si ya tiene la API) | ✅ | [precios](https://www.odoo.com/pricing-plan) |
 | Marley Health / Frappe (IN) | N | No estaba | Segundo ERP; buzón por construir: 70–110 h | 55–442 ×3 | ◐ | [repo](https://github.com/earthians/marley) |
 | Aidbox + Beda EMR (EE. UU.) | N | No estaba | Licencia de producción ≈ Healthie año 3 | ≈ 20.976 ×3 (terciaria) | — | [precios](https://www.health-samurai.io/docs/aidbox/overview/editions-and-pricing) |
 | Awell Health (BE/EE. UU.) | N | No estaba | Solo cubre 1–3; no es portal ni buzón | U | ◐ | [Hosted Pages](https://docs.awellhealth.com/docs/embed-and-host/overview-hosted-pages) |
@@ -403,7 +498,7 @@ Costes: años 1 / 2 / 3, en € para 2–3 personas (estimación); U = Unknown.
 | Clinked (UK) | D | Sin formularios ni webhooks · **Sí** | Formularios aparte; sondeo | ≈ 2.110 ×3 | — | [precios](https://www.clinked.com/pricing) |
 | Moxo (EE. UU.) | D | Fuera de escala · **Sí**; ya no publica precio | Presupuesto empresarial | ≥ 5.000 ×3 | — | [precios](https://www.moxo.com/pricing) |
 | Noloco (IE) | N★ | No estaba | ES a mano; DPA no publicado; portal fino | 720 ×3 | — | [precios](https://noloco.io/pricing) |
-| Knack (EE. UU., región DE) | N★ | No estaba | Excepción art. 9 o portal fino | 1.215 ×3 | — | [términos](https://www.knack.com/terms-of-service/) |
+| Knack (EE. UU., región UE a elegir) | N | No estaba | **Excluye el art. 9 sin excepción**, ni siquiera con el plan HIPAA; solo valdría una enmienda escrita. Frankfurt sin confirmar | 1.215 ×3 | — | [términos](https://www.knack.com/terms-of-service/) |
 | Glide (EE. UU.) | N | No estaba | **Prohíbe datos genéticos** | n/a | — | [user data](https://www.glideapps.com/legal/user-data) |
 | Bubble (EE. UU.) | N | No estaba | **El DPA prohíbe el art. 9** | n/a | ✅ | [DPA](https://bubble.io/dpa) |
 | WeWeb + Xano (FR/EE. UU.) | N | No estaba | Acuerdo de salud con Xano; 70–110 h | 1.160–1.460 (≈ 8.280 con acuerdo de salud) ×3 | ✅ | [Xano precios](https://www.xano.com/pricing/) |
@@ -468,17 +563,19 @@ Costes: años 1 / 2 / 3, en € para 2–3 personas (estimación); U = Unknown.
 
 1. **Datos de salud en no-code: el bloqueo es contractual, no técnico.**
    - Lo prohíben por escrito: Glide (datos genéticos), Bubble (DPA §13.4), Budibase Cloud, Circle (DPA), Kajabi (AUP) y Dubsado.
-   - Lo excluyen salvo plan HIPAA de EE. UU. o acuerdo aparte: Knack y Xano.
+   - Knack los excluye **sin excepción**: su excepción HIPAA solo cubre la PHI de EE. UU., no el art. 9.
+   - Xano los excluye salvo un «Health Data Agreement» aparte.
    - Lo desaconsejan: Softr, Plutio, Memberstack y Jotform.
    - Es un dato nuevo frente al 7 oct, cuando Softr quedó como mención sin esta comprobación.
 2. **Las genéticas B2B2C no sirven como portal.** Todas entregan su propio test o motor. La más útil es **TellmeGen B2B**, como complemento: es gratuita y saca el PDF genético con el logo de EPI10.
    - Aviso nuevo: en España, los productos Advanced y ULTRA de TellmeGen «requieren prescripción médica previa». Hay que confirmar cuál usa EPI10.
 3. **Venta adicional (R6) en España.**
    - Fullscript no envía a España (artículo actualizado el 4 sep 2026).
-   - Siguen valiendo Stripe Checkout desde el orquestador (2–4 h), Odoo eCommerce o la venta nativa de Pabau y Practice Better.
-   - Systeme.io (Irlanda) sirve como web y tienda en la UE si la web de EPI10 necesita casa.
+   - Siguen valiendo Stripe Checkout desde el orquestador (2–4 h) o la venta nativa de Pabau y Practice Better.
+   - Systeme.io (Irlanda) sirve como web y tienda en la UE. Es un dato para la parte del dossier que trata la web (2.2), no para el portal.
 4. **Complementos baratos en la UE.** Tally (Bélgica, 0–20 €/mes) para el consentimiento y la encuesta, con webhooks. Son útiles en cualquier opción con portal fino.
-5. **Lo que no cambia.** No existe hoy, a 18 oct, una plataforma en la UE, con portal en español, API gratis y venta adicional para una pyme de nutrición. Pabau es la que más se acerca, y lo tiene que demostrar.
+5. **Lo que no cambia.** A 18 oct no existe una plataforma en la UE con portal en español, API gratis y venta adicional para una pyme de nutrición. Pabau es la que más se acerca, y lo tiene que demostrar.
+6. **Frente a lo ya construido**, ninguna plataforma ahorra horas hasta producción (§3).
 
 ---
 
@@ -486,28 +583,30 @@ Costes: años 1 / 2 / 3, en € para 2–3 personas (estimación); U = Unknown.
 
 | # | Unknown | Quién | Cómo |
 |---|---|---|---|
-| U1 | Pabau: precio de Team (2–3 usuarios) y si la API y los webhooks tienen coste | Raúl, con su OK para pedir demo | Demo y presupuesto por escrito |
+| U1 | Pabau: precio de Team (2–3 usuarios) por sede y país, coste del complemento de marca (Marketing Plus) y si la API y los webhooks tienen coste | Raúl (demo pedida, SKI2-289) | Demo y presupuesto por escrito |
 | U2 | Pabau: idioma del portal, de la app y de los correos | Raúl o el equipo, tras la demo | Tour público o demo; prueba de 1–2 h |
-| U3 | Pabau: si los mensajes y documentos enviados por API se ven en el portal, si `clients/create` invita y qué eventos tiene el webhook | El equipo, con su OK | Prueba de 1–2 h en sandbox con la colección de Postman |
+| U3 | Pabau: cómo se da el acceso al portal sin ruta de invitación, si los documentos subidos por API se ven en el portal, si hay buzón accesible por API y qué eventos tiene el webhook | El equipo, tras la demo | Prueba de 1–2 h en sandbox con la colección de Postman |
 | U4 | Pabau: región UE garantizada por contrato, DPA de la UE (no solo UK GDPR) con SCC, y subencargados de EE. UU. | Raúl + abogado o DPD de EPI10 | Pregunta escrita y lectura del DPA |
 | U5 | Practice Better: precio y fecha de la API tras la beta | Raúl o Carmen | Pregunta escrita |
-| U6 | Odoo de EPI10: edición, versión, plan y acceso a la API. Y si se reabre la opción C | Carmen o Aresoltec (SKI2-104); Raúl decide la C | Mirar la suscripción (5 min) y prueba de 1–2 h en el Odoo 17 de pruebas |
-| U7 | Knack, Noloco y Softr: ¿aceptan datos del art. 9 bajo su DPA? | Raúl | Pregunta escrita a los tres |
+| U6 | Back office de Aitor con otra plataforma: hoy se apoya en OpenEMR (resumen del caso y enlace a la pantalla de informes) | Equipo | Diseño breve si se elige una plataforma; no se ha estimado |
+| U7 | Noloco: ¿acepta datos del art. 9 y firma un DPA? Knack: ¿aceptaría una enmienda del §3(a) para el art. 9 y en qué región de la UE (Frankfurt sin confirmar)? Softr no se pregunta: ya dice por escrito que no | Raúl | Pregunta escrita a Noloco; a Knack solo si se quiere insistir |
 | U8 | Simply.Coach: región AWS y DPA; si «Create Contact» invita | Raúl | Pregunta escrita; prueba de 14 días con su OK |
 | U9 | Tellescope: precio, región y DPA | Raúl | Pregunta escrita |
 | U10 | TellmeGen: qué producto usa EPI10 (¿exige prescripción?) y si la marca blanca evita que la clienta reciba sus correos | Carmen | Pregunta a TellmeGen (EPI10 ya es cliente) |
 | U11 | Horas consumidas de las 110 h | Raúl | Heredado de SKI2-205; condiciona cualquier opción |
 
-**Lo que no bloquea este documento.** Ninguna prueba con cuenta es imprescindible para entregar la línea 2.1 (a). **Sí lo es para afirmar en el dossier que Pabau es viable:** hasta U1–U3, Pabau es «casi viable».
+**Lo que no bloquea este documento.** Ninguna prueba con cuenta es imprescindible para entregar la línea 2.1 (a). **Sí lo es para afirmar en el dossier que Pabau es viable:** hasta resolver U1–U3, tras la demo de SKI2-289, Pabau es «casi viable».
 
 ---
 
 ## 7. Limitaciones y lo que no se revisó
 
-- El cupo de búsquedas web de la sesión se agotó a mitad del trabajo en los cinco grupos. Desde ese punto, los datos salen de abrir directamente las páginas oficiales. Las cifras de terceros van marcadas.
+- El cupo de búsquedas web se agotó a mitad del trabajo en los cinco grupos. Desde ese punto, los datos salen de abrir directamente las páginas oficiales. Las cifras de terceros van marcadas.
+- En la corrección volvió el cupo. Se añadieron 10 de las 17 pendientes: Dietowin, Nutrimind, Ofimedic, Doctena, Jameda, NutriSoft, Owl Practice, TherapyNotes, CharmHealth y Tebra. Todas son de fuente terciaria, y ninguna tiene API pública útil para el contrato.
 - Varias páginas dieron 403 o solo cargan con JavaScript: los artículos de Practice Better (leídos en el extracto del buscador), el DPA de Softr, el portal de desarrolladores de Carepatron y las tablas de precios en imagen de Noloco y Softr.
-- **No revisadas:** Doctena, Jameda, Esana, Halsa, Kenko, Nutrisoft, Ofimedic, Diet-Plan, Nutriboss, Dietowin, Nutrimind, Owl Practice, TherapyNotes, CharmHealth, Satori, Tebra/Kareo y Livv Health. Por su perfil (agenda, mercado local o EE. UU.) no se espera que cambien la lista corta. Es una inferencia, no una comprobación.
-- Las horas son estimaciones a partir del contrato y de lo construido para Healthie y OpenEMR. Ninguna plataforma se ha probado.
+- **No localizadas con ninguna fuente**, ni primaria ni terciaria (búsquedas del 18 oct sin resultados con esos nombres): Diet-Plan, Nutriboss, Esana, Halsa, Kenko, Satori y Livv Health. Las dos últimas tampoco resolvían DNS. Si alguien da el nombre exacto o la web, se revisan.
+- Las horas son estimaciones a partir del contrato real (`contrato.ts` v1.2.0) y de lo construido para Healthie y OpenEMR. Ninguna plataforma se ha probado.
+- Las horas desde hoy de OpenEMR salen de las descripciones de SKI2-239 a 242 y 173, que no tienen estimación en Linear.
 
 ## 8. Fuentes
 
@@ -517,18 +616,19 @@ Todas consultadas el **2026-10-18**. Las fuentes de cada plataforma están en su
 - Practice Better: [precios](https://practicebetter.io/pricing), [residencia de datos](https://help.practicebetter.io/hc/en-us/articles/47681541627931-Practice-Better-Data-Residency) (extracto), [API beta](https://help.practicebetter.io/hc/en-us/articles/16637584053275-Getting-Started-with-the-Practice-Better-API-Beta) (extracto).
 - Carepatron: [OpenAPI 2026-10-02](https://developer.carepatron.com/openapi.yaml), [DPA UE](https://www.carepatron.com/eu-data-processing-addendum), [precios](https://www.carepatron.com/pricing).
 - Healthie: [precios](https://www.gethealthie.com/pricing), [formularios en español](https://help.gethealthie.com/article/1106-forms-available-in-spanish).
-- Odoo: [precios](https://www.odoo.com/pricing-plan), [RGPD](https://www.odoo.com/gdpr).
-- Knack: [precios](https://www.knack.com/pricing/), [términos](https://www.knack.com/terms-of-service/). Noloco: [precios](https://noloco.io/pricing), [seguridad](https://noloco.io/security). Softr: [HIPAA](https://docs.softr.io/security/hipaa-compliance).
+- Odoo (descartado como portal): [precios](https://www.odoo.com/pricing-plan).
+- Knack (excluye el art. 9): [precios](https://www.knack.com/pricing/), [términos, §3(a) y §1(18)](https://www.knack.com/terms-of-service/). Noloco: [precios](https://noloco.io/pricing), [seguridad](https://noloco.io/security). Softr: [HIPAA](https://docs.softr.io/security/hipaa-compliance).
 - Simply.Coach: [precios y FAQ](https://simply.coach/pricing-for-solopreneurs/), [Zapier](https://zapier.com/apps/simplycoach/integrations).
 - OpenEMR: [releases](https://github.com/openemr/openemr/releases), [DINAO](https://dinao.com/en/conteneur/openemr).
 - Prohibiciones del art. 9: [Glide](https://www.glideapps.com/legal/user-data), [Bubble DPA](https://bubble.io/dpa), [Budibase](https://budibase.com/terms/), [Plutio DPA](https://www.plutio.com/legal/data-processing-agreement).
 - Venta en España: [Fullscript, envíos](https://support.fullscript.com/articles/eligible-shipping-addresses).
 - TellmeGen: [plataforma B2B](https://www.tellmegen.com/plataforma-b2b), [privacidad](https://www.tellmegen.com/politica-de-privacidad).
-- Referencias internas: Healthie 475/950/1.900 $/mes (correo del 7 oct, `../healthie/2026-10-07_noticias_healthie_v1.md`); botón rojo (SKI2-205, §7.1); OpenEMR vía 1 (SKI2-207).
+- Añadidas en la corrección (terciarias): [Dietowin](https://www.softwaredoit.es/dietowin/dietowin.html), [Nutrimind](https://www.softwaredoit.es/nutrimind/nutrimind.html), [Ofimedic](https://www.namirial.com/de/partners/marketplace/ofimedic/), [Doctena](https://www.okta.com/integrations/doctena/), [Jameda](https://www.aerztezeitung.de/Wirtschaft/jameda-und-medatixx-kooperieren-298080.html), [Owl Practice](https://www.capterra.com/p/160519/OwlPractice/pricing/), [TherapyNotes](https://docs.supergood.ai/therapynotes-api), [CharmHealth y Tebra](https://www.capterra.in/compare/120340/129169/charm-ehr/vs/tebra).
+- Referencias internas: Healthie 475/950/1.900 $/mes (correo del 7 oct, `../healthie/2026-10-07_noticias_healthie_v1.md`); botón rojo (SKI2-205, §7.1); OpenEMR vía 1 (SKI2-207); horas desde hoy (SKI2-239, 240, 241, 242 y 173); decisiones de Raúl (comentario en SKI2-288, 18 oct); revisión independiente (`05_scratch/ski2-288/revision_v1.md`, repo principal).
 
 ## Siguiente paso
 
-1. Revisión independiente de este documento, que lanza el orquestador: muestreo de fuentes y precios.
-2. Raúl decide si autoriza la demo de Pabau (U1–U3) antes del 21 y si reabre la opción C (Odoo como portal) con el argumento de la web.
-3. Si autoriza las preguntas escritas: Practice Better (U5), y Knack, Noloco y Softr (U7).
+1. Hecho: revisión independiente («apto con cambios») y correcciones aplicadas (B1, I1–I4 y los menores M1–M9).
+2. Demo de Pabau (SKI2-289, la pide Raúl). Después, la prueba de 1–2 h para U1–U3.
+3. Si Raúl autoriza las preguntas escritas: Practice Better (U5) y Noloco (U7).
 4. El dossier del 21 pone esta línea 2.1 (a) junto a la 2.1 (b) con el cuadro del §3.
