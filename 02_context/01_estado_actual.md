@@ -186,3 +186,6 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
   - Tellescope: borrador.
 - **El dossier se retrasa una semana, más o menos**, hasta después de la ronda de demos (Raúl). Raúl lo habla con Carmen (SKI2-303).
 - **Siguiente:** recoger las respuestas y actualizar las fichas del documento 05. SKI2-293 y SKI2-294 siguen en Backlog hasta que Raúl las active.
+- **Hoja de ruta acordada (Raúl, 18 oct, noche):**
+  - **Hito 6 · Ronda de demos (19–23 oct):** Tellescope, Practice Better y Pabau, más Plutio de rebote. IntakeQ, cancelado (rojo). Marley Health no se contacta (sería otro propio). Corte de respuestas el lunes 26.
+  - **Hito 7 · Nuevo análisis y dossier (~28 oct, por confirmar con Carmen):** primero SKI2-304 (actualizar la matriz y las fichas); después, cuando Raúl lo procese, SKI2-293, SKI2-294 y el dossier.
