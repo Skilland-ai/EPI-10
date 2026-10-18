@@ -141,3 +141,11 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
 - **Kit (SKI2-268):** ramas `v13-kit` (módulo, ffa1e5d sobre main) y `kit-codigo-recogida` (monolito) revisadas y corregidas; **los PR los crea Raúl** (acción denegada en la sesión del agente). Entrarán después.
 - **Para Carmen:** artefacto con la historia de la crisis, la decisión, lo construido y la demo (privado hasta que Raúl lo comparta).
 - **Deuda anotada:** unificar el stepper del carril con `stepper.mjs`; carril forzado solo en home.php; cambios del test tras D3 no se sincronizan; `probar` solo automatiza «En casa»; plantilla «Dirección de envío del kit»; kanban tipo tablero para Clientes; redesplegar NutriWell en Vercel con la página de éxito nueva (EPI-10 59c1126).
+
+## 18 oct · repaso de plataformas de mercado (SKI2-288, dossier 2.1 a)
+
+- Documento: `04_outputs/modulos/crisis-healthie/2026-10-18_repaso_plataformas_mercado_v1.md`. 127 plataformas con fuentes del 18 oct; solo información pública, sin cuentas ni contactos.
+- Ningún descarte del 7 oct se revoca. Se reabre **Odoo como portal** (opción C) por el punto 2.2 (web, tienda y portal con la misma marca).
+- **Lista corta:** Pabau (nueva, casi viable, pendiente de demo), Practice Better (empeora: AWS EE. UU., inglés, API de pago tras la beta), Odoo como portal, Knack o Noloco con portal fino (art. 9) y Simply.Coach (español nativo, semiautomático).
+- Cifras (estimación): licencias a 3 años 0–6.200 € frente a ≈ 43.300 € de Healthie con API; construcción 15–82 h frente a 52–76 h (OpenEMR vía 1) y 56–70 h (botón rojo).
+- **Pendiente de Raúl:** OK para la demo y la prueba de 1–2 h de Pabau (U1–U3); si reabre la C; preguntas escritas a Practice Better, Knack, Noloco y Softr. Revisión independiente: la lanza el orquestador.
