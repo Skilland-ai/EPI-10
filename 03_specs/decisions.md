@@ -86,3 +86,4 @@
 
 - **Pabau:** sí a la demo y al presupuesto antes del 21 oct (SKI2-289). La pide Raúl con el texto de `04_outputs/comunicaciones/2026-10-18_peticion_demo_pabau_v1.md`. Hasta resolver precio, español del portal y API → portal, sigue como «casi viable».
 - **Odoo como portal (opción C): sigue descartado.** Ya hay portal propio sobre OpenEMR; Odoo no aporta nada encima. Odoo es back office.
+- **Tope naranja para lo que no es software de salud (Raúl, 18 oct, noche):** una plataforma que no está hecha para datos de salud, por ejemplo una herramienta para freelancers, no pasa de naranja aunque cumpla las peticiones. Se aplica a Plutio: pasa a naranja con prioridad baja frente al propio; se le escribe con todas las preguntas (SKI2-299).
