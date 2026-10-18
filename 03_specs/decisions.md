@@ -81,3 +81,8 @@
 - **Ratificado:** línea de actividad en la ficha y no en el panel «Hoy»; carpetas planas (las 3D, descartadas para el portal); modal de subida completo pospuesto hasta el contrato v1.1.
 - **Decisiones estéticas delegadas al orquestador** («toma las mejores decisiones de diseño»), resueltas así: pasos del consentimiento en barra horizontal; opciones del cuestionario con radio (sin letras A/B/C); al terminar, halo cian sobrio (sin confeti); logins con panel liso y grano (sin halo de anillos); inicio en marfil liso; sin anillo «4 de 5» junto a la fase; sin indicador «escribiendo…» sin señal real; sin resalte deslizante en la lista de clientas; sin notas de voz en el chat; el grano en los azules se queda. «Mi informe» agrupado en carpetas planas cuando haya más de un documento: después de la demo.
 - **Siguen vigentes como aplicadas** (pendientes de que Raúl las toque en el repaso): texto de «Test recibido», chat sin adjuntos del equipo, Atlantic/Canary, ficha con código del kit visible y «Más datos» plegado.
+
+## 2026-10-18 · Repaso de plataformas de mercado (SKI2-288)
+
+- **Pabau:** sí a la demo y al presupuesto antes del 21 oct (SKI2-289). La pide Raúl con el texto de `04_outputs/comunicaciones/2026-10-18_peticion_demo_pabau_v1.md`. Hasta resolver precio, español del portal y API → portal, sigue como «casi viable».
+- **Odoo como portal (opción C): sigue descartado.** Ya hay portal propio sobre OpenEMR; Odoo no aporta nada encima. Odoo es back office.
