@@ -1,0 +1,320 @@
+# Matriz de peticiones y tiers de viabilidad del portal de cliente (v1)
+
+Fecha: 2026-10-18 · Linear: SKI2-288, documento 05 del proyecto · Construida a partir de las notas de los investigadores y del repaso del 18 oct. Script de tiers: reglas del §2.
+
+> **Qué es.** Las 137 plataformas que revisamos para el portal de cliente, evaluadas una a una contra **la lista de peticiones de EPI10 al portal** y ordenadas en tiers de viabilidad, de la más viable a la menos. Sustituye a la versión anterior de este documento, que daba cifras pero no decía qué cumple y qué no cada opción.
+>
+> **Datos:** fuentes públicas consultadas el 18 oct 2026 (SKI2-288), con su revisión independiente. **No se ha probado ninguna plataforma.** ❓ significa que el dato no está en ninguna fuente, no que no exista.
+
+---
+
+## 1. La lista de peticiones (las columnas)
+
+| Columna | Petición al portal de cliente | ¿Crítica? |
+|---|---|---|
+| **ES** | La **interfaz** del portal y la app en español (si solo el contenido propio va en español, es ◐) | ✅ crítica |
+| **Marca** | Marca EPI10 y personalización: marca blanca, dominio propio, sin la marca del proveedor | importante |
+| **Alta** | Alta automática tras pagar en Stripe e invitación al portal | ✅ crítica |
+| **Firma** | Consentimiento con firma en el portal | ✅ crítica |
+| **Form** | Encuesta de hábitos y formularios propios, con aviso cuando se completan | ✅ crítica |
+| **Chat** | Chat con el equipo, que el sistema pueda escribir y leer | ✅ crítica |
+| **PDF** | La clienta ve y descarga su informe en PDF, publicado por el sistema | ✅ crítica |
+| **Venta** | Venta adicional (paquetes, productos y pagos) usable desde España | importante |
+| **BO** | Back office para el equipo (Aitor, Carmen) | importante |
+| **API** | API o webhooks que una pyme pueda usar hoy | ✅ crítica |
+| **€** | Coste a 3 años asumible (referencia: Healthie con API ≈ 43.300 €) | importante |
+| **UE** | Datos de salud en la UE con un DPA que **acepte** los datos del art. 9 | ✅ crítica |
+| **Estable** | Madurez y estabilidad: sin cambios de precio anunciados, producto vivo | importante |
+
+**Leyenda:**
+- ✅ sí, y el sistema lo puede automatizar.
+- ◐ parcial o con concesión: a mano, solo por Zapier, solo en inglés, en un plan superior…
+- ❌ no lo tiene, o lo prohíbe.
+- ❓ desconocido.
+- — no aplica.
+
+## 2. Cómo se asigna el tier
+
+Reglas fijas, aplicadas igual a las 137:
+- 🟢 **Verde, superviable:** ninguna petición crítica en ❌ y al menos 6 de las 8 críticas en ✅.
+- 🟡 **Naranja, viable con concesiones:** tiene API, aunque sea parcial, y como mucho una crítica en ❌.
+- 🔴 **Rojo, no viable:** se cumple alguna de estas condiciones:
+  - prohíbe los datos de salud;
+  - precio inasumible;
+  - no es un portal de cliente;
+  - no tiene API (solo serviría como puente manual);
+  - dos o más críticas en ❌.
+- ⚪ **Sin datos:** 5 o más críticas desconocidas.
+
+Dentro de cada tier se ordena por puntuación. Cada crítica vale el doble: ✅ = 1, ◐ = 0,5, ❓ = 0,25, ❌ = 0.
+
+## 3. Resultado
+
+| Tier | Plataformas |
+|---|---|
+| 🟢 Verde | **2** |
+| 🟡 Naranja | **25** |
+| 🔴 Rojo | **106** |
+| ⚪ Sin datos | **4** |
+
+1. **Verde son dos.** Una es el portal propio sobre OpenEMR, ya construido, que cumple las 13 peticiones salvo la venta, que va por Stripe. La otra es **Plutio** (Reino Unido), que en la síntesis anterior se nos quedó enterrada en una fila del inventario.
+2. **Plutio cubre las 7 operaciones del contrato por API**, por unos 50 €/mes, con firma, formularios, chat y archivos en el portal. Sus pegas:
+   - el español del portal y de los correos está **sin verificar**;
+   - su DPA **desaconseja** los datos del art. 9 (no los prohíbe: exige que el cliente justifique la base legal);
+   - **los archivos se guardan en EE. UU.** Se evita sirviendo el PDF desde el orquestador con enlace firmado.
+3. **En el naranja, arriba:** CoachAccountable, Assembly, Practice Better, Marley Health y Tellescope. Todas fallan en **español** o en **datos en la UE**, o en las dos.
+4. **Pabau baja al puesto 12 del naranja.** Interfaz en español ❓ y firma ❓. Alta, chat y PDF ◐, porque no hay ruta de invitación ni de buzón por API. La demo del viernes resuelve exactamente esas casillas.
+5. **Ninguna plataforma de mercado tiene a la vez español ✅, datos en la UE ✅ y automatización ✅ confirmados.**
+6. **Motivos del rojo:**
+   - 56: no son un portal de cliente;
+   - 26: sin API, solo puente manual;
+   - 8: precio inasumible;
+   - 7: prohíben o excluyen los datos de salud;
+   - 7: archivadas, no contratables o descartadas por decisión;
+   - 2: fallan dos o más críticas.
+
+---
+
+## 4. Los tiers
+
++++ 🟢 Tier verde · superviable · 2
+
+| # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Por confirmar | Qué le falta |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | **OpenEMR + módulo EPI10 (propio, ya construido)** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | 0–480 ×3 | — | Venta solo por Stripe desde web/monolito; sin webhooks (consulta periódica); parches 2–4 h/mes; 39–62 h hasta producción. |
+| 2 | Plutio (UK) | ❓ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ◐ | ◐ | 550–640 ×3 | ES ❓, UE ◐ | Archivos en EE. UU.; DPA desaconseja art. 9; español sin verificar; webhooks sin confirmar (sondeo); EUR sin confirmar |
+
+**Plutio, lo que hay que confirmar antes de darlo por bueno:**
+1. **Interfaz y correos en español:** dice tener más de 25 idiomas, pero el español no está verificado.
+2. **El art. 9 por escrito:** que acepten datos de salud con su DPA (tiene SCC y adenda UK), o una evaluación propia documentada.
+3. **El PDF genético fuera de sus archivos (EE. UU.):** enlace firmado desde el orquestador.
+4. **Webhooks:** qué eventos hay; si no, consulta periódica.
+
+Montaje estimado por el investigador: **32–55 h**. Es una estimación, sin la línea fija de cableado y simulador (11–20 h) ni las 14–22 h comunes a cualquier opción. Precio: Pro, 490 $/año, más 9 $/mes por la marca blanca. Fuentes: [precios](https://www.plutio.com/pricing), [DPA](https://www.plutio.com/legal/data-processing-agreement), [API](https://docs.plutio.com).
+
++++
+
++++ 🟡 Tier naranja · viable con concesiones · 25
+
+| # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Para subir a verde (críticas no ✅) | Qué le falta |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | CoachAccountable (EE. UU.) | ◐ | ◐ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ❓ | 1.325–2.760 ×3 | ES ◐, Chat ◐, UE ◐ | Interfaz solo en inglés; sin dominio propio; mensajes sin API; formularios por sondeo; datos en Chicago; «NOT HIPAA». |
+| 2 | Assembly (EE. UU.) | ◐ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ◐ | ◐ | ≈ 1.090 ×3 | ES ◐, Alta ◐, UE ◐ | Interfaz solo inglés; pagos no disponibles en España; región no publicada (prob. EE. UU.); invitación por API sin confirmar |
+| 3 | Practice Better (CA) | ◐ | ◐ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ◐ | ◐ | ❌ | 985 / 985+API / 985+API | ES ◐, Chat ◐, UE ◐ | Interfaz solo en inglés; datos en AWS EE. UU.; la API beta será de pago sin precio; leer mensajes U. |
+| 4 | Marley Health / Frappe (IN) | ◐ | ✅ | ✅ | ◐ | ✅ | ❌ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 55–442 ×3 | ES ◐, Firma ◐, Chat ❌, PDF ◐ | Segundo ERP junto a Odoo; sin buzón; textos de Marley sin traducir; firma fuera del portal; 70–110 h. |
+| 5 | Tellescope (EE. UU.) | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ◐ | ❓ | ❓ | ◐ | U | ES ◐, API ◐, UE ❓ | Precio, plan de API, región y DPA desconocidos (probable EE. UU.); interfaz y correos en español sin confirmar. |
+| 6 | SuiteDash (EE. UU.) | ✅ | ✅ | ◐ | ✅ | ◐ | ◐ | ◐ | ✅ | ✅ | ◐ | ✅ | ◐ | ◐ | ≈ 885 ×3 | Alta ◐, Form ◐, Chat ◐, PDF ◐, API ◐, UE ◐ | API solo contactos: formularios, mensajes y PDF a mano o Zapier; EE. UU. sin BAA; traducción y Stripe sin reverificar |
+| 7 | IntakeQ / PracticeQ (EE. UU./CA) | ◐ | ◐ | ◐ | ✅ | ✅ | ◐ | ◐ | ◐ | ✅ | ✅ | ✅ | ◐ | ❓ | ≈ 940 ×3 | ES ◐, Alta ◐, Chat ◐, PDF ◐, UE ◐ | Invitación no documentada; mensajes y PDF a mano; portal quizá en inglés; datos en Canadá; 500 peticiones/día. |
+| 8 | Carepatron (NZ) | ✅ | ◐ | ◐ | ✅ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ◐ | ✅ | 515–1.030 / 1.030 / 1.030 | Alta ◐, Form ◐, Chat ◐, PDF ◐, API ◐, UE ◐ | API solo exporta contactos, sin webhooks: todo manual (15–25 min/caso); región sin publicar; white label en Advanced. |
+| 9 | Simply.Coach (IN/EE. UU.) | ✅ | ✅ | ◐ | ✅ | ◐ | ◐ | ◐ | ✅ | ✅ | ◐ | ✅ | ❓ | ❓ | 980–1.530 ×3 | Alta ◐, Form ◐, Chat ◐, PDF ◐, API ◐, UE ❓ | Sin API, solo Zapier; mensajes y PDF a mano (5–10 min/caso); región AWS y DPA no publicados. |
+| 10 | Memberstack + Webflow (EE. UU.) | ✅ | ✅ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ❓ | 500–900 + Webflow ×3 | Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Portal entero por construir (80–150 h); EE. UU.; desaconseja datos sensibles; sin invitación por API; coste de Webflow ❓ |
+| 11 | DriCloud (ES) | ✅ | ❓ | ◐ | ✅ | ◐ | ❓ | ◐ | ✅ | ✅ | ◐ | ✅ | ◐ | ❓ | 2.810 / 2.510 / 2.510 | Alta ◐, Form ◐, Chat ❓, PDF ◐, API ◐, UE ◐ | API solo pacientes y citas, sin webhooks: formularios, mensajes y PDF a mano; marca y DPA desconocidos. |
+| 12 | Pabau (UK) | ❓ | ◐ | ◐ | ❓ | ✅ | ◐ | ◐ | ✅ | ✅ | ✅ | ◐ | ◐ | ◐ | 1.370–2.050 ×3 (extrapolado, U) | ES ❓, Alta ◐, Firma ❓, Chat ◐, PDF ◐, UE ◐ | Sin invitación ni buzón por API; idioma del portal, firma y precio U; región UE no garantizada; DPA UK. |
+| 13 | Clinked (UK) | ❓ | ✅ | ✅ | ◐ | ❌ | ✅ | ✅ | ❌ | ◐ | ◐ | ✅ | ◐ | ◐ | ≈ 2.110 ×3 | ES ❓, Firma ◐, Form ❌, API ◐, UE ◐ | Sin formularios propios (Jotform/Tally); firma vía DocuSign; sin webhooks (sondeo) ni venta; ES sin reverificar; DPA ambiguo en salud |
+| 14 | Budibase (UK) | ◐ | ◐ | ✅ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ✅ | ✅ | ◐ | ◐ | 100–300 ×3 | ES ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Nube prohíbe salud: autoalojar y operar (50–90 h); sin traducciones ni marca en edición libre; sin Stripe |
+| 15 | Zite (EE. UU.) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ◐ | ≈ 830 ×3 | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin UE para apps y datos; página de acceso en inglés; sin API de invitación; P4–P7 construibles; producto joven |
+| 16 | Noloco (IE) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ✅ | ◐ | ◐ | 720 ×3 | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin localización (ES a mano); DPA no publicado ni postura art. 9; chat = comentarios; P4–P7 construibles; empresa pequeña |
+| 17 | Halaxy (AU) | ❓ | ✅ | ◐ | ✅ | ◐ | ◐ | ❓ | ◐ | ✅ | ✅ | ❓ | ❓ | ◐ | U | ES ❓, Alta ◐, Form ◐, Chat ◐, PDF ❓, UE ❓ | API sin formularios, mensajes ni documentos; invitación U; precio, alojamiento y DPA U; español U; opaca. |
+| 18 | Delenta (UK) | ❓ | ◐ | ◐ | ✅ | ◐ | ❓ | ◐ | ✅ | ✅ | ◐ | ✅ | ❓ | ◐ | ≈ 645 ×3 | ES ❓, Alta ◐, Form ◐, Chat ❓, PDF ◐, API ◐, UE ❓ | API solo en Enterprise; Zapier parcial; mensajes y PDF a mano; español y región U; empresa pequeña. |
+| 19 | Docline (ES) | ✅ | ✅ | ❓ | ❓ | ❓ | ◐ | ◐ | ◐ | ✅ | ◐ | ❓ | ◐ | ❓ | U | Alta ❓, Firma ❓, Form ❓, Chat ◐, PDF ◐, API ◐, UE ◐ | API declarada sin docs; precio enterprise por demo; firma no mencionada; región hoy no indicada. |
+| 20 | MN program (ES) | ✅ | ❓ | ◐ | ◐ | ◐ | ❌ | ◐ | ❓ | ✅ | ◐ | ❓ | ◐ | ❓ | ≥ 365 ×3 | Alta ◐, Firma ◐, Form ◐, Chat ❌, PDF ◐, API ◐, UE ◐ | SOAP de 3 operaciones sin webhooks ni acceso al portal; sin chat; firma y formularios en planes superiores. |
+| 21 | Trainerize (CA) | ❓ | ✅ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ❓ | ❓ | ≈ 1.600 ×3 | ES ❓, Alta ◐, Firma ❌, Form ◐, Chat ◐, PDF ◐, API ◐, UE ❓ | API solo en Studio Plus; Zapier sin aviso de formulario ni mensaje nuevo; sin firma; fitness sin DPA visible. |
+| 22 | Everfit (EE. UU./VN) | ❓ | ◐ | ◐ | ❓ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ❓ | ❓ | 600–1.300 ×3 | ES ❓, Alta ◐, Firma ❓, Form ◐, Chat ◐, PDF ◐, API ◐, UE ❓ | API solo en Enterprise; Zapier sin aviso de formulario; chat y PDF a mano; fitness; español y datos U. |
+| 23 | Appsmith (EE. UU./IN) | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❓ | ≈ 8.800 cloud / 0 autoalojado | ES ◐, Alta ❌, Firma ◐, Form ◐, Chat ◐, PDF ◐, API ◐, UE ◐ | Solo inglés; pensado para uso interno; autoalojar y construir firma y chat (60–100 h); nube ≈ 26.400 € |
+| 24 | BridgeInteract (EE. UU.) | ❓ | ✅ | ❓ | ◐ | ◐ | ◐ | ❓ | ◐ | ❓ | ❓ | ❓ | ❌ | ❓ | U | ES ❓, Alta ❓, Firma ◐, Form ◐, Chat ◐, PDF ❓, API ❓, UE ❌ | Empresarial para grupos con EHR: sin precio ni docs de API; datos en Dallas, sin RGPD; español desconocido. |
+| 25 | Nutrilog (FR) | ❌ | ❓ | ❓ | ❓ | ◐ | ◐ | ◐ | ❌ | ❓ | ◐ | ❓ | ❓ | ❓ | U | ES ❌, Alta ❓, Firma ❓, Form ◐, Chat ◐, PDF ◐, API ◐, UE ❓ | Solo francés; API para plataformas sin docs públicas; precio y región desconocidos. |
+
++++
+
+### 🔴 Tier rojo · no viable · 106
+
+Plegadas por motivo, para repasar si se nos ha escapado algo.
+
++++ 🔴 Prohíbe o excluye datos de salud · 7
+
+| # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Motivo | Qué le falta |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Softr (DE) | ◐ | ✅ | ✅ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ❌ | ◐ | 1.200–1.700 / 1.300–1.900 / 1.300–1.900 | Rechaza datos de salud | «PHI cannot be… stored inside Softr»; ES a mano, login en inglés; chat = comentarios; P4–P7 construibles; cambia planes a menudo |
+| 2 | Knack (EE. UU., región UE a elegir) | ✅ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ✅ | ❌ | ❓ | 1.215 ×3 | Excluye el art. 9 | Términos §3(a) excluyen art. 9 sin excepción, ni con HIPAA; Frankfurt sin confirmar; chat = comentarios; P4–P7 construibles |
+| 3 | Bubble (EE. UU.) | ✅ | ✅ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | — | ❌ | ❓ | n/a | DPA prohíbe art. 9 | DPA §13.4 prohíbe categorías especiales; UE solo en Enterprise dedicado; todo construible a mano |
+| 4 | Circle (EE. UU.) | ✅ | ✅ | ✅ | ❌ | ✅ | ◐ | ◐ | ✅ | ❓ | ◐ | — | ❌ | ❓ | n/a | DPA prohíbe art. 9 | DPA prohíbe art. 9; sin firma; leer DM solo con webhooks en Scale; PDF como adjunto |
+| 5 | Kajabi (EE. UU.) | ✅ | ✅ | ✅ | ❌ | ◐ | ◐ | ◐ | ✅ | ❓ | ◐ | — | ❌ | ❓ | n/a | AUP prohíbe datos de salud | AUP prohíbe datos de salud; sin firma; 1:1 (Backstage, beta) sin API; API solo en Pro o complemento |
+| 6 | Dubsado (EE. UU.) | ❓ | ✅ | ◐ | ✅ | ◐ | ❌ | ◐ | ◐ | ✅ | ❌ | ✅ | ❌ | ❓ | ≈ 485 ×3 | Excluye datos sensibles | Términos excluyen información sensible; sin API (Zapier solo Premier); sin chat; casi todo a mano |
+| 7 | Glide (EE. UU.) | ◐ | ❓ | ❌ | ◐ | ◐ | ◐ | ❌ | ◐ | ❓ | ◐ | — | ❌ | ❓ | n/a | Prohíbe datos genéticos | Prohíbe datos genéticos; sin servidores UE; API sin usuarios ni archivos; correo del PIN en inglés |
+
++++
+
++++ 🔴 Precio inasumible · 8
+
+| # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Motivo | Qué le falta |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Canvas Medical (EE. UU.) | ❓ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ❌ | ❌ | ✅ | ≈ 44.160 ×3 | precio inasumible | 4.000 $/mes con contrato de 2 años; AWS EE. UU., sin UE; español del portal desconocido. |
+| 2 | Oystehr / Ottehr (EE. UU.) | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ◐ | ◐ | ◐ | ✅ | ❌ | ❌ | ◐ | ≈ 11.040 ×3 + uso | precio inasumible | Silver 1.000 $/mes; datos en EE. UU. sin DPA; licencia con atribución obligatoria y cláusulas anti-IA. |
+| 3 | Healthie (EE. UU.) | ◐ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ❌ | ❌ | ❌ | 7.440 / 12.690 / 23.170 | Precio inasumible | API de pago (≈ 43.300 € a 3 años); interfaz sin español; sin white label; datos en EE. UU. sin DPA; precio ya cambió. |
+| 4 | WeWeb + Xano (FR/EE. UU.) | ✅ | ✅ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ❌ | ◐ | ◐ | 1.160–1.460 (≈ 8.280 con acuerdo de salud) ×3 | Precio con acuerdo de salud | Xano prohíbe salud sin «Health Data Agreement» (≈ 24.800 € a 3 años); WeWeb en EE. UU.; casi portal propio (70–110 h) |
+| 5 | Aidbox + Beda EMR (EE. UU.) | ◐ | ❓ | ✅ | ◐ | ✅ | ❓ | ◐ | ❌ | ✅ | ◐ | ❌ | ◐ | ◐ | ≈ 20.976 ×3 (terciaria) | precio inasumible | Licencia de producción ≈ Healthie año 3; la gratuita prohíbe datos reales; portal de paciente sin confirmar. |
+| 6 | Moxo (EE. UU.) | ✅ | ◐ | ❓ | ✅ | ◐ | ◐ | ◐ | ❓ | ✅ | ◐ | ❌ | ❓ | ❓ | ≥ 5.000 ×3 | Precio inasumible | API solo en plan a medida, sin precio público; marca en Enterprise; región UE y DPA no publicados |
+| 7 | Stackby (IN) | ❓ | ◐ | ❌ | ◐ | ◐ | ❌ | ◐ | ❌ | ◐ | ◐ | ❌ | ❌ | ◐ | ≈ 33.000 ×3 (extrapolación) | Precio inasumible, sin UE | Sin UE ni DPA; no aísla por clienta; sin invitación ni chat; invitados de portal muy caros |
+| 8 | Akute Health (EE. UU.) | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ❓ | ◐ | ✅ | ◐ | ❌ | ❌ | ◐ | > 6.072 ×3 + API U | precio inasumible | API solo en plan Developer sin precio; sin firma nativa; EE. UU. sin RGPD; empresa de 4 personas. |
+
++++
+
++++ 🔴 Sin API: solo puente manual (todo a mano) · 26
+
+| # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Motivo | Qué le falta |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Nutrium (PT) | ✅ | ❓ | ◐ | ❓ | ◐ | ◐ | ◐ | ◐ | ✅ | ❌ | ✅ | ✅ | ✅ | 299–948 / 599–948 / 599–948 | Sin API: solo puente manual | Sin API ni Zapier: alta, formularios, mensajes y PDF a mano; marca blanca y firma sin mencionar; sin tienda. |
+| 2 | Jane (CA) | ❓ | ◐ | ◐ | ✅ | ◐ | ◐ | ❓ | ◐ | ✅ | ❌ | ✅ | ◐ | ✅ | ≈ 790 / 790 / 790 | Sin API: solo puente manual | API solo para partners (no crea pacientes, sin formularios ni mensajes); español sin confirmar; datos en Londres por confirmar. |
+| 3 | SimplePractice (EE. UU.) | ◐ | ❓ | ◐ | ✅ | ◐ | ◐ | ◐ | ◐ | ✅ | ❌ | ✅ | ❌ | ✅ | ≈ 870 / 870 / 870 | Sin API: solo puente manual | Sin API ni webhooks: todo manual; datos en EE. UU., RGPD U; solo USD y CAD; documentos en inglés. |
+| 4 | Kalix (AU) | ◐ | ◐ | ◐ | ✅ | ◐ | ◐ | ◐ | ◐ | ✅ | ❌ | ◐ | ◐ | ❓ | 432 sin API / ≈ 9.340 con API | Sin API: solo puente manual | API y marca blanca solo Enterprise (846 $/mes); Zapier sin acciones; idioma del portal desconocido; datos en EE. UU. |
+| 5 | Zanda (AU) | ❓ | ◐ | ◐ | ✅ | ◐ | ❌ | ◐ | ◐ | ✅ | ❌ | ✅ | ◐ | ✅ | 405 / 540 / 540 | Sin API: solo puente manual | API en beta cerrada y solo lectura: todo manual; sin chat en el portal; español U; región del 7 oct sin reverificar. |
+| 6 | Dietopro (ES) | ✅ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ❌ | ✅ | ◐ | ◐ | 960 ×3 + IVA | Sin API: solo puente manual | Sin API: todo a mano; marca solo en informes; firma, venta y DPA sin confirmar; negocio unipersonal. |
+| 7 | Doctoralia / Docplanner (ES) | ✅ | ❌ | ◐ | ❓ | ◐ | ◐ | ◐ | ◐ | ✅ | ❌ | ✅ | ◐ | ❓ | ≈ 1.308 ×3 + IVA | Sin API: solo puente manual | Marca Doctoralia, no EPI10; API solo de agenda para proveedores; nada automatizable; DPA sin confirmar. |
+| 8 | Harbiz (ES) | ✅ | ◐ | ◐ | ❓ | ◐ | ◐ | ◐ | ◐ | ✅ | ❌ | ✅ | ❓ | ❓ | 1.068–1.788 ×3 + IVA | Sin API: solo puente manual | Sin API ni Zapier: puente manual; app propia en plan superior; consentimiento y región desconocidos. |
+| 9 | indya (ES) | ✅ | ◐ | ◐ | ❓ | ◐ | ◐ | ◐ | ❓ | ◐ | ❌ | ✅ | ❓ | ◐ | ≈ 588 ×3 (terciaria) | Sin API: solo puente manual | Sin API; marca blanca solo >100 clientes/mes; web oficial caída; firma, venta y hosting desconocidos. |
+| 10 | Medesk (UK) | ✅ | ◐ | ◐ | ❓ | ◐ | ❓ | ❓ | ◐ | ✅ | ❌ | ✅ | ◐ | ❓ | 0–450 ×3 | Sin API: solo puente manual | API sin docs; portal centrado en citas; firma, chat y PDF al paciente desconocidos; DPA contradictorio. |
+| 11 | Clinic Cloud (ES) | ◐ | ❌ | ◐ | ✅ | ❓ | ❌ | ◐ | ◐ | ✅ | ❌ | ✅ | ◐ | ◐ | ≈ 588 ×3 (terciaria) | Sin API: solo puente manual | Sin API ni chat; portal con marca Doctoralia; web oficial redirige a otra; DPA sin confirmar. |
+| 12 | Podia (EE. UU.) | ✅ | ✅ | ◐ | ❌ | ◐ | ◐ | ❌ | ✅ | ❓ | ❌ | ✅ | ◐ | ❓ | ≈ 930 ×3 | Sin API: solo puente manual | Sin API ni webhooks (solo Zapier); sin firma ni PDF privado; datos en EE. UU. |
+| 13 | Upcoach (EE. UU.) | ❓ | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ✅ | ✅ | ❌ | ✅ | ❓ | ❓ | ≈ 1.090 ×3 | Sin API: solo puente manual | Sin API, Zapier ni webhooks: todo manual; sin firma; sin mensajería directa explícita; español y datos U. |
+| 14 | NutriAdmin (UK) | ◐ | ◐ | ◐ | ❓ | ◐ | ❌ | ◐ | ◐ | ✅ | ❌ | ✅ | ❓ | ❓ | ≈ 690 ×3 | Sin API: solo puente manual | Sin API ni chat; interfaz en inglés traducible a mano; firma, región y DPA desconocidos. |
+| 15 | WriteUpp (UK) | ❓ | ❓ | ◐ | ❓ | ◐ | ◐ | ❓ | ◐ | ✅ | ❌ | ✅ | ❓ | ❓ | ≈ 395 ×3 | Sin API: solo puente manual | Sin API, webhooks ni Zapier: todo manual; chat solo por SMS; probablemente en inglés; datos U. |
+| 16 | Physitrack (UK/NL) | ❓ | ✅ | ◐ | ❓ | ◐ | ◐ | ❓ | ❌ | ❓ | ❌ | ❓ | ◐ | ◐ | U | Sin API: solo puente manual | Sin API: todo manual; centrada en ejercicios de fisioterapia; contrato de 2 años; región sin indicar. |
+| 17 | Ofimedic (ES) | ❓ | ❓ | ◐ | ✅ | ❓ | ❓ | ❓ | ❓ | ✅ | ❌ | ❓ | ❓ | ❓ | U | Sin API: solo puente manual | Sin API pública; precio no publicado; chat, PDF, venta y región desconocidos. |
+| 18 | Clinni (ES) | ❓ | ❓ | ◐ | ◐ | ❓ | ❌ | ◐ | ❌ | ✅ | ❌ | ✅ | ❓ | ❓ | ≈ 155 ×3 + IVA | Sin API: solo puente manual | Sin API; portal de reservas e historial; firma en tableta; sin chat ni venta; región desconocida. |
+| 19 | Heads Up Health (EE. UU.) | ❓ | ◐ | ◐ | ❓ | ❓ | ◐ | ❓ | ❌ | ✅ | ❌ | ◐ | ❓ | ❓ | 3.680 / 2.760 / 2.760 sin API | Sin API: solo puente manual | API y marca blanca solo en Enterprise (alta ≥ 7.000 $); firma, PDF propio, español y UE sin confirmar. |
+| 20 | Nubimed (ES) | ❓ | ❓ | ❓ | ◐ | ❓ | ❌ | ◐ | ❌ | ✅ | ❌ | ✅ | ❓ | ❓ | ≈ 600 ×3 + IVA | Sin API: solo puente manual | Sin API; portal de paciente no descrito; firma solo Premium; sin chat ni venta; región desconocida. |
+| 21 | Dietowin (ES) | ❓ | ❓ | ◐ | ❓ | ❓ | ❓ | ❓ | ❓ | ✅ | ❌ | ❓ | ❓ | ❓ | U | Sin API: solo puente manual | Escritorio con nube; portal solo citado (terciaria); sin API; precio y datos desconocidos. |
+| 22 | Owl Practice (CA) | ❌ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ✅ | ❌ | ✅ | ❓ | ❓ | ≈ 300–540 ×3 (terciaria) | Sin API: solo puente manual | Interfaz en inglés y francés; portal como extra; sin API conocida; el resto sin fuente (solo terciaria). |
+| 23 | TherapyNotes (EE. UU.) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ✅ | ❌ | ❓ | ❓ | ❓ | U | Sin API: solo puente manual | Sin API pública oficial (solo integración no oficial de terceros); precio, idioma, portal y datos sin fuente. |
+| 24 | Dietbox (BR) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ◐ | U | Sin API: solo puente manual | No evaluable: web con error 500; sin API; RGPD no verificado; orientado a Brasil. |
+| 25 | Doctolib (FR/DE) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ❓ | U | Sin API: solo puente manual | API solo para partners (Francia), sin programa público en España; portal y precio desconocidos. |
+| 26 | Nutrimind (MX/ES) | ❓ | ❌ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ❓ | U | Sin API: solo puente manual | Portal dudoso (fuentes contradictorias); sin marca blanca ni API; precio desconocido. |
+
++++
+
++++ 🔴 Falla dos o más peticiones críticas · 2
+
+| # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Motivo | Qué le falta |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Outseta (EE. UU.) | ✅ | ❓ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ◐ | ❓ | ≈ 410 ×3 | Falla 3 peticiones críticas | Sin formularios, firma ni PDF; necesita web externa; región no indicada (posible EE. UU.); marca y correos ❓ |
+| 2 | Teachable (EE. UU.) | ❓ | ✅ | ✅ | ❌ | ◐ | ❌ | ❌ | ✅ | ❓ | ✅ | ✅ | ◐ | ❓ | ≈ 1.535 ×3 | Falla 3 peticiones críticas | Sin mensajes, firma ni PDF privado; español del alumno sin verificar; región no indicada |
+
++++
+
++++ 🔴 Archivada, no contratable, no localizada o descartada por decisión · 7
+
+| # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Motivo | Qué le falta |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Odoo como portal (BE) | ✅ | ◐ | ✅ | ◐ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | 1.004 / 1.220 / 1.220 (0 € si ya tiene la API) | decisión de Raúl | Estética Odoo; chat como hilo; firma solo Enterprise; DPA no menciona datos de salud; 40–70 h. |
+| 2 | HoneyBook (EE. UU.) | ❓ | ❓ | ◐ | ✅ | ◐ | ◐ | ◐ | ❌ | ✅ | ❌ | — | ◐ | ❓ | n/a | No contratable desde España | Alta solo para EE. UU., CA, UK y AU; sin API pública (Zapier limitado); cobros sin EUR |
+| 3 | Fullscript (CA/EE. UU.) | — | — | — | — | — | — | — | ❌ | — | ❌ | — | ❌ | ❓ | n/a | No envía a España | Solo envía a EE. UU. y Canadá; API solo para partners EHR; datos en Norteamérica. |
+| 4 | Medicapp (FR/ES) | — | — | — | — | — | — | — | — | — | — | — | — | ❓ | U | No verificada | La web no resuelve; según las tiendas, software para el profesional, no portal de paciente. |
+| 5 | Fasten Health (EE. UU.) | — | — | — | — | — | — | — | — | — | — | — | — | ❌ | n/a | archivada; no es portal | Registro personal para familias; repositorio archivado el 18 jul 2026. |
+| 6 | HospitalRun (EE. UU.) | — | — | — | — | — | — | — | — | — | — | — | — | ❌ | n/a | archivada | Repositorio archivado el 9 ene 2023. |
+| 7 | Eugenomic | — | — | — | — | — | — | — | — | — | — | — | — | — | n/a | No localizada | Sin fuente primaria; las búsquedas devuelven Genotica y Mylogy, ninguno es portal configurable. |
+
++++
+
++++ 🔴 No es un portal de cliente (otro producto: test propio, agenda, chat, backend, consumidor…) · 56
+
+| # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Motivo | Qué le falta |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Medplum (EE. UU.) | ❌ | ✅ | ◐ | ❓ | ◐ | ◐ | ◐ | ❌ | ◐ | ✅ | ✅ | ✅ | ✅ | 0 autoalojado / ≈ 22.080 cloud | no es un portal | Portal entero por construir (90–160 h), starters en inglés; cloud caro y región desconocida; firma sin componente. |
+| 2 | Spruce Health (EE. UU.) | ❓ | ❌ | ✅ | ❌ | ◐ | ✅ | ✅ | ◐ | ◐ | ✅ | ✅ | ❌ | ❓ | ≈ 1.080 ×3 | Solo chat, no portal | Solo capa de chat: formularios y consentimiento fuera de la API; marca Spruce; datos en EE. UU. |
+| 3 | Tally (BE) | ✅ | ✅ | — | ◐ | ✅ | — | — | ◐ | — | ✅ | ✅ | ◐ | ❓ | 0–240 ×3 | No es un portal | Complemento: solo consentimiento y encuesta; firma simple sin auditoría; salud no mencionada |
+| 4 | Jotform (EE. UU./UK) | ◐ | ◐ | — | ✅ | ✅ | — | — | ◐ | — | ✅ | ✅ | ◐ | ❓ | 375–1.420 ×3 | No es un portal | Complemento; cláusula «highly sensitive» ambigua; dominio propio solo Gold; un usuario; textos del sistema en ES sin verificar |
+| 5 | Koibox (ES) | ✅ | ✅ | ◐ | ◐ | ❌ | ❌ | ❌ | ✅ | ✅ | ◐ | ✅ | ❓ | ❓ | 550 ×3 + IVA | No es un portal (belleza) | Sin formularios, chat ni PDF; firma solo por QR en el centro; datos de salud no contemplados. |
+| 6 | Fillout (EE. UU.) | ✅ | ◐ | — | ◐ | ✅ | — | — | ◐ | — | ✅ | ◐ | ◐ | ❓ | ≈ 3.310 ×3 | No es un portal | Complemento; UE solo en Team (300 $/mes, ≈ 9.900 € a 3 años); firma sin auditoría; salud no mencionada |
+| 7 | Typeform (ES) | ✅ | ◐ | — | ◐ | ✅ | — | — | ◐ | — | ✅ | ◐ | ◐ | ❓ | > 3.000 ×3 (U) | No es un portal | Complemento; UE, firma y dominio propio solo en planes altos o a medida; firma simple |
+| 8 | Cliniko (AU) | ❌ | — | ❌ | ◐ | ◐ | ❌ | ❌ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | 960–1.050 ×3 (2–5 profesionales; 495 con 1) | No es un portal | Sin portal de cliente ni chat; en inglés; API sin webhooks; habría que construir el portal igualmente. |
+| 9 | Awell Health (BE/EE. UU.) | ❓ | ✅ | ◐ | ❓ | ✅ | ❌ | ❓ | ❌ | ❓ | ✅ | ❓ | ◐ | ❓ | U | no es un portal | Solo cubre ops. 1–3; sin buzón ni respuesta de la clienta; enlaces caducan a 60 min; precio y DPA desconocidos. |
+| 10 | Bahmni (IN) | ❓ | ❓ | ❓ | ❌ | ❌ | ❌ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ✅ | 0 + > 120 h | portal solo PoC | Portal en prueba de concepto, «not ready for real-world use»; REST sin webhooks; venta solo Odoo interno. |
+| 11 | Systeme.io (IE) | ❓ | ✅ | ◐ | ❌ | ◐ | ❌ | ❌ | ◐ | ❓ | ✅ | ✅ | ◐ | ❓ | 190–1.070 ×3 | No es un portal | Web y tienda UE: sin firma, mensajes ni PDF privado; DPA no publicado; área de miembros y EUR sin verificar |
+| 12 | MediQuo (ES) | ✅ | ◐ | ◐ | ❌ | ❌ | ✅ | ❓ | ❌ | ❓ | ◐ | ❓ | ❓ | ❓ | U | Solo chat, no portal | Solo cubre el chat; API con caso de uso validado; quizá solo médicos de MediQuo; precio desconocido. |
+| 13 | Dolibarr CabinetMed (FR) | ❓ | ❓ | ❓ | ❌ | ❌ | ❌ | ❌ | ◐ | ✅ | ✅ | ✅ | ✅ | ◐ | 0 + > 120 h | no es un portal | Sin portal de paciente documentado; módulo médico casi parado (2023–2024); portal por construir (> 120 h). |
+| 14 | LibreHealth EHR (EE. UU.) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ✅ | ✅ | ◐ | n/a | sin portal abierto | Fork de OpenEMR con actividad dudosa; casi todo desconocido; OpenEMR lo da mejor. |
+| 15 | GNU Health + Tryton (AR/UE) | — | — | — | — | — | — | — | ◐ | ✅ | ◐ | ✅ | ✅ | ✅ | 0 + horas | no es un portal | Sin portal web para la clienta (> 120 h); JSON-RPC sin webhooks; venta solo interna del ERP. |
+| 16 | Ozone HIS (FR) | — | — | — | — | — | — | — | ◐ | ✅ | ◐ | ✅ | ✅ | ✅ | 0 + > 120 h | no es un portal | Sin portal de paciente; cuatro sistemas (OpenMRS, Odoo, SENAITE, Superset); solo autoalojado. |
+| 17 | Cronometer Pro (CA) | ✅ | ◐ | — | ❌ | ❌ | ◐ | ❌ | ❌ | ◐ | ❌ | ✅ | ◐ | ❓ | 440–700 ×3 | No es un portal | Sin consentimiento, formularios ni PDF; sin marca blanca; API solo socios; datos en EE. UU. |
+| 18 | Muhdo Helix (UK) | ❓ | ✅ | ❓ | ❓ | ❓ | ❓ | ❌ | ❌ | ❓ | ◐ | ❌ | ◐ | ◐ | ≈ 6.325 / 3.450 / 3.450 | Solo vende su test | Portal de sus tests: cambiar el kit, no muestra el informe EPI10; ≈ 13.200 €; «Sold out»; Muhdo es responsable. |
+| 19 | Paperbell (EE. UU.) | ❓ | ❓ | ❌ | ❓ | ❓ | ❓ | ❓ | ✅ | ❓ | ◐ | ❓ | ❓ | ❓ | U | Solo tienda, no portal | Zapier solo de salida: el alta no puede venir del orquestador; precio, formularios, idioma y datos U. |
+| 20 | OpenMRS O3 | — | — | — | — | — | — | — | ❌ | ✅ | ◐ | ✅ | ✅ | ✅ | 0 + > 120 h | no es un portal | Sin portal de paciente (> 120 h); REST/FHIR sin webhooks; sin venta. |
+| 21 | Patients Know Best (UK) | ❓ | ❓ | — | — | — | ◐ | ◐ | — | — | ◐ | ❓ | ◐ | ✅ | U | No es portal de marca | Historia clínica personal del NHS; marca, español, alojamiento y venta a clínicas privadas desconocidos. |
+| 22 | Heallist (UK) | ❓ | ❌ | ◐ | ❌ | ❌ | ◐ | ❌ | ◐ | ◐ | ❌ | ✅ | ❓ | ❓ | 220–265 ×3 | Marketplace, no portal | Marketplace sin formularios, firma ni PDF; sin marca propia; sin API; español y datos U. |
+| 23 | Juno EMR (CA) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ✅ | ❓ | ❓ | ❌ | ❓ | U | sin portal abierto | Servicio canadiense con datos en Canadá; portal, API y precio desconocidos. |
+| 24 | Directus (EE. UU.) | — | — | — | — | — | — | — | — | ✅ | ✅ | ✅ | ◐ | ❓ | 0–1.090 ×3 | No es un portal | Backend/CMS: portal por construir (90–140 h), duplica el orquestador; DPA sin categorías especiales («None») |
+| 25 | TellmeGen B2B (ES) | — | ◐ | ◐ | ❌ | ❌ | ❌ | ◐ | ❌ | ◐ | ❌ | ✅ | ◐ | ❓ | 0 ×3 | No es un portal | Complemento: marca blanca solo del PDF genético; alta manual sin API; alojamiento y DPA desconocidos. |
+| 26 | Luscii (NL) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❌ | ❓ | ◐ | ❓ | U | Solo hospitales | Telemonitorización hospitalaria; sin API pública; idiomas, marca y precio desconocidos. |
+| 27 | Portant (AU) | — | — | — | ◐ | ❌ | ❌ | — | ◐ | — | ✅ | — | ◐ | ❓ | n/a | No es un portal | Automatiza documentos para HubSpot/Google Docs; firma sin garantía legal; sin encuesta ni chat; EE. UU. |
+| 28 | InsideTracker / Terra (EE. UU.) | ❓ | ❌ | ◐ | ❌ | ◐ | ❌ | ❌ | ❌ | ◐ | ◐ | ❓ | ❌ | ◐ | U | No es un portal | Motor de sangre y wearables: crea usuario sin invitación, solo sus cuestionarios; sin chat, firma ni PDF propio; EE. UU. |
+| 29 | Evry (NL) | ❌ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❌ | ❓ | ◐ | ❓ | U | Solo mercado NL | Portal solo en neerlandés; sin API; precio desconocido. |
+| 30 | EHRbase (DE) | — | — | — | — | — | — | — | ❌ | ❌ | ◐ | ✅ | ✅ | ❓ | 0 + horas | no es un portal | Solo backend openEHR (interfaz Swagger); todo por construir (> 150 h); webhooks desconocidos. |
+| 31 | Semble (UK) | — | — | — | — | — | — | — | ◐ | ✅ | ◐ | ❓ | ❓ | ❓ | U | No es un portal | Sin portal de paciente ni español; webhooks activados por soporte; precio por demo; región no indicada. |
+| 32 | Luma Health (EE. UU.) | ◐ | — | — | — | — | — | — | — | — | ❌ | ❓ | ◐ | ❓ | U | Atada a un EHR | Se vende a sistemas de salud integrada con Epic/athena; sin API pública ni precio. |
+| 33 | i-Diet (ES) | — | — | — | — | — | — | — | — | — | ❌ | ✅ | ❓ | ❓ | 180 ×3 + IVA | No es un portal | Sin portal, chat ni consentimiento; informes por correo o impresos. |
+| 34 | LifeNome (EE. UU.) | — | — | — | — | — | — | — | ❌ | — | ◐ | ❓ | ❌ | ◐ | U | No es un portal | Motor genómico con API pública de precio desconocido; datos en Google Cloud EE. UU. sin SCC. |
+| 35 | Doctena (LU/DE) | — | — | — | — | — | — | — | — | ❓ | ❌ | ❓ | ❓ | ❓ | U | Solo agenda, no portal | Agenda; la API de Okta es solo identidad del personal. |
+| 36 | Jameda (DE) | — | — | — | — | — | — | — | — | ❓ | ❌ | ❓ | ❓ | ❓ | U | Solo agenda, no portal | Solo interfaces de agenda con software alemán. |
+| 37 | NutriSoft (EE. UU.) | — | — | — | — | — | — | — | — | — | ❓ | — | ❓ | ❓ | n/a | No es un portal | Programa de análisis nutricional, no portal. |
+| 38 | Open Health Stack (Google) | — | — | — | — | — | — | — | ❌ | ❌ | — | ✅ | — | ❓ | 0 + horas | no es un portal | SDK Android para apps offline; ni portal ni servidor; app por construir (> 200 h). |
+| 39 | Nutrigenomix (CA) | — | — | — | — | — | — | — | ❌ | — | ❓ | — | ❓ | ❓ | n/a | Solo vende su test | Solo entrega su test; web sin contenido legible, API y datos desconocidos. |
+| 40 | ADNTRO (ES) | — | — | — | — | — | — | — | ❌ | — | ❌ | — | ◐ | ❓ | n/a | Solo vende su test | Test de consumo sin programa de profesionales visible; Google Cloud UE, DPA desconocido. |
+| 41 | Vitagene / 1health.io (EE. UU.) | — | — | — | — | — | — | — | ❌ | — | ❓ | — | ❌ | ◐ | n/a | Solo vende su test | Solo sus pruebas en EE. UU.; sanción de la FTC por seguridad y borrado de ADN. |
+| 42 | That Clean Life (CA) | — | — | — | — | — | — | — | — | — | ❌ | — | ❓ | ❓ | n/a | No es un portal | Solo menús; integrado en Practice Better. |
+| 43 | Portal.io (EE. UU.) | — | — | — | — | — | — | — | — | — | ❌ | — | ❓ | ❓ | n/a | Otro sector (AV) | Propuestas para integradores AV/TI; sin API; región desconocida |
+| 44 | GenoPalate (EE. UU.) | — | — | — | — | — | — | — | ❌ | — | ❌ | — | ❓ | ❓ | n/a | Solo vende su test | Portal de profesional para su propio test (fuente terciaria); EE. UU. |
+| 45 | Xcode Life (IN) | — | — | — | — | — | — | — | ❌ | — | ❓ | — | ❌ | ❓ | n/a | Solo vende su test | Solo su análisis de datos brutos; API citada sin docs; datos en India. |
+| 46 | Fagron Genomics (ES) | — | — | — | — | — | — | — | ❌ | — | ❌ | — | ❓ | ❓ | n/a | Solo vende su test | Solo su test NutriGen; sin API; alojamiento desconocido. |
+| 47 | LetsGetChecked (IE/EE. UU.) | — | — | — | — | — | — | — | — | — | ❌ | — | ❓ | ❓ | n/a | Solo vende su test | Solo sus pruebas; sin API pública ni marca blanca; datos solo en fuente terciaria. |
+| 48 | Vibrant Wellness (EE. UU.) | — | — | — | — | — | — | — | — | — | — | — | ❓ | ❓ | n/a | Laboratorio, no portal | Laboratorio con portal de pedidos; expansión a Europa solo en fuente terciaria. |
+| 49 | Klara / ModMed (EE. UU.) | — | — | — | — | — | — | — | — | — | — | ❓ | — | ◐ | U | Solo con EHR ModMed | Absorbida por ModMed; solo se vende junto a su EHR. |
+| 50 | Metriport (EE. UU.) | — | — | — | — | — | — | — | — | — | — | — | ❌ | ❓ | n/a | no es un portal | API de historiales de redes de EE. UU.; no aplica a España. |
+| 51 | 3X4 Genetics (EE. UU./ZA) | — | — | — | — | — | — | — | ❌ | — | ❌ | — | ❌ | ❓ | n/a | Solo vende su test | Solo entrega su test, analizado en EE. UU.; sin API ni marca blanca. |
+| 52 | Nutrition Genome (EE. UU.) | — | — | — | — | — | — | — | ❌ | — | ❌ | ❌ | ❌ | ❓ | n/a | Solo vende su test | Marca blanca de sus informes con mínimo de 500 muestras/mes; servidor en EE. UU. |
+| 53 | Function Health (EE. UU.) | — | — | — | — | — | — | — | — | — | ❌ | — | — | ❓ | n/a | Solo consumidor, EE. UU. | Membresía de consumo solo en EE. UU.; sin B2B, API ni marca blanca. |
+| 54 | Lifeforce (EE. UU.) | — | — | — | — | — | — | — | — | — | ❌ | — | — | ❓ | n/a | Solo consumidor, EE. UU. | Programa de consumo por estados de EE. UU.; sin API ni marca blanca visibles. |
+| 55 | Nourish (EE. UU.) | — | — | — | — | — | — | — | — | — | ❌ | — | — | ❓ | n/a | Servicio, no software | Red de dietistas con seguro de EE. UU.; sin API ni marca blanca. |
+| 56 | Rupa Health (EE. UU.) | — | — | — | — | — | — | — | — | — | — | — | — | ❌ | n/a | Solo laboratorios EE. UU. | Pedido de análisis con NPI de EE. UU.; se integra en Fullscript durante 2026. |
+
++++
+
++++ ⚪ Sin datos suficientes · 4
+
+| # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Qué le falta |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Elation (EE. UU.) | ✅ | ❓ | ❓ | ✅ | ❓ | ❓ | ❓ | ◐ | ✅ | ❓ | ❓ | ❌ | ✅ | U | Precio y API solo por presupuesto; contrato no verificable sin docs de partner; datos en EE. UU. |
+| 2 | Flowww (ES) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ✅ | ◐ | ◐ | ❓ | ❓ | 708–2.988 ×3 + IVA (terciaria) | Estética; API «abierta» sin docs públicas; portal, firma y datos desconocidos; techo con IVA ≈ 10.800 €. |
+| 3 | CharmHealth (EE. UU.) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ✅ | ◐ | ❓ | ❓ | ❓ | U | Programa de API, HL7 y FHIR sin utilidad probada para el contrato; webhooks, precio, idioma y datos U. |
+| 4 | Tebra / Kareo (EE. UU.) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ✅ | ❓ | ❓ | ❓ | ❓ | U | Portal y API citados sin detalle; mercado de EE. UU.; precio, idioma y datos sin fuente. |
+
++++
+
+---
+
+## 5. Qué cambia frente a la versión anterior
+
+- **Plutio aparece en verde.** Antes era una fila del inventario («archivos en EE. UU.; el DPA desaconseja el art. 9») y no entró en la lista corta. Con la matriz se ve que cumple más peticiones que cualquier otra plataforma de mercado.
+- **Pabau no es la mejor externa en la matriz.** Es naranja medio porque tiene muchas casillas sin confirmar. Si la demo confirma español, firma, invitación y PDF en el portal, puede subir.
+- **Odoo como portal** sale bien en la matriz, pero sigue en rojo por tu decisión del 18 oct.
+- **Healthie** cumple casi todo, pero está en rojo por el precio de la API.
+
++++ Dudas de datos entre fuentes
+
+- **Practice Better:** los webhooks solo los respalda una guía terciaria de 2024. Los datos han pasado de Quebec a AWS EE. UU.
+- **Carepatron:** el alcance del español (interfaz o solo contenido) es Unknown. Que la API vaya en Advanced no es concluyente.
+- **Pabau:** el portal no menciona firma, pero la API tiene `quotes/sign`. El precio está extrapolado de fuentes terciarias con 1 usuario.
+- **Tellescope:** la firma sale de campos de la API (`esignatureTermsCompanyName`). Hay traducción de formularios, pero no consta la de la interfaz.
+- **Softr y Dubsado:** su exclusión de datos sensibles es menos explícita de lo que decía el §5 del repaso. El DPA de Softr no se pudo leer.
+- **Knack:** el art. 9 está excluido sin excepción (corrección de la revisión). Frankfurt no está confirmado.
+- **Xano:** admite datos de salud con un «Health Data Agreement» de pago (≈ 24.800 € a 3 años).
+- **Clinic Cloud, Kalix, Docline y Zanda:** sus datos de región y DPA son del 7 oct, sin reverificar.
+- **Muhdo Helix:** figura como «Sold out»; puede no estar contratable.
+
++++
+
+## 6. Documentos completos
+
+- Repaso con fuentes, fila a fila: `04_outputs/modulos/crisis-healthie/2026-10-18_repaso_plataformas_mercado_v1.md` ([GitHub](https://github.com/Skilland-ai/EPI-10/blob/master/04_outputs/modulos/crisis-healthie/2026-10-18_repaso_plataformas_mercado_v1.md))
+- Revisión independiente: `05_scratch/ski2-288/revision_v1.md` ([GitHub](https://github.com/Skilland-ai/EPI-10/blob/master/05_scratch/ski2-288/revision_v1.md))
+- Matriz de peticiones (esta tabla, en el repo): `04_outputs/modulos/crisis-healthie/2026-10-18_matriz_peticiones_tiers_v1.md`
+- Issues: SKI2-288 · SKI2-289 (demo de Pabau, vie 23 a las 9:15) · SKI2-204
