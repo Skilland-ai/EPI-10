@@ -6,15 +6,22 @@
 - **Repo canónico:** `~/Escritorio/Skilland.ai/Skilland.ai-CONSULTING/EPI-10` (GitHub `Skilland-ai/EPI-10`). Se movió aquí desde `~/Escritorio/EPI-10` el 3 oct; el clon antiguo de mayo se descartó.
 - `04_outputs/planificacion/linear/` es un snapshot del 15 sep del plan por oleadas, **ya obsoleto**.
 
-## Roadmap: 4 fases (aprobado por Raúl el 3 oct)
+## Roadmap: hitos en Linear (reordenados el 18 oct, noche)
 
-1. **Poner orden**: hecho (auditoría, repo consolidado, 75 issues del plan anterior canceladas y archivadas).
-2. **Deberes externos y cierre Stripe** (10 oct)
-   - SKI2-101: pedir a Carmen la API de Healthie (add-on del Group, sandbox y producción) y la cotización Enterprise con white label. Correo: [2026-10-03_correo_carmen_healthie_stripe_v1.md](../04_outputs/2026-10-03_correo_carmen_healthie_stripe_v1.md).
-   - SKI2-103 → SKI2-104: correo a Carmen para reenviar al mantenedor de Odoo, y sesión técnica. Correo: [2026-10-03_correo_carmen_odoo_v1.md](../04_outputs/2026-10-03_correo_carmen_odoo_v1.md).
-   - SKI2-20 → SKI2-21: replicar Stripe en la cuenta EPI10 y facturar.
-3. **Customer journey** (17 oct): SKI2-106, un documento único en `04_outputs/modulos/journey/`. Base: `post_Fer_PENDING_INTEGRAR_BIEN_EN_REPO/epi10_journey_operativo_odoo_healthie_v1.md`.
-4. **Implementación del journey** (13 nov): issues por tramo, creadas a partir del journey cerrado.
+Linear es la fuente de verdad; esta es la lectura cronológica:
+
+1. **Poner orden** — hecho (3 oct).
+2. **Deberes externos y cierre Stripe** — abierto: sesión con el mantenedor de Odoo (SKI2-104), replicar Stripe y facturar (20, 21), material de Aitor (177), formularios (184), boletín (187). Hace falta elijamos lo que elijamos.
+3. **Customer journey** — hecho (17 oct).
+4. **Orquestador construido** — hecho (4 oct): monolito con Stripe, Odoo, informes y el cliente de Healthie. Antes se llamaba «Implementación del journey»; aquí queda solo lo hecho.
+5. **Crisis de Healthie: experimento OpenEMR y giro del 14 oct** — hecho (14 oct). El portal propio sobre OpenEMR existe y funciona, pero es **una de las opciones**, no la dirección.
+6. **Ronda de demos y contactos con plataformas** — en curso, corte el lunes 26.
+7. **Nuevo análisis de opciones y dossier para EPI10** — ~28 oct, fecha por cerrar con Carmen (303). Raúl procesa el material antes de lanzar tareas del dossier.
+8. **Decisión con EPI10: reunión y demo de las opciones** — fecha por fijar. **La demo del portal propio se enseña aquí, como una opción más.** Cierra SKI2-204.
+9. **Implementación de la opción elegida** — tras la decisión. Si es el propio: 239, 240, 241, 242, 173, 185, 181 (39–62 h estimadas). Si es externa: issues de integración nuevas.
+- **Cajón de sastre** — restos del plan con la API de Healthie.
+
+El roadmap de 4 fases del 3 oct (documento 00 de Linear) queda superado por esta lista.
 
 ## Hechos confirmados (3 oct)
 
