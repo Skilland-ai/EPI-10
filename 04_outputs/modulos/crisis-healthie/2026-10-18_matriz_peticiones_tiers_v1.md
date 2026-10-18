@@ -84,13 +84,53 @@ Dentro de cada tier se ordena por puntuación. Cada crítica vale el doble: ✅ 
 | 1 | **OpenEMR + módulo EPI10 (propio, ya construido)** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | 0–480 ×3 | — | Venta solo por Stripe desde web/monolito; sin webhooks (consulta periódica); parches 2–4 h/mes; 39–62 h hasta producción. |
 | 2 | Plutio (UK) | ❓ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ◐ | ◐ | 550–640 ×3 | ES ❓, UE ◐ | Archivos en EE. UU.; DPA desaconseja art. 9; español sin verificar; webhooks sin confirmar (sondeo); EUR sin confirmar |
 
-**Plutio, lo que hay que confirmar antes de darlo por bueno:**
-1. **Interfaz y correos en español:** dice tener más de 25 idiomas, pero el español no está verificado.
-2. **El art. 9 por escrito:** que acepten datos de salud con su DPA (tiene SCC y adenda UK), o una evaluación propia documentada.
-3. **El PDF genético fuera de sus archivos (EE. UU.):** enlace firmado desde el orquestador.
-4. **Webhooks:** qué eventos hay; si no, consulta periódica.
+**Ficha de Plutio, verificada en sus fuentes oficiales (18 oct, noche).**
 
-Montaje estimado por el investigador: **32–55 h**. Es una estimación, sin la línea fija de cableado y simulador (11–20 h) ni las 14–22 h comunes a cualquier opción. Precio: Pro, 490 $/año, más 9 $/mes por la marca blanca. Fuentes: [precios](https://www.plutio.com/pricing), [DPA](https://www.plutio.com/legal/data-processing-agreement), [API](https://docs.plutio.com).
+| Petición | Qué hay | Prueba | Fuente |
+|---|---|---|---|
+| **ES** | ◐ «Available in 25 languages, including Spanish». No consta que el portal de la clienta y los correos salgan en español. Una reseña antigua dice que la traducción de algunos términos es pobre. | Documentado a medias | [features](https://www.plutio.com/features) |
+| **Marca** | ✅ Marca blanca por 9 $/mes: dominio propio, logo, colores y correos desde tu dominio. «Clients never see the Plutio name». | Documentado | [portal](https://www.plutio.com/features/client-portal) |
+| **Alta** | ✅ Alta por `POST /people` (nombre, correo y rol). La URL de invitación se puede pedir por API (`GET /people/invitation-code`, changelog del 1 oct 2024). **Encaja con lo que ya hacemos:** el monolito manda su propio correo de acceso con la marca EPI10. | Existe; el detalle del endpoint no está documentado | [API](https://docs.plutio.com) |
+| **Firma** | ✅ Contratos con firma electrónica, «legally binding»: enlace único por firmante y PDF firmado al terminar. Se crean y envían por API (`POST /contracts`, `/contracts/email`). No menciona eIDAS ni registro de auditoría. | Documentado | [contratos](https://www.plutio.com/help/contracts-overview) |
+| **Form** | ✅ Formularios por enlace o incrustados. La respuesta se asocia a la clienta por su correo. **Webhook de formulario enviado**, con todos los campos. No consta que se le pueda asignar un formulario dentro del portal. | Documentado | [respuestas](https://www.plutio.com/help/form-responses), [webhooks](https://help.plutio.com/help/webhook-integration) |
+| **Chat** | ✅ Hilo de mensajes con la clienta en el portal, con aviso por correo. La API tiene Conversations y Messengers. No hay webhook de mensaje nuevo documentado: se leería por consulta periódica, como hoy con OpenEMR. | Existe; el detalle no se ha leído | [API](https://docs.plutio.com) |
+| **PDF** | ✅ La clienta descarga los archivos compartidos desde su portal. `POST /files/share` (jun 2026). **Los archivos se guardan en AWS S3, EE. UU.** | Documentado | [subencargados](https://www.plutio.com/legal/sub-processors) |
+| **Venta** | ◐ Facturas y cobro en el portal con Stripe, PayPal o transferencia, sin comisión de Plutio. No es una tienda de productos. | Documentado | [precios](https://www.plutio.com/pricing) |
+| **BO** | ✅ Workspace completo: contactos, proyectos, tareas y estados, hasta 30 colaboradores en Pro. | Documentado | [precios](https://www.plutio.com/pricing) |
+| **API** | ✅ REST con OAuth2 **en todos los planes, sin coste aparte**, hasta 1.500 peticiones/h. Webhooks salientes `{entidad}.create/edit/remove` (facturas, tareas, proyectos, contactos, propuestas, contratos y formularios), con 10 reintentos. **No documenta firma HMAC.** | Documentado | [API](https://docs.plutio.com), [webhooks](https://help.plutio.com/help/webhook-integration) |
+| **€** | ✅ Pro: 490 $/año + marca blanca 108 $/año ≈ **550 €/año, ≈ 1.650 € a 3 años**. | Documentado | [precios](https://www.plutio.com/pricing) |
+| **UE** | ◐ **El punto delicado.** El DPA (4 sep 2026) entra solo al aceptar los términos, con SCC módulo 2 y adenda UK. Sobre el art. 9: «not designed to process special category personal data… should not store such data unless it has satisfied itself» de la base legal. No lo prohíbe. Base de datos: MongoDB «US, EU», sin forma documentada de fijar la UE. **Archivos en EE. UU.** Las funciones de IA envían datos a OpenAI (EE. UU.). | Documentado | [DPA](https://www.plutio.com/legal/data-processing-agreement), [subencargados](https://www.plutio.com/legal/sub-processors) |
+| **Estable** | ❓ No hay datos públicos sobre la empresa: tamaño, financiación o antigüedad. Aparece en Capterra y AppSumo. | Sin fuente | — |
+
+**Lectura.** Sigue en verde: la documentación confirma que las peticiones críticas existen y se pueden automatizar. **Lo que lo puede tumbar no es técnico:**
+1. Que las respuestas de salud (encuesta y consentimiento) y los mensajes se guarden en una base de datos que puede estar en EE. UU., con un proveedor que **desaconseja** el art. 9.
+2. Que el portal no salga en español de verdad.
+
+Si (1) falla, queda una variante de **«portal fino»**:
+- la encuesta y el consentimiento en un formulario de la UE (Tally) o en el orquestador;
+- el PDF como enlace firmado del orquestador;
+- en Plutio, solo el acceso, el estado y los mensajes de hito, sin datos de salud.
+
+**¿Merece una prueba? Sí, barata y en dos pasos:**
+
+1. **Pregunta escrita a soporte.** 0 h; la redacta el orquestador y la envía Raúl.
+   - ¿Aceptan datos del art. 9 con su DPA?
+   - ¿Se puede fijar la base de datos y los archivos en la UE?
+   - ¿Se puede desactivar la IA (OpenAI)?
+   - ¿El portal y los correos salen en español por clienta?
+   - ¿Los webhooks van firmados?
+2. **Prueba sin datos reales, 1–2 h, con tu OK para abrir la cuenta de prueba.** Pasos:
+   - crear una clienta por API y sacar su URL de invitación;
+   - ver el portal en español;
+   - enviar un formulario y recibir el webhook;
+   - escribirle un mensaje por API y leer su respuesta;
+   - compartir un PDF;
+   - firmar un contrato.
+
+**Criterios para descartarla:**
+- no aceptan el art. 9 y el «portal fino» no convence;
+- el portal no sale en español;
+- no se puede sacar la URL de invitación por API.
 
 +++
 
