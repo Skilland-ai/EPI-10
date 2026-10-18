@@ -1,4 +1,4 @@
-# Estado actual — 3 de octubre de 2026
+# Estado actual — 18 de octubre de 2026
 
 ## Fuente de verdad
 
@@ -162,3 +162,12 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
 - **Pendiente:**
   - demo de Pabau, que la pide Raúl (SKI2-289), y después la prueba de 1–2 h;
   - preguntas escritas a Practice Better y Noloco, si Raúl las autoriza.
+
+## 18 oct (noche) · cierre de la sesión del orquestador
+
+- **14 oct:** correo a Carmen con Tomás en copia y la nota de 7 págs., enviado a las 17:13 (SKI2-286 y SKI2-287, Done). Sin respuesta a 18 oct.
+- **Demo de Pabau:** vie 23 oct, 9:15–10:00, con Danny de Pabau (SKI2-289). Plan de Raúl: el dossier sale el mié 21 y el jue 22 invita a Carmen a la mini demo si quiere venir.
+- **Odoo como portal: sigue descartado** (Raúl, 18 oct). Ver `03_specs/decisions.md`.
+- **Síntesis para Raúl:** documento 05 del proyecto en Linear, «Portal de cliente · plataformas de mercado frente a desarrollo propio».
+- **Dossier del 21:** en pausa. **Raúl lo procesa antes de lanzar ninguna tarea.** SKI2-293 (cifras del propio) y SKI2-294 (web integrada) están en Backlog, con el brief escrito.
+- **hermes-node:** los contenedores de EPI10 (demo, OpenEMR y Odoo de pruebas) están **parados, no borrados**, para liberar el HP para otra sesión. Se recuperan con `docker start`. No hacer `down`: los módulos de OpenEMR viven en el contenedor.
