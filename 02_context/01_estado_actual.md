@@ -171,3 +171,18 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
 - **Síntesis para Raúl:** documento 05 del proyecto en Linear, «Portal de cliente · plataformas de mercado frente a desarrollo propio».
 - **Dossier del 21:** en pausa. **Raúl lo procesa antes de lanzar ninguna tarea.** SKI2-293 (cifras del propio) y SKI2-294 (web integrada) están en Backlog, con el brief escrito.
 - **hermes-node:** los contenedores de EPI10 (demo, OpenEMR y Odoo de pruebas) están **parados, no borrados**, para liberar el HP para otra sesión. Se recuperan con `docker start`. No hacer `down`: los módulos de OpenEMR viven en el contenedor.
+
+## 18 oct (cierre) · matriz por peticiones, ronda de contactos y retraso del dossier
+
+- **Documento 05 en Linear** (repo: `04_outputs/modulos/crisis-healthie/2026-10-18_matriz_peticiones_tiers_v1.md`): 137 plataformas contra 13 peticiones. Resultado: verde 1 (el propio), naranja 13 (sanitarias: Tellescope, Practice Better, Pabau y Marley Health), rojo 119 y 4 sin datos.
+- **Reglas de Raúl:**
+  - si no automatiza, es rojo, y lo rojo no se contacta;
+  - lo que no es software de salud no pasa de naranja (Plutio).
+- **Contactos (correos solo en Gmail, Carmen en copia):**
+  - Plutio: enviado.
+  - Practice Better: enviado, ticket 321185.
+  - Pabau: programado para el lunes 19 a las 8:00; demo el viernes 23 a las 9:15.
+  - IntakeQ: programado, pero ahora está en rojo; Raúl decide si lo cancela.
+  - Tellescope: borrador.
+- **El dossier se retrasa una semana, más o menos**, hasta después de la ronda de demos (Raúl). Raúl lo habla con Carmen (SKI2-303).
+- **Siguiente:** recoger las respuestas y actualizar las fichas del documento 05. SKI2-293 y SKI2-294 siguen en Backlog hasta que Raúl las active.
