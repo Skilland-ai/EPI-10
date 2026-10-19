@@ -5,6 +5,8 @@ Fecha: 2026-10-18 · Linear: SKI2-288, documento 05 del proyecto · Construida a
 > **Qué es.** Las 137 plataformas que revisamos para el portal de cliente, evaluadas una a una contra **la lista de peticiones de EPI10 al portal** y ordenadas en tiers de viabilidad, de la más viable a la menos. Sustituye a la versión anterior de este documento, que daba cifras pero no decía qué cumple y qué no cada opción.
 >
 > **Datos:** fuentes públicas consultadas el 18 oct 2026 (SKI2-288), con su revisión independiente. **No se ha probado ninguna plataforma.** ❓ significa que el dato no está en ninguna fuente, no que no exista.
+>
+> **Actualización 19 oct:** Tellescope pasa a rojo. Respondió a nuestro correo el mismo día: no atiende a organizaciones con pacientes fuera de EE. UU.
 
 ---
 
@@ -56,14 +58,13 @@ Dentro de cada tier se ordena por puntuación. Cada crítica vale el doble: ✅ 
 | Tier | Plataformas |
 |---|---|
 | 🟢 Verde | **1** |
-| 🟡 Naranja | **13** |
-| 🔴 Rojo | **119** |
+| 🟡 Naranja | **12** |
+| 🔴 Rojo | **120** |
 | ⚪ Sin datos | **4** |
 
 1. **Verde solo queda el portal propio sobre OpenEMR**, ya construido: cumple las 13 peticiones salvo la venta, que va por Stripe.
-2. **En el naranja quedan 13 plataformas, y solo 4 son software de salud:** Tellescope, Practice Better, Pabau y Marley Health. Las otras 9 no son de salud y no pasan de naranja: Plutio (la que más peticiones cubre), Assembly y los constructores sin código.
-3. **Las 4 sanitarias:**
-   - **Tellescope:** las 7 operaciones por API, firma y marca blanca. Precio, región, DPA y español desconocidos.
+2. **En el naranja quedan 12 plataformas, y solo 3 son software de salud:** Practice Better, Pabau y Marley Health. Tellescope, la que más cubría, se descartó el 19 oct: solo atiende a organizaciones con pacientes en EE. UU. Las otras 9 no son de salud y no pasan de naranja: Plutio (la que más peticiones cubre), Assembly y los constructores sin código.
+3. **Las 3 sanitarias:**
    - **Practice Better:** automatiza bien, pero interfaz en inglés, datos en EE. UU. y una API que pasará a ser de pago.
    - **Pabau:** no hay invitación ni buzón por API. Demo el viernes 23.
    - **Marley Health:** código abierto, alojable en la UE, pero es otro ERP al lado de Odoo y no tiene chat.
@@ -74,7 +75,7 @@ Dentro de cada tier se ordena por puntuación. Cada crítica vale el doble: ✅ 
    - 56: no son un portal de cliente;
    - 8: precio inasumible;
    - 7: prohíben o excluyen los datos de salud;
-   - 7: archivadas, no contratables o descartadas por decisión;
+   - 8: archivadas, no contratables o descartadas por decisión (Tellescope desde el 19 oct);
    - 2: fallan dos o más críticas.
 
 ---
@@ -89,7 +90,7 @@ Dentro de cada tier se ordena por puntuación. Cada crítica vale el doble: ✅ 
 
 +++
 
-+++ 🟡 Tier naranja · viable con concesiones · 13
++++ 🟡 Tier naranja · viable con concesiones · 12
 
 | # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | ¿Software de salud? | Para subir a verde (críticas no ✅) | Qué le falta |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -97,15 +98,14 @@ Dentro de cada tier se ordena por puntuación. Cada crítica vale el doble: ✅ 
 | 2 | Assembly (EE. UU.) | ◐ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ◐ | ◐ | ≈ 1.090 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, UE ◐ | Interfaz solo inglés; pagos no disponibles en España; región no publicada (prob. EE. UU.); invitación por API sin confirmar |
 | 3 | Practice Better (CA) | ◐ | ◐ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ◐ | ◐ | ❌ | 985 / 985+API / 985+API | ✅ | ES ◐, Chat ◐, UE ◐ | Interfaz solo en inglés; datos en AWS EE. UU.; la API beta será de pago sin precio; leer mensajes U. |
 | 4 | Marley Health / Frappe (IN) | ◐ | ✅ | ✅ | ◐ | ✅ | ❌ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 55–442 ×3 | ✅ | ES ◐, Firma ◐, Chat ❌, PDF ◐ | Segundo ERP junto a Odoo; sin buzón; textos de Marley sin traducir; firma fuera del portal; 70–110 h. |
-| 5 | Tellescope (EE. UU.) | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ◐ | ❓ | ❓ | ◐ | U | ✅ | ES ◐, API ◐, UE ❓ | Precio, plan de API, región y DPA desconocidos (probable EE. UU.); interfaz y correos en español sin confirmar. |
-| 6 | Memberstack + Webflow (EE. UU.) | ✅ | ✅ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ❓ | 500–900 + Webflow ×3 | ❌ (tope naranja) | Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Portal entero por construir (80–150 h); EE. UU.; desaconseja datos sensibles; sin invitación por API; coste de Webflow ❓ |
-| 7 | Pabau (UK) | ❓ | ◐ | ◐ | ❓ | ✅ | ◐ | ◐ | ✅ | ✅ | ✅ | ◐ | ◐ | ◐ | 1.370–2.050 ×3 (extrapolado, U) | ✅ | ES ❓, Alta ◐, Firma ❓, Chat ◐, PDF ◐, UE ◐ | Sin invitación ni buzón por API; idioma del portal, firma y precio U; región UE no garantizada; DPA UK. |
-| 8 | Clinked (UK) | ❓ | ✅ | ✅ | ◐ | ❌ | ✅ | ✅ | ❌ | ◐ | ◐ | ✅ | ◐ | ◐ | ≈ 2.110 ×3 | ❌ (tope naranja) | ES ❓, Firma ◐, Form ❌, API ◐, UE ◐ | Sin formularios propios (Jotform/Tally); firma vía DocuSign; sin webhooks (sondeo) ni venta; ES sin reverificar; DPA ambiguo en salud |
-| 9 | Budibase (UK) | ◐ | ◐ | ✅ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ✅ | ✅ | ◐ | ◐ | 100–300 ×3 | ❌ (tope naranja) | ES ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Nube prohíbe salud: autoalojar y operar (50–90 h); sin traducciones ni marca en edición libre; sin Stripe |
-| 10 | Zite (EE. UU.) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ◐ | ≈ 830 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin UE para apps y datos; página de acceso en inglés; sin API de invitación; P4–P7 construibles; producto joven |
-| 11 | Noloco (IE) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ✅ | ◐ | ◐ | 720 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin localización (ES a mano); DPA no publicado ni postura art. 9; chat = comentarios; P4–P7 construibles; empresa pequeña |
-| 12 | Trainerize (CA) | ❓ | ✅ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ❓ | ❓ | ≈ 1.600 ×3 | ❌ (tope naranja) | ES ❓, Alta ◐, Firma ❌, Form ◐, Chat ◐, PDF ◐, API ◐, UE ❓ | API solo en Studio Plus; Zapier sin aviso de formulario ni mensaje nuevo; sin firma; fitness sin DPA visible. |
-| 13 | Appsmith (EE. UU./IN) | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❓ | ≈ 8.800 cloud / 0 autoalojado | ❌ (tope naranja) | ES ◐, Alta ❌, Firma ◐, Form ◐, Chat ◐, PDF ◐, API ◐, UE ◐ | Solo inglés; pensado para uso interno; autoalojar y construir firma y chat (60–100 h); nube ≈ 26.400 € |
+| 5 | Memberstack + Webflow (EE. UU.) | ✅ | ✅ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ❓ | 500–900 + Webflow ×3 | ❌ (tope naranja) | Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Portal entero por construir (80–150 h); EE. UU.; desaconseja datos sensibles; sin invitación por API; coste de Webflow ❓ |
+| 6 | Pabau (UK) | ❓ | ◐ | ◐ | ❓ | ✅ | ◐ | ◐ | ✅ | ✅ | ✅ | ◐ | ◐ | ◐ | 1.370–2.050 ×3 (extrapolado, U) | ✅ | ES ❓, Alta ◐, Firma ❓, Chat ◐, PDF ◐, UE ◐ | Sin invitación ni buzón por API; idioma del portal, firma y precio U; región UE no garantizada; DPA UK. |
+| 7 | Clinked (UK) | ❓ | ✅ | ✅ | ◐ | ❌ | ✅ | ✅ | ❌ | ◐ | ◐ | ✅ | ◐ | ◐ | ≈ 2.110 ×3 | ❌ (tope naranja) | ES ❓, Firma ◐, Form ❌, API ◐, UE ◐ | Sin formularios propios (Jotform/Tally); firma vía DocuSign; sin webhooks (sondeo) ni venta; ES sin reverificar; DPA ambiguo en salud |
+| 8 | Budibase (UK) | ◐ | ◐ | ✅ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ✅ | ✅ | ◐ | ◐ | 100–300 ×3 | ❌ (tope naranja) | ES ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Nube prohíbe salud: autoalojar y operar (50–90 h); sin traducciones ni marca en edición libre; sin Stripe |
+| 9 | Zite (EE. UU.) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ◐ | ≈ 830 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin UE para apps y datos; página de acceso en inglés; sin API de invitación; P4–P7 construibles; producto joven |
+| 10 | Noloco (IE) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ✅ | ◐ | ◐ | 720 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin localización (ES a mano); DPA no publicado ni postura art. 9; chat = comentarios; P4–P7 construibles; empresa pequeña |
+| 11 | Trainerize (CA) | ❓ | ✅ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ❓ | ❓ | ≈ 1.600 ×3 | ❌ (tope naranja) | ES ❓, Alta ◐, Firma ❌, Form ◐, Chat ◐, PDF ◐, API ◐, UE ❓ | API solo en Studio Plus; Zapier sin aviso de formulario ni mensaje nuevo; sin firma; fitness sin DPA visible. |
+| 12 | Appsmith (EE. UU./IN) | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❓ | ≈ 8.800 cloud / 0 autoalojado | ❌ (tope naranja) | ES ◐, Alta ❌, Firma ◐, Form ◐, Chat ◐, PDF ◐, API ◐, UE ◐ | Solo inglés; pensado para uso interno; autoalojar y construir firma y chat (60–100 h); nube ≈ 26.400 € |
 
 **Ficha de Plutio, verificada en sus fuentes oficiales (18 oct, noche).**
 
@@ -157,7 +157,7 @@ Si (1) falla, queda una variante de **«portal fino»**:
 
 +++
 
-### 🔴 Tier rojo · no viable · 119
+### 🔴 Tier rojo · no viable · 120
 
 Plegadas por motivo. **Lo rojo no se contacta** (Raúl, 18 oct).
 
@@ -245,7 +245,7 @@ Plegadas por motivo. **Lo rojo no se contacta** (Raúl, 18 oct).
 
 +++
 
-+++ 🔴 Archivada, no contratable, no localizada o descartada por decisión · 7
++++ 🔴 Archivada, no contratable, no localizada o descartada por decisión · 8
 
 | # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Motivo | Qué le falta |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -256,6 +256,7 @@ Plegadas por motivo. **Lo rojo no se contacta** (Raúl, 18 oct).
 | 5 | Fasten Health (EE. UU.) | — | — | — | — | — | — | — | — | — | — | — | — | ❌ | n/a | archivada; no es portal | Registro personal para familias; repositorio archivado el 18 jul 2026. |
 | 6 | HospitalRun (EE. UU.) | — | — | — | — | — | — | — | — | — | — | — | — | ❌ | n/a | archivada | Repositorio archivado el 9 ene 2023. |
 | 7 | Eugenomic | — | — | — | — | — | — | — | — | — | — | — | — | — | n/a | No localizada | Sin fuente primaria; las búsquedas devuelven Genotica y Mylogy, ninguno es portal configurable. |
+| 8 | Tellescope (EE. UU.) | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ◐ | ❓ | ❌ | ◐ | U | No contratable desde España (correo del 19 oct) | «We currently do not serve organizations that have patients residing outside the U.S.»; avisarán si cambia. Antes, naranja 5: cubría las 7 operaciones por API. |
 
 +++
 
@@ -341,6 +342,7 @@ Plegadas por motivo. **Lo rojo no se contacta** (Raúl, 18 oct).
 - **Odoo como portal** sale bien en la matriz, pero sigue en rojo por tu decisión del 18 oct.
 - **Healthie** cumple casi todo, pero está en rojo por el precio de la API.
 - **Regla nueva (Raúl, 18 oct):** si la API no automatiza el flujo, la plataforma va a rojo, y lo rojo no se contacta. 13 plataformas pasan de naranja a rojo, IntakeQ entre ellas.
+- **Tellescope, fuera (19 oct).** Era la sanitaria que más peticiones cubría. Contestó a nuestro correo el mismo día: no atienden a organizaciones con pacientes fuera de EE. UU. Pasa a rojo por no contratable desde España.
 
 +++ Dudas de datos entre fuentes
 

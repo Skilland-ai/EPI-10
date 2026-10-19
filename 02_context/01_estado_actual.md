@@ -190,9 +190,16 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
   - Practice Better: enviado, ticket 321185.
   - Pabau: programado para el lunes 19 a las 8:00; demo el viernes 23 a las 9:15.
   - IntakeQ: programado, pero ahora está en rojo; Raúl decide si lo cancela.
-  - Tellescope: borrador.
+  - Tellescope: enviado el lunes 19 a las 8:00. **Rechazo el mismo día:** no atienden a organizaciones con pacientes fuera de EE. UU. Pasa a rojo.
 - **El dossier se retrasa una semana, más o menos**, hasta después de la ronda de demos (Raúl). Raúl lo habla con Carmen (SKI2-303).
 - **Siguiente:** recoger las respuestas y actualizar las fichas del documento 05. SKI2-293 y SKI2-294 siguen en Backlog hasta que Raúl las active.
 - **Hoja de ruta acordada (Raúl, 18 oct, noche):**
   - **Hito 6 · Ronda de demos (19–23 oct):** Tellescope, Practice Better y Pabau, más Plutio de rebote. IntakeQ, cancelado (rojo). Marley Health no se contacta (sería otro propio). Corte de respuestas el lunes 26.
   - **Hito 7 · Nuevo análisis y dossier (~28 oct, por confirmar con Carmen):** primero SKI2-304 (actualizar la matriz y las fichas); después, cuando Raúl lo procese, SKI2-293, SKI2-294 y el dossier.
+
+## 19 oct · primeras respuestas de la ronda de demos
+
+- **Tellescope, descartada.** Respuesta de soporte (Derek) a las 15:17: «We currently do not serve organizations that have patients residing outside the U.S.». Pasa de naranja 5 a rojo (no contratable desde España) en el documento 05 y en la copia del repo. Quedan en la ronda: Pabau (demo vie 23, 9:15), Practice Better (ticket 321185) y Plutio. Ninguna ha respondido aún.
+- **Carmen (correo de las 8:49):** no vendrá a la demo de Pabau. Agradece la invitación, pero prefiere que Skilland haga el filtrado técnico y decidir después si alguna plataforma sirve. Pregunta si se cancela la reunión del martes 20, prevista sin hora. Raúl le contesta (SKI2-303: cancelación del martes y nueva fecha del dossier).
+- **Raúl:** de baja por gastroenteritis desde el 18 oct.
+- **Sin novedades** de Pabau, Practice Better ni Plutio. Corte de respuestas: lunes 26.
