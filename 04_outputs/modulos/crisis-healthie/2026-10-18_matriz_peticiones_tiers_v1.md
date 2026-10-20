@@ -7,6 +7,8 @@ Fecha: 2026-10-18 · Linear: SKI2-288, documento 05 del proyecto · Construida a
 > **Datos:** fuentes públicas consultadas el 18 oct 2026 (SKI2-288), con su revisión independiente. **No se ha probado ninguna plataforma.** ❓ significa que el dato no está en ninguna fuente, no que no exista.
 >
 > **Actualización 19 oct:** Tellescope pasa a rojo. Respondió a nuestro correo el mismo día: no atiende a organizaciones con pacientes fuera de EE. UU.
+>
+> **Actualización 20 oct:** Pabau pasa a rojo por su respuesta escrita: sin buzón por API en ningún sentido y el informe se comparte a mano. Practice Better confirma que su interfaz es solo en inglés, sin forma de cambiar los textos del sistema.
 
 ---
 
@@ -58,20 +60,19 @@ Dentro de cada tier se ordena por puntuación. Cada crítica vale el doble: ✅ 
 | Tier | Plataformas |
 |---|---|
 | 🟢 Verde | **1** |
-| 🟡 Naranja | **12** |
-| 🔴 Rojo | **120** |
+| 🟡 Naranja | **11** |
+| 🔴 Rojo | **121** |
 | ⚪ Sin datos | **4** |
 
 1. **Verde solo queda el portal propio sobre OpenEMR**, ya construido: cumple las 13 peticiones salvo la venta, que va por Stripe.
-2. **En el naranja quedan 12 plataformas, y solo 3 son software de salud:** Practice Better, Pabau y Marley Health. Tellescope, la que más cubría, se descartó el 19 oct: solo atiende a organizaciones con pacientes en EE. UU. Las otras 9 no son de salud y no pasan de naranja: Plutio (la que más peticiones cubre), Assembly y los constructores sin código.
-3. **Las 3 sanitarias:**
-   - **Practice Better:** automatiza bien, pero interfaz en inglés, datos en EE. UU. y una API que pasará a ser de pago.
-   - **Pabau:** no hay invitación ni buzón por API. Demo el viernes 23.
+2. **En el naranja quedan 11 plataformas, y solo 2 son software de salud:** Practice Better y Marley Health. Tellescope se descartó el 19 oct (solo pacientes en EE. UU.). Pabau pasó a rojo el 20 oct por su propia respuesta escrita: sin buzón por API y el informe se comparte a mano. Las otras 9 no son de salud y no pasan de naranja: Plutio (la que más peticiones cubre), Assembly y los constructores sin código.
+3. **Las 2 sanitarias que quedan:**
+   - **Practice Better:** automatiza bien, pero su soporte confirmó el 19 oct que la interfaz es solo en inglés y que no hay forma de cambiar los textos del sistema; datos en EE. UU.; API que pasará a ser de pago.
    - **Marley Health:** código abierto, alojable en la UE, pero es otro ERP al lado de Odoo y no tiene chat.
 4. **Pasan a rojo 13 que no automatizan:** IntakeQ, Carepatron, Simply.Coach, DriCloud, CoachAccountable, SuiteDash, Halaxy, Delenta, Everfit y MN program, porque dejan mensajes, informe o formularios a mano en cada caso. Docline, BridgeInteract y Nutrilog, porque su API no está documentada.
 5. **Ninguna plataforma de mercado tiene a la vez español ✅, datos en la UE ✅ y automatización ✅ confirmados.**
 6. **Motivos del rojo:**
-   - 39: sin API o no automatizan;
+   - 40: sin API o no automatizan (Pabau desde el 20 oct);
    - 56: no son un portal de cliente;
    - 8: precio inasumible;
    - 7: prohíben o excluyen los datos de salud;
@@ -90,22 +91,21 @@ Dentro de cada tier se ordena por puntuación. Cada crítica vale el doble: ✅ 
 
 +++
 
-+++ 🟡 Tier naranja · viable con concesiones · 12
++++ 🟡 Tier naranja · viable con concesiones · 11
 
 | # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | ¿Software de salud? | Para subir a verde (críticas no ✅) | Qué le falta |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | **Plutio (UK)** | ❓ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ◐ | ◐ | 550–640 ×3 | ❌ (tope naranja, Raúl 18 oct) | ES ❓, UE ◐ | Archivos en EE. UU.; DPA desaconseja art. 9; español sin verificar; webhooks sin confirmar (sondeo); EUR sin confirmar |
 | 2 | Assembly (EE. UU.) | ◐ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ◐ | ◐ | ≈ 1.090 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, UE ◐ | Interfaz solo inglés; pagos no disponibles en España; región no publicada (prob. EE. UU.); invitación por API sin confirmar |
-| 3 | Practice Better (CA) | ◐ | ◐ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ◐ | ◐ | ❌ | 985 / 985+API / 985+API | ✅ | ES ◐, Chat ◐, UE ◐ | Interfaz solo en inglés; datos en AWS EE. UU.; la API beta será de pago sin precio; leer mensajes U. |
+| 3 | Practice Better (CA) | ❌ | ◐ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ◐ | ◐ | ❌ | 985 / 985+API / 985+API | ✅ | ES ❌, Chat ◐, UE ◐ | **Interfaz solo en inglés, confirmado por soporte el 19 oct:** sin archivo de traducción, CSS/JS ni API para los textos del sistema; solo el contenido propio va en español. Datos en AWS EE. UU.; API beta de pago sin precio. Para el resto nos derivan a Sarah Ray (Director of Practice Growth). |
 | 4 | Marley Health / Frappe (IN) | ◐ | ✅ | ✅ | ◐ | ✅ | ❌ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 55–442 ×3 | ✅ | ES ◐, Firma ◐, Chat ❌, PDF ◐ | Segundo ERP junto a Odoo; sin buzón; textos de Marley sin traducir; firma fuera del portal; 70–110 h. |
 | 5 | Memberstack + Webflow (EE. UU.) | ✅ | ✅ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ❓ | 500–900 + Webflow ×3 | ❌ (tope naranja) | Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Portal entero por construir (80–150 h); EE. UU.; desaconseja datos sensibles; sin invitación por API; coste de Webflow ❓ |
-| 6 | Pabau (UK) | ❓ | ◐ | ◐ | ❓ | ✅ | ◐ | ◐ | ✅ | ✅ | ✅ | ◐ | ◐ | ◐ | 1.370–2.050 ×3 (extrapolado, U) | ✅ | ES ❓, Alta ◐, Firma ❓, Chat ◐, PDF ◐, UE ◐ | Sin invitación ni buzón por API; idioma del portal, firma y precio U; región UE no garantizada; DPA UK. |
-| 7 | Clinked (UK) | ❓ | ✅ | ✅ | ◐ | ❌ | ✅ | ✅ | ❌ | ◐ | ◐ | ✅ | ◐ | ◐ | ≈ 2.110 ×3 | ❌ (tope naranja) | ES ❓, Firma ◐, Form ❌, API ◐, UE ◐ | Sin formularios propios (Jotform/Tally); firma vía DocuSign; sin webhooks (sondeo) ni venta; ES sin reverificar; DPA ambiguo en salud |
-| 8 | Budibase (UK) | ◐ | ◐ | ✅ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ✅ | ✅ | ◐ | ◐ | 100–300 ×3 | ❌ (tope naranja) | ES ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Nube prohíbe salud: autoalojar y operar (50–90 h); sin traducciones ni marca en edición libre; sin Stripe |
-| 9 | Zite (EE. UU.) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ◐ | ≈ 830 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin UE para apps y datos; página de acceso en inglés; sin API de invitación; P4–P7 construibles; producto joven |
-| 10 | Noloco (IE) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ✅ | ◐ | ◐ | 720 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin localización (ES a mano); DPA no publicado ni postura art. 9; chat = comentarios; P4–P7 construibles; empresa pequeña |
-| 11 | Trainerize (CA) | ❓ | ✅ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ❓ | ❓ | ≈ 1.600 ×3 | ❌ (tope naranja) | ES ❓, Alta ◐, Firma ❌, Form ◐, Chat ◐, PDF ◐, API ◐, UE ❓ | API solo en Studio Plus; Zapier sin aviso de formulario ni mensaje nuevo; sin firma; fitness sin DPA visible. |
-| 12 | Appsmith (EE. UU./IN) | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❓ | ≈ 8.800 cloud / 0 autoalojado | ❌ (tope naranja) | ES ◐, Alta ❌, Firma ◐, Form ◐, Chat ◐, PDF ◐, API ◐, UE ◐ | Solo inglés; pensado para uso interno; autoalojar y construir firma y chat (60–100 h); nube ≈ 26.400 € |
+| 6 | Clinked (UK) | ❓ | ✅ | ✅ | ◐ | ❌ | ✅ | ✅ | ❌ | ◐ | ◐ | ✅ | ◐ | ◐ | ≈ 2.110 ×3 | ❌ (tope naranja) | ES ❓, Firma ◐, Form ❌, API ◐, UE ◐ | Sin formularios propios (Jotform/Tally); firma vía DocuSign; sin webhooks (sondeo) ni venta; ES sin reverificar; DPA ambiguo en salud |
+| 7 | Budibase (UK) | ◐ | ◐ | ✅ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ✅ | ✅ | ◐ | ◐ | 100–300 ×3 | ❌ (tope naranja) | ES ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Nube prohíbe salud: autoalojar y operar (50–90 h); sin traducciones ni marca en edición libre; sin Stripe |
+| 8 | Zite (EE. UU.) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ◐ | ≈ 830 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin UE para apps y datos; página de acceso en inglés; sin API de invitación; P4–P7 construibles; producto joven |
+| 9 | Noloco (IE) | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ✅ | ◐ | ◐ | 720 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Sin localización (ES a mano); DPA no publicado ni postura art. 9; chat = comentarios; P4–P7 construibles; empresa pequeña |
+| 10 | Trainerize (CA) | ❓ | ✅ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ❓ | ❓ | ≈ 1.600 ×3 | ❌ (tope naranja) | ES ❓, Alta ◐, Firma ❌, Form ◐, Chat ◐, PDF ◐, API ◐, UE ❓ | API solo en Studio Plus; Zapier sin aviso de formulario ni mensaje nuevo; sin firma; fitness sin DPA visible. |
+| 11 | Appsmith (EE. UU./IN) | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❌ | ◐ | ◐ | ◐ | ◐ | ❓ | ≈ 8.800 cloud / 0 autoalojado | ❌ (tope naranja) | ES ◐, Alta ❌, Firma ◐, Form ◐, Chat ◐, PDF ◐, API ◐, UE ◐ | Solo inglés; pensado para uso interno; autoalojar y construir firma y chat (60–100 h); nube ≈ 26.400 € |
 
 **Ficha de Plutio, verificada en sus fuentes oficiales (18 oct, noche).**
 
@@ -157,11 +157,11 @@ Si (1) falla, queda una variante de **«portal fino»**:
 
 +++
 
-### 🔴 Tier rojo · no viable · 120
+### 🔴 Tier rojo · no viable · 121
 
 Plegadas por motivo. **Lo rojo no se contacta** (Raúl, 18 oct).
 
-+++ 🔴 Sin API o no automatiza: trabajo manual en cada caso · 39
++++ 🔴 Sin API o no automatiza: trabajo manual en cada caso · 40
 
 | # | Plataforma | ES | Marca | Alta | Firma | Form | Chat | PDF | Venta | BO | API | € | UE | Estable | € 3 años | Motivo | Qué le falta |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -204,6 +204,7 @@ Plegadas por motivo. **Lo rojo no se contacta** (Raúl, 18 oct).
 | 37 | Dietbox (BR) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ◐ | U | Sin API: solo puente manual | No evaluable: web con error 500; sin API; RGPD no verificado; orientado a Brasil. |
 | 38 | Doctolib (FR/DE) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ❓ | U | Sin API: solo puente manual | API solo para partners (Francia), sin programa público en España; portal y precio desconocidos. |
 | 39 | Nutrimind (MX/ES) | ❓ | ❌ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ❓ | U | Sin API: solo puente manual | Portal dudoso (fuentes contradictorias); sin marca blanca ni API; precio desconocido. |
+| 40 | Pabau (UK) | ◐ | ◐ | ◐ | ✅ | ✅ | ❌ | ◐ | ✅ | ✅ | ✅ | ❌ | ◐ | ✅ | ≈ 9.200–11.500 + IVA | No automatiza: sin buzón por API y el informe se comparte a mano (respuesta escrita de Pabau, 20 oct) | Sin mensajes por API en ningún sentido (la bidireccional es Pabau Engage, otro producto); el PDF subido por API no se ve en el portal ni avisa: se comparte a mano con Share Securely; «Powered by Pabau» se queda aunque pagues Marketing Plus (124 €/mes, necesario también para webhooks); correo del código de acceso solo en inglés; sin CSS/JS ni archivo de traducción; Team 195 €/mes + IVA. A favor: portal, correos y botones en español; DPA que cubre EU GDPR y art. 9; UE posible por cláusula; firma y formularios por enlace mágico con webhook; cuenta de prueba bajo petición. Antes, naranja 6. Lo único que lo devolvería a naranja: que send/email admita el PDF adjunto y aceptar mensajes de ida por correo sin respuesta en el portal. |
 
 +++
 
@@ -338,7 +339,8 @@ Plegadas por motivo. **Lo rojo no se contacta** (Raúl, 18 oct).
 ## 5. Qué cambia frente a la versión anterior
 
 - **Plutio sale de la sombra.** Antes era una fila del inventario. Con la matriz se ve que cumple más peticiones que cualquier otra plataforma de mercado. Estuvo en verde hasta que Raúl fijó el tope naranja para lo que no es software de salud.
-- **Pabau no es la mejor externa en la matriz.** Tiene muchas casillas sin confirmar. Si la demo confirma español, firma, invitación y PDF en el portal, puede subir.
+- **Pabau, a rojo (20 oct).** Danny contestó por escrito a las 8 preguntas del flujo: alta, firma, formularios, estado de formularios, etiquetas y citas, sí; **mensajes al portal y lectura de mensajes, no** (solo correo de ida desde Pabau, que queda en el historial); **el PDF por API no se ve en el portal** y se comparte a mano. Español casi completo (el correo del código de acceso, en inglés). Coste real ≈ 319 €/mes + IVA con Marketing Plus, muy por encima de la estimación. Por la regla «si deja mensajes o informe a mano, rojo», baja de naranja 6 a rojo. La demo del viernes 23 sigue reservada; Raúl decide si la mantiene.
+- **Practice Better, interfaz solo en inglés (19 oct).** Soporte lo confirma y descarta cualquier mecanismo para cambiar los textos del sistema. Sigue en naranja por la regla (una sola crítica en ❌), pero el español era el bloqueo principal. Derivan a Sarah Ray para precio de la API, DPA y hoja de ruta.
 - **Odoo como portal** sale bien en la matriz, pero sigue en rojo por tu decisión del 18 oct.
 - **Healthie** cumple casi todo, pero está en rojo por el precio de la API.
 - **Regla nueva (Raúl, 18 oct):** si la API no automatiza el flujo, la plataforma va a rojo, y lo rojo no se contacta. 13 plataformas pasan de naranja a rojo, IntakeQ entre ellas.
