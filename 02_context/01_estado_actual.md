@@ -220,3 +220,11 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
 - **Borrador a Carmen del 20 oct, sin enviar:** cancelaba la reunión del martes 20, proponía el dossier el mié 28 y verse el jue 29 o el vie 30.
 - **Carmen, 23 oct (correo formal, con Tomás en copia):** pide el estado real del MVP, una demo, los entregables y la documentación; el dossier, que estaba previsto para el 21; separar lo que entra en el presupuesto contratado de lo que sería ampliación; un calendario definitivo de cierre (el contrato es del 22 jun); y el estado del desarrollo de la subvención de la Cámara de Comercio. Sin contestar.
 - **Corte de respuestas de la ronda:** lunes 26.
+- **Decisiones de Raúl (25 oct, tarde):**
+  - el propio, tal cual;
+  - Pabau: se mantiene la demo del 30; falta ver el portal por dentro;
+  - Practice Better: correo nuevo sobre la API y el coste (borrador en Gmail, lo envía Raúl);
+  - Plutio: no se insiste;
+  - Tellescope, IntakeQ y Marley Health: descartadas (Marley pasa de naranja a rojo; la matriz queda con naranja 10 y rojo 122);
+  - Healthie: se documenta que la API siempre fue a criterio suyo, no un cambio de condiciones.
+- **Documento:** `04_outputs/modulos/crisis-healthie/2026-10-25_punto_situacion_plataformas_v1.md`, con lo que sabemos de cada una y de dónde sale.
