@@ -9,6 +9,8 @@ Fecha: 2026-10-18 · Linear: SKI2-288, documento 05 del proyecto · Construida a
 > **Actualización 19 oct:** Tellescope pasa a rojo. Respondió a nuestro correo el mismo día: no atiende a organizaciones con pacientes fuera de EE. UU.
 >
 > **Actualización 20 oct:** Pabau pasa a rojo por su respuesta escrita: sin buzón por API en ningún sentido y el informe se comparte a mano. Practice Better confirma que su interfaz es solo en inglés, sin forma de cambiar los textos del sistema.
+>
+> **Actualización 25 oct (correo):** ningún tier cambia. Pabau: demo movida al vie 30 oct a las 9:15, a petición de Raúl, con 11 preguntas pendientes por escrito. Practice Better: nuestra respuesta no llegó a salir y han cerrado el ticket 321185. Plutio: sin respuesta desde el 18 oct.
 
 ---
 
@@ -97,7 +99,7 @@ Dentro de cada tier se ordena por puntuación. Cada crítica vale el doble: ✅ 
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | **Plutio (UK)** | ❓ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ◐ | ◐ | 550–640 ×3 | ❌ (tope naranja, Raúl 18 oct) | ES ❓, UE ◐ | Archivos en EE. UU.; DPA desaconseja art. 9; español sin verificar; webhooks sin confirmar (sondeo); EUR sin confirmar |
 | 2 | Assembly (EE. UU.) | ◐ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ◐ | ◐ | ≈ 1.090 ×3 | ❌ (tope naranja) | ES ◐, Alta ◐, UE ◐ | Interfaz solo inglés; pagos no disponibles en España; región no publicada (prob. EE. UU.); invitación por API sin confirmar |
-| 3 | Practice Better (CA) | ❌ | ◐ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ◐ | ◐ | ❌ | 985 / 985+API / 985+API | ✅ | ES ❌, Chat ◐, UE ◐ | **Interfaz solo en inglés, confirmado por soporte el 19 oct:** sin archivo de traducción, CSS/JS ni API para los textos del sistema; solo el contenido propio va en español. Datos en AWS EE. UU.; API beta de pago sin precio. Para el resto nos derivan a Sarah Ray (Director of Practice Growth). |
+| 3 | Practice Better (CA) | ❌ | ◐ | ✅ | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ | ◐ | ◐ | ❌ | 985 / 985+API / 985+API | ✅ | ES ❌, Chat ◐, UE ◐ | **Interfaz solo en inglés, confirmado por soporte el 19 oct:** sin archivo de traducción, CSS/JS ni API para los textos del sistema; solo el contenido propio va en español. Datos en AWS EE. UU.; API beta de pago sin precio. Para el resto nos derivan a Sarah Ray (Director of Practice Growth). Ticket 321185 cerrado por ellos el 24 oct sin respuesta nuestra (el borrador del 20 oct no se envió); sin llamada con Sarah. |
 | 4 | Marley Health / Frappe (IN) | ◐ | ✅ | ✅ | ◐ | ✅ | ❌ | ◐ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 55–442 ×3 | ✅ | ES ◐, Firma ◐, Chat ❌, PDF ◐ | Segundo ERP junto a Odoo; sin buzón; textos de Marley sin traducir; firma fuera del portal; 70–110 h. |
 | 5 | Memberstack + Webflow (EE. UU.) | ✅ | ✅ | ◐ | ◐ | ◐ | ◐ | ◐ | ✅ | ◐ | ✅ | ✅ | ◐ | ❓ | 500–900 + Webflow ×3 | ❌ (tope naranja) | Alta ◐, Firma ◐, Form ◐, Chat ◐, PDF ◐, UE ◐ | Portal entero por construir (80–150 h); EE. UU.; desaconseja datos sensibles; sin invitación por API; coste de Webflow ❓ |
 | 6 | Clinked (UK) | ❓ | ✅ | ✅ | ◐ | ❌ | ✅ | ✅ | ❌ | ◐ | ◐ | ✅ | ◐ | ◐ | ≈ 2.110 ×3 | ❌ (tope naranja) | ES ❓, Firma ◐, Form ❌, API ◐, UE ◐ | Sin formularios propios (Jotform/Tally); firma vía DocuSign; sin webhooks (sondeo) ni venta; ES sin reverificar; DPA ambiguo en salud |
@@ -133,6 +135,8 @@ Si (1) falla, queda una variante de **«portal fino»**:
 - la encuesta y el consentimiento en un formulario de la UE (Tally) o en el orquestador;
 - el PDF como enlace firmado del orquestador;
 - en Plutio, solo el acceso, el estado y los mensajes de hito, sin datos de salud.
+
+**Estado 25 oct:** el correo salió el 18 oct a help@plutio.com, con Carmen en copia. Sin respuesta ni acuse a 25 oct.
 
 **Siguiente paso:** el correo de SKI2-299. La prueba de 1–2 h solo si la respuesta convence:
 
@@ -204,7 +208,7 @@ Plegadas por motivo. **Lo rojo no se contacta** (Raúl, 18 oct).
 | 37 | Dietbox (BR) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ◐ | U | Sin API: solo puente manual | No evaluable: web con error 500; sin API; RGPD no verificado; orientado a Brasil. |
 | 38 | Doctolib (FR/DE) | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ❓ | U | Sin API: solo puente manual | API solo para partners (Francia), sin programa público en España; portal y precio desconocidos. |
 | 39 | Nutrimind (MX/ES) | ❓ | ❌ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ | ❌ | ❓ | ❓ | ❓ | U | Sin API: solo puente manual | Portal dudoso (fuentes contradictorias); sin marca blanca ni API; precio desconocido. |
-| 40 | Pabau (UK) | ◐ | ◐ | ◐ | ✅ | ✅ | ❌ | ◐ | ✅ | ✅ | ✅ | ❌ | ◐ | ✅ | ≈ 9.200–11.500 + IVA | No automatiza: sin buzón por API y el informe se comparte a mano (respuesta escrita de Pabau, 20 oct) | Sin mensajes por API en ningún sentido (la bidireccional es Pabau Engage, otro producto); el PDF subido por API no se ve en el portal ni avisa: se comparte a mano con Share Securely; «Powered by Pabau» se queda aunque pagues Marketing Plus (124 €/mes, necesario también para webhooks); correo del código de acceso solo en inglés; sin CSS/JS ni archivo de traducción; Team 195 €/mes + IVA. A favor: portal, correos y botones en español; DPA que cubre EU GDPR y art. 9; UE posible por cláusula; firma y formularios por enlace mágico con webhook; cuenta de prueba bajo petición. Antes, naranja 6. Lo único que lo devolvería a naranja: que send/email admita el PDF adjunto y aceptar mensajes de ida por correo sin respuesta en el portal. |
+| 40 | Pabau (UK) | ◐ | ◐ | ◐ | ✅ | ✅ | ❌ | ◐ | ✅ | ✅ | ✅ | ❌ | ◐ | ✅ | ≈ 9.200–11.500 + IVA | No automatiza: sin buzón por API y el informe se comparte a mano (respuesta escrita de Pabau, 20 oct) | Sin mensajes por API en ningún sentido (la bidireccional es Pabau Engage, otro producto); el PDF subido por API no se ve en el portal ni avisa: se comparte a mano con Share Securely; «Powered by Pabau» se queda aunque pagues Marketing Plus (124 €/mes, necesario también para webhooks); correo del código de acceso solo en inglés; sin CSS/JS ni archivo de traducción; Team 195 €/mes + IVA. A favor: portal, correos y botones en español; DPA que cubre EU GDPR y art. 9; UE posible por cláusula; firma y formularios por enlace mágico con webhook; cuenta de prueba bajo petición. Antes, naranja 6. Lo único que lo devolvería a naranja: que send/email admita el PDF adjunto y aceptar mensajes de ida por correo sin respuesta en el portal. **25 oct:** demo movida al vie 30 oct, 9:15; Raúl le mandó el 22 oct 11 preguntas pendientes (DPA UE con SCC, subencargados, IA, exportación y borrado, precio de Care Plus y del pie «Powered by», cuenta de prueba, API nueva, mensajes y Share Securely por API, textos en inglés, cláusula UE, SLA). Danny, 23 oct: «I'll review the questions and get back to you». Sin respuestas aún. |
 
 +++
 
@@ -338,6 +342,11 @@ Plegadas por motivo. **Lo rojo no se contacta** (Raúl, 18 oct).
 
 ## 5. Qué cambia frente a la versión anterior
 
+- **Ronda de contactos a 25 oct (correo), sin cambios de tier:**
+  - **Pabau (rojo):** demo movida al vie 30 oct, 9:15, a petición de Raúl (correo del 22 oct). Le pidió por escrito 11 puntos antes de la demo. Danny dice que los revisa; aún no ha contestado.
+  - **Practice Better (naranja):** el borrador del 20 oct a Josh no llegó a enviarse. En él pedíamos, antes de reservar con Sarah Ray, la fecha del español en su hoja de ruta y el precio de la API. Practice Better mandó un recordatorio el 21 oct y cerró el ticket el 24 oct. Para seguir hay que abrir otro ticket o reservar con Sarah.
+  - **Plutio (naranja):** sin respuesta desde el 18 oct.
+  - **Tellescope:** cerrado (rojo, 19 oct). **IntakeQ:** no consta ningún envío en el correo.
 - **Plutio sale de la sombra.** Antes era una fila del inventario. Con la matriz se ve que cumple más peticiones que cualquier otra plataforma de mercado. Estuvo en verde hasta que Raúl fijó el tope naranja para lo que no es software de salud.
 - **Pabau, a rojo (20 oct).** Danny contestó por escrito a las 8 preguntas del flujo: alta, firma, formularios, estado de formularios, etiquetas y citas, sí; **mensajes al portal y lectura de mensajes, no** (solo correo de ida desde Pabau, que queda en el historial); **el PDF por API no se ve en el portal** y se comparte a mano. Español casi completo (el correo del código de acceso, en inglés). Coste real ≈ 319 €/mes + IVA con Marketing Plus, muy por encima de la estimación. Por la regla «si deja mensajes o informe a mano, rojo», baja de naranja 6 a rojo. La demo del viernes 23 sigue reservada; Raúl decide si la mantiene.
 - **Practice Better, interfaz solo en inglés (19 oct).** Soporte lo confirma y descarta cualquier mecanismo para cambiar los textos del sistema. Sigue en naranja por la regla (una sola crítica en ❌), pero el español era el bloqueo principal. Derivan a Sarah Ray para precio de la API, DPA y hoja de ruta.

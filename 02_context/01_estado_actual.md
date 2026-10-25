@@ -209,3 +209,14 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
 - **Pabau (Danny, 9:28, por escrito, Carmen en copia):** alta por API + enlace mágico (el portal entra con código por correo de Pabau, en inglés); firma y formularios con webhook; etiquetas y citas por API. **Sin mensajes por API en ningún sentido** (mensajería bidireccional = Pabau Engage, otro producto); **el PDF subido por API no se ve en el portal** y se comparte a mano (Share Securely). Español en portal, correos y botones; «Powered by Pabau» se queda aunque pagues Marketing Plus (124 €/mes, necesario para webhooks). Team 195 €/mes + IVA → ≈ 319 €/mes, ≈ 9.200–11.500 € a 3 años. DPA cubre EU GDPR y art. 9; UE por cláusula específica; sin ISO/SOC 2; SCC, subencargados, IA desactivable y API de borrado, pendientes. Cuenta de prueba bajo petición. **Por la regla «mensajes o informe a mano = rojo», Pabau pasa a rojo** (naranja 6 → rojo 40). La demo del viernes 23 sigue reservada: Raúl decide.
 - **Practice Better (Joshua Morato, soporte, 19 oct 18:12):** interfaz solo en inglés, confirmado; sin archivo de traducción, CSS/JS ni API para los textos del sistema. Derivan a Sarah Ray (Director of Practice Growth) para precio de API, DPA y hoja de ruta, con enlace de reserva. ES pasa a ❌; sigue en naranja por la regla.
 - **Quedan en naranja 11; sanitarias: Practice Better y Marley Health.** Plutio sin respuesta. Carmen sin contestar desde el 19 (SKI2-303).
+
+## 25 oct · punto de situación de las plataformas externas (correo)
+
+- **Ningún tier cambia.** Detalle en el §5 de `04_outputs/modulos/crisis-healthie/2026-10-18_matriz_peticiones_tiers_v1.md`.
+- **Pabau (rojo):** demo movida al **vie 30 oct, 9:15** (Raúl, 22 oct). Raúl le pidió 11 puntos por escrito antes de la demo; Danny dice que los revisa, sin respuesta aún.
+- **Practice Better (naranja):** el borrador a Josh del 20 oct **no se envió**. Practice Better cerró el ticket 321185 el 24 oct. No hay llamada con Sarah Ray.
+- **Plutio (naranja):** sin respuesta desde el 18 oct.
+- **Tellescope:** cerrado (rojo). **IntakeQ:** no consta ningún envío.
+- **Borrador a Carmen del 20 oct, sin enviar:** cancelaba la reunión del martes 20, proponía el dossier el mié 28 y verse el jue 29 o el vie 30.
+- **Carmen, 23 oct (correo formal, con Tomás en copia):** pide el estado real del MVP, una demo, los entregables y la documentación; el dossier, que estaba previsto para el 21; separar lo que entra en el presupuesto contratado de lo que sería ampliación; un calendario definitivo de cierre (el contrato es del 22 jun); y el estado del desarrollo de la subvención de la Cámara de Comercio. Sin contestar.
+- **Corte de respuestas de la ronda:** lunes 26.
