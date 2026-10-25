@@ -228,3 +228,34 @@ Programadas por Raúl para el **5 oct a las 8:00**. Textos finales en `04_output
   - Tellescope, IntakeQ y Marley Health: descartadas (Marley pasa de naranja a rojo; la matriz queda con naranja 10 y rojo 122);
   - Healthie: se documenta que la API siempre fue a criterio suyo, no un cambio de condiciones.
 - **Documento:** `04_outputs/modulos/crisis-healthie/2026-10-25_punto_situacion_plataformas_v1.md`, con lo que sabemos de cada una y de dónde sale.
+
+## 25 oct (noche) · demo del orquestador y del generador de borradores, lista para probar
+
+- **Carriles de la tarde (Herdr), terminados y fusionados en `master` de `epi10-orquestador` (6ac2695):**
+  - **#32 · CON-460, panel en vivo** (`/panel`):
+    - consola en tiempo real (SSE);
+    - estado de conexiones, con el **portal de la clienta desconectado** («Healthie dado de baja»);
+    - 7 botones que simulan los eventos del portal contra el Odoo de pruebas real, más «Nueva clienta de demo» (pago real en el sandbox de Stripe) y «Reiniciar demo»;
+    - tarjeta «Cambios en Odoo» con antes, después y causa;
+    - Trabajos y ficha del caso;
+    - capa común EPI10 UI en `src/ui/`;
+    - `PORTAL_CLIENTE=desconectado`; ningún «OpenEMR» visible; el campo «ID de OpenEMR» se oculta en Odoo.
+  - **#33 · CON-461, generador de borradores** (`/informes`):
+    - se suben los 6 PDF de TellmeGen y el cuestionario; se seudonimizan, con comprobación de residuos;
+    - Opus 5.5 redacta 14 secciones;
+    - revisión maquetada como el informe Nutriwell;
+    - **Word editable** con los puntos de revisión como comentarios; PDF de vista previa desde el navegador;
+    - 2 casos ficticios: Lucía y Javier.
+  - **#34 · pila de demo con el modelo real:** la clave va montada como secret, sin fugas; plan B con `--llm falso`.
+- **Ensayo final sobre `master`:**
+  - panel de principio a fin en 87 s;
+  - caso A con el borrador real en 95 s;
+  - Word de 33 págs. con 8 comentarios, sin nombre ni código del kit.
+- **La pila queda limpia y en marcha en hermes-node.** Guía de prueba para Raúl: `05_scratch/carriles-2026-10-25/guia_prueba_raul.md`.
+- **Clave de Anthropic** en el HP, en `~/.config/epi10-demo/anthropic.key`. Pasó por el chat: revocarla tras la demo.
+- **CON-472:** validar con Aitor el catálogo de complementos, la pregunta 44, un cuestionario respondido real y las erratas corregidas.
+- **Pendiente:**
+  - el OK de Raúl tras probar, para cerrar CON-460 y CON-461;
+  - poner el hito 9 a esas issues;
+  - pasar la pantalla de informes a `src/ui/`;
+  - el carril 3 (automatizaciones de Healthie), cuando Raúl diga cómo.
