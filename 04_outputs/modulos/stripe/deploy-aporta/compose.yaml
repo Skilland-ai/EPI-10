@@ -12,6 +12,8 @@ services:
     restart: unless-stopped
     mem_limit: 512m
     env_file: .env
+    environment:
+      DEMO_GUIA_ACTIVA: 'true'
     security_opt: ['no-new-privileges:true']
     depends_on: [kv-rest]
     networks:

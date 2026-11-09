@@ -35,6 +35,7 @@ export default async function PurchasePage({ searchParams }: { searchParams: Pro
   const content = copy[state];
   const canContinue = ['pending', 'expired', 'ready'].includes(state);
   const finished = state === 'paid' || state === 'refunded';
+  const verCaso = state === 'paid' && process.env.DEMO_GUIA_ACTIVA === 'true';
   return <>
     <div className="demo-bar"><span className="status-dot" />Vista de demostración<span className="demo-bar__detail">Sin cobros reales</span></div>
     <header className="site-header shell"><Link href="/" prefetch={false} className="brand" aria-label="EPI10 Salud, inicio"><img src="/images/epi10-blue.png" alt="EPI10" width="132" height="47" /></Link><Link className="header-link" href="/" prefetch={false}>Volver a NutriWell <span aria-hidden="true">↗</span></Link></header>
@@ -50,7 +51,8 @@ export default async function PurchasePage({ searchParams }: { searchParams: Pro
         <div className="result-actions">
           {canContinue && <form action={continuePurchase}><SubmitButton>Continuar al pago de prueba <span aria-hidden="true">↗</span></SubmitButton></form>}
           {['processing', 'unavailable'].includes(state) && <a className="button button--blue" href="/compra">Comprobar de nuevo <span aria-hidden="true">↻</span></a>}
-          {(finished || state === 'missing') && <Link className="button button--blue" href="/" prefetch={false}>Volver a NutriWell <span aria-hidden="true">↗</span></Link>}
+          {verCaso && <a className="button button--blue" href="https://panel.aporta-epi10.com/__entrar?volver=/panel/casos">Ver el caso en el orquestador <span aria-hidden="true">↗</span></a>}
+          {(finished || state === 'missing') && <Link className={verCaso ? 'result-secondary' : 'button button--blue'} href="/" prefetch={false}>Volver a NutriWell{!verCaso && <> <span aria-hidden="true">↗</span></>}</Link>}
           {(finished || state === 'not-started') && <form action={startNewPurchase}><SubmitButton className={finished ? 'result-secondary' : 'button button--blue'}>Iniciar otra prueba</SubmitButton></form>}
           {canContinue && <Link className="result-secondary" href="/" prefetch={false}>Volver a NutriWell</Link>}
         </div>
