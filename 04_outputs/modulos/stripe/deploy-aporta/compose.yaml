@@ -1,0 +1,52 @@
+# Web de compra (CON-533). En el VPS: /srv/epi10-aporta/compra/compose.yaml
+# Redis y su pasarela REST sustituyen a Upstash: la app sigue usando @upstash/redis
+# con KV_REST_API_URL y KV_REST_API_TOKEN, sin cambios de código.
+name: epi10-compra
+
+services:
+  web:
+    build:
+      context: ./app
+      dockerfile: ../Dockerfile
+    image: epi10-compra-web:local
+    restart: unless-stopped
+    mem_limit: 512m
+    env_file: .env
+    security_opt: ['no-new-privileges:true']
+    depends_on: [kv-rest]
+    networks:
+      interna:
+      epi10-aporta:
+        aliases: [epi10-compra-web]
+
+  kv-rest:
+    image: hiett/serverless-redis-http:0.0.10
+    restart: unless-stopped
+    mem_limit: 256m
+    environment:
+      SRH_MODE: env
+      SRH_TOKEN: ${KV_REST_API_TOKEN:?falta KV_REST_API_TOKEN en .env}
+      SRH_CONNECTION_STRING: redis://redis:6379
+    security_opt: ['no-new-privileges:true']
+    depends_on: [redis]
+    networks: [interna]
+
+  redis:
+    image: redis:7.4-alpine
+    restart: unless-stopped
+    mem_limit: 128m
+    command: ['redis-server', '--appendonly', 'yes', '--maxmemory', '64mb', '--maxmemory-policy', 'noeviction']
+    security_opt: ['no-new-privileges:true']
+    volumes:
+      - redis-datos:/data
+    networks: [interna]
+
+volumes:
+  redis-datos:
+
+networks:
+  interna:
+    internal: true
+  epi10-aporta:
+    name: epi10-aporta
+    external: true

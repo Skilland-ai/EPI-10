@@ -1,0 +1,16 @@
+# Generado por vps.sh desde la plantilla de deploy-aporta (CON-535 y CON-537).
+aporta-epi10.com {
+	import aporta_comun
+
+	header {
+		Content-Security-Policy "default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+		Referrer-Policy "no-referrer"
+	}
+
+	basic_auth {
+		__USUARIO__ __HASH__
+	}
+
+	root * /srv/portada
+	file_server
+}

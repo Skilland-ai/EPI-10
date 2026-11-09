@@ -6,7 +6,7 @@ const editorial = Instrument_Serif({ variable: '--font-editorial', weight: '400'
 export const metadata: Metadata = {
   title: 'NutriWell — Comprende lo que te hace único | EPI10',
   description: 'Genética, hábitos e interpretación profesional. Descubre NutriWell en esta demostración de EPI10 y prueba el recorrido de pago sin cargos reales.',
-  metadataBase: new URL('https://epi10-nutriwell-demo.vercel.app'),
+  metadataBase: new URL('https://compra.aporta-epi10.com'),
   openGraph: { title: 'NutriWell — Tu biología. Tu próximo capítulo.', description: 'Una experiencia EPI10. Genética, hábitos e interpretación profesional. Demostración sin cobros reales.', siteName: 'EPI10 Salud', locale: 'es_ES', type: 'website', images: [{ url: '/og.png', width: 1730, height: 909, alt: 'NutriWell — Tu biología. Tu próximo capítulo.' }] },
   twitter: { card: 'summary_large_image', title: 'NutriWell — Tu biología. Tu próximo capítulo.', description: 'Una experiencia EPI10 · Demostración sin cobros reales.', images: ['/og.png'] },
   robots: { index: false, follow: false },

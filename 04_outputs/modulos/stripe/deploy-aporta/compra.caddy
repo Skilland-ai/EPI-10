@@ -1,0 +1,12 @@
+# Generado por vps.sh desde la plantilla de deploy-aporta (CON-533 y CON-535).
+compra.aporta-epi10.com {
+	import aporta_comun
+
+	# Stripe no puede autenticarse con la contraseña común; el receptor verifica la firma de cada evento.
+	@protegido not path /api/webhooks/stripe
+	basic_auth @protegido {
+		__USUARIO__ __HASH__
+	}
+
+	reverse_proxy epi10-compra-web:3000
+}

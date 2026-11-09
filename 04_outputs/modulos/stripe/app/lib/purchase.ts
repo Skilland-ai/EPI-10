@@ -3,7 +3,7 @@ import type { Order } from './order';
 
 export const DEMO_PRICE = 'price_1UG00zRrJS0VSqzs4Uhv6g9Q';
 export const DEMO_ACCOUNT = 'acct_1UFzBqRrJS0VSqzs';
-const APP_URL = 'https://epi10-nutriwell-demo.vercel.app';
+const APP_URL = 'https://compra.aporta-epi10.com';
 export type PurchaseState = 'pending' | 'expired' | 'processing' | 'paid' | 'refunded';
 export function firstAttemptExpired(order: Order, now = Date.now()) {
   return now - order.started > 23 * 3600000;

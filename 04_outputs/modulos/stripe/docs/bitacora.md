@@ -476,3 +476,15 @@ factura del módulo adicional prevista en SKI-81.
   sin petición de Raúl. SKI-53 pasa a In Progress, no Done.
 - **Siguiente:** cerrar guion, seleccionar respaldo y hacer ensayo oral de
   3–5 minutos; después decidir si conservar o devolver el pago de sandbox.
+
+## 2026-11-09 — Publicación en el entorno Aporta (CON-533)
+
+- **Acción:** origen y URL de retorno cambiados a `compra.aporta-epi10.com`;
+  Upstash sustituido por Redis local con pasarela REST, sin tocar el código del
+  registro; despliegue en `skilland-vps` con `deploy-aporta/desplegar.sh`.
+- **Resultado observado:** compra con tarjeta 4242 completada en navegador
+  (NW-561A4B0D), evento recibido una vez y `payment_recorded` con `livemode=false`.
+- **Evidencia:** `05_scratch/sprint-aporta-2026-11-09/CON-533/informe.md`.
+- **Decisión:** el receptor queda fuera de la contraseña común porque Stripe no
+  puede autenticarse; cada evento se verifica por firma.
+- **Siguiente:** conectar la compra con el orquestador (CON-534).
