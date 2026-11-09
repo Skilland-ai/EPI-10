@@ -7,9 +7,6 @@ umask 077
 BASE=/srv/epi10-aporta
 COMPRA="$BASE/compra"
 ENV_FILE="$COMPRA/.env"
-CRED="$BASE/.credenciales-portada"
-USUARIO=auditor
-CADDY_IMG=caddy:2.10-alpine
 
 touch "$ENV_FILE"
 chmod 600 "$ENV_FILE"
@@ -33,16 +30,6 @@ esac
 [ -n "$(valor KV_REST_API_TOKEN)" ] || poner KV_REST_API_TOKEN "$(openssl rand -hex 32)"
 [ "$(valor KV_REST_API_URL)" = "http://kv-rest:80" ] || poner KV_REST_API_URL "http://kv-rest:80"
 
-# Contraseña común de la portada y de compra.
-if [ ! -s "$CRED" ]; then
-  CLAVE=$(openssl rand -base64 32 | tr -dc 'A-Za-z0-9' | head -c 22)
-  printf 'usuario=%s\ncontrasena=%s\n' "$USUARIO" "$CLAVE" > "$CRED"
-  unset CLAVE
-fi
-chmod 600 "$CRED"
-HASH=$(sed -n 's/^contrasena=//p' "$CRED" | docker run --rm -i "$CADDY_IMG" sh -c 'read -r p; printf "%s\n%s\n" "$p" "$p" | caddy hash-password' | tail -1)
-case "$HASH" in '$2'*) ;; *) echo "No se pudo calcular el hash de la contraseña" >&2; exit 1 ;; esac
-
 cd "$COMPRA"
 docker compose build --quiet web
 
@@ -55,9 +42,9 @@ unset SECRETO
 
 docker compose up -d --remove-orphans
 
-# Sitios de Caddy, con el hash y sin la contraseña.
+# Sitios de Caddy: el acceso lo da la puerta (deploy/aporta/puerta en epi10-orquestador).
 for sitio in compra portada; do
-  sed -e "s|__USUARIO__|$USUARIO|" -e "s|__HASH__|$HASH|" "$COMPRA/$sitio.caddy" > "$BASE/caddy/conf.d/$sitio.caddy"
+  cp "$COMPRA/$sitio.caddy" "$BASE/caddy/conf.d/$sitio.caddy"
   chmod 644 "$BASE/caddy/conf.d/$sitio.caddy"
 done
 docker exec -w /etc/caddy epi10-aporta-caddy caddy validate --config /etc/caddy/Caddyfile
