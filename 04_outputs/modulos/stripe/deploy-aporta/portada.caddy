@@ -5,6 +5,7 @@ aporta-epi10.com {
 	# Sin la puerta solo se ve el login, con el logo y las fuentes que usa.
 	@protegido not path /__puerta/* /img/* /fonts/*
 	import puerta @protegido
+	import guia
 
 	handle /__puerta/* {
 		reverse_proxy epi10-puerta:8080
@@ -12,7 +13,7 @@ aporta-epi10.com {
 
 	handle {
 		header {
-			Content-Security-Policy "default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+			Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
 			Referrer-Policy "no-referrer"
 		}
 

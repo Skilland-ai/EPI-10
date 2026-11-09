@@ -5,6 +5,7 @@ compra.aporta-epi10.com {
 	# Stripe no puede pasar por la puerta; el receptor verifica la firma de cada evento.
 	@protegido not path /api/webhooks/stripe
 	import puerta @protegido
+	import guia
 
 	reverse_proxy epi10-compra-web:3000
 }
