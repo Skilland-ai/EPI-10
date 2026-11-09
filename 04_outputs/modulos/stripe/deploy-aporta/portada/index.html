@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>EPI10 Salud · Entorno de demostración</title>
   <link rel="icon" href="img/epi10-blue.png">
-  <link rel="stylesheet" href="estilos.css?v=20261109-2">
+  <link rel="stylesheet" href="estilos.css?v=20261109-3">
 </head>
 <body>
   <div class="aviso" role="note">
@@ -37,48 +37,59 @@
           <p>La pasarela de pago está en modo de pruebas y, para probar el generador de borradores de informes, se facilitan varios packs de clientes ficticios.</p>
         </article>
       </div>
+
+      <ol class="viaje" aria-label="Recorrido del proceso">
+        <li>Compra</li>
+        <li>Pago de prueba</li>
+        <li>Orquestador</li>
+        <li>Odoo</li>
+        <li>Borrador de informe</li>
+      </ol>
     </div>
   </header>
 
   <main class="contenedor">
     <section aria-labelledby="accesos">
+      <p class="eyebrow">Cinco herramientas, un solo acceso</p>
       <h2 id="accesos">Accesos</h2>
       <p class="nota">Ya has iniciado sesión: ninguna de estas herramientas te volverá a pedir credenciales.</p>
       <div class="rejilla">
-        <article class="tarjeta">
-          <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg></span>
+        <article class="tarjeta t-web">
+          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg></span><span class="num" aria-hidden="true">01</span></div>
           <h3>Web de compra</h3>
           <p class="texto">Página de venta de NutriWell: permite consultar la oferta e iniciar la compra.</p>
           <a class="enlace" href="https://compra.aporta-epi10.com" target="_blank" rel="noopener">Abrir la web de compra</a>
         </article>
 
-        <article class="tarjeta">
-          <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></svg></span>
+        <article class="tarjeta t-pago">
+          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></svg></span><span class="num" aria-hidden="true">02</span></div>
           <h3>Pasarela de pago</h3>
           <p class="texto">Instancia de pruebas de Stripe: permite completar la compra sin ningún pago real.</p>
           <p class="dato">Tarjeta de prueba: <strong>4242 4242 4242 4242</strong>, fecha futura y cualquier CVC.</p>
           <a class="enlace" href="https://compra.aporta-epi10.com/#demo" target="_blank" rel="noopener">Iniciar el pago de prueba</a>
         </article>
 
-        <article class="tarjeta">
-          <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span>
+        <article class="tarjeta t-orq">
+          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span><span class="num" aria-hidden="true">03</span></div>
           <h3>Orquestador</h3>
           <p class="texto">Consola de operación: permite seguir cada caso desde el pago hasta el informe.</p>
           <a class="enlace" href="https://panel.aporta-epi10.com/__entrar?volver=/panel" target="_blank" rel="noopener">Abrir el orquestador</a>
         </article>
 
-        <article class="tarjeta">
-          <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="10" rx="1.5"/><rect x="17" y="4" width="4" height="13" rx="1.5"/></svg></span>
+        <article class="tarjeta t-odoo">
+          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="10" rx="1.5"/><rect x="17" y="4" width="4" height="13" rx="1.5"/></svg></span><span class="num" aria-hidden="true">04</span></div>
           <h3>Odoo</h3>
           <p class="texto">Sistema de gestión del equipo: permite consultar los casos y sus tareas en el tablero.</p>
           <a class="enlace" href="https://odoo.aporta-epi10.com/__entrar" target="_blank" rel="noopener">Abrir Odoo</a>
         </article>
 
-        <article class="tarjeta tarjeta--ancha">
-          <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6zM14 3v5h5M9 13h7M9 17h7"/></svg></span>
-          <h3>Generador de borradores de informes</h3>
-          <p class="texto">Herramienta de redacción asistida: permite subir los PDF de un caso y revisar su borrador.</p>
-          <a class="enlace" href="https://panel.aporta-epi10.com/__entrar?volver=/informes" target="_blank" rel="noopener">Abrir el generador</a>
+        <article class="tarjeta tarjeta--ancha t-gen">
+          <div class="gen">
+            <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6zM14 3v5h5M9 13h7M9 17h7"/></svg></span><span class="num" aria-hidden="true">05</span></div>
+            <h3>Generador de borradores de informes</h3>
+            <p class="texto">Herramienta de redacción asistida: permite subir los PDF de un caso y revisar su borrador.</p>
+            <a class="enlace" href="https://panel.aporta-epi10.com/__entrar?volver=/informes" target="_blank" rel="noopener">Abrir el generador</a>
+          </div>
           <div class="pack">
             <h4>Pack de casos ficticios</h4>
             <p class="dato">Descomprime el ZIP y arrastra sus 7 PDF a la zona de subida del generador.</p>
@@ -92,10 +103,12 @@
     </section>
   </main>
 
-  <footer class="contenedor descargo">
-    <h2>Sobre este entorno</h2>
-    <p>Se ha preparado en tiempo récord, desde que el jueves se solicitó su revisión. Reúne parte de un sistema más amplio dentro de un perímetro controlado, para que el auditor pueda verlo y probarlo.</p>
-    <p>Al haberse acotado así y en tan poco tiempo, puede presentar algún error puntual.</p>
+  <footer class="contenedor">
+    <div class="descargo">
+      <h2>Sobre este entorno</h2>
+      <p>Se ha preparado en tiempo récord, desde que el jueves se solicitó su revisión. Reúne parte de un sistema más amplio dentro de un perímetro controlado, para que el auditor pueda verlo y probarlo.</p>
+      <p>Al haberse acotado así y en tan poco tiempo, puede presentar algún error puntual.</p>
+    </div>
   </footer>
 </body>
 </html>
