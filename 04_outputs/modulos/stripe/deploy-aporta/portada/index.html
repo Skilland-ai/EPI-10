@@ -9,18 +9,33 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <p class="aviso" role="note"><strong>Nota técnica:</strong> entorno desplegado y en funcionamiento, creado expresamente para la justificación del proyecto y su revisión por el auditor. No es el entorno comercial: todos los datos son ficticios y no deben introducirse datos reales.</p>
+  <div class="aviso" role="note">
+    <p class="contenedor"><strong>Nota técnica:</strong> entorno desplegado y en funcionamiento, creado expresamente para la justificación del proyecto y su revisión por el auditor. No es el entorno comercial: todos los datos son ficticios y no deben introducirse datos reales.</p>
+  </div>
 
   <header class="hero">
     <div class="contenedor">
-      <img class="logo" src="img/epi10-white.png" alt="EPI10" width="132" height="44">
-      <p class="antetitulo">EPI10 Salud</p>
+      <div class="marca">
+        <img class="logo" src="img/epi10-white.png" alt="EPI10" width="108" height="36">
+        <p class="antetitulo">EPI10 Salud</p>
+      </div>
       <h1>Entorno de demostración</h1>
-      <div class="intro">
-        <p>Este entorno se ha creado para la justificación del proyecto y es independiente de cualquier operación comercial.</p>
-        <p>Es el MVP de una infraestructura tecnológica concebida para que el producto y el concepto de EPI10 puedan venderse a clientes de la Península, con contratación y pago en línea, test en casa, seguimiento del caso y elaboración del informe. Sin esta solución tecnológica, ese alcance quedaba muy limitado.</p>
-        <p>Permite recorrer el proceso completo de principio a fin. Todos los datos son ficticios.</p>
-        <p>Se ha planteado así para que el equipo de auditoría pueda comprobar todas las herramientas sin acceder a datos de clientes reales ni tener que ejecutar operaciones financieras reales. Por eso la pasarela de pago está en modo de pruebas y, para probar el generador de borradores de informes, se facilitan varios packs de clientes ficticios.</p>
+      <p class="entradilla">Creado para la justificación del proyecto e independiente de cualquier operación comercial. Permite recorrer el proceso completo de principio a fin.</p>
+
+      <div class="claves">
+        <article class="clave clave--principal">
+          <h2>Finalidad del MVP</h2>
+          <p>Infraestructura tecnológica concebida para que el producto y el concepto de EPI10 puedan venderse a clientes de la Península, con contratación y pago en línea, test en casa, seguimiento del caso y elaboración del informe.</p>
+          <p class="clave__remate">Sin esta solución tecnológica, ese alcance quedaba muy limitado.</p>
+        </article>
+        <article class="clave">
+          <h2>Sin datos ni pagos reales</h2>
+          <p>El equipo de auditoría puede comprobar todas las herramientas sin acceder a datos de clientes reales ni tener que ejecutar operaciones financieras reales.</p>
+        </article>
+        <article class="clave">
+          <h2>Preparado para probar</h2>
+          <p>La pasarela de pago está en modo de pruebas y, para probar el generador de borradores de informes, se facilitan varios packs de clientes ficticios.</p>
+        </article>
       </div>
     </div>
   </header>
