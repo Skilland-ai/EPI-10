@@ -1,0 +1,42 @@
+# Fase 2 · portal propio (CON-212): OpenEMR de demostración con el módulo EPI10, tras la puerta.
+# Va en /srv/epi10-aporta/caddy/conf.d/ del VPS; el compose está en /srv/epi10-fase2.
+# No importa `guia` (el recorrido de la fase 1): lleva el suyo propio y el sello «Vista simulada».
+portal-propio.aporta-epi10.com {
+	import aporta_comun
+
+	import puerta *
+
+	# Sello y recorrido de la fase 2 en cada documento HTML de primer nivel (no en los iframes del
+	# back office, que van con Sec-Fetch-Dest: iframe y ya quedan dentro de la página sellada).
+	@f2_documento {
+		header Sec-Fetch-Dest document
+		not path /__fase2/* /__entrar /__puerta/*
+	}
+	request_header @f2_documento -Accept-Encoding
+	request_header @f2_documento -If-None-Match
+	request_header @f2_documento -If-Modified-Since
+	replace @f2_documento {
+		match {
+			header Content-Type text/html*
+		}
+		"<head>" "<head><script src=\"/__fase2/polyfill.js\"></script>"
+		"</head>" "<link rel=\"stylesheet\" href=\"/__fase2/driver.css\"><link rel=\"stylesheet\" href=\"/__fase2/fase2.css\"><script src=\"/__fase2/driver.js.iife.js\" defer></script><script src=\"/__fase2/fase2.js\" defer></script></head>"
+	}
+
+	# Páginas propias del recorrido: portada de la fase 2, correo simulado y estáticos de la guía.
+	@f2_web path / /index.html /correo /correo/* /__fase2/*
+	handle @f2_web {
+		header Cache-Control "no-cache"
+		reverse_proxy epi10-fase2-web:8080
+	}
+
+	# Gestor de instalación y utilidades de mantenimiento de OpenEMR: cerrados.
+	@cerrado path /setup.php /admin.php /sql_upgrade.php /sql_patch.php /acl_upgrade.php /ippf_upgrade.php /phpmyadmin /phpmyadmin/*
+	handle @cerrado {
+		respond 404
+	}
+
+	handle {
+		reverse_proxy epi10-fase2-openemr:80
+	}
+}

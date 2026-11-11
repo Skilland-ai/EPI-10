@@ -1,0 +1,152 @@
+/*
+ * Fase 2 · portal propio (CON-212). Sello «Vista simulada», recorrido guiado y páginas propias
+ * (portada y correo simulado). Caddy lo inyecta en cada documento de portal-propio.aporta-epi10.com.
+ * Todo con prefijo f2- para no chocar con OpenEMR ni con el módulo EPI10.
+ */
+@font-face { font-family: "F2 Manrope"; font-weight: 400; font-display: swap; src: url("/__fase2/fonts/manrope-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "F2 Manrope"; font-weight: 500; font-display: swap; src: url("/__fase2/fonts/manrope-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "F2 Manrope"; font-weight: 600; font-display: swap; src: url("/__fase2/fonts/manrope-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "F2 Manrope"; font-weight: 700; font-display: swap; src: url("/__fase2/fonts/manrope-latin-700-normal.woff2") format("woff2"); }
+
+:root {
+  --f2-azul: #01447b;
+  --f2-azul-900: #00294d;
+  --f2-azul-50: #eef4fa;
+  --f2-cian: #029acc;
+  --f2-cian-claro: #80dff1;
+  --f2-cian-50: #e6f6fb;
+  --f2-marfil: #fdf4ed;
+  --f2-marfil-2: #f8ebe0;
+  --f2-tinta: #101828;
+  --f2-gris: #5b6474;
+  --f2-linea: #eadfd5;
+  --f2-aviso: #9a5b00;
+  --f2-aviso-50: #fff3df;
+  --f2-font: "F2 Manrope", "EPI10 Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---------- Sello: siempre visible, nunca tapa controles ---------- */
+.f2-sello {
+  position: fixed; left: 16px; bottom: 16px; z-index: 2147483000;
+  display: flex; align-items: center; gap: 8px; max-width: calc(100vw - 32px);
+  padding: 6px 14px; border-radius: 999px; pointer-events: none;
+  background: var(--f2-aviso-50); color: var(--f2-aviso); border: 1px solid #f1d9a8;
+  box-shadow: 0 2px 10px rgba(0, 41, 77, .12);
+  font: 600 13px/1.3 var(--f2-font); letter-spacing: .01em; white-space: nowrap;
+}
+.f2-sello::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #e0a100; flex: none; }
+.f2-sello small { font-weight: 500; color: #7a5a1c; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 720px) { .f2-sello small { display: none; } }
+
+/* ---------- Recorrido: popover de driver.js con la marca EPI10 ---------- */
+.driver-popover.f2-pop {
+  font-family: var(--f2-font); color: var(--f2-tinta); background: #fff;
+  border-radius: 16px; padding: 18px 20px 14px; max-width: 380px; min-width: 300px;
+  box-shadow: 0 12px 40px rgba(0, 41, 77, .25);
+}
+.driver-popover.f2-pop .driver-popover-title { font: 700 18px/1.3 var(--f2-font); color: var(--f2-azul-900); margin: 0 0 6px; }
+.driver-popover.f2-pop .driver-popover-description { font: 400 14.5px/1.55 var(--f2-font); color: #283244; }
+.driver-popover.f2-pop .driver-popover-description p { margin: 0 0 8px; }
+.driver-popover.f2-pop .driver-popover-description strong { color: var(--f2-azul-900); }
+.driver-popover.f2-pop .driver-popover-footer { display: none; }
+.driver-popover.f2-pop .driver-popover-close-btn { display: none; }
+
+.f2-parte { display: block; font: 700 11px/1.2 var(--f2-font); letter-spacing: .1em; text-transform: uppercase; color: var(--f2-cian); margin-bottom: 6px; }
+.f2-nota { display: block; margin-top: 8px; padding: 8px 10px; border-radius: 10px; background: var(--f2-aviso-50); color: #6b4a0c; font-size: 13px; line-height: 1.45; }
+.f2-botones { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 14px; }
+.f2-botones .f2-hueco { flex: 1; }
+.f2-btn {
+  appearance: none; border: 1px solid transparent; cursor: pointer; border-radius: 999px;
+  padding: 8px 16px; font: 600 14px/1.2 var(--f2-font); text-decoration: none;
+  background: var(--f2-azul); color: #fff;
+}
+.f2-btn:hover { background: var(--f2-azul-900); }
+.f2-btn:focus-visible { outline: 2px solid var(--f2-cian); outline-offset: 2px; }
+.f2-btn--sec { background: #fff; color: var(--f2-azul); border-color: #c9d6e4; }
+.f2-btn--sec:hover { background: var(--f2-azul-50); }
+.f2-btn--ayuda { background: var(--f2-cian-50); color: var(--f2-azul-900); border-color: #b9e3f2; }
+.f2-btn--ayuda:hover { background: #d3eff8; }
+.f2-enlace { appearance: none; border: 0; background: none; padding: 4px 2px; cursor: pointer; font: 500 13px/1.2 var(--f2-font); color: var(--f2-gris); text-decoration: underline; }
+.f2-progreso { margin-top: 10px; font: 500 12px/1.2 var(--f2-font); color: #8a93a3; }
+.f2-espera { display: inline-flex; align-items: center; gap: 6px; font: 500 13px/1.3 var(--f2-font); color: var(--f2-gris); }
+.f2-espera::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--f2-cian); animation: f2-latido 1.2s ease-in-out infinite; }
+@keyframes f2-latido { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .f2-espera::before { animation: none; } }
+
+/* Aviso flotante (fuera de sitio) y botón para retomar */
+.f2-aviso {
+  position: fixed; right: 20px; bottom: 20px; z-index: 2147483001; width: min(360px, calc(100vw - 32px));
+  background: #fff; border-radius: 16px; padding: 16px 18px; box-shadow: 0 12px 40px rgba(0, 41, 77, .25);
+  font: 400 14px/1.5 var(--f2-font); color: var(--f2-tinta);
+}
+.f2-aviso h3 { margin: 0 0 4px; font: 700 16px/1.3 var(--f2-font); color: var(--f2-azul-900); }
+.f2-aviso p { margin: 0; }
+.f2-retomar {
+  position: fixed; right: 20px; bottom: 20px; z-index: 2147483001;
+  box-shadow: 0 6px 20px rgba(0, 41, 77, .25);
+}
+
+/* ---------- Páginas propias: portada de la fase 2 y correo simulado ---------- */
+.f2-pagina { margin: 0; min-height: 100vh; background: var(--f2-marfil); color: var(--f2-tinta); font: 400 16px/1.6 var(--f2-font); }
+.f2-pagina * { box-sizing: border-box; }
+.f2-cab { background: #fff; border-bottom: 1px solid var(--f2-linea); }
+.f2-cab__in { max-width: 1120px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.f2-cab img { height: 30px; display: block; }
+.f2-cab__tag { font: 600 13px/1.2 var(--f2-font); color: var(--f2-gris); }
+.f2-main { max-width: 1120px; margin: 0 auto; padding: 56px 16px 72px; }
+.f2-eyebrow { font: 700 12px/1.2 var(--f2-font); letter-spacing: .12em; text-transform: uppercase; color: var(--f2-cian); margin: 0 0 10px; }
+.f2-h1 { font: 700 clamp(30px, 4.2vw, 46px)/1.12 var(--f2-font); color: var(--f2-azul-900); margin: 0 0 14px; letter-spacing: -.01em; }
+.f2-lead { font-size: 18px; color: #3a4456; max-width: 720px; margin: 0 0 26px; }
+.f2-hero {
+  border-radius: 24px; padding: 28px; color: #fff; margin-bottom: 36px;
+  background: linear-gradient(135deg, var(--f2-azul-900), var(--f2-azul) 70%, #0a5c9c);
+  display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+}
+.f2-hero p { margin: 0; color: #d6e6f5; max-width: 640px; }
+.f2-hero strong { color: #fff; }
+.f2-hero .f2-btn { background: #fff; color: var(--f2-azul-900); padding: 12px 22px; font-size: 15px; }
+.f2-hero .f2-btn:hover { background: var(--f2-cian-50); }
+@media (max-width: 760px) { .f2-hero { grid-template-columns: 1fr; } }
+.f2-pasos { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 960px) { .f2-pasos { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .f2-pasos { grid-template-columns: 1fr; } }
+.f2-paso { background: #fff; border: 1px solid var(--f2-linea); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+.f2-paso__n { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--f2-azul-50); color: var(--f2-azul); font-weight: 700; font-size: 14px; }
+.f2-paso h2 { margin: 0; font: 700 17px/1.3 var(--f2-font); color: var(--f2-azul-900); }
+.f2-paso p { margin: 0; font-size: 14.5px; color: #4a5468; flex: 1; }
+.f2-chip { align-self: flex-start; font: 600 12px/1 var(--f2-font); padding: 6px 10px; border-radius: 999px; }
+.f2-chip--real { background: #e8f5ee; color: #1f7a52; }
+.f2-chip--sim { background: var(--f2-aviso-50); color: var(--f2-aviso); }
+.f2-paso a { font: 600 14px/1.3 var(--f2-font); color: var(--f2-azul); }
+.f2-capturas { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+@media (max-width: 760px) { .f2-capturas { grid-template-columns: 1fr; } }
+.f2-capturas figure { margin: 0; background: #fff; border: 1px solid var(--f2-linea); border-radius: 18px; padding: 12px; }
+.f2-capturas img { width: 100%; height: auto; display: block; border-radius: 10px; }
+.f2-capturas figcaption { font-size: 13.5px; color: var(--f2-gris); padding: 8px 4px 0; }
+.f2-pie { margin-top: 40px; font-size: 13px; color: #7a8394; }
+
+/* Correo simulado: un cliente de correo mínimo */
+.f2-buzon { max-width: 760px; margin: 0 auto; background: #fff; border: 1px solid var(--f2-linea); border-radius: 18px; overflow: hidden; box-shadow: 0 8px 30px rgba(0, 41, 77, .08); }
+.f2-buzon__meta { padding: 16px 22px; border-bottom: 1px solid var(--f2-linea); font-size: 14px; color: #4a5468; display: grid; gap: 2px; }
+.f2-buzon__meta b { color: var(--f2-tinta); font-weight: 600; }
+.f2-buzon__asunto { font: 700 20px/1.3 var(--f2-font); color: var(--f2-tinta); margin: 0 0 6px; }
+.f2-buzon__cuerpo { background: var(--f2-marfil); padding: 28px 16px; }
+.f2-correo { max-width: 520px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid var(--f2-linea); }
+.f2-correo__logo { padding: 26px 30px 18px; border-bottom: 4px solid var(--f2-azul); position: relative; }
+.f2-correo__logo::after { content: ""; position: absolute; right: 0; bottom: -4px; width: 30%; height: 4px; background: var(--f2-cian); }
+.f2-correo__logo img { height: 34px; display: block; }
+.f2-correo__in { padding: 26px 30px 8px; }
+.f2-correo__in .f2-eyebrow { font-size: 12px; }
+.f2-correo h1 { font: 700 26px/1.25 var(--f2-font); color: var(--f2-azul-900); margin: 0 0 14px; }
+.f2-correo p { margin: 0 0 14px; color: #283244; }
+.f2-correo__cta { display: inline-block; margin: 6px 0 18px; padding: 13px 26px; border-radius: 999px; background: var(--f2-azul); color: #fff; font: 700 16px/1.2 var(--f2-font); text-decoration: none; }
+.f2-correo__cta:hover { background: var(--f2-azul-900); }
+.f2-correo__importante { border-left: 4px solid var(--f2-cian); background: var(--f2-cian-50); border-radius: 10px; padding: 12px 14px; font-size: 14px; margin-bottom: 18px; }
+.f2-correo__pie { background: var(--f2-azul-900); color: #c9d8e8; padding: 18px 30px; font-size: 13px; }
+.f2-correo__pie b { color: #fff; display: block; margin-bottom: 2px; }
+.f2-volver { display: inline-block; margin: 0 0 18px; font: 600 14px/1.2 var(--f2-font); color: var(--f2-azul); }
+
+/* Tarjeta flotante sin capa: pasos con formularios largos (consentimiento, cuestionario, test) */
+.f2-tarjeta { right: 24px; bottom: 24px; width: min(340px, calc(100vw - 32px)); border: 1px solid #d7e3ef; }
+.f2-tarjeta__texto p { margin: 0 0 8px; font-size: 14px; color: #283244; }
+.f2-tarjeta__texto strong { color: var(--f2-azul-900); }

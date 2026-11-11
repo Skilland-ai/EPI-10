@@ -1,0 +1,49 @@
+# Fase 2 · portal propio: OpenEMR de demostración (CON-212). Solo datos ficticios.
+# Va en /srv/epi10-fase2 del VPS. No publica puertos: lo sirve el Caddy común de Aporta por la red
+# epi10-aporta, siempre tras la puerta. Los secretos viven solo en /srv/epi10-fase2/.env.
+name: epi10-fase2
+services:
+  mysql:
+    image: mariadb@sha256:6422478cb8e159f080fb1d8ccf65101e26fe51385787fde7d16c3b165a331f15 # 11.8
+    command: ["mariadbd", "--character-set-server=utf8mb4"]
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes: [db:/var/lib/mysql]
+    networks: [interna]
+    mem_limit: 1g
+    restart: unless-stopped
+  openemr:
+    build: .
+    image: epi10-fase2-openemr:local
+    depends_on: [mysql]
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_ROOT_PASS: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: openemr
+      MYSQL_PASS: ${MYSQL_PASS}
+      OE_USER: admin
+      OE_PASS: ${OE_PASS}
+      EPI10_INFORMES_ACCESO_SECRETO: ${EPI10_INFORMES_ACCESO_SECRETO}
+    volumes: [sites:/var/www/localhost/htdocs/openemr/sites]
+    networks:
+      interna: {}
+      aporta:
+        aliases: [epi10-fase2-openemr]
+    mem_limit: 1536m
+    restart: unless-stopped
+  # Páginas propias del recorrido (portada de la fase 2, correo simulado) y la guía inyectada.
+  web:
+    image: caddy:2-alpine
+    command: ["caddy", "file-server", "--root", "/srv/web", "--listen", ":8080"]
+    volumes: ["./web:/srv/web:ro"]
+    networks:
+      aporta:
+        aliases: [epi10-fase2-web]
+    mem_limit: 64m
+    restart: unless-stopped
+volumes: {db: {}, sites: {}}
+networks:
+  interna: {}
+  aporta:
+    name: epi10-aporta
+    external: true
