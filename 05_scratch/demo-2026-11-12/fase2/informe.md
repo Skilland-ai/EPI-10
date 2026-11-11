@@ -7,10 +7,15 @@ Sesión «Fase 2 · portal propio» (brief_fase2.md). Linear: encaja con **CON-2
 - **URL:** https://portal-propio.aporta-epi10.com
 - **Acceso:** la misma puerta de la demo (`carmen` / `carmen1234`). La cookie vale para todos los subdominios.
   - Si se entra directamente sin sesión, la puerta lleva a la portada `aporta-epi10.com` (su lista de destinos de vuelta no incluye `portal-propio`). Después de entrar, hay que abrir la URL otra vez. Se le ha pedido al orquestador que añada el host.
-- **Cuentas de dentro** (todas ficticias). Los botones «Rellenar» del recorrido las escriben solas:
-  - clientas `marta` (primera vez) y `lucia` (con el informe ya publicado)
-  - equipo `operaciones.prueba`
-  - las contraseñas solo están en el VPS (`/srv/epi10-fase2/.env`)
+- **Cuentas de dentro.** Los botones «Rellenar» del recorrido las escriben solas:
+  - clientas `marta` (primera vez) y `lucia` (con el informe ya publicado), ficticias
+  - equipo: **`carmen` / `carmen1234`** (nombre visible «Carmen»), que es la que usa el botón del recorrido. También sigue `operaciones.prueba`
+  - las contraseñas de las cuentas ficticias solo están en el VPS (`/srv/epi10-fase2/.env` y `web/__fase2/cuentas.json`)
+- **Usuario `carmen` del back office** (creado el 11 nov a petición de Raúl):
+  - es un clon de `operaciones.prueba`: grupo ACL «EPI10 Operaciones», menú `EPI10 Operaciones.json`, la misma sede y los mismos ajustes (`deploy/usuario-carmen.sql`)
+  - no ha hecho falta tocar la política de contraseñas: el hash se crea directamente y el login no la vuelve a comprobar. Solo se aplicaría si Carmen cambiase la contraseña desde Ajustes. La contraseña caduca a los 180 días
+  - comprobado con navegador: entra en el inicio EPI10 («Hola, Carmen») y ve lo mismo que `operaciones.prueba` en el inicio, clientes, la ficha, mensajes, documentos y calendario, sin errores
+  - está incluida en la instantánea, así que sobrevive a `reiniciar.sh` (comprobado)
 - **Antes de enseñarlo, reinicia los datos:** `ssh skilland-vps /srv/epi10-fase2/reiniciar.sh` (≈1 min). Deja a Marta sin onboarding y a Lucía con su informe.
 - Funciona solo en escritorio (más de 900 px de ancho). En el móvil se ve el sello, pero no el recorrido.
 
@@ -22,7 +27,7 @@ Sesión «Fase 2 · portal propio» (brief_fase2.md). Linear: encaja con **CON-2
 | 2 | Correo | El correo de acceso tal como le llega a la clienta (Marta) | En español, con su marca, enlace personal. Es un correo simulado: no se envía nada |
 | 3 | Portal de la clienta | Login de Marta → onboarding real: fecha de nacimiento, **consentimiento firmado en pantalla**, cuestionario de 6 preguntas, test en casa o en sede, «Todo listo» → su espacio | El portal la guía; hasta que no completa los tres pasos no ve nada más |
 | 4 | Su informe | Salto a Lucía → «Paso 5 de 5: informe listo» → Mi informe → visor del PDF | Solo ve los informes que el equipo ha revisado y publicado |
-| 5 | Back office | Login del equipo → inicio («Hoy»: casos por etapa de Odoo; los documentos de Marta que acaba de firmar) → Clientes por fase → ficha de Lucía | OpenEMR por dentro, con la interfaz EPI10 y solo las funciones del equipo |
+| 5 | Back office | Login del equipo con el usuario de Carmen → inicio («Hoy»: casos por etapa de Odoo; los documentos de Marta que acaba de firmar) → Clientes por fase → ficha de Lucía | OpenEMR por dentro, con la interfaz EPI10 y solo las funciones del equipo |
 
 Cierre: «Esto es lo que funciona en laboratorio. Llevarlo a producción, conectarlo con el orquestador y Odoo y desplegarlo en vuestro servidor es el trabajo de la fase 2.»
 

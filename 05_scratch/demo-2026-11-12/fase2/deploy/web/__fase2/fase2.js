@@ -246,12 +246,12 @@
       el: '.epi-auth__card', lado: 'left', accion: true,
       hecho: function () { return /\/interface\/main\/tabs\/main\.php$/.test(ruta()) || ruta().indexOf(BO) === 0; },
       ayuda: [{
-        texto: 'Rellenar con el equipo (ficticio)', fn: function () {
+        texto: 'Rellenar con el usuario de Carmen', fn: function () {
           conCuentas(function (c) { rellenar('#authUser', c.equipo.usuario); rellenar('#clearPass', c.equipo.clave); });
         },
       }],
       titulo: 'Acceso del equipo',
-      texto: '<p>Cada persona del equipo con su usuario y su rol. Rellena y pulsa «Entrar».</p>',
+      texto: '<p>Cada persona del equipo entra con su usuario y su rol. Aquí, con el usuario de Carmen, que tiene el mismo rol que operaciones.</p><p>Rellena y pulsa «Entrar».</p>',
     },
     {
       id: 'bo-inicio', parte: 5, url: BO + 'inicio.php',

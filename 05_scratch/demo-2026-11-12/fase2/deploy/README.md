@@ -11,6 +11,7 @@ puerta de la demo. Solo datos ficticios.
 | `web/` | `/srv/epi10-fase2/web/` | Portada de la fase 2, correo simulado y `__fase2/` (sello, recorrido, driver.js) |
 | `instantanea.sh`, `reiniciar.sh` | `/srv/epi10-fase2/` | Guardar y restaurar el estado de la demo (≈1 min) |
 | `curacion.sql` | — | Cambios de datos aplicados a la copia antes de la instantánea |
+| `usuario-carmen.sql` | `/srv/epi10-fase2/` | Usuario `carmen` del back office, clon de `operaciones.prueba` (el hash lo añade quien lo ejecuta; ya está en la instantánea) |
 
 No se versionan (solo en el VPS): `.env` (secretos de MariaDB y cuentas), `modules/` (copia de los
 módulos instalados), `web/__fase2/cuentas.json` (usuarios ficticios para los botones «Rellenar») e
