@@ -1,0 +1,15 @@
+/* Añadidos de la home de la fase 2 sobre estilos.css de la portada de la fase 1 (copiado tal cual). */
+.t-correo { --c1: #0a5ea3; --c2: #029acc; }
+.t-portal { --c1: #01447b; --c2: #38c6e3; }
+.t-bo { --c1: #00294d; --c2: #0a5ea3; }
+.etiqueta { display: inline-block; margin: 2px 0 6px; padding: 5px 10px; border-radius: 999px; font-size: .78rem; font-weight: 700; line-height: 1.2; }
+.etiqueta--real { background: #e8f5ee; color: #1f7a52; }
+.etiqueta--sim { background: var(--aviso-50); color: var(--aviso); }
+.arranque { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 30px; }
+.empezar { appearance: none; border: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px 24px; border-radius: 12px;
+  background: #fff; color: var(--azul-900); font: 700 1rem/1.2 "Manrope", system-ui, sans-serif; box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .5); transition: transform .15s ease, background .15s ease; }
+.empezar::after { content: "\2192"; }
+.empezar:hover { background: #e4f6fb; transform: translateX(2px); }
+.empezar:focus-visible { outline: 3px solid var(--cian-claro); outline-offset: 2px; }
+.arranque p { margin: 0; color: rgba(255, 255, 255, .86); font-size: .94rem; }
+@media (prefers-reduced-motion: reduce) { .empezar { transition: none; } .empezar:hover { transform: none; } }

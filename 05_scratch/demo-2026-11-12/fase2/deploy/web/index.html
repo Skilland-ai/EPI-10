@@ -1,73 +1,108 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Portal propio EPI10 · Fase 2</title>
-<link rel="icon" href="/__fase2/img/epi10-azul.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>EPI10 Salud · Entorno de demostración · Fase 2 · Portal propio</title>
+  <link rel="icon" href="/__fase2/portada/img/epi10-blue.png">
+  <!-- Misma maqueta que la portada de la fase 1 (deploy-aporta/portada): su estilos.css tal cual. -->
+  <link rel="stylesheet" href="/__fase2/portada/estilos.css?v=20261111-1">
+  <link rel="stylesheet" href="/__fase2/portada/fase2.css?v=20261111-1">
 </head>
-<body class="f2-pagina">
-<header class="f2-cab">
-  <div class="f2-cab__in">
-    <img src="/__fase2/img/epi10-azul.png" alt="EPI10">
-    <span class="f2-cab__tag">Entorno de demostración · Fase 2</span>
-  </div>
-</header>
-<main class="f2-main">
-  <p class="f2-eyebrow">Fase 2 · Portal propio</p>
-  <h1 class="f2-h1">Así se vería vuestro portal de cliente</h1>
-  <p class="f2-lead">Es la instancia real de OpenEMR con el módulo EPI10 que hemos construido en laboratorio. Usa solo datos ficticios.
-    Son <strong>vistas simuladas</strong>: el portal todavía no está implementado ni conectado con vuestro sistema.</p>
-
-  <section class="f2-hero" id="f2-hero">
-    <p><strong>Recorrido guiado de unos 10 minutos.</strong> Empieza donde termina la fase 1, con el pago. Sigue con el correo que recibe la clienta, su primera entrada en el portal y su informe, y acaba en el back office del equipo.</p>
-    <button type="button" class="f2-btn" id="f2-empezar">Empezar el recorrido</button>
-  </section>
-
-  <ol class="f2-pasos" id="f2-pasos">
-    <li class="f2-paso" id="paso-pago">
-      <span class="f2-paso__n">1</span>
-      <h2>Pago</h2>
-      <p>La clienta compra NutriWell y paga en la pasarela de Stripe. Esta parte es la de la fase 1.</p>
-      <span class="f2-chip f2-chip--real">Ya funciona · fase 1</span>
-      <a href="https://compra.aporta-epi10.com/" target="_blank" rel="noopener">Abrir la pasarela de la fase 1 ↗</a>
-    </li>
-    <li class="f2-paso" id="paso-correo">
-      <span class="f2-paso__n">2</span>
-      <h2>Correo de acceso</h2>
-      <p>Tras pagar, recibe un correo en español con un botón para entrar en su espacio.</p>
-      <span class="f2-chip f2-chip--sim">Vista simulada</span>
-      <a href="/correo/" id="ir-correo">Ver el correo</a>
-    </li>
-    <li class="f2-paso" id="paso-portal">
-      <span class="f2-paso__n">3</span>
-      <h2>Portal de la clienta</h2>
-      <p>Entra por primera vez y el portal la guía: consentimiento firmado, cuestionario y test. Al final, su informe.</p>
-      <span class="f2-chip f2-chip--sim">Vista simulada · OpenEMR</span>
-      <a href="/portal/index.php?site=default">Abrir el portal</a>
-    </li>
-    <li class="f2-paso" id="paso-backoffice">
-      <span class="f2-paso__n">4</span>
-      <h2>Back office</h2>
-      <p>El equipo ve lo que toca hoy, la ficha de cada clienta, sus documentos, sus mensajes y sus citas.</p>
-      <span class="f2-chip f2-chip--sim">Vista simulada · OpenEMR</span>
-      <a href="/interface/login/login.php?site=default">Abrir el back office</a>
-    </li>
-  </ol>
-
-  <div class="f2-capturas" id="f2-capturas">
-    <figure>
-      <img src="/__fase2/img/pago.jpg" alt="Pasarela de pago de Stripe con el producto NutriWell (modo prueba)" loading="lazy">
-      <figcaption>Fase 1 · La pasarela de Stripe en modo prueba.</figcaption>
-    </figure>
-    <figure>
-      <img src="/__fase2/img/pago-confirmado.jpg" alt="Pantalla de pago de prueba confirmado" loading="lazy">
-      <figcaption>Fase 1 · Pago confirmado. Desde aquí empieza la fase 2.</figcaption>
-    </figure>
+<body>
+  <div class="aviso" role="note">
+    <p class="contenedor"><strong>Entorno de demostración de la fase 2 · Portal propio. Son vistas simuladas:</strong> así se vería el portal de cliente propio de EPI10. Todavía no está implementado ni conectado con vuestro sistema. Todos los datos son ficticios.</p>
   </div>
 
-  <p class="f2-pie">Entorno de demostración preparado por Skilland para EPI10 Salud. Datos ficticios. No es un servicio en producción.</p>
-</main>
+  <header class="hero">
+    <div class="contenedor">
+      <div class="marca">
+        <img class="logo" src="/__fase2/portada/img/epi10-white.png" alt="EPI10" width="108" height="36">
+        <p class="antetitulo">EPI10 Salud</p>
+      </div>
+      <h1>Entorno de demostración · Fase 2 · Portal propio</h1>
+      <p class="entradilla">Un recorrido guiado por el portal de la clienta y el back office del equipo, desde el correo que llega tras el pago hasta el informe.</p>
+
+      <div class="claves">
+        <article class="clave clave--principal">
+          <h2>Qué vais a ver</h2>
+          <p>La instancia real de OpenEMR con el módulo EPI10 que hemos construido en laboratorio: vuestra marca, en español, con el portal de la clienta y el back office del equipo.</p>
+          <p class="clave__remate">Así se vería vuestro portal propio.</p>
+        </article>
+        <article class="clave">
+          <h2>Vistas simuladas</h2>
+          <p>El portal todavía no está implementado ni conectado con el orquestador ni con Odoo. Llevarlo a producción es el trabajo de la fase 2.</p>
+        </article>
+        <article class="clave">
+          <h2>Sin datos reales</h2>
+          <p>Todas las clientas son ficticias. El pago es el de la fase 1, en modo de pruebas, y el correo es una vista simulada.</p>
+        </article>
+      </div>
+
+      <ol class="viaje" aria-label="Recorrido de la fase 2">
+        <li>Pago</li>
+        <li>Correo de acceso</li>
+        <li>Portal de la clienta</li>
+        <li>Su informe</li>
+        <li>Back office</li>
+      </ol>
+
+      <div class="arranque">
+        <button type="button" class="empezar" id="f2-empezar">Empezar el recorrido</button>
+        <p>Unos 10 minutos. Cada paso se abre en una pestaña nueva y esta página se queda detrás.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section aria-labelledby="accesos">
+      <p class="eyebrow">Cuatro accesos, un solo inicio de sesión</p>
+      <h2 id="accesos">Accesos</h2>
+      <p class="nota">Ya has iniciado sesión. Cada acceso se abre en una pestaña nueva.</p>
+      <div class="rejilla">
+        <article class="tarjeta t-pago">
+          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></svg></span><span class="num" aria-hidden="true">01</span></div>
+          <h3>Pago</h3>
+          <span class="etiqueta etiqueta--real">Ya funciona · fase 1</span>
+          <p class="texto">La clienta compra NutriWell y paga en la pasarela de Stripe, en modo de pruebas. Es el punto de partida de la fase 2.</p>
+          <p class="dato">Tarjeta de prueba: <strong>4242 4242 4242 4242</strong>, fecha futura y cualquier CVC.</p>
+          <a class="enlace" href="https://compra.aporta-epi10.com/#demo" target="_blank" rel="noopener">Abrir la pasarela de la fase 1</a>
+        </article>
+
+        <article class="tarjeta t-correo">
+          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="num" aria-hidden="true">02</span></div>
+          <h3>Correo de acceso</h3>
+          <span class="etiqueta etiqueta--sim">Vista simulada</span>
+          <p class="texto">Tras pagar, la clienta recibe un correo en español con un botón para entrar en su espacio.</p>
+          <a class="enlace" href="/correo/" target="_blank" rel="noopener">Ver el correo</a>
+        </article>
+
+        <article class="tarjeta t-portal">
+          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="num" aria-hidden="true">03</span></div>
+          <h3>Portal de la clienta</h3>
+          <span class="etiqueta etiqueta--sim">Vista simulada</span>
+          <p class="texto">Entra por primera vez y el portal la guía: consentimiento firmado, cuestionario y test. Al final, su informe.</p>
+          <a class="enlace" href="/portal/index.php?site=default" target="_blank" rel="noopener">Abrir el portal</a>
+        </article>
+
+        <article class="tarjeta t-bo">
+          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.6a3.5 3.5 0 0 1 0 6.8M18 13.8c2.1.8 3.5 2.9 3.5 5.2"/></svg></span><span class="num" aria-hidden="true">04</span></div>
+          <h3>Back office · Equipo EPI10</h3>
+          <span class="etiqueta etiqueta--sim">Vista simulada</span>
+          <p class="texto">Lo que ve el equipo de operaciones: lo que toca hoy, la ficha de cada clienta, sus documentos, sus mensajes y sus citas.</p>
+          <a class="enlace" href="/interface/login/login.php?site=default" target="_blank" rel="noopener">Abrir el back office</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contenedor">
+    <div class="descargo">
+      <h2>Sobre este entorno</h2>
+      <p>Es la instancia de laboratorio de OpenEMR con el módulo EPI10, con datos ficticios y dentro de un perímetro controlado, para que el equipo de EPI10 vea cómo sería el portal propio.</p>
+      <p>Son vistas simuladas: no es un servicio en producción y puede presentar algún error puntual.</p>
+    </div>
+  </footer>
 </body>
 </html>

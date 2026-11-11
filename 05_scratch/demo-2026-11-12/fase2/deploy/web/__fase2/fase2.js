@@ -40,6 +40,17 @@
     var n = document.querySelector('[data-epi10-onboarding-paso]');
     return n ? n.getAttribute('data-epi10-onboarding-paso') : null;
   };
+  var enInicio = function () { return ruta() === '/' || ruta() === '/index.html'; };
+  // Cada «sitio» del recorrido vive en su pestaña: cambiar de sitio abre pestaña nueva.
+  function sitio(url) {
+    var r = url ? new URL(url, location.href).pathname : ruta();
+    if (r === '/' || r === '/index.html') return 'inicio';
+    if (/^\/correo\//.test(r) || r === '/correo') return 'correo';
+    if (/^\/portal\//.test(r) || /\/public\/portal\//.test(r)) return 'portal';
+    return 'backoffice';
+  }
+  function abrirNueva(url) { window.open(url, '_blank', 'noopener'); }
+  function irA(url) { if (sitio(url) !== sitio()) abrirNueva(url); else location.href = url; }
   var enLoginPortal = function () { return /^\/portal\/(index\.php)?$/.test(ruta()) && hay('#uname'); };
   var enLoginBO = function () { return /\/interface\/login\/login\.php$/.test(ruta()) && hay('#authUser'); };
   var enOnboarding = function () { return /\/portal\/onboarding\.php$/.test(ruta()); };
@@ -86,40 +97,46 @@
   var PARTES = ['Inicio', 'Correo', 'Portal de la clienta', 'Su informe', 'Back office'];
 
   var PASOS = [
-    // 1 · Inicio
+    // 1 · Inicio (la home no navega nunca: cada acceso abre pestaña nueva y la home queda detrás)
     {
-      id: 'inicio', parte: 1, url: '/', donde: function () { return ruta() === '/'; },
+      id: 'inicio', parte: 1, url: '/', donde: enInicio,
       titulo: 'Fase 2 · Portal propio',
       texto: '<p>Lo que vais a ver es la <strong>instancia real de OpenEMR</strong> con el módulo EPI10 que hemos construido, con datos ficticios.</p>' +
         '<p>Son <strong>vistas simuladas</strong>: así se vería vuestro portal propio. Todavía no está implementado ni conectado con vuestro sistema.</p>',
     },
     {
-      id: 'inicio-pago', parte: 1, url: '/', donde: function () { return ruta() === '/'; },
-      el: '#f2-capturas', lado: 'top',
-      titulo: 'Empieza donde terminó la fase 1',
-      texto: '<p>La clienta compra NutriWell y paga en la pasarela de Stripe. Eso ya lo habéis visto funcionando en la fase 1, así que aquí lo damos por hecho.</p>',
+      id: 'inicio-accesos', parte: 1, url: '/', donde: enInicio,
+      el: '.rejilla', lado: 'top',
+      titulo: 'Cuatro accesos',
+      texto: '<p>Pago, correo, portal de la clienta y back office del equipo. Cada uno se abre en una <strong>pestaña nueva</strong>; esta página se queda detrás como punto de partida.</p>',
     },
     {
-      id: 'inicio-correo', parte: 1, url: '/', donde: function () { return ruta() === '/'; },
-      el: '#ir-correo', lado: 'top', accion: true,
-      hecho: function () { return /^\/correo\/?/.test(ruta()); },
+      id: 'inicio-pago', parte: 1, url: '/', donde: enInicio,
+      el: '.t-pago', lado: 'right',
+      titulo: 'Empieza donde terminó la fase 1',
+      texto: '<p>La clienta compra NutriWell y paga en la pasarela de Stripe. Eso ya funciona y lo habéis visto en la fase 1, así que aquí lo damos por hecho.</p>',
+    },
+    {
+      id: 'inicio-correo', parte: 1, url: '/', donde: enInicio,
+      el: '.t-correo .enlace', lado: 'bottom', accion: true,
+      hecho: function () { return /^\/correo\/?$/.test(ruta()); },
       titulo: 'Tras pagar, le llega un correo',
-      texto: '<p>Pulsa «Ver el correo».</p>',
+      texto: '<p>Pulsa «Ver el correo». Se abre en una pestaña nueva y el recorrido sigue allí.</p>',
     },
     // 2 · Correo
     {
-      id: 'correo', parte: 2, url: '/correo/', donde: function () { return /^\/correo\/?/.test(ruta()); },
+      id: 'correo', parte: 2, url: '/correo/', donde: function () { return /^\/correo\/?$/.test(ruta()); },
       el: '#f2-correo', lado: 'right',
       titulo: 'Así le llega el correo',
       texto: '<p>En español y con vuestra marca. Lo envía el sistema en cuanto se confirma el pago, con un enlace personal de un solo uso.</p>' +
         '<span class="f2-nota">Correo simulado: en la demo no se envía ningún correo.</span>',
     },
     {
-      id: 'correo-entrar', parte: 2, url: '/correo/', donde: function () { return /^\/correo\/?/.test(ruta()); },
+      id: 'correo-entrar', parte: 2, url: '/correo/', donde: function () { return /^\/correo\/?$/.test(ruta()); },
       el: '#entrar', lado: 'right', accion: true,
       hecho: function () { return enLoginPortal() || enOnboarding(); },
       titulo: 'Entra en su espacio',
-      texto: '<p>Pulsa «Entrar en mi espacio».</p>',
+      texto: '<p>Pulsa «Entrar en mi espacio». Como en un correo de verdad, el portal se abre en una pestaña nueva.</p>',
     },
     // 3 · Portal de la clienta (Marta, primera vez)
     {
@@ -237,8 +254,8 @@
     {
       id: 'bo-entrar', parte: 5, url: UI + '/portal/biblioteca.php', donde: function () { return /\/portal\//.test(ruta()); },
       titulo: 'Ahora, el lado del equipo',
-      texto: '<p>Pasamos al back office: lo que ven Aitor y el equipo.</p>',
-      primario: { texto: 'Ir al back office', fn: function () { location.href = BO_LOGIN; } },
+      texto: '<p>Pasamos al back office: lo que ven Aitor y el equipo. Se abre en una pestaña nueva.</p>',
+      primario: { texto: 'Ir al back office', fn: function () { abrirNueva(BO_LOGIN); } },
       hecho: function () { return enLoginBO() || /\/interface\/main\/tabs\/main\.php$/.test(ruta()) || ruta().indexOf(BO) === 0; },
     },
     {
@@ -431,19 +448,27 @@
     if (pintor && pintor.isActive()) pintor.destroy();
     pintor = null;
     pintado = null;
-    if (aviso && aviso.getAttribute('data-paso') === p.id) return;
+    var clave = p.id + '@' + sitio();
+    if (aviso && aviso.getAttribute('data-paso') === clave) return;
     if (aviso) aviso.remove();
     aviso = document.createElement('div');
     aviso.className = 'f2-aviso';
-    aviso.setAttribute('data-paso', p.id);
+    aviso.setAttribute('data-paso', clave);
     aviso.setAttribute('role', 'dialog');
-    aviso.innerHTML = '<h3>El recorrido sigue en otra pantalla</h3><p>Siguiente paso: <strong></strong></p>';
-    aviso.querySelector('strong').textContent = p.titulo;
     var f = document.createElement('div');
     f.className = 'f2-botones';
-    f.appendChild(boton('Ir allí', 'f2-btn', function () { location.href = p.url; }));
-    if (i > 0) f.appendChild(boton('Atrás', 'f2-btn f2-btn--sec', function () { ir(i - 1, true); }));
+    if (enInicio()) {
+      // La home es el ancla: nunca navega. El recorrido sigue en la pestaña que se abrió.
+      aviso.innerHTML = '<h3>El recorrido sigue en otra pestaña</h3><p>Ahora: <strong></strong>. Esta página se queda aquí como punto de partida.</p>';
+      f.appendChild(boton('Abrirlo en otra pestaña', 'f2-btn f2-btn--sec', function () { abrirNueva(p.url); }));
+      f.appendChild(boton('Volver al principio', 'f2-enlace', reiniciar));
+    } else {
+      aviso.innerHTML = '<h3>El recorrido sigue en otra pantalla</h3><p>Siguiente paso: <strong></strong></p>';
+      f.appendChild(boton(sitio(p.url) !== sitio() ? 'Abrir en pestaña nueva' : 'Ir allí', 'f2-btn', function () { irA(p.url); }));
+      if (i > 0) f.appendChild(boton('Atrás', 'f2-btn f2-btn--sec', function () { ir(i - 1, true); }));
+    }
     f.appendChild(boton('Salir', 'f2-enlace', salir));
+    aviso.querySelector('strong').textContent = p.titulo;
     aviso.appendChild(f);
     document.body.appendChild(aviso);
   }
@@ -466,13 +491,14 @@
     var p = PASOS[i];
     pintado = null;
     // Al ir atrás a un paso de otra pantalla, se navega a ella; hacia delante, el paso lo dice.
-    if (!p.donde() && atras && p.url) { location.href = p.url; return; }
+    if (!p.donde() && atras && p.url) { irA(p.url); return; }
     tick();
   }
   function salir() { guardar({ activo: false, i: estado ? estado.i : 0 }); cerrarTodo(); mostrarRetomar(); }
-  function reiniciar() { guardar({ activo: true, i: 0 }); cerrarTodo(); if (ruta() !== '/') location.href = '/'; else tick(); }
+  function reiniciar() { guardar({ activo: true, i: 0 }); cerrarTodo(); tick(); }
 
   function tick() {
+    estado = leer();
     if (window.innerWidth < ANCHO_MINIMO) { cerrarTodo(); return; }
     if (!estado || !estado.activo) { if (pintor && pintor.isActive()) cerrarTodo(); mostrarRetomar(); return; }
     var i = estado.i || 0;
@@ -492,9 +518,7 @@
   // ---------- Arranque ----------
   function arrancar() {
     sello();
-    // El botón del correo simulado entra siempre como clienta nueva, aunque quede otra sesión abierta.
-    var entrar = document.getElementById('entrar');
-    if (entrar) entrar.addEventListener('click', function (ev) { ev.preventDefault(); salirPortal(entrar.getAttribute('href')); });
+    if (document.body.hasAttribute('data-f2-sin-tour')) return;
     var empezar = document.getElementById('f2-empezar');
     if (empezar) empezar.addEventListener('click', function () { guardar({ activo: true, i: 0 }); cerrarTodo(); tick(); });
     tick();

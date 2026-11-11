@@ -23,7 +23,7 @@ Sesión «Fase 2 · portal propio» (brief_fase2.md). Linear: encaja con **CON-2
 
 | # | Parte | Qué se ve | Qué se dice |
 |---|---|---|---|
-| 1 | Inicio | Portada de la fase 2 y capturas de la pasarela de Stripe | «Es la instancia real de OpenEMR con nuestro módulo y datos ficticios. Son vistas simuladas: así se vería; no está implementado ni conectado». El pago es el de la fase 1 |
+| 1 | Inicio | Home de la fase 2, maquetada igual que la portada de la fase 1: hero con avisos, rejilla 2×2 de accesos (Pago · Correo de acceso / Portal de la clienta · Back office · Equipo EPI10) | «Es la instancia real de OpenEMR con nuestro módulo y datos ficticios. Son vistas simuladas: así se vería; no está implementado ni conectado». El pago es el de la fase 1 |
 | 2 | Correo | El correo de acceso tal como le llega a la clienta (Marta) | En español, con su marca, enlace personal. Es un correo simulado: no se envía nada |
 | 3 | Portal de la clienta | Login de Marta → onboarding real: fecha de nacimiento, **consentimiento firmado en pantalla**, cuestionario de 6 preguntas, test en casa o en sede, «Todo listo» → su espacio | El portal la guía; hasta que no completa los tres pasos no ve nada más |
 | 4 | Su informe | Salto a Lucía → «Paso 5 de 5: informe listo» → Mi informe → visor del PDF | Solo ve los informes que el equipo ha revisado y publicado |
@@ -32,6 +32,8 @@ Sesión «Fase 2 · portal propio» (brief_fase2.md). Linear: encaja con **CON-2
 Cierre: «Esto es lo que funciona en laboratorio. Llevarlo a producción, conectarlo con el orquestador y Odoo y desplegarlo en vuestro servidor es el trabajo de la fase 2.»
 
 En cada paso hay «Atrás», «Salir del recorrido» y, en los de acción, «Saltar este paso». Si se sale de la pantalla del paso, una tarjeta ofrece «Ir allí».
+
+**Pestañas (como en la fase 1).** La home no navega nunca: es el ancla. Abre en pestaña nueva todo enlace que sale de ella (las 4 tarjetas) y todo paso del recorrido que cambia de sitio. El recorrido queda en 4 pestañas: home → correo → portal (Marta y luego Lucía, en la misma pestaña) → back office. El paso se guarda en `localStorage`, que comparten todas las pestañas, y la pestaña nueva sigue sola. Si se vuelve a la home a mitad del recorrido, muestra «El recorrido sigue en otra pestaña» con «Abrirlo en otra pestaña» y «Volver al principio». Capturas de la home en `capturas/home_1366.png` y `capturas/home_1920.png` (más las `_completa`).
 
 ## Qué es real y qué es simulado
 
@@ -62,9 +64,18 @@ Todas las páginas del subdominio llevan el sello fijo **«Vista simulada · fas
 
 ## Riesgos
 
+0. **Inyección intermitente (visto una vez).** En 1 de 4 recorridos automáticos, una página del portal (Mi informe) cargó sin sello ni recorrido. No se ha podido reproducir: 10 de 10 cargas directas y por el botón salieron con la inyección. Si pasa en la demo, basta con recargar la página (F5); el recorrido sigue en el mismo paso.
+
 1. **Visor del PDF:** el pdf.js del módulo usa `Map.getOrInsertComputed`, que no tienen todos los Chrome. Se ha añadido un polyfill inyectado por Caddy y ya renderiza en Chromium 141. Si mañana el PDF sale en blanco, usar «Descargar PDF».
 2. **El logo de la portada del informe de Lucía sale estirado.** Viene del PDF de laboratorio, no del visor. Es cosmético; si se ve, pasar a la página 2.
 3. **Hay que reiniciar los datos antes de la demo.** Si se repite el recorrido sin `reiniciar.sh`, Marta ya ha hecho el onboarding y el recorrido salta los pasos de la parte 3.
 4. **Puerta:** si Carmen abre el enlace sin sesión, cae en la portada de la fase 1 y luego hay que volver a abrir la URL (ver «Acceso»).
 5. **Mensaje:** la relación está tensa. El sello y el texto del recorrido dicen «no implementado». No decir que está «listo» ni dar plazos fuera de la propuesta del 27 oct.
 6. El VPS es compartido con la fase 1. La fase 2 tiene topes de memoria y su propio compose; para apagarla: `cd /srv/epi10-fase2 && docker compose down`.
+
+## Cambios del 11 nov por la tarde (corrección de Raúl sobre la home)
+
+- Fuera las dos capturas grandes (pasarela y «Prueba completada»).
+- La home usa el `estilos.css`, las fuentes, los logos y los iconos de la portada de la fase 1 tal cual (`web/__fase2/portada/`), más un `fase2.css` mínimo para las etiquetas y el botón «Empezar el recorrido».
+- Todos los enlaces de la home llevan `target="_blank" rel="noopener"`. El botón del correo abre `/correo/entrar/`, en pestaña nueva, que cierra cualquier sesión de portal anterior y lleva al login. «Ir al back office» también abre pestaña nueva.
+- Verificado con Playwright a 1366×768 y a 1920×1080: recorrido completo de 27 pasos, 4 pestañas, la home sigue en `/` al terminar, 0 errores de JS y 0 respuestas 5xx, sello en todas las pantallas y sin scroll horizontal. Datos reiniciados al acabar (Marta sin onboarding, `carmen` presente).
