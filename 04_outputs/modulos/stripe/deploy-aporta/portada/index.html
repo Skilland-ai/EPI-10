@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>EPI10 Salud · Entorno de demostración · Fase 1</title>
   <link rel="icon" href="img/epi10-blue.png">
-  <link rel="stylesheet" href="estilos.css?v=20261109-3">
+  <link rel="stylesheet" href="estilos.css?v=20261112-1">
 </head>
 <body>
   <div class="aviso" role="note">
@@ -49,6 +49,75 @@
   </header>
 
   <main class="contenedor">
+    <section class="arq" aria-label="Arquitectura del sistema">
+      <details>
+        <summary>
+          <span class="arq__texto"><span class="eyebrow">Cómo encaja todo</span><span class="arq__titulo">Arquitectura del sistema</span><span class="arq__sub">El esquema acordado en el workshop: qué pieza hace qué y cómo se conectan.</span></span>
+          <span class="arq__flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <div class="arq__lienzo">
+          <svg class="arq__svg" viewBox="0 0 1040 470" role="img" aria-labelledby="arq-t arq-d">
+            <title id="arq-t">Arquitectura del sistema EPI10</title>
+            <desc id="arq-d">La clienta llega por la web de compra y paga en la pasarela de pago. El pago entra en el sistema por el orquestador, que abre el caso en Odoo, donde trabaja el equipo, y se apoya en el generador de borradores de informes. A la izquierda, fuera del sistema, el portal de la clienta: Healthie u otra alternativa.</desc>
+            <defs>
+              <marker id="arq-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#01447b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+              <marker id="arq-pc" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#029acc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            </defs>
+
+            <rect class="a-marco" x="460" y="100" width="550" height="345" rx="22"/>
+            <text class="a-marco-t" x="482" y="126">SISTEMA EPI10 · FASE 1</text>
+
+            <rect class="a-pildora" x="65" y="58" width="110" height="30" rx="15"/><text class="a-pildora-t" x="120" y="78" text-anchor="middle">Clienta</text>
+            <rect class="a-pildora" x="820" y="44" width="140" height="30" rx="15"/><text class="a-pildora-t" x="890" y="64" text-anchor="middle">Equipo EPI10</text>
+
+            <path class="a-linea" d="M120 88V146" marker-end="url(#arq-p)"/>
+            <path class="a-linea" d="M890 74V146" marker-end="url(#arq-p)"/>
+            <path class="a-linea" d="M210 195H246" marker-end="url(#arq-p)"/>
+            <path class="a-linea" d="M430 180H486" marker-end="url(#arq-p)"/>
+            <path class="a-linea" d="M714 195H796" marker-start="url(#arq-p)" marker-end="url(#arq-p)"/>
+            <path class="a-linea" d="M600 254V326" marker-start="url(#arq-p)" marker-end="url(#arq-p)"/>
+            <path class="a-linea a-linea--ext" d="M344 375H445V225H486" marker-start="url(#arq-pc)" marker-end="url(#arq-pc)"/>
+
+            <text class="a-rotulo" x="755" y="183" text-anchor="middle">casos y tareas</text>
+            <text class="a-rotulo" x="612" y="295">packs y borradores</text>
+            <text class="a-rotulo" x="395" y="393" text-anchor="middle">alta y documentos</text>
+
+            <rect class="a-caja" x="30" y="150" width="180" height="90" rx="16"/>
+            <text class="a-num" x="48" y="176">01</text>
+            <text class="a-tit" x="48" y="200">Web de compra</text>
+            <text class="a-sub" x="48" y="221">Oferta e inicio de la compra</text>
+
+            <rect class="a-caja" x="250" y="150" width="180" height="90" rx="16"/>
+            <text class="a-num" x="268" y="176">02</text>
+            <text class="a-tit" x="268" y="200">Pasarela de pago</text>
+            <text class="a-sub" x="268" y="221">Stripe cobra y avisa</text>
+
+            <rect class="a-caja a-caja--orq" x="490" y="140" width="220" height="110" rx="18"/>
+            <text class="a-num a-claro" x="510" y="168">03</text>
+            <text class="a-tit a-blanco" x="510" y="194">Orquestador</text>
+            <text class="a-sub a-blanco2" x="510" y="216">Recibe el pago, abre el caso</text>
+            <text class="a-sub a-blanco2" x="510" y="233">y coordina cada paso</text>
+
+            <rect class="a-caja" x="800" y="150" width="180" height="90" rx="16"/>
+            <text class="a-num" x="818" y="176">04</text>
+            <text class="a-tit" x="818" y="200">Odoo</text>
+            <text class="a-sub" x="818" y="221">Etapas y tareas del equipo</text>
+
+            <rect class="a-caja" x="490" y="330" width="220" height="90" rx="16"/>
+            <text class="a-num" x="510" y="356">05</text>
+            <text class="a-tit" x="510" y="380">Generador de borradores</text>
+            <text class="a-sub" x="510" y="401">Borrador del informe, a revisar</text>
+
+            <rect class="a-caja a-caja--ext" x="140" y="330" width="200" height="90" rx="16"/>
+            <text class="a-num a-cian" x="158" y="356">FUERA DEL SISTEMA</text>
+            <text class="a-tit" x="158" y="380">Portal de la clienta</text>
+            <text class="a-sub" x="158" y="401">Healthie u otra alternativa</text>
+          </svg>
+        </div>
+        <p class="arq__pie">El orquestador queda en el centro: recibe el pago, abre el caso en Odoo y conecta el resto de piezas. El portal de la clienta es una pieza intercambiable: Healthie o cualquier alternativa.</p>
+      </details>
+    </section>
+
     <section aria-labelledby="accesos">
       <p class="eyebrow">Cinco herramientas, un solo acceso</p>
       <h2 id="accesos">Accesos</h2>

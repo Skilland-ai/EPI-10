@@ -103,3 +103,34 @@ footer { padding-bottom: 48px; }
   .rejilla { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) { .enlace, .tarjeta { transition: none; } .tarjeta:hover, .enlace:hover { transform: none; } }
+
+/* Arquitectura del sistema: desplegable, cerrado por defecto. */
+.arq details { background: #fff; border: 1px solid rgba(1, 68, 123, .1); border-radius: 18px; box-shadow: 0 1px 2px rgba(0, 41, 77, .05), 0 12px 28px -18px rgba(0, 41, 77, .28); }
+.arq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 26px; cursor: pointer; list-style: none; border-radius: 18px; }
+.arq summary::-webkit-details-marker { display: none; }
+.arq summary:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+.arq__texto { display: flex; flex-direction: column; gap: 2px; }
+.arq__titulo { font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; color: var(--azul-900); }
+.arq__sub { color: var(--gris); font-size: .95rem; }
+.arq__flecha { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--azul-50); color: var(--azul); transition: transform .18s ease; }
+.arq__flecha svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.arq details[open] .arq__flecha { transform: rotate(180deg); }
+.arq__lienzo { overflow-x: auto; padding: 4px 26px 0; border-top: 1px solid var(--linea); }
+.arq__svg { display: block; width: 100%; min-width: 760px; height: auto; font-family: "Manrope", system-ui, sans-serif; }
+.arq__pie { margin: 0; padding: 8px 26px 24px; max-width: 80ch; color: var(--gris); font-size: .95rem; }
+.a-marco { fill: rgba(238, 244, 250, .6); stroke: rgba(1, 68, 123, .35); stroke-width: 1.5; stroke-dasharray: 6 6; }
+.a-marco-t { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; fill: var(--azul); }
+.a-pildora { fill: var(--azul-50); stroke: rgba(1, 68, 123, .25); }
+.a-pildora-t { font-size: 13px; font-weight: 700; fill: var(--azul-900); }
+.a-caja { fill: #fff; stroke: rgba(1, 68, 123, .3); stroke-width: 1.5; }
+.a-caja--orq { fill: var(--azul-900); stroke: var(--azul-900); }
+.a-caja--ext { fill: #f3fbfe; stroke: var(--foco); stroke-dasharray: 6 5; }
+.a-num { font-size: 11px; font-weight: 700; letter-spacing: .08em; fill: var(--foco); }
+.a-tit { font-size: 15.5px; font-weight: 700; fill: var(--azul-900); }
+.a-sub { font-size: 12px; fill: var(--gris); }
+.a-claro { fill: var(--cian-claro); } .a-cian { fill: #027aa3; font-size: 10.5px; }
+.a-blanco { fill: #fff; } .a-blanco2 { fill: rgba(255, 255, 255, .86); }
+.a-linea { fill: none; stroke: var(--azul); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.a-linea--ext { stroke: var(--foco); stroke-dasharray: 6 5; }
+.a-rotulo { font-size: 11.5px; font-weight: 600; fill: var(--gris); }
+@media (prefers-reduced-motion: reduce) { .arq__flecha { transition: none; } }
