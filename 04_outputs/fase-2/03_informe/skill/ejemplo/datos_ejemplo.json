@@ -1,0 +1,857 @@
+{
+  "meta": {
+    "producto": "NutriWell",
+    "titulo": "Tu plan",
+    "cliente": {
+      "nombre": "Álex",
+      "codigo": "NW-EJ-0001"
+    },
+    "fecha": "Noviembre 2026",
+    "revisado_por": "Equipo de nutrigenética de EPI10 Salud",
+    "fuentes": [
+      "genetica",
+      "habitos",
+      "analitica"
+    ],
+    "ejemplo": true,
+    "nota_ejemplo": "Ejemplo con datos anonimizados y nombre ficticio. Basado en el informe anonimizado I."
+  },
+  "resumen": {
+    "frase": "Entrenas mucho y lo haces bien. Ahora lo que más te va a ayudar es tomar menos y mejor, dormir mejor y proteger tus tendones.",
+    "lo_que_haces_bien": [
+      "Entrenas más de tres veces por semana",
+      "No fumas",
+      "Comes pescado una o dos veces por semana",
+      "Bebes alcohol solo de forma ocasional"
+    ]
+  },
+  "areas": [
+    {
+      "id": "nutricion",
+      "nombre": "Nutrición",
+      "estado": "ambar",
+      "habitos": 3,
+      "genetica": 2.3,
+      "frase": "Dieta cetogénica: cuida la calidad de las grasas y la variedad.",
+      "genetica_txt": "Tendencia a IMC y grasa corporal altos; LDL y apolipoproteína B altos.",
+      "habitos_txt": "Cetogénica. Fruta y verdura una o dos veces al día."
+    },
+    {
+      "id": "movimiento",
+      "nombre": "Movimiento",
+      "estado": "verde",
+      "habitos": 5,
+      "genetica": 2.8,
+      "frase": "Tu punto fuerte. Tus tendones piden más recuperación.",
+      "genetica_txt": "Riesgo alto de tendinopatías y regeneración muscular más lenta.",
+      "habitos_txt": "Fútbol, musculación y running, más de tres veces por semana."
+    },
+    {
+      "id": "descanso",
+      "nombre": "Descanso",
+      "estado": "rojo",
+      "habitos": 2,
+      "genetica": 2.7,
+      "frase": "Duermes las horas, pero no descansas bien.",
+      "genetica_txt": "Tendencia a sueño corto y alta probabilidad de insomnio.",
+      "habitos_txt": "7–8 horas, pero solo duermes bien de vez en cuando."
+    },
+    {
+      "id": "estres",
+      "nombre": "Estrés y energía",
+      "estado": "ambar",
+      "habitos": 2,
+      "genetica": 2.0,
+      "frase": "Estrés frecuente y cansancio de vez en cuando.",
+      "genetica_txt": "Una copia de COMT V158M; respuesta al estrés más intensa.",
+      "habitos_txt": "Te estresas casi siempre; ansiedad y cansancio ocasionales."
+    },
+    {
+      "id": "complementacion",
+      "nombre": "Complementación",
+      "estado": "ambar",
+      "habitos": 2,
+      "genetica": 2.5,
+      "frase": "Tomas seis productos. Tres encajan; tres hay que revisarlos.",
+      "genetica_txt": "MTHFR C677T (dos copias) y variante en HFE: prudencia con hierro y vitaminas B.",
+      "habitos_txt": "Proteína, creatina, multivitamínico, L-carnitina, omega-3 y colágeno."
+    }
+  ],
+  "prioridades": [
+    {
+      "n": 1,
+      "area": "complementacion",
+      "titulo": "Toma menos, pero mejor",
+      "frase": "De seis productos, mantén tres y revisa los otros tres. Antes de nada, mira si tu multivitamínico lleva hierro."
+    },
+    {
+      "n": 2,
+      "area": "descanso",
+      "titulo": "Duerme para recuperarte",
+      "frase": "Tu genética tiende al sueño corto y tu estrés es frecuente. Horario fijo y nada de estimulantes antes de dormir."
+    },
+    {
+      "n": 3,
+      "area": "movimiento",
+      "titulo": "Protege tus tendones",
+      "frase": "Sigue entrenando. Sube las cargas poco a poco y respeta los días de recuperación."
+    }
+  ],
+  "perfil_habitos": [
+    {
+      "icono": "movimiento",
+      "etiqueta": "Actividad",
+      "valor": "Fútbol, musculación y running · más de 3 veces por semana",
+      "estado": "verde"
+    },
+    {
+      "icono": "nutricion",
+      "etiqueta": "Alimentación",
+      "valor": "Cetogénica · fruta y verdura 1–2 veces al día",
+      "estado": "ambar"
+    },
+    {
+      "icono": "pez",
+      "etiqueta": "Pescado",
+      "valor": "1–2 veces por semana · carne o huevos 3 o más",
+      "estado": "verde"
+    },
+    {
+      "icono": "descanso",
+      "etiqueta": "Sueño",
+      "valor": "7–8 horas · duermes bien solo de vez en cuando",
+      "estado": "rojo"
+    },
+    {
+      "icono": "estres",
+      "etiqueta": "Estrés",
+      "valor": "Casi siempre · ansiedad ocasional",
+      "estado": "ambar"
+    },
+    {
+      "icono": "copa",
+      "etiqueta": "Alcohol y tabaco",
+      "valor": "Vino ocasional · exfumador",
+      "estado": "verde"
+    },
+    {
+      "icono": "complementacion",
+      "etiqueta": "Complementos",
+      "valor": "6 productos a la vez",
+      "estado": "ambar"
+    },
+    {
+      "icono": "capsula-med",
+      "etiqueta": "Medicación",
+      "valor": "Un antihistamínico por alergia",
+      "estado": "info"
+    }
+  ],
+  "analitica": {
+    "aportada": true,
+    "resumen": "B12 y folato dentro de los intervalos del laboratorio. El perfil lipídico se tiene en cuenta junto a tu dieta. No hacemos interpretación clínica de la analítica."
+  },
+  "cuerpo": [
+    {
+      "zona": "cabeza",
+      "titulo": "Sueño",
+      "texto": "Tendencia a sueño corto y alta probabilidad de insomnio",
+      "nivel": "alto"
+    },
+    {
+      "zona": "corazon",
+      "titulo": "Grasas en sangre",
+      "texto": "Tendencia a LDL y apolipoproteína B altos",
+      "nivel": "ligeramente alto"
+    },
+    {
+      "zona": "higado",
+      "titulo": "Hierro",
+      "texto": "Tendencia a hierro alto en hígado y variante en HFE",
+      "nivel": "alto"
+    },
+    {
+      "zona": "intestino",
+      "titulo": "Lactosa",
+      "texto": "Alta probabilidad de intolerancia (no la notas hoy)",
+      "nivel": "alto"
+    },
+    {
+      "zona": "codo",
+      "titulo": "Tendones",
+      "texto": "Riesgo alto de tendinopatías en brazos y piernas",
+      "nivel": "alto"
+    },
+    {
+      "zona": "muslo",
+      "titulo": "Músculo",
+      "texto": "Regeneración más lenta tras el esfuerzo",
+      "nivel": "ligeramente alto"
+    },
+    {
+      "zona": "rodilla",
+      "titulo": "Hueso",
+      "texto": "Tendencia a densidad mineral ósea baja",
+      "nivel": "ligeramente alto"
+    }
+  ],
+  "habitos": [
+    {
+      "area": "descanso",
+      "estado": "rojo",
+      "titulo": "Descanso y desconexión",
+      "vemos": {
+        "genetica": "Sueño corto e insomnio probables",
+        "habitos": "Solo duermes bien a veces; estrés frecuente"
+      },
+      "accion": "Acuéstate y levántate a la misma hora, también el fin de semana. Sin estimulantes en las horas antes de dormir.",
+      "por_que": "Con tanto entrenamiento, descansar es tan importante como lo que tomas.",
+      "indicador": "Noches que duermes bien, de 7",
+      "frecuencia": "Cada semana"
+    },
+    {
+      "area": "movimiento",
+      "estado": "ambar",
+      "titulo": "Recuperación de músculo y tendones",
+      "vemos": {
+        "genetica": "Tendinopatías y regeneración lenta",
+        "habitos": "Tres deportes, más de 3 días por semana"
+      },
+      "accion": "Sube las cargas de forma progresiva y deja días de recuperación entre sesiones intensas. Toma proteína suficiente.",
+      "por_que": "Tu genética no te frena: te pide una progresión más cuidada.",
+      "indicador": "Semanas sin molestias en tendones",
+      "frecuencia": "Cada semana"
+    },
+    {
+      "area": "nutricion",
+      "estado": "ambar",
+      "titulo": "Calidad de la alimentación",
+      "vemos": {
+        "genetica": "IMC, grasa corporal y LDL altos",
+        "habitos": "Cetogénica; poca variedad vegetal"
+      },
+      "accion": "Dentro de tu cetogénica, prioriza grasas de calidad y más variedad de verduras. Ajusta lo que comes a lo que entrenas.",
+      "por_que": "Una dieta restrictiva puede quitarte variedad sin que te des cuenta.",
+      "indicador": "Raciones de verdura al día",
+      "frecuencia": "Cada semana"
+    },
+    {
+      "area": "complementacion",
+      "estado": "ambar",
+      "titulo": "Vitaminas y minerales",
+      "vemos": {
+        "genetica": "MTHFR C677T y variante HFE",
+        "habitos": "Multivitamínico diario"
+      },
+      "accion": "Revisa la etiqueta de tu multivitamínico: evita el hierro añadido y las dosis altas de vitaminas del grupo B.",
+      "por_que": "No es una carencia ni un diagnóstico: es prudencia con lo que no necesitas.",
+      "indicador": "Etiqueta revisada",
+      "frecuencia": "Una vez"
+    },
+    {
+      "area": "movimiento",
+      "estado": "verde",
+      "titulo": "Actividad física",
+      "vemos": {
+        "genetica": "Perfil muscular tipo velocista",
+        "habitos": "Más de 3 días por semana"
+      },
+      "accion": "Mantén tu rutina. Es tu mejor hábito.",
+      "por_que": "",
+      "indicador": "Días activos por semana",
+      "frecuencia": "Cada semana"
+    }
+  ],
+  "complementacion_actual": [
+    {
+      "nombre": "Creatina",
+      "estado": "mantener",
+      "motivo": "Encaja con tu deporte y tu perfil muscular.",
+      "ajuste": "3 g al día de monohidrato"
+    },
+    {
+      "nombre": "Colágeno",
+      "estado": "mantener",
+      "motivo": "Apoyo a tendones por tu riesgo genético y tu actividad.",
+      "ajuste": "Revisa la dosis y añade vitamina C"
+    },
+    {
+      "nombre": "Omega-3",
+      "estado": "mantener",
+      "motivo": "Complementa el pescado que ya comes.",
+      "ajuste": "Mira cuánto EPA + DHA aporta, no el aceite total"
+    },
+    {
+      "nombre": "Proteína",
+      "estado": "revisar",
+      "motivo": "Útil si tu dieta no llega a lo que necesitas.",
+      "ajuste": "Cuenta la proteína total: comida + batido"
+    },
+    {
+      "nombre": "L-carnitina",
+      "estado": "revisar",
+      "motivo": "No vemos un motivo claro para tomarla.",
+      "ajuste": "Valora si te aporta algo"
+    },
+    {
+      "nombre": "Multivitamínico",
+      "estado": "revisar",
+      "motivo": "Variante en HFE y tendencia a hierro alto.",
+      "ajuste": "Comprueba que no lleve hierro ni B en dosis altas"
+    },
+    {
+      "nombre": "Vitamina C",
+      "estado": "anadir",
+      "motivo": "Contribuye a la formación normal de colágeno.",
+      "ajuste": "80 mg al día, junto al colágeno"
+    }
+  ],
+  "medicacion": "Tomas un antihistamínico. Si dudas de si algún complemento interfiere con él, consúltalo con tu médico. Sus indicaciones van siempre primero.",
+  "complementos": [
+    {
+      "nombre": "Creatina monohidrato",
+      "dosis": "3 g",
+      "unidad": "al día",
+      "estado": "mantener",
+      "por_que": {
+        "genetica": "Perfil muscular tipo velocista y regeneración más lenta.",
+        "habitos": "Fútbol, musculación y running más de 3 veces por semana. Ya la tomas."
+      },
+      "como": "Con una comida principal o después de entrenar, con agua suficiente.",
+      "momentos": [
+        "comida",
+        "entreno"
+      ],
+      "evidencia": 3,
+      "declaracion": "La creatina aumenta el rendimiento físico en series sucesivas de ejercicios breves de alta intensidad (con 3 g al día, en adultos que hacen ejercicio de alta intensidad).",
+      "referencias": [
+        "https://pubmed.ncbi.nlm.nih.gov/27523919/"
+      ],
+      "epi10": null
+    },
+    {
+      "nombre": "Colágeno hidrolizado + vitamina C",
+      "dosis": "5 g + 80 mg",
+      "unidad": "al día",
+      "estado": "ajustar",
+      "por_que": {
+        "genetica": "Riesgo alto de tendinopatías y tendencia a densidad ósea baja.",
+        "habitos": "Mucha carga deportiva. Ya tomas colágeno: falta la vitamina C."
+      },
+      "como": "Una toma al día, alrededor del entrenamiento o con una comida.",
+      "momentos": [
+        "entreno",
+        "comida"
+      ],
+      "evidencia": 2,
+      "declaracion": "La vitamina C contribuye a la formación normal de colágeno para el funcionamiento normal de los huesos y cartílagos.",
+      "referencias": [
+        "https://pubmed.ncbi.nlm.nih.gov/37424319/",
+        "https://pubmed.ncbi.nlm.nih.gov/30386805/"
+      ],
+      "epi10": null
+    },
+    {
+      "nombre": "Omega-3 de alta pureza (EPA + DHA)",
+      "dosis": "1.000 mg",
+      "unidad": "EPA + DHA al día",
+      "estado": "mantener",
+      "por_que": {
+        "genetica": "Omega-3 en niveles medios y tendencias en el metabolismo de las grasas.",
+        "habitos": "Cetogénica y pescado una o dos veces por semana. Ya lo tomas."
+      },
+      "como": "Con una comida principal que lleve grasa.",
+      "momentos": [
+        "comida"
+      ],
+      "evidencia": 3,
+      "declaracion": "El EPA y el DHA contribuyen al funcionamiento normal del corazón (con 250 mg al día de EPA y DHA).",
+      "referencias": [
+        "https://pubmed.ncbi.nlm.nih.gov/42124047/"
+      ],
+      "epi10": null
+    }
+  ],
+  "dia": [
+    {
+      "momento": "Mañana",
+      "icono": "sol",
+      "items": [
+        {
+          "tipo": "habito",
+          "texto": "Levántate a tu hora fija"
+        }
+      ]
+    },
+    {
+      "momento": "Comida principal",
+      "icono": "comida",
+      "items": [
+        {
+          "tipo": "complemento",
+          "texto": "Omega-3 · 1.000 mg"
+        },
+        {
+          "tipo": "complemento",
+          "texto": "Creatina · 3 g"
+        },
+        {
+          "tipo": "habito",
+          "texto": "Verdura variada en el plato"
+        }
+      ]
+    },
+    {
+      "momento": "Entrenamiento",
+      "icono": "entreno",
+      "items": [
+        {
+          "tipo": "complemento",
+          "texto": "Colágeno 5 g + vitamina C"
+        },
+        {
+          "tipo": "habito",
+          "texto": "Progresión de cargas"
+        }
+      ]
+    },
+    {
+      "momento": "Noche",
+      "icono": "descanso",
+      "items": [
+        {
+          "tipo": "habito",
+          "texto": "Sin estimulantes"
+        },
+        {
+          "tipo": "habito",
+          "texto": "Rutina de desconexión"
+        }
+      ]
+    }
+  ],
+  "siguientes_pasos": [
+    {
+      "icono": "libro",
+      "titulo": "Lee tu plan",
+      "texto": "Estas páginas. Diez minutos.",
+      "cuando": "Hoy"
+    },
+    {
+      "icono": "conversa",
+      "titulo": "Sesión con tu profesional",
+      "texto": "30 minutos para resolver dudas y acordar el plan.",
+      "cuando": "Esta semana"
+    },
+    {
+      "icono": "movil",
+      "titulo": "Activa Mi plan",
+      "texto": "Tus prioridades, hábitos y complementos, en tu portal.",
+      "cuando": "Tras la sesión"
+    },
+    {
+      "icono": "repetir",
+      "titulo": "Revisión mensual",
+      "texto": "Dos minutos. Tus semáforos se actualizan.",
+      "cuando": "Cada mes"
+    },
+    {
+      "icono": "calendario",
+      "titulo": "Revisión a seis meses",
+      "texto": "Vemos tu evolución y ajustamos.",
+      "cuando": "Mayo 2027"
+    }
+  ],
+  "cta": {
+    "titulo": "Tu plan sigue en tu portal",
+    "texto": "Marca tus hábitos cada semana, haz tu revisión de dos minutos cada mes y pide tus complementos cuando los necesites, con recordatorio de recompra.",
+    "boton": "Entra en tu portal EPI10",
+    "url": "",
+    "nota": "Recomendamos lo que encaja contigo, lo venda EPI10 o no. Puedes comprar tus complementos donde prefieras."
+  },
+  "capa2": {
+    "ancestralidad": {
+      "regiones": [
+        {
+          "nombre": "Península Ibérica",
+          "pct": 68.5,
+          "detalle": "España y Portugal"
+        },
+        {
+          "nombre": "Italia",
+          "pct": 31.5,
+          "detalle": "Norte, centro-sur y Sicilia"
+        }
+      ],
+      "continente": "Europa · 100 %",
+      "linaje_materno": {
+        "haplogrupo": "L2",
+        "sub": "L2b1a",
+        "texto": "Origen en África occidental, hace entre 87.000 y 107.000 años.",
+        "ruta": [
+          {
+            "hg": "L",
+            "hace": 150000
+          },
+          {
+            "hg": "L2",
+            "hace": 97000
+          },
+          {
+            "hg": "L2b1a",
+            "hace": null
+          }
+        ]
+      },
+      "linaje_paterno": {
+        "haplogrupo": "R1b",
+        "sub": "R1b1a1b1a1a1c1a2a1",
+        "texto": "El linaje más frecuente en Europa occidental, hace unos 18.500 años.",
+        "ruta": [
+          {
+            "hg": "Y-Adán",
+            "hace": 300000
+          },
+          {
+            "hg": "A0T",
+            "hace": 160000
+          },
+          {
+            "hg": "BT",
+            "hace": 110000
+          },
+          {
+            "hg": "CT",
+            "hace": 85000
+          },
+          {
+            "hg": "CF",
+            "hace": 68000
+          },
+          {
+            "hg": "F",
+            "hace": 57000
+          },
+          {
+            "hg": "K",
+            "hace": 47000
+          },
+          {
+            "hg": "P",
+            "hace": 44000
+          },
+          {
+            "hg": "R",
+            "hace": 28000
+          },
+          {
+            "hg": "R1",
+            "hace": 24000
+          },
+          {
+            "hg": "R1b",
+            "hace": 18500
+          }
+        ]
+      },
+      "neandertal_pct": 2.0,
+      "neandertal_txt": "834 variantes de origen neandertal en tu ADN. Algo por encima de la media de la base de datos."
+    },
+    "rasgos": [
+      {
+        "categoria": "Metabolismo y composición",
+        "icono": "nutricion",
+        "items": [
+          {
+            "rasgo": "Índice de masa corporal",
+            "tendencia": "alto"
+          },
+          {
+            "rasgo": "Grasa visceral",
+            "tendencia": "alto"
+          },
+          {
+            "rasgo": "Tendencia a comer en exceso",
+            "tendencia": "ligeramente alto"
+          },
+          {
+            "rasgo": "LDL y apolipoproteína B",
+            "tendencia": "alto"
+          }
+        ],
+        "significa": "Ayudan a entender por qué te conviene cuidar la calidad de las grasas y ajustar lo que comes a lo que entrenas."
+      },
+      {
+        "categoria": "Músculo y tendones",
+        "icono": "movimiento",
+        "items": [
+          {
+            "rasgo": "Perfil muscular velocista",
+            "tendencia": "alto"
+          },
+          {
+            "rasgo": "Regeneración muscular",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Riesgo de tendinopatías",
+            "tendencia": "alto"
+          }
+        ],
+        "significa": "Refuerzan la importancia de progresar en las cargas y de recuperar bien."
+      },
+      {
+        "categoria": "Vitaminas y hueso",
+        "icono": "hueso",
+        "items": [
+          {
+            "rasgo": "Vitamina B12",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Vitamina D",
+            "tendencia": "medio"
+          },
+          {
+            "rasgo": "Capacidad antioxidante",
+            "tendencia": "ligeramente bajo"
+          },
+          {
+            "rasgo": "Densidad mineral ósea",
+            "tendencia": "bajo"
+          }
+        ],
+        "significa": "Son tendencias, no déficits confirmados. No justifican complementar de forma automática."
+      },
+      {
+        "categoria": "Descanso y ritmo",
+        "icono": "descanso",
+        "items": [
+          {
+            "rasgo": "Duración del sueño",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Probabilidad de insomnio",
+            "tendencia": "alto"
+          },
+          {
+            "rasgo": "Ritmo matutino",
+            "tendencia": "alto"
+          }
+        ],
+        "significa": "Tiendes a dormir menos y a funcionar mejor temprano. Cuida la regularidad."
+      },
+      {
+        "categoria": "Tolerancia y cafeína",
+        "icono": "comida",
+        "items": [
+          {
+            "rasgo": "Intolerancia a la lactosa",
+            "tendencia": "alto"
+          },
+          {
+            "rasgo": "Alergia al cacahuete",
+            "tendencia": "alto"
+          },
+          {
+            "rasgo": "Enfermedad celíaca",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Rendimiento con cafeína",
+            "tendencia": "alto"
+          }
+        ],
+        "significa": "Manda tu tolerancia real. No elimines alimentos solo por una predisposición."
+      },
+      {
+        "categoria": "Genes del metabolismo",
+        "icono": "genetica",
+        "items": [
+          {
+            "rasgo": "MTHFR C677T",
+            "tendencia": "dos copias",
+            "tipo": "variante"
+          },
+          {
+            "rasgo": "COMT V158M",
+            "tendencia": "una copia",
+            "tipo": "variante"
+          },
+          {
+            "rasgo": "MTR y MTRR",
+            "tendencia": "sin variantes",
+            "tipo": "variante"
+          },
+          {
+            "rasgo": "Hierro en hígado",
+            "tendencia": "alto"
+          }
+        ],
+        "significa": "Rutas del folato, del estrés y del hierro. Por eso te pedimos prudencia con el multivitamínico."
+      },
+      {
+        "categoria": "Corazón y hormonas",
+        "icono": "corazon",
+        "items": [
+          {
+            "rasgo": "Frecuencia cardiaca en reposo",
+            "tendencia": "alto"
+          },
+          {
+            "rasgo": "Intervalo QT",
+            "tendencia": "alto"
+          },
+          {
+            "rasgo": "TSH",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Estradiol",
+            "tendencia": "alto"
+          }
+        ],
+        "significa": "No son pruebas cardiológicas ni hormonales. Cualquier síntoma o antecedente, con tu médico."
+      }
+    ],
+    "sensible": {
+      "consentimiento": true,
+      "farmacogenetica": [
+        {
+          "familia": "Antidepresivos",
+          "resultado": "Metabolizador rápido de CYP2C19. Posibles ajustes con citalopram y escitalopram; varios tricíclicos, a evitar.",
+          "relevancia": "Solo si algún día te los recetan."
+        },
+        {
+          "familia": "Estatinas",
+          "resultado": "Más riesgo de miopatía con fluvastatina. El resto, dosis estándar.",
+          "relevancia": "Útil si se valora este tratamiento."
+        },
+        {
+          "familia": "Anticoagulantes",
+          "resultado": "Más riesgo de sangrado a dosis estándar con warfarina y fluindiona.",
+          "relevancia": "Solo en contexto médico."
+        },
+        {
+          "familia": "Anestesia",
+          "resultado": "Bloqueo neuromuscular prolongado con mivacurio y succinilcolina. Riesgo bajo de hipertermia maligna.",
+          "relevancia": "Coméntalo antes de una intervención."
+        },
+        {
+          "familia": "Otros fármacos",
+          "resultado": "Metotrexato, isoniazida, efavirenz y tacrólimus con respuesta diferente.",
+          "relevancia": "Solo si llegan a usarse."
+        }
+      ],
+      "predisposiciones": [
+        {
+          "categoria": "Tiroides",
+          "items": [
+            {
+              "nombre": "Cáncer no medular de tiroides",
+              "nivel": "alto"
+            },
+            {
+              "nombre": "Enfermedad de Graves y bocio",
+              "nivel": "medio"
+            },
+            {
+              "nombre": "Hipotiroidismo y Hashimoto",
+              "nivel": "ligeramente bajo"
+            }
+          ]
+        },
+        {
+          "categoria": "Corazón y vasos",
+          "items": [
+            {
+              "nombre": "Hiperlipidemia e hipercolesterolemia",
+              "nivel": "ligeramente alto"
+            },
+            {
+              "nombre": "Enfermedad arterial periférica",
+              "nivel": "ligeramente alto"
+            },
+            {
+              "nombre": "Cardiopatía, infarto, hipertensión e ictus",
+              "nivel": "medio"
+            }
+          ]
+        },
+        {
+          "categoria": "Piel",
+          "items": [
+            {
+              "nombre": "Carcinoma basocelular y escamoso; queratosis actínica",
+              "nivel": "ligeramente alto"
+            },
+            {
+              "nombre": "Melanoma",
+              "nivel": "medio"
+            }
+          ]
+        },
+        {
+          "categoria": "Digestivo",
+          "items": [
+            {
+              "nombre": "Esófago de Barrett y hemorroides",
+              "nivel": "ligeramente alto"
+            },
+            {
+              "nombre": "Crohn, colitis, reflujo, pólipos y colorrectal",
+              "nivel": "medio"
+            }
+          ]
+        },
+        {
+          "categoria": "Otros",
+          "items": [
+            {
+              "nombre": "Glioma, hernia inguinal, trastorno bipolar, sarcoidosis",
+              "nivel": "ligeramente alto"
+            }
+          ]
+        }
+      ],
+      "predisposiciones_txt": "Una predisposición es una probabilidad estadística comparada con la población. No indica que tengas ni que vayas a tener ninguna de estas condiciones. Donde puedes actuar, tus hábitos pesan: protección solar, calidad de la dieta y revisiones habituales.",
+      "hereditarias": [
+        {
+          "condicion": "Hemocromatosis hereditaria tipo 1 (gen HFE)",
+          "resultado": "Variante presente",
+          "significa": "No confirma acumulación de hierro. Por eso evitamos hierro sin una necesidad clara."
+        },
+        {
+          "condicion": "Deficiencia de biotinidasa",
+          "resultado": "Variante presente",
+          "significa": "No es un diagnóstico. Información del panel analizado."
+        }
+      ]
+    }
+  },
+  "referencias": [
+    {
+      "texto": "Creatina y entrenamiento de fuerza (metaanálisis)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27523919/"
+    },
+    {
+      "texto": "Péptidos de colágeno y ejercicio (revisión sistemática)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37424319/"
+    },
+    {
+      "texto": "Vitamina C y formación de colágeno",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30386805/"
+    },
+    {
+      "texto": "EPA, DHA y función cardiaca",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42124047/"
+    }
+  ],
+  "contacto": {
+    "telefono": "676 178 422",
+    "email": "info@epi10.es",
+    "web": "www.epi10.es",
+    "direccion": "Enclave Innovaparq ULL · San Cristóbal de La Laguna · Santa Cruz de Tenerife"
+  }
+}

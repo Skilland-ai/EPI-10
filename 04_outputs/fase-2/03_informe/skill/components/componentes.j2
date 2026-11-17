@@ -1,0 +1,299 @@
+{# EPI10 · Informe visual · componentes
+   Cada macro es una pieza reutilizable: sirve igual en el PDF (A4) y en la vista del portal.
+   Catálogo y reglas de uso: references/sistema-visual.md.  Iconos: components/iconos.svg. #}
+
+{% macro icono(nombre, clase="") -%}
+<svg class="ic {{ clase }}" aria-hidden="true"><use href="#i-{{ nombre }}"/></svg>
+{%- endmacro %}
+
+{% macro kicker(texto, oscuro=false) -%}
+<div class="kicker{{ ' oscuro' if oscuro }}"><span class="barras-logo"><i></i><i></i><i></i></span>{{ texto }}</div>
+{%- endmacro %}
+
+{# Chip de estado del semáforo: verde · ambar · rojo · info #}
+{% macro estado(est, texto=none) -%}
+{% set e = ESTADOS.get(est, ESTADOS['info']) %}
+<span class="chip-estado {{ e[0] }}"><i></i>{{ texto or e[1] }}</span>
+{%- endmacro %}
+
+{# Etiqueta de origen del dato: genetica · habitos · analitica #}
+{% macro origen(tipo, texto=none) -%}
+{% set nombres = {'genetica':'Genética','habitos':'Hábitos','analitica':'Analítica'} %}
+<span class="origen {{ tipo }}">{{ icono(tipo) }}{{ texto or nombres[tipo] }}</span>
+{%- endmacro %}
+
+{# Línea «lo que vemos»: origen + frase #}
+{% macro vemos(tipo, texto) -%}
+<div class="vemos {{ tipo }}">{{ icono(tipo) }}<span>{{ texto }}</span></div>
+{%- endmacro %}
+
+{# ── 1. Tres prioridades ─────────────────────────────── #}
+{% macro prioridades(lista, areas, compacto=false) -%}
+<ol class="prioridades{{ ' compacto' if compacto }}">
+{% for p in lista %}
+  {% set a = areas[p.area] %}
+  <li class="prioridad {{ ESTADOS[a.estado][0] }}">
+    <span class="prio-n">{{ p.n }}</span>
+    <div class="prio-txt">
+      <div class="prio-area">{{ icono(a.id) }}{{ a.nombre }}</div>
+      <h3>{{ p.titulo }}</h3>
+      <p>{{ p.frase }}</p>
+    </div>
+  </li>
+{% endfor %}
+</ol>
+{%- endmacro %}
+
+{# ── 2. Rueda del perfil + leyenda con puntuaciones ──── #}
+{% macro rueda(areas_lista) -%}
+<div class="rueda-wrap">{{ rueda_svg(areas_lista) }}</div>
+{%- endmacro %}
+
+{% macro rueda_leyenda(areas_lista) -%}
+<table class="leyenda-areas">
+  <thead><tr><th>Área</th><th>Estado</th><th>Hábitos</th><th>Genética</th></tr></thead>
+  <tbody>
+  {% for a in areas_lista %}
+    <tr>
+      <td class="la-nombre">{{ icono(a.id) }}<span><b>{{ a.nombre }}</b><small>{{ a.frase }}</small></span></td>
+      <td>{{ estado(a.estado) }}</td>
+      <td>{{ puntos(a.habitos) }}</td>
+      <td>{{ barras_genetica(a.genetica) }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{%- endmacro %}
+
+{# Leyenda compacta de la rueda (bajo la rueda en la página resumen) #}
+{% macro rueda_mini(areas_lista) -%}
+<ul class="rueda-mini">
+{% for a in areas_lista %}<li class="{{ ESTADOS[a.estado][0] }}"><i></i><b>{{ a.nombre }}</b><span>{{ a.frase }}</span></li>{% endfor %}
+</ul>
+{%- endmacro %}
+
+{# Cómo leer los colores: semáforo frente a escala neutra y origen del dato #}
+{% macro como_leer() -%}
+<div class="como-leer">
+  <div><h4>El semáforo · lo que puedes cambiar</h4>
+    <p><span class="chip-estado verde"><i></i>Vas bien</span><span class="chip-estado ambar"><i></i>Mejorable</span><span class="chip-estado rojo"><i></i>Prioridad</span></p>
+    <small>Solo para tus áreas, hábitos y complementos. Cambia de color cuando avanzas.</small></div>
+  <div><h4>El azul · lo que te describe</h4>
+    <p>{{ escala_html('ligeramente alto') }}</p>
+    <small>Para tendencias genéticas. Ni buenas ni malas: no cambian, pero orientan.</small></div>
+  <div><h4>De dónde sale cada dato</h4>
+    <p>{{ origen('genetica') }} {{ origen('habitos') }} {{ origen('analitica') }}</p>
+    <small>Cada conclusión dice si viene de tus genes, de tus hábitos o de tu analítica.</small></div>
+</div>
+{%- endmacro %}
+
+{# ── 3. Mapa de prioridades (genética × hábitos) ─────── #}
+{% macro matriz(areas_lista) -%}
+<figure class="matriz-wrap">{{ matriz_svg(areas_lista) }}</figure>
+{%- endmacro %}
+
+{# ── 4. Mapa del cuerpo ──────────────────────────────── #}
+{% macro cuerpo(marcadores) -%}
+<div class="cuerpo-wrap">
+  <div class="cuerpo-fig">{{ cuerpo_svg(marcadores) }}</div>
+  <ol class="cuerpo-lista">
+  {% for m in marcadores %}
+    <li><span class="cl-n" style="background:{{ '#01447b' if nivel(m.nivel)==5 else ('#4682b8' if nivel(m.nivel)==4 else '#86b1d6') }}">{{ loop.index }}</span>
+      <div><b>{{ m.titulo }}</b><span>{{ m.texto }}</span></div></li>
+  {% endfor %}
+  </ol>
+</div>
+{%- endmacro %}
+
+{# ── 5. Perfil de partida (hábitos declarados) ───────── #}
+{% macro perfil(lista) -%}
+<ul class="perfil">
+{% for h in lista %}
+  <li class="{{ ESTADOS.get(h.estado, ESTADOS['info'])[0] }}">
+    <span class="pf-ic">{{ icono(h.icono) }}</span>
+    <div><small>{{ h.etiqueta }}</small><b>{{ h.valor }}</b></div>
+    <i class="pf-dot"></i>
+  </li>
+{% endfor %}
+</ul>
+{%- endmacro %}
+
+{# ── 6. Semáforo de hábitos: tarjeta ─────────────────── #}
+{% macro tarjeta_habito(h, areas) -%}
+{% set e = ESTADOS[h.estado] %}
+<article class="habito {{ e[0] }}">
+  <header>
+    <span class="hb-luz"><i class="r"></i><i class="a"></i><i class="v"></i></span>
+    <div><h3>{{ h.titulo }}</h3><small>{{ icono(h.area) }}{{ areas[h.area].nombre }}</small></div>
+    {{ estado(h.estado) }}
+  </header>
+  <div class="hb-vemos">
+    {{ vemos('genetica', h.vemos.genetica) }}
+    {{ vemos('habitos', h.vemos.habitos) }}
+  </div>
+  <div class="hb-accion">{{ icono('diana') }}<p><b>Tu acción.</b> {{ h.accion }}{% if h.por_que %} <span class="hb-pq">{{ h.por_que }}</span>{% endif %}</p></div>
+  <footer>{{ icono('repetir') }}<span>{{ h.frecuencia }} · en tu portal: <b>{{ h.indicador }}</b></span></footer>
+</article>
+{%- endmacro %}
+
+{# ── 7. Tu complementación hoy ───────────────────────── #}
+{% macro complementacion_hoy(lista) -%}
+{% set antes = lista | rejectattr('estado','equalto','anadir') | list %}
+<div class="ch-resumen">
+  <div class="ch-col"><small>Hoy tomas</small><b>{{ antes | length }}</b>
+    <div class="ch-pills">{% for c in antes %}<span>{{ c.nombre }}</span>{% endfor %}</div></div>
+  <span class="ch-flecha">{{ icono('flecha') }}</span>
+  <div class="ch-col"><small>Con tu plan</small>
+    <div class="ch-cuentas">
+    {% for k in ['mantener','revisar','dejar','anadir'] %}
+      {% set n = lista | selectattr('estado','equalto',k) | list | length %}
+      {% if n %}{% set e = ESTADOS_COMPLEMENTO[k] %}<span class="ch-cuenta {{ e[0] }}"><b>{{ n }}</b>{{ e[1] | lower }}</span>{% endif %}
+    {% endfor %}
+    </div></div>
+</div>
+<table class="ch-tabla">
+  <tbody>
+  {% for c in lista %}
+    {% set e = ESTADOS_COMPLEMENTO[c.estado] %}
+    <tr class="{{ e[0] }}">
+      <td class="ch-estado"><span class="pastilla {{ e[0] }}">{{ icono(e[2]) }}{{ e[1] }}</span></td>
+      <td class="ch-nombre">{{ c.nombre }}</td>
+      <td class="ch-motivo">{{ c.motivo }}</td>
+      <td class="ch-ajuste">{{ c.ajuste }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{%- endmacro %}
+
+{# ── 8. Tarjeta de complemento ───────────────────────── #}
+{% macro tarjeta_complemento(c, n) -%}
+{% set e = ESTADOS_COMPLEMENTO[c.estado] %}
+<article class="complemento">
+  <header>
+    <span class="cp-n">{{ n }}</span>
+    <div class="cp-nombre"><h3>{{ c.nombre }}</h3><span class="pastilla {{ e[0] }}">{{ icono(e[2]) }}{{ e[1] }}</span></div>
+    <div class="cp-dosis"><b>{{ c.dosis }}</b><small>{{ c.unidad }}</small></div>
+  </header>
+  <div class="cp-cuerpo">
+    <div class="cp-pq">
+      <h4>Por qué en tu caso</h4>
+      {{ vemos('genetica', c.por_que.genetica) }}
+      {{ vemos('habitos', c.por_que.habitos) }}
+    </div>
+    <div class="cp-como">
+      <h4>Cómo tomarlo</h4>
+      <div class="cp-momentos">{% for m in c.momentos %}{% set mm = MOMENTOS[m] %}<span>{{ icono(mm[0]) }}{{ mm[1] }}</span>{% endfor %}</div>
+      <p>{{ c.como }}</p>
+      <h4>Evidencia científica</h4>
+      <div class="cp-evid"><span class="ev">{% for k in range(3) %}<i class="{{ 'on' if k < c.evidencia }}"></i>{% endfor %}</span>{{ EVIDENCIA_TXT[c.evidencia] }}</div>
+    </div>
+  </div>
+  <blockquote class="cp-decl"><small>Declaración autorizada en la UE</small>{{ c.declaracion }}</blockquote>
+  <footer>
+    <span class="cp-ref">{{ icono('libro') }}{% for r in c.referencias %}<a href="{{ r }}">{{ r | replace('https://','') | replace('pubmed.ncbi.nlm.nih.gov','PubMed') | replace('pmc.ncbi.nlm.nih.gov/articles','PMC') | trim('/') }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>
+    {% if c.epi10 %}
+      <span class="cp-epi10">{{ icono('bolsa') }}Disponible en EPI10: <b>{{ c.epi10.nombre }}</b>{% if c.epi10.nota %} · {{ c.epi10.nota }}{% endif %}</span>
+    {% else %}
+      <span class="cp-pide">{{ icono('bolsa') }}Pídelo desde tu portal o donde prefieras</span>
+    {% endif %}
+  </footer>
+</article>
+{%- endmacro %}
+
+{# ── 9. Tu día ───────────────────────────────────────── #}
+{% macro tu_dia(momentos) -%}
+<ol class="dia">
+{% for m in momentos %}
+  <li>
+    <div class="dia-cab">{{ icono(m.icono) }}<b>{{ m.momento }}</b></div>
+    <ul>{% for it in m["items"] %}<li class="it-{{ it.tipo }}">{{ icono('complementacion' if it.tipo == 'complemento' else 'check') }}{{ it.texto }}</li>{% endfor %}</ul>
+  </li>
+{% endfor %}
+</ol>
+{%- endmacro %}
+
+{# ── 10. Siguientes pasos ────────────────────────────── #}
+{% macro pasos(lista) -%}
+<ol class="pasos">
+{% for p in lista %}
+  <li><span class="ps-ic">{{ icono(p.icono) }}</span><small>{{ p.cuando }}</small><b>{{ p.titulo }}</b><span>{{ p.texto }}</span></li>
+{% endfor %}
+</ol>
+{%- endmacro %}
+
+{# Vista previa de la revisión mensual (sale de los indicadores de cada hábito) #}
+{% macro revision(habitos) -%}
+<section class="revision">
+  <header>{{ icono('repetir') }}<div><h3>Tu primera revisión mensual</h3><small>Dos minutos en tu portal. Así se actualizan tus colores.</small></div></header>
+  <ul>
+  {% for h in habitos[:4] %}
+    <li><span class="rv-dot {{ ESTADOS[h.estado][0] }}"></span><span class="rv-q">{{ h.indicador }}</span>
+      <span class="rv-op"><i>No</i><i>A medias</i><i>Sí</i></span></li>
+  {% endfor %}
+  </ul>
+</section>
+{%- endmacro %}
+
+{# ── 11. Llamada a la acción ─────────────────────────── #}
+{% macro cta(c) -%}
+<section class="cta">
+  <div class="cta-txt">
+    {{ kicker('Mi plan · portal EPI10', true) }}
+    <h2>{{ c.titulo }}</h2>
+    <p>{{ c.texto }}</p>
+    <span class="cta-boton">{{ icono('movil') }}{{ c.boton }}{% if c.url %} · {{ c.url }}{% endif %}</span>
+  </div>
+  <ul class="cta-lista">
+    <li>{{ icono('check') }}<span><b>Hábitos con semáforo</b>Márcalos una vez por semana.</span></li>
+    <li>{{ icono('repetir') }}<span><b>Revisión mensual</b>Dos minutos. Ves cómo cambian tus colores.</span></li>
+    <li>{{ icono('bolsa') }}<span><b>Tus complementos</b>Qué tomar, qué mantener y qué dejar, con recompra.</span></li>
+    <li>{{ icono('conversa') }}<span><b>Tu profesional</b>Mensajes y citas desde el mismo sitio.</span></li>
+  </ul>
+  <p class="cta-nota">{{ c.nota }}</p>
+</section>
+{%- endmacro %}
+
+{# ── 12. Qué es y qué no es ──────────────────────────── #}
+{% macro es_no_es() -%}
+<div class="es-no">
+  <div class="es"><h4>{{ icono('check') }}Este informe es</h4>
+    <ul><li>Una orientación de bienestar, nutrición y hábitos.</li><li>Tu genética leída junto a tus hábitos y tu contexto.</li><li>Revisado por un profesional de EPI10.</li></ul></div>
+  <div class="no"><h4>{{ icono('cruz') }}No es</h4>
+    <ul><li>Un diagnóstico ni un tratamiento.</li><li>Una predicción de lo que te va a pasar.</li><li>Un sustituto de tu médico: sus indicaciones van primero.</li></ul></div>
+</div>
+{%- endmacro %}
+
+{# ── 13. Escala neutra (tendencias genéticas) ────────── #}
+{% macro tabla_rasgos(r) -%}
+<article class="rasgos">
+  <header>{{ icono(r.icono) }}<h3>{{ r.categoria }}</h3></header>
+  <ul>{% for it in r["items"] %}<li><span>{{ it.rasgo }}</span>{{ escala_html(it.tendencia) }}</li>{% endfor %}</ul>
+  <p>{{ r.significa }}</p>
+</article>
+{%- endmacro %}
+
+{# ── 14. Ancestralidad ───────────────────────────────── #}
+{% macro ancestralidad(a) -%}
+<div class="ancestro">
+  <div class="an-barra">{% for r in a.regiones %}<span style="flex:{{ r.pct }};--c:{{ ['#01447b','#029acc','#86b1d6','#bcd3e8'][loop.index0 % 4] }}"><b>{{ ('%.1f' % r.pct) | replace('.', ',') }} %</b></span>{% endfor %}</div>
+  <ul class="an-leyenda">{% for r in a.regiones %}<li><i style="background:{{ ['#01447b','#029acc','#86b1d6','#bcd3e8'][loop.index0 % 4] }}"></i><b>{{ r.nombre }}</b><span>{{ r.detalle }}</span></li>{% endfor %}<li class="an-cont">{{ a.continente }}</li></ul>
+  <div class="an-linajes">
+    <div><small>Linaje materno</small><b>{{ a.linaje_materno.haplogrupo }}</b><span class="an-sub">{{ a.linaje_materno.sub }}</span><p>{{ a.linaje_materno.texto }}</p></div>
+    {% if a.linaje_paterno %}
+    <div><small>Linaje paterno</small><b>{{ a.linaje_paterno.haplogrupo }}</b><span class="an-sub">{{ a.linaje_paterno.sub }}</span><p>{{ a.linaje_paterno.texto }}</p></div>
+    {% else %}
+    <div class="an-na"><small>Linaje paterno</small><b>No aplica</b><p>Se lee en el cromosoma Y, que solo tienen los hombres biológicos.</p></div>
+    {% endif %}
+    <div><small>ADN neandertal</small><b>{{ ('%.0f' % a.neandertal_pct) }} %</b>
+      <span class="an-nea"><i style="width:{{ a.neandertal_pct / 4 * 100 }}%"></i></span><span class="an-esc"><span>0 %</span><span>4 %</span></span>
+      <p>{{ a.neandertal_txt }}</p></div>
+  </div>
+  {% if a.linaje_materno.ruta is defined %}<figure class="linaje-wrap"><figcaption>Tus linajes en el tiempo · años atrás</figcaption>{{ linaje_svg(a.linaje_materno.ruta, a.linaje_paterno.ruta if a.linaje_paterno else none) }}</figure>{% endif %}
+</div>
+{%- endmacro %}
+
+{# ── 15. Bloque sensible ─────────────────────────────── #}
+{% macro aviso_sensible(texto) -%}
+<div class="sensible-aviso">{{ icono('candado') }}<div><b>Información sensible · la ves porque la pediste.</b><span>{{ texto }}</span></div></div>
+{%- endmacro %}

@@ -1,0 +1,259 @@
+{# EPI10 · Informe visual · plantilla
+   Capa 1 «Tu plan» (págs. 1-8) y capa 2 «Tu perfil completo» (anexo).
+   Una página = un trabajo. El contenido sale SIEMPRE de los datos (d); aquí no se escribe texto de cliente,
+   salvo los textos fijos de método y avisos, que son comunes a todos los informes. #}
+{% import "components/componentes.j2" as c with context %}
+{% set ns = namespace(p=0) %}
+{% set nombre = d.meta.cliente.nombre %}
+
+{% macro pagina(seccion, clase="") -%}
+{% set ns.p = ns.p + 1 %}
+<section class="pag {{ clase }}" data-seccion="{{ seccion }}">
+  <header class="cab"><img src="{{ logo_azul }}" alt="EPI10"><span>{{ seccion }}</span></header>
+  <div class="cuerpo">{{ caller() }}</div>
+  <footer class="pie"><span>{{ d.meta.producto }} · {{ d.meta.titulo }} de {{ nombre }} · {{ d.meta.fecha }}</span><span>Orientativo · no es un diagnóstico</span><b>{{ '%02d' % ns.p }}</b></footer>
+</section>
+{%- endmacro %}
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ d.meta.producto }} · {{ d.meta.titulo }} de {{ nombre }}</title>
+<style>{{ css | safe }}</style>
+</head>
+<body class="modo-{{ modo }}">
+{{ iconos | safe }}
+<main class="doc">
+
+{# ═══════════════ 1 · PORTADA ═══════════════ #}
+{% set ns.p = ns.p + 1 %}
+<section class="pag portada">
+  <div class="pt-fondo"></div>
+  <div class="pt-barras"><i></i><i></i><i></i></div>
+  <header class="pt-cab"><img src="{{ logo_blanco }}" alt="EPI10"><span>{{ d.meta.producto }}</span></header>
+  <div class="pt-centro">
+    {{ c.kicker('Informe de bienestar personalizado', true) }}
+    <h1>{{ d.meta.titulo }},<br>{{ nombre }}.</h1>
+    <p class="pt-lead">Tu genética y tus hábitos, convertidos en tres prioridades y un plan que revisamos contigo.</p>
+  </div>
+  <div class="pt-prios">
+    {% for p in d.prioridades %}{% set a = areas[p.area] %}
+    <div class="pt-prio"><span class="pt-n {{ ESTADOS[a.estado][0] }}">{{ p.n }}</span><b>{{ p.titulo }}</b></div>
+    {% endfor %}
+  </div>
+  <footer class="pt-pie">
+    <div><small>Preparado para</small><b>{{ nombre }} · {{ d.meta.cliente.codigo }}</b></div>
+    <div><small>Fecha</small><b>{{ d.meta.fecha }}</b></div>
+    <div><small>Revisado por</small><b>{{ d.meta.revisado_por }}</b></div>
+    <div class="pt-capas"><span><b>Tu plan</b> págs. 2–8</span><span><b>Tu perfil completo</b> anexo</span></div>
+  </footer>
+  {% if d.meta.ejemplo %}<p class="pt-ejemplo">{{ d.meta.nota_ejemplo }}</p>{% endif %}
+</section>
+
+{# ═══════════════ 2 · TU PLAN EN UNA PÁGINA ═══════════════ #}
+{% call pagina('Tu plan en una página', 'resumen-pag') %}
+  {{ c.kicker('Tu plan en una página') }}
+  <h1 class="h1">{{ d.resumen.frase }}</h1>
+  <div class="res-grid">
+    <div class="res-rueda">
+      {{ c.rueda(d.areas) }}
+      {{ c.rueda_mini(d.areas) }}
+    </div>
+    <div class="res-prios">
+      <h2 class="h2">Tus tres prioridades</h2>
+      {{ c.prioridades(d.prioridades, areas) }}
+    </div>
+  </div>
+  <div class="res-pie">
+    <div class="res-bien">
+      <h4>{{ c.icono('check') }}Lo que ya haces bien</h4>
+      <ul>{% for x in d.resumen.lo_que_haces_bien %}<li>{{ x }}</li>{% endfor %}</ul>
+    </div>
+    <div class="res-comp">
+      {% set lista = d.complementacion_actual %}
+      <h4>{{ c.icono('complementacion') }}Tu complementación</h4>
+      <div class="res-comp-n">
+        {% for k in ['mantener','revisar','dejar','anadir'] %}{% set n = lista | selectattr('estado','equalto',k) | list | length %}{% if n %}{% set e = ESTADOS_COMPLEMENTO[k] %}<span class="ch-cuenta {{ e[0] }}"><b>{{ n }}</b>{{ e[1] | lower }}</span>{% endif %}{% endfor %}
+      </div>
+      <small>Detalle en la página 6</small>
+    </div>
+    <div class="res-sig">
+      <h4>{{ c.icono('flecha') }}Siguiente paso</h4>
+      <p><b>{{ d.siguientes_pasos[1].titulo }}.</b> {{ d.siguientes_pasos[1].texto }}</p>
+    </div>
+  </div>
+{% endcall %}
+
+{# ═══════════════ 3 · TU PUNTO DE PARTIDA ═══════════════ #}
+{% call pagina('Tu punto de partida') %}
+  {{ c.kicker('Tu punto de partida') }}
+  <h1 class="h1">Hemos leído tu genética junto a tu vida real.</h1>
+  <p class="lead">Tu genética marca una tendencia. Tus hábitos deciden el resultado. Por eso cada conclusión de este informe dice de dónde sale.</p>
+  <div class="fuentes">
+    <div class="fuente genetica">{{ c.icono('genetica') }}<b>Test genético</b><span>Cómo procesa tu cuerpo los nutrientes, el esfuerzo y el descanso. Laboratorio: TellmeGen.</span></div>
+    <div class="fuente habitos">{{ c.icono('habitos') }}<b>Cuestionario de hábitos</b><span>Tu alimentación, actividad, sueño, estrés y lo que ya tomas. Pesa tanto como tus genes.</span></div>
+    {% if d.analitica.aportada %}<div class="fuente analitica">{{ c.icono('analitica') }}<b>Tu analítica</b><span>{{ d.analitica.resumen }}</span></div>{% endif %}
+  </div>
+  <h2 class="h2">Lo que nos has contado</h2>
+  {{ c.perfil(d.perfil_habitos) }}
+  <h2 class="h2 sep">Cómo leer los colores</h2>
+  {{ c.como_leer() }}
+  <div class="grow"></div>
+  {{ c.es_no_es() }}
+{% endcall %}
+
+{# ═══════════════ 4 · POR QUÉ ESTAS PRIORIDADES ═══════════════ #}
+{% call pagina('Por qué estas prioridades') %}
+  {{ c.kicker('Genética + hábitos') }}
+  <h1 class="h1">Por qué estas tres prioridades y no otras.</h1>
+  <p class="lead">Cruzamos dos preguntas por área: ¿cuánta señal da tu genética? ¿Cómo son tus hábitos hoy? Donde las dos apuntan al mismo sitio, está tu prioridad.</p>
+  <div class="por-que">
+    {{ c.matriz(d.areas) }}
+    {{ c.rueda_leyenda(d.areas) }}
+  </div>
+  <div class="cuerpo-bloque">
+    <div class="cb-txt">
+      <h2 class="h2">Dónde se nota tu genética</h2>
+      <p>Las tendencias más relevantes de tu test, sobre el cuerpo. Son probabilidades, no diagnósticos: el azul más intenso marca la señal más fuerte.</p>
+    </div>
+    {{ c.cuerpo(d.cuerpo) }}
+  </div>
+{% endcall %}
+
+{# ═══════════════ 5 · SEMÁFORO DE HÁBITOS ═══════════════ #}
+{% call pagina('El semáforo de tus hábitos') %}
+  {{ c.kicker('El semáforo de tus hábitos') }}
+  <h1 class="h1">{{ d.habitos | length }} hábitos. Uno por semana es suficiente.</h1>
+  <p class="lead">Cada hábito tiene su color, lo que vemos en ti y una acción concreta. En tu portal los marcas una vez por semana y el color cambia cuando avanzas.</p>
+  <div class="hb-grid">
+    {% for est in ['rojo','ambar','verde'] %}{% for h in d.habitos | selectattr('estado','equalto',est) %}{{ c.tarjeta_habito(h, areas) }}{% endfor %}{% endfor %}
+  </div>
+{% endcall %}
+
+{# ═══════════════ 6 · TU COMPLEMENTACIÓN HOY ═══════════════ #}
+{% call pagina('Tu complementación hoy') %}
+  {{ c.kicker('Tu complementación hoy') }}
+  <h1 class="h1">Antes de añadir nada, ordenamos lo que ya tomas.</h1>
+  <p class="lead">Revisamos cada producto con tu genética, tu deporte y tu dieta. Te decimos qué mantener, qué revisar y, si hace falta, qué dejar.</p>
+  {{ c.complementacion_hoy(d.complementacion_actual) }}
+  <div class="grow"></div>
+  {% if d.medicacion %}<div class="aviso-med">{{ c.icono('capsula-med') }}<p><b>Tu medicación.</b> {{ d.medicacion }}</p></div>
+  {% else %}<div class="aviso-med">{{ c.icono('capsula-med') }}<p><b>Si empiezas a tomar medicación,</b> consulta con tu médico antes de mantener estos complementos. Sus indicaciones van siempre primero.</p></div>{% endif %}
+{% endcall %}
+
+{# ═══════════════ 7 · TUS COMPLEMENTOS ═══════════════ #}
+{% call pagina('Tus complementos') %}
+  {{ c.kicker('Tus complementos recomendados') }}
+  <h1 class="h1">{{ d.complementos | length }} complementos, con dosis y motivo.</h1>
+  <div class="cp-grid">
+    {% for x in d.complementos %}{{ c.tarjeta_complemento(x, loop.index) }}{% endfor %}
+  </div>
+{% endcall %}
+
+{# ═══════════════ 8 · TU DÍA Y TU PLAN SIGUE ═══════════════ #}
+{% call pagina('Tu plan en marcha') %}
+  {{ c.kicker('Tu día') }}
+  <h1 class="h1">Así queda tu plan en un día normal.</h1>
+  {{ c.tu_dia(d.dia) }}
+  <h2 class="h2 sep">Lo que viene ahora</h2>
+  {{ c.pasos(d.siguientes_pasos) }}
+  {{ c.revision(d.habitos) }}
+  <div class="grow"></div>
+  {{ c.cta(d.cta) }}
+{% endcall %}
+
+{% if capa2 %}
+{# ═══════════════ 9 · CAPA 2 · ANCESTRALIDAD ═══════════════ #}
+{% call pagina('Tu perfil completo', 'capa2') %}
+  <div class="capa2-cab">
+    {{ c.kicker('Capa 2 · Tu perfil completo') }}
+    <h1 class="h1">Para consultar cuando quieras.</h1>
+    <p class="lead">Tu plan ya está en las páginas anteriores. Aquí tienes el resto de tu información genética, ordenada de lo curioso a lo sensible.</p>
+    <ol class="capa2-indice">
+      <li>{{ c.icono('globo') }}<b>De dónde vienes</b><span>Esta página</span></li>
+      <li>{{ c.icono('genetica') }}<b>Tus rasgos</b><span>Página {{ ns.p + 1 }}</span></li>
+      {% set sens = 1 if d.capa2.sensible.consentimiento else 0 %}
+      <li>{{ c.icono('candado') }}<b>Información sensible</b><span>{{ ('Página %d' % (ns.p + 2)) if sens else 'No solicitada' }}</span></li>
+      <li>{{ c.icono('libro') }}<b>Método y referencias</b><span>Página {{ ns.p + 2 + sens }}</span></li>
+    </ol>
+  </div>
+  <h2 class="h2">De dónde vienes</h2>
+  {{ c.ancestralidad(d.capa2.ancestralidad) }}
+{% endcall %}
+
+{# ═══════════════ 10 · RASGOS ═══════════════ #}
+{% call pagina('Tu perfil completo · rasgos', 'capa2') %}
+  {{ c.kicker('Tus rasgos') }}
+  <h1 class="h1">Tus tendencias genéticas, de un vistazo.</h1>
+  <p class="lead">La escala va de bajo a alto comparado con la población. Es azul a propósito: una tendencia no es buena ni mala, solo te describe.</p>
+  <div class="rasgos-grid">
+    {% for r in d.capa2.rasgos %}{{ c.tabla_rasgos(r) }}{% endfor %}
+  </div>
+{% endcall %}
+
+{# ═══════════════ 11 · INFORMACIÓN SENSIBLE (una sola página, con control granular) ═══════════════ #}
+{% if d.capa2.sensible.consentimiento %}
+{% call pagina('Información sensible', 'capa2 sensible') %}
+  {{ c.kicker('Información sensible') }}
+  <h1 class="h1">Medicamentos, riesgos y herencia.</h1>
+  {{ c.aviso_sensible(d.capa2.sensible.predisposiciones_txt) }}
+  <h2 class="h2">{{ c.icono('capsula-med') }} Cómo podrías responder a algunos medicamentos</h2>
+  <div class="farma">
+    {% for f in d.capa2.sensible.farmacogenetica %}
+    <article><h3>{{ f.familia }}</h3><p>{{ f.resultado }}</p><small>{{ c.icono('persona') }}{{ f.relevancia }}</small></article>
+    {% endfor %}
+    <article class="lleva">{{ c.icono('conversa') }}<p><b>Llévalo a tu médico.</b> No cambies ninguna medicación por tu cuenta. Si te recetan un fármaco o vas a una intervención con anestesia, enséñale esta página.</p></article>
+  </div>
+  <h2 class="h2 sep">Predisposiciones y condiciones hereditarias</h2>
+  <div class="predis">
+    {% for g in d.capa2.sensible.predisposiciones %}
+    <article><h3>{{ g.categoria }}</h3>
+      <ul>{% for it in g["items"] %}<li><span>{{ it.nombre }}</span>{{ escala_html(it.nivel) }}</li>{% endfor %}</ul>
+    </article>
+    {% endfor %}
+    <article class="hered"><h3>Condiciones hereditarias</h3>
+      <ul class="hered-lista">{% for h in d.capa2.sensible.hereditarias %}<li><em>{{ h.resultado }}</em><b>{{ h.condicion }}</b><span>{{ h.significa }}</span></li>{% endfor %}</ul>
+    </article>
+  </div>
+{% endcall %}
+{% endif %}
+
+{# ═══════════════ 13 · MÉTODO, AVISOS Y REFERENCIAS ═══════════════ #}
+{% call pagina('Método y referencias', 'capa2') %}
+  {{ c.kicker('Cómo hemos hecho tu informe') }}
+  <h1 class="h1">Método, límites y fuentes.</h1>
+  <div class="metodo">
+    <div><h3>{{ c.icono('capas') }}Cómo trabajamos</h3>
+      <ol class="met-pasos">
+        <li><b>Laboratorio.</b> TellmeGen analiza tu muestra y entrega los resultados genéticos.</li>
+        <li><b>Contexto.</b> Sumamos tu cuestionario de hábitos{% if d.analitica.aportada %} y tu analítica{% endif %}.</li>
+        <li><b>Criterio.</b> Un profesional de EPI10 cruza las fuentes, prioriza y revisa cada recomendación.</li>
+        <li><b>Plan.</b> Lo convertimos en prioridades, hábitos y complementos que puedes seguir y revisar.</li>
+      </ol></div>
+    <div><h3>{{ c.icono('escudo') }}Lo que debes saber</h3>
+      <ul class="met-avisos">
+        <li>Este informe no tiene finalidad diagnóstica, terapéutica ni preventiva de enfermedades. Se orienta al bienestar y al uso responsable de complementos alimenticios.</li>
+        <li>Los resultados genéticos son probabilidades y tendencias. No confirman la presencia, ausencia ni el desarrollo futuro de ninguna enfermedad.</li>
+        <li>Las recomendaciones de tu médico prevalecen siempre sobre las de este informe. Consulta cualquier duda sobre medicación, síntomas o analíticas con tu equipo sanitario.</li>
+        <li>Solo usamos declaraciones de propiedades saludables autorizadas en la Unión Europea.</li>
+        <li>Recomendamos lo que encaja contigo, lo venda EPI10 o no.</li>
+      </ul></div>
+  </div>
+  <h2 class="h2 sep">Referencias científicas</h2>
+  <ol class="refs">{% for r in d.referencias %}<li><span>{{ r.texto }}</span><a href="{{ r.url }}">{{ r.url | replace('https://','') }}</a></li>{% endfor %}</ol>
+  <div class="grow"></div>
+  <div class="contacto">
+    <img src="{{ logo_blanco }}" alt="EPI10">
+    <div><small>Teléfono</small><b>{{ d.contacto.telefono }}</b></div>
+    <div><small>Correo</small><b>{{ d.contacto.email }}</b></div>
+    <div><small>Web</small><b>{{ d.contacto.web }}</b></div>
+    <p>{{ d.contacto.direccion }}</p>
+  </div>
+{% endcall %}
+{% endif %}
+
+</main>
+</body>
+</html>
