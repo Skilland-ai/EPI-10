@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marta Gil Prieto · Equipo EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .ficha-cab{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .ficha-cab h1{font-size:24px}
+  .datos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px;margin-top:16px;padding-top:16px;border-top:1px solid var(--linea)}
+  @media (min-width:900px){.datos{grid-template-columns:repeat(5,minmax(0,1fr))}}
+  .datos .k{display:block;margin-bottom:3px}
+  .tramos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-top:18px}
+  .tramos div{font-size:11.5px;color:var(--tinta-2);font-weight:600}
+  .tramos div::before{content:"";display:block;height:4px;border-radius:4px;background:var(--azul);margin-bottom:6px}
+  .tramos div.nuevo{color:var(--cian-ink)}
+  .tramos div.nuevo::before{background:linear-gradient(90deg,var(--cian) 35%,#e6dfd8 35%)}
+  @media (max-width:640px){.tramos div{font-size:0}.tramos div.nuevo{font-size:11px;grid-column:span 1}}
+  .alerta{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;background:var(--ambar-suave);border-radius:16px;padding:14px 16px;border:1px solid #f1d9a2}
+  .alerta .q{flex:1;min-width:220px}
+  .barras4{display:inline-flex;gap:3px;align-items:flex-end;height:22px}
+  .barras4 i{width:7px;border-radius:2px;display:block}
+</style>
+</head>
+<body data-zona="equipo" data-v02="cambia" data-pie>
+<main class="pag">
+  <div class="migas"><a href="equipo-hoy.html">Inicio</a><svg class="ic ic-s"><use href="#i-chevron"/></svg><a href="#">Clientes</a><svg class="ic ic-s"><use href="#i-chevron"/></svg><span>Marta Gil Prieto</span></div>
+
+  <section class="t">
+    <div class="ficha-cab"><span class="av av-l">MG</span><div style="flex:1"><h1>Marta Gil Prieto</h1><a class="peq" href="#">marta.gil@ejemplo.com</a></div><span class="sem sem-nuevo">Plan activo · mes 1</span><span data-marca></span></div>
+    <div class="datos">
+      <div><span class="k">Teléfono</span>600 000 104</div>
+      <div><span class="k">Edad</span>44 años</div>
+      <div><span class="k">Código del kit</span>EP-00412</div>
+      <div><span class="k">Entrada</span>Puerta B · chatbot, 2 oct</div>
+      <div><span class="k">Profesional</span>Equipo de nutrigenética</div>
+    </div>
+    <div class="tramos"><div>Compra y alta</div><div>Onboarding</div><div>Test y cita</div><div>Laboratorio e informe</div><div>Informe entregado</div><div class="nuevo">Plan · mes 1</div></div>
+  </section>
+
+  <nav class="pest"><a href="#">Resumen</a><a class="act" href="#">Plan <span class="v02 v02-nuevo" style="margin-left:4px">Nuevo</span></a><a href="#">Documentos</a><a href="#">Mensajes</a><a href="#">Citas</a><a href="#">Datos</a></nav>
+
+  <div class="alerta">
+    <svg class="ic" style="color:var(--ambar-ink)"><use href="#i-alerta"/></svg>
+    <div class="q"><b>Nutrición ha bajado en la revisión de hoy</b><p class="peq">De «vas bien» a «mejorable». Ella ha marcado «¿Cómo has comido?: regular». El portal ya le propone verdura en la cena tres días.</p></div>
+    <div class="fila-w"><button class="btn btn-p btn-sm" id="escribir">Escribir a Marta</button><button class="btn btn-s btn-sm">Proponer cita</button><button class="btn btn-g btn-sm">Marcar como vista</button></div>
+  </div>
+
+  <div class="g g-plan mt16">
+    <div class="col" style="gap:16px">
+      <section class="t">
+        <div class="t-cab"><h3>Áreas y evolución</h3><span class="der nota">Lo mismo que ve ella</span></div>
+        <div class="fila" style="justify-content:center;gap:10px"><div style="text-align:center" id="rA"></div><svg class="ic gris"><use href="#i-flecha"/></svg><div style="text-align:center" id="rB"></div></div>
+        <div class="tabla-w mt12"><table class="tabla"><thead><tr><th>Área</th><th>Inicio</th><th>3 dic</th><th>Evolución</th></tr></thead><tbody id="areas"></tbody></table></div>
+      </section>
+      <section class="t">
+        <div class="t-cab"><h3>Hábitos</h3><span class="der chip">78 % en noviembre</span></div>
+        <div class="tabla-w"><table class="tabla"><thead><tr><th>Hábito</th><th>Estado</th><th>Días/semana</th><th>Semáforo</th></tr></thead><tbody id="habitos"></tbody></table></div>
+        <p class="nota mt8">Siguiente hábito propuesto: respirar 5 minutos al salir del trabajo. Ella lo ha aceptado en la revisión.</p>
+      </section>
+      <section class="t">
+        <div class="t-cab"><h3>Revisiones</h3></div>
+        <div class="tabla-w"><table class="tabla"><thead><tr><th>Fecha</th><th>Respuestas</th><th></th></tr></thead><tbody>
+          <tr><td>3 dic</td><td class="peq">Descanso 3 · Estrés 3 · Movimiento 4 · Nutrición 3 · Nocticum «noto que duermo mejor» · Salud o medicación: sin cambios</td><td><span class="sem sem-ambar">1 baja</span></td></tr>
+          <tr><td>6 nov</td><td class="peq">Punto de partida: cuestionario de hábitos e informe</td><td></td></tr>
+        </tbody></table></div>
+      </section>
+    </div>
+    <div class="col" style="gap:16px">
+      <section class="t">
+        <div class="t-cab"><h3>Prioridades</h3><button class="der btn btn-s btn-sm" id="editar"><svg class="ic ic-s"><use href="#i-ajustar"/></svg>Editar plan</button></div>
+        <div class="prios" id="prios"></div>
+        <p class="nota mt8">Salen del informe publicado el 2 nov (datos, no texto). Se acordaron en la sesión del 5 nov.</p>
+      </section>
+      <section class="t">
+        <div class="t-cab"><h3>Suplementación y compras</h3></div>
+        <div id="supl"></div>
+        <div class="dato-fila mt8"><span class="k">Compras</span><span>6 nov · Nocticum 24,90 € <span class="ejemplo">ejemplo</span></span></div>
+        <div class="dato-fila"><span class="k">Recompra</span><span>Se le acaba hacia el 10 dic. Aviso enviado. <b>Segunda compra: pendiente</b> (día 27 de 90).</span></div>
+      </section>
+      <section class="t">
+        <div class="t-cab"><h3>Investigación</h3></div>
+        <div class="dato-fila" style="border-top:0"><span class="k">Permisos</span><span>0 de 4 activados</span></div>
+        <div class="dato-fila"><span class="k">Código</span><span>PSN-7F3A (seudónimo)</span></div>
+        <p class="nota mt8">Si no hay permiso, sus datos no entran en ninguna exportación.</p>
+      </section>
+    </div>
+  </div>
+</main>
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var U = EPIU, E = EPI;
+  var ahora = { nutricion: "ambar", movimiento: "verde", descanso: "ambar", estres: "ambar", complementacion: "ambar" };
+  var B = E.areas.map(function(a){ var n = Object.assign({}, a); n.estado = ahora[a.id]; return n; });
+  document.getElementById("rA").innerHTML = U.rueda(E.areas, { mini: true }) + '<span class="k">6 nov</span>';
+  document.getElementById("rB").innerHTML = U.rueda(B, { mini: true }) + '<span class="k">3 dic</span>';
+  document.getElementById("areas").innerHTML = E.areas.map(function(a, i){
+    var b = B[i], ok = { rojo: 0, ambar: 1, verde: 2 }, d = ok[b.estado] - ok[a.estado];
+    return '<tr><td><span class="fila">' + U.ic(a.id, "azul ic-s") + a.nombre + '</span></td><td>' + U.sem(a.estado) + '</td><td>' + U.sem(b.estado) + '</td><td>' + U.tira([a.estado[0], b.estado[0]]) + (d < 0 ? ' <span class="chip" style="background:var(--ambar-suave);color:var(--ambar-ink)">baja</span>' : d > 0 ? ' <span class="chip" style="background:var(--verde-suave);color:var(--verde-ink)">mejora</span>' : '') + '</td></tr>';
+  }).join("");
+  document.getElementById("habitos").innerHTML = E.habitos.map(function(h){
+    var sem = h.historial.concat([h.semana]).map(function(w, i){ var n = w.filter(function(v){ return v === 1; }).length, last = i === h.historial.length; return '<i style="height:' + Math.max(3, n / 7 * 22) + 'px;background:' + (last ? 'var(--cian)' : n >= 5 ? 'var(--verde)' : n >= 3 ? 'var(--ambar)' : 'var(--rojo)') + '"></i>'; }).join("");
+    return '<tr><td><b class="peq">' + h.nombre + '</b></td><td>' + U.sem(h.estado) + '</td><td><span class="barras4">' + sem + '</span></td><td>' + U.tira(h.tira) + '</td></tr>';
+  }).join("");
+  document.getElementById("prios").innerHTML = E.prioridades.map(function(p){ var a = U.area(p.area);
+    return '<div class="prio"><span class="prio-n ' + p.estado + '">' + p.n + '</span><div class="prio-c"><span class="k">' + U.ic(a.id, "ic-s") + a.nombre + '</span><h4>' + p.titulo + '</h4></div></div>'; }).join("");
+  document.getElementById("supl").innerHTML = E.suplementos.map(function(s){ return '<div class="supl-fila">' + U.est(s.estado) + '<div class="q"><b>' + s.nombre + (s.epi10 ? ' <span class="epi10-sello">EPI10</span>' : '') + '</b><span>' + s.porque + '</span></div></div>'; }).join("");
+  document.getElementById("editar").addEventListener("click", function(){
+    U.modal("Editar el plan de Marta", '<p class="peq">El plan llega del informe como datos. Aquí el profesional ajusta lo que se acordó en la sesión o en una revisión. Marta ve el cambio en su portal y recibe un aviso.</p>' +
+      '<label class="campo mt16">Estado de Melatonina<select class="inp"><option>Revisar</option><option>Mantener</option><option>Dejar</option></select></label>' +
+      '<label class="campo">Hábito nuevo<input class="inp" value="Respirar 5 minutos al salir del trabajo"></label>' +
+      '<label class="campo">Nota para Marta (opcional)<textarea class="inp" rows="2">Con Nocticum funcionando, la melatonina ya no hace falta.</textarea></label>' +
+      '<div class="acciones"><button class="btn btn-p" onclick="EPIU.cierraModal()">Guardar y avisar</button><button class="btn btn-g" onclick="EPIU.cierraModal()">Cancelar</button></div>');
+  });
+  document.getElementById("escribir").addEventListener("click", function(){
+    U.modal("Mensaje a Marta", '<label class="campo">Plantilla<select class="inp"><option>Revisión: un área ha bajado</option></select></label><textarea class="inp" rows="4">Hola, Marta. He visto tu revisión: el descanso va muy bien. La alimentación ha bajado un poco este mes; ¿quieres que lo veamos en una llamada de 15 minutos?</textarea><div class="acciones"><button class="btn btn-p" onclick="EPIU.cierraModal()">Enviar</button></div>');
+  });
+})();
+</script>
+</body>
+</html>

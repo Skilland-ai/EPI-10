@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu suplementación · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .hoy{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .hoy .antes{text-align:center}
+  .hoy .antes b{font-size:34px;line-height:1;color:#fff;display:block}
+  .hoy .flecha{color:var(--cian-claro)}
+  .hoy .ahora{display:flex;gap:8px;flex-wrap:wrap}
+  .hoy .ahora span{background:rgba(255,255,255,.1);border-radius:12px;padding:8px 12px;font-size:13px;color:#d7e6f3;display:flex;align-items:center;gap:8px}
+  .hoy .ahora b{font-size:22px;color:#fff}
+  .supl-card h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .formulas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  @media (min-width:900px){.formulas{grid-template-columns:repeat(6,minmax(0,1fr))}}
+  .formula{background:#fff;border-radius:14px;padding:14px;border:1px solid var(--linea-fria);display:flex;flex-direction:column;gap:6px}
+  .formula.rec{border:2px solid var(--cian)}
+  .formula .bote-m{width:34px;height:42px;border-radius:8px;background:linear-gradient(160deg,#0a5aa0,var(--azul-900));position:relative}
+  .formula .bote-m::before{content:"";position:absolute;left:5px;right:5px;top:-5px;height:7px;border-radius:3px;background:var(--azul-tinta)}
+  .formula .bote-m i{position:absolute;left:6px;right:6px;top:14px;height:3px;border-radius:2px;background:var(--cian-claro)}
+  .formula b{font-size:15px}
+  .formula p{font-size:12px;color:var(--tinta-2);line-height:1.35}
+  .respuesta{display:none;margin-top:12px}
+  .respuesta.on{display:block}
+</style>
+</head>
+<body data-zona="clienta" data-v02="nuevo" data-pie>
+<main class="pag">
+  <div class="cab-pag">
+    <div>
+      <div class="fila-w"><span class="eyebrow">Mi plan</span><span data-marca></span></div>
+      <h1 class="tit">Tu suplementación</h1>
+      <p class="lead">Lo que empiezas, lo que mantienes, lo que revisamos y lo que sobra. Te recomendamos lo que encaja contigo, lo venda EPI10 o no.</p>
+    </div>
+  </div>
+
+  <div class="g g-plan">
+    <section class="t-osc">
+      <span class="eyebrow">Tu complementación hoy</span>
+      <div class="hoy mt12">
+        <div class="antes"><b>4</b><span class="peq" style="color:#d7e6f3">tomabas</span></div>
+        <svg class="ic ic-l flecha"><use href="#i-flecha"/></svg>
+        <div class="ahora">
+          <span><b>1</b>mantienes</span><span><b>2</b>revisamos</span><span><b>1</b>dejas</span><span><b>1</b>empiezas</span>
+        </div>
+      </div>
+      <p class="mt12 peq">Antes de añadir nada, ordenamos lo que ya tomas. Lo decidió tu profesional en la sesión del 5 de noviembre.</p>
+    </section>
+
+    <section class="t" id="pedir">
+      <div class="t-cab"><h3>Tu próximo bote</h3><span class="der ejemplo">precio de ejemplo</span></div>
+      <div class="recompra">
+        <span class="bote" aria-hidden="true"><i style="height:20%"></i></span>
+        <div style="flex:1;min-width:160px"><b>Nocticum</b> <span class="epi10-sello">EPI10</span><p class="peq mt4">Te quedan unos <b>6 días</b> (hasta el 10 dic).</p><p class="nota">24,90 € · 30 días. Nada se cobra solo.</p></div>
+      </div>
+      <div class="acciones"><button class="btn btn-p" id="btnPedir"><svg class="ic ic-s"><use href="#i-bolsa"/></svg>Pedir de nuevo</button><button class="btn btn-s" id="btnAjustar"><svg class="ic ic-s"><use href="#i-ajustar"/></svg>Ajustar</button></div>
+      <p class="nota mt8"><a href="#" id="donde">¿Prefieres comprarlo en otro sitio? Dónde encontrarlo</a></p>
+    </section>
+  </div>
+
+  <div class="sec-cab sec"><h2 class="sec-tit">Una a una, y por qué</h2><span class="sec-sub">El estado lo decide tu profesional</span></div>
+  <div class="g g-2" id="tarjetas"></div>
+
+  <div class="sec-cab sec"><h2 class="sec-tit">Las fórmulas de EPI10</h2><span class="ejemplo">catálogo de ejemplo · pendiente del real</span></div>
+  <p class="peq gris" style="margin:-4px 0 12px">Solo te recomendamos la que encaja con tu plan. El resto está aquí por si tu profesional te la propone más adelante.</p>
+  <div class="formulas" id="formulas"></div>
+
+  <section class="t mt24">
+    <div class="t-cab"><h3>Tus pedidos</h3></div>
+    <div class="tabla-w"><table class="tabla"><thead><tr><th>Fecha</th><th>Producto</th><th>Importe</th><th>Estado</th></tr></thead>
+      <tbody><tr><td>6 nov 2026</td><td>Nocticum · 30 días</td><td>24,90 € <span class="ejemplo">ejemplo</span></td><td><span class="chip">Entregado</span></td></tr></tbody></table></div>
+  </section>
+
+  <p class="legal">Los complementos alimenticios no deben utilizarse como sustitutos de una dieta variada y equilibrada ni de un estilo de vida saludable. No superes la dosis diaria recomendada en el envase. En caso de embarazo, lactancia, medicación, enfermedad diagnosticada, alergias o dudas, consulta con un profesional sanitario. Textos pendientes del asesor de EPI10.</p>
+</main>
+
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var U = EPIU, E = EPI;
+  var ACCION = {
+    tomar: '<button class="btn btn-p btn-sm" data-pedir>Pedir</button><button class="btn btn-s btn-sm" data-ficha>Ver ficha</button>',
+    mantener: '<button class="btn btn-s btn-sm" data-elegir>Cómo elegirlo</button>',
+    revisar: '<a class="btn btn-s btn-sm" href="se-mantiene.html#mensajes">Preguntar a mi profesional</a>',
+    dejar: '<button class="btn btn-s btn-sm" data-ok>Entendido, lo dejo</button><a class="btn btn-g btn-sm" href="se-mantiene.html#mensajes">Prefiero hablarlo</a>'
+  };
+  document.getElementById("tarjetas").innerHTML = E.suplementos.map(function(s){
+    var borde = { tomar: "n", mantener: "v", revisar: "a", dejar: "r" }[s.estado];
+    var orig = s.orig.map(function(o){ return '<span class="org org-' + o[0] + '">' + U.ic(o[0] === "gen" ? "genetica" : "habitos") + o[1] + '</span>'; }).join("");
+    return '<article class="t supl-card tarjeta-s borde-' + borde + '" id="' + s.id + '"><div class="fila entre">' + U.est(s.estado) + (s.epi10 ? '<span class="epi10-sello">' + U.ic("escudo", "ic-s") + 'Disponible en EPI10</span>' : '<span class="no-vend">No lo vendemos</span>') + '</div>' +
+      '<div><h3>' + s.nombre + (s.ejemplo ? ' <span class="ejemplo">ficha de ejemplo</span>' : '') + '</h3><p class="marca">' + s.queEs + '</p></div>' +
+      '<p class="porque"><b>' + ({ revisar: "Lo revisamos porque", dejar: "Te proponemos dejarlo porque" }[s.estado] || "Te lo recomendamos porque") + '</b> ' + s.porque.charAt(0).toLowerCase() + s.porque.slice(1) + '</p><div class="orgs" style="margin-top:0">' + orig + '</div>' +
+      '<div><div class="dato-fila"><span class="k">Cómo</span><span>' + s.como + '</span></div>' +
+      '<div class="dato-fila"><span class="k">Evidencia</span><span>' + s.evidencia + '</span></div>' +
+      (s.declaracion ? '<div class="dato-fila"><span class="k">Declaración</span><span class="nota" style="font-size:12.5px">' + s.declaracion + '</span></div>' : '') +
+      (s.buscalo ? '<div class="dato-fila"><span class="k">Dónde</span><span>' + s.buscalo + '</span></div>' : '') + '</div>' +
+      '<div class="acciones" style="margin-top:4px">' + ACCION[s.estado] + '</div></article>';
+  }).join("");
+  document.getElementById("formulas").innerHTML = E.formulas.map(function(f){
+    var rec = f.id === "nocticum";
+    return '<div class="formula' + (rec ? ' rec' : '') + '"><span class="bote-m"><i></i></span><b>' + f.nombre + '</b><p>' + f.foco + '</p>' + (rec ? '<span class="sem sem-nuevo" style="align-self:flex-start">En tu plan</span>' : '<span class="nota">Ficha por llegar</span>') + '</div>';
+  }).join("");
+
+  function pedido(){
+    var m = U.modal("Tu pedido", '<div class="recompra"><span class="bote"><i style="height:100%;background:var(--cian)"></i></span><div style="flex:1"><b>Nocticum · 30 días</b><p class="peq gris">Fórmula de EPI10 · la que pide tu prioridad 1</p></div><b>24,90 €</b></div>' +
+      '<div class="dato-fila mt16"><span class="k">Envío</span><span>A tu dirección del kit · C/ Ejemplo 12, Las Palmas <a href="#">cambiar</a></span></div>' +
+      '<div class="dato-fila"><span class="k">Llega</span><span>Antes del 9 dic, si lo pides hoy</span></div>' +
+      '<label class="fila mt12" style="align-items:flex-start;gap:12px;cursor:pointer"><span class="inter"><input type="checkbox"><span></span></span><span class="peq"><b>Recibirlo cada mes.</b> Te avisamos 15 días antes de cada cobro y lo cambias o lo paras desde aquí, en un toque.</span></label>' +
+      '<div class="aviso mt16"><svg class="ic"><use href="#i-info"/></svg><span>Pago seguro con Stripe. En la maqueta no se cobra nada. Precio de ejemplo hasta tener el catálogo real.</span></div>' +
+      '<div class="acciones"><button class="btn btn-p btn-bloque" id="pagar">Pagar 24,90 €</button></div>');
+    m.querySelector("#pagar").addEventListener("click", function(){
+      m.innerHTML = '<div style="text-align:center;padding:10px 0"><span class="icono-c" style="margin:0 auto;background:var(--verde-suave);color:var(--verde-ink);width:56px;height:56px;border-radius:50%"><svg class="ic ic-l"><use href="#i-check"/></svg></span><h3 class="mt12">Pedido hecho</h3><p class="peq gris mt8">Te llega antes del 9 de diciembre. Te avisamos por correo cuando salga.</p><div class="acciones" style="justify-content:center"><button class="btn btn-s" onclick="EPIU.cierraModal()">Volver a mi plan</button></div></div>';
+    });
+  }
+  function ajustar(){
+    var R = {
+      cambiar: "Lo vemos con tu profesional: le pasamos tu revisión y te propone otra opción si tiene sentido. No pidas nada mientras tanto.",
+      espaciar: "Puedes pedir el próximo bote más tarde. Te volvemos a avisar en 15 días.",
+      saltar: "Este mes no pides. Tu plan sigue igual y en la próxima revisión vemos cómo vas sin él.",
+      dejar: "Hecho. Lo quitamos de tu plan y se lo contamos a tu profesional. Tus hábitos siguen: son la base de tu plan."
+    };
+    var m = U.modal("Ajustar Nocticum", '<p>¿Qué prefieres? Todas valen igual.</p><div class="opc mt12">' +
+      '<button data-r="cambiar">Cambiar de fórmula</button><button data-r="espaciar">Espaciarlo</button><button data-r="saltar">Saltar este mes</button><button data-r="dejar">Dejarlo</button></div><div class="aviso respuesta" id="resp"></div>');
+    m.addEventListener("click", function(e){ var b = e.target.closest("[data-r]"); if (!b) return;
+      m.querySelectorAll("[data-r]").forEach(function(x){ x.classList.toggle("sel", x === b); });
+      var r = m.querySelector("#resp"); r.textContent = R[b.dataset.r]; r.classList.add("on"); });
+  }
+  document.getElementById("btnPedir").addEventListener("click", pedido);
+  document.getElementById("btnAjustar").addEventListener("click", ajustar);
+  document.getElementById("donde").addEventListener("click", function(e){ e.preventDefault();
+    U.modal("Dónde comprar Nocticum", '<p>Si prefieres la farmacia o una tienda, pide <b>Nocticum de EPI10</b>. Tu plan sigue igual: lo importante es que lo tomes como te indicamos.</p><p class="nota mt12">Canal de venta por confirmar con EPI10 (online, farmacia o ambos). Mientras, esta es la alternativa «dónde comprarlo» que pide la estrategia.</p>');
+  });
+  document.getElementById("tarjetas").addEventListener("click", function(e){
+    if (e.target.closest("[data-pedir]")) pedido();
+    if (e.target.closest("[data-ficha]")) U.modal("Nocticum", '<span class="ejemplo">ficha de ejemplo</span><p class="mt12">Fórmula de EPI10 para la rutina de descanso y desconexión.</p><div class="dato-fila mt12"><span class="k">Composición</span><span>Pendiente del catálogo de EPI10</span></div><div class="dato-fila"><span class="k">Dosis</span><span>La de la etiqueta</span></div><div class="dato-fila"><span class="k">Declaración</span><span>Autorizada de la UE, literal de la ficha</span></div><div class="aviso aviso-a mt12"><svg class="ic"><use href="#i-alerta"/></svg><span>Si tomas ansiolíticos, sedantes, antidepresivos o medicación para dormir, consulta a un profesional sanitario antes de tomarlo.</span></div>');
+    if (e.target.closest("[data-elegir]")) U.modal("Cómo elegir tu omega-3", '<p>Mira en la etiqueta cuánto <b>EPA + DHA</b> lleva por cápsula, no el aceite total. Con tu dieta, uno al día suele bastar.</p><p class="nota mt12">No lo vendemos. Te lo recomendamos porque encaja con tu plan.</p>');
+    var ok = e.target.closest("[data-ok]"); if (ok) { ok.textContent = "Anotado"; ok.disabled = true; }
+  });
+  if (location.hash === "#pedir") document.getElementById("pedir").scrollIntoView();
+})();
+</script>
+</body>
+</html>

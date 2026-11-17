@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tus hábitos · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .resumen3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .mini{background:#fff;border-radius:14px;box-shadow:var(--sombra);padding:12px 14px}
+  .mini .cifra{font-size:24px}
+  .mini p{font-size:12.5px;color:var(--gris);margin-top:4px;line-height:1.3}
+  .hab-c{display:flex;flex-direction:column;gap:12px}
+  .hab-c .top{display:flex;gap:12px;align-items:flex-start}
+  .hab-c h3{font-size:16.5px;line-height:1.25}
+  .semanas{display:flex;align-items:flex-end;gap:10px;height:74px;padding-top:6px}
+  .semanas div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+  .semanas b{display:block;width:100%;max-width:34px;border-radius:7px 7px 3px 3px}
+  .semanas span{font-size:10.5px;color:var(--gris)}
+  .semanas em{font-style:normal;font-size:11px;font-weight:700;color:var(--tinta-2)}
+  .ritmo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .ritmo button{border:1.5px solid #dbe3ec;background:#fff;border-radius:14px;padding:12px 6px;cursor:pointer;font-weight:600;font-size:13.5px;color:var(--tinta-2)}
+  .ritmo button b{display:block;font-size:22px;color:var(--azul-tinta)}
+  .ritmo button.sel{border-color:var(--azul);background:var(--cian-50)}
+</style>
+</head>
+<body data-zona="clienta" data-v02="nuevo" data-pie>
+<main class="pag">
+  <div class="cab-pag">
+    <div>
+      <div class="fila-w"><span class="eyebrow">Mi plan</span><span data-marca></span></div>
+      <h1 class="tit">Tus hábitos</h1>
+      <p class="lead">Tres hábitos, uno por prioridad. Márcalos cuando quieras: basta con entrar una vez por semana.</p>
+    </div>
+  </div>
+
+  <div class="resumen3">
+    <div class="mini"><div class="cifra" id="cSem">7/8</div><p>hechos esta semana</p></div>
+    <div class="mini"><div class="cifra">78 %</div><p>tu mes · noviembre</p></div>
+    <div class="mini"><div class="cifra" style="color:var(--verde)"><svg class="ic ic-l"><use href="#i-tendencia-sube"/></svg></div><p>Lo que más has mejorado: <b style="color:var(--tinta)">cenar antes de las 21:00</b></p></div>
+  </div>
+
+  <div class="g g-21 mt24">
+    <section class="t">
+      <div class="t-cab"><h3>Esta semana · 30 nov – 6 dic</h3></div>
+      <div id="rejilla"></div>
+    </section>
+    <section class="t">
+      <div class="t-cab"><h3>Tu ritmo</h3></div>
+      <p class="peq">¿Cuántos hábitos quieres llevar a la vez? El primer mes recomendamos pocos.</p>
+      <div class="ritmo mt12"><button>Uno<b>1</b></button><button>Hasta tres<b>3</b></button><button>Hasta cinco<b>5</b></button></div>
+      <div class="aviso mt12"><svg class="ic"><use href="#i-candado"/></svg><div><b>Siguiente: respirar 5 minutos al salir del trabajo.</b> Se suma tras tu revisión, si te ves con fuerzas.</div></div>
+      <div class="dato-fila mt16" style="border-top:0"><span class="k">Avisos</span><span>Un correo el domingo con tu semana. <a href="#" id="whats">Añadir WhatsApp</a></span></div>
+      <div class="acciones"><button class="btn btn-s btn-sm" id="pausar"><svg class="ic ic-s"><use href="#i-pausa"/></svg>Pausar mi plan</button></div>
+    </section>
+  </div>
+
+  <div class="sec-cab sec"><h2 class="sec-tit">Cómo va cada uno</h2><span class="sec-sub">El color cambia con lo que marcas y con tu revisión</span></div>
+  <div class="g g-3" id="tarjetas"></div>
+
+  <p class="nota mt24">Sin rachas ni puntos: un día que no sale no borra lo que llevas. «Saltar» es para los días que no tocan (viaje, enfermedad) y no cuenta en contra.</p>
+</main>
+
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var U = EPIU, E = EPI;
+  U.rejilla(document.getElementById("rejilla"), E.habitos, { area: true, alCambiar: function(h){
+    var c = U.cuentaSemana(h); document.getElementById("cSem").textContent = c.si + "/" + c.tot; pintaTarjetas();
+  }});
+  var BADGE = { verde: "Vas bien", ambar: "Mejorable", rojo: "Prioridad" };
+  function pintaTarjetas(){
+    document.getElementById("tarjetas").innerHTML = E.habitos.map(function(h){
+      var a = U.area(h.area), p = E.prioridades.filter(function(x){ return x.area === h.area; })[0];
+      var semanas = h.historial.concat([h.semana]).map(function(w, i){
+        var hechos = w.filter(function(v){ return v === 1; }).length, actual = i === h.historial.length;
+        var col = hechos >= 5 ? "var(--verde)" : hechos >= 3 ? "var(--ambar)" : "var(--rojo)";
+        if (actual) col = "var(--cian)";
+        return '<div><em>' + hechos + '</em><b style="height:' + Math.max(6, hechos / 7 * 52) + 'px;background:' + col + (actual ? ';opacity:.55' : '') + '"></b><span>' + (actual ? 'esta' : 'S' + (i + 1)) + '</span></div>';
+      }).join("");
+      var genO = a.gen ? '<span class="org org-gen">' + U.ic("genetica") + a.gen + '</span>' : '';
+      return '<article class="t hab-c borde-' + h.estado[0] + '"><div class="top"><span class="luz ' + h.estado + '"><i></i><i></i><i></i></span><div style="flex:1"><h3>' + h.nombre + '</h3><span class="k mt4" style="display:flex;gap:5px;align-items:center">' + U.ic(a.id, "ic-s") + a.nombre + (p ? ' · prioridad ' + p.n : '') + '</span></div>' + U.sem(h.estado) + '</div>' +
+        '<div><span class="k">Días por semana, de 7</span><div class="semanas">' + semanas + '</div></div>' +
+        '<div class="fila entre"><span class="k">Tu semáforo por semana</span>' + U.tira(h.tira) + '</div>' +
+        '<div class="orgs" style="margin-top:0">' + genO + '<span class="org org-hab">' + U.ic("habitos") + a.hab + '</span></div>' +
+        '<p class="peq" style="border-top:1px dashed var(--linea);padding-top:10px">' + U.ic("repetir", "ic-s azul") + ' En tu revisión te preguntaremos: <b>' + h.indicador + '</b></p></article>';
+    }).join("");
+  }
+  pintaTarjetas();
+  var r = document.querySelectorAll(".ritmo button"); r[1].classList.add("sel");
+  r.forEach(function(b){ b.addEventListener("click", function(){ r.forEach(function(x){ x.classList.remove("sel"); }); b.classList.add("sel"); }); });
+  document.getElementById("pausar").addEventListener("click", function(){
+    U.modal("Pausar tu plan", '<p>Si estás de viaje, enferma o con una mala racha, pausa el plan. No perdemos nada y no te escribimos hasta que vuelvas.</p><div class="opc mt16"><button class="sel">Una semana</button><button>Dos semanas</button><button>Hasta que yo lo reactive</button></div><div class="acciones"><button class="btn btn-p" onclick="EPIU.cierraModal()">Pausar</button><button class="btn btn-g" onclick="EPIU.cierraModal()">Ahora no</button></div>');
+  });
+  document.getElementById("whats").addEventListener("click", function(e){ e.preventDefault();
+    U.modal("Avisos por WhatsApp", '<p>Te mandaríamos un mensaje el domingo con tu semana y otro cuando toque tu revisión. Nada más.</p><label class="campo mt16">Tu móvil<input class="inp" value="600 000 000"></label><p class="nota">Canal por decidir en el workshop: correo seguro; WhatsApp si EPI10 lo usa.</p><div class="acciones"><button class="btn btn-p" onclick="EPIU.cierraModal()">Activar</button></div>');
+  });
+})();
+</script>
+</body>
+</html>

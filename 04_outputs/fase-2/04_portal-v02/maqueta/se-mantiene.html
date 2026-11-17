@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lo que se mantiene · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .galeria{display:grid;gap:16px}
+  @media (min-width:900px){.galeria{grid-template-columns:repeat(3,1fr)}}
+  .vista{background:#fff;border-radius:16px;box-shadow:var(--sombra);overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:60px}
+  .vista picture,.vista img{display:block;width:100%;border-bottom:1px solid var(--linea);aspect-ratio:16/10;object-fit:cover;object-position:top}
+  @media (max-width:899px){.vista img{aspect-ratio:390/600}}
+  .vista .pie-v{padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+  .vista .pie-v b{font-size:15px}
+  .vista .pie-v p{font-size:13px;color:var(--tinta-2)}
+  .vista:target{outline:3px solid var(--cian)}
+</style>
+</head>
+<body data-zona="clienta" data-v02="mantiene" data-pie>
+<main class="pag">
+  <div class="fila-w"><span class="eyebrow">Portal v0.1 · fase 1</span><span data-marca></span></div>
+  <h1 class="tit">Lo que ya funciona, se queda</h1>
+  <p class="lead">El recorrido de compra, consentimiento, cuestionario, kit, mensajes, citas y documentos es el de la v0.1, ya construido sobre OpenEMR. Son capturas reales de esa versión. En la v0.2 solo cambian los detalles anotados en cada una.</p>
+
+  <div class="g g-3m mt16" style="gap:10px">
+    <div class="t-cian"><b>Compra y alta</b><p class="peq mt4">Stripe, orquestador y Odoo. Sin cambios.</p></div>
+    <div class="t-cian"><b>Onboarding guiado</b><p class="peq mt4">Consentimiento, cuestionario y «Tu test». Cambio menor: el cuestionario llega medio relleno desde el chatbot.</p></div>
+    <div class="t-cian"><b>Mensajes, citas y documentos</b><p class="peq mt4">Iguales. En la navegación nueva, Mensajes queda en la barra y Citas y Documentos en el menú.</p></div>
+  </div>
+
+  <div class="galeria mt24">
+    <article class="vista" id="bienvenida"><picture><source media="(max-width:899px)" srcset="assets/v01/04_bienvenida_m.jpg"><img src="assets/v01/04_bienvenida.jpg" alt="Bienvenida de la v0.1"></picture><div class="pie-v"><b>Bienvenida</b><p>Los tres pasos que tiene por delante y cuánto tarda cada uno.</p><span class="v02 v02-mantiene">Igual</span></div></article>
+    <article class="vista" id="consentimiento"><picture><source media="(max-width:899px)" srcset="assets/v01/05_consentimiento_m.jpg"><img src="assets/v01/05_consentimiento.jpg" alt="Consentimiento de la v0.1"></picture><div class="pie-v"><b>Consentimiento del servicio</b><p>Firmado en pantalla. El de investigación va aparte y es opcional.</p><span class="v02 v02-mantiene">Igual</span></div></article>
+    <article class="vista" id="cuestionario"><picture><source media="(max-width:899px)" srcset="assets/v01/06_cuestionario_m.jpg"><img src="assets/v01/06_cuestionario.jpg" alt="Cuestionario de la v0.1"></picture><div class="pie-v"><b>Cuestionario de hábitos</b><p>Pregunta a pregunta. En v0.2 llega con las respuestas del chatbot ya puestas.</p><span class="v02 v02-cambia">Cambio menor</span></div></article>
+    <article class="vista" id="test"><picture><source media="(max-width:899px)" srcset="assets/v01/07_eleccion_del_test_m.jpg"><img src="assets/v01/07_eleccion_del_test.jpg" alt="Elección del test"></picture><div class="pie-v"><b>Elección del test</b><p>En casa o en la sede. Con Eurofins, más adelante, el laboratorio más cercano.</p><span class="v02 v02-mantiene">Igual</span></div></article>
+    <article class="vista" id="kit"><picture><source media="(max-width:899px)" srcset="assets/v01/08_envio_del_kit_m.jpg"><img src="assets/v01/08_envio_del_kit.jpg" alt="Envío del kit"></picture><div class="pie-v"><b>Envío del kit</b><p>Dirección y franja. La misma dirección sirve luego para los pedidos de fórmulas.</p><span class="v02 v02-mantiene">Igual</span></div></article>
+    <article class="vista" id="listo"><picture><source media="(max-width:899px)" srcset="assets/v01/09_todo_listo_m.jpg"><img src="assets/v01/09_todo_listo.jpg" alt="Todo listo"></picture><div class="pie-v"><b>Todo listo</b><p>Confirmación. Después, la espera con hábitos (nuevo).</p><span class="v02 v02-mantiene">Igual</span></div></article>
+    <article class="vista" id="mensajes"><picture><source media="(max-width:899px)" srcset="assets/v01/14_mensajes_m.jpg"><img src="assets/v01/14_mensajes.jpg" alt="Mensajes"></picture><div class="pie-v"><b>Mensajes</b><p>Chat con el equipo. Las alertas de la revisión llegan aquí como mensaje del profesional.</p><span class="v02 v02-mantiene">Igual</span></div></article>
+    <article class="vista" id="citas"><picture><source media="(max-width:899px)" srcset="assets/v01/13_citas_m.jpg"><img src="assets/v01/13_citas.jpg" alt="Citas"></picture><div class="pie-v"><b>Citas</b><p>Sirve para la sesión del informe y la revisión a seis meses.</p><span class="v02 v02-mantiene">Igual</span></div></article>
+    <article class="vista" id="documentos"><picture><source media="(max-width:899px)" srcset="assets/v01/12_documentos_m.jpg"><img src="assets/v01/12_documentos.jpg" alt="Documentos"></picture><div class="pie-v"><b>Tus documentos</b><p>Estado de cada documento.</p><span class="v02 v02-mantiene">Igual</span></div></article>
+    <article class="vista" id="visor"><picture><source media="(max-width:899px)" srcset="assets/v01/16_visor_informe_m.jpg"><img src="assets/v01/16_visor_informe.jpg" alt="Visor del informe"></picture><div class="pie-v"><b>Visor del PDF</b><p>Se mantiene para el informe completo. Delante va el resumen visual.</p><span class="v02 v02-mantiene">Igual</span></div></article>
+    <article class="vista" id="ajustes"><picture><source media="(max-width:899px)" srcset="assets/v01/11_menu_y_ajustes_m.jpg"><img src="assets/v01/11_menu_y_ajustes.jpg" alt="Menú y ajustes"></picture><div class="pie-v"><b>Menú y ajustes</b><p>Se añade «Tus datos y permisos» (consentimiento de investigación).</p><span class="v02 v02-cambia">Cambio menor</span></div></article>
+  </div>
+  <p class="nota mt16">Capturas de la propuesta del portal propio del 27 de octubre (clienta ficticia Lucía). Instancia de referencia: portal-propio.aporta-epi10.com.</p>
+</main>
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

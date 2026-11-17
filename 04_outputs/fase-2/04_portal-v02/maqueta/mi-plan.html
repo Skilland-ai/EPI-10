@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi plan · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .hero{display:grid;gap:18px;align-items:center}
+  .hero .rueda-mini{max-width:132px;margin:0 auto}
+  .hero-r{background:rgba(255,255,255,.96);border-radius:50%;width:150px;height:150px;display:grid;place-items:center;margin:0 auto}
+  @media (min-width:700px){.hero{grid-template-columns:1fr auto}}
+  .rev{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#fff;border-radius:16px;padding:14px 16px;box-shadow:var(--sombra);border:1.5px solid var(--cian)}
+  .rev .icono-c{background:var(--cian);color:#fff}
+  .rev .q{flex:1;min-width:200px}
+  .rev b{font-size:15.5px;color:var(--azul-tinta)}
+  .bloq{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1.5px dashed #d5dde6;color:var(--gris);font-size:13.5px;margin-top:10px}
+  .proximo li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--linea)}
+  .proximo li:last-child{border-bottom:0}
+  .proximo{list-style:none;margin:0;padding:0}
+  .fecha{width:46px;flex:none;text-align:center;border-radius:10px;background:var(--marfil);padding:5px 0;line-height:1.1}
+  .fecha b{display:block;font-size:17px;color:var(--azul)}
+  .fecha span{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--gris);font-weight:700}
+</style>
+</head>
+<body data-zona="clienta" data-v02="nuevo" data-pie>
+<main class="pag">
+
+  <section class="t-osc hero">
+    <div>
+      <div class="fila-w"><span class="eyebrow">Hola, Marta · semana 4 de tu plan</span><span data-marca></span></div>
+      <h1 class="tit" style="color:#fff">Tu plan</h1>
+      <p class="mt8" style="max-width:520px">Tres prioridades, tres hábitos y lo que tomas, en un solo sitio. Lo revisamos contigo cada mes.</p>
+      <div class="mt16" id="recuento" style="max-width:460px"></div>
+    </div>
+    <a class="hero-r" href="mi-informe.html#resumen" title="Ver tu perfil en el informe" id="ruedaMini"></a>
+  </section>
+
+  <div class="rev mt16">
+    <span class="icono-c"><svg class="ic"><use href="#i-calendario"/></svg></span>
+    <div class="q"><b>Te toca tu revisión mensual</b><p class="peq gris">Seis preguntas, dos minutos. Al terminar verás qué ha cambiado y qué tomas el mes que viene.</p></div>
+    <a class="btn btn-p" href="revision.html">Empezar revisión <svg class="ic ic-s"><use href="#i-flecha"/></svg></a>
+  </div>
+
+  <div class="g g-plan mt24">
+    <div class="col" style="gap:16px">
+
+      <section class="t">
+        <div class="t-cab"><h3>Tus 3 prioridades</h3><a class="der peq" href="prioridades.html">Por qué estas tres</a></div>
+        <div class="prios" id="prios"></div>
+      </section>
+
+      <section class="t" id="semana">
+        <div class="t-cab"><h3>Esta semana</h3><span class="der chip" id="cuenta"></span></div>
+        <div id="rejilla"></div>
+        <div class="prog mt12"><span class="peq">Tu mes</span><span class="prog-b"><i style="width:78%"></i></span><b class="peq">78 %</b></div>
+        <div class="bloq"><svg class="ic ic-s"><use href="#i-candado"/></svg><span><b style="color:var(--tinta-2)">Siguiente hábito:</b> respirar 5 minutos al salir del trabajo. Se suma tras tu revisión, si te ves con fuerzas.</span></div>
+        <div class="acciones"><a class="btn btn-s btn-sm" href="habitos.html">Ver tus hábitos</a><button class="btn btn-g btn-sm" id="pausar"><svg class="ic ic-s"><use href="#i-pausa"/></svg>Pausar mi plan</button></div>
+      </section>
+
+    </div>
+    <div class="col" style="gap:16px">
+
+      <section class="t">
+        <div class="t-cab"><h3>Tu suplementación</h3><a class="der peq" href="suplementacion.html">Ver por qué</a></div>
+        <div id="supl"></div>
+        <div class="t-suave mt12 recompra">
+          <span class="bote" aria-hidden="true"><i style="height:20%"></i></span>
+          <div style="flex:1;min-width:150px"><b>Nocticum</b><p class="peq">Te quedan unos 6 días.</p><p class="nota">Revísalo hoy y pide lo del mes que viene.</p></div>
+          <a class="btn btn-p btn-sm" href="suplementacion.html#pedir">Pedir de nuevo</a>
+        </div>
+        <p class="nota mt8">También te decimos lo que no vendemos. Precio y catálogo: <span class="ejemplo">ejemplo</span></p>
+      </section>
+
+      <section class="t">
+        <div class="t-cab"><h3>Lo que viene</h3></div>
+        <ul class="proximo">
+          <li><span class="fecha"><b>3</b><span>dic</span></span><div><b>Revisión mensual</b><p class="peq gris">Hoy. Dos minutos desde el móvil.</p></div></li>
+          <li><span class="fecha"><b>10</b><span>dic</span></span><div><b>Fin de tu bote de Nocticum</b><p class="peq gris">Te avisamos unos días antes. Nada se cobra solo.</p></div></li>
+          <li><span class="fecha"><b>6</b><span>may</span></span><div><b>Sesión de revisión a seis meses</b><p class="peq gris">30 minutos con tu profesional. <span class="ejemplo">por decidir</span></p></div></li>
+        </ul>
+      </section>
+
+      <section class="t">
+        <div class="fila"><span class="av av-l">EP</span><div style="flex:1"><b>Tu profesional de EPI10</b><p class="peq gris">«¿Qué tal las noches sin pantallas? Cuéntamelo en la revisión.»</p></div></div>
+        <div class="acciones"><a class="btn btn-s btn-sm" href="se-mantiene.html#mensajes">Responder</a><a class="btn btn-g btn-sm" href="se-mantiene.html#citas">Pedir una cita</a></div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var U = EPIU, E = EPI;
+  document.getElementById("recuento").innerHTML = U.recuento(E.areas);
+  document.getElementById("ruedaMini").innerHTML = U.rueda(E.areas, { mini: true });
+  document.getElementById("prios").innerHTML = E.prioridades.map(function(p){
+    var a = U.area(p.area);
+    return '<a class="prio" href="prioridades.html#p' + p.n + '" style="text-decoration:none;color:inherit"><span class="prio-n ' + p.estado + '">' + p.n + '</span><div class="prio-c"><span class="k">' + U.ic(a.id, "ic-s") + a.nombre + '</span><h4>' + p.titulo + '</h4><p>' + p.accion + '</p></div>' +
+      (p.n === 1 ? '<span class="empieza">Empieza por aquí</span>' : U.ic("chevron", "gris")) + '</a>';
+  }).join("");
+  U.rejilla(document.getElementById("rejilla"), E.habitos, { leyenda: false, alCambiar: function(h){
+    var c = U.cuentaSemana(h); document.getElementById("cuenta").textContent = c.si + " de " + c.tot + " hechos";
+  }});
+  document.getElementById("supl").innerHTML = E.suplementos.map(function(s){
+    return '<a class="supl-fila" href="suplementacion.html#' + s.id + '" style="text-decoration:none;color:inherit">' + U.est(s.estado) + '<div class="q"><b>' + s.nombre + (s.epi10 ? ' <span class="epi10-sello">EPI10</span>' : '') + '</b><span>' + s.porque + '</span></div>' + U.ic("chevron", "gris") + '</a>';
+  }).join("");
+  document.getElementById("pausar").addEventListener("click", function(){
+    U.modal("Pausar tu plan", '<p>Si estás de viaje, enferma o con una mala racha, pausa el plan. No perdemos nada y no te escribimos hasta que vuelvas.</p>' +
+      '<div class="opc mt16"><button class="sel">Una semana</button><button>Dos semanas</button><button>Hasta que yo lo reactive</button></div>' +
+      '<div class="acciones"><button class="btn btn-p" onclick="EPIU.cierraModal()">Pausar</button><button class="btn btn-g" onclick="EPIU.cierraModal()">Ahora no</button></div>');
+  });
+})();
+</script>
+</body>
+</html>

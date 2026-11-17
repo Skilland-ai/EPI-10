@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tus datos y permisos · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .fin{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--linea)}
+  .fin:last-child{border-bottom:0}
+  .fin .q{flex:1}
+  .fin h4{font-size:15.5px}
+  .fin p{font-size:13.5px;color:var(--tinta-2);margin-top:3px}
+  .fin .det{font-size:12.5px;color:var(--gris);margin-top:6px;display:flex;gap:12px;flex-wrap:wrap}
+  .fin .det span{display:inline-flex;align-items:center;gap:4px}
+  .dos-col li{margin:6px 0;font-size:14px}
+  .dos-col ul{padding-left:18px;margin:8px 0 0}
+  .estado-p{font-size:12px;font-weight:700}
+</style>
+</head>
+<body data-zona="clienta" data-v02="nuevo" data-pie>
+<main class="pag pag-estrecha" style="max-width:900px">
+  <div class="migas"><a href="mi-plan.html">Mi plan</a><svg class="ic ic-s"><use href="#i-chevron"/></svg><span>Tus datos y permisos</span></div>
+  <div class="fila-w"><span class="eyebrow">Investigación</span><span data-marca></span></div>
+  <h1 class="tit">¿Nos ayudas a investigar?</h1>
+  <p class="lead">Es opcional y aparte del consentimiento de tu servicio. Decir que no no cambia ni tu precio ni tu plan. Puedes cambiar cada permiso cuando quieras.</p>
+
+  <div class="g g-2m mt24" style="gap:10px">
+    <div class="t-cian fila" style="align-items:flex-start"><svg class="ic azul"><use href="#i-escudo"/></svg><div><b>Seudonimizado</b><p class="peq mt4">Tu nombre y tu correo se guardan aparte. Quien investiga ve un código, nunca quién eres.</p></div></div>
+    <div class="t-cian fila" style="align-items:flex-start"><svg class="ic azul"><use href="#i-mapa"/></svg><div><b>En la UE</b><p class="peq mt4">En el servidor de EPI10. Nada sale sin un acuerdo escrito y sin tu permiso.</p></div></div>
+  </div>
+
+  <section class="t mt16">
+    <div class="t-cab"><h3>Para qué, una a una</h3><span class="der nota" id="nPerm">0 de 4 activados</span></div>
+    <div class="fin">
+      <div class="q"><h4>Mejorar las recomendaciones de EPI10</h4><p>Usar tus respuestas, tu plan y cómo evolucionas para afinar las reglas con las que recomendamos.</p>
+        <div class="det"><span><svg class="ic ic-s"><use href="#i-habitos"/></svg>Cuestionarios y revisiones</span><span><svg class="ic ic-s"><use href="#i-capsula-med"/></svg>Plan y compras</span></div></div>
+      <label class="inter" aria-label="Mejorar las recomendaciones"><input type="checkbox" data-p><span></span></label>
+    </div>
+    <div class="fin">
+      <div class="q"><h4>Guardar tus resultados genéticos estructurados</h4><p>Hoy tus resultados del laboratorio se procesan y se borran. Con este permiso guardamos los datos (no el PDF) para investigación.</p>
+        <div class="det"><span><svg class="ic ic-s"><use href="#i-genetica"/></svg>Resultados del test</span><span class="ejemplo">cambio de arquitectura: decidir en el workshop</span></div></div>
+      <label class="inter" aria-label="Guardar resultados genéticos"><input type="checkbox" data-p><span></span></label>
+    </div>
+    <div class="fin">
+      <div class="q"><h4>Compartirlos con universidades</h4><p>Solo con proyectos con acuerdo escrito y evaluación de impacto. Te avisamos de cada proyecto antes y puedes salirte.</p>
+        <div class="det"><span><svg class="ic ic-s"><use href="#i-universidad"/></svg>Proyectos aprobados</span><span><svg class="ic ic-s"><use href="#i-base-datos"/></svg>Datos seudonimizados</span></div></div>
+      <label class="inter" aria-label="Compartir con universidades"><input type="checkbox" data-p><span></span></label>
+    </div>
+    <div class="fin">
+      <div class="q"><h4>Que te contactemos para estudios</h4><p>Por si un estudio busca personas con tu perfil. Contestar es siempre voluntario.</p>
+        <div class="det"><span><svg class="ic ic-s"><use href="#i-conversa"/></svg>Por correo</span></div></div>
+      <label class="inter" aria-label="Contactar para estudios"><input type="checkbox" data-p><span></span></label>
+    </div>
+    <div class="acciones"><button class="btn btn-p" id="guardar">Guardar mis permisos</button><a class="btn btn-g" href="#texto">Leer el texto completo</a></div>
+  </section>
+
+  <div class="g g-2 mt16 dos-col">
+    <section class="t"><h4>Qué guardamos, si dices que sí</h4><ul><li>Tus respuestas, como datos codificados.</li><li>Tu plan, lo que cumples y cómo cambian tus semáforos.</li><li>Tus compras de fórmulas.</li><li>Tus resultados genéticos, solo con el segundo permiso.</li></ul></section>
+    <section class="t"><h4>Qué no hacemos nunca</h4><ul><li>Vender tus datos.</li><li>Usar tu nombre, tu correo o tu teléfono para investigar.</li><li>Cambiar tu precio o tu servicio según lo que elijas.</li><li>Compartir nada sin acuerdo escrito.</li></ul></section>
+  </div>
+
+  <section class="t mt16">
+    <div class="t-cab"><h3>Quién ha usado tus datos</h3><span class="der chip">Registro de exportaciones</span></div>
+    <p class="peq gris">Todavía nadie. Cada vez que se exporten datos para un proyecto, aparecerá aquí con la fecha, el proyecto y qué se exportó.</p>
+    <div class="acciones"><button class="btn btn-s btn-sm"><svg class="ic ic-s"><use href="#i-descarga"/></svg>Descargar mis datos (JSON)</button><button class="btn btn-s btn-sm"><svg class="ic ic-s"><use href="#i-descarga"/></svg>CSV</button></div>
+  </section>
+
+  <p class="legal" id="texto">Texto legal pendiente del asesor o delegado de protección de datos de EPI10 (Ley 14/2007 de investigación biomédica y RGPD, art. 9). Esta pantalla solo propone la forma: consentimiento separado, por finalidades, revocable y sin condicionar el servicio.</p>
+</main>
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var ins = document.querySelectorAll("[data-p]"), n = document.getElementById("nPerm");
+  function cuenta(){ var c = 0; ins.forEach(function(i){ if (i.checked) c++; }); n.textContent = c + " de 4 activados"; }
+  ins.forEach(function(i){ i.addEventListener("change", cuenta); });
+  document.getElementById("guardar").addEventListener("click", function(){
+    EPIU.modal("Permisos guardados", '<p>' + n.textContent + '. Puedes cambiarlos cuando quieras desde aquí. Te mandamos una copia por correo.</p><div class="acciones"><a class="btn btn-p" href="mi-plan.html">Volver a mi plan</a></div>');
+  });
+})();
+</script>
+</body>
+</html>

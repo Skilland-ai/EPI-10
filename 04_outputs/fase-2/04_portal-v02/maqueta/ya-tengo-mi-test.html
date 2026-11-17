@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ya tengo mi test · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .lab{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .pasos-c{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  .pasos-c li{display:flex;gap:12px;align-items:flex-start;font-size:14px}
+  .pasos-c b.n{width:26px;height:26px;border-radius:50%;background:var(--cian-50);color:var(--azul);display:grid;place-items:center;font-size:13px;flex:none}
+</style>
+</head>
+<body data-zona="web" data-v02="nuevo">
+<main class="pag">
+  <div class="g g-21">
+    <section>
+      <div class="fila-w"><span class="eyebrow">Puerta C · ya tengo mi test</span><span data-marca></span></div>
+      <h1 class="tit">Ya tienes tus datos. Te ayudamos a usarlos.</h1>
+      <p class="lead">Si hiciste un test genético con otra empresa, envíanoslo. Lo revisa una persona del equipo y te decimos si podemos prepararte tu plan sin repetir el test.</p>
+
+      <form class="t mt24" id="form">
+        <b>¿De qué empresa es tu test?</b>
+        <div class="lab opc mt8" id="lab"><button type="button" class="sel" data-v="t">TellmeGen</button><button type="button" data-v="o">Otra</button></div>
+        <div class="aviso aviso-a mt12 oculto" id="otra"><svg class="ic"><use href="#i-info"/></svg><span>Por ahora solo trabajamos con TellmeGen, que ya sabemos leer. Déjanos tus datos y te avisamos cuando aceptemos otros.</span></div>
+
+        <div class="g g-2m mt16" style="gap:0 12px">
+          <label class="campo">Nombre<input class="inp" value="Javier"></label>
+          <label class="campo">Correo<input class="inp" value="javier@ejemplo.com"></label>
+        </div>
+        <b>Tus resultados</b>
+        <div class="subida mt8" id="subida"><svg class="ic ic-l azul"><use href="#i-subir"/></svg><p class="mt8"><b>Arrastra aquí tus PDF</b> o toca para elegirlos</p><p class="nota">Los informes de TellmeGen (Wellness, Traits…). Máx. 30 MB.</p></div>
+        <div id="archivos" class="mt8"></div>
+        <label class="campo mt12">¿Algo que debamos saber? (opcional)<textarea class="inp" rows="3" placeholder="Por ejemplo: qué te gustaría mejorar"></textarea></label>
+        <label class="fila peq" style="gap:8px;align-items:flex-start"><input type="checkbox"> <span>Acepto que EPI10 trate mis resultados genéticos para preparar mi plan. <a href="#">Leer el consentimiento</a></span></label>
+        <div class="acciones"><button class="btn btn-p" type="submit">Enviar solicitud</button></div>
+        <p class="nota mt8">No se cobra nada hasta que te confirmemos que podemos usar tu test. Precio del plan sin kit: <span class="ejemplo">por decidir</span></p>
+      </form>
+    </section>
+
+    <aside class="col" style="gap:16px">
+      <section class="t">
+        <div class="t-cab"><h3>Qué pasa después</h3></div>
+        <ol class="pasos-c">
+          <li><b class="n">1</b><span>Una persona del equipo revisa tus archivos en unos días laborables <span class="ejemplo">plazo por confirmar</span>.</span></li>
+          <li><b class="n">2</b><span>Si podemos usarlos, te mandamos el enlace de pago y el cuestionario de hábitos.</span></li>
+          <li><b class="n">3</b><span>Tu profesional prepara tu informe y tu plan, igual que con nuestro test.</span></li>
+          <li><b class="n">4</b><span>Entras en Mi plan, con sesión y revisión mensual.</span></li>
+        </ol>
+      </section>
+      <div class="aviso"><svg class="ic"><use href="#i-escudo"/></svg><span>Tus archivos se procesan para preparar tu plan y se borran después, como en el resto del servicio.</span></div>
+      <p class="nota">En la v1 esta puerta se atiende a mano: el equipo ve la solicitud en su panel. Si llegan suficientes, se automatiza.</p>
+    </aside>
+  </div>
+</main>
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var lab = document.getElementById("lab");
+  lab.addEventListener("click", function(e){ var b = e.target.closest("button"); if (!b) return; lab.querySelectorAll("button").forEach(function(x){ x.classList.toggle("sel", x === b); }); document.getElementById("otra").classList.toggle("oculto", b.dataset.v !== "o"); });
+  document.getElementById("subida").addEventListener("click", function(){
+    document.getElementById("archivos").innerHTML = '<div class="supl-fila"><span class="icono-c" style="background:#fbe4e2;color:var(--rojo-ink)"><svg class="ic"><use href="#i-documento"/></svg></span><div class="q"><b>WELLNESS_report.pdf</b><span>2,1 MB · listo</span></div><span class="sem sem-verde">Subido</span></div><div class="supl-fila"><span class="icono-c" style="background:#fbe4e2;color:var(--rojo-ink)"><svg class="ic"><use href="#i-documento"/></svg></span><div class="q"><b>TRAITS_report.pdf</b><span>1,4 MB · listo</span></div><span class="sem sem-verde">Subido</span></div>';
+  });
+  document.getElementById("form").addEventListener("submit", function(e){ e.preventDefault();
+    EPIU.modal("Solicitud enviada", '<p>Gracias, Javier. Te escribimos en unos días laborables para decirte si podemos usar tu test.</p><p class="nota mt8">Mientras, puedes hacer la conversación gratuita y empezar con dos hábitos.</p><div class="acciones"><a class="btn btn-p" href="chatbot.html">Empezar por conocerme</a></div>');
+  });
+})();
+</script>
+</body>
+</html>

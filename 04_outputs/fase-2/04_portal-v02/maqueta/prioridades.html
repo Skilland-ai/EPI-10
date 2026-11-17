@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tus prioridades · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .matriz{width:100%;max-width:420px;height:auto;display:block;margin:0 auto}
+  .matriz .mz-q{font-size:8.5px;font-weight:800;letter-spacing:.08em}
+  .matriz .mz-ax{font-size:9.5px;font-weight:700;fill:var(--tinta-2)}
+  .matriz .mz-ax2{font-size:8px;fill:var(--gris)}
+  .matriz .mz-eje{stroke:var(--gris);stroke-width:1.2;fill:none}
+  .matriz .mz-lab{font-size:9px;font-weight:700;fill:var(--tinta)}
+  .pc{display:grid;gap:16px}
+  @media (min-width:900px){.pc{grid-template-columns:auto minmax(0,1fr) minmax(0,1fr)}}
+  .pc-n{font-size:64px;font-weight:700;line-height:.9}
+  .pc-n.rojo{color:var(--rojo)}.pc-n.ambar{color:var(--ambar)}.pc-n.verde{color:var(--verde)}
+  .pc h2{font-size:22px;line-height:1.2;margin-top:4px}
+  .caja{border-radius:14px;background:var(--marfil);padding:12px 14px}
+  .caja + .caja{margin-top:10px}
+  .caja .k{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+  .sinprod{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--verde-ink)}
+</style>
+</head>
+<body data-zona="clienta" data-v02="nuevo" data-pie>
+<main class="pag">
+  <div class="migas"><a href="mi-plan.html">Mi plan</a><svg class="ic ic-s"><use href="#i-chevron"/></svg><span>Prioridades</span></div>
+  <div class="cab-pag">
+    <div>
+      <div class="fila-w"><span class="eyebrow">Mi plan</span><span data-marca></span></div>
+      <h1 class="tit">Tus tres prioridades</h1>
+      <p class="lead">Salen de cruzar tu genética con tus hábitos. Tu profesional las ordenó contigo en la sesión del 5 de noviembre.</p>
+    </div>
+  </div>
+
+  <div class="g g-2">
+    <section class="t">
+      <div class="t-cab"><h3>Por qué estas tres</h3></div>
+      <div id="matriz"></div>
+      <p class="peq mt12">Arriba, lo que ya haces bien. A la derecha, donde tu genética da más señal. <b>Lo prioritario está abajo a la derecha</b>: donde la genética pide cuidado y el hábito flojea.</p>
+    </section>
+    <section class="t">
+      <div class="t-cab"><h3>Tus cinco áreas</h3><span class="der nota">Toca un área</span></div>
+      <div id="rueda"></div>
+    </section>
+  </div>
+
+  <div class="col mt24" style="gap:16px" id="lista"></div>
+
+  <div class="aviso mt24"><svg class="ic"><use href="#i-info"/></svg><span>Tu genética marca una tendencia; tus hábitos deciden el resultado. Nada de esto es un diagnóstico. La genética no cambia: por eso lo que revisamos cada mes son tus hábitos.</span></div>
+</main>
+
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var U = EPIU, E = EPI;
+  /* Mapa de prioridades: genética (x) frente a hábitos (y). Mismo dibujo que matriz_svg() del informe. */
+  function matriz(areas){
+    var W = 340, H = 262, x0 = 40, y0 = 20, w = 290, h = 196, pad = .1;
+    function px(g){ return x0 + (pad + (1 - 2 * pad) * (Math.max(1, Math.min(3, g)) - 1) / 2) * w; }
+    function py(hb){ return y0 + (pad + (1 - 2 * pad) * (5 - Math.max(1, Math.min(5, hb))) / 4) * h; }
+    var o = ['<svg class="matriz" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Mapa de prioridades">'];
+    [[x0, y0, "#e2f3ea", "Mantén", "#17663f"], [x0 + w / 2, y0, "#e5f5fa", "Vigila y protege", "#00739a"], [x0, y0 + h / 2, "#fcf0d4", "Mejora el hábito", "#865600"], [x0 + w / 2, y0 + h / 2, "#fbe4e2", "Prioridad", "#9b2620"]].forEach(function(q){
+      o.push('<rect x="' + q[0] + '" y="' + q[1] + '" width="' + w / 2 + '" height="' + h / 2 + '" fill="' + q[2] + '"/>');
+      var ty = q[1] === y0 ? y0 - 6 : y0 + h + 12;
+      o.push('<text x="' + (q[0] + w / 4) + '" y="' + ty + '" text-anchor="middle" class="mz-q" fill="' + q[4] + '">' + q[3].toUpperCase() + '</text>');
+    });
+    o.push('<line x1="' + (x0 + w / 2) + '" y1="' + y0 + '" x2="' + (x0 + w / 2) + '" y2="' + (y0 + h) + '" stroke="#fff" stroke-width="1.5"/><line x1="' + x0 + '" y1="' + (y0 + h / 2) + '" x2="' + (x0 + w) + '" y2="' + (y0 + h / 2) + '" stroke="#fff" stroke-width="1.5"/>');
+    var yb = y0 + h + 28;
+    o.push('<line x1="' + x0 + '" y1="' + (yb - 4) + '" x2="' + (x0 + w) + '" y2="' + (yb - 4) + '" class="mz-eje"/><text x="' + (x0 + w / 2) + '" y="' + (yb + 9) + '" text-anchor="middle" class="mz-ax">Señal de tu genética</text><text x="' + x0 + '" y="' + (yb + 9) + '" class="mz-ax2">menos</text><text x="' + (x0 + w) + '" y="' + (yb + 9) + '" text-anchor="end" class="mz-ax2">más</text>');
+    o.push('<line x1="' + (x0 - 14) + '" y1="' + (y0 + h) + '" x2="' + (x0 - 14) + '" y2="' + y0 + '" class="mz-eje"/><text transform="translate(' + (x0 - 20) + ' ' + (y0 + h / 2) + ') rotate(-90)" text-anchor="middle" class="mz-ax">Tus hábitos hoy</text>');
+    var grupos = {};
+    areas.forEach(function(a){ (grupos[a.habitos] = grupos[a.habitos] || []).push(a); });
+    Object.keys(grupos).forEach(function(k){ grupos[k].sort(function(p, q){ return p.genetica - q.genetica; }).forEach(function(a, j){ a._j = j; a._n = grupos[k].length; }); });
+    areas.forEach(function(a){
+      var x = px(a.genetica), y = py(a.habitos);
+      o.push('<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="12.5" fill="' + U.COLOR[a.estado] + '" stroke="#fff" stroke-width="2"/><use href="#i-' + a.id + '" x="' + (x - 8).toFixed(1) + '" y="' + (y - 8).toFixed(1) + '" width="16" height="16" style="color:#fff"/>');
+      var arriba = a._n > 1 ? a._j % 2 === 0 : true; if (y < y0 + 34) arriba = false; if (y > y0 + h - 34) arriba = true;
+      var anc = x > x0 + w - 45 ? "end" : (x < x0 + 45 ? "start" : "middle");
+      o.push('<text x="' + x.toFixed(1) + '" y="' + (arriba ? y - 17 : y + 25).toFixed(1) + '" text-anchor="' + anc + '" class="mz-lab">' + a.nombre + '</text>');
+    });
+    return o.join("") + "</svg>";
+  }
+  document.getElementById("matriz").innerHTML = matriz(E.areas);
+  U.ruedaConLista(document.getElementById("rueda"), E.areas, { inicial: "descanso" });
+
+  document.getElementById("lista").innerHTML = E.prioridades.map(function(p){
+    var a = U.area(p.area), h = E.habitos.filter(function(x){ return x.area === p.area; })[0];
+    var hechos = h ? h.semana.filter(function(v){ return v === 1; }).length : 0;
+    var ayuda = p.ayuda.tipo === "formula"
+      ? '<div class="supl-fila" style="padding:0;border:0">' + U.est("tomar") + '<div class="q"><b>Nocticum <span class="epi10-sello">EPI10</span></b><span>Por la noche, antes de dormir</span></div><a class="btn btn-s btn-sm" href="suplementacion.html#nocticum">Ver</a></div><p class="nota mt8">Y dejar el quemagrasas con cafeína de la tarde.</p>'
+      : '<span class="sinprod">' + U.ic("check") + 'Sin producto: solo hábitos</span><p class="nota mt4">No todo se resuelve en la tienda.</p>';
+    return '<article class="t pc borde-' + p.estado[0] + '" id="p' + p.n + '">' +
+      '<div><span class="pc-n ' + p.estado + '">' + p.n + '</span></div>' +
+      '<div><div class="fila-w"><span class="k" style="display:flex;gap:6px;align-items:center">' + U.ic(a.id, "ic-s") + a.nombre + '</span>' + U.sem(a.estado) + (p.n === 1 ? '<span class="empieza">Empieza por aquí</span>' : '') + '</div>' +
+        '<h2>' + p.titulo + '</h2><p class="mt8">' + p.frase + '</p>' +
+        '<div class="orgs"><span class="org org-gen">' + U.ic("genetica") + '<span><b>Lo que traes</b> · ' + a.gen + '</span></span><span class="org org-hab">' + U.ic("habitos") + '<span><b>Lo que haces</b> · ' + a.hab + '</span></span></div></div>' +
+      '<div><div class="caja"><span class="k">' + U.ic("diana", "ic-s") + 'Qué haces</span><p class="peq">' + p.accion + '</p>' +
+        (h ? '<div class="fila mt8">' + U.sem(h.estado) + '<span class="peq gris">' + h.nombre + ' · ' + hechos + ' hechos esta semana</span></div>' : '') + '</div>' +
+        '<div class="caja"><span class="k">' + U.ic("capsula-med", "ic-s") + 'Con qué te ayudamos</span>' + ayuda + '</div>' +
+        '<div class="caja"><span class="k">' + U.ic("repetir", "ic-s") + 'Cuándo lo revisamos</span><p class="peq">Cada mes. Te preguntaremos: <b>' + p.revisa + '</b>.</p></div></div>' +
+      '</article>';
+  }).join("");
+})();
+</script>
+</body>
+</html>

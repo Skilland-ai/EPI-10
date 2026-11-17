@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empieza por conocerte · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .web{display:grid;gap:20px}
+  @media (min-width:980px){.web{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}.web-hero{position:sticky;top:20px}}
+  .web-hero h1{font-size:36px;line-height:1.08}
+  @media (min-width:980px){.web-hero h1{font-size:48px}}
+  .web-hero .lead{font-size:17px}
+  .ventaja{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:14.5px}
+  .ventaja .ic{color:var(--cian-ink);margin-top:2px}
+  .chatbox{background:#f7f2ec;border-radius:22px;box-shadow:var(--sombra);border:1px solid var(--linea);overflow:hidden}
+  .chat-cab{display:flex;align-items:center;gap:10px;background:#fff;padding:12px 16px;border-bottom:1px solid var(--linea)}
+  .chat-cab .icono-c{background:var(--azul);color:#fff;border-radius:50%}
+  .chat-cab small{display:block;color:var(--gris);font-size:12px}
+  .contador{font-size:12px;color:var(--gris);padding:10px 16px 0}
+  .contador .progreso{height:4px;border-radius:9px;background:#e6dfd8;margin-top:6px;overflow:hidden}
+  .contador .progreso i{display:block;height:100%;background:var(--cian);transition:width .3s}
+  .chat{padding:14px 16px 6px;min-height:280px}
+  .resp{padding:6px 16px 16px}
+  .resp .opc{display:grid;grid-template-columns:1fr;gap:8px}
+  @media (min-width:520px){.resp .opc.dos{grid-template-columns:1fr 1fr}}
+  .resp .opc button{padding:10px 12px;font-size:14px}
+  .multi-nota{font-size:12px;color:var(--gris);margin:0 0 8px}
+  .sem-card{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:14px;padding:12px 14px;border:1px solid var(--linea-fria)}
+  .sem-card .luz{margin-top:2px}
+  .tres{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .formula-r{border:2px solid var(--cian);border-radius:16px;background:#fff;padding:14px}
+  .formula-r.orient{border-color:#d5dde6}
+  #resultado .t{box-shadow:none}
+</style>
+</head>
+<body data-zona="web" data-v02="nuevo">
+<main class="pag">
+  <div class="web">
+    <section class="web-hero">
+      <div class="fila-w"><span class="eyebrow">EPI10 Salud · web</span><span data-marca></span></div>
+      <h1 class="mt8">Entiéndete primero. Después, cuídate con criterio.</h1>
+      <p class="lead">Cinco minutos de conversación y te damos una primera orientación hecha para ti. Gratis y sin compromiso.</p>
+      <div class="ventaja"><svg class="ic"><use href="#i-check"/></svg><span>Tres semáforos sobre tu descanso, tu energía y tu movimiento.</span></div>
+      <div class="ventaja"><svg class="ic"><use href="#i-check"/></svg><span>Dos hábitos para empezar y, si encaja, una fórmula de EPI10.</span></div>
+      <div class="ventaja"><svg class="ic"><use href="#i-check"/></svg><span>Te pedimos el correo al final, solo si quieres guardarlo.</span></div>
+      <p class="nota mt16">¿Ya hiciste un test genético con otra empresa? <a href="ya-tengo-mi-test.html">Ya tengo mi test</a></p>
+      <button class="btn btn-g btn-sm mt8" id="comoMarta" title="Atajo para el workshop">Responder como Marta (maqueta)</button>
+    </section>
+
+    <section class="chatbox" aria-label="Asistente de EPI10">
+      <div class="chat-cab"><span class="icono-c"><svg class="ic"><use href="#i-bot"/></svg></span><div><b>Asistente de EPI10</b><small>Asistente guiado con IA · sigue las reglas de nuestro equipo</small></div></div>
+      <div class="contador" id="contador"><span id="cTxt"></span><div class="progreso"><i id="cBar" style="width:0"></i></div></div>
+      <div class="chat" id="chat"></div>
+      <div class="resp" id="resp"></div>
+      <div id="resultado" class="oculto" style="padding:0 16px 18px"></div>
+    </section>
+  </div>
+</main>
+
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+/* Conversación sobre el «Cuestionario EPI10 · recomendación multifórmula» de Aitor:
+   preguntas 1 a 7 = perfil y seguridad; 8 = objetivo (múltiple); 9 a 11 = bloque de afinado; puntuación y reglas de seguridad tal cual.
+   Los semáforos del resultado son una REGLA PROPUESTA por Skilland (el cuestionario no los define): validar con Aitor. */
+(function(){
+  var U = EPIU;
+  var F = { L: "Lesinot", I: "Inarticum", Fo: "Forticum", N: "Nocticum", Li: "Lipix", O: "Oxinot" };
+  var BLOQUES = {
+    A: [["¿Qué te gustaría cuidar de forma prioritaria?", 2, [["Músculos, tendones, ligamentos y tejidos de soporte", { L: 2 }], ["Movilidad y confort articular diario", { I: 2 }], ["Vitalidad en épocas de actividad física", { Fo: 1 }], ["Cuidado antioxidante frente al desgaste diario", { O: 1 }]]],
+        ["¿En qué contexto lo notas más?", 1, [["Deporte, entrenamiento o trabajo físico", { L: 2 }], ["Caminar, subir escaleras o moverme en el día a día", { I: 2 }], ["Semanas de alta exigencia", { Fo: 1 }], ["Estrés o factores externos", { O: 1 }]]],
+        ["¿Qué esperas principalmente?", 1, [["Cuidado de tejidos de soporte", { L: 2 }], ["Apoyo a movilidad y confort articular", { I: 2 }], ["Apoyo a vitalidad y tono general", { Fo: 2 }], ["Apoyo a protección celular", { O: 2 }]]]],
+    B: [["¿Qué describe mejor tu situación?", 2, [["Quiero vitalidad y tono durante el día", { Fo: 2 }], ["Me cuesta desconectar y eso afecta a mi rutina", { N: 2 }], ["Me preocupa el desgaste por estrés o ritmo intenso", { O: 2 }], ["Quiero acompañarlo con mejora de alimentación", { Li: 1 }]]],
+        ["¿Cuándo lo notas más?", 1, [["Durante la jornada", { Fo: 2 }], ["Por la noche al intentar relajarme", { N: 2 }], ["De forma acumulada por estrés mantenido", { O: 2 }], ["En etapas de cambio de hábitos alimentarios", { Li: 2 }]]],
+        ["¿Qué apoyo buscas principalmente?", 1, [["Vitalidad y bienestar diario", { Fo: 2 }], ["Relajación y rutina de descanso", { N: 2 }], ["Protección celular frente al estrés oxidativo", { O: 2 }], ["Metabolismo de las grasas dentro de hábitos saludables", { Li: 2 }]]]],
+    C: [["¿Qué buscas mejorar realmente?", 2, [["Rutina de relajación antes de dormir", { N: 2 }], ["Vitalidad durante el día", { Fo: 1 }], ["Bienestar frente al estrés diario", { O: 1 }], ["Comodidad corporal al final del día", { I: 1 }]]],
+        ["¿Qué factor notas más relacionado?", 1, [["Me cuesta desconectar al final del día", { N: 2 }], ["Mi ritmo diario me exige mucho", { Fo: 2 }], ["Estrés o factores externos", { O: 2 }], ["Rigidez, sobrecarga o incomodidad corporal", { I: 2 }]]],
+        ["¿Qué prioridad elegirías?", 1, [["Relajación y rutina nocturna", { N: 2 }], ["Tono general y bienestar diario", { Fo: 2 }], ["Protección celular y antioxidante", { O: 2 }], ["Movilidad y confort articular", { I: 2 }]]]],
+    D: [["¿Qué enfoque encaja más contigo?", 2, [["Apoyar el metabolismo de las grasas con hábitos saludables", { Li: 2 }], ["Más vitalidad para mantener rutinas", { Fo: 1 }], ["Cuidar el bienestar frente al estrés oxidativo", { O: 1 }], ["Mejorar descanso y horarios", { N: 1 }]]],
+        ["¿Qué estás intentando mejorar?", 1, [["Alimentación, equilibrio lipídico y hábitos", { Li: 2 }], ["Energía, constancia y tono general", { Fo: 2 }], ["Cuidado celular a largo plazo", { O: 2 }], ["Desconexión, descanso y horarios", { N: 2 }]]],
+        ["¿Qué esperas del complemento?", 1, [["Apoyo nutricional en mejora de hábitos", { Li: 2 }], ["Apoyo para afrontar el ritmo diario", { Fo: 2 }], ["Apoyo antioxidante", { O: 2 }], ["Apoyo a la rutina de descanso", { N: 2 }]]]],
+    E: [["¿Qué te preocupa más?", 2, [["Estrés oxidativo o bienestar celular", { O: 2 }], ["Falta de vitalidad o semanas de mucha exigencia", { Fo: 2 }], ["Alimentación y equilibrio lipídico", { Li: 1 }], ["Rutina de descanso y desconexión", { N: 1 }]]],
+        ["¿Qué describe mejor tu estilo de vida?", 1, [["Ritmo intenso, estrés o factores externos", { O: 2 }], ["Mucha carga física, mental o laboral", { Fo: 2 }], ["Estoy cuidando alimentación o hábitos", { Li: 2 }], ["Me cuesta relajarme al final del día", { N: 2 }]]],
+        ["¿Qué enfoque prefieres?", 1, [["Antioxidante y protección celular", { O: 2 }], ["Vitalidad y bienestar diario", { Fo: 2 }], ["Metabolismo de grasas con hábitos saludables", { Li: 2 }], ["Relajación y descanso", { N: 2 }]]]],
+    F: [["¿Qué área te gustaría cuidar más ahora?", 2, [["Movimiento y articulaciones", { L: 1, I: 1 }], ["Vitalidad y ritmo diario", { Fo: 2 }], ["Descanso y desconexión", { N: 2 }], ["Alimentación y hábitos", { Li: 2 }], ["Protección celular", { O: 2 }]]],
+        ["¿Qué situación se acerca más a ti?", 2, [["Hago deporte o tengo vida activa", { L: 2 }], ["Muchas horas sentada o movilidad cotidiana", { I: 2 }], ["Semanas exigentes", { Fo: 2 }], ["Me cuesta desconectar al final del día", { N: 2 }], ["Estoy cuidando alimentación", { Li: 2 }]]],
+        ["¿Qué resultado te gustaría priorizar?", 2, [["Cuidar tejidos de soporte", { L: 2 }], ["Movilidad y confort articular", { I: 2 }], ["Vitalidad y bienestar diario", { Fo: 2 }], ["Rutina de descanso", { N: 2 }], ["Metabolismo de grasas", { Li: 2 }], ["Protección celular", { O: 2 }]]]]
+  };
+  var Q = [
+    { id: "nombre", t: "Para empezar, ¿cómo te llamas?", tipo: "texto", marta: "Marta" },
+    { id: "edad", t: "¿Cuántos años tienes?", op: ["18-30 años", "31-45 años", "46-60 años", "Más de 60 años"], marta: [1] },
+    { id: "sexo", t: "¿Sexo?", op: ["Mujer", "Hombre", "Prefiero no indicarlo"], marta: [0] },
+    { id: "embarazo", t: "¿Estás embarazada o en periodo de lactancia?", op: ["No", "Sí", "No lo sé o prefiero no responder"], si: function(r){ return r.sexo && r.sexo[0] === 0; }, marta: [0],
+      porque: "Lo preguntamos por seguridad: en el embarazo y la lactancia, cualquier complemento se consulta antes." },
+    { id: "alergias", t: "¿Tienes alguna alergia, intolerancia o sensibilidad?", multi: 3, op: ["No", "Gluten", "Lactosa", "Huevo", "Pescado", "Crustáceos o moluscos", "Soja", "Frutos de cáscara", "Otra"], marta: [0],
+      porque: "Algunas fórmulas llevan alérgenos. Si nos lo dices, no te las recomendamos." },
+    { id: "medicacion", t: "¿Tomas alguna medicación de forma habitual?", multi: 3, op: ["No", "Anticoagulantes o antiagregantes", "Para la tensión", "Para la diabetes o la glucosa", "Para el colesterol", "Para el tiroides", "Antidepresivos, ansiolíticos o para dormir", "Antiinflamatorios frecuentes", "Tratamiento hormonal", "Otra"], marta: [0],
+      porque: "Nunca afirmamos que algo sea compatible con tu medicación. Si tomas alguna, te pediremos que lo consultes antes." },
+    { id: "enfermedad", t: "¿Tienes alguna enfermedad o condición diagnosticada?", multi: 3, op: ["No", "Tensión o corazón", "Diabetes o glucosa", "Colesterol", "Hígado o riñón", "Tiroides", "Autoinmune", "Digestiva", "Trastorno del sueño", "Ansiedad o depresión", "Articulaciones o músculos", "Otra"], marta: [0] },
+    { id: "alimentacion", t: "¿Cómo es tu alimentación habitual?", multi: 2, op: ["Variada y equilibrada", "Vegetariana o vegana", "Baja en pescado", "Baja en frutas y verduras", "Alta en grasas, azúcares o ultraprocesados", "Irregular por horarios o viajes", "Dieta para control de peso"], marta: [0] },
+    { id: "habitos", t: "¿Qué se parece a tu día a día?", multi: 3, op: ["Hago deporte con frecuencia", "Paso muchas horas sentada", "Rutina exigente o estrés habitual", "Duermo poco u horarios irregulares", "Fumo", "Bebo alcohol con frecuencia", "Ninguna de las anteriores"], marta: [1, 2, 3] },
+    { id: "objetivo", t: "¿Qué te gustaría cuidar? Puedes marcar dos.", multi: 2, op: ["Articulaciones, músculos o tendones", "Vitalidad y ritmo diario", "Descanso y desconexión", "Alimentación y metabolismo de las grasas", "Protección celular a largo plazo", "No lo tengo claro"], marta: [2],
+      pts: [{ L: 1, I: 1 }, { Fo: 1, O: 1 }, { N: 1, Fo: .5 }, { Li: 1, Fo: .5 }, { O: 1, Fo: .5 }, {}] },
+    { id: "b1", bloque: 0, marta: [0, 1] }, { id: "b2", bloque: 1, marta: [0] }, { id: "b3", bloque: 2, marta: [0] }
+  ];
+  var LET = ["A", "B", "C", "D", "E", "F"];
+  var R = {}, k = 0, auto = false;
+  var chat = document.getElementById("chat"), resp = document.getElementById("resp");
+
+  function bot(html, extra){ chat.insertAdjacentHTML("beforeend", '<div class="burbuja bot">' + html + (extra ? '<span class="porque-q">' + extra + '</span>' : '') + '</div>'); }
+  function yo(t){ chat.insertAdjacentHTML("beforeend", '<div class="burbuja yo">' + U.esc(t) + '</div>'); }
+  function bloqueDe(){ var o = (R.objetivo || [5])[0]; return BLOQUES[LET[o]]; }
+  function preguntas(){ return Q.filter(function(q){ return !q.si || q.si(R); }); }
+  function def(q){ if (q.bloque === undefined) return q; var b = bloqueDe()[q.bloque]; return { id: q.id, t: b[0], multi: b[1] > 1 ? b[1] : 0, op: b[2].map(function(o){ return o[0]; }), pts: b[2].map(function(o){ return o[1]; }), marta: q.marta }; }
+
+  function siguiente(){
+    var lista = preguntas();
+    if (k >= lista.length) return resultado();
+    var q = def(lista[k]);
+    document.getElementById("cTxt").textContent = "Pregunta " + (k + 1) + " de " + lista.length + " · al final, tus 3 semáforos";
+    document.getElementById("cBar").style.width = (k / lista.length * 100) + "%";
+    bot(q.t, q.porque);
+    if (q.tipo === "texto") {
+      resp.innerHTML = '<form class="fila" id="ft"><input class="inp" style="margin:0" id="tx" placeholder="Tu nombre" autocomplete="off"><button class="btn btn-p" aria-label="Enviar"><svg class="ic"><use href="#i-enviar"/></svg></button></form>';
+      var f = document.getElementById("ft");
+      f.addEventListener("submit", function(e){ e.preventDefault(); var v = document.getElementById("tx").value.trim() || "Marta"; R.nombre = v; yo(v); k++; setTimeout(siguiente, 250); });
+      if (auto) { document.getElementById("tx").value = q.marta; setTimeout(function(){ f.requestSubmit(); }, 150); }
+      return;
+    }
+    var sel = [];
+    resp.innerHTML = (q.multi ? '<p class="multi-nota">Puedes marcar hasta ' + q.multi + '.</p>' : '') + '<div class="opc ' + (q.op.length > 3 ? "dos" : "") + '">' + q.op.map(function(o, i){ return '<button data-i="' + i + '">' + o + '</button>'; }).join("") + '</div>' +
+      (q.multi ? '<div class="acciones" style="margin-top:10px"><button class="btn btn-p btn-sm" id="cont" disabled>Continuar</button></div>' : '');
+    function responde(){ R[q.id] = sel.slice(); if (q.pts) R["_pts_" + q.id] = sel.map(function(i){ return q.pts[i]; }); yo(sel.map(function(i){ return q.op[i]; }).join(" · ")); resp.innerHTML = ""; k++; setTimeout(siguiente, auto ? 120 : 300); }
+    resp.querySelectorAll("[data-i]").forEach(function(b){
+      b.addEventListener("click", function(){
+        var i = +b.dataset.i;
+        if (!q.multi) { sel = [i]; return responde(); }
+        var exclusivo = q.op[i] === "No" || /^Ninguna/.test(q.op[i]);
+        if (exclusivo) sel = [i]; else { sel = sel.filter(function(x){ return !(q.op[x] === "No" || /^Ninguna/.test(q.op[x])); }); var p = sel.indexOf(i); if (p >= 0) sel.splice(p, 1); else if (sel.length < q.multi) sel.push(i); }
+        resp.querySelectorAll("[data-i]").forEach(function(x){ x.classList.toggle("sel", sel.indexOf(+x.dataset.i) >= 0); });
+        document.getElementById("cont").disabled = !sel.length;
+      });
+    });
+    var c = document.getElementById("cont"); if (c) c.addEventListener("click", responde);
+    if (auto) setTimeout(function(){ sel = q.marta.slice(); resp.querySelectorAll("[data-i]").forEach(function(x){ x.classList.toggle("sel", sel.indexOf(+x.dataset.i) >= 0); }); setTimeout(responde, 160); }, 160);
+  }
+
+  function resultado(){
+    document.getElementById("cTxt").textContent = "Listo · tu resultado";
+    document.getElementById("cBar").style.width = "100%";
+    var pts = { L: 0, I: 0, Fo: 0, N: 0, Li: 0, O: 0 };
+    Object.keys(R).forEach(function(key){ if (key.indexOf("_pts_") === 0) R[key].forEach(function(p){ Object.keys(p).forEach(function(f){ pts[f] += p[f]; }); }); });
+    var orden = Object.keys(pts).sort(function(a, b){ return pts[b] - pts[a]; });
+    var has = function(id, txt){ var q = def(Q.filter(function(x){ return x.id === id; })[0]); return (R[id] || []).some(function(i){ return q.op[i] === txt || (txt.test && txt.test(q.op[i])); }); };
+    // Reglas de seguridad del cuestionario (§6)
+    var avisos = [], orientativo = false;
+    var alergia = R.alergias && R.alergias.length && !has("alergias", "No");
+    if (alergia) avisos.push("Revisa ingredientes, alérgenos y etiquetado antes de tomar cualquier complemento.");
+    var sinFormula = false;
+    if (has("alergias", "Pescado")) {
+      if (orden[0] === "L") { sinFormula = true; avisos.push("Por tu alergia al pescado, Lesinot no es tu primera opción. Inarticum podría ser una alternativa solo si su etiquetado confirma que no lleva el alérgeno: lo revisa un profesional antes."); }
+      orden = orden.filter(function(c){ return c !== "L"; });
+    }
+    if (R.embarazo && R.embarazo[0] !== 0) { orientativo = true; avisos.push("En embarazo o lactancia, consulta a un profesional antes de tomar ningún complemento."); }
+    if (R.medicacion && !has("medicacion", "No")) { orientativo = true; avisos.push("Tomas medicación: no podemos afirmar que sea compatible. Consulta a un profesional sanitario antes de tomar nada."); }
+    if (has("medicacion", /Antidepresivos/) && orden[0] === "N") avisos.push("Con ansiolíticos, sedantes, antidepresivos o medicación para dormir, consulta antes de tomar Nocticum.");
+    if (R.enfermedad && !has("enfermedad", "No")) { orientativo = true; avisos.push("Con una condición diagnosticada, esto es solo una orientación: háblalo con tu profesional."); }
+    if (has("alimentacion", /control de peso/) && orden[0] === "Li") avisos.push("Lipix no es un producto para adelgazar: acompaña hábitos saludables.");
+    // Semáforos (regla propuesta, por validar con Aitor)
+    var sem = [];
+    var dPoco = has("habitos", /Duermo poco/), estres = has("habitos", /estrés/), sentada = has("habitos", /sentada/), deporte = has("habitos", /deporte/);
+    var obj = R.objetivo || [];
+    sem.push({ id: "descanso", e: dPoco ? (obj.indexOf(2) >= 0 ? "rojo" : "ambar") : "verde", dijo: dPoco ? "duermes poco o con horarios irregulares" : "descansas bien", hab: "Sin pantallas 30 minutos antes de dormir" });
+    sem.push({ id: "estres", e: estres ? (obj.indexOf(1) >= 0 ? "rojo" : "ambar") : "verde", dijo: estres ? "tu rutina es exigente y el estrés es habitual" : "llevas bien tu ritmo", hab: "Cenar antes de las 21:00 para bajar el ritmo" });
+    sem.push({ id: "movimiento", e: deporte ? "verde" : sentada ? "ambar" : "gris", dijo: deporte ? "haces deporte con frecuencia" : sentada ? "pasas muchas horas sentada" : "no nos has contado cuánto te mueves", hab: "Caminar 30 minutos al día" });
+    var al = R.alimentacion || [];
+    sem.push({ id: "nutricion", e: has("alimentacion", /ultraprocesados/) ? "rojo" : (al.length === 1 && has("alimentacion", /Variada/)) ? "verde" : "ambar", dijo: has("alimentacion", /Variada/) ? "comes variado" : "tu alimentación tiene margen", hab: "Verdura en la cena tres días por semana" });
+    var peso = { rojo: 0, ambar: 1, gris: 2, verde: 3 };
+    var top = sem.slice().sort(function(a, b){ return peso[a.e] - peso[b.e]; }).slice(0, 3);
+    var nombre = R.nombre || "Marta", f1 = orden[0], f2 = pts[orden[1]] >= 1 ? orden[1] : null;
+    var pt = function(n){ return String(n).replace(".", ",") + (n === 1 ? " punto" : " puntos"); };
+    var fdat = function(c){ return EPI.formulas.filter(function(x){ return x.nombre === F[c]; })[0]; };
+    var h = '<div class="t" style="background:#fff;border-radius:18px">' +
+      '<span class="eyebrow">Tu punto de partida</span><h2 class="mt4" style="font-size:22px">' + U.esc(nombre) + ', esto es lo que vemos</h2>' +
+      '<div class="tres">' + top.map(function(s){ return U.sem(s.e, U.area(s.id).nombre + " · " + (s.e === "gris" ? "sin datos" : U.ESTADO_TXT[s.e].toLowerCase())); }).join("") + '</div>' +
+      '<div class="col mt16" style="gap:8px">' + top.map(function(s){
+        var a = U.area(s.id);
+        return '<div class="sem-card"><span class="luz ' + s.e + '"><i></i><i></i><i></i></span><div><b>' + a.nombre + '</b><p class="peq">Nos dijiste que ' + s.dijo + '. ' + (s.e === "verde" ? '<b>Aquí no necesitas nada.</b>' : '<b>Te sugerimos:</b> ' + s.hab.charAt(0).toLowerCase() + s.hab.slice(1) + '.') + '</p></div></div>';
+      }).join("") + '</div>' +
+      '<div class="formula-r mt16' + (orientativo ? " orient" : "") + '"><div class="fila entre"><span class="k">' + (orientativo ? "Orientación, no recomendación" : "Fórmula orientativa") + '</span><span class="ejemplo">ficha de ejemplo</span></div>' +
+      (sinFormula ? '<h3 class="mt4">Sin fórmula automática</h3><p class="peq">Tu objetivo encaja con el cuidado de músculos y tendones, pero con tu alergia no te recomendamos ninguna fórmula sin que un profesional revise antes el etiquetado.</p>'
+        : '<h3 class="mt4">' + F[f1] + '</h3><p class="peq">' + fdat(f1).foco + '. Tus respuestas muestran más afinidad con ella (' + pt(pts[f1]) + ' frente a ' + pt(pts[orden[1]]) + ').</p>' +
+          (f2 ? '<p class="nota mt8">También podría interesarte <b>' + F[f2] + '</b>, con menos énfasis: ' + fdat(f2).foco.toLowerCase() + '.</p>' : '')) +
+      (avisos.length ? '<div class="aviso aviso-a mt12"><svg class="ic"><use href="#i-alerta"/></svg><span>' + avisos.join(" ") + '</span></div>' : '') + '</div>' +
+      '<div class="t-cian mt16"><b>Guárdalo y sigue tu avance</b><p class="peq mt4">Te creamos una cuenta gratuita con tus semáforos, estos hábitos y tu fórmula. Te avisamos cuando toque revisarlos.</p>' +
+      '<label class="campo mt12">Tu correo<input class="inp" type="email" value="marta@ejemplo.com"></label><label class="fila peq" style="gap:8px;align-items:flex-start;margin-bottom:12px"><input type="checkbox"> <span>Acepto la política de privacidad. (Casilla sin marcar: la marca ella.)</span></label>' +
+      '<a class="btn btn-p btn-bloque" href="gratuita.html">Crear mi cuenta gratuita</a></div>' +
+      '<div class="fila entre mt16" style="flex-wrap:wrap;gap:8px"><span class="peq">¿Quieres saber qué dice tu genética? <b>Test e informe con sesión: 399 €</b> <span class="ejemplo">precio por confirmar</span></span><a class="btn btn-s btn-sm" href="se-mantiene.html">Ver el test</a></div>' +
+      '<p class="legal">Este cuestionario es orientativo y no sustituye el consejo de un profesional sanitario. Los complementos alimenticios no deben utilizarse como sustitutos de una dieta variada y equilibrada ni de un estilo de vida saludable. No superar la dosis diaria recomendada. Mantener fuera del alcance de los niños más pequeños. En caso de embarazo, lactancia, medicación, enfermedad diagnosticada, alergias o dudas, consulta con un profesional sanitario.</p>' +
+      '<p class="nota mt8">Maqueta: puntuación y reglas de seguridad del cuestionario multifórmula tal cual. Los semáforos son una regla propuesta por Skilland, por validar con Aitor.</p></div>';
+    bot("Gracias, " + U.esc(nombre) + ". Con tus respuestas, esto es lo que vemos. No es un diagnóstico.");
+    var r = document.getElementById("resultado"); r.innerHTML = h; r.classList.remove("oculto"); resp.innerHTML = "";
+    if (!auto) r.scrollIntoView({ behavior: "smooth" });
+  }
+
+  bot("Hola. Soy el asistente de EPI10, una inteligencia artificial que sigue las reglas de nuestro equipo profesional. No diagnostico: te doy una primera orientación. Tu informe, si lo pides, lo firma un profesional.");
+  setTimeout(siguiente, 300);
+  document.getElementById("comoMarta").addEventListener("click", function(){
+    auto = true; R = {}; k = 0; chat.innerHTML = ""; document.getElementById("resultado").classList.add("oculto");
+    bot("Hola. Soy el asistente de EPI10, una inteligencia artificial que sigue las reglas de nuestro equipo profesional. No diagnostico: te doy una primera orientación.");
+    siguiente();
+  });
+})();
+</script>
+</body>
+</html>

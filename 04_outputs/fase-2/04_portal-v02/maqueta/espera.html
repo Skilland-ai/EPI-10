@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu espacio · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .tuto{display:grid;gap:12px}
+  @media (min-width:900px){.tuto{grid-template-columns:repeat(3,1fr)}}
+  .tuto .t{display:flex;flex-direction:column;gap:8px}
+  .tuto .num{font-size:12px;font-weight:800;color:var(--cian-ink);letter-spacing:.1em}
+  .tuto h4{font-size:16px}
+  .tuto p{font-size:13.5px;color:var(--tinta-2)}
+  .dibujo{height:86px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:10px}
+  .acc{display:flex;flex-direction:column;gap:8px}
+  .acc .ic{color:var(--azul)}
+  .cifra-s{font-size:22px;font-weight:700;color:var(--azul-tinta)}
+</style>
+</head>
+<body data-zona="espera" data-v02="cambia" data-pie>
+<main class="pag">
+  <div class="fila-w"><span class="eyebrow">Hola, Marta</span><span data-marca></span></div>
+  <h1 class="tit">Tu espacio EPI10</h1>
+  <p class="lead">Tu muestra está en el laboratorio. Mientras llega tu informe, ya puedes ir trabajando tus dos primeros hábitos.</p>
+
+  <section class="t-osc mt24">
+    <span class="eyebrow">Paso 4 de 5 · Laboratorio</span>
+    <p class="mt8" style="color:#a9c4dc;font-size:13px">Estás en</p>
+    <h2 style="font-size:24px">Tu muestra se está analizando</h2>
+    <p class="mt4">Siguiente: tu profesional prepara el informe. Suele tardar entre 3 y 5 semanas <span class="ejemplo">plazo por confirmar</span>. Te avisamos por correo.</p>
+    <div class="pasos">
+      <div class="paso ok"><b><svg class="ic ic-s"><use href="#i-check"/></svg></b><span>Bienvenida</span></div>
+      <div class="paso ok"><b><svg class="ic ic-s"><use href="#i-check"/></svg></b><span>Tus documentos</span></div>
+      <div class="paso ok"><b><svg class="ic ic-s"><use href="#i-check"/></svg></b><span>Tu test</span></div>
+      <div class="paso act"><b>4</b><span>Laboratorio</span></div>
+      <div class="paso"><b>5</b><span>Tu informe</span></div>
+    </div>
+  </section>
+
+  <div class="g g-plan mt24">
+    <section class="t" id="habitos">
+      <div class="t-cab"><h3>Mientras tanto, tus dos hábitos</h3><span class="der sem sem-nuevo">Nuevo</span></div>
+      <div id="rejilla"></div>
+      <p class="nota mt8">Los trajiste de tu cuenta gratuita. Cuando llegue tu informe, tu profesional los ajusta y se convierten en tu plan.</p>
+    </section>
+    <section class="t">
+      <div class="t-cab"><h3>Tu informe está en camino</h3></div>
+      <div class="t-suave" style="text-align:center">
+        <div id="ruedaGris"></div>
+        <p class="peq mt8">Tu rueda se colorea cuando tu profesional cruza tu genética con tus hábitos.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="sec-cab sec"><h2 class="sec-tit">Qué vas a descubrir</h2><span class="sec-sub">Tres minutos de lectura</span></div>
+  <div class="tuto">
+    <article class="t"><span class="num">1 DE 3</span><div class="dibujo" style="background:var(--o-genetica);color:var(--o-genetica-ink)"><svg class="ic ic-l"><use href="#i-genetica"/></svg></div><h4>Qué mide un test genético</h4><p>Cómo tiende tu cuerpo a procesar los nutrientes, el esfuerzo, la cafeína o el descanso. Son tendencias que traes de serie.</p></article>
+    <article class="t"><span class="num">2 DE 3</span><div class="dibujo" style="background:#f1f2f4;color:var(--gris)"><svg class="ic ic-l"><use href="#i-escudo"/></svg></div><h4>Qué no puede decirte</h4><p>No es un diagnóstico ni predice lo que te va a pasar. Una tendencia no es un destino.</p></article>
+    <article class="t"><span class="num">3 DE 3</span><div class="dibujo" style="background:var(--o-habitos);color:var(--o-habitos-ink)"><svg class="ic ic-l"><use href="#i-habitos"/></svg></div><h4>Qué depende de ti</h4><p>Tus hábitos deciden el resultado. Por eso tu informe acaba en un plan corto, que revisamos contigo cada mes.</p></article>
+  </div>
+
+  <div class="g g-3 mt24">
+    <a class="t acc" href="se-mantiene.html#documentos" style="color:inherit;text-decoration:none"><span class="icono-c"><svg class="ic"><use href="#i-documento"/></svg></span><b>Mis documentos</b><p class="peq gris">Tu consentimiento y tu cuestionario, ya enviados.</p><span><span class="cifra-s">2</span> <span class="peq">de 2 completados</span></span></a>
+    <a class="t acc" href="se-mantiene.html#citas" style="color:inherit;text-decoration:none"><span class="icono-c"><svg class="ic"><use href="#i-calendario"/></svg></span><b>Citas</b><p class="peq gris">Aquí verás tu sesión con el profesional cuando llegue el informe.</p><span class="chip">Sin citas próximas</span></a>
+    <a class="t acc" href="se-mantiene.html#mensajes" style="color:inherit;text-decoration:none"><span class="icono-c"><svg class="ic"><use href="#i-conversa"/></svg></span><b>Mensajes</b><p class="peq gris">Escribe al equipo de EPI10. Te respondemos aquí mismo.</p><span class="chip">1 sin leer</span></a>
+  </div>
+  <p class="nota mt12"><span class="v02 v02-mantiene">Se mantiene de v0.1</span> El stepper y las tres tarjetas de abajo son los de la v0.1. Lo nuevo son los hábitos, la rueda en espera y «Qué vas a descubrir».</p>
+</main>
+
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var U = EPIU;
+  U.rejilla(document.getElementById("rejilla"), [
+    { nombre: "Sin pantallas 30′ antes de dormir", area: "descanso", semana: [1, 1, 0, null, null, null, null] },
+    { nombre: "Caminar 30 minutos", area: "movimiento", semana: [1, 0, 1, null, null, null, null] }
+  ], { area: true });
+  var gris = EPI.areas.map(function(a){ var n = Object.assign({}, a); n.estado = "gris"; return n; });
+  document.getElementById("ruedaGris").innerHTML = U.rueda(gris, { mini: true, centro: '<text y="-4" text-anchor="middle" class="rueda-k">EN CAMINO</text><text y="12" text-anchor="middle" class="rueda-s">sin datos todavía</text>' });
+})();
+</script>
+</body>
+</html>

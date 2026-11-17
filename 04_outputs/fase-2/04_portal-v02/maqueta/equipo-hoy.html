@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equipo · Hoy · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  @media (min-width:900px){.tiles{grid-template-columns:repeat(6,minmax(0,1fr))}}
+  .tile{background:#fff;border-radius:14px;box-shadow:var(--sombra);padding:14px;display:flex;flex-direction:column;gap:6px;color:inherit;text-decoration:none!important}
+  .tile b{font-size:15px;color:var(--azul-tinta)}
+  .tile p{font-size:12.5px;color:var(--gris);line-height:1.35}
+  .tile.nuevo{border:2px solid var(--cian)}
+  .kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  @media (min-width:900px){.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .kpi{background:#fff;border-radius:14px;padding:14px;box-shadow:var(--sombra)}
+  .kpi p{font-size:12.5px;color:var(--gris);margin-top:6px}
+  .kpi.principal{background:linear-gradient(140deg,#0a5aa0,var(--azul) 45%,var(--azul-900));color:#fff}
+  .kpi.principal .cifra{color:#fff}.kpi.principal p{color:#cfe0ee}
+  .filtros{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+  .filtros button{border:1.5px solid #dbe3ec;background:#fff;border-radius:var(--pill);padding:7px 12px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;display:flex;gap:6px;align-items:center}
+  .filtros button.sel{background:var(--azul);color:#fff;border-color:var(--azul)}
+  .filtros button i{font-style:normal;background:var(--marfil);color:var(--azul);border-radius:var(--pill);padding:0 7px;font-size:12px}
+  .filtros button.sel i{background:rgba(255,255,255,.2);color:#fff}
+  .fila-caso{display:grid;gap:8px 14px;padding:14px 0;border-bottom:1px solid var(--linea);align-items:center}
+  .fila-caso:last-child{border-bottom:0}
+  @media (min-width:900px){.fila-caso{grid-template-columns:220px minmax(0,1fr) 120px auto}}
+  .quien{display:flex;gap:10px;align-items:center}
+  .quien b{display:block;font-size:14.5px}
+  .que{font-size:14px}
+  .que small{display:block;color:var(--gris);font-size:12.5px;margin-top:2px}
+</style>
+</head>
+<body data-zona="equipo" data-v02="cambia" data-pie>
+<main class="pag">
+  <div class="fila-w"><span class="eyebrow">Jueves, 3 de diciembre</span><span data-marca></span></div>
+  <h1 class="tit" style="font-size:28px">Hola, Operaciones</h1>
+
+  <div class="tiles mt16">
+    <a class="tile" href="#"><span class="icono-c"><svg class="ic"><use href="#i-persona"/></svg></span><b>Clientes</b><p>Busca un cliente y abre su ficha.</p></a>
+    <a class="tile nuevo" href="#planes"><span class="icono-c" style="background:var(--cian);color:#fff"><svg class="ic"><use href="#i-diana"/></svg></span><b>Planes</b><p>Revisiones, alertas y recompras.</p></a>
+    <a class="tile" href="#"><span class="icono-c"><svg class="ic"><use href="#i-conversa"/></svg></span><b>Mensajes</b><p>Conversaciones con los clientes.</p></a>
+    <a class="tile" href="#"><span class="icono-c"><svg class="ic"><use href="#i-calendario"/></svg></span><b>Calendario</b><p>Citas y sesiones del equipo.</p></a>
+    <a class="tile" href="#"><span class="icono-c"><svg class="ic"><use href="#i-documento"/></svg></span><b>Documentos e informes</b><p>Consentimientos, cuestionarios e informes.</p></a>
+    <a class="tile" href="#"><span class="icono-c"><svg class="ic"><use href="#i-ajustar"/></svg></span><b>Ajustes</b><p>Usuario, contraseña y funciones avanzadas.</p></a>
+  </div>
+
+  <div class="sec-cab sec" id="planes"><h2 class="sec-tit">Planes · lo que pide atención</h2><span class="v02 v02-nuevo">Nuevo en v0.2</span></div>
+  <div class="kpis">
+    <div class="kpi principal"><span class="k" style="color:var(--cian-claro)">Métrica principal</span><div class="cifra mt8">41 %</div><p>Segunda compra de suplementación en 90 días · 7 de 17</p></div>
+    <div class="kpi"><span class="k">Planes activos</span><div class="cifra mt8">18</div><p>2 en pausa</p></div>
+    <div class="kpi"><span class="k">Revisiones del mes</span><div class="cifra mt8">13/18</div><p>72 % hechas · 5 pendientes</p></div>
+    <div class="kpi"><span class="k">Cuentas gratuitas</span><div class="cifra mt8">64</div><p>9 pasaron al informe (14 %)</p></div>
+  </div>
+  <p class="nota mt8">Cifras de ejemplo.</p>
+
+  <section class="t mt16">
+    <div class="filtros" id="filtros">
+      <button class="sel" data-f="todo">Todo <i>6</i></button>
+      <button data-f="baja"><span class="punto p-ambar"></span>Semáforos que han bajado <i>2</i></button>
+      <button data-f="rev">Revisiones pendientes <i>1</i></button>
+      <button data-f="comp">Recompras en 7 días <i>1</i></button>
+      <button data-f="c">Ya tengo mi test <i>1</i></button>
+      <button data-f="pub">Planes por publicar <i>1</i></button>
+    </div>
+    <div class="mt8" id="casos">
+      <div class="fila-caso" data-f="baja"><div class="quien"><span class="av av-l">MG</span><div><b>Marta Gil Prieto</b><span class="sem sem-ambar">Nutrición baja</span></div></div><div class="que">En su revisión de hoy, nutrición pasa de «vas bien» a «mejorable». Descanso y movimiento mejoran.<small>Revisión 3 dic · Nocticum: «noto que duermo mejor»</small></div><div>${tira:v,a}</div><a class="btn btn-p btn-sm" href="equipo-ficha.html">Abrir su plan</a></div>
+      <div class="fila-caso" data-f="baja"><div class="quien"><span class="av av-l">ER</span><div><b>Elena Ruiz Gómez</b><span class="sem sem-rojo">Descanso baja</span></div></div><div class="que">No nota nada con Nocticum y duerme peor que al empezar.<small>Revisión 1 dic · ha pedido «Ajustar»</small></div><div>${tira:a,a,r}</div><button class="btn btn-p btn-sm">Escribirle</button></div>
+      <div class="fila-caso" data-f="rev"><div class="quien"><span class="av av-l">CV</span><div><b>Clara Vidal Soto</b><span class="chip">Revisión pendiente</span></div></div><div class="que">Le tocaba el 27 nov. Recordatorio enviado por correo el 28.<small>Si no responde, segundo aviso el lunes</small></div><div>${tira:a}</div><button class="btn btn-s btn-sm">Recordar</button></div>
+      <div class="fila-caso" data-f="comp"><div class="quien"><span class="av av-l">SD</span><div><b>Sara Díaz León</b><span class="chip">Recompra</span></div></div><div class="que">Su Forticum se acaba en unos 4 días y no ha pedido.<small>Primera compra 9 nov · aviso enviado</small></div><div>${tira:a,v}</div><button class="btn btn-s btn-sm">Ver</button></div>
+      <div class="fila-caso" data-f="c"><div class="quien"><span class="av av-l">JA</span><div><b>Javier</b><span class="chip">Puerta C</span></div></div><div class="que">Solicitud con test de TellmeGen: 2 PDF subidos.<small>Se atiende a mano: revisar y contestar si se puede usar</small></div><div class="nota">—</div><button class="btn btn-s btn-sm">Revisar</button></div>
+      <div class="fila-caso" data-f="pub"><div class="quien"><span class="av av-l">LM</span><div><b>Lucía Martín Sanz</b><span class="chip">Plan por publicar</span></div></div><div class="que">Plan extraído del informe: 3 prioridades, 3 hábitos y 3 complementos. Falta revisarlo tras la sesión.<small>Informe publicado 1 dic · sesión hoy a las 17:00</small></div><div class="nota">—</div><button class="btn btn-s btn-sm">Revisar y publicar</button></div>
+    </div>
+  </section>
+
+  <div class="sec-cab sec"><h2 class="sec-tit">Casos que esperan al equipo</h2><span class="v02 v02-mantiene">Se mantiene de v0.1</span></div>
+  <section class="t">
+    <div class="fila-caso"><div class="quien"><span class="av av-l">PR</span><div><b>Pablo Rey Ortega</b><span class="sem sem-ambar">Test recibido</span></div></div><div class="que">Pablo te ha escrito y está sin responder.<small>Después: agenda su cita en la sede</small></div><div></div><button class="btn btn-p btn-sm">Responder en Mensajes</button></div>
+    <div class="fila-caso"><div class="quien"><span class="av av-l">AN</span><div><b>Ana Navarro Gil</b><span class="sem sem-nuevo">Muestra en el laboratorio</span></div></div><div class="que">Cuando llegue el resultado, súbelo y marca «Entregable disponible».<small>En el sistema de gestión · actualizado 1 dic</small></div><div></div><button class="btn btn-p btn-sm">Ver en el sistema de gestión</button></div>
+  </section>
+</main>
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var c = document.getElementById("casos");
+  c.innerHTML = c.innerHTML.replace(/\$\{tira:([a-z,]+)\}/g, function(_, l){ var t = l.split(","); return EPIU.tira(t) + '<span class="nota" style="display:block">' + t.length + ' revisi' + (t.length > 1 ? 'ones' : 'ón') + '</span>'; });
+  var f = document.getElementById("filtros");
+  f.addEventListener("click", function(e){ var b = e.target.closest("button"); if (!b) return;
+    f.querySelectorAll("button").forEach(function(x){ x.classList.toggle("sel", x === b); });
+    c.querySelectorAll(".fila-caso").forEach(function(r){ r.style.display = b.dataset.f === "todo" || r.dataset.f === b.dataset.f ? "" : "none"; });
+  });
+})();
+</script>
+</body>
+</html>

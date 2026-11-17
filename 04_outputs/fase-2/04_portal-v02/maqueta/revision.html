@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisión mensual · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .progreso{height:6px;border-radius:var(--pill);background:#e6ecf2;overflow:hidden}
+  .progreso i{display:block;height:100%;background:var(--cian);transition:width .25s}
+  .preg h2{font-size:23px;line-height:1.25;margin-top:10px}
+  .antes-h{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--gris);margin-top:8px}
+  .cambio{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--linea);flex-wrap:wrap}
+  .cambio:last-child{border-bottom:0}
+  .cambio .nom{display:flex;align-items:center;gap:8px;font-weight:700;min-width:150px;flex:1}
+  .cambio .ab{display:flex;align-items:center;gap:6px}
+  .ruedas{display:flex;align-items:center;justify-content:center;gap:10px}
+  .ruedas > div{text-align:center}
+  .ruedas .rueda-mini{max-width:130px}
+  .ruedas .k{display:block;margin-top:4px}
+  .bloque-r h4{font-size:15px;display:flex;align-items:center;gap:8px}
+  .bloque-r li{margin:6px 0;font-size:14px}
+  .bloque-r ul{padding-left:18px;margin:8px 0 0}
+  .foco{display:grid;gap:8px}
+  @media (min-width:640px){.foco{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body data-zona="clienta" data-v02="nuevo" data-pie>
+<main class="pag pag-estrecha" style="max-width:820px">
+
+  <!-- 0 · Entrada -->
+  <section id="intro">
+    <div class="fila-w"><span class="eyebrow">Revisión de diciembre</span><span data-marca></span></div>
+    <h1 class="tit">¿Cómo ha ido tu primer mes?</h1>
+    <p class="lead">Seis preguntas, unos dos minutos. Al terminar verás qué ha cambiado, qué tomas el mes que viene y en qué te centras.</p>
+    <div class="t mt24">
+      <div class="g g-2m">
+        <div class="fila" style="align-items:flex-start"><span class="icono-c"><svg class="ic"><use href="#i-diana"/></svg></span><div><b>Una pregunta por área</b><p class="peq gris">Con un pulsador del 1 al 5. Sin escribir.</p></div></div>
+        <div class="fila" style="align-items:flex-start"><span class="icono-c"><svg class="ic"><use href="#i-capsula-med"/></svg></span><div><b>Una sobre Nocticum</b><p class="peq gris">Para decidir si sigue en tu plan.</p></div></div>
+        <div class="fila" style="align-items:flex-start"><span class="icono-c"><svg class="ic"><use href="#i-grafico"/></svg></span><div><b>Te comparamos contigo</b><p class="peq gris">Con tu punto de partida del 6 de noviembre, no con otras personas.</p></div></div>
+        <div class="fila" style="align-items:flex-start"><span class="icono-c"><svg class="ic"><use href="#i-persona"/></svg></span><div><b>Tu profesional lo ve</b><p class="peq gris">Si algo baja, te escribe.</p></div></div>
+      </div>
+      <div class="acciones"><button class="btn btn-p" id="empezar">Empezar</button><button class="btn btn-g" id="comoMarta" title="Atajo para el workshop">Rellenar como Marta (maqueta)</button></div>
+    </div>
+  </section>
+
+  <!-- 1 · Preguntas -->
+  <section id="preg" class="oculto">
+    <div class="fila entre"><span class="k" id="pn"></span><button class="btn btn-g btn-sm" id="salir">Seguir luego</button></div>
+    <div class="progreso mt8"><i id="pb"></i></div>
+    <div class="t mt16 preg">
+      <span class="k" id="parea" style="display:flex;align-items:center;gap:6px"></span>
+      <h2 id="ptxt"></h2>
+      <span class="antes-h" id="pantes"></span>
+      <div class="mt16" id="popc"></div>
+      <div class="aviso aviso-a mt12 oculto" id="paviso"><svg class="ic"><use href="#i-alerta"/></svg><span>Gracias. Avisamos a tu profesional para que lo revise contigo antes de seguir con tus complementos. Mientras, no cambies nada por tu cuenta.</span></div>
+      <div class="acciones"><button class="btn btn-s" id="atras">Atrás</button><button class="btn btn-p" id="sig" disabled>Siguiente</button></div>
+    </div>
+  </section>
+
+  <!-- 2 · Resultado -->
+  <section id="res" class="oculto">
+    <div class="fila-w"><span class="eyebrow">Tu revisión · 3 de diciembre</span><span data-marca></span></div>
+    <h1 class="tit" id="rTit">Tu mes, de un vistazo</h1>
+    <p class="lead" id="rLead"></p>
+
+    <section class="t mt24">
+      <div class="ruedas"><div id="rAntes"></div><svg class="ic ic-l gris"><use href="#i-flecha"/></svg><div id="rAhora"></div></div>
+      <div class="mt16" id="cambios"></div>
+    </section>
+
+    <div class="g g-2 mt16">
+      <section class="t bloque-r borde-v"><h4><svg class="ic" style="color:var(--verde)"><use href="#i-tendencia-sube"/></svg>Sigue así</h4><ul id="sigue"></ul></section>
+      <section class="t bloque-r borde-a"><h4><svg class="ic" style="color:var(--ambar)"><use href="#i-ojo"/></svg>Merece una mirada</h4><ul id="mirada"></ul>
+        <div class="acciones"><a class="btn btn-s btn-sm" href="habitos.html">Ajustar mi plan</a><a class="btn btn-g btn-sm" href="se-mantiene.html#mensajes">Hablar con mi profesional</a></div>
+        <p class="nota mt8">Tu profesional ya lo ve en tu ficha.</p></section>
+    </div>
+
+    <section class="t mt16">
+      <div class="t-cab"><h3>Tu suplementación del mes que viene</h3><span class="der ejemplo">precio de ejemplo</span></div>
+      <div id="suplRes"></div>
+    </section>
+
+    <section class="t mt16">
+      <div class="t-cab"><h3>¿En qué te centras este mes?</h3></div>
+      <div class="foco opc" id="foco"></div>
+      <label class="fila mt16" style="gap:12px;cursor:pointer;align-items:flex-start"><span class="inter"><input type="checkbox" checked><span></span></span><span class="peq"><b>Sumar un hábito:</b> respirar 5 minutos al salir del trabajo. Tu primer mes ha ido bien y te ves con fuerzas.</span></label>
+      <div class="acciones"><a class="btn btn-p" href="mi-plan.html">Guardar y volver a mi plan</a></div>
+    </section>
+    <p class="nota mt16">Próxima revisión: hacia el 3 de enero, unos días antes de que se acabe tu siguiente bote. Te avisamos por correo.</p>
+  </section>
+</main>
+
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var U = EPIU, E = EPI;
+  var ESC = ["Muy mal", "Mal", "Regular", "Bien", "Muy bien"];
+  var P = [
+    { area: "descanso", t: "¿Cómo has dormido este mes?", marta: 3 },
+    { area: "estres", t: "¿Cómo has llevado el estrés y la energía?", marta: 3 },
+    { area: "movimiento", t: "¿Cuánto te has movido?", marta: 4, esc: ["Casi nada", "Poco", "Algunos días", "Bastante", "Mucho"] },
+    { area: "nutricion", t: "¿Cómo has comido?", marta: 3, esc: ["Muy mal", "Peor que antes", "Regular", "Bien", "Muy bien"] },
+    { area: "complementacion", t: "¿Cómo te ha ido con Nocticum?", tipo: "opc", marta: 0,
+      opc: ["Noto que duermo mejor", "Igual que antes", "No lo he tomado casi", "No me ha sentado bien"] },
+    { area: "complementacion", t: "¿Ha cambiado algo en tu salud o en tu medicación?", tipo: "opc", marta: 0, opc: ["No", "Sí"], seguridad: 1 }
+  ];
+  var R = new Array(P.length).fill(null), i = 0;
+  var $ = function(id){ return document.getElementById(id); };
+
+  function pinta(){
+    var p = P[i], a = U.area(p.area);
+    $("pn").textContent = "Pregunta " + (i + 1) + " de " + P.length;
+    $("pb").style.width = ((i) / P.length * 100) + "%";
+    $("parea").innerHTML = U.ic(a.id, "ic-s") + a.nombre;
+    $("ptxt").textContent = p.t;
+    $("pantes").innerHTML = p.tipo ? "" : "En tu punto de partida: " + U.sem(a.estado) ;
+    if (p.tipo === "opc") {
+      $("popc").innerHTML = '<div class="opc">' + p.opc.map(function(o, k){ return '<button data-v="' + k + '" class="' + (R[i] === k ? "sel" : "") + '">' + o + '</button>'; }).join("") + "</div>";
+    } else {
+      var esc = p.esc || ESC;
+      $("popc").innerHTML = '<div class="pulsadores">' + esc.map(function(o, k){ return '<button data-v="' + (k + 1) + '" class="' + (R[i] === k + 1 ? "sel" : "") + '"><b>' + (k + 1) + '</b>' + o + '</button>'; }).join("") + "</div>";
+    }
+    $("paviso").classList.toggle("oculto", !(p.seguridad !== undefined && R[i] === p.seguridad));
+    $("sig").disabled = R[i] === null;
+    $("sig").textContent = i === P.length - 1 ? "Ver mi resultado" : "Siguiente";
+    $("atras").style.visibility = i ? "visible" : "hidden";
+  }
+  $("popc").addEventListener("click", function(e){ var b = e.target.closest("[data-v]"); if (!b) return; R[i] = +b.dataset.v; pinta(); });
+  $("empezar").addEventListener("click", function(){ $("intro").classList.add("oculto"); $("preg").classList.remove("oculto"); pinta(); });
+  $("atras").addEventListener("click", function(){ if (i) { i--; pinta(); } });
+  $("salir").addEventListener("click", function(){ location.href = "mi-plan.html"; });
+  $("sig").addEventListener("click", function(){ if (i < P.length - 1) { i++; pinta(); } else resultado(); });
+  $("comoMarta").addEventListener("click", function(){
+    $("intro").classList.add("oculto"); $("preg").classList.remove("oculto");
+    var k = 0; (function paso(){ i = k; R[k] = P[k].marta; pinta(); k++; if (k < P.length) setTimeout(paso, 260); else setTimeout(resultado, 300); })();
+  });
+
+  function estadoDe(v){ return v <= 2 ? "rojo" : v === 3 ? "ambar" : "verde"; }
+  var ORDEN = { rojo: 0, ambar: 1, verde: 2 };
+  var ACC = { nutricion: "Esta semana: verdura en la cena tres días.", descanso: "Esta semana: pantallas fuera del dormitorio.", estres: "Esta semana: una pausa de cinco minutos al salir del trabajo.", movimiento: "Esta semana: tres paseos de 20 minutos.", complementacion: "Lo vemos con tu profesional." };
+  function resultado(){
+    $("preg").classList.add("oculto"); $("res").classList.remove("oculto"); window.scrollTo(0, 0);
+    var antes = E.areas.map(function(a){ return Object.assign({}, a); });
+    var ahora = antes.map(function(a){
+      var k = P.findIndex(function(p){ return p.area === a.id && !p.tipo; });
+      var n = Object.assign({}, a); if (k >= 0 && R[k]) { n.estado = estadoDe(R[k]); n.valor = R[k]; }
+      if (a.id === "complementacion" && R[4] === 0) n.estado = "ambar";
+      return n;
+    });
+    $("rAntes").innerHTML = U.rueda(antes, { mini: true }) + '<span class="k">6 nov · inicio</span>';
+    $("rAhora").innerHTML = U.rueda(ahora, { mini: true }) + '<span class="k">3 dic · hoy</span>';
+    var sigue = [], mirada = [];
+    $("cambios").innerHTML = ahora.map(function(n, k){
+      var a = antes[k], d = ORDEN[n.estado] - ORDEN[a.estado];
+      var flecha = d > 0 ? '<span class="chip" style="background:var(--verde-suave);color:var(--verde-ink)">' + U.ic("tendencia-sube", "ic-s") + 'mejora</span>' : d < 0 ? '<span class="chip" style="background:var(--ambar-suave);color:var(--ambar-ink)">' + U.ic("tendencia-baja", "ic-s") + 'a mirar</span>' : '<span class="chip">igual</span>';
+      if (d > 0) sigue.push("<b>" + n.nombre + "</b>: de «" + U.ESTADO_TXT[a.estado].toLowerCase() + "» a «" + U.ESTADO_TXT[n.estado].toLowerCase() + "».");
+      if (d < 0) mirada.push("<b>" + n.nombre + "</b> pasa a «" + U.ESTADO_TXT[n.estado].toLowerCase() + "». " + ACC[n.id] + " Lo miramos en la próxima revisión.");
+      return '<div class="cambio"><span class="nom">' + U.ic(n.id, "azul") + n.nombre + '</span><span class="ab">' + U.sem(a.estado) + U.ic("flecha", "ic-s gris") + U.sem(n.estado) + '</span>' + flecha + '</div>';
+    }).join("");
+    var nS = sigue.length, nM = mirada.length, NUM = ["ninguna", "una", "dos", "tres", "cuatro", "cinco"];
+    $("rTit").textContent = nS ? "Has movido " + (nS === 1 ? "un" : NUM[nS]) + " área" + (nS > 1 ? "s" : "") + " en un mes" : "Tu primer mes, de un vistazo";
+    $("rLead").textContent = (nS ? "Vas a mejor en lo que más importaba. " : "Mantener también es avanzar. ") + (nM ? "Hay " + NUM[nM] + " que merece" + (nM > 1 ? "n" : "") + " una mirada este mes." : "Nada ha bajado.");
+    if (!sigue.length) sigue.push("Has hecho tu revisión: eso ya es seguir el plan.");
+    sigue.push("<b>Cenar antes de las 21:00</b>: 6 de 7 días la última semana.");
+    if (!mirada.length) mirada.push("Nada ha bajado este mes.");
+    $("sigue").innerHTML = sigue.map(function(t){ return "<li>" + t + "</li>"; }).join("");
+    $("mirada").innerHTML = mirada.map(function(t){ return "<li>" + t + "</li>"; }).join("");
+    var noct = R[4], noctEstado = noct === 0 ? "mantener" : noct === 3 ? "dejar" : "revisar";
+    var noctTxt = { mantener: "Notas que duermes mejor. Sigue un mes más.", revisar: "Lo vemos con tu profesional antes de pedir otro.", dejar: "Lo paramos y se lo contamos a tu profesional." }[noctEstado];
+    if (R[5] === 1) { noctEstado = "revisar"; noctTxt = "Has indicado un cambio en tu salud o medicación: tu profesional lo revisa antes de seguir."; }
+    $("suplRes").innerHTML =
+      '<div class="supl-fila">' + U.est(noctEstado) + '<div class="q"><b>Nocticum <span class="epi10-sello">EPI10</span></b><span style="white-space:normal">' + noctTxt + '</span></div>' + (noctEstado === "mantener" ? '<a class="btn btn-p btn-sm" href="suplementacion.html#pedir">Pedir · 24,90 €</a>' : '') + '</div>' +
+      '<div class="supl-fila">' + U.est("mantener") + '<div class="q"><b>Omega-3</b><span>Sin cambios.</span></div></div>' +
+      '<div class="supl-fila">' + U.est("revisar") + '<div class="q"><b>Magnesio y melatonina</b><span style="white-space:normal">Pendientes de tu profesional. Con Nocticum funcionando, puede que la melatonina sobre.</span></div></div>' +
+      '<div class="supl-fila">' + U.est("dejar") + '<div class="q"><b>Quemagrasas con cafeína</b><span>Lo dejaste en noviembre.</span></div></div>';
+    $("foco").innerHTML = E.prioridades.map(function(p){ return '<button class="' + (p.n === 1 ? "sel" : "") + '"><span class="prio-n ' + p.estado + '" style="font-size:20px;width:auto">' + p.n + '</span>' + p.titulo + '</button>'; }).join("");
+  }
+  $("foco").addEventListener("click", function(e){ var b = e.target.closest("button"); if (!b) return; $("foco").querySelectorAll("button").forEach(function(x){ x.classList.toggle("sel", x === b); }); });
+})();
+</script>
+</body>
+</html>

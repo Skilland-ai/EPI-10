@@ -1,0 +1,68 @@
+/* EPI10 · Informe visual · tokens
+   Fuente de verdad del color, la tipografía y el espacio del informe.
+   Marca: canon de julio 2026 (azul profundo, cian luminoso, marfil cálido, casi negro).
+   Valores: los mismos que el portal (oe-module-epi10/epi10-tokens.css) para que informe y portal sean un solo sistema.
+   Los colores de semáforo son FUNCIONALES: solo marcan estados, nunca decoran. */
+
+@font-face { font-family: "Manrope"; font-weight: 400; font-display: block; src: url("fonts/manrope-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-weight: 500; font-display: block; src: url("fonts/manrope-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-weight: 600; font-display: block; src: url("fonts/manrope-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-weight: 700; font-display: block; src: url("fonts/manrope-latin-700-normal.woff2") format("woff2"); }
+
+:root {
+  /* ── Marca ─────────────────────────────────────────── */
+  --azul: #01447b;          /* autoridad, titulares, fondos de alto impacto */
+  --azul-logo: #044799;     /* el de la firma; solo para el logo */
+  --azul-900: #00294d;      /* portadas y bandas oscuras */
+  --azul-950: #001a33;      /* fondo más profundo de la portada */
+  --azul-tinta: #0d2a4a;    /* texto de titulares sobre marfil */
+  --cian: #029acc;          /* navegación, señal, llamadas a la acción */
+  --cian-ink: #00739a;      /* cian legible como texto sobre claro */
+  --cian-claro: #80dff1;    /* acentos sobre azul oscuro */
+  --cian-50: #e5f5fa;       /* fondo suave de «genética» y de avisos de portal */
+  --marfil: #fdf4ed;        /* fondo editorial de las páginas */
+  --marfil-2: #f6e9de;      /* fondo suave de «hábitos» y bloques secundarios */
+  --blanco: #ffffff;
+  --tinta: #101828;         /* texto principal */
+  --tinta-2: #344054;       /* texto secundario */
+  --gris: #5b6474;          /* notas, pies, etiquetas */
+  --linea: #e6dfd8;         /* filetes sobre marfil */
+  --linea-fria: #d9e3ec;    /* filetes sobre blanco */
+
+  /* ── Semáforo (solo estados accionables: hábitos, áreas, complementos) ── */
+  --verde: #2e9e6a;   --verde-suave: #e2f3ea;   --verde-ink: #17663f;
+  --ambar: #e8a317;   --ambar-suave: #fcf0d4;   --ambar-ink: #865600;
+  --rojo:  #d6453d;   --rojo-suave:  #fbe4e2;   --rojo-ink:  #9b2620;
+  --nuevo: var(--cian); --nuevo-suave: var(--cian-50); --nuevo-ink: var(--cian-ink);
+
+  /* ── Escala neutra (tendencias y riesgos genéticos: NUNCA semáforo) ── */
+  --n1: #e3edf6; --n2: #bcd3e8; --n3: #86b1d6; --n4: #4682b8; --n5: #01447b;
+
+  /* ── Origen del dato ─────────────────────────────────── */
+  --o-genetica: var(--cian-50);   --o-genetica-ink: var(--cian-ink);
+  --o-habitos: var(--marfil-2);   --o-habitos-ink: #7a4b22;
+  --o-analitica: #efe9f7;         --o-analitica-ink: #5b3f8c;
+
+  /* ── Tipografía (una familia, pesos contenidos) ─────── */
+  --fuente: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --t-display: 34pt;  /* portada */
+  --t-h1: 23pt;       /* título de página */
+  --t-h2: 14pt;       /* título de bloque */
+  --t-h3: 10.5pt;     /* título de tarjeta */
+  --t-lead: 11.2pt;   /* entradilla */
+  --t-body: 9.2pt;    /* texto */
+  --t-small: 8.2pt;   /* notas */
+  --t-micro: 7pt;     /* etiquetas en mayúsculas */
+  --t-num: 30pt;      /* números grandes (prioridades, dosis) */
+
+  /* ── Espacio y forma ────────────────────────────────── */
+  --radio: 12px;
+  --radio-s: 8px;
+  --pill: 999px;
+  --sombra: 0 1px 2px rgba(1, 68, 123, .05), 0 6px 18px rgba(1, 68, 123, .07);
+  --trazo-icono: 1.7;
+
+  /* ── Página A4 ──────────────────────────────────────── */
+  --pag-w: 210mm; --pag-h: 297mm;
+  --margen-x: 17mm; --margen-arriba: 24mm; --margen-abajo: 20mm;
+}

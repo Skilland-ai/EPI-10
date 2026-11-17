@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu espacio · EPI10</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/portal.css">
+<style>
+  .tres-sem{display:grid;gap:10px}
+  @media (min-width:640px){.tres-sem{grid-template-columns:repeat(3,1fr)}}
+  .ts{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px;display:flex;gap:10px;align-items:flex-start;color:#fff}
+  .ts p{font-size:12.5px;color:#cfe0ee;margin-top:2px}
+  .bloqueado{position:relative}
+  .bloqueado .velo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,.92) 60%);display:flex;align-items:flex-end;justify-content:center;padding:14px;border-radius:14px}
+  .incluye li{display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-size:14px}
+  .incluye{list-style:none;padding:0;margin:10px 0 0}
+  .incluye .ic{color:var(--cian-ink);margin-top:1px}
+</style>
+</head>
+<body data-zona="gratuita" data-v02="nuevo" data-pie>
+<main class="pag">
+  <section class="t-osc">
+    <div class="fila-w"><span class="eyebrow">Hola, Marta · cuenta gratuita</span><span data-marca></span></div>
+    <h1 class="tit" style="color:#fff">Tu punto de partida</h1>
+    <p class="mt8" style="max-width:600px">Lo que nos contaste en la conversación, guardado. Vuelve cuando quieras: aquí sigues tus dos primeros hábitos.</p>
+    <div class="tres-sem mt16" id="tres"></div>
+    <p class="nota mt12" style="color:#a9c4dc">Sale de tus respuestas, sin test genético. Es una orientación, no un diagnóstico.</p>
+  </section>
+
+  <div class="g g-plan mt24">
+    <div class="col" style="gap:16px">
+      <section class="t" id="habitos">
+        <div class="t-cab"><h3>Dos hábitos para empezar</h3><span class="der chip" id="cuenta"></span></div>
+        <div id="rejilla"></div>
+        <p class="nota mt8">Basta con marcarlos una vez por semana. Te mandamos un correo el domingo.</p>
+      </section>
+
+      <section class="t" id="informe">
+        <div class="t-cab"><span class="icono-c"><svg class="ic"><use href="#i-genetica"/></svg></span><h3>¿Quieres saber qué dice tu genética?</h3></div>
+        <p>Tus respuestas nos dicen <b>lo que haces</b>. El test nos dice <b>lo que traes</b>. Juntos dan tus tres prioridades.</p>
+        <div class="g g-2m mt16">
+          <div class="bloqueado">
+            <div class="t-suave" style="padding:14px">
+              <span class="k">Así se verá tu rueda</span>
+              <div id="ruedaPrev" class="mt8"></div>
+            </div>
+            <div class="velo"><span class="chip"><svg class="ic ic-s"><use href="#i-candado"/></svg>Con tu informe</span></div>
+          </div>
+          <div>
+            <div class="orgs" style="margin-top:0">
+              <span class="org org-gen"><svg class="ic"><use href="#i-genetica"/></svg><span><b>Lo que traes</b> · ¿duermes ligero por genética? <span class="barras-g"><i></i><i></i><i></i></span></span></span>
+              <span class="org org-hab"><svg class="ic"><use href="#i-habitos"/></svg><span><b>Lo que haces</b> · duermes poco y con horarios irregulares</span></span>
+            </div>
+            <ul class="incluye">
+              <li><svg class="ic"><use href="#i-check"/></svg>Test genético en casa o en la sede, e informe visual.</li>
+              <li><svg class="ic"><use href="#i-check"/></svg>Sesión de 30 minutos con un profesional.</li>
+              <li><svg class="ic"><use href="#i-check"/></svg>Mi plan: prioridades, hábitos y revisión mensual.</li>
+              <li><svg class="ic"><use href="#i-check"/></svg>Tus respuestas ya cuentan: el cuestionario sale medio relleno.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="acciones"><a class="btn btn-p" href="se-mantiene.html">Pedir mi test · 399 €</a><span class="ejemplo" style="align-self:center">precio por confirmar</span></div>
+      </section>
+    </div>
+
+    <div class="col" style="gap:16px">
+      <section class="t borde-n" id="formula">
+        <div class="fila entre"><span class="k">Tu fórmula orientativa</span><span class="ejemplo">ficha de ejemplo</span></div>
+        <div class="fila mt12" style="gap:14px"><span class="bote" style="border-color:var(--azul);background:linear-gradient(160deg,#0a5aa0,var(--azul-900))"></span><div><h3 style="font-size:20px">Nocticum <span class="epi10-sello">EPI10</span></h3><p class="peq gris">Rutina de descanso y desconexión</p></div></div>
+        <p class="porque mt12"><b>Por qué te la sugerimos:</b> marcaste el descanso como objetivo y nos dijiste que te cuesta desconectar al final del día.</p>
+        <div class="orgs"><span class="org org-hab"><svg class="ic"><use href="#i-habitos"/></svg>Duermo poco u horarios irregulares</span><span class="org org-hab"><svg class="ic"><use href="#i-habitos"/></svg>Me cuesta desconectar al final del día</span></div>
+        <p class="nota mt8">También podría interesarte Forticum, con menos énfasis.</p>
+        <div class="acciones"><button class="btn btn-s" id="ver">Ver ficha</button><button class="btn btn-p" id="comprar">Comprar · 24,90 €</button></div>
+        <p class="nota mt8">Primero, los hábitos. La fórmula acompaña; no los sustituye.</p>
+      </section>
+
+      <section class="t">
+        <div class="t-cab"><h3>¿Ya tienes un test genético?</h3></div>
+        <p class="peq">Si lo hiciste con TellmeGen, envíanoslo y te preparamos tu plan sin repetir el test.</p>
+        <div class="acciones"><a class="btn btn-s btn-sm" href="ya-tengo-mi-test.html"><svg class="ic ic-s"><use href="#i-subir"/></svg>Ya tengo mi test</a></div>
+      </section>
+
+      <section class="t">
+        <div class="t-cab"><h3>Tus respuestas</h3></div>
+        <p class="peq">12 respuestas del 2 oct. <a href="chatbot.html">Repetir la conversación</a></p>
+        <p class="nota mt8">Las guardamos para tu orientación. Para investigación, solo si das un permiso aparte: <a href="investigacion.html">tus datos y permisos</a>.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script src="assets/datos.js"></script>
+<script src="assets/iconos.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var U = EPIU;
+  var B = [ // cuenta B: solo cuestionario
+    { id: "descanso", e: "rojo", t: "Duermes poco y te cuesta desconectar." },
+    { id: "estres", e: "ambar", t: "Rutina exigente y estrés habitual." },
+    { id: "movimiento", e: "ambar", t: "Muchas horas sentada." }
+  ];
+  document.getElementById("tres").innerHTML = B.map(function(s){ var a = U.area(s.id);
+    return '<div class="ts"><span class="luz ' + s.e + '"><i></i><i></i><i></i></span><div><b>' + a.nombre + '</b> ' + '<span class="sem sem-' + s.e + '" style="margin-left:4px">' + U.ESTADO_TXT[s.e] + '</span><p>' + s.t + '</p></div></div>'; }).join("");
+  var areasB = EPI.areas.map(function(a){ var n = Object.assign({}, a); n.estado = { nutricion: "verde", movimiento: "ambar", descanso: "rojo", estres: "ambar", complementacion: "gris" }[a.id]; return n; });
+  document.getElementById("ruedaPrev").innerHTML = U.rueda(areasB, { mini: true });
+  var H = [
+    { nombre: "Sin pantallas 30′ antes de dormir", area: "descanso", semana: [1, 0, 1, null, null, null, null] },
+    { nombre: "Caminar 30 minutos", area: "movimiento", semana: [0, 1, 1, null, null, null, null] }
+  ];
+  U.rejilla(document.getElementById("rejilla"), H, { area: true, leyenda: false, alCambiar: function(h){ var c = U.cuentaSemana(h); document.getElementById("cuenta").textContent = c.si + " de " + c.tot + " hechos"; } });
+  document.getElementById("ver").addEventListener("click", function(){ U.modal("Nocticum", '<span class="ejemplo">ficha de ejemplo</span><p class="mt12">Fórmula de EPI10 para la rutina de descanso y desconexión.</p><div class="dato-fila mt12"><span class="k">Composición</span><span>Pendiente del catálogo de EPI10</span></div><div class="dato-fila"><span class="k">Cómo</span><span>La dosis de la etiqueta</span></div><div class="aviso aviso-a mt12"><svg class="ic"><use href="#i-alerta"/></svg><span>Si tomas ansiolíticos, sedantes, antidepresivos o medicación para dormir, consulta antes a un profesional sanitario.</span></div>'); });
+  document.getElementById("comprar").addEventListener("click", function(){ U.modal("Comprar Nocticum", '<p>Pago con Stripe, como la compra del test. En la maqueta no se cobra nada.</p><p class="nota mt8">Hipótesis de trabajo: las fórmulas se venden online desde el portal. Alternativa si no: «dónde comprarlo».</p><div class="acciones"><button class="btn btn-p" onclick="EPIU.cierraModal()">Pagar 24,90 €</button></div>'); });
+})();
+</script>
+</body>
+</html>
