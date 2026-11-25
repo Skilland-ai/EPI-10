@@ -1,0 +1,21 @@
+# Pila de pruebas de la portada: el mismo portada.caddy del despliegue, servido en :80 y sin TLS.
+# Los snippets comunes viven en epi10-orquestador (deploy/aporta/caddy/Caddyfile); aquí van copias mínimas.
+{
+	auto_https off
+}
+
+(aporta_comun) {
+	header {
+		X-Robots-Tag "noindex, nofollow"
+		X-Content-Type-Options "nosniff"
+		-Server
+	}
+}
+
+(puerta) {
+	forward_auth {args[0]} epi10-puerta:8080 {
+		uri /__verificar
+	}
+}
+
+import /etc/caddy/sitio.caddy

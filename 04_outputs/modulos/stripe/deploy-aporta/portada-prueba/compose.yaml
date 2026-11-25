@@ -1,0 +1,18 @@
+# Pila de pruebas de la portada (hermes-node). Ver README.md.
+name: epi10-portada-prueba
+
+services:
+  caddy:
+    image: caddy:2.10-alpine
+    ports: ['127.0.0.1:${PUERTO:-4131}:80']
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./sitio.caddy:/etc/caddy/sitio.caddy:ro
+      - ./sitio:/srv/portada:ro
+    depends_on: [epi10-puerta]
+
+  epi10-puerta:
+    image: node:22-alpine
+    command: ['node', '/puerta-simulada.mjs']
+    volumes:
+      - ./puerta-simulada.mjs:/puerta-simulada.mjs:ro
