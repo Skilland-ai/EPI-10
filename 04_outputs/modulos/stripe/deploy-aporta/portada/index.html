@@ -4,180 +4,213 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>EPI10 Salud · Entorno de demostración · Fase 1</title>
+  <title>EPI10 · Espacio de trabajo</title>
   <link rel="icon" href="img/epi10-blue.png">
-  <link rel="stylesheet" href="estilos.css?v=20261112-1">
+  <link rel="stylesheet" href="estilos.css?v=20261125-1">
+  <script src="portada.js?v=20261125-1" defer></script>
 </head>
 <body>
-  <div class="aviso" role="note">
-    <p class="contenedor"><strong>Entorno de demostración de la fase 1, para todo el equipo de EPI10.</strong> Es el paso previo al despliegue en producción: todos los datos son ficticios, la pasarela de pago está en modo de pruebas y no deben introducirse datos reales.</p>
-  </div>
-
-  <header class="hero">
+  <header class="cabecera">
     <div class="contenedor">
-      <div class="marca">
-        <img class="logo" src="img/epi10-white.png" alt="EPI10" width="108" height="36">
-        <p class="antetitulo">EPI10 Salud</p>
+      <div class="barra">
+        <a class="marca" href="/" aria-label="EPI10, inicio">
+          <img class="logo" src="img/epi10-white.png" alt="EPI10" width="96" height="32">
+          <span class="antetitulo">Espacio de trabajo</span>
+        </a>
+        <p class="cuenta">
+          <span class="cuenta__nombre" data-yo-nombre hidden></span>
+          <a class="salir" href="/__puerta/salir" data-destino="salir">Salir</a>
+        </p>
       </div>
-      <h1>Entorno de demostración · Fase 1</h1>
-      <p class="entradilla">Un recorrido guiado por el proceso completo, de la compra al informe, tal como quedará antes de su despliegue en producción.</p>
-
-      <div class="claves">
-        <article class="clave clave--principal">
-          <h2>Para qué sirve</h2>
-          <p>Infraestructura tecnológica concebida para que el producto y el concepto de EPI10 puedan venderse a clientes de la Península, con contratación y pago en línea, test en casa, seguimiento del caso y elaboración del informe.</p>
-          <p class="clave__remate">Todo el proceso, en línea y conectado de punta a punta.</p>
-        </article>
-        <article class="clave">
-          <h2>Sin datos ni pagos reales</h2>
-          <p>Se pueden probar todas las herramientas sin acceder a datos de clientes reales ni ejecutar operaciones financieras reales.</p>
-        </article>
-        <article class="clave">
-          <h2>Preparado para probar</h2>
-          <p>La pasarela de pago está en modo de pruebas y, para probar el generador de borradores de informes, se facilitan varios packs de clientes ficticios.</p>
-        </article>
-      </div>
-
-      <ol class="viaje" aria-label="Recorrido del proceso">
-        <li>Compra</li>
-        <li>Pago de prueba</li>
-        <li>Orquestador</li>
-        <li>Odoo</li>
-        <li>Borrador de informe</li>
-      </ol>
+      <h1 data-yo-saludo>Hola</h1>
+      <p class="entradilla">Aquí se trabaja con casos reales. Lo que escribes se guarda y se copia cada noche.</p>
     </div>
   </header>
 
   <main class="contenedor">
-    <section class="arq" aria-label="Arquitectura del sistema">
+    <section class="herramientas" aria-label="Herramientas">
+      <article class="tarjeta t-odoo">
+        <div class="tarjeta__cabeza">
+          <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="10" rx="1.5"/><rect x="17" y="4" width="4" height="13" rx="1.5"/></svg></span>
+          <div>
+            <h2>Casos y clientes</h2>
+            <p class="apunte">Esta herramienta es Odoo</p>
+          </div>
+        </div>
+        <p class="texto">Das de alta a un cliente, ves en qué punto está y lo pasas de etapa.</p>
+        <a class="boton" href="https://odoo.aporta-epi10.com/__entrar" data-destino="odoo">Abrir Casos y clientes</a>
+      </article>
+
+      <article class="tarjeta t-gen">
+        <div class="tarjeta__cabeza">
+          <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6zM14 3v5h5M9 13h7M9 17h7"/></svg></span>
+          <div>
+            <h2>Generador de borradores de informes</h2>
+            <p class="apunte">No envía nada al cliente</p>
+          </div>
+        </div>
+        <p class="texto">Subes los PDF de un cliente y recibes el borrador del informe en Word.</p>
+        <a class="boton" href="https://generador.aporta-epi10.com/__entrar" data-destino="generador">Abrir el generador</a>
+      </article>
+    </section>
+
+    <section class="primera" aria-labelledby="primera-t">
+      <div class="primera__recorrido">
+        <h2 id="primera-t">¿Primera vez?</h2>
+        <p class="texto">Haz el recorrido <strong>«Tu primer caso»</strong>: llevas un cliente de práctica del alta al cierre, paso a paso. Puedes dejarlo y retomarlo.</p>
+        <a class="boton boton--claro" href="https://odoo.aporta-epi10.com/__entrar?volver=/epi10/primer-caso" data-destino="recorrido">Empezar «Tu primer caso»</a>
+      </div>
+      <ul class="primera__lista">
+        <li>
+          <a class="primera__enlace" href="guia-rapida" data-destino="guia">Guía rápida</a>
+          <span class="primera__nota">Tres tutoriales cortos: entrar, llevar un cliente y sacar un informe.</span>
+        </li>
+        <li>
+          <span class="primera__titulo">Packs de práctica</span>
+          <span class="primera__nota">Los 7 PDF de un cliente inventado, para probar el generador.</span>
+          <span class="primera__packs">
+            <a href="descargas/caso-a-lucia-ferrer.zip" download>Lucía Ferrer (ZIP)</a>
+            <a href="descargas/caso-b-javier-ortega.zip" download>Javier Ortega (ZIP)</a>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <p class="tecnica">¿Curiosidad por lo que pasa por detrás? <a href="https://panel.aporta-epi10.com/__entrar?volver=/panel" data-destino="tecnica">Abrir la vista técnica</a>. No hace falta para trabajar.</p>
+
+    <section class="mas" aria-label="Más información sobre este sistema">
       <details>
         <summary>
-          <span class="arq__texto"><span class="eyebrow">Cómo encaja todo</span><span class="arq__titulo">Arquitectura del sistema</span><span class="arq__sub">El esquema acordado en el workshop: qué pieza hace qué y cómo se conectan.</span></span>
-          <span class="arq__flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+          <span class="mas__titulo">¿Quieres más información sobre este sistema?</span>
+          <span class="mas__flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
         </summary>
-        <div class="arq__lienzo">
-          <svg class="arq__svg" viewBox="0 0 1040 470" role="img" aria-labelledby="arq-t arq-d">
-            <title id="arq-t">Arquitectura del sistema EPI10</title>
-            <desc id="arq-d">La clienta llega por la web de compra y paga en la pasarela de pago. El pago entra en el sistema por el orquestador, que abre el caso en Odoo, donde trabaja el equipo, y se apoya en el generador de borradores de informes. A la izquierda, fuera del sistema, el portal de la clienta: Healthie u otra alternativa.</desc>
-            <defs>
-              <marker id="arq-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#01447b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
-              <marker id="arq-pc" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#029acc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
-            </defs>
 
-            <rect class="a-marco" x="460" y="100" width="550" height="345" rx="22"/>
-            <text class="a-marco-t" x="482" y="126">SISTEMA EPI10 · FASE 1</text>
+        <div class="mas__cuerpo">
+          <section class="bloque" aria-labelledby="mas-para">
+            <p class="eyebrow">Para qué sirve</p>
+            <h3 id="mas-para">Todo el proceso, en línea y conectado de punta a punta</h3>
+            <p>Infraestructura tecnológica concebida para que el producto y el concepto de EPI10 puedan venderse a clientes de la Península, con contratación y pago en línea, test en casa, seguimiento del caso y elaboración del informe.</p>
+            <ol class="viaje" aria-label="Recorrido del proceso">
+              <li>Compra</li>
+              <li>Pago</li>
+              <li>Coordinación</li>
+              <li>Casos y clientes</li>
+              <li>Borrador de informe</li>
+            </ol>
+          </section>
 
-            <rect class="a-pildora" x="65" y="58" width="110" height="30" rx="15"/><text class="a-pildora-t" x="120" y="78" text-anchor="middle">Clienta</text>
-            <rect class="a-pildora" x="820" y="44" width="140" height="30" rx="15"/><text class="a-pildora-t" x="890" y="64" text-anchor="middle">Equipo EPI10</text>
+          <section class="bloque" aria-labelledby="mas-fases">
+            <p class="eyebrow">Fases</p>
+            <h3 id="mas-fases">Qué está en marcha y qué llega después</h3>
+            <div class="fases">
+              <div class="fase fase--hoy">
+                <h4>Fase 1 · En uso</h4>
+                <p>Casos y clientes (Odoo) y el generador de borradores de informes. Es con lo que trabajas hoy. La web de compra y la pasarela de pago ya existen, en modo de pruebas.</p>
+              </div>
+              <div class="fase">
+                <h4>Por ahora, a mano</h4>
+                <p>La web y el portal de clientes todavía no están conectados. Por eso das de alta a cada cliente y lo pasas de etapa tú.</p>
+              </div>
+              <div class="fase">
+                <h4>Fase 2 · En preparación</h4>
+                <p>La web nueva y el portal de clientes. Cuando estén conectados, cada compra creará el cliente sola y el caso avanzará solo conforme el cliente use la app.</p>
+              </div>
+            </div>
+          </section>
 
-            <path class="a-linea" d="M120 88V146" marker-end="url(#arq-p)"/>
-            <path class="a-linea" d="M890 74V146" marker-end="url(#arq-p)"/>
-            <path class="a-linea" d="M210 195H246" marker-end="url(#arq-p)"/>
-            <path class="a-linea" d="M430 180H486" marker-end="url(#arq-p)"/>
-            <path class="a-linea" d="M714 195H796" marker-start="url(#arq-p)" marker-end="url(#arq-p)"/>
-            <path class="a-linea" d="M600 254V326" marker-start="url(#arq-p)" marker-end="url(#arq-p)"/>
-            <path class="a-linea a-linea--ext" d="M344 375H445V225H486" marker-start="url(#arq-pc)" marker-end="url(#arq-pc)"/>
+          <section class="bloque" aria-labelledby="mas-arq">
+            <p class="eyebrow">Cómo encaja todo</p>
+            <h3 id="mas-arq">Arquitectura del sistema</h3>
+            <p>El esquema acordado en el workshop: qué pieza hace qué y cómo se conectan.</p>
+            <div class="arq__lienzo">
+              <svg class="arq__svg" viewBox="0 0 1040 470" role="img" aria-labelledby="arq-t arq-d">
+                <title id="arq-t">Arquitectura del sistema EPI10</title>
+                <desc id="arq-d">El cliente llega por la web de compra y paga en la pasarela de pago. El pago entra en el sistema por el orquestador, que abre el caso en Odoo, donde trabaja el equipo, y se apoya en el generador de borradores de informes. A la izquierda, fuera del sistema, el portal de clientes, todavía sin conectar.</desc>
+                <defs>
+                  <marker id="arq-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#01447b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+                  <marker id="arq-pc" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#029acc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+                </defs>
 
-            <text class="a-rotulo" x="755" y="183" text-anchor="middle">casos y tareas</text>
-            <text class="a-rotulo" x="612" y="295">packs y borradores</text>
-            <text class="a-rotulo" x="395" y="393" text-anchor="middle">alta y documentos</text>
+                <rect class="a-marco" x="460" y="100" width="550" height="345" rx="22"/>
+                <text class="a-marco-t" x="482" y="126">SISTEMA EPI10 · FASE 1</text>
 
-            <rect class="a-caja" x="30" y="150" width="180" height="90" rx="16"/>
-            <text class="a-num" x="48" y="176">01</text>
-            <text class="a-tit" x="48" y="200">Web de compra</text>
-            <text class="a-sub" x="48" y="221">Oferta e inicio de la compra</text>
+                <rect class="a-pildora" x="65" y="58" width="110" height="30" rx="15"/><text class="a-pildora-t" x="120" y="78" text-anchor="middle">Cliente</text>
+                <rect class="a-pildora" x="820" y="44" width="140" height="30" rx="15"/><text class="a-pildora-t" x="890" y="64" text-anchor="middle">Equipo EPI10</text>
 
-            <rect class="a-caja" x="250" y="150" width="180" height="90" rx="16"/>
-            <text class="a-num" x="268" y="176">02</text>
-            <text class="a-tit" x="268" y="200">Pasarela de pago</text>
-            <text class="a-sub" x="268" y="221">Stripe cobra y avisa</text>
+                <path class="a-linea" d="M120 88V146" marker-end="url(#arq-p)"/>
+                <path class="a-linea" d="M890 74V146" marker-end="url(#arq-p)"/>
+                <path class="a-linea" d="M210 195H246" marker-end="url(#arq-p)"/>
+                <path class="a-linea" d="M430 180H486" marker-end="url(#arq-p)"/>
+                <path class="a-linea" d="M714 195H796" marker-start="url(#arq-p)" marker-end="url(#arq-p)"/>
+                <path class="a-linea" d="M600 254V326" marker-start="url(#arq-p)" marker-end="url(#arq-p)"/>
+                <path class="a-linea a-linea--ext" d="M344 375H445V225H486" marker-start="url(#arq-pc)" marker-end="url(#arq-pc)"/>
 
-            <rect class="a-caja a-caja--orq" x="490" y="140" width="220" height="110" rx="18"/>
-            <text class="a-num a-claro" x="510" y="168">03</text>
-            <text class="a-tit a-blanco" x="510" y="194">Orquestador</text>
-            <text class="a-sub a-blanco2" x="510" y="216">Recibe el pago, abre el caso</text>
-            <text class="a-sub a-blanco2" x="510" y="233">y coordina cada paso</text>
+                <text class="a-rotulo" x="755" y="183" text-anchor="middle">casos y tareas</text>
+                <text class="a-rotulo" x="612" y="295">packs y borradores</text>
+                <text class="a-rotulo" x="395" y="393" text-anchor="middle">alta y documentos</text>
 
-            <rect class="a-caja" x="800" y="150" width="180" height="90" rx="16"/>
-            <text class="a-num" x="818" y="176">04</text>
-            <text class="a-tit" x="818" y="200">Odoo</text>
-            <text class="a-sub" x="818" y="221">Etapas y tareas del equipo</text>
+                <rect class="a-caja" x="30" y="150" width="180" height="90" rx="16"/>
+                <text class="a-num" x="48" y="176">01</text>
+                <text class="a-tit" x="48" y="200">Web de compra</text>
+                <text class="a-sub" x="48" y="221">Oferta e inicio de la compra</text>
 
-            <rect class="a-caja" x="490" y="330" width="220" height="90" rx="16"/>
-            <text class="a-num" x="510" y="356">05</text>
-            <text class="a-tit" x="510" y="380">Generador de borradores</text>
-            <text class="a-sub" x="510" y="401">Borrador del informe, a revisar</text>
+                <rect class="a-caja" x="250" y="150" width="180" height="90" rx="16"/>
+                <text class="a-num" x="268" y="176">02</text>
+                <text class="a-tit" x="268" y="200">Pasarela de pago</text>
+                <text class="a-sub" x="268" y="221">Stripe cobra y avisa</text>
 
-            <rect class="a-caja a-caja--ext" x="140" y="330" width="200" height="90" rx="16"/>
-            <text class="a-num a-cian" x="158" y="356">FUERA DEL SISTEMA</text>
-            <text class="a-tit" x="158" y="380">Portal de la clienta</text>
-            <text class="a-sub" x="158" y="401">Healthie u otra alternativa</text>
-          </svg>
+                <rect class="a-caja a-caja--orq" x="490" y="140" width="220" height="110" rx="18"/>
+                <text class="a-num a-claro" x="510" y="168">03</text>
+                <text class="a-tit a-blanco" x="510" y="194">Orquestador</text>
+                <text class="a-sub a-blanco2" x="510" y="216">Recibe el pago, abre el caso</text>
+                <text class="a-sub a-blanco2" x="510" y="233">y coordina cada paso</text>
+
+                <rect class="a-caja" x="800" y="150" width="180" height="90" rx="16"/>
+                <text class="a-num" x="818" y="176">04</text>
+                <text class="a-tit" x="818" y="200">Odoo</text>
+                <text class="a-sub" x="818" y="221">Etapas y tareas del equipo</text>
+
+                <rect class="a-caja" x="490" y="330" width="220" height="90" rx="16"/>
+                <text class="a-num" x="510" y="356">05</text>
+                <text class="a-tit" x="510" y="380">Generador de borradores</text>
+                <text class="a-sub" x="510" y="401">Borrador del informe, a revisar</text>
+
+                <rect class="a-caja a-caja--ext" x="140" y="330" width="200" height="90" rx="16"/>
+                <text class="a-num a-cian" x="158" y="356">FUERA DEL SISTEMA</text>
+                <text class="a-tit" x="158" y="380">Portal de clientes</text>
+                <text class="a-sub" x="158" y="401">Todavía sin conectar</text>
+              </svg>
+            </div>
+            <p class="arq__pie">El orquestador es la pieza que coordina por detrás: recibe el pago, abre el caso en Odoo y conecta el resto. Es lo que enseña la vista técnica. El portal de clientes es una pieza intercambiable.</p>
+          </section>
+
+          <section class="bloque" aria-labelledby="mas-compra">
+            <p class="eyebrow">Lo que verá el cliente</p>
+            <h3 id="mas-compra">Web de compra y pasarela de pago</h3>
+            <p>Siguen en marcha, en modo de pruebas, para ver cómo será la compra. <strong>Una compra de prueba abre un caso de prueba en Casos y clientes:</strong> si haces una, cierra después ese caso.</p>
+            <div class="rejilla">
+              <article class="tarjeta tarjeta--plana t-web">
+                <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg></span><div><h4>Web de compra</h4></div></div>
+                <p class="texto">Página de venta de NutriWell: permite consultar la oferta e iniciar la compra.</p>
+                <a class="enlace" href="https://compra.aporta-epi10.com" target="_blank" rel="noopener">Abrir la web de compra</a>
+              </article>
+              <article class="tarjeta tarjeta--plana t-pago">
+                <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></svg></span><div><h4>Pasarela de pago</h4></div></div>
+                <p class="texto">Stripe, en modo de pruebas: permite completar la compra sin ningún pago real.</p>
+                <p class="dato">Tarjeta de prueba: <strong>4242 4242 4242 4242</strong>, fecha futura y cualquier CVC.</p>
+                <a class="enlace" href="https://compra.aporta-epi10.com/#demo" target="_blank" rel="noopener">Iniciar el pago de prueba</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="bloque bloque--nota" aria-labelledby="mas-sobre">
+            <h3 id="mas-sobre">Sobre este entorno</h3>
+            <p>Reúne parte de un sistema más amplio dentro de un perímetro controlado, para que el equipo de EPI10 pueda trabajar con él de principio a fin.</p>
+            <p>Estamos en periodo de pruebas: puede aparecer algún error puntual. Si algo falla o no se entiende, díselo a Raúl, de Skilland.</p>
+          </section>
         </div>
-        <p class="arq__pie">El orquestador queda en el centro: recibe el pago, abre el caso en Odoo y conecta el resto de piezas. El portal de la clienta es una pieza intercambiable: Healthie o cualquier alternativa.</p>
       </details>
     </section>
-
-    <section aria-labelledby="accesos">
-      <p class="eyebrow">Cinco herramientas, un solo acceso</p>
-      <h2 id="accesos">Accesos</h2>
-      <p class="nota">Ya has iniciado sesión: ninguna de estas herramientas te volverá a pedir credenciales.</p>
-      <div class="rejilla">
-        <article class="tarjeta t-web">
-          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg></span><span class="num" aria-hidden="true">01</span></div>
-          <h3>Web de compra</h3>
-          <p class="texto">Página de venta de NutriWell: permite consultar la oferta e iniciar la compra.</p>
-          <a class="enlace" href="https://compra.aporta-epi10.com" target="_blank" rel="noopener">Abrir la web de compra</a>
-        </article>
-
-        <article class="tarjeta t-pago">
-          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></svg></span><span class="num" aria-hidden="true">02</span></div>
-          <h3>Pasarela de pago</h3>
-          <p class="texto">Instancia de pruebas de Stripe: permite completar la compra sin ningún pago real.</p>
-          <p class="dato">Tarjeta de prueba: <strong>4242 4242 4242 4242</strong>, fecha futura y cualquier CVC.</p>
-          <a class="enlace" href="https://compra.aporta-epi10.com/#demo" target="_blank" rel="noopener">Iniciar el pago de prueba</a>
-        </article>
-
-        <article class="tarjeta t-orq">
-          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span><span class="num" aria-hidden="true">03</span></div>
-          <h3>Orquestador</h3>
-          <p class="texto">Consola de operación: permite seguir cada caso desde el pago hasta el informe.</p>
-          <a class="enlace" href="https://panel.aporta-epi10.com/__entrar?volver=/panel" target="_blank" rel="noopener">Abrir el orquestador</a>
-        </article>
-
-        <article class="tarjeta t-odoo">
-          <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="10" rx="1.5"/><rect x="17" y="4" width="4" height="13" rx="1.5"/></svg></span><span class="num" aria-hidden="true">04</span></div>
-          <h3>Odoo</h3>
-          <p class="texto">Sistema de gestión del equipo: el inicio con lo pendiente de hoy, los casos por etapa y las tareas de cada persona.</p>
-          <a class="enlace" href="https://odoo.aporta-epi10.com/__entrar" target="_blank" rel="noopener">Abrir Odoo</a>
-        </article>
-
-        <article class="tarjeta tarjeta--ancha t-gen">
-          <div class="gen">
-            <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6zM14 3v5h5M9 13h7M9 17h7"/></svg></span><span class="num" aria-hidden="true">05</span></div>
-            <h3>Generador de borradores de informes</h3>
-            <p class="texto">Herramienta de redacción asistida: permite subir los PDF de un caso y revisar su borrador.</p>
-            <a class="enlace" href="https://generador.aporta-epi10.com/__entrar" target="_blank" rel="noopener">Abrir el generador</a>
-          </div>
-          <div class="pack">
-            <h4>Pack de casos ficticios</h4>
-            <p class="dato">Descomprime el ZIP y arrastra sus 7 PDF a la zona de subida del generador.</p>
-            <ul class="descargas">
-              <li><a href="descargas/caso-a-lucia-ferrer.zip" download>Caso A · Lucía Ferrer (ZIP)</a></li>
-              <li><a href="descargas/caso-b-javier-ortega.zip" download>Caso B · Javier Ortega (ZIP)</a></li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
   </main>
-
-  <footer class="contenedor">
-    <div class="descargo">
-      <h2>Sobre este entorno</h2>
-      <p>Reúne parte de un sistema más amplio dentro de un perímetro controlado, para que el equipo de EPI10 pueda verlo y probarlo de principio a fin.</p>
-      <p>Es un entorno de demostración: puede presentar algún error puntual.</p>
-    </div>
-  </footer>
 </body>
 </html>

@@ -1,11 +1,11 @@
 # Copiado por vps.sh desde deploy-aporta (CON-535, CON-537 y CON-546).
+# Portada de uso diario: sin el recorrido de la demo (`import guia`).
 aporta-epi10.com {
 	import aporta_comun
 
 	# Sin la puerta solo se ve el login, con el logo y las fuentes que usa.
 	@protegido not path /__puerta/* /img/* /fonts/*
 	import puerta @protegido
-	import guia
 
 	handle /__puerta/* {
 		reverse_proxy epi10-puerta:8080
@@ -13,11 +13,13 @@ aporta-epi10.com {
 
 	handle {
 		header {
-			Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+			Content-Security-Policy "default-src 'none'; script-src 'self'; connect-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
 			Referrer-Policy "no-referrer"
 		}
 
 		root * /srv/portada
+		# /guia-rapida sirve guia-rapida.html.
+		try_files {path} {path}.html
 		file_server
 	}
 }

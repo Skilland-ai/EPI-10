@@ -488,3 +488,21 @@ factura del módulo adicional prevista en SKI-81.
 - **Decisión:** el receptor queda fuera de la contraseña común porque Stripe no
   puede autenticarse; cada evento se verifica por firma.
 - **Siguiente:** conectar la compra con el orquestador (CON-534).
+
+## 2026-11-25 — Portada de uso diario (carril portal)
+
+- **Acción:** la portada de `aporta-epi10.com` pasa de escaparate de la demo a
+  entrada de trabajo: saludo con el nombre (`/__puerta/yo`), «Salir», las dos
+  herramientas, «¿Primera vez?» (recorrido «Tu primer caso», guía rápida y packs
+  de práctica), enlace discreto a la vista técnica y un desplegable cerrado con
+  lo que enseñaba la demo (web de compra, Stripe, arquitectura, fases). Página
+  nueva `/guia-rapida`. `portada.caddy` y `compra.caddy` sin `import guia`.
+- **Resultado observado:** batería `portada-prueba/portada.test.mjs` 10/10 en
+  hermes-node, con Caddy real y puerta simulada; comprobado con navegador en
+  escritorio (1366×768 y 1280×720) y móvil (390×844), sin errores de consola.
+- **Evidencia:** `05_scratch/uso-diario-2026-11-25/informe_portal.md` y
+  `capturas_portal/`.
+- **Decisión:** la web de compra sigue viva y solo se enlaza desde el
+  desplegable, con el aviso de que una compra de prueba abre un caso.
+- **Siguiente:** integrar y desplegar con el resto de carriles (lo hace el
+  orquestador de la sesión). Sin desplegar todavía.

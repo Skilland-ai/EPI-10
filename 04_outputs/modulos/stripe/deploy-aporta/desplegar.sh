@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Despliega web de compra, portada y pack de casos ficticios en skilland-vps.
+# Despliega web de compra, portada de uso diario y packs de práctica en skilland-vps.
 # Se lanza desde el ASUS (el VPS no tiene acceso a GitHub). Se puede repetir.
 #   ORQUESTADOR=/ruta/al/repo ./desplegar.sh
 set -euo pipefail
