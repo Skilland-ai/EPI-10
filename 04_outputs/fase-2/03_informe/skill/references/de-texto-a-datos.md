@@ -4,6 +4,7 @@ El informe actual (plantilla `Plantilla Informe Nutrigenético.odt`, 44–50 pá
 
 | Sección del informe actual | Campo del JSON | Cómo se convierte |
 |---|---|---|
+| Cuestionario de hábitos, sección 1 y formulario femenino | `persona` | Sexo al nacer (P3), edad desde la fecha de nacimiento (P2), peso y altura (P5 y P6), actividad (P19–P22) y etapa (P45–P48). **El objetivo no está en el cuestionario**: sale de lo que escriba el profesional o se deja vacío. Reglas en `personalizacion.md` |
 | «Tus resultados» (prosa de hábitos) | `perfil_habitos[]` | Una ficha por tema: actividad, alimentación, pescado, sueño, estrés, alcohol y tabaco, complementos y medicación. Valor en menos de 10 palabras. Estado según la regla de puntuación |
 | «Tus resultados» (analítica) | `analitica` | Solo si se aportó. Copia la frase de «sin interpretación clínica» |
 | «Lo más relevante de tu perfil» (tabla de 5–6 áreas) | `areas[]` | Agrupa en las cinco áreas de la rueda. `genetica_txt` sale de «Tu tendencia» (lo genético); `habitos_txt`, de lo declarado; `frase`, de «¿Qué implica?» resumido |
@@ -41,7 +42,11 @@ Si tu propuesta contradice el texto de Aitor, manda el texto.
 
 **Indicadores.** Cada hábito lleva un indicador que se pueda marcar en el portal: «Noches que duermes bien, de 7» o «Etiqueta revisada». Si Aitor no lo da, se propone y se marca para validar.
 
-**Mujeres biológicas.** `linaje_paterno: null`. Lo pidió Aitor: no tienen cromosoma Y.
+**Mujeres biológicas.** `persona.sexo: "mujer"` y `linaje_paterno: null`. Lo pidió Aitor: no tienen cromosoma Y. Si se olvida, `render.py` lo vacía y avisa. Los textos del JSON, en femenino.
+
+**Resultados propios de un sexo.** Si el volcado de TellmeGen trae rasgos o predisposiciones que solo tienen sentido para un sexo (próstata, mama, ovario), márcalos con `"solo"`.
+
+**Objetivo.** Si el informe o el profesional no lo dicen, no lo deduzcas del IMC ni de la genética. Sin objetivo no hay progresión, y es correcto.
 
 **Erratas del original.** Se corrigen sin cambiar el sentido. Por ejemplo, el linaje paterno que dice «subhaplogrupo materno».
 

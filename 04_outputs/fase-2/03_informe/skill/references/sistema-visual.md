@@ -23,7 +23,7 @@ Marca: azul profundo `#01447b` para titulares y bandas, `#00294d`–`#001a33` pa
 | 5 | **Cómo leer los colores** | `como_leer` | — | Enseña los tres lenguajes de color una sola vez |
 | 6 | **Mapa de prioridades** (genética × hábitos) | `matriz` | `areas[].genetica`, `areas[].habitos` | Explica *por qué* algo es prioridad: donde la genética da señal y los hábitos flojean. Cuatro cuadrantes: mantén, vigila y protege, mejora el hábito, prioridad |
 | 7 | **Leyenda de áreas con puntuaciones** | `rueda_leyenda` | `areas[]` | Hábitos en 5 puntos y señal genética en 3 barras (eco de las barras del logo) |
-| 8 | **Mapa del cuerpo** | `cuerpo` | `cuerpo[]` (zona, nivel) | Las tendencias físicas sobre una silueta de trazos redondeados. Escala neutra; es estático. El interactivo queda para después de la v1 |
+| 8 | **Mapa del cuerpo** | `cuerpo` | `cuerpo[]` (zona, nivel), `persona` | Las tendencias físicas sobre la figura de la persona (sexo y complexión). Los marcadores se recolocan solos. Escala neutra; es estático. El interactivo queda para después de la v1 |
 | 9 | **Semáforo de hábitos** | `tarjeta_habito` | `habitos[]` | Luz de semáforo, lo que vemos (genes + hábitos), una acción y el indicador que se marcará en el portal |
 | 10 | **Tu complementación hoy** | `complementacion_hoy` | `complementacion_actual[]` | Antes y después: «tomas 6 → mantén 3, revisa 3, añade 1». Es la pieza más diferencial: dice lo que sobra |
 | 11 | **Tarjeta de complemento** | `tarjeta_complemento` | `complementos[]` | Dosis grande, porqué con su origen, momentos con icono, evidencia en 3 barras, declaración UE literal, referencias y hueco para «Disponible en EPI10» |
@@ -35,6 +35,12 @@ Marca: azul profundo `#01447b` para titulares y bandas, `#00294d`–`#001a33` pa
 | 17 | **Rasgos en escala neutra** | `tabla_rasgos` | `capa2.rasgos[]` | Tarjetas por categoría. Las variantes («dos copias») van como etiqueta |
 | 18 | **Ancestralidad y linajes** | `ancestralidad` | `capa2.ancestralidad` | Barra de porcentajes, fichas de haplogrupo, medidor de neandertal y línea del tiempo de los linajes |
 | 19 | **Bloque sensible** | `aviso_sensible` + página | `capa2.sensible` | Banda oscura con candado, «la ves porque la pediste», y derivación al médico |
+| 20 | **Figura de anatomía** | `figura_svg` | `persona.sexo`, IMC o `complexion` | Dos cuerpos por cinco complexiones, dibujados con medidas. Azul, sin nombre ni número a la vista del cliente |
+| 21 | **Progresión «de dónde partes → a dónde vas»** | `progresion` | `persona.objetivo`, complexión | La dirección del objetivo con las mismas figuras. Una dirección, no una talla ni un plazo |
+| 22 | **Ficha «Tú, hoy»** | `ficha_persona` | `persona` | Edad, talla y peso, actividad y objetivo en una línea. El IMC, como número y «orientativo» |
+| 23 | **Notas de tu etapa** | `notas_etapa` | `persona.etapa`, `persona.edad` | Prudencia donde toca: embarazo, lactancia, etapa hormonal, terapia hormonal y más de 65 años |
+
+Los componentes 20 a 23 son de la versión 0.2 y solo salen si el JSON trae `persona`. Cuándo aparece cada uno: `personalizacion.md`. El catálogo ilustrado para gente no técnica se genera con `scripts/catalogo.py`.
 
 ## 3. Reglas de composición
 
@@ -43,6 +49,7 @@ Marca: azul profundo `#01447b` para titulares y bandas, `#00294d`–`#001a33` pa
 - Papel marfil y tarjetas blancas con sombra suave. Bandas azules solo para lo que empuja a la acción (siguiente paso, CTA, aviso sensible, contacto).
 - Números grandes para lo que se recuerda: prioridades, dosis, recuentos y porcentajes.
 - Iconos del sprite `components/iconos.svg`, de trazo 1,7 y extremos redondeados. Si falta uno, se añade con la misma rejilla de 24.
+- La página 4 reparte el bloque inferior: mapa del cuerpo a la izquierda y progresión a la derecha. Sin progresión, el mapa ocupa todo el ancho, como en la 0.1. Con siete marcadores o más, la lista se compacta sola.
 - La capa 2 usa un papel más frío (`#f8f6f3` y `#f4f6f9` en lo sensible) para que se note el cambio de capa.
 
 ## 4. Modo pantalla

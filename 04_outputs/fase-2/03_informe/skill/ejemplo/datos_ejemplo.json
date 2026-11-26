@@ -14,7 +14,21 @@
       "analitica"
     ],
     "ejemplo": true,
-    "nota_ejemplo": "Ejemplo con datos anonimizados y nombre ficticio. Basado en el informe anonimizado I."
+    "nota_ejemplo": "Ejemplo con datos anonimizados y nombre ficticio. Basado en el informe anonimizado I. La edad, la talla, el peso y el objetivo son inventados."
+  },
+  "persona": {
+    "sexo": "hombre",
+    "edad": 34,
+    "talla_cm": 178,
+    "peso_kg": 86,
+    "imc": null,
+    "complexion": null,
+    "objetivo": "perder_grasa",
+    "objetivo_txt": "Bajar grasa sin perder músculo",
+    "complexion_objetivo": null,
+    "actividad": "alta",
+    "actividad_txt": "Tres deportes, más de 3 días",
+    "etapa": null
   },
   "resumen": {
     "frase": "Entrenas mucho y lo haces bien. Ahora lo que más te va a ayudar es tomar menos y mejor, dormir mejor y proteger tus tendones.",

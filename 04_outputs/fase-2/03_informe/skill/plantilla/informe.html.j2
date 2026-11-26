@@ -1,5 +1,6 @@
 {# EPI10 · Informe visual · plantilla
    Capa 1 «Tu plan» (págs. 1-8) y capa 2 «Tu perfil completo» (anexo).
+   `persona` (lo prepara render.py a partir de d.persona) decide la figura, la ficha, la progresión y las notas de etapa.
    Una página = un trabajo. El contenido sale SIEMPRE de los datos (d); aquí no se escribe texto de cliente,
    salvo los textos fijos de método y avisos, que son comunes a todos los informes. #}
 {% import "components/componentes.j2" as c with context %}
@@ -87,7 +88,7 @@
 {% endcall %}
 
 {# ═══════════════ 3 · TU PUNTO DE PARTIDA ═══════════════ #}
-{% call pagina('Tu punto de partida') %}
+{% call pagina('Tu punto de partida', 'con-ficha' if persona else '') %}
   {{ c.kicker('Tu punto de partida') }}
   <h1 class="h1">Hemos leído tu genética junto a tu vida real.</h1>
   <p class="lead">Tu genética marca una tendencia. Tus hábitos deciden el resultado. Por eso cada conclusión de este informe dice de dónde sale.</p>
@@ -97,6 +98,7 @@
     {% if d.analitica.aportada %}<div class="fuente analitica">{{ c.icono('analitica') }}<b>Tu analítica</b><span>{{ d.analitica.resumen }}</span></div>{% endif %}
   </div>
   <h2 class="h2">Lo que nos has contado</h2>
+  {% if persona %}{{ c.ficha_persona(persona) }}{% endif %}
   {{ c.perfil(d.perfil_habitos) }}
   <h2 class="h2 sep">Cómo leer los colores</h2>
   {{ c.como_leer() }}
@@ -113,12 +115,16 @@
     {{ c.matriz(d.areas) }}
     {{ c.rueda_leyenda(d.areas) }}
   </div>
-  <div class="cuerpo-bloque">
-    <div class="cb-txt">
-      <h2 class="h2">Dónde se nota tu genética</h2>
-      <p>Las tendencias más relevantes de tu test, sobre el cuerpo. Son probabilidades, no diagnósticos: el azul más intenso marca la señal más fuerte.</p>
+  {% set con_prog = persona and persona.progresion %}
+  <div class="cuerpo-bloque{{ ' con-prog' if con_prog }}">
+    <div class="cb-mapa">
+      <div class="cb-txt">
+        <h2 class="h2">Dónde se nota tu genética</h2>
+        <p>Las tendencias más relevantes de tu test, sobre el cuerpo. Son probabilidades, no diagnósticos: el azul más intenso marca la señal más fuerte.</p>
+      </div>
+      {{ c.cuerpo(d.cuerpo, persona, 1 if con_prog else 2, con_prog and d.cuerpo | length > 6) }}
     </div>
-    {{ c.cuerpo(d.cuerpo) }}
+    {% if con_prog %}{{ c.progresion(persona) }}{% endif %}
   </div>
 {% endcall %}
 
@@ -139,6 +145,7 @@
   <p class="lead">Revisamos cada producto con tu genética, tu deporte y tu dieta. Te decimos qué mantener, qué revisar y, si hace falta, qué dejar.</p>
   {{ c.complementacion_hoy(d.complementacion_actual) }}
   <div class="grow"></div>
+  {% if persona and persona.notas %}{{ c.notas_etapa(persona.notas) }}{% endif %}
   {% if d.medicacion %}<div class="aviso-med">{{ c.icono('capsula-med') }}<p><b>Tu medicación.</b> {{ d.medicacion }}</p></div>
   {% else %}<div class="aviso-med">{{ c.icono('capsula-med') }}<p><b>Si empiezas a tomar medicación,</b> consulta con tu médico antes de mantener estos complementos. Sus indicaciones van siempre primero.</p></div>{% endif %}
 {% endcall %}

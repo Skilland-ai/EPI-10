@@ -1,7 +1,7 @@
 ---
 name: epi10-informe-visual
-version: 0.1.0
-description: Diseñador de información de EPI10 Salud. Convierte el texto de un informe nutrigenético de EPI10 (los borradores de Aitor, el informe NutriWell de 44–50 páginas o los resultados de TellmeGen) en el informe visual de EPI10. Primero lo pasa a datos estructurados (JSON) y luego genera un HTML A4 imprimible, su PDF y la vista móvil del portal. Úsala cuando pidan «pasa este informe a visual», «maqueta el informe de EPI10», «hazme el informe nuevo», «convierte el informe de Aitor», «el semáforo de hábitos», «la rueda» o «Mi plan desde el informe», o cuando haya que añadir o cambiar un componente del informe de EPI10. No sirve para documentos de Skilland, que tienen su propia marca (skilland-brand), ni para diagnosticar ni recomendar por cuenta propia.
+version: 0.2.0
+description: Diseñador de información de EPI10 Salud. Convierte el texto de un informe nutrigenético de EPI10 (los borradores de Aitor, el informe NutriWell de 44–50 páginas o los resultados de TellmeGen) en el informe visual de EPI10. Primero lo pasa a datos estructurados (JSON) y luego maqueta el informe 2.0: un HTML A4 imprimible, su PDF y la vista móvil del portal. Elige sola la versión (mujer u hombre), la figura del cuerpo según el IMC, la progresión según el objetivo y las piezas que dependen de la edad, la actividad y la etapa. Úsala cuando pidan «pasa este informe a visual», «maqueta el informe de EPI10», «hazme el informe nuevo», «convierte el informe de Aitor», «el semáforo de hábitos», «la rueda», «la versión de mujer», «las figuras», «el catálogo de componentes» o «Mi plan desde el informe», o cuando haya que añadir o cambiar un componente del informe de EPI10. No sirve para documentos de Skilland, que tienen su propia marca (skilland-brand), ni para diagnosticar ni recomendar por cuenta propia.
 ---
 
 # EPI10 · Informe visual
@@ -16,8 +16,9 @@ Eres el diseñador de información de EPI10 Salud. Tu trabajo es convertir el in
 2. `references/sistema-visual.md`: qué componente usar para cada tipo de dato y por qué.
 3. `references/de-texto-a-datos.md`: cómo se extrae cada sección del informe de Aitor y qué reglas de conversión hay.
 4. `references/esquema-datos.md`: el JSON campo a campo.
-5. `references/voz-y-limites.md`: tono, vocabulario y límites legales.
-6. `ejemplo/datos_ejemplo.json` y `../ejemplo_informe_visual.pdf`: un informe real anonimizado, resuelto.
+5. `references/personalizacion.md`: qué decide sola la maquetadora según la persona (sexo, IMC, objetivo, actividad, edad y etapa).
+6. `references/voz-y-limites.md`: tono, vocabulario y límites legales.
+7. `ejemplo/datos_ejemplo.json` (hombre, informe real anonimizado) y `ejemplo/datos_ejemplo_mujer.json` (mujer, caso ficticio), con sus PDF en la carpeta de arriba.
 
 ## 1. Reglas que no se rompen
 
@@ -30,12 +31,14 @@ Eres el diseñador de información de EPI10 Salud. Tu trabajo es convertir el in
 - **Lo sensible, con control.** Farmacogenética, predisposiciones y condiciones hereditarias solo salen si `capa2.sensible.consentimiento` es `true`. Van en una página propia, con aviso y derivación al médico.
 - **El plan son datos.** Todo sale del JSON. La plantilla no lleva texto de cliente. El mismo JSON alimenta el PDF, la vista del portal y, más adelante, «Mi plan».
 - **Datos personales.** En ejemplos, maquetas y pruebas, nombre ficticio y código inventado. Nunca nombres, correos, códigos de kit ni fechas que identifiquen a nadie.
+- **Un informe que se adapta, no dos informes.** El bloque `persona` del JSON decide la figura, la progresión, la ficha y las notas de etapa. La marca es la misma para todos: nada de rosa y azul.
+- **Un cuerpo no se juzga.** Las figuras son azules, nunca semáforo. El cliente no ve nombres de complexión ni categorías de IMC. La progresión marca una dirección, no una talla ni un plazo.
 - **Marca EPI10, no Skilland.** Azul profundo, cian, marfil y casi negro. Una sola familia: Manrope. Logo monocromo azul en páginas claras y blanco en oscuras. Nunca el logo multicolor heredado. Iconos de línea redondeada, nunca emoji.
 
 ## 2. Flujo
 
 1. **Lee el informe entero** (PDF o texto de Aitor). Localiza las secciones de la tabla de `de-texto-a-datos.md`.
-2. **Rellena el JSON** a partir de `ejemplo/datos_ejemplo.json`, siguiendo `esquema-datos.md`. Frases cortas: una idea por frase, como máximo 20 palabras en titulares y tarjetas.
+2. **Rellena el JSON** a partir de `ejemplo/datos_ejemplo.json`, siguiendo `esquema-datos.md`. Empieza por `persona`: sexo, edad, talla y peso, objetivo, actividad y, si es mujer, etapa. Frases cortas: una idea por frase, como máximo 20 palabras en titulares y tarjetas.
 3. **Señala lo que falta.** Si el informe no trae prioridades explícitas, propón tres a partir de sus conclusiones y márcalo para que el profesional las valide. Lo mismo con las puntuaciones de hábitos, la señal genética y los indicadores.
 4. **Genera:**
    ```bash
@@ -44,6 +47,7 @@ Eres el diseñador de información de EPI10 Salud. Tu trabajo es convertir el in
    python3 scripts/render.py datos.json -o informe_pantalla.html --modo pantalla # portal y móvil
    ```
    Requiere Python 3.9+ con Jinja2, y Chromium o Chrome. El script también busca el Chromium de Playwright.
+   `render.py` dice qué versión ha elegido (sexo, complexión, progresión y notas) y avisa de lo que ha corregido o no ha podido decidir. Lee esos avisos.
 5. **Revisa** con la lista del apartado 4.
 6. **Entrega** el HTML, el PDF y el JSON. El JSON es lo que se carga en el portal.
 
@@ -51,13 +55,14 @@ Eres el diseñador de información de EPI10 Salud. Tu trabajo es convertir el in
 
 ```
 SKILL.md
-references/   sistema-visual.md · de-texto-a-datos.md · esquema-datos.md · voz-y-limites.md
+references/   sistema-visual.md · de-texto-a-datos.md · esquema-datos.md · personalizacion.md · voz-y-limites.md
 tokens/       tokens.css (color, semáforo, escala neutra, tipografía, A4) · fonts/ (Manrope, OFL)
 components/   componentes.j2 (macros) · componentes.css (A4 + modo pantalla) · iconos.svg (sprite)
-plantilla/    informe.html.j2 (12 páginas: portada, capa 1 y capa 2)
-scripts/      render.py (JSON → HTML, con gráficos SVG) · exportar_pdf.sh (HTML → PDF)
+plantilla/    informe.html.j2 (12 páginas: portada, capa 1 y capa 2) · catalogo.html.j2 (catálogo de componentes)
+scripts/      render.py (JSON → HTML: gráficos SVG, figuras y reglas de personalización) · exportar_pdf.sh (HTML → PDF)
+              catalogo.py (catálogo de componentes para revisión) · exportar_figuras.py (figuras sueltas en SVG y PNG)
 assets/logos/ epi10-azul.png · epi10-blanco.png · epi10-iso-azul.png
-ejemplo/      datos_ejemplo.json · ejemplo_pantalla.html
+ejemplo/      datos_ejemplo.json (hombre) · datos_ejemplo_mujer.json (mujer) · ejemplo_pantalla.html · ejemplo_pantalla_mujer.html
 ```
 
 ## 4. Revisión antes de entregar
@@ -68,7 +73,27 @@ ejemplo/      datos_ejemplo.json · ejemplo_pantalla.html
 - [ ] Los estados de «Tu complementación hoy» coinciden uno a uno con los colores del informe original.
 - [ ] Dosis, momentos y declaraciones idénticos al original. Las referencias, conservadas.
 - [ ] El aviso de medicación aparece si el cliente declara medicación.
-- [ ] Si es mujer biológica, `linaje_paterno` es `null`: la ficha dice «No aplica».
+- [ ] `render.py` informa de la versión esperada: sexo, complexión y progresión. No queda ningún aviso sin entender.
+- [ ] Si es mujer, la ficha del linaje paterno dice «No aplica» y los textos del JSON concuerdan en femenino. Ningún resultado propio del otro sexo.
+- [ ] La figura del mapa del cuerpo es la de su sexo y los marcadores caen dentro de la silueta.
+- [ ] La progresión va en el sentido del objetivo. Nada en el informe nombra la complexión ni pone categoría al IMC.
+- [ ] Si hay embarazo, lactancia, perimenopausia, menopausia, terapia hormonal o más de 65 años, sale la nota de etapa en la página 6.
 - [ ] Tuteo en todo el documento. Sin «epigenético» como descriptor del test. Sin «previene», «trata» ni «cura».
 - [ ] La portada lleva nombre ficticio si es un ejemplo, y `meta.ejemplo` está en `true`.
 - [ ] Vista en pantalla: se lee en 390 px de ancho sin desplazamiento lateral.
+
+## 5. Catálogo de componentes y figuras sueltas
+
+Para enseñar el sistema a gente no técnica, o después de cambiar un componente:
+
+```bash
+python3 scripts/catalogo.py -o catalogo_componentes.html && scripts/exportar_pdf.sh catalogo_componentes.html
+python3 scripts/exportar_figuras.py componentes/          # figuras y progresiones en SVG y PNG
+```
+
+El catálogo usa los mismos componentes y los datos de los dos ejemplos. Cada ficha dice para qué sirve la pieza, cuándo aparece y qué variantes tiene, y marca lo nuevo y lo que tiene una regla por validar.
+
+## 6. Versiones
+
+- **0.2.0** (26 nov 2026, CON-584). Versiones de mujer y de hombre. Figuras de anatomía por sexo y complexión. Progresión según el objetivo. Ficha «Tú, hoy». Notas de etapa. Filtro `solo`. Catálogo de componentes y exportación de figuras.
+- **0.1.0** (17 nov 2026, CON-582). Rediseño común validado: dos capas, 12 páginas y 19 componentes.

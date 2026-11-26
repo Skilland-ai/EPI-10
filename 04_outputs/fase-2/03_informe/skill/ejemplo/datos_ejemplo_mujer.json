@@ -1,0 +1,812 @@
+{
+  "meta": {
+    "producto": "NutriWell",
+    "titulo": "Tu plan",
+    "cliente": {
+      "nombre": "Lucía",
+      "codigo": "NW-EJ-0002"
+    },
+    "fecha": "Noviembre 2026",
+    "revisado_por": "Equipo de nutrigenética de EPI10 Salud",
+    "fuentes": [
+      "genetica",
+      "habitos"
+    ],
+    "ejemplo": true,
+    "nota_ejemplo": "Ejemplo con nombre y datos ficticios. No corresponde a ninguna clienta: ningún informe anonimizado disponible era de mujer."
+  },
+  "persona": {
+    "sexo": "mujer",
+    "edad": 46,
+    "talla_cm": 164,
+    "peso_kg": 54,
+    "imc": null,
+    "complexion": null,
+    "objetivo": "ganar_musculo",
+    "objetivo_txt": "Ganar fuerza y masa muscular",
+    "complexion_objetivo": null,
+    "actividad": "suave",
+    "actividad_txt": "Yoga y caminar, 2–3 días",
+    "etapa": {
+      "embarazo": false,
+      "lactancia": false,
+      "hormonal": "perimenopausia",
+      "terapia_hormonal": false
+    }
+  },
+  "resumen": {
+    "frase": "Comes bien y cuidas tu estrés. Ahora lo que más te va a ayudar es entrenar fuerza, sumar proteína y proteger tu sueño.",
+    "lo_que_haces_bien": [
+      "Dieta mediterránea, con pescado dos veces por semana",
+      "Yoga dos días por semana",
+      "No fumas",
+      "Bebes alcohol solo de forma ocasional"
+    ]
+  },
+  "areas": [
+    {
+      "id": "nutricion",
+      "nombre": "Nutrición",
+      "estado": "ambar",
+      "habitos": 3,
+      "genetica": 2.4,
+      "frase": "Comes variado, pero con poca proteína para tu objetivo.",
+      "genetica_txt": "Tendencia a menos masa muscular y a vitamina D baja.",
+      "habitos_txt": "Mediterránea. Poca proteína en el desayuno y en la cena."
+    },
+    {
+      "id": "movimiento",
+      "nombre": "Movimiento",
+      "estado": "rojo",
+      "habitos": 2,
+      "genetica": 2.7,
+      "frase": "Te mueves, pero te falta entrenar fuerza.",
+      "genetica_txt": "Tendencia a menos masa muscular y a densidad mineral ósea baja.",
+      "habitos_txt": "Yoga y caminar dos o tres días. Nada de fuerza. Trabajas sentada."
+    },
+    {
+      "id": "descanso",
+      "nombre": "Descanso",
+      "estado": "ambar",
+      "habitos": 2,
+      "genetica": 2.0,
+      "frase": "Duermes algo menos de lo que necesitas, y con despertares.",
+      "genetica_txt": "Tendencia a un sueño más ligero.",
+      "habitos_txt": "6–7 horas. Te despiertas de madrugada varias noches."
+    },
+    {
+      "id": "estres",
+      "nombre": "Estrés y energía",
+      "estado": "verde",
+      "habitos": 4,
+      "genetica": 1.5,
+      "frase": "Lo llevas bien. El yoga te ayuda.",
+      "genetica_txt": "Sin hallazgos relevantes en esta área.",
+      "habitos_txt": "Estrés de vez en cuando. Cansancio por la tarde algunos días."
+    },
+    {
+      "id": "complementacion",
+      "nombre": "Complementación",
+      "estado": "ambar",
+      "habitos": 3,
+      "genetica": 1.8,
+      "frase": "Tomas cuatro productos. Dos repiten la vitamina D.",
+      "genetica_txt": "Tendencia a vitamina D baja: tiene sentido cuidarla, sin duplicarla.",
+      "habitos_txt": "Magnesio, vitamina D, multivitamínico y colágeno."
+    }
+  ],
+  "prioridades": [
+    {
+      "n": 1,
+      "area": "movimiento",
+      "titulo": "Entrena fuerza dos días",
+      "frase": "Es lo que más cuida tu músculo y tu hueso en esta etapa. Dos sesiones de 30 minutos, subiendo poco a poco."
+    },
+    {
+      "n": 2,
+      "area": "nutricion",
+      "titulo": "Proteína en cada comida",
+      "frase": "Tu dieta es buena, pero se queda corta de proteína para ganar fuerza. Empieza por el desayuno y la cena."
+    },
+    {
+      "n": 3,
+      "area": "descanso",
+      "titulo": "Protege tu sueño",
+      "frase": "Cena ligera y pronto, pantallas fuera media hora antes y dormitorio fresco. Sin dormir bien, el músculo no se recupera."
+    }
+  ],
+  "perfil_habitos": [
+    {
+      "icono": "movimiento",
+      "etiqueta": "Actividad",
+      "valor": "Yoga y caminar · 2–3 días por semana · sin fuerza",
+      "estado": "ambar"
+    },
+    {
+      "icono": "nutricion",
+      "etiqueta": "Alimentación",
+      "valor": "Mediterránea · poca proteína en desayuno y cena",
+      "estado": "ambar"
+    },
+    {
+      "icono": "pez",
+      "etiqueta": "Pescado",
+      "valor": "2 veces por semana · legumbres 2 veces",
+      "estado": "verde"
+    },
+    {
+      "icono": "descanso",
+      "etiqueta": "Sueño",
+      "valor": "6–7 horas · despertares de madrugada",
+      "estado": "ambar"
+    },
+    {
+      "icono": "estres",
+      "etiqueta": "Estrés",
+      "valor": "De vez en cuando · trabajo sentada",
+      "estado": "verde"
+    },
+    {
+      "icono": "copa",
+      "etiqueta": "Alcohol y tabaco",
+      "valor": "Vino ocasional · no fumas",
+      "estado": "verde"
+    },
+    {
+      "icono": "complementacion",
+      "etiqueta": "Complementos",
+      "valor": "4 productos a la vez",
+      "estado": "ambar"
+    },
+    {
+      "icono": "capsula-med",
+      "etiqueta": "Medicación",
+      "valor": "Ninguna",
+      "estado": "info"
+    }
+  ],
+  "analitica": {
+    "aportada": false,
+    "resumen": ""
+  },
+  "cuerpo": [
+    {
+      "zona": "cabeza",
+      "titulo": "Sueño",
+      "texto": "Tendencia a un sueño más ligero",
+      "nivel": "ligeramente alto"
+    },
+    {
+      "zona": "piel",
+      "titulo": "Vitamina D",
+      "texto": "Tendencia a niveles bajos de vitamina D",
+      "nivel": "alto"
+    },
+    {
+      "zona": "estomago",
+      "titulo": "Hierro",
+      "texto": "Tendencia a reservas de hierro más bajas",
+      "nivel": "ligeramente alto"
+    },
+    {
+      "zona": "cadera",
+      "titulo": "Hueso",
+      "texto": "Tendencia a densidad mineral ósea baja",
+      "nivel": "alto"
+    },
+    {
+      "zona": "muslo",
+      "titulo": "Músculo",
+      "texto": "Tendencia a menos masa muscular",
+      "nivel": "alto"
+    },
+    {
+      "zona": "rodilla",
+      "titulo": "Articulaciones",
+      "texto": "Recuperación algo más lenta tras el esfuerzo",
+      "nivel": "ligeramente alto"
+    }
+  ],
+  "habitos": [
+    {
+      "area": "movimiento",
+      "estado": "rojo",
+      "titulo": "Fuerza dos días por semana",
+      "vemos": {
+        "genetica": "Menos masa muscular y densidad ósea baja",
+        "habitos": "Yoga y caminar; nada de fuerza"
+      },
+      "accion": "Añade dos sesiones de fuerza de 30 minutos por semana. Empieza con tu propio peso o con gomas y sube poco a poco.",
+      "por_que": "Es el cambio que más pesa en tu objetivo.",
+      "indicador": "Sesiones de fuerza por semana",
+      "frecuencia": "Cada semana"
+    },
+    {
+      "area": "nutricion",
+      "estado": "ambar",
+      "titulo": "Proteína en cada comida",
+      "vemos": {
+        "genetica": "Tendencia a menos masa muscular",
+        "habitos": "Poca proteína en desayuno y cena"
+      },
+      "accion": "Incluye una ración de proteína en cada comida: huevos, yogur, legumbres, pescado o carne.",
+      "por_que": "Sin proteína suficiente, el entrenamiento rinde menos.",
+      "indicador": "Comidas con proteína al día",
+      "frecuencia": "Cada semana"
+    },
+    {
+      "area": "descanso",
+      "estado": "ambar",
+      "titulo": "Sueño sin interrupciones",
+      "vemos": {
+        "genetica": "Tendencia a un sueño más ligero",
+        "habitos": "6–7 horas, con despertares"
+      },
+      "accion": "Cena ligera y pronto. Deja las pantallas media hora antes de acostarte y mantén el dormitorio fresco.",
+      "por_que": "Si los despertares siguen, coméntalo con tu médico.",
+      "indicador": "Noches sin despertarte, de 7",
+      "frecuencia": "Cada semana"
+    },
+    {
+      "area": "complementacion",
+      "estado": "ambar",
+      "titulo": "Vitamina D sin duplicar",
+      "vemos": {
+        "genetica": "Tendencia a vitamina D baja",
+        "habitos": "La tomas en dos productos a la vez"
+      },
+      "accion": "Suma la vitamina D de tus dos etiquetas y quédate con una sola fuente.",
+      "por_que": "Más no es mejor: lo que importa es la dosis total.",
+      "indicador": "Etiquetas revisadas",
+      "frecuencia": "Una vez"
+    },
+    {
+      "area": "estres",
+      "estado": "verde",
+      "titulo": "Tu yoga",
+      "vemos": {
+        "genetica": "Sin señales relevantes",
+        "habitos": "Yoga dos días; estrés puntual"
+      },
+      "accion": "Mantén tu yoga. Es tu mejor hábito.",
+      "por_que": "",
+      "indicador": "Días de yoga por semana",
+      "frecuencia": "Cada semana"
+    }
+  ],
+  "complementacion_actual": [
+    {
+      "nombre": "Magnesio",
+      "estado": "mantener",
+      "motivo": "Encaja con tu descanso y con el entrenamiento que empiezas.",
+      "ajuste": "Tómalo por la noche"
+    },
+    {
+      "nombre": "Vitamina D",
+      "estado": "mantener",
+      "motivo": "Tendencia genética a vitamina D baja.",
+      "ajuste": "Que sea tu única fuente de vitamina D"
+    },
+    {
+      "nombre": "Multivitamínico",
+      "estado": "revisar",
+      "motivo": "Repite la vitamina D que ya tomas aparte.",
+      "ajuste": "Suma la vitamina D de las dos etiquetas"
+    },
+    {
+      "nombre": "Colágeno",
+      "estado": "revisar",
+      "motivo": "No vemos un motivo claro en tu perfil.",
+      "ajuste": "Valora si te aporta algo"
+    },
+    {
+      "nombre": "Proteína",
+      "estado": "anadir",
+      "motivo": "Tu dieta se queda corta para tu objetivo de fuerza.",
+      "ajuste": "20 g los días que entrenes fuerza"
+    }
+  ],
+  "medicacion": null,
+  "complementos": [
+    {
+      "nombre": "Proteína en polvo (suero o vegetal)",
+      "dosis": "20 g",
+      "unidad": "los días de fuerza",
+      "estado": "nuevo",
+      "por_que": {
+        "genetica": "Tendencia a menos masa muscular.",
+        "habitos": "Poca proteína en tu dieta y un objetivo claro: ganar fuerza."
+      },
+      "como": "Después de tu sesión de fuerza, con agua o leche. La comida va primero: es un apoyo.",
+      "momentos": [
+        "entreno"
+      ],
+      "evidencia": 3,
+      "declaracion": "Las proteínas contribuyen a que aumente la masa muscular.",
+      "referencias": [
+        "https://pubmed.ncbi.nlm.nih.gov/28698222/"
+      ],
+      "epi10": null
+    },
+    {
+      "nombre": "Vitamina D3",
+      "dosis": "25 µg",
+      "unidad": "1.000 UI al día",
+      "estado": "ajustar",
+      "por_que": {
+        "genetica": "Tendencia a vitamina D y a densidad mineral ósea bajas.",
+        "habitos": "Trabajas en interior. Ya la tomas, pero por duplicado."
+      },
+      "como": "Con una comida que lleve grasa. Una sola fuente: revisa la etiqueta de tu multivitamínico.",
+      "momentos": [
+        "comida"
+      ],
+      "evidencia": 3,
+      "declaracion": "La vitamina D contribuye al mantenimiento de los huesos en condiciones normales.",
+      "referencias": [
+        "https://pubmed.ncbi.nlm.nih.gov/26510847/"
+      ],
+      "epi10": null
+    },
+    {
+      "nombre": "Magnesio (bisglicinato)",
+      "dosis": "300 mg",
+      "unidad": "al día",
+      "estado": "mantener",
+      "por_que": {
+        "genetica": "Tendencia a un sueño más ligero.",
+        "habitos": "Despertares de madrugada y sesiones de fuerza nuevas. Ya lo tomas."
+      },
+      "como": "Por la noche, con un vaso de agua.",
+      "momentos": [
+        "noche",
+        "agua"
+      ],
+      "evidencia": 2,
+      "declaracion": "El magnesio contribuye al funcionamiento normal de los músculos.",
+      "referencias": [
+        "https://pubmed.ncbi.nlm.nih.gov/23853635/"
+      ],
+      "epi10": null
+    }
+  ],
+  "dia": [
+    {
+      "momento": "Mañana",
+      "icono": "sol",
+      "items": [
+        {
+          "tipo": "habito",
+          "texto": "Desayuno con proteína"
+        }
+      ]
+    },
+    {
+      "momento": "Comida principal",
+      "icono": "comida",
+      "items": [
+        {
+          "tipo": "complemento",
+          "texto": "Vitamina D3 · 25 µg"
+        },
+        {
+          "tipo": "habito",
+          "texto": "Proteína y verdura en el plato"
+        }
+      ]
+    },
+    {
+      "momento": "Entrenamiento",
+      "icono": "entreno",
+      "items": [
+        {
+          "tipo": "habito",
+          "texto": "Fuerza, 30 minutos (2 días)"
+        },
+        {
+          "tipo": "complemento",
+          "texto": "Proteína · 20 g"
+        }
+      ]
+    },
+    {
+      "momento": "Noche",
+      "icono": "descanso",
+      "items": [
+        {
+          "tipo": "complemento",
+          "texto": "Magnesio · 300 mg"
+        },
+        {
+          "tipo": "habito",
+          "texto": "Cena ligera y pronto"
+        },
+        {
+          "tipo": "habito",
+          "texto": "Pantallas fuera"
+        }
+      ]
+    }
+  ],
+  "siguientes_pasos": [
+    {
+      "icono": "libro",
+      "titulo": "Lee tu plan",
+      "texto": "Estas páginas. Diez minutos.",
+      "cuando": "Hoy"
+    },
+    {
+      "icono": "conversa",
+      "titulo": "Sesión con tu profesional",
+      "texto": "30 minutos para resolver dudas y acordar el plan.",
+      "cuando": "Esta semana"
+    },
+    {
+      "icono": "movil",
+      "titulo": "Activa Mi plan",
+      "texto": "Tus prioridades, hábitos y complementos, en tu portal.",
+      "cuando": "Tras la sesión"
+    },
+    {
+      "icono": "repetir",
+      "titulo": "Revisión mensual",
+      "texto": "Dos minutos. Tus semáforos se actualizan.",
+      "cuando": "Cada mes"
+    },
+    {
+      "icono": "calendario",
+      "titulo": "Revisión a seis meses",
+      "texto": "Vemos tu evolución y ajustamos.",
+      "cuando": "Mayo 2027"
+    }
+  ],
+  "cta": {
+    "titulo": "Tu plan sigue en tu portal",
+    "texto": "Marca tus hábitos cada semana, haz tu revisión de dos minutos cada mes y pide tus complementos cuando los necesites, con recordatorio de recompra.",
+    "boton": "Entra en tu portal EPI10",
+    "url": "",
+    "nota": "Recomendamos lo que encaja contigo, lo venda EPI10 o no. Puedes comprar tus complementos donde prefieras."
+  },
+  "capa2": {
+    "ancestralidad": {
+      "regiones": [
+        {
+          "nombre": "Península Ibérica",
+          "pct": 74.2,
+          "detalle": "España y Portugal"
+        },
+        {
+          "nombre": "Italia",
+          "pct": 14.3,
+          "detalle": "Norte y centro"
+        },
+        {
+          "nombre": "Norte de África",
+          "pct": 11.5,
+          "detalle": "Magreb"
+        }
+      ],
+      "continente": "Europa · 88,5 %",
+      "linaje_materno": {
+        "haplogrupo": "H",
+        "sub": "H1e1a",
+        "texto": "El linaje materno más frecuente en Europa occidental, hace unos 20.000 años.",
+        "ruta": [
+          {
+            "hg": "L",
+            "hace": 150000
+          },
+          {
+            "hg": "L3",
+            "hace": 75000
+          },
+          {
+            "hg": "N",
+            "hace": 60000
+          },
+          {
+            "hg": "HV",
+            "hace": 30000
+          },
+          {
+            "hg": "H",
+            "hace": 20000
+          },
+          {
+            "hg": "H1e1a",
+            "hace": null
+          }
+        ]
+      },
+      "linaje_paterno": null,
+      "neandertal_pct": 1.8,
+      "neandertal_txt": "752 variantes de origen neandertal en tu ADN. En la media de la base de datos."
+    },
+    "rasgos": [
+      {
+        "categoria": "Músculo y hueso",
+        "icono": "hueso",
+        "items": [
+          {
+            "rasgo": "Masa muscular",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Fuerza de agarre",
+            "tendencia": "ligeramente bajo"
+          },
+          {
+            "rasgo": "Densidad mineral ósea",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Regeneración muscular",
+            "tendencia": "ligeramente bajo"
+          }
+        ],
+        "significa": "Son tendencias, no medidas. Explican por qué la fuerza es tu primera prioridad."
+      },
+      {
+        "categoria": "Metabolismo y composición",
+        "icono": "nutricion",
+        "items": [
+          {
+            "rasgo": "Índice de masa corporal",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Grasa visceral",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Saciedad",
+            "tendencia": "alto"
+          },
+          {
+            "rasgo": "LDL y apolipoproteína B",
+            "tendencia": "medio"
+          }
+        ],
+        "significa": "Tiendes a saciarte pronto. Por eso conviene repartir la proteína a lo largo del día."
+      },
+      {
+        "categoria": "Vitaminas y minerales",
+        "icono": "sol",
+        "items": [
+          {
+            "rasgo": "Vitamina D",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Hierro (ferritina)",
+            "tendencia": "ligeramente bajo"
+          },
+          {
+            "rasgo": "Vitamina B12",
+            "tendencia": "medio"
+          },
+          {
+            "rasgo": "Calcio",
+            "tendencia": "ligeramente bajo"
+          }
+        ],
+        "significa": "No son déficits confirmados. Una analítica dirá si hay algo que ajustar."
+      },
+      {
+        "categoria": "Descanso y ritmo",
+        "icono": "descanso",
+        "items": [
+          {
+            "rasgo": "Duración del sueño",
+            "tendencia": "medio"
+          },
+          {
+            "rasgo": "Sueño ligero",
+            "tendencia": "ligeramente alto"
+          },
+          {
+            "rasgo": "Ritmo matutino",
+            "tendencia": "ligeramente alto"
+          }
+        ],
+        "significa": "Tu sueño es más sensible a la cena, la luz y la temperatura."
+      },
+      {
+        "categoria": "Tolerancia y cafeína",
+        "icono": "comida",
+        "items": [
+          {
+            "rasgo": "Intolerancia a la lactosa",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Enfermedad celíaca",
+            "tendencia": "bajo"
+          },
+          {
+            "rasgo": "Metabolismo de la cafeína",
+            "tendencia": "bajo"
+          }
+        ],
+        "significa": "Metabolizas la cafeína despacio: mejor antes del mediodía."
+      },
+      {
+        "categoria": "Genes del metabolismo",
+        "icono": "genetica",
+        "items": [
+          {
+            "rasgo": "MTHFR C677T",
+            "tendencia": "una copia",
+            "tipo": "variante"
+          },
+          {
+            "rasgo": "COMT V158M",
+            "tendencia": "sin variantes",
+            "tipo": "variante"
+          },
+          {
+            "rasgo": "VDR (receptor de vitamina D)",
+            "tendencia": "una copia",
+            "tipo": "variante"
+          }
+        ],
+        "significa": "Rutas del folato y de la vitamina D. No cambian tu plan: lo contextualizan."
+      },
+      {
+        "categoria": "Corazón y hormonas",
+        "icono": "corazon",
+        "items": [
+          {
+            "rasgo": "Frecuencia cardiaca en reposo",
+            "tendencia": "medio"
+          },
+          {
+            "rasgo": "TSH",
+            "tendencia": "ligeramente alto"
+          },
+          {
+            "rasgo": "Estradiol",
+            "tendencia": "medio"
+          },
+          {
+            "rasgo": "Edad de la menopausia",
+            "tendencia": "medio",
+            "solo": "mujer"
+          }
+        ],
+        "significa": "No son pruebas cardiológicas ni hormonales. Cualquier síntoma o antecedente, con tu médico."
+      }
+    ],
+    "sensible": {
+      "consentimiento": true,
+      "farmacogenetica": [
+        {
+          "familia": "Anticonceptivos y terapia hormonal",
+          "resultado": "Variante en el factor V Leiden no detectada. Sin hallazgos que cambien la pauta habitual.",
+          "relevancia": "Útil si se valora este tratamiento."
+        },
+        {
+          "familia": "Antidepresivos",
+          "resultado": "Metabolizadora normal de CYP2C19 e intermedia de CYP2D6. Posibles ajustes con algunos tricíclicos.",
+          "relevancia": "Solo si algún día te los recetan."
+        },
+        {
+          "familia": "Analgésicos",
+          "resultado": "Menor conversión de codeína y tramadol a su forma activa.",
+          "relevancia": "Coméntalo si te los recetan."
+        },
+        {
+          "familia": "Estatinas",
+          "resultado": "Sin variantes relevantes en SLCO1B1. Dosis estándar.",
+          "relevancia": "Útil si se valora este tratamiento."
+        },
+        {
+          "familia": "Anestesia",
+          "resultado": "Sin variantes asociadas a hipertermia maligna en el panel analizado.",
+          "relevancia": "Coméntalo antes de una intervención."
+        }
+      ],
+      "predisposiciones": [
+        {
+          "categoria": "Hueso y articulaciones",
+          "items": [
+            {
+              "nombre": "Osteoporosis",
+              "nivel": "ligeramente alto"
+            },
+            {
+              "nombre": "Artrosis de rodilla y cadera",
+              "nivel": "medio"
+            }
+          ]
+        },
+        {
+          "categoria": "Mama y ovario",
+          "items": [
+            {
+              "nombre": "Cáncer de mama",
+              "nivel": "medio",
+              "solo": "mujer"
+            },
+            {
+              "nombre": "Cáncer de ovario",
+              "nivel": "ligeramente bajo",
+              "solo": "mujer"
+            }
+          ]
+        },
+        {
+          "categoria": "Tiroides",
+          "items": [
+            {
+              "nombre": "Hipotiroidismo y Hashimoto",
+              "nivel": "ligeramente alto"
+            },
+            {
+              "nombre": "Enfermedad de Graves",
+              "nivel": "medio"
+            }
+          ]
+        },
+        {
+          "categoria": "Corazón y vasos",
+          "items": [
+            {
+              "nombre": "Hipertensión",
+              "nivel": "medio"
+            },
+            {
+              "nombre": "Hipercolesterolemia",
+              "nivel": "ligeramente bajo"
+            },
+            {
+              "nombre": "Varices",
+              "nivel": "ligeramente alto"
+            }
+          ]
+        },
+        {
+          "categoria": "Piel",
+          "items": [
+            {
+              "nombre": "Melanoma",
+              "nivel": "medio"
+            },
+            {
+              "nombre": "Carcinoma basocelular",
+              "nivel": "ligeramente bajo"
+            }
+          ]
+        }
+      ],
+      "predisposiciones_txt": "Una predisposición es una probabilidad estadística comparada con la población. No indica que tengas ni que vayas a tener ninguna de estas condiciones. No sustituye tus revisiones habituales: mantenlas como te indique tu médico.",
+      "hereditarias": [
+        {
+          "condicion": "Panel de condiciones hereditarias",
+          "resultado": "Sin variantes",
+          "significa": "No se han detectado variantes en el panel analizado. No descarta otras que el panel no incluye."
+        }
+      ]
+    }
+  },
+  "referencias": [
+    {
+      "texto": "Proteína y entrenamiento de fuerza (metaanálisis)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28698222/"
+    },
+    {
+      "texto": "Calcio, vitamina D y hueso (metaanálisis)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26510847/"
+    },
+    {
+      "texto": "Magnesio y calidad del sueño (ensayo clínico)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23853635/"
+    }
+  ],
+  "contacto": {
+    "telefono": "676 178 422",
+    "email": "info@epi10.es",
+    "web": "www.epi10.es",
+    "direccion": "Enclave Innovaparq ULL · San Cristóbal de La Laguna · Santa Cruz de Tenerife"
+  }
+}

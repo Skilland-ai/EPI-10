@@ -92,16 +92,51 @@
 <figure class="matriz-wrap">{{ matriz_svg(areas_lista) }}</figure>
 {%- endmacro %}
 
-{# ── 4. Mapa del cuerpo ──────────────────────────────── #}
-{% macro cuerpo(marcadores) -%}
+{# ── 4. Mapa del cuerpo: usa la figura que toca (sexo × complexión). Sin persona, la neutra ── #}
+{% macro cuerpo(marcadores, persona=none, columnas=2, densa=false) -%}
 <div class="cuerpo-wrap">
-  <div class="cuerpo-fig">{{ cuerpo_svg(marcadores) }}</div>
-  <ol class="cuerpo-lista">
+  <div class="cuerpo-fig">{{ cuerpo_svg(marcadores, persona.sexo_fig if persona else 'neutra', persona.complexion if persona else 3) }}</div>
+  <ol class="cuerpo-lista{{ ' una' if columnas == 1 }}{{ ' densa' if densa }}">
   {% for m in marcadores %}
     <li><span class="cl-n" style="background:{{ '#01447b' if nivel(m.nivel)==5 else ('#4682b8' if nivel(m.nivel)==4 else '#86b1d6') }}">{{ loop.index }}</span>
       <div><b>{{ m.titulo }}</b><span>{{ m.texto }}</span></div></li>
   {% endfor %}
   </ol>
+</div>
+{%- endmacro %}
+
+{# ── 4b. Progresión «de dónde partes → a dónde vas» (solo si hay objetivo y complexión) ── #}
+{% macro progresion(persona) -%}
+<section class="prog{{ '' if persona.cambia else ' prog-igual' }}">
+  <h3>De dónde partes y a dónde vas</h3>
+  <div class="prog-figs p{{ persona.pasos | length }}">{{ progresion_svg(persona.sexo_fig, persona.pasos) }}</div>
+  <p class="prog-obj">{{ icono('diana') }}<span><small>Tu objetivo</small><b>{{ persona.objetivo_txt }}</b></span></p>
+  {% if persona.cambia %}
+  <p class="prog-nota">Es una orientación visual. Marca una dirección, no una talla ni un plazo: el ritmo lo acuerdas con tu profesional.</p>
+  {% else %}
+  <p class="prog-nota">Tu objetivo no pasa por cambiar de complexión. Tu avance se verá en tus hábitos y en cómo te encuentras, no en la silueta.</p>
+  {% endif %}
+</section>
+{%- endmacro %}
+
+{# ── 4c. Ficha «Tú, hoy»: los datos de la persona que mueven el informe ── #}
+{% macro ficha_persona(persona) -%}
+<div class="ficha">
+  <div class="ficha-fig">{{ figura_svg(persona.sexo_fig, persona.complexion, 'activa') }}</div>
+  {% if persona.edad is not none %}<div class="ficha-dato"><small>Edad</small><b>{{ persona.edad }} años</b>{% if persona.etapa_nombre %}<span>{{ persona.etapa_nombre }}</span>{% endif %}</div>{% endif %}
+  {% if persona.talla_cm and persona.peso_kg %}<div class="ficha-dato"><small>Talla y peso</small><b>{{ persona.talla_cm }} cm · {{ persona.peso_kg }} kg</b>{% if persona.imc_txt %}<span>IMC {{ persona.imc_txt }} · orientativo</span>{% endif %}</div>
+  {% elif persona.imc_txt %}<div class="ficha-dato"><small>IMC</small><b>{{ persona.imc_txt }}</b><span>Orientativo</span></div>{% endif %}
+  {% if persona.actividad %}<div class="ficha-dato"><small>Actividad</small><b><span class="ficha-act" title="{{ persona.actividad_nombre }}">{% for n in range(1, 5) %}<i class="{{ 'on' if n <= persona.actividad_nivel }}"></i>{% endfor %}</span>{{ persona.actividad_nombre }}</b>{% if persona.actividad_txt %}<span>{{ persona.actividad_txt }}</span>{% endif %}</div>{% endif %}
+  {% if persona.objetivo %}<div class="ficha-dato ficha-obj"><small>Tu objetivo</small><b>{{ persona.objetivo_txt }}</b></div>{% endif %}
+</div>
+{%- endmacro %}
+
+{# ── 4d. Notas de tu etapa: prudencia según sexo, etapa y edad. Solo si hay alguna ── #}
+{% macro notas_etapa(notas) -%}
+<div class="etapa">
+  {{ icono('escudo') }}
+  <div><h4>Por tu etapa</h4>
+    <ul>{% for n in notas %}<li><b>{{ n.titulo }}.</b> {{ n.texto }}</li>{% endfor %}</ul></div>
 </div>
 {%- endmacro %}
 
@@ -283,7 +318,7 @@
     {% if a.linaje_paterno %}
     <div><small>Linaje paterno</small><b>{{ a.linaje_paterno.haplogrupo }}</b><span class="an-sub">{{ a.linaje_paterno.sub }}</span><p>{{ a.linaje_paterno.texto }}</p></div>
     {% else %}
-    <div class="an-na"><small>Linaje paterno</small><b>No aplica</b><p>Se lee en el cromosoma Y, que solo tienen los hombres biológicos.</p></div>
+    <div class="an-na"><small>Linaje paterno</small><b>No aplica</b><p>Se lee en el cromosoma Y, que solo tienen los hombres biológicos. No te falta ningún dato.</p></div>
     {% endif %}
     <div><small>ADN neandertal</small><b>{{ ('%.0f' % a.neandertal_pct) }} %</b>
       <span class="an-nea"><i style="width:{{ a.neandertal_pct / 4 * 100 }}%"></i></span><span class="an-esc"><span>0 %</span><span>4 %</span></span>

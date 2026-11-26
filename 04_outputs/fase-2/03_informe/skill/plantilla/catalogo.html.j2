@@ -1,0 +1,283 @@
+{# EPI10 · Informe visual · catálogo de componentes (para revisión por gente no técnica).
+   Cada ficha: nombre, para qué sirve, cuándo aparece, variantes y el componente real, con datos de ejemplo. #}
+{% import "components/componentes.j2" as c with context %}
+{% set ns = namespace(p=0, n=0) %}
+
+{% macro pagina(seccion, clase="") -%}
+{% set ns.p = ns.p + 1 %}
+<section class="pag cat {{ clase }}">
+  <header class="cab"><img src="{{ logo_azul }}" alt="EPI10"><span>{{ seccion }}</span></header>
+  <div class="cuerpo">{{ caller() }}</div>
+  <footer class="pie"><span>Informe visual 2.0 · Catálogo de componentes · {{ fecha }}</span><span>Primera versión para revisar · datos de ejemplo</span><b>{{ '%02d' % ns.p }}</b></footer>
+</section>
+{%- endmacro %}
+
+{% macro ficha(nombre, sirve, aparece, variantes="", nuevo=false, validar=false) -%}
+{% set ns.n = ns.n + 1 %}
+<header class="cat-cab">
+  <span class="cat-n">{{ '%02d' % ns.n }}</span><h2>{{ nombre }}</h2>
+  {% if nuevo %}<span class="cat-tag nuevo">Nuevo</span>{% endif %}{% if validar %}<span class="cat-tag validar">Regla por validar</span>{% endif %}
+</header>
+<dl class="cat-ficha">
+  <div><dt>Para qué sirve</dt><dd>{{ sirve }}</dd></div>
+  <div><dt>Cuándo aparece</dt><dd>{{ aparece }}</dd></div>
+  {% if variantes %}<div><dt>Variantes</dt><dd>{{ variantes }}</dd></div>{% endif %}
+</dl>
+{%- endmacro %}
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EPI10 · Informe visual 2.0 · Catálogo de componentes</title>
+<style>{{ css | safe }}</style>
+</head>
+<body class="modo-pdf">
+{{ iconos | safe }}
+<main class="doc">
+
+{% set ns.p = ns.p + 1 %}
+<section class="pag portada">
+  <div class="pt-fondo"></div>
+  <div class="pt-barras"><i></i><i></i><i></i></div>
+  <header class="pt-cab"><img src="{{ logo_blanco }}" alt="EPI10"><span>Informe visual 2.0</span></header>
+  <div class="pt-centro">
+    {{ c.kicker('Para revisar con el equipo de EPI10', true) }}
+    <h1>Catálogo de<br>componentes.</h1>
+    <p class="pt-lead">Las piezas con las que se monta cada informe: qué es cada una, para qué sirve, cuándo aparece y qué versiones tiene.</p>
+  </div>
+  <div class="pt-prios">
+    <div class="pt-prio"><span class="pt-n cat-pt">1</span><b>Figuras de mujer y de hombre</b></div>
+    <div class="pt-prio"><span class="pt-n cat-pt">2</span><b>Piezas que cambian con cada persona</b></div>
+    <div class="pt-prio"><span class="pt-n cat-pt">3</span><b>Las piezas comunes, ya validadas</b></div>
+  </div>
+  <footer class="pt-pie">
+    <div><small>Documento</small><b>Primera versión para revisar</b></div>
+    <div><small>Fecha</small><b>{{ fecha }}</b></div>
+    <div><small>Datos</small><b>De ejemplo, con nombres ficticios</b></div>
+  </footer>
+</section>
+
+{# ═════ Cómo leer ═════ #}
+{% call pagina('Cómo leer este catálogo') %}
+  {{ c.kicker('Cómo leer este catálogo') }}
+  <h1 class="h1">El informe se monta solo, pieza a pieza.</h1>
+  <p class="lead">Cada informe sale de los datos de la persona. Según esos datos, el sistema elige la figura, enseña unas piezas y esconde otras. Aquí están todas.</p>
+  <div class="cat-leyenda">
+    <div><span class="cat-tag nuevo">Nuevo</span><p>Pieza de esta entrega. No estaba en el informe que ya visteis.</p></div>
+    <div><span class="cat-tag validar">Regla por validar</span><p>La pieza funciona, pero la regla que la mueve es una propuesta nuestra. Necesita vuestro visto bueno.</p></div>
+    <div><span class="cat-tag">Sin etiqueta</span><p>Pieza común del informe, validada. Se enseña para tener el conjunto a la vista.</p></div>
+  </div>
+  <h2 class="h2 sep">Qué dato mueve qué pieza</h2>
+  <table class="cat-tabla">
+    <thead><tr><th>Dato de la persona</th><th>De dónde sale</th><th>Qué cambia en el informe</th></tr></thead>
+    <tbody>
+      <tr><td><b>Sexo al nacer</b></td><td>Cuestionario, pregunta 3</td><td>La figura del cuerpo. El linaje paterno, que en mujeres dice «No aplica». Las notas de etapa. Los resultados que solo tienen sentido para un sexo.</td></tr>
+      <tr><td><b>Talla y peso</b></td><td>Cuestionario, preguntas 5 y 6</td><td>El índice de masa corporal y, con él, la complexión de la figura (cinco escalones).</td></tr>
+      <tr><td><b>Objetivo</b></td><td>Hoy no se pregunta en el cuestionario</td><td>La progresión «de dónde partes y a dónde vas» y la casilla de objetivo de la ficha.</td></tr>
+      <tr><td><b>Nivel de actividad</b></td><td>Cuestionario, preguntas 19 a 22</td><td>El medidor de actividad de la ficha.</td></tr>
+      <tr><td><b>Edad</b></td><td>Cuestionario, pregunta 2</td><td>La casilla de edad y, a partir de 65 años, una nota de prudencia.</td></tr>
+      <tr><td><b>Etapa (solo mujer)</b></td><td>Formulario femenino, preguntas 45 a 48</td><td>Las notas de embarazo, lactancia, perimenopausia, menopausia y terapia hormonal.</td></tr>
+      <tr><td><b>Información sensible</b></td><td>Cuestionario, pregunta 44</td><td>La página de medicamentos, predisposiciones y herencia, que solo sale si la persona la pidió.</td></tr>
+      <tr><td><b>Analítica y medicación</b></td><td>Cuestionario</td><td>La tercera fuente de la página 3 y el aviso de medicación de la página 6.</td></tr>
+    </tbody>
+  </table>
+  <div class="grow"></div>
+  <div class="aviso-med">{{ c.icono('info') }}<p><b>Lo que no cambia.</b> La marca, los colores, el orden de las páginas y los avisos son los mismos para todos. No hay una versión «rosa» y otra «azul»: hay un solo informe que se adapta.</p></div>
+{% endcall %}
+
+{# ═════ Figuras ═════ #}
+{% call pagina('Figuras de anatomía') %}
+  {{ ficha('Figuras de anatomía',
+     'Dibujan el cuerpo de la persona en el mapa del cuerpo, en la ficha y en la progresión. Son sobrias a propósito: describen, no juzgan.',
+     'Siempre. Si no se conoce el sexo, se usa una figura neutra, intermedia entre las dos.',
+     'Dos cuerpos (mujer y hombre) por cinco complexiones. Diez figuras, más la neutra.', true, true) }}
+  {% for sexo, nombre in [('mujer', 'Mujer'), ('hombre', 'Hombre')] %}
+  <div class="cat-figs">
+    <h3>{{ nombre }}</h3>
+    <div class="cat-figs-fila">
+      {% for k in range(1, 6) %}<figure>{{ figura_svg(sexo, k, 'normal') }}<figcaption><b>Complexión {{ k }}</b></figcaption></figure>{% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  <table class="cat-tabla cat-imc">
+    <thead><tr><th>Complexión</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+    <tbody>
+      <tr><td><b>Índice de masa corporal</b></td><td>Menos de {{ ('%.1f' % cortes[0]) | replace('.', ',') }}</td><td>De {{ ('%.1f' % cortes[0]) | replace('.', ',') }} a 21,9</td><td>De 22 a 24,9</td><td>De 25 a 29,9</td><td>30 o más</td></tr>
+    </tbody>
+  </table>
+  <p class="nota">Los cortes son una propuesta nuestra y los mismos para mujer y hombre. El índice de masa corporal no distingue músculo de grasa: por eso el profesional puede fijar la complexión a mano. En el informe las figuras nunca llevan nombre ni número: el cliente solo ve «Hoy» y «Tu dirección».</p>
+{% endcall %}
+
+{# ═════ Progresión ═════ #}
+{% call pagina('De dónde partes y a dónde vas') %}
+  {{ ficha('Progresión «de dónde partes y a dónde vas»',
+     'Enseña la dirección del objetivo con las mismas figuras: de la complexión de hoy hacia la de destino.',
+     'Cuando hay objetivo y se conoce la complexión. Va en la página 4, junto al mapa del cuerpo.',
+     'Ganar (de las complexiones 1 y 2 hacia arriba), bajar (de las 4 y 5 hacia abajo) y sin cambio de complexión.', true, true) }}
+  <div class="cat-progs">
+    {% for titulo, regla, p in progresiones %}
+    <div class="cat-prog"><div class="cat-pie-demo"><b>{{ titulo }}</b><span>{{ regla }}</span></div>{{ c.progresion(p) }}</div>
+    {% endfor %}
+    <div class="cat-reglas">
+      <h4>Las reglas, en llano</h4>
+      <ul>
+        <li>Un paso por defecto. Dos como mucho, y solo si el profesional marca el destino.</li>
+        <li>Bajando nunca se dibuja por debajo de la complexión media. Subiendo, nunca por encima.</li>
+        <li>Si el objetivo no cambia la silueta (rendir más, sentirse mejor, mantenerse), sale una sola figura.</li>
+        <li>Nunca se promete una talla ni un plazo.</li>
+      </ul>
+    </div>
+  </div>
+{% endcall %}
+
+{# ═════ Mapa del cuerpo ═════ #}
+{% call pagina('Mapa del cuerpo') %}
+  {{ ficha('Mapa del cuerpo',
+     'Coloca sobre el cuerpo las tendencias genéticas más relevantes. El azul más intenso marca la señal más fuerte. Nunca usa rojo.',
+     'Siempre, en la página 4. Lleva de cuatro a ocho marcadores.',
+     'Usa la figura de la persona: cambia con el sexo y con la complexión. Los marcadores se recolocan solos.', true) }}
+  <div class="cat-dos">
+    <div class="cat-demo"><div class="cat-pie-demo"><b>Lucía</b><span>Mujer · complexión 2</span></div>{{ c.cuerpo(m.cuerpo, pm, 1) }}</div>
+    <div class="cat-demo"><div class="cat-pie-demo"><b>Álex</b><span>Hombre · complexión 4</span></div>{{ c.cuerpo(h.cuerpo, ph, 1, true) }}</div>
+  </div>
+  {{ ficha('Ficha «Tú, hoy»',
+     'Resume en una línea los datos de la persona que mueven el informe. Demuestra que el informe es suyo.',
+     'Cuando el informe trae los datos de la persona. Va en la página 3. Cada casilla sale solo si hay dato.',
+     'Con o sin etapa, con o sin objetivo. El medidor de actividad tiene cuatro niveles: sedentaria, suave, moderada y alta.', true, true) }}
+  <div class="cat-demo plano">{{ c.ficha_persona(pm) }}</div>
+  <div class="cat-demo plano">{{ c.ficha_persona(ph) }}</div>
+  <p class="nota">El índice de masa corporal se da como número y con la palabra «orientativo». No lleva categorías ni colores: no queremos poner una etiqueta al cuerpo de nadie.</p>
+{% endcall %}
+
+{# ═════ Notas de etapa y linaje ═════ #}
+{% call pagina('Piezas que dependen del sexo y de la etapa') %}
+  {{ ficha('Notas de tu etapa',
+     'Añade prudencia donde hace falta: recuerda consultar con un profesional sanitario antes de tomar complementos.',
+     'Solo si la persona está en una de estas situaciones. Va en la página 6, sobre el aviso de medicación.',
+     'Embarazo, lactancia, perimenopausia, menopausia, anticonceptivos o terapia hormonal, y más de 65 años.', true, true) }}
+  {% for titulo, lista in notas.items() %}
+  <div class="cat-demo plano"><div class="cat-pie-demo"><b>{{ titulo }}</b></div>{{ c.notas_etapa(lista) }}</div>
+  {% endfor %}
+  <p class="nota">Los textos de embarazo, lactancia, etapa hormonal y terapia hormonal siguen las reglas de prudencia del anexo de vuestro cuestionario de hábitos. La nota de los 65 años es una propuesta nuestra.</p>
+  {{ ficha('Linaje paterno «No aplica»',
+     'Evita que una mujer crea que le falta un resultado. El linaje paterno se lee en el cromosoma Y.',
+     'Siempre que el sexo al nacer es mujer. Va en la página 9. El sistema lo pone solo, aunque el dato llegue relleno por error.',
+     'Hombre: dos linajes y dos líneas en el tiempo. Mujer: linaje materno y una sola línea.') }}
+  <div class="cat-dos">
+    <div class="cat-demo"><div class="cat-pie-demo"><b>Mujer</b></div><div class="ancestro"><div class="an-linajes cat-linajes"><div><small>Linaje materno</small><b>{{ m.capa2.ancestralidad.linaje_materno.haplogrupo }}</b><p>{{ m.capa2.ancestralidad.linaje_materno.texto }}</p></div><div class="an-na"><small>Linaje paterno</small><b>No aplica</b><p>Se lee en el cromosoma Y, que solo tienen los hombres biológicos. No te falta ningún dato.</p></div></div></div></div>
+    <div class="cat-demo"><div class="cat-pie-demo"><b>Hombre</b></div><div class="ancestro"><div class="an-linajes cat-linajes"><div><small>Linaje materno</small><b>{{ h.capa2.ancestralidad.linaje_materno.haplogrupo }}</b><p>{{ h.capa2.ancestralidad.linaje_materno.texto }}</p></div><div><small>Linaje paterno</small><b>{{ h.capa2.ancestralidad.linaje_paterno.haplogrupo }}</b><p>{{ h.capa2.ancestralidad.linaje_paterno.texto }}</p></div></div></div></div>
+  </div>
+{% endcall %}
+
+{# ═════ Rueda y prioridades ═════ #}
+{% call pagina('Tu plan en una página') %}
+  {{ ficha('Rueda del perfil',
+     'Da el estado de las cinco áreas de un vistazo. El centro cuenta cuántas hay en cada color.',
+     'Siempre, en la página 2. Es la misma rueda del portal.',
+     'Cada porción toma el color de su área: verde (vas bien), ámbar (mejorable) o rojo (prioridad).') }}
+  <div class="cat-dos">
+    <div class="cat-demo"><div class="cat-pie-demo"><b>Lucía</b></div>{{ c.rueda(m.areas) }}</div>
+    <div class="cat-demo"><div class="cat-pie-demo"><b>Álex</b></div>{{ c.rueda(h.areas) }}</div>
+  </div>
+  {{ ficha('Tres prioridades',
+     'Es lo que la persona debe recordar al cerrar el informe. Número grande, título y una frase.',
+     'Siempre, en la portada y en la página 2. Son tres, ni dos ni cinco, y las ordena el profesional.',
+     'El color del borde es el estado del área, no el orden.') }}
+  <div class="cat-demo plano">{{ c.prioridades(m.prioridades, areas_m) }}</div>
+{% endcall %}
+
+{# ═════ Punto de partida y mapa de prioridades ═════ #}
+{% call pagina('Punto de partida y porqué') %}
+  {{ ficha('Lo que nos has contado',
+     'Devuelve a la persona lo que respondió en el cuestionario, con un punto de color por hábito.',
+     'Siempre, en la página 3. De seis a ocho casillas.',
+     'Punto verde, ámbar o rojo. El punto hueco es un dato sin valoración, como la medicación.') }}
+  <div class="cat-demo plano">{{ c.perfil(m.perfil_habitos[4:8]) }}</div>
+  {{ ficha('Cómo leer los colores',
+     'Enseña una sola vez los tres lenguajes: el semáforo (lo que puedes cambiar), el azul (lo que te describe) y el origen del dato.',
+     'Siempre, en la página 3.') }}
+  <div class="cat-demo plano">{{ c.como_leer() }}</div>
+  {{ ficha('Mapa de prioridades',
+     'Explica por qué algo es prioridad: cruza la señal de la genética con los hábitos de hoy.',
+     'Siempre, en la página 4, junto a la tabla de áreas con sus puntuaciones.',
+     'Cuatro zonas: mantén, vigila y protege, mejora el hábito y prioridad.') }}
+  <div class="cat-demo plano"><div class="por-que">{{ c.matriz(m.areas) }}{{ c.rueda_leyenda(m.areas) }}</div></div>
+{% endcall %}
+
+{# ═════ Semáforo de hábitos ═════ #}
+{% call pagina('El semáforo de tus hábitos') %}
+  {{ ficha('Tarjeta de hábito',
+     'Convierte cada recomendación en una acción: lo que vemos (genética y hábitos), qué hacer y cómo se medirá en el portal.',
+     'Siempre, en la página 5. De tres a cinco hábitos, más uno en verde con lo que ya hace bien.',
+     'Rojo (prioridad), ámbar (mejorable) y verde (vas bien). El semáforo solo se usa para lo que la persona puede cambiar.') }}
+  <div class="hb-grid">
+    {{ c.tarjeta_habito(m.habitos[0], areas_m) }}
+    {{ c.tarjeta_habito(m.habitos[1], areas_m) }}
+    {{ c.tarjeta_habito(m.habitos[4], areas_m) }}
+  </div>
+  {{ ficha('Tu primera revisión mensual',
+     'Anticipa el hábito de volver al portal: enseña las preguntas de la revisión de dos minutos.',
+     'Siempre, en la página 8. Sale de los indicadores de los cuatro primeros hábitos.') }}
+  {{ c.revision(m.habitos) }}
+{% endcall %}
+
+{# ═════ Complementación ═════ #}
+{% call pagina('Complementación') %}
+  {{ ficha('Tu complementación hoy',
+     'Ordena lo que la persona ya toma antes de añadir nada. Es la pieza más diferencial: también dice lo que sobra.',
+     'Siempre, en la página 6. Un renglón por producto.',
+     'Mantener (verde), revisar o ajustar (ámbar), dejar (rojo) y añadir (cian). El estado es literal del profesional.') }}
+  {{ c.complementacion_hoy(m.complementacion_actual) }}
+  {{ ficha('Tarjeta de complemento',
+     'Da la dosis, el motivo en su caso, cómo tomarlo, la evidencia y la declaración autorizada en la UE, literal.',
+     'Siempre, en la página 7. Una tarjeta por complemento recomendado.',
+     'Evidencia alta, moderada o preliminar. Etiqueta de estado. Hueco opcional «Disponible en EPI10».') }}
+  {{ c.tarjeta_complemento(m.complementos[1], 2) }}
+{% endcall %}
+
+{# ═════ Tu día y siguientes pasos ═════ #}
+{% call pagina('Tu plan en marcha') %}
+  {{ ficha('Tu día',
+     'Convierte la lista de hábitos y complementos en una rutina de cuatro momentos.',
+     'Siempre, en la página 8.',
+     'Tres o cuatro momentos. Los complementos van en negrita; los hábitos, con una marca verde.') }}
+  {{ c.tu_dia(m.dia) }}
+  {{ ficha('Lo que viene ahora',
+     'Línea de tiempo de los cinco pasos: leer, sesión, activar Mi plan, revisión mensual y revisión a seis meses.',
+     'Siempre, en la página 8.') }}
+  {{ c.pasos(m.siguientes_pasos) }}
+  {{ ficha('Llamada al portal',
+     'Lleva a la persona al portal, con la regla «recomendamos lo que encaja contigo, lo venda EPI10 o no».',
+     'Siempre, al final de la página 8.') }}
+  {{ c.cta(m.cta) }}
+{% endcall %}
+
+{# ═════ Capa 2 ═════ #}
+{% call pagina('Tu perfil completo', 'capa2') %}
+  {{ ficha('Rasgos en escala azul',
+     'Enseña las tendencias genéticas de bajo a alto. Es azul a propósito: una tendencia no es buena ni mala.',
+     'Siempre, en la página 10. Una tarjeta por categoría.',
+     'Escala de cinco pasos o etiqueta de variante («una copia»). Un rasgo marcado como solo de un sexo no sale en el otro.') }}
+  <div class="rasgos-grid">{{ c.tabla_rasgos(m.capa2.rasgos[0]) }}{{ c.tabla_rasgos(m.capa2.rasgos[5]) }}</div>
+  {{ ficha('Ancestralidad',
+     'Porcentajes por región, linajes y ADN neandertal, sin los textos históricos largos.',
+     'Siempre, en la página 9.',
+     'Con dos linajes (hombre) o con el paterno en «No aplica» (mujer).') }}
+  <div class="cat-demo plano"><div class="ancestro"><div class="an-barra">{% for x in m.capa2.ancestralidad.regiones %}<span style="flex:{{ x.pct }};--c:{{ ['#01447b','#029acc','#86b1d6','#bcd3e8'][loop.index0 % 4] }}"><b>{{ ('%.1f' % x.pct) | replace('.', ',') }} %</b></span>{% endfor %}</div></div></div>
+  {{ ficha('Bloque sensible',
+     'Trata aparte la farmacogenética, las predisposiciones y las condiciones hereditarias, con aviso y derivación al médico.',
+     'Solo si la persona pidió verla en el cuestionario. Si no, la página no existe y el índice dice «No solicitada».',
+     'Las predisposiciones propias de un sexo (por ejemplo, mama y ovario) solo salen en ese sexo.') }}
+  {{ c.aviso_sensible(m.capa2.sensible.predisposiciones_txt) }}
+  <div class="predis">
+    {% for g in m.capa2.sensible.predisposiciones[:2] %}
+    <article><h3>{{ g.categoria }}</h3><ul>{% for it in g["items"] %}<li><span>{{ it.nombre }}</span>{{ escala_html(it.nivel) }}</li>{% endfor %}</ul></article>
+    {% endfor %}
+  </div>
+{% endcall %}
+
+</main>
+</body>
+</html>
