@@ -111,6 +111,30 @@ test('los destinos son los del contrato', () => {
   assert.equal(destino('recorrido'), 'https://odoo.aporta-epi10.com/__entrar?volver=/epi10/primer-caso');
   assert.equal(destino('tecnica'), 'https://panel.aporta-epi10.com/__entrar?volver=/panel');
   assert.equal(destino('guia'), 'guia-rapida');
+  assert.equal(destino('orquestador'), 'https://panel.aporta-epi10.com/__entrar?volver=/panel');
+});
+
+test('cada botón abre pestaña nueva; salir, el logo, volver y las descargas, no', () => {
+  const enlaces = (html) => [...html.matchAll(/<a\s[^>]*>/g)].map(([a]) => a);
+  const nueva = (a) => /\starget="_blank"/.test(a) && /\srel="noopener"/.test(a);
+  for (const nombre of ['odoo', 'generador', 'recorrido', 'guia', 'tecnica', 'orquestador']) {
+    const a = enlaces(portada).find((e) => e.includes(`data-destino="${nombre}"`));
+    assert.ok(a && nueva(a), `${nombre} abre pestaña nueva`);
+  }
+  for (const a of enlaces(portada).filter((e) => /href="https:/.test(e)))
+    assert.ok(nueva(a), `abre pestaña nueva: ${a}`);
+  const misma = enlaces(portada + guia).filter((e) => !/href="https:|data-destino="guia"/.test(e));
+  assert.ok(misma.length >= 8);
+  for (const a of misma) assert.doesNotMatch(a, /target=/, a);
+});
+
+test('la tarjeta del orquestador va debajo de la web de compra y la pasarela de pago', () => {
+  const pago = desplegable.indexOf('Iniciar el pago de prueba');
+  const tarjeta = desplegable.indexOf('data-destino="orquestador"');
+  const sobre = desplegable.indexOf('id="mas-sobre"');
+  assert.ok(pago > 0 && pago < tarjeta && tarjeta < sobre);
+  assert.match(desplegable, /<article class="tarjeta tarjeta--plana t-orq">/);
+  assert.match(desplegable, />Abrir el orquestador<\/a>/);
 });
 
 test('la web de compra y Stripe solo se enlazan dentro del desplegable', () => {

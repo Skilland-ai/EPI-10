@@ -58,6 +58,7 @@ h4 { font-size: 1.02rem; font-weight: 700; color: var(--azul-900); }
 .tarjeta--plana { box-shadow: none; background: var(--marfil); border-color: var(--linea); }
 .t-web { --c1: #0a5ea3; --c2: #029acc; }
 .t-pago { --c1: #027aa3; --c2: #029acc; }
+.t-orq { --c1: #00294d; --c2: #01447b; }
 .t-odoo { --c1: #01447b; --c2: #0a5ea3; }
 .t-gen { --c1: #00294d; --c2: #027aa3; }
 .tarjeta__cabeza { display: flex; align-items: center; gap: 14px; }

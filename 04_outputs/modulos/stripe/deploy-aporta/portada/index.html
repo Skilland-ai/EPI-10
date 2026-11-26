@@ -6,8 +6,8 @@
   <meta name="robots" content="noindex, nofollow">
   <title>EPI10 · Espacio de trabajo</title>
   <link rel="icon" href="img/epi10-blue.png">
-  <link rel="stylesheet" href="estilos.css?v=20261125-1">
-  <script src="portada.js?v=20261125-1" defer></script>
+  <link rel="stylesheet" href="estilos.css?v=20261126-1">
+  <script src="portada.js?v=20261126-1" defer></script>
 </head>
 <body>
   <header class="cabecera">
@@ -38,7 +38,7 @@
           </div>
         </div>
         <p class="texto">Das de alta a un cliente, ves en qué punto está y lo pasas de etapa.</p>
-        <a class="boton" href="https://odoo.aporta-epi10.com/__entrar" data-destino="odoo">Abrir Casos y clientes</a>
+        <a class="boton" href="https://odoo.aporta-epi10.com/__entrar" data-destino="odoo" target="_blank" rel="noopener">Abrir Casos y clientes</a>
       </article>
 
       <article class="tarjeta t-gen">
@@ -50,7 +50,7 @@
           </div>
         </div>
         <p class="texto">Subes los PDF de un cliente y recibes el borrador del informe en Word.</p>
-        <a class="boton" href="https://generador.aporta-epi10.com/__entrar" data-destino="generador">Abrir el generador</a>
+        <a class="boton" href="https://generador.aporta-epi10.com/__entrar" data-destino="generador" target="_blank" rel="noopener">Abrir el generador</a>
       </article>
     </section>
 
@@ -58,11 +58,11 @@
       <div class="primera__recorrido">
         <h2 id="primera-t">¿Primera vez?</h2>
         <p class="texto">Haz el recorrido <strong>«Tu primer caso»</strong>: llevas un cliente de práctica del alta al cierre, paso a paso. Puedes dejarlo y retomarlo.</p>
-        <a class="boton boton--claro" href="https://odoo.aporta-epi10.com/__entrar?volver=/epi10/primer-caso" data-destino="recorrido">Empezar «Tu primer caso»</a>
+        <a class="boton boton--claro" href="https://odoo.aporta-epi10.com/__entrar?volver=/epi10/primer-caso" data-destino="recorrido" target="_blank" rel="noopener">Empezar «Tu primer caso»</a>
       </div>
       <ul class="primera__lista">
         <li>
-          <a class="primera__enlace" href="guia-rapida" data-destino="guia">Guía rápida</a>
+          <a class="primera__enlace" href="guia-rapida" data-destino="guia" target="_blank" rel="noopener">Guía rápida</a>
           <span class="primera__nota">Tres tutoriales cortos: entrar, llevar un cliente y sacar un informe.</span>
         </li>
         <li>
@@ -76,7 +76,7 @@
       </ul>
     </section>
 
-    <p class="tecnica">¿Curiosidad por lo que pasa por detrás? <a href="https://panel.aporta-epi10.com/__entrar?volver=/panel" data-destino="tecnica">Abrir la vista técnica</a>. No hace falta para trabajar.</p>
+    <p class="tecnica">¿Curiosidad por lo que pasa por detrás? <a href="https://panel.aporta-epi10.com/__entrar?volver=/panel" data-destino="tecnica" target="_blank" rel="noopener">Abrir la vista técnica</a>. No hace falta para trabajar.</p>
 
     <section class="mas" aria-label="Más información sobre este sistema">
       <details>
@@ -199,6 +199,19 @@
                 <p class="texto">Stripe, en modo de pruebas: permite completar la compra sin ningún pago real.</p>
                 <p class="dato">Tarjeta de prueba: <strong>4242 4242 4242 4242</strong>, fecha futura y cualquier CVC.</p>
                 <a class="enlace" href="https://compra.aporta-epi10.com/#demo" target="_blank" rel="noopener">Iniciar el pago de prueba</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="bloque" aria-labelledby="mas-orq">
+            <p class="eyebrow">Lo que pasa por detrás</p>
+            <h3 id="mas-orq">El orquestador</h3>
+            <p>Es la pieza que mantiene el mismo caso en Casos y clientes y en el generador. No hace falta entrar para trabajar: está aquí por si quieres verlo.</p>
+            <div class="rejilla">
+              <article class="tarjeta tarjeta--plana t-orq">
+                <div class="tarjeta__cabeza"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="20" r="2"/><path d="M6.6 7.4l3 2.6M17.4 7.4l-3 2.6M12 15v3"/></svg></span><div><h4>Orquestador</h4></div></div>
+                <p class="texto">Su vista técnica enseña cada caso, las tareas que ha creado y el registro de todo lo que ha pasado. Es de consulta.</p>
+                <a class="enlace" href="https://panel.aporta-epi10.com/__entrar?volver=/panel" data-destino="orquestador" target="_blank" rel="noopener">Abrir el orquestador</a>
               </article>
             </div>
           </section>
